@@ -3,55 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uçuş Dispeçerliği Sınav Sistemi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Uçuş Dispeçerliği | Pilotaj Sınavı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #e9ecef; }
-        * { box-sizing: border-box; }
+        :root {
+            --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5;
+        }
+        * { box-sizing: border-box; transition: all 0.2s ease; }
         body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; display: flex; flex-direction: column; }
+        
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1400px; margin: 0 auto; width: 100%; }
-        .main { flex: 3; padding: 20px; overflow-y: auto; }
-        .container { background: white; padding: 30px; border-radius: 12px; shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; }
-        .q-text { font-size: 1.2em; font-weight: 500; margin-bottom: 20px; line-height: 1.4; }
-        .opt { display: block; width: 100%; padding: 15px; margin: 10px 0; border: 2px solid #ddd; border-radius: 8px; cursor: pointer; text-align: left; background: white; font-size: 1em; transition: 0.2s; pointer-events: auto; }
-        .opt:hover { border-color: var(--p); background: #f8f9fa; }
-        .ans .opt { pointer-events: none; }
-        .correct { background: #d4edda !important; border-color: var(--s) !important; color: #155724; font-weight: bold; }
-        .wrong { background: #f8d7da !important; border-color: var(--e) !important; color: #721c24; }
-        .nav { margin-top: 20px; display: flex; justify-content: space-between; }
-        .btn { background: var(--p); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .side { flex: 1; background: white; border-left: 1px solid #ddd; overflow-y: auto; padding: 15px; max-width: 220px; }
-        .link { display: block; padding: 6px; margin: 3px 0; background: #eee; border-radius: 4px; text-decoration: none; color: #333; font-size: 0.8em; text-align: center; }
+        
+        /* Sol Sınav Alanı */
+        .main { flex: 3; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        
+        /* SABİT ÇERÇEVE */
+        .container { 
+            background: white; 
+            width: 100%;
+            max-width: 800px;
+            height: 600px; /* SABİT YÜKSEKLİK */
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.9em; }
+        
+        /* SORU METNİ ALANI (Scrollable) */
+        .q-text { 
+            font-size: 1.2em; 
+            font-weight: 500; 
+            margin-bottom: 15px; 
+            line-height: 1.4; 
+            height: 100px; /* Soru metni için ayrılan sabit alan */
+            overflow-y: auto; 
+        }
+
+        /* ŞIKLAR ALANI (Sabit Konum) */
+        #opts { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+
+        .opt { 
+            display: block; width: 100%; padding: 14px; margin: 6px 0; 
+            border: 2px solid #eee; border-radius: 10px; cursor: pointer; 
+            background: white; font-size: 1em; text-align: left;
+        }
+        .opt:hover { border-color: var(--p); transform: scale(1.01); background: #f8f9fa; }
+        
+        .ans-mode .opt { pointer-events: none; }
+        .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: bold; }
+        .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
+
+        /* SABİT BUTONLAR ALANI */
+        .nav { 
+            margin-top: auto; /* Butonları en alta iter */
+            padding-top: 20px;
+            display: flex; 
+            justify-content: space-between; 
+            gap: 10px;
+        }
+        .btn { 
+            flex: 1; padding: 12px; border: none; border-radius: 8px; 
+            cursor: pointer; background: var(--p); color: white; 
+            font-weight: bold; font-size: 0.9em; text-transform: uppercase;
+        }
+        .btn:active { transform: scale(0.95); }
+        .btn-gray { background: #6c757d; }
+        .btn-reset { background: #ffc107; color: #333; }
+
+        /* Sağ Sidebar */
+        .side { flex: 1; background: white; border-left: 1px solid #ddd; overflow-y: auto; padding: 15px; max-width: 250px; }
+        .link { display: block; padding: 8px; margin: 3px; background: #eee; text-decoration: none; color: #333; font-size: 11px; text-align: center; border-radius: 4px; }
         .link.active { background: var(--p); color: white; }
-        .art { text-align: center; font-family: monospace; font-size: 7px; color: #999; padding: 15px; white-space: pre; background: var(--bg); }
+
+        /* ART FOOTER */
+        .art { 
+            text-align: center; 
+            padding: 30px; 
+            background: var(--bg);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .art-box {
+            display: inline-block;
+            border: 3px solid #333;
+            padding: 15px 40px;
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #333;
+            background: white;
+            box-shadow: 10px 10px 0px #000;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper { flex-direction: column; }
+            .container { height: auto; min-height: 550px; }
+            .side { max-width: 100%; height: 150px; }
+        }
     </style>
 </head>
 <body>
+
     <div class="wrapper">
-        <div class="main">
-            <div id="q-box" class="container">
-                <div class="header" id="no">...</div>
-                <div class="q-text" id="txt">Yükleniyor...</div>
+        <main class="main">
+            <div id="q-container" class="container">
+                <div id="no" class="header">Yükleniyor...</div>
+                <div id="txt" class="q-text">Soru alanı hazırlanıyor...</div>
                 <div id="opts"></div>
+                
                 <div class="nav">
-                    <button class="btn" style="background:#6c757d" onclick="move(-1)">Önceki</button>
-                    <button class="btn" style="background:#6c757d" onclick="rand()">Rastgele</button>
+                    <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
+                    <button class="btn btn-reset" onclick="resetQ()">Reset</button>
+                    <button class="btn btn-gray" onclick="rand()">Random</button>
                     <button class="btn" onclick="move(1)">Sonraki</button>
                 </div>
             </div>
-        </div>
-        <div class="side" id="list"></div>
+        </main>
+
+        <aside class="side" id="list"></aside>
     </div>
+
     <div class="art">
-----------------------
-CREATED BY BURAK KURT
-----------------------
+        <div class="art-box">
+            ----------------------<br>
+            CREATED BY BURAK KURT<br>
+            ----------------------
+        </div>
     </div>
 
     <script>
-        let qs = [], idx = 0, answered = false;
-        async function init() {
+        let qs = [], idx = 0;
+
+        async function start() {
             const r = await fetch('sorular.json');
             qs = await r.json();
             const l = document.getElementById('list');
@@ -63,40 +148,46 @@ CREATED BY BURAK KURT
             });
             show();
         }
+
         function show() {
-            answered = false;
             const q = qs[idx];
-            document.getElementById('q-box').classList.remove('ans');
-            document.getElementById('no').innerText = q['soru no'] + " [GÜNCEL SÜRÜM]";
+            const cont = document.getElementById('q-container');
+            cont.classList.remove('ans-mode');
+            document.getElementById('no').innerText = q['soru no'] + " [GENEL SORULAR VE CEVAPLAR]";
             document.getElementById('txt').innerText = q['soru'];
-            const o = document.getElementById('opts');
-            o.innerHTML = '';
-            ['a','b','c','d'].forEach(k => {
-                if(q[k]) {
+            const oDiv = document.getElementById('opts');
+            oDiv.innerHTML = '';
+
+            ['a','b','c','d'].forEach(key => {
+                if(q[key]) {
                     const b = document.createElement('button');
-                    b.className = 'opt'; b.innerText = k.toUpperCase() + ') ' + q[k];
+                    b.className = 'opt';
+                    b.innerText = key.toUpperCase() + ") " + q[key];
                     b.onclick = () => {
-                        if(answered) return;
-                        answered = true;
-                        document.getElementById('q-box').classList.add('ans');
-                        if(k === q.cevap) b.classList.add('correct');
-                        else {
+                        cont.classList.add('ans-mode');
+                        const correctKey = q.cevap.trim().charAt(0).toLowerCase();
+                        if(key === correctKey) {
+                            b.classList.add('correct');
+                        } else {
                             b.classList.add('wrong');
-                            Array.from(o.children).forEach(x => {
-                                if(x.innerText.toLowerCase().startsWith(q.cevap)) x.classList.add('correct');
+                            Array.from(oDiv.children).forEach(btn => {
+                                if(btn.innerText.toLowerCase().startsWith(correctKey)) btn.classList.add('correct');
                             });
                         }
                     };
-                    o.appendChild(b);
+                    oDiv.appendChild(b);
                 }
             });
             document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
             const active = document.getElementById('l'+idx);
-            active.classList.add('active'); active.scrollIntoView({block:'center'});
+            active.classList.add('active'); active.scrollIntoView({block:'center', behavior: 'smooth'});
         }
+
         function move(n) { idx = (idx+n+qs.length)%qs.length; show(); }
         function rand() { idx = Math.floor(Math.random()*qs.length); show(); }
-        init();
+        function resetQ() { show(); } // Show fonksiyonu zaten durumu sıfırlıyor.
+
+        start();
     </script>
 </body>
 </html>
