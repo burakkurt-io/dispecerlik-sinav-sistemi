@@ -2,78 +2,379 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sınav Sistemi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Uçuş Dispeçerliği Sınav Sistemi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 10px; line-height: 1.6; }
-        .q-header { color: #555; font-weight: bold; margin-bottom: 15px; }
-        .question-text { font-size: 1.1em; margin-bottom: 20px; }
-        .option { 
-            display: block; width: 100%; padding: 15px; margin: 10px 0;
-            border: 1px solid #ddd; border-radius: 5px; cursor: pointer; text-align: left;
-            background: white; transition: 0.2s;
+        :root {
+            --primary-color: #0056b3; /* Havacılık mavisi */
+            --secondary-color: #f8f9fa;
+            --text-dark: #333;
+            --success-bg: #d4edda;
+            --success-border: #28a745;
+            --error-bg: #f8d7da;
+            --error-border: #dc3545;
         }
-        .option:hover { background: #f9f9f9; }
-        .correct { background: #d4edda !important; border-color: #28a745 !important; color: #155724; }
-        .wrong { background: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
-        .nav-links { margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; font-size: 0.9em; }
-        .nav-links a { color: blue; text-decoration: none; margin-right: 15px; cursor: pointer; }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #e9ecef; 
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Ana Yerleşim */
+        .main-wrapper {
+            display: flex;
+            flex: 1;
+            overflow: hidden; /* Çift scroll barı önler */
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Sol Taraf - Sınav Alanı */
+        .quiz-area {
+            flex: 3;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .q-header { 
+            color: var(--primary-color); 
+            font-weight: 700; 
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: inline-block;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .question-text { 
+            font-size: 1.25em; 
+            font-weight: 500;
+            margin-bottom: 25px; 
+            line-height: 1.5;
+        }
+
+        /* Modern Butonlar */
+        .quiz-option { 
+            display: block; 
+            width: 100%; 
+            padding: 18px 20px; 
+            margin: 12px 0;
+            border: 2px solid #e0e0e0; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            text-align: left;
+            background: white; 
+            font-size: 1.05em;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+        }
+
+        /* Sadece cevaplanmamışken hover efekti uygula */
+        .quiz-container:not(.answered) .quiz-option:hover { 
+            background: var(--secondary-color); 
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Doğru/Yanlış Durumları */
+        .quiz-option.correct-selection { 
+            background-color: var(--success-bg) !important; 
+            border-color: var(--success-border) !important; 
+            color: #155724;
+            font-weight: 500;
+        }
+        
+        .quiz-option.correct-selection::after {
+            content: '✓';
+            position: absolute;
+            right: 20px;
+            font-weight: bold;
+        }
+
+        .quiz-option.wrong-selection { 
+            background-color: var(--error-bg) !important; 
+            border-color: var(--error-border) !important; 
+            color: #721c24;
+        }
+        
+        .quiz-option.wrong-selection::after {
+            content: '✕';
+            position: absolute;
+            right: 20px;
+            font-weight: bold;
+        }
+
+        /* Cevaplandıktan sonra tıklamayı engelle */
+        .quiz-container.answered .quiz-option {
+            cursor: default !important;
+            pointer-events: none;
+        }
+
+        /* Alt Navigasyon */
+        .nav-links { 
+            margin-top: 30px; 
+            border-top: 1px solid #eee; 
+            padding-top: 20px; 
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav-btn { 
+            background: var(--primary-color); 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background-color: #004494; }
+        .nav-btn.secondary { background: #6c757d; }
+
+
+        /* Sağ Taraf - Sidebar Navigasyon */
+        .sidebar {
+            flex: 1;
+            background: white;
+            border-left: 1px solid #ddd;
+            overflow-y: auto;
+            padding: 20px;
+            max-width: 300px;
+        }
+
+        .sidebar-header {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .question-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .question-list li {
+            margin-bottom: 8px;
+        }
+
+        .q-link {
+            display: block;
+            padding: 8px 12px;
+            background: var(--secondary-color);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9em;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .q-link:hover {
+            background: #e2e6ea;
+            border-color: #ccc;
+        }
+
+        /* Aktif soru sidebar'da vurgulanır */
+        .q-link.active {
+            background: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            .main-wrapper { flex-direction: column; }
+            .quiz-area { padding: 15px; flex: none; }
+            .sidebar { 
+                flex: none; 
+                max-width: 100%; 
+                height: 300px; /* Mobilde sidebar yüksekliği */
+                border-left: none;
+                border-top: 1px solid #ddd;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="quiz-container">
-        <div class="q-header" id="q-no">Yükleniyor...</div>
-        <div class="question-text" id="q-text"></div>
-        <div id="options-container"></div>
-        <div class="nav-links">
-            <a onclick="prevQuestion()">prev</a>
-            <a onclick="randomQuestion()">rand</a>
-            <a onclick="nextQuestion()">next</a>
-        </div>
+
+    <div class="main-wrapper">
+        <main class="quiz-area">
+            <div id="quiz-container" class="quiz-container">
+                <div class="q-header" id="q-no">Yükleniyor...</div>
+                <div class="question-text" id="q-text">Sorular getiriliyor, lütfen bekleyin.</div>
+                <div id="options-container">
+                    </div>
+                <div class="nav-links">
+                    <button class="nav-btn secondary" onclick="prevQuestion()">← Önceki</button>
+                    <button class="nav-btn secondary" onclick="randomQuestion()">Rastgele</button>
+                    <button class="nav-btn" onclick="nextQuestion()">Sonraki →</button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">Tüm Sorular</div>
+            <ul class="question-list" id="sidebar-list">
+                </ul>
+        </aside>
     </div>
 
     <script>
         let questions = [];
         let currentIndex = 0;
+        let isAnswered = false; // Cevap verildi mi kontrolü
 
+        // Veriyi çek ve başlat
         async function loadQuestions() {
-            const response = await fetch('sorular.json');
-            questions = await response.json();
-            renderQuestion();
+            try {
+                const response = await fetch('sorular.json');
+                if (!response.ok) throw new Error("Dosya bulunamadı");
+                questions = await response.json();
+                renderSidebar(); // Sidebar'ı oluştur
+                renderQuestion(); // İlk soruyu göster
+            } catch (error) {
+                document.getElementById('q-text').innerText = "Hata: Sorular yüklenemedi. Lütfen sayfayı yenileyin.";
+                console.error(error);
+            }
         }
 
+        // Soruyu ekrana bas
         function renderQuestion() {
+            if (questions.length === 0) return;
+            
+            // Yeni soruya geçerken durumu sıfırla
+            isAnswered = false;
+            document.getElementById('quiz-container').classList.remove('answered');
+
             const q = questions[currentIndex];
-            document.getElementById('q-no').innerText = `${q['soru no']}`;
+            document.getElementById('q-no').innerText = `${q['soru no']} [Uçuş Planlama]`; // Konu başlığı eklendi
             document.getElementById('q-text').innerText = q['soru'];
             
             const container = document.getElementById('options-container');
-            container.innerHTML = '';
+            container.innerHTML = ''; // Önceki şıkları temizle
 
+            // Şıkları döngüyle oluştur
             ['a', 'b', 'c', 'd'].forEach(key => {
                 if(q[key]) {
                     const btn = document.createElement('button');
-                    btn.className = 'option';
-                    btn.innerText = `${key}) ${q[key]}`;
+                    btn.className = 'quiz-option';
+                    btn.innerText = `${key.toUpperCase()}) ${q[key]}`;
+                    btn.dataset.key = key; // Hangi şık olduğunu butona kaydet (a,b,c,d)
+                    // Tıklama olayı
                     btn.onclick = () => checkAnswer(btn, key, q.dogru_cevap);
                     container.appendChild(btn);
                 }
             });
+
+            updateSidebarActiveState(); // Sidebar'da aktif soruyu güncelle
         }
 
-        function checkAnswer(btn, selected, correctFull) {
-            const correctLetter = correctFull.charAt(0); // "b) 9 sınıf." -> "b"
-            if (selected === correctLetter) {
-                btn.classList.add('correct');
+        // Cevap kontrolü
+        function checkAnswer(clickedBtn, selectedKey, fullCorrectString) {
+            if (isAnswered) return; // Eğer zaten cevaplandıysa işlem yapma
+            
+            isAnswered = true;
+            document.getElementById('quiz-container').classList.add('answered'); // Kapsayıcıya sınıf ekle
+
+            // Doğru cevabın ilk harfini al (Örn: "b) 9 sınıf." -> "b")
+            const correctKey = fullCorrectString.charAt(0).toLowerCase();
+            
+            // Tüm butonları bul
+            const allButtons = document.querySelectorAll('.quiz-option');
+
+            if (selectedKey === correctKey) {
+                // Doğruysa tıklanan butonu yeşil yap
+                clickedBtn.classList.add('correct-selection');
             } else {
-                btn.classList.add('wrong');
+                // Yanlışsa tıklananı kırmızı yap
+                clickedBtn.classList.add('wrong-selection');
+                // VE doğru olan butonu bulup yeşil yap
+                allButtons.forEach(btn => {
+                    if (btn.dataset.key === correctKey) {
+                        btn.classList.add('correct-selection');
+                    }
+                });
             }
         }
 
-        function nextQuestion() { currentIndex = (currentIndex + 1) % questions.length; renderQuestion(); }
-        function prevQuestion() { currentIndex = (currentIndex - 1 + questions.length) % questions.length; renderQuestion(); }
-        function randomQuestion() { currentIndex = Math.floor(Math.random() * questions.length); renderQuestion(); }
+        // Navigasyon Fonksiyonları
+        function nextQuestion() { 
+            currentIndex = (currentIndex + 1) % questions.length; 
+            renderQuestion(); 
+            scrollToTop();
+        }
+        function prevQuestion() { 
+            currentIndex = (currentIndex - 1 + questions.length) % questions.length; 
+            renderQuestion(); 
+            scrollToTop();
+        }
+        function randomQuestion() { 
+            currentIndex = Math.floor(Math.random() * questions.length); 
+            renderQuestion(); 
+            scrollToTop();
+        }
+        
+        // Belirli bir soruya git (Sidebar için)
+        function jumpToQuestion(index) {
+            currentIndex = index;
+            renderQuestion();
+            scrollToTop();
+        }
 
+        // Yeni soruya geçince en üste kaydır
+        function scrollToTop() {
+            document.querySelector('.quiz-area').scrollTop = 0;
+        }
+
+        // Sidebar'ı Oluştur
+        function renderSidebar() {
+            const sidebarList = document.getElementById('sidebar-list');
+            questions.forEach((q, index) => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.className = 'q-link';
+                a.innerText = q['soru no'];
+                a.href = "javascript:void(0)";
+                a.onclick = () => jumpToQuestion(index);
+                a.id = `sidebar-link-${index}`;
+                li.appendChild(a);
+                sidebarList.appendChild(li);
+            });
+        }
+
+        // Sidebar'daki aktif linki güncelle
+        function updateSidebarActiveState() {
+            // Önceki aktifi kaldır
+            const previousActive = document.querySelector('.sidebar .q-link.active');
+            if (previousActive) previousActive.classList.remove('active');
+
+            // Yeni aktifi ekle ve ona kaydır
+            const newActive = document.getElementById(`sidebar-link-${currentIndex}`);
+            if (newActive) {
+                newActive.classList.add('active');
+                newActive.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Başlat
         loadQuestions();
     </script>
 </body>
