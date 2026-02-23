@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav Sistemi</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 10px; line-height: 1.6; }
+        .q-header { color: #555; font-weight: bold; margin-bottom: 15px; }
+        .question-text { font-size: 1.1em; margin-bottom: 20px; }
+        .option { 
+            display: block; width: 100%; padding: 15px; margin: 10px 0;
+            border: 1px solid #ddd; border-radius: 5px; cursor: pointer; text-align: left;
+            background: white; transition: 0.2s;
+        }
+        .option:hover { background: #f9f9f9; }
+        .correct { background: #d4edda !important; border-color: #28a745 !important; color: #155724; }
+        .wrong { background: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
+        .nav-links { margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; font-size: 0.9em; }
+        .nav-links a { color: blue; text-decoration: none; margin-right: 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <div class="q-header" id="q-no">Yükleniyor...</div>
+        <div class="question-text" id="q-text"></div>
+        <div id="options-container"></div>
+        <div class="nav-links">
+            <a onclick="prevQuestion()">prev</a>
+            <a onclick="randomQuestion()">rand</a>
+            <a onclick="nextQuestion()">next</a>
+        </div>
+    </div>
+
+    <script>
+        let questions = [];
+        let currentIndex = 0;
+
+        async function loadQuestions() {
+            const response = await fetch('sorular.json');
+            questions = await response.json();
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = questions[currentIndex];
+            document.getElementById('q-no').innerText = `${q['soru no']}`;
+            document.getElementById('q-text').innerText = q['soru'];
+            
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            ['a', 'b', 'c', 'd'].forEach(key => {
+                if(q[key]) {
+                    const btn = document.createElement('button');
+                    btn.className = 'option';
+                    btn.innerText = `${key}) ${q[key]}`;
+                    btn.onclick = () => checkAnswer(btn, key, q.dogru_cevap);
+                    container.appendChild(btn);
+                }
+            });
+        }
+
+        function checkAnswer(btn, selected, correctFull) {
+            const correctLetter = correctFull.charAt(0); // "b) 9 sınıf." -> "b"
+            if (selected === correctLetter) {
+                btn.classList.add('correct');
+            } else {
+                btn.classList.add('wrong');
+            }
+        }
+
+        function nextQuestion() { currentIndex = (currentIndex + 1) % questions.length; renderQuestion(); }
+        function prevQuestion() { currentIndex = (currentIndex - 1 + questions.length) % questions.length; renderQuestion(); }
+        function randomQuestion() { currentIndex = Math.floor(Math.random() * questions.length); renderQuestion(); }
+
+        loadQuestions();
+    </script>
+</body>
+</html>
