@@ -41,7 +41,7 @@
         .btn-gray { background: #6c757d; }
         .btn-reset { background: #ffc107; color: #000; }
 
-        /* SAĞ SİDEBAR - GENİŞLETİLDİ */
+        /* SAĞ SİDEBAR */
         .side { flex: 1; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 25px; min-width: 380px; max-width: 450px; }
         .link { 
             display: block; padding: 12px; margin: 6px 0; 
@@ -52,7 +52,7 @@
         .link:hover { background: #e9ecef; border-color: var(--p); transform: scale(1.02); }
         .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
-        /* FOOTER ALANI */
+        /* FOOTER */
         .footer-area { display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; width: 100%; }
         .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; }
         .mini-analiz { 
@@ -65,15 +65,15 @@
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
         .modal-content { 
             background: white; margin: 2% auto; padding: 40px; border-radius: 20px; 
-            width: 90%; max-width: 900px; height: 85vh; overflow-y: auto; position: relative;
+            width: 90%; max-width: 1000px; height: 85vh; overflow-y: auto; position: relative;
         }
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; color: #333; }
         
-        /* NOT TASARIMI */
         .note-section { margin-bottom: 25px; border-left: 4px solid var(--p); padding-left: 15px; }
-        .note-title { color: var(--p); font-weight: bold; font-size: 1.1em; margin-bottom: 10px; text-transform: uppercase; }
-        .note-content { font-size: 14px; line-height: 1.6; color: #444; }
-        .highlight-box { background: #fff3cd; padding: 15px; border-radius: 8px; border: 1px dashed #e67e22; margin-top: 10px; }
+        .note-title { color: var(--p); font-weight: bold; font-size: 1.1em; margin-bottom: 8px; text-transform: uppercase; }
+        .note-content { font-size: 14px; line-height: 1.6; color: #333; }
+        .tech-core { font-style: italic; color: #666; margin-bottom: 8px; display: block; font-size: 13px; }
+        .highlight-box { background: #fff3cd; padding: 15px; border-radius: 8px; border: 1px dashed #e67e22; margin-top: 15px; }
 
         @media (max-width: 1000px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 250px; } }
     </style>
@@ -101,7 +101,7 @@
         </main>
 
         <aside class="side">
-            <div style="text-align:center; font-weight:bold; color:var(--p); margin-bottom:20px; font-size:16px; border-bottom:1px solid #eee; padding-bottom:10px;">NAVİGASYON PANELİ</div>
+            <div style="text-align:center; font-weight:bold; color:var(--p); margin-bottom:20px; font-size:16px; border-bottom:1px solid #eee; padding-bottom:10px;">SORU NAVİGASYONU</div>
             <div id="list"></div>
         </aside>
     </div>
@@ -109,71 +109,126 @@
     <div id="analizModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h1 style="color: var(--p); text-align: center; margin-bottom: 30px; border-bottom: 3px double var(--p); padding-bottom: 15px;">SHGM SORU ANALİZ VE TEKNİK NOTLAR</h1>
+            <h1 style="color: var(--p); text-align: center; margin-bottom: 30px; border-bottom: 3px double var(--p); padding-bottom: 15px;">DİSPEÇERLİK TEKNİK ANALİZ NOTLARI</h1>
             
             <div class="note-section">
-                <div class="note-title">1. M&B - AĞIRLIK VE DENGE</div>
+                <div class="note-title">1. M&B - AĞIRLIK VE DENGE (U 01 E UO 199)</div>
+                <span class="tech-core">Teknik Çekirdek: Uçağın ağırlığı yapısal ömrü ve aerodinamik kontrol yüzeylerinin etkinliğini belirler.</span>
                 <div class="note-content">
-                    <strong>Hiyerarşi:</strong> ZFW (En Kritik - Yakıtsız Ağırlık) > TOM (Kalkış) > LM (İniş).<br>
-                    <strong>CG Mekaniği:</strong> Arka CG = En verimli uçuş, düşük yakıt sarfiyatı, düşük stall hızı. Ön CG = Maksimum stabilite, yüksek yakıt sarfiyatı.
+                    <strong>Ağırlık Hiyerarşisi:</strong> BEM (Çıplak) > DOM (+Mürettebat/Ekipman) > <b>ZFW (+Trafik Yükü - Kritik Sınır)</b> > TOM (+Yakıt) > LM (-Trip Fuel).<br>
+                    <strong>CG ve %MAC:</strong> Ön CG (Stabil, stall hızı yüksek, verim düşük). Arka CG (Daha az stabil, stall hızı düşük, <b>en verimli uçuş</b>).<br>
+                    <strong>LMC:</strong> Limitler aşılırsa Loadsheet yeniden hazırlanır.
                 </div>
             </div>
 
             <div class="note-section">
-                <div class="note-title">2. HPL - İNSAN PERFORMANSI</div>
+                <div class="note-title">2. HPL - İNSAN PERFORMANSI VE LİMİTLERİ (U 01 E UO 209)</div>
+                <span class="tech-core">Teknik Çekirdek: 10.000 ft üzeri adaptasyon ve bilişsel hata payı.</span>
                 <div class="note-content">
-                    <strong>Hipoksi:</strong> Hipoksik (Yükseklik), Anemik (Sigara/CO), Stagnant (G Kuvveti), Histotoksik (Alkol).<br>
-                    <strong>Görüş:</strong> Çubuklar (Gece), Koniler (Gündüz/Renk). Gece kör noktası foveanın merkezidir.
+                    <strong>Hipoksi:</strong> Hipoksik (İrtifa), Anemik (Sigara/Hemoglobin), Stagnant (G Kuvveti), Histotoksik (Alkol/Zehir).<br>
+                    <strong>Göz:</strong> Çubuklar (Gece), Koniler (Gündüz). Gece kör noktası foveanın merkezindedir.<br>
+                    <strong>İllüzyonlar:</strong> Somatogravic (Hızlanmayı tırmanma sanma), Black Hole (Derinlik algısı kaybı).
                 </div>
             </div>
 
             <div class="note-section">
-                <div class="note-title">3. DGR - TEHLİKELİ MADDELER</div>
+                <div class="note-title">3. DGR - TEHLİKELİ MADDELER (U 01 E UO 054)</div>
                 <div class="note-content">
-                    <strong>Sınıflar:</strong> 1 (Patlayıcı), 7 (Radyoaktif), 8 (Aşındırıcı).<br>
-                    <strong>NOTOC:</strong> Kaptana bildirilmesi zorunlu resmi belgedir.
+                    <strong>Sınıflandırma:</strong> 9 Sınıf. 1 (Patlayıcı), 7 (Radyoaktif), 8 (Aşındırıcı) en kritiklerdir.<br>
+                    <strong>Paketleme:</strong> X (PG I - Çok Tehlikeli), Y (PG II), Z (PG III - Az Tehlikeli).<br>
+                    <strong>NOTOC:</strong> Kaptana yer, miktar ve acil kod bildiren resmi belge.
                 </div>
             </div>
 
             <div class="note-section">
-                <div class="note-title">4. LAW & HAV - HUKUK VE TRAFİK</div>
+                <div class="note-title">4. COM - HABERLEŞME (U 01 E UO 197)</div>
                 <div class="note-content">
-                    <strong>Chicago Konvansiyonu:</strong> ICAO'nun temeli.<br>
-                    <strong>Separation:</strong> RVSM sahasında dikey 1000 ft, radar kontrolünde yatay 5 NM.
+                    <strong>Öncelik:</strong> 1. Distress (Mayday), 2. Urgency (Pan-Pan), 3. Radio Nav, 4. Weather.<br>
+                    <strong>Frekans:</strong> VHF (118.00-136.975 MHz - Görüş hattı). HF (Okyanus aşırı - İyonosfer yansıması).
                 </div>
             </div>
 
             <div class="note-section">
-                <div class="note-title">5. MET - METEOROLOJİ</div>
+                <div class="note-title">5. LAW - HAVA HUKUKU VE ATC (U 01 E UO 201)</div>
                 <div class="note-content">
-                    <strong>Buzlanma:</strong> En tehlikelisi Clear Ice (0°C/-20°C).<br>
-                    <strong>TAF/METAR:</strong> TEMPO (Geçici <1saat), BECMG (Kalıcı değişim), NOSIG (2 saat değişim yok).
+                    <strong>Chicago Konvansiyonu (1944):</strong> ICAO'nun temeli.<br>
+                    <strong>Annexler:</strong> Annex 1 (Lisans), 2 (Kurallar), 6 (Operasyon), 17 (Güvenlik).<br>
+                    <strong>Tescil:</strong> Her uçağın bir bayrak devleti ve tescili (TC-LLL) olmalıdır.
                 </div>
             </div>
 
             <div class="note-section">
-                <div class="note-title">6. PEF - PERFORMANS HIZLARI</div>
+                <div class="note-title">6. HAV - HAVA TRAFİK YÖNETİMİ (U 01 E UO 880)</div>
                 <div class="note-content">
-                    <strong>V1:</strong> Karar hızı. <strong>Vr:</strong> Rotate. <strong>V2:</strong> Emniyetli tırmanma.<br>
-                    <strong>Pist:</strong> TODA = TORA + Clearway. ASDA = TORA + Stopway.
+                    <strong>Hava Sahası:</strong> Sınıf A (Sadece IFR, tam kontrol). Sınıf G (Kontrolsüz).<br>
+                    <strong>Ayırma:</strong> RVSM'de dikey 1000 ft. Radar kontrolünde yatay 5 NM standarttır.
                 </div>
             </div>
 
-            <div class="note-section" style="border-left-color: #e67e22;">
-                <div class="note-title" style="color: #e67e22;">💡 BURAK KURT STRATEJİ VE TAKTİKLER</div>
+            <div class="note-section">
+                <div class="note-title">7. MET - METEOROLOJİ (U 01 E UO 196)</div>
                 <div class="note-content">
-                    <ul style="padding-left: 20px;">
-                        <li><strong>Birim Tuzağı:</strong> Feet/Metre çevrimine dikkat (1 ft = 0.3048 m).</li>
-                        <li><strong>Kök Analizi:</strong> "NOT", "EXCEPT", "MINIMUM" kelimelerini gördüğünde alarm durumuna geç.</li>
-                        <li><strong>Emniyet Mantığı:</strong> Hatırlayamadığın soruda "Hangi şık emniyeti en çok artırır?" diye sor.</li>
-                    </ul>
-                    <div class="highlight-box">
-                        <strong>Zaman Yönetimi:</strong> Önce LAW, SEC, HPL gibi bilgi sorularını bitir. NAV ve PEF hesaplamalarını sona bırak!
-                    </div>
+                    <strong>Buzlanma:</strong> 0°C/-20°C arası bulut içinde. En tehlikelisi <b>Clear Ice</b>.<br>
+                    <strong>Raporlar:</strong> METAR (Anlık), TAF (Tahmin). NOSIG (2 saat değişim yok).<br>
+                    <strong>Rüzgar:</strong> Jetstreamler troposferin üst tabakasındaki çok güçlü akıntılardır.
                 </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">8. PEF - PERFORMANS (U 01 E UO 176)</div>
+                <div class="note-content">
+                    <strong>Hızlar:</strong> V1 (Karar), Vr (Rotate), V2 (Emniyetli tırmanma).<br>
+                    <strong>Pist:</strong> TODA (Pist+Clearway), ASDA (Pist+Stopway).<br>
+                    <strong>Yoğunluk:</strong> Yüksek sıcaklık ve rakım yoğunluğu düşürür, performansı azaltır.
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">9. SEC - GÜVENLİK (U 01 E UO 249)</div>
+                <div class="note-content">
+                    <strong>Aramalar:</strong> Security Search (Yer prosedürü).<br>
+                    <strong>Yolcu:</strong> UM (Refakatsiz çocuk), DEPO (Sınır dışı) kuralları.<br>
+                    <strong>Sterile Cockpit:</strong> 10.000 ft altı sadece uçuş odaklı iletişim.
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">10. NAV - SEYRÜSEFER (U 01 E UO 205)</div>
+                <div class="note-content">
+                    <strong>Modeller:</strong> Great Circle (En kısa mesafe), Rhumb Line (Sabit açılı hat).<br>
+                    <strong>Yardımcılar:</strong> VOR (Radyal), DME (Uzaklık), ILS (İniş hattı).<br>
+                    <strong>TAS:</strong> İrtifa arttıkça TAS, IAS'ten daha yüksek olur.
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">11. FPL&FM - UÇUŞ PLANLAMA (U 01 E UO 208)</div>
+                <div class="note-content">
+                    <strong>Yakıt:</strong> Contingency (%5 veya 5 dk), Final Reserve (Jetler için 30 dk).<br>
+                    <strong>PNR:</strong> Dönüş için yeterli yakıtın olduğu son nokta.
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">12. AVI - HAVACILIK ÖĞRETİMİ (U 01 E UO 248)</div>
+                <div class="note-content">
+                    <strong>Dört Kuvvet:</strong> Taşıma, Ağırlık, İtki, Sürükleme.<br>
+                    <strong>Stall:</strong> Hücum açısı (AoA) sınırı aşınca taşımanın kaybı.<br>
+                    <strong>Sistemler:</strong> Hidrolik (Kumanda), Pnömatik (İklimlendirme), Elektrik (Aviyonik).
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="margin-top:0; color:#e67e22;">💡 BURAK KURT STRATEJİ VE TAKTİKLER</h3>
+                <ul style="padding-left: 20px; font-size: 14px; line-height: 1.6;">
+                    <li><strong>Soru Kökü:</strong> "NOT", "EXCEPT", "MINIMUM" kelimelerini gördüğünde 2 kez oku!</li>
+                    <li><strong>Birim Tuzağı:</strong> 1 ft = 0.3048 m çevrimini unutma.</li>
+                    <li><strong>Emniyet Mantığı:</strong> Hatırlayamadığında en muhafazakar/emniyetli şıkka yönel.</li>
+                    <li><strong>Zaman:</strong> Önce bilgi (LAW, SEC, HPL), sonra hesaplama (NAV, PEF) sorularını çöz.</li>
+                </ul>
             </div>
             
-            <p style="text-align: center; color: #999; font-size: 12px; margin-top: 40px;">Havacılık bir tutkudur, başarı ise disiplin. İyi uçuşlar.</p>
+            <p style="text-align: center; color: #999; font-size: 12px; margin-top: 30px;">"Dispeçerlik bir ezber değil, prosedür disiplinidir."</p>
         </div>
     </div>
 
@@ -192,7 +247,7 @@
                     l.appendChild(a);
                 });
                 show();
-            } catch(e) { console.error("JSON Hatası."); }
+            } catch(e) { console.error("Veri yüklenemedi."); }
         }
         function show() {
             if(!qs.length) return;
