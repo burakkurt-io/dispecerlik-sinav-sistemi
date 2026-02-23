@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Uçuş Dispeçerliği Sınav Sistemi</title>
+    <title>Uçuş Dispeçerliği | Güncel Sürüm</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0056b3; /* Havacılık mavisi */
+            --primary-color: #0056b3;
             --secondary-color: #f8f9fa;
             --text-dark: #333;
             --success-bg: #d4edda;
@@ -19,197 +19,60 @@
         * { box-sizing: border-box; }
         body { 
             font-family: 'Roboto', sans-serif; 
-            margin: 0; 
-            padding: 0; 
+            margin: 0; padding: 0; 
             background-color: #e9ecef; 
-            color: var(--text-dark);
             height: 100vh;
-            display: flex;
-            flex-direction: column;
+            display: flex; flex-direction: column;
         }
 
-        /* Ana Yerleşim */
         .main-wrapper {
-            display: flex;
-            flex: 1;
-            overflow: hidden; /* Çift scroll barı önler */
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
+            display: flex; flex: 1; overflow: hidden;
+            max-width: 1400px; margin: 0 auto; width: 100%;
         }
 
-        /* Sol Taraf - Sınav Alanı */
-        .quiz-area {
-            flex: 3;
-            padding: 30px;
-            overflow-y: auto;
-        }
-
-        .quiz-container {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        .quiz-area { flex: 3; padding: 30px; overflow-y: auto; display: flex; flex-direction: column; }
+        .quiz-container { background: white; padding: 30px; border-radius: 12px; shadow: 0 5px 15px rgba(0,0,0,0.1); flex-grow: 1; }
 
         .q-header { 
-            color: var(--primary-color); 
-            font-weight: 700; 
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            display: inline-block;
-            border-bottom: 2px solid var(--primary-color);
+            color: var(--primary-color); font-weight: 700; font-size: 1.1em;
+            margin-bottom: 15px; display: inline-block; border-bottom: 2px solid var(--primary-color);
         }
 
-        .question-text { 
-            font-size: 1.25em; 
-            font-weight: 500;
-            margin-bottom: 25px; 
-            line-height: 1.5;
-        }
+        .question-text { font-size: 1.25em; font-weight: 500; margin-bottom: 25px; line-height: 1.5; }
 
-        /* Modern Butonlar */
         .quiz-option { 
-            display: block; 
-            width: 100%; 
-            padding: 18px 20px; 
-            margin: 12px 0;
-            border: 2px solid #e0e0e0; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            text-align: left;
-            background: white; 
-            font-size: 1.05em;
-            transition: all 0.2s ease-in-out;
-            position: relative;
+            display: block; width: 100%; padding: 18px 20px; margin: 12px 0;
+            border: 2px solid #e0e0e0; border-radius: 8px; cursor: pointer; text-align: left;
+            background: white; font-size: 1.05em; transition: 0.2s; position: relative;
         }
 
-        /* Sadece cevaplanmamışken hover efekti uygula */
         .quiz-container:not(.answered) .quiz-option:hover { 
-            background: var(--secondary-color); 
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            background: #f1f3f5; border-color: var(--primary-color);
         }
 
-        /* Doğru/Yanlış Durumları */
-        .quiz-option.correct-selection { 
-            background-color: var(--success-bg) !important; 
-            border-color: var(--success-border) !important; 
-            color: #155724;
-            font-weight: 500;
-        }
-        
-        .quiz-option.correct-selection::after {
-            content: '✓';
-            position: absolute;
-            right: 20px;
-            font-weight: bold;
-        }
+        .quiz-option.correct-selection { background-color: var(--success-bg) !important; border-color: var(--success-border) !important; color: #155724; font-weight: bold; }
+        .quiz-option.wrong-selection { background-color: var(--error-bg) !important; border-color: var(--error-border) !important; color: #721c24; }
 
-        .quiz-option.wrong-selection { 
-            background-color: var(--error-bg) !important; 
-            border-color: var(--error-border) !important; 
-            color: #721c24;
-        }
-        
-        .quiz-option.wrong-selection::after {
-            content: '✕';
-            position: absolute;
-            right: 20px;
-            font-weight: bold;
-        }
+        .quiz-container.answered .quiz-option { cursor: default; }
 
-        /* Cevaplandıktan sonra tıklamayı engelle */
-        .quiz-container.answered .quiz-option {
-            cursor: default !important;
-            pointer-events: none;
-        }
-
-        /* Alt Navigasyon */
-        .nav-links { 
-            margin-top: 30px; 
-            border-top: 1px solid #eee; 
-            padding-top: 20px; 
-            display: flex;
-            justify-content: space-between;
-        }
-        .nav-btn { 
-            background: var(--primary-color); 
-            color: white; 
-            border: none; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-        .nav-btn:hover { background-color: #004494; }
+        .nav-links { margin-top: 30px; display: flex; justify-content: space-between; }
+        .nav-btn { background: var(--primary-color); color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
         .nav-btn.secondary { background: #6c757d; }
 
+        /* Sidebar */
+        .sidebar { flex: 1; background: white; border-left: 1px solid #ddd; overflow-y: auto; padding: 20px; max-width: 250px; }
+        .q-link { display: block; padding: 8px; margin-bottom: 5px; background: #f8f9fa; border-radius: 4px; text-decoration: none; color: #333; font-size: 0.85em; text-align: center; border: 1px solid transparent; }
+        .q-link.active { background: var(--primary-color); color: white; font-weight: bold; }
 
-        /* Sağ Taraf - Sidebar Navigasyon */
-        .sidebar {
-            flex: 1;
-            background: white;
-            border-left: 1px solid #ddd;
-            overflow-y: auto;
-            padding: 20px;
-            max-width: 300px;
+        /* ASCII Art Footer */
+        .footer-art {
+            text-align: center; font-family: monospace; font-size: 8px; line-height: 10px;
+            color: #6c757d; padding: 20px 0; white-space: pre; background: #e9ecef;
         }
 
-        .sidebar-header {
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            text-align: center;
-        }
-
-        .question-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .question-list li {
-            margin-bottom: 8px;
-        }
-
-        .q-link {
-            display: block;
-            padding: 8px 12px;
-            background: var(--secondary-color);
-            border-radius: 4px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.9em;
-            transition: 0.2s;
-            border: 1px solid transparent;
-        }
-
-        .q-link:hover {
-            background: #e2e6ea;
-            border-color: #ccc;
-        }
-
-        /* Aktif soru sidebar'da vurgulanır */
-        .q-link.active {
-            background: var(--primary-color);
-            color: white;
-            font-weight: bold;
-        }
-
-        /* Mobil Uyumluluk */
         @media (max-width: 768px) {
             .main-wrapper { flex-direction: column; }
-            .quiz-area { padding: 15px; flex: none; }
-            .sidebar { 
-                flex: none; 
-                max-width: 100%; 
-                height: 300px; /* Mobilde sidebar yüksekliği */
-                border-left: none;
-                border-top: 1px solid #ddd;
-            }
+            .sidebar { max-width: 100%; height: 200px; border-left: none; border-top: 1px solid #ddd; }
         }
     </style>
 </head>
@@ -219,9 +82,8 @@
         <main class="quiz-area">
             <div id="quiz-container" class="quiz-container">
                 <div class="q-header" id="q-no">Yükleniyor...</div>
-                <div class="question-text" id="q-text">Sorular getiriliyor, lütfen bekleyin.</div>
-                <div id="options-container">
-                    </div>
+                <div class="question-text" id="q-text">Lütfen bekleyin...</div>
+                <div id="options-container"></div>
                 <div class="nav-links">
                     <button class="nav-btn secondary" onclick="prevQuestion()">← Önceki</button>
                     <button class="nav-btn secondary" onclick="randomQuestion()">Rastgele</button>
@@ -231,150 +93,108 @@
         </main>
 
         <aside class="sidebar">
-            <div class="sidebar-header">Tüm Sorular</div>
-            <ul class="question-list" id="sidebar-list">
-                </ul>
+            <div style="font-weight: bold; margin-bottom: 10px; text-align: center;">SORU LİSTESİ</div>
+            <div id="sidebar-list"></div>
         </aside>
+    </div>
+
+    <div class="footer-art">
+   _____                _           _   _             ____                       _      _  __            _   
+  / ____|              | |         | | | |           |  _ \                     | |    | |/ /           | |  
+ | |     _ __ ___  __ _| |_ ___  __| | | |__  _   _  | |_) |_   _ _ __ __ _  | | __ | ' / _   _ _ __| |_ 
+ | |    | '__/ _ \/ _` | __/ _ \/ _` | | '_ \| | | | |  _ <| | | | '__/ _` | | |/ / |  < | | | | '__| __|
+ | |____| | |  __/ (_| | ||  __/ (_| | | |_) | |_| | | |_) | |_| | | | (_| | |   <  | . \| |_| | |  | |_ 
+  \_____|_|  \___|\__,_|\__\___|\__,_| |_.__/ \__, | |____/ \__,_|_|  \__,_| |_|\_\ |_|\_\\__,_|_|   \__|
+                                               __/ |                                                     
+                                              |___/                                                      
     </div>
 
     <script>
         let questions = [];
         let currentIndex = 0;
-        let isAnswered = false; // Cevap verildi mi kontrolü
+        let isAnswered = false;
 
-        // Veriyi çek ve başlat
         async function loadQuestions() {
             try {
                 const response = await fetch('sorular.json');
-                if (!response.ok) throw new Error("Dosya bulunamadı");
                 questions = await response.json();
-                renderSidebar(); // Sidebar'ı oluştur
-                renderQuestion(); // İlk soruyu göster
-            } catch (error) {
-                document.getElementById('q-text').innerText = "Hata: Sorular yüklenemedi. Lütfen sayfayı yenileyin.";
-                console.error(error);
-            }
+                renderSidebar();
+                renderQuestion();
+            } catch (e) { console.error("JSON Hatası:", e); }
         }
 
-        // Soruyu ekrana bas
         function renderQuestion() {
-            if (questions.length === 0) return;
-            
-            // Yeni soruya geçerken durumu sıfırla
+            if (!questions.length) return;
             isAnswered = false;
-            document.getElementById('quiz-container').classList.remove('answered');
+            const container = document.getElementById('quiz-container');
+            container.classList.remove('answered');
 
             const q = questions[currentIndex];
-            document.getElementById('q-no').innerText = `${q['soru no']} [Uçuş Planlama]`; // Konu başlığı eklendi
+            document.getElementById('q-no').innerText = `${q['soru no']} [GENEL SORULAR VE CEVAPLAR EN GÜNCEL SÜRÜM]`;
             document.getElementById('q-text').innerText = q['soru'];
             
-            const container = document.getElementById('options-container');
-            container.innerHTML = ''; // Önceki şıkları temizle
+            const optContainer = document.getElementById('options-container');
+            optContainer.innerHTML = '';
 
-            // Şıkları döngüyle oluştur
             ['a', 'b', 'c', 'd'].forEach(key => {
-                if(q[key]) {
+                if (q[key]) {
                     const btn = document.createElement('button');
                     btn.className = 'quiz-option';
                     btn.innerText = `${key.toUpperCase()}) ${q[key]}`;
-                    btn.dataset.key = key; // Hangi şık olduğunu butona kaydet (a,b,c,d)
-                    // Tıklama olayı
                     btn.onclick = () => checkAnswer(btn, key, q.dogru_cevap);
-                    container.appendChild(btn);
+                    optContainer.appendChild(btn);
                 }
             });
-
-            updateSidebarActiveState(); // Sidebar'da aktif soruyu güncelle
+            updateSidebar();
         }
 
-        // Cevap kontrolü
-        function checkAnswer(clickedBtn, selectedKey, fullCorrectString) {
-            if (isAnswered) return; // Eğer zaten cevaplandıysa işlem yapma
-            
+        function checkAnswer(btn, key, correctStr) {
+            if (isAnswered) return;
             isAnswered = true;
-            document.getElementById('quiz-container').classList.add('answered'); // Kapsayıcıya sınıf ekle
+            document.getElementById('quiz-container').classList.add('answered');
 
-            // Doğru cevabın ilk harfini al (Örn: "b) 9 sınıf." -> "b")
-            const correctKey = fullCorrectString.charAt(0).toLowerCase();
-            
-            // Tüm butonları bul
-            const allButtons = document.querySelectorAll('.quiz-option');
+            // BUTON TIKLAMA SORUNU ÇÖZÜMÜ: Harfi ayıkla ve temizle
+            const correctLetter = correctStr.split(')')[0].trim().toLowerCase();
+            const allBtns = document.querySelectorAll('.quiz-option');
 
-            if (selectedKey === correctKey) {
-                // Doğruysa tıklanan butonu yeşil yap
-                clickedBtn.classList.add('correct-selection');
+            if (key === correctLetter) {
+                btn.classList.add('correct-selection');
             } else {
-                // Yanlışsa tıklananı kırmızı yap
-                clickedBtn.classList.add('wrong-selection');
-                // VE doğru olan butonu bulup yeşil yap
-                allButtons.forEach(btn => {
-                    if (btn.dataset.key === correctKey) {
-                        btn.classList.add('correct-selection');
-                    }
+                btn.classList.add('wrong-selection');
+                allBtns.forEach(b => {
+                    const bKey = b.innerText.split(')')[0].trim().toLowerCase();
+                    if (bKey === correctLetter) b.classList.add('correct-selection');
                 });
             }
         }
 
-        // Navigasyon Fonksiyonları
-        function nextQuestion() { 
-            currentIndex = (currentIndex + 1) % questions.length; 
-            renderQuestion(); 
-            scrollToTop();
-        }
-        function prevQuestion() { 
-            currentIndex = (currentIndex - 1 + questions.length) % questions.length; 
-            renderQuestion(); 
-            scrollToTop();
-        }
-        function randomQuestion() { 
-            currentIndex = Math.floor(Math.random() * questions.length); 
-            renderQuestion(); 
-            scrollToTop();
-        }
-        
-        // Belirli bir soruya git (Sidebar için)
-        function jumpToQuestion(index) {
-            currentIndex = index;
-            renderQuestion();
-            scrollToTop();
-        }
+        function nextQuestion() { currentIndex = (currentIndex + 1) % questions.length; renderQuestion(); }
+        function prevQuestion() { currentIndex = (currentIndex - 1 + questions.length) % questions.length; renderQuestion(); }
+        function randomQuestion() { currentIndex = Math.floor(Math.random() * questions.length); renderQuestion(); }
+        function jump(i) { currentIndex = i; renderQuestion(); }
 
-        // Yeni soruya geçince en üste kaydır
-        function scrollToTop() {
-            document.querySelector('.quiz-area').scrollTop = 0;
-        }
-
-        // Sidebar'ı Oluştur
         function renderSidebar() {
-            const sidebarList = document.getElementById('sidebar-list');
-            questions.forEach((q, index) => {
-                const li = document.createElement('li');
+            const list = document.getElementById('sidebar-list');
+            questions.forEach((q, i) => {
                 const a = document.createElement('a');
                 a.className = 'q-link';
+                a.id = `q-${i}`;
                 a.innerText = q['soru no'];
-                a.href = "javascript:void(0)";
-                a.onclick = () => jumpToQuestion(index);
-                a.id = `sidebar-link-${index}`;
-                li.appendChild(a);
-                sidebarList.appendChild(li);
+                a.href = "#";
+                a.onclick = (e) => { e.preventDefault(); jump(i); };
+                list.appendChild(a);
             });
         }
 
-        // Sidebar'daki aktif linki güncelle
-        function updateSidebarActiveState() {
-            // Önceki aktifi kaldır
-            const previousActive = document.querySelector('.sidebar .q-link.active');
-            if (previousActive) previousActive.classList.remove('active');
-
-            // Yeni aktifi ekle ve ona kaydır
-            const newActive = document.getElementById(`sidebar-link-${currentIndex}`);
-            if (newActive) {
-                newActive.classList.add('active');
-                newActive.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        function updateSidebar() {
+            document.querySelectorAll('.q-link').forEach(l => l.classList.remove('active'));
+            const active = document.getElementById(`q-${currentIndex}`);
+            if (active) {
+                active.classList.add('active');
+                active.scrollIntoView({ block: 'center' });
             }
         }
 
-        // Başlat
         loadQuestions();
     </script>
 </body>
