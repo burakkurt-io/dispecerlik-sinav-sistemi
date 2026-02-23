@@ -116,7 +116,7 @@
         <main class="main">
             <div id="q-container" class="container">
                 <div id="no" class="header">GÜNCEL SORU BANKASI</div>
-                <div id="txt" class="q-text">Hazırlanıyor...</div>
+                <div id="txt" class="q-text">Sorular Hazırlanıyor...</div>
                 <div id="opts"></div>
                 
                 <div class="nav">
@@ -161,7 +161,7 @@
             const q = qs[idx];
             const cont = document.getElementById('q-container');
             cont.classList.remove('ans-mode');
-            document.getElementById('no').innerText = q['soru no'] + " [ GENEL SORULAR CEVAPLAR (en güncel)] ";
+            document.getElementById('no').innerText = q['soru no'] + " [ GENEL SORULAR VE CEVAPLAR - En Güncel ] ";
             document.getElementById('txt').innerText = q['soru'];
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
@@ -204,6 +204,7 @@
     </script>
 </body>
 </html>
+
 
 
 
