@@ -9,42 +9,77 @@
         :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5; }
         * { box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; display: flex; flex-direction: column; }
-        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1400px; margin: 0 auto; width: 100%; }
-        .main { flex: 3; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .container { background: white; width: 100%; max-width: 800px; height: 600px; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; position: relative; }
+        
+        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1600px; margin: 0 auto; width: 100%; }
+        
+        /* Sol Sınav Alanı */
+        .main { flex: 2.5; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        
+        /* SABİT ÇERÇEVE */
+        .container { 
+            background: white; width: 100%; max-width: 850px; height: 620px;
+            padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column; position: relative;
+        }
+
         .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.85em; opacity: 0.8; }
-        .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; height: 110px; overflow-y: auto; color: #2c3e50; }
+        .q-text { font-size: 1.2em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; height: 120px; overflow-y: auto; color: #2c3e50; }
         #opts { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
-        .opt { display: block; width: 100%; padding: 14px; margin: 6px 0; border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; background: #fff; font-size: 1em; text-align: left; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        .opt { 
+            display: block; width: 100%; padding: 14px; margin: 6px 0; 
+            border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; 
+            background: #fff; font-size: 1em; text-align: left;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
         .opt:hover { border-color: var(--p); background: #f8faff; transform: translateX(5px); }
         .ans-mode .opt { pointer-events: none; }
         .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: bold; }
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
+
         .nav { margin-top: auto; padding-top: 20px; display: flex; justify-content: space-between; gap: 10px; }
-        .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; transition: all 0.2s ease; }
+        .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
         .btn-gray { background: #6c757d; }
         .btn-reset { background: #ffc107; color: #000; }
-        .btn-analiz { background: #17a2b8; color: white; margin-bottom: 10px; width: 100%; max-width: 800px; }
-        .side { flex: 1; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 15px; max-width: 250px; }
-        .link { display: block; padding: 8px; margin: 4px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 11px; text-align: center; border-radius: 6px; transition: all 0.2s ease; }
-        .link.active { background: var(--p); color: white; }
-        .footer-note { text-align: center; padding: 15px; font-size: 10px; color: var(--p); font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
 
-        /* MODAL STYLES */
+        /* SAĞ SİDEBAR - BÜYÜTÜLDÜ */
+        .side { flex: 1; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 20px; min-width: 320px; max-width: 400px; }
+        .link { 
+            display: block; padding: 10px; margin: 5px 0; 
+            background: #f8f9fa; text-decoration: none; color: #495057; 
+            font-size: 13px; text-align: center; border-radius: 8px; 
+            transition: all 0.2s ease; border: 1px solid transparent;
+        }
+        .link:hover { background: #e9ecef; border-color: var(--p); }
+        .link.active { background: var(--p); color: white; font-weight: bold; }
+
+        /* FOOTER & ANALİZ BUTONU YAN YANA */
+        .footer-area {
+            display: flex; align-items: center; justify-content: center; gap: 20px; padding: 15px; width: 100%;
+        }
+        .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        .mini-analiz { 
+            background: #17a2b8; color: white; border: none; padding: 5px 12px; 
+            border-radius: 20px; cursor: pointer; font-size: 10px; font-weight: bold;
+            transition: 0.3s;
+        }
+        .mini-analiz:hover { background: #138496; transform: scale(1.05); }
+
+        /* MODAL */
         .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
         .modal-content { background: white; margin: 5% auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 700px; box-shadow: 0 5px 30px rgba(0,0,0,0.3); position: relative; max-height: 80vh; overflow-y: auto; }
         .close-btn { position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa; }
+
+        @media (max-width: 768px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 200px; } }
     </style>
 </head>
 <body>
 
     <div class="wrapper">
         <main class="main">
-            <button class="btn btn-analiz" onclick="openModal()">📊 SHGM SORU ANALİZ NOTLARINI GÖRÜNTÜLE</button>
-
             <div id="q-container" class="container">
                 <div id="no" class="header">GÜNCEL SORU BANKASI</div>
-                <div id="txt" class="q-text">Hazırlanıyor...</div>
+                <div id="txt" class="q-text">Yükleniyor...</div>
                 <div id="opts"></div>
                 <div class="nav">
                     <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
@@ -53,9 +88,17 @@
                     <button class="btn" onclick="move(1)">Sonraki</button>
                 </div>
             </div>
-            <div class="footer-note">---------------------- CREATED BY BURAK KURT ----------------------</div>
+            
+            <div class="footer-area">
+                <div class="footer-note">CREATED BY BURAK KURT</div>
+                <button class="mini-analiz" onclick="openModal()">📊 ANALİZ NOTLARI</button>
+            </div>
         </main>
-        <aside class="side"><div id="list"></div></aside>
+
+        <aside class="side">
+            <div style="text-align:center; font-weight:bold; color:#999; margin-bottom:15px; font-size:14px;">SORU PANELİ</div>
+            <div id="list"></div>
+        </aside>
     </div>
 
     <div id="analizModal" class="modal">
@@ -63,14 +106,12 @@
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h2 style="color: var(--p); border-bottom: 2px solid var(--p); padding-bottom: 10px;">SHGM Soru Analiz Notları</h2>
             <div style="line-height: 1.6; color: #333; font-size: 14px;">
-                <p><strong>⚠️ Önemli Hatırlatma:</strong> Bu notlar sınav tecrübelerine dayanarak Burak Kurt tarafından derlenmiştir.</p>
-                <hr>
-                <p>🚀 <strong>Uçuş Planlama:</strong> Yakıt hesaplamalarında %5 Contingency Fuel kuralını asla unutmayın. Çoğu soru bu yüzde üzerinden elenir.</p>
-                <p>☁️ <strong>Meteoroloji:</strong> TAF raporlarında "BECMG" ve "TEMPO" arasındaki farkı iyi analiz edin. TEMPO geçici, BECMG kalıcı değişikliği ifade eder.</p>
-                <p>⚖️ <strong>Hava Hukuku:</strong> ICAO Annex 17 (Güvenlik) ve Annex 18 (Tehlikeli Maddeler) numaralarını karıştırmayın, direkt numara sorulabiliyor.</p>
-                <p style="background: #e7f3ff; padding: 15px; border-radius: 8px; border-left: 5px solid var(--p);">
-                    <strong>Taktik:</strong> Eğer soruda "Unless otherwise prescribed" ifadesi geçiyorsa, genellikle ICAO standart prosedürü soruluyordur.
-                </p>
+                <p>🚀 <strong>Uçuş Planlama:</strong> Yakıt hesaplamalarında %5 Contingency Fuel kuralını asla unutmayın.</p>
+                <p>☁️ <strong>Meteoroloji:</strong> TAF raporlarında "BECMG" kalıcı, "TEMPO" geçici değişikliği ifade eder.</p>
+                <p>⚖️ <strong>Hava Hukuku:</strong> Annex 17 Güvenlik, Annex 18 Tehlikeli Maddelerdir.</p>
+                <div style="background: #e7f3ff; padding: 15px; border-radius: 8px; margin-top:15px;">
+                    <strong>Burak Kurt Notu:</strong> Sınavda sakin kalın, soruların köküne (NOT/EXCEPT) dikkat edin.
+                </div>
             </div>
         </div>
     </div>
