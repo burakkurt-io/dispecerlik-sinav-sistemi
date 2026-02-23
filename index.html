@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uçuş Dispeçerliği | Pilotaj Sınavı</title>
+    <title>Uçuş Dispeçerliği | Sınav Portalı</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5; }
         * { box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; display: flex; flex-direction: column; }
         
-        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1600px; margin: 0 auto; width: 100%; }
+        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1650px; margin: 0 auto; width: 100%; }
         
         /* Sol Sınav Alanı */
-        .main { flex: 2.5; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .main { flex: 2.2; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
-        /* SABİT ÇERÇEVE */
         .container { 
             background: white; width: 100%; max-width: 850px; height: 620px;
-            padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 30px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             display: flex; flex-direction: column; position: relative;
         }
 
-        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.85em; opacity: 0.8; }
-        .q-text { font-size: 1.2em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; height: 120px; overflow-y: auto; color: #2c3e50; }
+        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.85em; }
+        .q-text { font-size: 1.25em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; height: 130px; overflow-y: auto; color: #2c3e50; }
         #opts { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
 
         .opt { 
             display: block; width: 100%; padding: 14px; margin: 6px 0; 
             border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; 
-            background: #fff; font-size: 1em; text-align: left;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #fff; font-size: 1.05em; text-align: left;
+            transition: all 0.2s ease;
         }
         .opt:hover { border-color: var(--p); background: #f8faff; transform: translateX(5px); }
         .ans-mode .opt { pointer-events: none; }
@@ -42,35 +41,41 @@
         .btn-gray { background: #6c757d; }
         .btn-reset { background: #ffc107; color: #000; }
 
-        /* SAĞ SİDEBAR - BÜYÜTÜLDÜ */
-        .side { flex: 1; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 20px; min-width: 320px; max-width: 400px; }
+        /* SAĞ SİDEBAR - GENİŞLETİLDİ */
+        .side { flex: 1; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 25px; min-width: 380px; max-width: 450px; }
         .link { 
-            display: block; padding: 10px; margin: 5px 0; 
+            display: block; padding: 12px; margin: 6px 0; 
             background: #f8f9fa; text-decoration: none; color: #495057; 
-            font-size: 13px; text-align: center; border-radius: 8px; 
-            transition: all 0.2s ease; border: 1px solid transparent;
+            font-size: 14px; text-align: center; border-radius: 8px; 
+            transition: 0.2s; border: 1px solid transparent;
         }
-        .link:hover { background: #e9ecef; border-color: var(--p); }
-        .link.active { background: var(--p); color: white; font-weight: bold; }
+        .link:hover { background: #e9ecef; border-color: var(--p); transform: scale(1.02); }
+        .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
-        /* FOOTER & ANALİZ BUTONU YAN YANA */
-        .footer-area {
-            display: flex; align-items: center; justify-content: center; gap: 20px; padding: 15px; width: 100%;
-        }
-        .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        /* FOOTER ALANI */
+        .footer-area { display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; width: 100%; }
+        .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; }
         .mini-analiz { 
-            background: #17a2b8; color: white; border: none; padding: 5px 12px; 
-            border-radius: 20px; cursor: pointer; font-size: 10px; font-weight: bold;
-            transition: 0.3s;
+            background: #17a2b8; color: white; border: none; padding: 6px 15px; 
+            border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold;
+            box-shadow: 0 4px 10px rgba(23,162,184,0.3);
         }
-        .mini-analiz:hover { background: #138496; transform: scale(1.05); }
 
-        /* MODAL */
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
-        .modal-content { background: white; margin: 5% auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 700px; box-shadow: 0 5px 30px rgba(0,0,0,0.3); position: relative; max-height: 80vh; overflow-y: auto; }
-        .close-btn { position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa; }
+        /* MODAL POPUP */
+        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
+        .modal-content { 
+            background: white; margin: 2% auto; padding: 40px; border-radius: 20px; 
+            width: 90%; max-width: 900px; height: 85vh; overflow-y: auto; position: relative;
+        }
+        .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; color: #333; }
+        
+        /* NOT TASARIMI */
+        .note-section { margin-bottom: 25px; border-left: 4px solid var(--p); padding-left: 15px; }
+        .note-title { color: var(--p); font-weight: bold; font-size: 1.1em; margin-bottom: 10px; text-transform: uppercase; }
+        .note-content { font-size: 14px; line-height: 1.6; color: #444; }
+        .highlight-box { background: #fff3cd; padding: 15px; border-radius: 8px; border: 1px dashed #e67e22; margin-top: 10px; }
 
-        @media (max-width: 768px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 200px; } }
+        @media (max-width: 1000px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 250px; } }
     </style>
 </head>
 <body>
@@ -79,7 +84,7 @@
         <main class="main">
             <div id="q-container" class="container">
                 <div id="no" class="header">GÜNCEL SORU BANKASI</div>
-                <div id="txt" class="q-text">Yükleniyor...</div>
+                <div id="txt" class="q-text">Sistem yükleniyor...</div>
                 <div id="opts"></div>
                 <div class="nav">
                     <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
@@ -90,13 +95,13 @@
             </div>
             
             <div class="footer-area">
-                <div class="footer-note">CREATED BY BURAK KURT</div>
+                <div class="footer-note">---------------------- CREATED BY BURAK KURT ----------------------</div>
                 <button class="mini-analiz" onclick="openModal()">📊 ANALİZ NOTLARI</button>
             </div>
         </main>
 
         <aside class="side">
-            <div style="text-align:center; font-weight:bold; color:#999; margin-bottom:15px; font-size:14px;">SORU PANELİ</div>
+            <div style="text-align:center; font-weight:bold; color:var(--p); margin-bottom:20px; font-size:16px; border-bottom:1px solid #eee; padding-bottom:10px;">NAVİGASYON PANELİ</div>
             <div id="list"></div>
         </aside>
     </div>
@@ -104,31 +109,90 @@
     <div id="analizModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 style="color: var(--p); border-bottom: 2px solid var(--p); padding-bottom: 10px;">SHGM Soru Analiz Notları</h2>
-            <div style="line-height: 1.6; color: #333; font-size: 14px;">
-                <p>🚀 <strong>Uçuş Planlama:</strong> Yakıt hesaplamalarında %5 Contingency Fuel kuralını asla unutmayın.</p>
-                <p>☁️ <strong>Meteoroloji:</strong> TAF raporlarında "BECMG" kalıcı, "TEMPO" geçici değişikliği ifade eder.</p>
-                <p>⚖️ <strong>Hava Hukuku:</strong> Annex 17 Güvenlik, Annex 18 Tehlikeli Maddelerdir.</p>
-                <div style="background: #e7f3ff; padding: 15px; border-radius: 8px; margin-top:15px;">
-                    <strong>Burak Kurt Notu:</strong> Sınavda sakin kalın, soruların köküne (NOT/EXCEPT) dikkat edin.
+            <h1 style="color: var(--p); text-align: center; margin-bottom: 30px; border-bottom: 3px double var(--p); padding-bottom: 15px;">SHGM SORU ANALİZ VE TEKNİK NOTLAR</h1>
+            
+            <div class="note-section">
+                <div class="note-title">1. M&B - AĞIRLIK VE DENGE</div>
+                <div class="note-content">
+                    <strong>Hiyerarşi:</strong> ZFW (En Kritik - Yakıtsız Ağırlık) > TOM (Kalkış) > LM (İniş).<br>
+                    <strong>CG Mekaniği:</strong> Arka CG = En verimli uçuş, düşük yakıt sarfiyatı, düşük stall hızı. Ön CG = Maksimum stabilite, yüksek yakıt sarfiyatı.
                 </div>
             </div>
+
+            <div class="note-section">
+                <div class="note-title">2. HPL - İNSAN PERFORMANSI</div>
+                <div class="note-content">
+                    <strong>Hipoksi:</strong> Hipoksik (Yükseklik), Anemik (Sigara/CO), Stagnant (G Kuvveti), Histotoksik (Alkol).<br>
+                    <strong>Görüş:</strong> Çubuklar (Gece), Koniler (Gündüz/Renk). Gece kör noktası foveanın merkezidir.
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">3. DGR - TEHLİKELİ MADDELER</div>
+                <div class="note-content">
+                    <strong>Sınıflar:</strong> 1 (Patlayıcı), 7 (Radyoaktif), 8 (Aşındırıcı).<br>
+                    <strong>NOTOC:</strong> Kaptana bildirilmesi zorunlu resmi belgedir.
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">4. LAW & HAV - HUKUK VE TRAFİK</div>
+                <div class="note-content">
+                    <strong>Chicago Konvansiyonu:</strong> ICAO'nun temeli.<br>
+                    <strong>Separation:</strong> RVSM sahasında dikey 1000 ft, radar kontrolünde yatay 5 NM.
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">5. MET - METEOROLOJİ</div>
+                <div class="note-content">
+                    <strong>Buzlanma:</strong> En tehlikelisi Clear Ice (0°C/-20°C).<br>
+                    <strong>TAF/METAR:</strong> TEMPO (Geçici <1saat), BECMG (Kalıcı değişim), NOSIG (2 saat değişim yok).
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">6. PEF - PERFORMANS HIZLARI</div>
+                <div class="note-content">
+                    <strong>V1:</strong> Karar hızı. <strong>Vr:</strong> Rotate. <strong>V2:</strong> Emniyetli tırmanma.<br>
+                    <strong>Pist:</strong> TODA = TORA + Clearway. ASDA = TORA + Stopway.
+                </div>
+            </div>
+
+            <div class="note-section" style="border-left-color: #e67e22;">
+                <div class="note-title" style="color: #e67e22;">💡 BURAK KURT STRATEJİ VE TAKTİKLER</div>
+                <div class="note-content">
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Birim Tuzağı:</strong> Feet/Metre çevrimine dikkat (1 ft = 0.3048 m).</li>
+                        <li><strong>Kök Analizi:</strong> "NOT", "EXCEPT", "MINIMUM" kelimelerini gördüğünde alarm durumuna geç.</li>
+                        <li><strong>Emniyet Mantığı:</strong> Hatırlayamadığın soruda "Hangi şık emniyeti en çok artırır?" diye sor.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Zaman Yönetimi:</strong> Önce LAW, SEC, HPL gibi bilgi sorularını bitir. NAV ve PEF hesaplamalarını sona bırak!
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #999; font-size: 12px; margin-top: 40px;">Havacılık bir tutkudur, başarı ise disiplin. İyi uçuşlar.</p>
         </div>
     </div>
 
     <script>
         let qs = [], idx = 0;
         async function start() {
-            const r = await fetch('sorular.json');
-            qs = await r.json();
-            const l = document.getElementById('list');
-            qs.forEach((q, i) => {
-                const a = document.createElement('a');
-                a.className = 'link'; a.id = 'l'+i; a.innerText = q['soru no'];
-                a.onclick = () => { idx = i; show(); };
-                l.appendChild(a);
-            });
-            show();
+            try {
+                const r = await fetch('sorular.json');
+                qs = await r.json();
+                const l = document.getElementById('list');
+                qs.forEach((q, i) => {
+                    const a = document.createElement('a');
+                    a.className = 'link'; a.id = 'l'+i; a.innerText = q['soru no'];
+                    a.href = "javascript:void(0)";
+                    a.onclick = () => { idx = i; show(); };
+                    l.appendChild(a);
+                });
+                show();
+            } catch(e) { console.error("JSON Hatası."); }
         }
         function show() {
             if(!qs.length) return;
