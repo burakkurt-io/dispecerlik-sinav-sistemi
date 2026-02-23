@@ -4,85 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uçuş Dispeçerliği | Pilotaj Sınavı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --p: #2563eb; --s: #10b981; --e: #ef4444; --bg: #f8fafc; --t: #1e293b;
+            --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5;
         }
-        * { box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); 
-            height: 100vh; display: flex; flex-direction: column; color: var(--t);
-        }
+        * { box-sizing: border-box; transition: all 0.2s ease; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; display: flex; flex-direction: column; }
         
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1400px; margin: 0 auto; width: 100%; }
         
         /* Sol Sınav Alanı */
-        .main { flex: 3; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .main { flex: 3; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         
         /* SABİT ÇERÇEVE */
         .container { 
-            background: white; width: 100%; max-width: 800px; height: 580px; 
-            padding: 35px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            display: flex; flex-direction: column; position: relative;
-            transition: transform 0.2s ease;
+            background: white; 
+            width: 100%;
+            max-width: 800px;
+            height: 600px; /* SABİT YÜKSEKLİK */
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
-        .header { color: var(--p); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 12px; opacity: 0.8; }
+        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.9em; }
         
+        /* SORU METNİ ALANI (Scrollable) */
         .q-text { 
-            font-size: 1.25rem; font-weight: 600; margin-bottom: 20px; line-height: 1.5; 
-            height: 120px; overflow-y: auto; padding-right: 10px;
+            font-size: 1.2em; 
+            font-weight: 500; 
+            margin-bottom: 15px; 
+            line-height: 1.4; 
+            height: 100px; /* Soru metni için ayrılan sabit alan */
+            overflow-y: auto; 
         }
 
-        /* ŞIKLAR ALANI */
-        #opts { flex: 1; }
+        /* ŞIKLAR ALANI (Sabit Konum) */
+        #opts { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+
         .opt { 
-            display: block; width: 100%; padding: 14px 20px; margin: 8px 0; 
-            border: 1px solid #e2e8f0; border-radius: 10px; cursor: pointer; 
-            background: white; font-size: 1rem; text-align: left;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block; width: 100%; padding: 14px; margin: 6px 0; 
+            border: 2px solid #eee; border-radius: 10px; cursor: pointer; 
+            background: white; font-size: 1em; text-align: left;
         }
-        .opt:hover { border-color: var(--p); background: #f1f5f9; transform: translateX(4px); }
+        .opt:hover { border-color: var(--p); transform: scale(1.01); background: #f8f9fa; }
         
         .ans-mode .opt { pointer-events: none; }
-        .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: 600; }
+        .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: bold; }
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
 
-        /* NAVİGASYON */
-        .nav { margin-top: auto; padding-top: 20px; display: flex; gap: 10px; }
+        /* SABİT BUTONLAR ALANI */
+        .nav { 
+            margin-top: auto; /* Butonları en alta iter */
+            padding-top: 20px;
+            display: flex; 
+            justify-content: space-between; 
+            gap: 10px;
+        }
         .btn { 
             flex: 1; padding: 12px; border: none; border-radius: 8px; 
-            cursor: pointer; background: #334155; color: white; 
-            font-weight: 600; font-size: 0.85rem; transition: all 0.2s;
+            cursor: pointer; background: var(--p); color: white; 
+            font-weight: bold; font-size: 0.9em; text-transform: uppercase;
         }
-        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
-        .btn:active { transform: translateY(0); }
-        .btn-primary { background: var(--p); }
-        .btn-reset { background: #f1f5f9; color: #475569; }
+        .btn:active { transform: scale(0.95); }
+        .btn-gray { background: #6c757d; }
+        .btn-reset { background: #ffc107; color: #333; }
 
         /* Sağ Sidebar */
-        .side { flex: 1; background: white; border-left: 1px solid #e2e8f0; overflow-y: auto; padding: 15px; max-width: 250px; }
-        .link { 
-            display: block; padding: 10px; margin: 4px 0; background: #f8fafc; 
-            text-decoration: none; color: #64748b; font-size: 0.75rem; 
-            text-align: center; border-radius: 6px; transition: all 0.2s;
-            border: 1px solid transparent;
-        }
-        .link:hover { background: #f1f5f9; border-color: #cbd5e1; color: var(--p); }
-        .link.active { background: #eff6ff; color: var(--p); border-color: #bfdbfe; font-weight: 600; }
+        .side { flex: 1; background: white; border-left: 1px solid #ddd; overflow-y: auto; padding: 15px; max-width: 250px; }
+        .link { display: block; padding: 8px; margin: 3px; background: #eee; text-decoration: none; color: #333; font-size: 11px; text-align: center; border-radius: 4px; }
+        .link.active { background: var(--p); color: white; }
 
-        /* MİNİMAL FOOTER */
-        .footer { 
-            text-align: center; padding: 15px; font-size: 0.75rem; 
-            color: #94a3b8; letter-spacing: 0.02em;
+        /* ART FOOTER */
+        .art { 
+            text-align: center; 
+            padding: 30px; 
+            background: var(--bg);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .art-box {
+            display: inline-block;
+            border: 3px solid #333;
+            padding: 15px 40px;
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #333;
+            background: white;
+            box-shadow: 10px 10px 0px #000;
         }
 
         @media (max-width: 768px) {
             .wrapper { flex-direction: column; }
-            .container { height: auto; min-height: 500px; }
-            .side { max-width: 100%; height: 120px; display: flex; overflow-x: auto; gap: 10px; }
-            .link { min-width: 80px; }
+            .container { height: auto; min-height: 550px; }
+            .side { max-width: 100%; height: 150px; }
         }
     </style>
 </head>
@@ -91,15 +109,15 @@
     <div class="wrapper">
         <main class="main">
             <div id="q-container" class="container">
-                <div id="no" class="header">---</div>
-                <div id="txt" class="q-text">Hazırlanıyor...</div>
+                <div id="no" class="header">Yükleniyor...</div>
+                <div id="txt" class="q-text">Soru alanı hazırlanıyor...</div>
                 <div id="opts"></div>
                 
                 <div class="nav">
-                    <button class="btn" onclick="move(-1)">Önceki</button>
-                    <button class="btn btn-reset" onclick="resetQ()">Sıfırla</button>
-                    <button class="btn" onclick="rand()">Rastgele</button>
-                    <button class="btn btn-primary" onclick="move(1)">Sonraki</button>
+                    <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
+                    <button class="btn btn-reset" onclick="resetQ()">Reset</button>
+                    <button class="btn btn-gray" onclick="rand()">Random</button>
+                    <button class="btn" onclick="move(1)">Sonraki</button>
                 </div>
             </div>
         </main>
@@ -107,79 +125,67 @@
         <aside class="side" id="list"></aside>
     </div>
 
-    <footer class="footer">
-        ----------------------<br>
-        CREATED BY <b>BURAK KURT</b><br>
-        ----------------------
-    </footer>
+    <div class="art">
+        <div class="art-box">
+            ----------------------<br>
+            CREATED BY BURAK KURT<br>
+            ----------------------
+        </div>
+    </div>
 
     <script>
         let qs = [], idx = 0;
 
         async function start() {
-            try {
-                const r = await fetch('sorular.json');
-                qs = await r.json();
-                const l = document.getElementById('list');
-                const fragment = document.createDocumentFragment();
-                qs.forEach((q, i) => {
-                    const a = document.createElement('a');
-                    a.className = 'link'; a.id = 'l'+i; a.innerText = q['soru no'];
-                    a.onclick = () => { idx = i; show(); };
-                    fragment.appendChild(a);
-                });
-                l.appendChild(fragment);
-                show();
-            } catch(e) { console.error("Veri yüklenemedi."); }
+            const r = await fetch('sorular.json');
+            qs = await r.json();
+            const l = document.getElementById('list');
+            qs.forEach((q, i) => {
+                const a = document.createElement('a');
+                a.className = 'link'; a.id = 'l'+i; a.innerText = q['soru no'];
+                a.onclick = () => { idx = i; show(); };
+                l.appendChild(a);
+            });
+            show();
         }
 
         function show() {
             const q = qs[idx];
             const cont = document.getElementById('q-container');
-            
-            // Hızlı geçiş efekti
-            cont.style.opacity = '0';
-            setTimeout(() => {
-                cont.classList.remove('ans-mode');
-                document.getElementById('no').innerText = q['soru no'] + " • GENEL SORULAR VE CEVAPLAR";
-                document.getElementById('txt').innerText = q['soru'];
-                const oDiv = document.getElementById('opts');
-                oDiv.innerHTML = '';
+            cont.classList.remove('ans-mode');
+            document.getElementById('no').innerText = q['soru no'] + " [GENEL SORULAR VE CEVAPLAR]";
+            document.getElementById('txt').innerText = q['soru'];
+            const oDiv = document.getElementById('opts');
+            oDiv.innerHTML = '';
 
-                ['a','b','c','d'].forEach(key => {
-                    if(q[key]) {
-                        const b = document.createElement('button');
-                        b.className = 'opt';
-                        b.innerText = key.toUpperCase() + ") " + q[key];
-                        b.onclick = () => {
-                            cont.classList.add('ans-mode');
-                            const correctKey = q.cevap.trim().charAt(0).toLowerCase();
-                            if(key === correctKey) {
-                                b.classList.add('correct');
-                            } else {
-                                b.classList.add('wrong');
-                                Array.from(oDiv.children).forEach(btn => {
-                                    if(btn.innerText.toLowerCase().startsWith(correctKey)) btn.classList.add('correct');
-                                });
-                            }
-                        };
-                        oDiv.appendChild(b);
-                    }
-                });
-                
-                document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
-                const active = document.getElementById('l'+idx);
-                if(active) {
-                    active.classList.add('active');
-                    active.scrollIntoView({block:'center', behavior: 'smooth'});
+            ['a','b','c','d'].forEach(key => {
+                if(q[key]) {
+                    const b = document.createElement('button');
+                    b.className = 'opt';
+                    b.innerText = key.toUpperCase() + ") " + q[key];
+                    b.onclick = () => {
+                        cont.classList.add('ans-mode');
+                        const correctKey = q.cevap.trim().charAt(0).toLowerCase();
+                        if(key === correctKey) {
+                            b.classList.add('correct');
+                        } else {
+                            b.classList.add('wrong');
+                            Array.from(oDiv.children).forEach(btn => {
+                                if(btn.innerText.toLowerCase().startsWith(correctKey)) btn.classList.add('correct');
+                            });
+                        }
+                    };
+                    oDiv.appendChild(b);
                 }
-                cont.style.opacity = '1';
-            }, 50);
+            });
+            document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
+            const active = document.getElementById('l'+idx);
+            active.classList.add('active'); active.scrollIntoView({block:'center', behavior: 'smooth'});
         }
 
         function move(n) { idx = (idx+n+qs.length)%qs.length; show(); }
         function rand() { idx = Math.floor(Math.random()*qs.length); show(); }
-        function resetQ() { show(); }
+        function resetQ() { show(); } // Show fonksiyonu zaten durumu sıfırlıyor.
 
         start();
     </script>
