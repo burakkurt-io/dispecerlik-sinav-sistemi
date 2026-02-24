@@ -155,7 +155,7 @@
     {
         "soru no": "S.18",
         "soru": "Ceiling olabilmesi için, bulut durumu ne olmalıdır?",
-        "a": "25000 ft üstünde / gökyüzünün yarısından fazlasını kaplamalıdır.",
+        "a": "25000 ft üstünde / gökyüzünün yarısından fazlasını kaplamalıdır.\nb) 25000 ft altında / gökyüzünün yarısından fazlasını kaplamalıdır.",
         "b": "",
         "c": "20000 ft üstünde / gökyüzünün yarısından fazlasını kaplamalıdır.",
         "d": "20000 ft altında / gökyüzünün yarısından fazlasını kaplamalıdır.",
@@ -406,7 +406,7 @@
     },
     {
         "soru no": "S.46",
-        "soru": "Aşağıdaki faktörlerden hangisi, uçağın performansına etki etmez? 1) The aircraft category 2) The take-off mass 3) Outside air temperature 4) The gradient of the runway 5) Visibility",
+        "soru": "Aşağıdaki faktörlerden hangisi, uçağın performansına etki etmez?",
         "a": "All affect the performance",
         "b": "1 and 4 do not affect performance",
         "c": "4 and 5 do not affect performance",
@@ -415,7 +415,7 @@
     },
     {
         "soru no": "S.47",
-        "soru": "Aşağıdakilerden hangileri Operation Manual’in içeriğinin temelidir? 1) The Operator’s flight time limitation scheme 2) Aircraft checklists 3) Aircraft system details 4) Everyday operating procedures 5) Quality Assurance",
+        "soru": "Aşağıdakilerden hangileri Operation Manual’in içeriğinin temelidir?",
         "a": "All except 5",
         "b": "All of the above",
         "c": "All except 4",
@@ -451,7 +451,7 @@
     },
     {
         "soru no": "S.51",
-        "soru": "Rüzgar durumunda, aşağıdakilerden hangileri arasında farklılıklar olur? 1) Track ve Heading 2) Ground speed ve TAS 3) IAS ve TAS 4) Ground distance ve Air distance 5) TAS ve WV",
+        "soru": "Rüzgar durumunda, aşağıdakilerden hangileri arasında farklılıklar olur?",
         "a": "1, 3, 5",
         "b": "1, 2, 4",
         "c": "1, 2, 4, 5",
@@ -460,7 +460,7 @@
     },
     {
         "soru no": "S.52",
-        "soru": "Bir meydana Straight-in Landing yapılabilmesi için, hangi kombinasyonlar olmalıdır? 1) ILS, MLS, VOR 2) VOR, NDB, DME 3) TACAN, VOR, NDB 4) ILS, MLS, PAR 5) PAR, NDB, VOR",
+        "soru": "Bir meydana Straight-in Landing yapılabilmesi için, hangi kombinasyonlar olmalıdır?",
         "a": "1, 2, 5",
         "b": "3, 4, 5",
         "c": "1, 2, 4",
@@ -514,7 +514,7 @@
     },
     {
         "soru no": "S.58",
-        "soru": "Decision Altitude veya Decision height……… yaklaşma prosedüründe … ’nın başladığı, dikey yer değiştirme olarak tanımlanır. Aşağıdaki kombinasyonlardan hangisi bu tanımı doğru olarak tamamlar? 1) Non-precision\t\t5) Go around 2) Straight in\t\t\t6) Abort 3) Visual\t\t\t7) Missed aproach 4) Precision\t\t\t8) Glide path descent",
+        "soru": "Decision Altitude veya Decision height……… yaklaşma prosedüründe … ’nın başladığı, dikey yer değiştirme olarak tanımlanır. Aşağıdaki kombinasyonlardan hangisi bu tanımı doğru olarak tamamlar?",
         "a": "1 ve 5",
         "b": "4 ve 7",
         "c": "2 ve 6",
@@ -532,7 +532,7 @@
     },
     {
         "soru no": "S.60",
-        "soru": "Havanın yoğunluğunu belirleyen faktörler olarak, aşağıdaki kombinasyonlardan hangisi doğrudur? 1) Rüzgar 2) Basınç 3) Cepheler 4) Buzlanma 5) Nem 6) Bulutlar 7) Suhunet",
+        "soru": "Havanın yoğunluğunu belirleyen faktörler olarak, aşağıdaki kombinasyonlardan hangisi doğrudur?",
         "a": "1, 2, 4",
         "b": "2, 4, 6",
         "c": "3, 5, 7",
@@ -541,7 +541,7 @@
     },
     {
         "soru no": "S.61",
-        "soru": "High Density Altitude’un etkileri için aşağıdaki kombinasyonlardan hangisi doğrudur? 1) Motorların gücü artar 2) Motorların gücü azalır 3) Kaldırma kuvveti artar 4) Kaldırma kuvveti azalır 5) Take – Off Roll mesafesi artar 6) Take – Off Roll mesafesi azalır",
+        "soru": "High Density Altitude’un etkileri için aşağıdaki kombinasyonlardan hangisi doğrudur?",
         "a": "1, 3, 6",
         "b": "2, 4, 5",
         "c": "3, 4, 6",
@@ -559,7 +559,7 @@
     },
     {
         "soru no": "S.63",
-        "soru": "ETOPS tanımı için aşağıdaki kombinasyonlardan hangisi doğrudur? 1) Kalkış meydanından 60 dakikadan daha uzakta icra edilen operasyondur 2) Sadece açık deniz üzerinde uygulanan bir operasyondur 3) Uçuş yolunda uygun bir meydandan 60 dakikadan daha uzakta icra edilen operasyondur 4) Sadece kara üzerinde icra edilen operasyondur 5) Üç motorlu uçaklarla icra edilen operasyondur 6) Standart atmosfer şartlarında icra edilen operasyondur 7) İki motorlu uçaklarla icra edilen operasyondur",
+        "soru": "ETOPS tanımı için aşağıdaki kombinasyonlardan hangisi doğrudur?",
         "a": "1, 2, 5",
         "b": "2, 4, 5",
         "c": "3, 6, 7",
@@ -568,7 +568,7 @@
     },
     {
         "soru no": "S.64",
-        "soru": "NAT HLA veya Tamamen NAT HLA yetkisi olmayan uçak operasyonları için Dispeçerin karar vermesi gereken seçenekler nelerdir ? 1) Uçuşu ETOPS olarak planlar 2) MNPS hava sahası altında veya üstünde uçuşu dispeç eder 3) RVSM hava sahası dışında uçuşu dispeç eder 4) VOR, DME, ADF rutları seçer 5) 2 LRNS gereken rutları seçer 6) Blue spurce rutları seçer 7) OTS rutları seçer",
+        "soru": "NAT HLA veya Tamamen NAT HLA yetkisi olmayan uçak operasyonları için Dispeçerin karar vermesi gereken seçenekler nelerdir ?",
         "a": "1, 3, 7",
         "b": "2, 4, 6",
         "c": "3, 5, 7",
@@ -721,7 +721,7 @@
     },
     {
         "soru no": "S.81",
-        "soru": "Aşağıdaki cümlelerden hangileri bir operatörün AOC’den ( Air Operators Certificate) önce kanıtlamak zorunda olduğu şeyleri doğru olarak tanımlar? 1) Organisation, method of control and supervision of flight operations 2) Training programmes 3) Maintenance arrangements",
+        "soru": "Aşağıdaki cümlelerden hangileri bir operatörün AOC’den ( Air Operators Certificate) önce kanıtlamak zorunda olduğu şeyleri doğru olarak tanımlar?",
         "a": "1, 2 ve 3",
         "b": "1 ve 3",
         "c": "1 ve 2",
@@ -830,7 +830,7 @@
     {
         "soru no": "S.93",
         "soru": "CAT C uçaklar için RVR’in 125 metre olduğu durumlarda kalkış yapabilmesi için HIRL ve HICL aralıkları en fazla kaç metre olmalıdır?",
-        "a": "HIRL 60m ve daha az HICL 15m ve daha az",
+        "a": "HIRL 60m ve daha az HICL 15m ve daha az\nb) HIRL 60m ve daha az HICL 15m ve daha fazla",
         "b": "",
         "c": "HIRL 60m ve daha fazla HICL 15m ve daha az",
         "d": "HIRL 60m ve daha fazla HICL 15m ve daha fazla",
@@ -919,7 +919,7 @@
     },
     {
         "soru no": "S.103",
-        "soru": "EASA-OPS 1.295; İşletici her IFR uçuş için bir adet varış yedek meydanı seçmelidir. Ancak bu kurala uymayabilir. Aşağıdaki kombinasyonlardan hangisi bu kural için yanlıştır? 1) Uçuş için kalkıştan inişe kadar geçen süre 6 saati aşmıyorsa, 2) İniş meydanında iki ayrı iniş pisti müsaitse, 3) İniş meydanına varış zamanında iniş VMC şartlarda olabiliyorsa, 4) İniş meydanına varış zamanından 1 saat öncesi ve 1 saat sonrasında inişin VMC şartlarda olması sağlanıyorsa, 5) İniş meydanına varış zamanından 1 saat öncesi ve 1 saat sonrasında inişin VFR şartlarda olması sağlanıyorsa, 6) İniş meydanı izole edilmişse ve yakında iniş için elverişli meydan yoksa, 7) İniş meydanına varış zamanından 1 saat öncesi ve 1 saat sonrasında inişin IFR şatlarda olması sağlanıyorsa",
+        "soru": "EASA-OPS 1.295; İşletici her IFR uçuş için bir adet varış yedek meydanı seçmelidir. Ancak bu kurala uymayabilir. Aşağıdaki kombinasyonlardan hangisi bu kural için yanlıştır?",
         "a": "1, 4, 6",
         "b": "2, 4, 6",
         "c": "3, 5, 7",
@@ -1324,7 +1324,7 @@
     },
     {
         "soru no": "S.148",
-        "soru": "AIP’nin general bölümündeki bilgiler aşağıdaki kombinasyonlardan hangileridir? 1) Yetkili otoriteler 2) Genel kurallar 3) Hava araçlarının giriş çıkış ve transit geçişleri 4) Görerek uçuş kuralları, aletle uçuş kuralları 5) Uçaklarda bulunması gereken alet ve uçuş belgeleri 6) Yaklaşma ve kalkış yöntemleri 7) Ulusal tüzük ve uluslararası anlaşmalar, ICAO standartları",
+        "soru": "AIP’nin general bölümündeki bilgiler aşağıdaki kombinasyonlardan hangileridir?",
         "a": "1, 3, 5, 7",
         "b": "2, 4, 5, 6",
         "c": "1, 2, 4, 5",
@@ -1387,7 +1387,7 @@
     },
     {
         "soru no": "S.155",
-        "soru": "Hava aracının hüviyetini tayin eden unsurlar olarak aşağıdaki kombinasyonlardan hangisi doğrudur? 1) Tip model ve markası 2) Uçuşa elverişlilik sertifikası 3) Sigorta poliçesi 4) Tescil işareti 5) Radyo techizat sertifikası 6) Sahibi",
+        "soru": "Hava aracının hüviyetini tayin eden unsurlar olarak aşağıdaki kombinasyonlardan hangisi doğrudur?",
         "a": "1, 4, 6",
         "b": "2, 3, 5",
         "c": "3, 5, 6",
@@ -1774,7 +1774,7 @@
     },
     {
         "soru no": "S.198",
-        "soru": "Aşağıdaki SIP mesajında önerilen yeni CTOT zamanı aşağıdakilerden hangisidir? -TITLE SIP -ARCID ABC101 -IFPLID AA12345678 -ADEP EGLL -ADES LIRF -EOBD 080901 -EOBT 0945 -CTOT 1030 -NEWCTOT 1010 -REGUL LIRFA01 -RESPBY 0930 -TAXITIME 0020”",
+        "soru": "Aşağıdaki SIP mesajında önerilen yeni CTOT zamanı aşağıdakilerden hangisidir?",
         "a": "0930",
         "b": "1030",
         "c": "1010",
@@ -2116,7 +2116,7 @@
     },
     {
         "soru no": "S.236",
-        "soru": "Havacılıkta uyulması gereken kurallar belli bir sıra takip eder, Bu sıralama aşağıdaki şıklardan hangisinde doğru şekilde verilmiştir? I.\tUlusal Yasalar ( National Laws  ) II.\tUlusal Havacılık Kuralları ( National Aviation Regulations ) III.\tŞirket politikaları ve Prosedürler ( ICAO annexler, EU-OPS ve FAR) IV.  \tUluslar arası Yasalar ( International Laws )",
+        "soru": "Havacılıkta uyulması gereken kurallar belli bir sıra takip eder, Bu sıralama aşağıdaki şıklardan hangisinde doğru şekilde verilmiştir?",
         "a": "III, II, IV, I",
         "b": "IV, III, I, II",
         "c": "IV, I, II, III",
@@ -2270,7 +2270,7 @@
     {
         "soru no": "S.254",
         "soru": "The isobars drawn on a surface weather chart represent lines of equal pressure:",
-        "a": "At flight level",
+        "a": "At flight level\nb) At height of observatory\nc) At a determined density altitude\nd) Reduced to sea level",
         "b": "",
         "c": "",
         "d": "",
@@ -2279,7 +2279,7 @@
     {
         "soru no": "S.255",
         "soru": "With regard to RVR and Met vis: ?",
-        "a": "Met vis is usually less than RVR",
+        "a": "Met vis is usually less than RVR\nb) Met vis is usually greater than RVR\nc) RVR is usually less than met vis\nd) Met vis and RVR are usually the same",
         "b": "",
         "c": "",
         "d": "",
@@ -2314,7 +2314,7 @@
     },
     {
         "soru no": "S.259",
-        "soru": "Aşağıdaki ifadeler ile hangi türbülans tipi anlatılmıştır? ·         Hava aracını kanat uçlarında oluşur ·         Kalkış/İniş için ayırma minimumlarının belirlenmesinde önemlidir.",
+        "soru": "Aşağıdaki ifadeler ile hangi türbülans tipi anlatılmıştır?",
         "a": "Vortex Türbülansı",
         "b": "Konvektif Türbülans",
         "c": "Gust Türbülansı",
@@ -2387,7 +2387,7 @@
     {
         "soru no": "S.267",
         "soru": "For a flight plan filed before flight, the indicated time of departure is:",
-        "a": "The time overhead the first reporting point after take-off",
+        "a": "The time overhead the first reporting point after take-off\nb) The time at which the flight plan is filed\nc) The estimated off-block time\nd) The time of take-off",
         "b": "",
         "c": "",
         "d": "",
@@ -2513,7 +2513,7 @@
     {
         "soru no": "S.281",
         "soru": "What should the pilot rely on if disoriented in IMC?",
-        "a": "Vision",
+        "a": "Vision\nb) Turning head to recover from disorientation\nc) Sense of balance\nd) Instruments",
         "b": "",
         "c": "",
         "d": "",
@@ -2522,7 +2522,7 @@
     {
         "soru no": "S.282",
         "soru": "Communication in the cockpit is primarily used for what purpose?",
-        "a": "It is the main tool to ensure coordination",
+        "a": "It is the main tool to ensure coordination\nb) It is the main tool to ensure comprehension\nc) It is the main tool to ensure harmony\nd) It is the main tool to ensure understanding",
         "b": "",
         "c": "",
         "d": "",
@@ -2674,7 +2674,7 @@
     },
     {
         "soru no": "S.299",
-        "soru": "Aşağıdakilerden hangisi uçağın kalkış performansını olumsuz etkiler? 1) Yüksek OAT 2) Düşük OAT 3) Düşük yoğunluktaki hava 4) Yüksek yoğunluktaki hava 5) Kısa pist 6) Uzun pist 7) Downhill slope 8) Uphill Slope",
+        "soru": "Aşağıdakilerden hangisi uçağın kalkış performansını olumsuz etkiler?",
         "a": "1, 2, 6, 8",
         "b": "1, 3, 5, 8",
         "c": "2, 4, 6, 8",
@@ -2881,7 +2881,7 @@
     },
     {
         "soru no": "S.322",
-        "soru": "Complete the sentence. Planning minima for destination aerodrome (except isolated destination aerodrome) An adequate aerodrome may be usable for destination (except if the aerodrome is isolated) if the weather reports or forecasts indicate that, during a period commencing 1 hour before and ending 1 hour after the estimated time of arrival at the aerodrome, the weather conditions (RVR / visibility and for non-precision or circling approaches, ceiling at or above MDH) will be at or ..........................................",
+        "soru": "Complete the sentence.",
         "a": "below the approach operating minima",
         "b": "above alternate minima",
         "c": "above the planning minima",
@@ -2926,7 +2926,7 @@
     },
     {
         "soru no": "S.327",
-        "soru": "Aşağıdaki boşlukları doldurunuz. ..................is the Runway length only ..................is the Runway + Stopway lengths. ..................it is the Runway + Clearway lengths.",
+        "soru": "Aşağıdaki boşlukları doldurunuz.",
         "a": "TODA, ASDA, TORA",
         "b": "ASDA, TORA, TODA",
         "c": "TORA, TODA, ASDA",
@@ -2980,7 +2980,7 @@
     },
     {
         "soru no": "S.333",
-        "soru": "ICAO’nun Flight Operation Officer / Flight Dispatcher Flight Planning eğitimi ile ilgili yayınında da bahsedildiği gibi temel olarak Crew Briefing’e aşağıdakilerden hangileri dahildir? 1) Meteoroloji 2) Meydanlar, hava seyrüsefer yardımcıları ve komünikasyon kolaylıklarının son durumu (NOTAM) 3) Yedek meydan handling firmaları 4) Uçuş Planı hakkında 5) Kabin Ekibi 6) Uçak ve teçhizat hakkında (MEL,CDL)",
+        "soru": "ICAO’nun Flight Operation Officer / Flight Dispatcher Flight Planning eğitimi ile ilgili yayınında da bahsedildiği gibi temel olarak Crew Briefing’e aşağıdakilerden hangileri dahildir?",
         "a": "1, 2, 3, 4",
         "b": "2, 3, 4, 5",
         "c": "2, 3, 5, 6",
@@ -2989,7 +2989,7 @@
     },
     {
         "soru no": "S.334",
-        "soru": "EASA.OPS’te uçakta taşınması gereken dokümanlardan ve formlardan bahseder. Buna göre aşağıdaki ifadelerden hangisi veya hangileri doğrudur? 1) Operational Flight Plan 2) Uçuşa elverişlilik (Airwortiness) sertifikası 3) Uçak Telsiz (radyo) sertifikası 4) NOTAM/AIS dokümanları 5) Deportee (sınır dışı edilen yolcu) bilgisi",
+        "soru": "EASA.OPS’te uçakta taşınması gereken dokümanlardan ve formlardan bahseder. Buna göre aşağıdaki ifadelerden hangisi veya hangileri doğrudur?",
         "a": "1, 2, 3, 4, 5",
         "b": "sadece 5",
         "c": "1, 4 ve 5",
@@ -3295,7 +3295,7 @@
     },
     {
         "soru no": "S.367",
-        "soru": "Sisi meydana getiren şartlar aşağıdaki şıkların hangisinde doğru olarak verilmiştir? 1) İstikrarlı hava 2) İstikrarsız hava 3) Rutubet 4) Kuru hava 5) Soğuma",
+        "soru": "Sisi meydana getiren şartlar aşağıdaki şıkların hangisinde doğru olarak verilmiştir?",
         "a": "1, 4, 5",
         "b": "1, 3, 5",
         "c": "2, 4, 5",
@@ -3439,7 +3439,7 @@
     },
     {
         "soru no": "S.383",
-        "soru": "EASA-OPS Operational Flight Plan’da uçuş planında olması gereken maddelerden bahseder. Buna göre aşağıdaki şıklardan hangisi en doğrudur? 1) Uçak Kanat ismi (Airplane Registration) 2) Kalkış meydanı (Place of Departure) 3) Yolcu sayısı (Number of passanger) 4) Uçuş ekşibinin isimleri (Names of flight crew members) 5) Planlanan Altitude ve Uçuş seviyeleri (Planned altitude and flight levels)",
+        "soru": "EASA-OPS Operational Flight Plan’da uçuş planında olması gereken maddelerden bahseder. Buna göre aşağıdaki şıklardan hangisi en doğrudur?",
         "a": "1, 2, 3 ve 5",
         "b": "1, 3, 4 ve 5",
         "c": "1, 2, 4 ve 5",
@@ -3448,7 +3448,7 @@
     },
     {
         "soru no": "S.384",
-        "soru": "AMC OPS 1.255 Fuel Policy trip yakıtının neleri ihtiva etmesi gerektiğinden bahseder. Bular aşağıda basit olarak ifade edilmiştir. Buna göre mevcut şıklardan hangisi en doğrudur? 1) Kalkış, Başlangıç uçuş altitude / seviyesine tırmanış, 2) Kalkış paternlerini (SID) dikkate alarak, 3) Uçuş seviyesine ilk çıkıştan iniş için alçaymaya başlayıncaya kadar (ara seviye değişiklikleri dahil) 4) İniş için alçaymaya başlanacak noktadan, iniş için yaklaşmanın başlayacağı yere kadar 5) Meydan yaklaşma paternlerini (STAR) dikkate alarak, 6) İniş için yaklaşmaya başlanacak noktadan varış meydanına ininceye kadar,",
+        "soru": "AMC OPS 1.255 Fuel Policy trip yakıtının neleri ihtiva etmesi gerektiğinden bahseder. Bular aşağıda basit olarak ifade edilmiştir. Buna göre mevcut şıklardan hangisi en doğrudur?",
         "a": "1, 2, 3, 4 ve 6",
         "b": "1, 3, 4 ve 6",
         "c": "1, 2, 3, 4, 5 ve 6",
@@ -3466,7 +3466,7 @@
     },
     {
         "soru no": "S.386",
-        "soru": "EASA-OPS 1.295 Selection of aerodrome’da yedek meydan seçiminden bahseder. En az iki yedek meydan (varış meydanı için) seçme şartları ile ilgili aşağıda verilen bilgileri değerlendiriniz. Buna göre mevcut şıklardan hangisi en doğrudur? 1) Varış meydanı hava durumu iniş limitlerinde ise 2) Varış meydanı için meterolojik raporlar mevcut değil ise 3) Varış meydanı hava durumu iniş limitlerinin altında ise",
+        "soru": "EASA-OPS 1.295 Selection of aerodrome’da yedek meydan seçiminden bahseder. En az iki yedek meydan (varış meydanı için) seçme şartları ile ilgili aşağıda verilen bilgileri değerlendiriniz. Buna göre mevcut şıklardan hangisi en doğrudur?",
         "a": "1 ve 2",
         "b": "1 ve 3",
         "c": "2 ve 3",
@@ -3556,7 +3556,7 @@
     },
     {
         "soru no": "S.396",
-        "soru": "Direkt İşletme Maliyetleri (Direct Operating Costs – DOC) olarak isimlendirilen dispatcher’ in kontrol edebileceği düşünülen maliyetler aşağıdakilerden hangileridir? 1) Yakıt ve ATC 2) Uçuş zamanına bağlı olarak ödenen “Maintenance” ve Materyaller 3) Uçuş zamanı ile bağlantılı formülleştirilmiş Kabin ve Kokpit personeli maaşları 4) “Catering” giderleri 5) Seçilmiş yedek meydanların yer hizmetleri ve iniş maliyetleri 6) Yer personeli giderleri",
+        "soru": "Direkt İşletme Maliyetleri (Direct Operating Costs – DOC) olarak isimlendirilen dispatcher’ in kontrol edebileceği düşünülen maliyetler aşağıdakilerden hangileridir?",
         "a": "1, 3, 5, 6",
         "b": "1, 2, 4, 5",
         "c": "1, 3, 4, 5",
@@ -3611,7 +3611,7 @@
     {
         "soru no": "S.402",
         "soru": "Climb Gradient’le hangi segment yüksek irtifa meydanlarında ağırlık nedeniyle tırmanış limiti getirebilir?",
-        "a": "1.Segment; yerden kesilme anından iniş takımlarının yukarıya alınmasına kadar olan segment.",
+        "a": "1.Segment; yerden kesilme anından iniş takımlarının yukarıya alınmasına kadar olan segment.\nb) 2. Segment; iniş takımlarının yukarıya alınışından itibaren 400 feet yüksekliğin kazanıldığı noktaya kadar olan segment",
         "b": "",
         "c": "3. Segment; 400 feet yükseklikten 1500 feet yüksekliğin kazanılmasına kadar olan segment",
         "d": "Final segment",
@@ -3943,7 +3943,7 @@
     },
     {
         "soru no": "S.439",
-        "soru": "The carriage of dangerous goods in aeroplanes is the subject of specific rules and regulations Operators are specifally required to:",
+        "soru": "The carriage of dangerous goods in aeroplanes is the subject of specific rules and regulations",
         "a": "Inspect the content of any consigment to ensure that the consignee has correctly labell the contents.",
         "b": "Specify what materials constitute dangerous goods.",
         "c": "Specfy the manner in which dangerous goods are to be labelled.",
@@ -3970,7 +3970,7 @@
     },
     {
         "soru no": "S.442",
-        "soru": "The operations department (Flight Dispatcher’s department) is required to retain information which is necessary in the event of a serach and rescue operation being mounted. This information relates to:",
+        "soru": "The operations department (Flight Dispatcher’s department) is required to retain information which is necessary in the event of a serach and rescue operation being mounted.",
         "a": "Personal details of the crew and passengers",
         "b": "Technical performance details of the aeroplane",
         "c": "MEL limitations affecting the aeroplane at take-off",
@@ -4087,7 +4087,7 @@
     },
     {
         "soru no": "S.455",
-        "soru": "Hava taşıma belgeleri olarak aşağıdaki kombinasyonlardan hangisi doğrudur? 1) Tescil Belgesi 2) Uçuşa Elverişlilik Belgesi 3) Yolcu bileti 4) Sigorta belgesi 5) Bagaj kuponu 6) Bordo jurnali 7) Kargo manifestosu",
+        "soru": "Hava taşıma belgeleri olarak aşağıdaki kombinasyonlardan hangisi doğrudur?",
         "a": "1, 2, 4",
         "b": "3, 5, 7",
         "c": "4, 6, 7",
@@ -4258,7 +4258,7 @@
     },
     {
         "soru no": "S.474",
-        "soru": "The Flight Operations Officer is responsible to the Operator for initiating the procedures defined in the operations manual in the event of an emergency, providing such action does not conflict with procedures established by which of the following: 1) ATC 2) The meteorological service 3) The communications service",
+        "soru": "The Flight Operations Officer is responsible to the Operator for initiating the procedures defined in the operations manual in the event of an emergency, providing such action does not conflict with procedures established by which of the following:",
         "a": "1 and 3 only",
         "b": "2 only",
         "c": "All of the above",
@@ -4339,7 +4339,7 @@
     },
     {
         "soru no": "S.483",
-        "soru": "Aşağıdakilerden hangileri MEA nın belirlenmesinde operatörün göz önünde bulundurduklarını tam olarak açıklar? 1) Rota için çartlardaki olası hataları 2) Üzerinden uçulacak sahanın özelliklerini 3) Uçuş ekibi 4) İstenmeyen hava ile karşılaşma olasılığı 5) İrtifa hataları 6) Hava sahası kısıtlamaları 7) Seyrüsefer hataları",
+        "soru": "Aşağıdakilerden hangileri MEA nın belirlenmesinde operatörün göz önünde bulundurduklarını tam olarak açıklar?",
         "a": "3 hariç hepsi",
         "b": "1 ve 3 hariç hepsi",
         "c": "1, 3, 5 hariç hepsi",
@@ -4348,10 +4348,10 @@
     },
     {
         "soru no": "S.484",
-        "soru": "Decisión Altitude (DA) or Decision Height (DH) is defined as a specified vertical displacement in a...................approach procedure at which a......................must be initiated if the required visual reference to continue the approach has not been established. Which of the following combinations correctly completes the definition? 1) Non precision 2) Precision 3) Go around 4) Missed Approach",
+        "soru": "Decisión Altitude (DA) or Decision Height (DH) is defined as a specified vertical displacement in a...................approach procedure at which a......................must be initiated if the required visual reference to continue the approach has not been established. Which of the following combinations correctly completes the definition?",
         "a": "1 and 3",
         "b": "2 and 4",
-        "c": "2 and 3",
+        "c": "2 and 3\nd) 1 and 4",
         "d": "",
         "cevap": "b"
     },
@@ -4376,7 +4376,7 @@
     {
         "soru no": "S.487",
         "soru": "If an operator specifies a minimum flight altitude for a route, it must be:",
-        "a": "Not less than the flight altitudes specified by the State for the same route,",
+        "a": "Not less than the flight altitudes specified by the State for the same route,\nb) Equal to or lower than that specified by the State over which the flight is being\nc) Not below FL100.\nd) A flight level.",
         "b": "",
         "c": "",
         "d": "",
@@ -4906,7 +4906,7 @@
     },
     {
         "soru no": "S.546",
-        "soru": "Select from the following list environmental stressors? 1) Heat 2) Humidity 3) Divorce 4) Lack of rest 5) Loss of job 6) Noise",
+        "soru": "Select from the following list environmental stressors?",
         "a": "1, 2, 3, 6",
         "b": "1, 2, 4, 6",
         "c": "1, 2, 6",
@@ -5023,7 +5023,7 @@
     },
     {
         "soru no": "S.559",
-        "soru": "Disturbance of the biological clock is most likely to appear after a: 1) Bad night’s sleep 2) Day flight Amsterdam – New York 3) Day flight Amsterdam – Johannesburg 4) Night flight New York – Amsterdam",
+        "soru": "Disturbance of the biological clock is most likely to appear after a:",
         "a": "1, 2, 3,and 4 are correct",
         "b": "2 and 4 are correct",
         "c": "1, 2, 3 are correct",
@@ -5059,7 +5059,7 @@
     },
     {
         "soru no": "S.563",
-        "soru": "Which of the following list are symptoms of fatigue? 1) Diminished accommodation 2) Slowed reactions 3) Long-term memory Access problems 4) Being over-talkative 5) Diminished motor skills",
+        "soru": "Which of the following list are symptoms of fatigue?",
         "a": "1, 2 & 4",
         "b": "1, 2, 3 & 5",
         "c": "2 & 5 only",
@@ -5086,7 +5086,7 @@
     },
     {
         "soru no": "S.566",
-        "soru": "To maintain good situational awareness you should; 1) Believe only in your own interpretation of the data. 2) Gather as much data as possible from every possible source before making inferences. 3) Question whether your hypothesis still fits the situation as events progress and try to make time to review the situation. 4) Consider ways of testing your situational hypothesis to see whether it is correct.",
+        "soru": "To maintain good situational awareness you should;",
         "a": "1 and 3 are correct.",
         "b": "1 and 4 are correct.",
         "c": "2, 3 and 4 are correct.",
@@ -5248,7 +5248,7 @@
     },
     {
         "soru no": "S.584",
-        "soru": "Herhangi bir şüphe halinde uçağın yerini tespit etmeye çalışan bir dispeçer hangi veriler üzerinden takibe başlamalıdır? 1) Slot mesajları 2) FIR Geçiş ve mecburi rapor noktaları 3) Notamlar 4) Flight plan",
+        "soru": "Herhangi bir şüphe halinde uçağın yerini tespit etmeye çalışan bir dispeçer hangi veriler üzerinden takibe başlamalıdır?",
         "a": "2 ve 4",
         "b": "1 ve 2",
         "c": "Yalnız 1",
@@ -5536,7 +5536,7 @@
     },
     {
         "soru no": "S.616",
-        "soru": "Aşağıdaki dökümanlardan hangileri her uçuşta taşınmak zorundadır? 1) Certificate of Registration (CofR) 2) Certificate of Airworthiness (CofA) 3) Noise certificate 4) Air Operators Certificate (AOC) 5) Aircraft radio licence 6) Third party liability insurance certificates 7) Crew licences with appropriate ratings",
+        "soru": "Aşağıdaki dökümanlardan hangileri her uçuşta taşınmak zorundadır?",
         "a": "1, 2, 5 and 7",
         "b": "1, 2 and 7",
         "c": "2, 5 and 7",
@@ -5861,7 +5861,7 @@
     {
         "soru no": "S.652",
         "soru": "If passengers are on board an aeroplane, or are embarking or disemparking, which of the following are correct?",
-        "a": "Refueling is not permitted under any circumstances",
+        "a": "Refueling is not permitted under any circumstances\nb) Refueling is permitted provided qualified ground crew are in attendance\nc) Refueling is only permitted providing no communications equipment is used in the vicintiy of the aeroplane",
         "b": "",
         "c": "",
         "d": "Refueling is permitted only if qualified cabin staff (able to direct an immediate evacuation) are in attendance",
@@ -6067,7 +6067,7 @@
     },
     {
         "soru no": "S.675",
-        "soru": "Which of the below parameters will decrease the take off run? 1) Decreasing take-off mass 2) Increasing take-off mass 3) Increasing density 4) Decreasing density 5) Increasing flap setting 6) Decreasing flap setting 7) Increasing pressure altitude 8) Decreasing pressure altitude",
+        "soru": "Which of the below parameters will decrease the take off run?",
         "a": "2, 4, 5 and 7",
         "b": "2, 3, 6 and 7",
         "c": "1, 3, 5 and 8",
@@ -6121,7 +6121,7 @@
     },
     {
         "soru no": "S.681",
-        "soru": "In ECAC area in case of a delay in the event of a delay of a controlled flight, the submitted flight Plan shall be amended or cancelled and a new flight plan submitted when the delay is in excess of;",
+        "soru": "In ECAC area in case of a delay in the event of a delay of a controlled flight, the submitted flight",
         "a": "15 minutes of the estimated time off blocks",
         "b": "30 minutes of the estimated time off blocks",
         "c": "45 minutes of the estimated time off blocks",
@@ -6373,7 +6373,7 @@
     },
     {
         "soru no": "S.709",
-        "soru": "Situation awareness’in öğeleri ile ilgili olarak doğru şık aşağıdakilerden hangisidir? 1) Tecrübe ve eğitim 2) Uçuş yeteneği 3) Sağlık ve davranış 4) Ekip yönetim becerisi 5) Bilgi edinme süreci değerlendirilmesi 6) Bulunduğun yerin farkına varmak",
+        "soru": "Situation awareness’in öğeleri ile ilgili olarak doğru şık aşağıdakilerden hangisidir?",
         "a": "1, 2, 3, 4, 5",
         "b": "1, 2, 3, 4, 6",
         "c": "1, 2, 3, 4, 5, 6",
@@ -6382,7 +6382,7 @@
     },
     {
         "soru no": "S.710",
-        "soru": "Yeterlilik, iletişim becerisi, karar verme yeteneği, azim, istikrarlı yapı, tutarlılık, isteklilik, ahlak yukarıda özellikler aşağıdaki şıklardan hangisi ile ilişkilidir?",
+        "soru": "Yeterlilik, iletişim becerisi, karar verme yeteneği, azim, istikrarlı yapı, tutarlılık, isteklilik, ahlak",
         "a": "Situation awareness",
         "b": "Feedback",
         "c": "Liderlik",
@@ -6634,7 +6634,7 @@
     },
     {
         "soru no": "S.738",
-        "soru": "EASA-OPS 1.125 Documents to be carried” da uçakta her serferde taşınması gereken  dökümanlardan bahseder. Buna göre aşağıdaki şıklardan hangisi en doğrudur? 1) Uçuşa elverişlilik sertifikası (Airworthiness) 2) EASA 145 sertificası 3) Radyo lisansı (Aircraft Radio)",
+        "soru": "EASA-OPS 1.125 Documents to be carried” da uçakta her serferde taşınması gereken  dökümanlardan bahseder. Buna göre aşağıdaki şıklardan hangisi en doğrudur?",
         "a": "1 ve 2",
         "b": "2 ve 3",
         "c": "1 ve 3",
@@ -6643,7 +6643,7 @@
     },
     {
         "soru no": "S.739",
-        "soru": "EASA-OPS 1.255 Fuel Policy de uçak işleticinin uçuş öncesi kullanılacak yakıt miktarının hesaplanması için hangi yakıtların olması gerektiğinden bahseder. Buna göre aşağıdaki şıklardan hangisi en doğrudur? 1) Taksi yakıt 2) Trip yakıt 3) Yedek Meydan Yakıtı (Alternate) 4) Operasyon gereği ilave yakıt (ETOPS gibi) 5) Varış meydanı bekleme yakıtı",
+        "soru": "EASA-OPS 1.255 Fuel Policy de uçak işleticinin uçuş öncesi kullanılacak yakıt miktarının hesaplanması için hangi yakıtların olması gerektiğinden bahseder. Buna göre aşağıdaki şıklardan hangisi en doğrudur?",
         "a": "1, 2, 3 ve 4",
         "b": "2, 3, 4 ve 5",
         "c": "1, 2, 3 ve 5",
@@ -6706,7 +6706,7 @@
     },
     {
         "soru no": "S.746",
-        "soru": "Bir meydana gece operasyonu yapılabilmesi için gerekli ışık sistemlerini belirten kombinasyon hangisidir? 1.  ALS 2.  TL 3.  RL 4.  VASI 5.  CL 6.  REIL 7.  PAPI",
+        "soru": "Bir meydana gece operasyonu yapılabilmesi için gerekli ışık sistemlerini belirten kombinasyon hangisidir?",
         "a": "1, 3, 5",
         "b": "2, 4, 6",
         "c": "2, 3, 6",
@@ -6778,7 +6778,7 @@
     },
     {
         "soru no": "S.754",
-        "soru": "Metar rasatında verilen SNOWTAM’da frenleme katsayısı kaçtır? LTBA 020850Z 33015G25KT 1200 R36R/1200N SHSN SCT010 BKN020 BKN020 BKN0800 01/M00 Q1000 186///34 NOSIG RMK RWY18L 33018KT RWY06 33020KT RWY24 31018KT=",
+        "soru": "Metar rasatında verilen SNOWTAM’da frenleme katsayısı kaçtır?",
         "a": "18L",
         "b": "36R",
         "c": "34",
@@ -6841,7 +6841,7 @@
     },
     {
         "soru no": "S.761",
-        "soru": "Aşağıdakilerden hangisi doğrudur? LM = Landing Mass TOM = Take-off Mass MTOM = Maximum Take-off Mass ZFM = Zero Fuel Mass MZFM = Maximum Zero Fuel Mass DOM = Dry Operating Mass",
+        "soru": "Aşağıdakilerden hangisi doğrudur?",
         "a": "LM = TOM - Trip Fuel",
         "b": "MTOM = ZFM + maximum possible fuel mass",
         "c": "MZFM = Traffic load + DOM",
@@ -6859,7 +6859,7 @@
     },
     {
         "soru no": "S.763",
-        "soru": "Aşağıdaki verilenlere göre Maximum Traffic (payload) load nedir? - Dry Operating Mass = 80 400 kg - Maximum Take-off Mass = 170 000 kg - Maximum Landing Mass = 148 500 kg - Maximum Zero Fuel Mass = 112 500 kg - Taxi Fuel = 800 kg - Trip Fuel = 29 000 kg - Block Fuel = 40 000kg",
+        "soru": "Aşağıdaki verilenlere göre Maximum Traffic (payload) load nedir?",
         "a": "35 000 kg",
         "b": "32 100 kg",
         "c": "31 000 kg",
@@ -7363,7 +7363,7 @@
     },
     {
         "soru no": "S.819",
-        "soru": "Given: Dry Operating Mass (DOM) = 33510 kg Load = 7600 kg Trip Fuel (TF) = 2040 kg Final Reserve Fuel = 983 kg Alternate Fuel = 1100 kg Contingency Fuel = 5% of Trip Fuel Which of the listed estimated masses is correct?",
+        "soru": "Given:",
         "a": "Estimated take-off mass= 45233 kg.",
         "b": "Estimated landing mass at destination= 43295 kg.",
         "c": "Estimated landing mass at destination= 43193 kg.",
@@ -7390,7 +7390,7 @@
     },
     {
         "soru no": "S.822",
-        "soru": "Aşağıdaki verilenlere göre Actual Take off Weight nedir? - Maximum Structural Take-off Mass = 48 000 kg - Maximum Structural Landing Mass = 44 000 kg - Actual Zero Fuel Mass = 36 000 kg - Taxi Fuel = 600 kg - Contingency Fuel = 900 kg - Alternate Fuel = 800 kg - Final Reserve Fuel = 1 100 kg - Trip Fuel = 9 000 kg",
+        "soru": "Aşağıdaki verilenlere göre Actual Take off Weight nedir?",
         "a": "45100",
         "b": "46200",
         "c": "47800",
@@ -7408,7 +7408,7 @@
     },
     {
         "soru no": "S.824",
-        "soru": "Aşağıdaki verilenlere göre maximum allowed take-off mass ve payload nedir? - Dry Operating Mass = 38 000 kg - Maximum Structural Take-off Mass = 72 000 kg - Maximum Landing Mass = 65 000 kg - Maximum Zero Fuel Mass = 61 000 kg - Fuel Burn = 8 000 kg - Take-off Fuel = 10 300 kg",
+        "soru": "Aşağıdaki verilenlere göre maximum allowed take-off mass ve payload nedir?",
         "a": "72500 kg – 21200 kg",
         "b": "71300 kg – 23000 kg",
         "c": "77400 kg – 22000 kg",
@@ -7435,7 +7435,7 @@
     },
     {
         "soru no": "S.827",
-        "soru": "Aşağıda belirtilen METAR hava raporunda geçici olarak beklenen görüş ve pist görüş değerleri nedir? METAR LTFE 24015KT 200V280 8000 –RA FEW010 BKN025 OVC080 18/15 Q0983 TEMPO 0500 RA OVC070 R11 0750V1000 R29 0500D",
+        "soru": "Aşağıda belirtilen METAR hava raporunda geçici olarak beklenen görüş ve pist görüş değerleri nedir?",
         "a": "Görüş 500m, pist görüş değerleri RWY 11 için 750 ile 1000m arasında değişken, RWY 29 için 500m azalmakta",
         "b": "Görüş 500m, pist görüş değerleri RWY 11 için 750 ile 1000m arasında değişken, RWY 29 için 500m artmakta",
         "c": "Görüş 500m, pist görüş değerleri RWY 11 için 1000m, RWY 29 için 500m",
@@ -7453,7 +7453,7 @@
     },
     {
         "soru no": "S.829",
-        "soru": "Verilen Rasatta TREND tahmini ve süresi nedir? LOWW 050750Z 00000KT 3000 1000SE R29/P1500N R16/P1500N BCFG BR FEW002 BKN003 M00/M01 Q0998 TEMPO SCT003 BKN005=",
+        "soru": "Verilen Rasatta TREND tahmini ve süresi nedir?",
         "a": "R29/P1500N R16/P1500N BCFG BR 1 saat",
         "b": "TEMPO SCT003 BKN005 1 saat",
         "c": "TEMPO SCT003 BKN005 2saat",
@@ -7462,7 +7462,7 @@
     },
     {
         "soru no": "S.830",
-        "soru": "Aşağıdaki TAF’a göre verilen METAR örneğindeki Trend Tipi İniş İstidlali aşağıdakilerden hangisi olmalıdır? LTXX 120740Z 120918 VRB02KT CAVOK BECMG 0911 5000 BR= LTXX 120950Z 05005KT 7000 NSC 08/06 Q1015 ……………..",
+        "soru": "Aşağıdaki TAF’a göre verilen METAR örneğindeki Trend Tipi İniş İstidlali aşağıdakilerden hangisi olmalıdır?",
         "a": "NOSIG",
         "b": "BECMG 5000",
         "c": "BECMG TL1100 5000 BR",
@@ -7885,7 +7885,7 @@
     },
     {
         "soru no": "S.877",
-        "soru": "Refer to the TAF for Amsterdam airport; TAF EHAM 060427Z 0606/0712 26013KT 9999 FEW025 SCT045 BECMG 0614/0616 18007KT 7000 -RA SCT012 BKN018 BECMG 0619/0621 23024G36KT SCT010 BKN014 TEMPO 0620/0703 4000 RADZ BKN008 BECMG 0702/0704 29010KT 9999 NSW FEW020 SCT040 BECMG 0706/0708 26013KT Flight from Bordeaux to Amsterdam, ETA 2100 UTC. What is the minimum visibility and cloud base forecast for ETA Amsterdam?",
+        "soru": "Refer to the TAF for Amsterdam airport;",
         "a": "Above 10 km, 4500 feet",
         "b": "Above 10 km, 4000 feet",
         "c": "7 km, 1400 feet",
@@ -7975,7 +7975,7 @@
     },
     {
         "soru no": "S.887",
-        "soru": "Which is a correct interpretation of data from the following METAR? METAR 16003KT 0400 R14/ P1500 R16/ 1000N FZFG VV003 M02/ M02 Q1026 BECMG 2000=",
+        "soru": "Which is a correct interpretation of data from the following METAR?",
         "a": "Pre. Vis. 1000 m, RVR 400 m, freezinglevel at 300 m, temperature 2C",
         "b": "RVR for runway 16 1000 m, pre.vis. increasing in the next 2 hours to 2000 m, vertical visibility 300 m, temperature -2C",
         "c": "RVR for runway 14 1500 m, pre.vis. 400 m, QNH 1026 hPa, wind 160 at 3 km",
@@ -8380,7 +8380,7 @@
     },
     {
         "soru no": "S.932",
-        "soru": "Aşağıdaki meydan hava durumlarından hangisi CAVOK şartlarına uygundur? (MSA above ground : LSZB 10000 FT,  LSZH 8000 FT,  LSGG 12000 FT,  LFSB 6000 FT)",
+        "soru": "Aşağıdaki meydan hava durumlarından hangisi CAVOK şartlarına uygundur?",
         "a": "LSGG 22006KT 9999 RA BKN090 17/18 Q1008 NOSIG",
         "b": "LSZH VRB02KT 9000 BKN080 21/14 Q1022 NOSIG",
         "c": "LFSB 24004KT 9999 SCT040 18/11 Q1015 NOSIG",
@@ -8389,7 +8389,7 @@
     },
     {
         "soru no": "S.933",
-        "soru": "LFBD 1524 26015KT 9999 SHRA BKN020 TEMPO 1620 26020G30KT 8000 +SHRA BKN015CB PROB30 TSRA Yukarıdaki TAF a göre 18:00 UTC de tahmin edilen yağış tipi nedir?",
+        "soru": "LFBD 1524 26015KT 9999 SHRA BKN020 TEMPO 1620 26020G30KT 8000 +SHRA BKN015CB PROB30 TSRA",
         "a": "Heavy rain shower",
         "b": "Moderate rain shower",
         "c": "Light drizzle fog",
@@ -8398,7 +8398,7 @@
     },
     {
         "soru no": "S.934",
-        "soru": "EDDM 241322 VRB03KT 1500 HZ OVC004 BECMG 1517 00000KT 0500 FG VV002 TEMPO 2022 0400 FG VV001 Yukarıdaki hava raporu ile ilgili aşağıdaki bilgilerden hangisi doğrudur?",
+        "soru": "EDDM 241322 VRB03KT 1500 HZ OVC004 BECMG 1517 00000KT 0500 FG VV002 TEMPO 2022 0400 FG VV001",
         "a": "18 saatlik TAF",
         "b": "24 saatlik TAF",
         "c": "9 saatlik TAF",
@@ -8461,7 +8461,7 @@
     },
     {
         "soru no": "S.941",
-        "soru": "FC EHAM 281601 14010KT 6000 -RA SCT025 BECMG 1618 12015G25KT SCT008 BKN013 TEMPO 1823 3000 RA BKN005 OVC010 BECMG 2301 25020KT 8000 NSW BKN020 Yukarıdaki TAF a göre 21:00 UTC de beklenen rüzgar değeri nedir?",
+        "soru": "FC EHAM 281601 14010KT 6000 -RA SCT025 BECMG 1618 12015G25KT SCT008 BKN013 TEMPO 1823 3000 RA BKN005 OVC010 BECMG 2301 25020KT 8000 NSW BKN020",
         "a": "120° / 15 kt gusts 25 kt",
         "b": "140° / 10 kt",
         "c": "300° / 15 kt maximum wind 25 kt",
@@ -8535,7 +8535,7 @@
         "soru no": "S.949",
         "soru": "Who is responsible for approving methods of calculating minimum flight altitudes?",
         "a": "The EASA",
-        "b": "The State of the Operator,",
+        "b": "The State of the Operator,\nc) The Operator,",
         "c": "",
         "d": "ICAO.",
         "cevap": "b"
@@ -8544,7 +8544,7 @@
         "soru no": "S.950",
         "soru": "For a land-based aeroplane, sea survival equipment is to be carried:",
         "a": "When flying en-route over water beyond gliding distance from shore",
-        "b": "When flying over water more than 50 Km from the shore where the en-route ‘'engine out' limitations apply",
+        "b": "When flying over water more than 50 Km from the shore where the en-route ‘'engine out' limitations apply\nc) When taking off or landing at an aerodrome where, in opinion of the Operator there is a danger of the aeroplane ditching due to the proximity of water\nd) In all aeroplanes",
         "c": "",
         "d": "",
         "cevap": "a"
@@ -8578,7 +8578,7 @@
     },
     {
         "soru no": "S.954",
-        "soru": "For twin-engined aircraft, the take-off alternate shall be located at a distance that: (Annex 6, Part I)",
+        "soru": "For twin-engined aircraft, the take-off alternate shall be located at a distance that:",
         "a": "Does not exceed the equivalent of two hour of flight time at cruising speed all engines operating.",
         "b": "Does not exceed the equivalent of two hours of flight time, at cruising speed with only one engine operative.",
         "c": "Does not exceed the equivalent of one hour of flight time at cruising speed all engines operating.",
@@ -8641,7 +8641,7 @@
     },
     {
         "soru no": "S.961",
-        "soru": "Which combination of the following list of documents correctly identifies those that must be carried on each flight? 1) Certificate of Registration (CofR) 2) Certificate of Airworthiness (CofA) 3) Noise certificate 4) Air Operators Certificate (AOC) 5) Aircraft radio license 6) Third party liability insurance certificates 7) Crew licenses with appropriate ratings",
+        "soru": "Which combination of the following list of documents correctly identifies those that must be carried on each flight?",
         "a": "1, 2, 5 and 7",
         "b": "1, 2 and 7",
         "c": "2, 5 and 7",
@@ -8677,7 +8677,7 @@
     },
     {
         "soru no": "S.965",
-        "soru": "Hava taşıma sözleşme çeşitleri için aşağıdaki kombinasyonlardan hangisi doğrudur? 1) Yolcu taşıma sözleşmesi 2) Yük taşıma sözleşmesi 3) İç taşıma sözleşmesş 4) Karma taşıma sözleşmesi 5) Zincirleme taşıma sözleşmesi 6) Dış Taşıma sözleşmesi",
+        "soru": "Hava taşıma sözleşme çeşitleri için aşağıdaki kombinasyonlardan hangisi doğrudur?",
         "a": "1, 3, 5",
         "b": "2, 4, 6",
         "c": "1, 4, 6",
@@ -9271,7 +9271,7 @@
     },
     {
         "soru no": "S.1031",
-        "soru": "When letters are used for the registration mark combinations shall not be used which might be confused with the;",
+        "soru": "When letters are used for the registration mark combinations shall not be",
         "a": "three letters combinations used in the international code of signals",
         "b": "four letter combinations beginning with Q",
         "c": "five letter combinations used in the international code of signals",
@@ -9298,7 +9298,7 @@
     },
     {
         "soru no": "S.1034",
-        "soru": "The registration mark shall be letters, numbers or a combination of letters And numbers and shall be that assigned by:",
+        "soru": "The registration mark shall be letters, numbers or a combination of letters",
         "a": "the International Civil Aviation Organisation",
         "b": "the state of airworthiness",
         "c": "the state of registry of local authority",
@@ -9370,7 +9370,7 @@
     },
     {
         "soru no": "S.1042",
-        "soru": "During an IFR flight in VMC in controlled airspace you experience a two-way Radio communication failure. You will:",
+        "soru": "During an IFR flight in VMC in controlled airspace you experience a two-way",
         "a": "Land at the nearest suitable aerodrome maintaining VMC and inform ATC;",
         "b": "Select A7600 and continue according currenct flight plan to destination;",
         "c": "Descend to the flight level submitted for that portion of flight;",
@@ -9974,9 +9974,9 @@
     {
         "soru no": "S.1109",
         "soru": "Who is responsible for establishing operating minima (AOM)?",
-        "a": "The Operator,",
+        "a": "The Operator,\nb) ATC at the aerodrome,",
         "b": "",
-        "c": "The Pilot-in Command,",
+        "c": "The Pilot-in Command,\nd) The State of the Operator.",
         "d": "",
         "cevap": "a"
     },
@@ -9984,7 +9984,7 @@
         "soru no": "S.1110",
         "soru": "For a land based aeroplane, sea survival equipment is to be carried:",
         "a": "When flying en-route over water beyond gliding distance from shore",
-        "b": "When flying over water more than 50 Km from the shore where the en-route 'engine out' limitations apply",
+        "b": "When flying over water more than 50 Km from the shore where the en-route 'engine out' limitations apply\nc) When taking off or landing at an aerodrome where, in opinion of the Operator there is a danger of the aeroplane ditching due to the proximity of water",
         "c": "",
         "d": "In all aeroplanes",
         "cevap": "a"
@@ -9994,14 +9994,14 @@
         "soru": "If it is not possible to file a copy of the OFP with the Operator (or agent) it sould be:",
         "a": "Posted to the Operator ( a certificate of proof of posting is required)",
         "b": "Teken in a sealed envelope to the next aerodrome where the Operator or agent has a representative",
-        "c": "Left with the aerodrome authorities",
+        "c": "Left with the aerodrome authorities\nd) Sent to the aothority within 10 days",
         "d": "",
         "cevap": "c"
     },
     {
         "soru no": "S.1112",
         "soru": "The purpose of the Master Minimum Equipment List (MMEL) is",
-        "a": "To permit the Authotity to specify what equipment must be carried in an aircraft with max take off mass greather than 5 700 kg",
+        "a": "To permit the Authotity to specify what equipment must be carried in an aircraft with max take off mass greather than 5 700 kg\nb) To permit one MEL to exist for the operator's entire fleet of aeroplanes\nc) To permit the operator to change the content of the MEL whilst keeping a master unamended state",
         "b": "",
         "c": "",
         "d": "Not to be used as an Operator's MEL",
@@ -10045,7 +10045,7 @@
     },
     {
         "soru no": "S.1117",
-        "soru": "FAM (Flight Activation Monitoring) uygulamasının yapıldığı meydanlardan biri olan GVA meydanındaki bir seferin gecikmesi, vaktinde sisteme yansıtılmadığı için FLS mesajı gelmiştir. -TITLE FLS -ARCID ABC101 -IFPLID AA12345678 -ADEP LSGG -ADES LIRF -EOBD 080423 -EOBT 0945 -COMMENT NOT REPORTED AS AIRBORNE -TAXITIME 0020 Bu mesajı aldıktan sonra çektiğimiz DLA mesajına cevap olarak ATFCM’den hangi mesaj gelir?",
+        "soru": "FAM (Flight Activation Monitoring) uygulamasının yapıldığı meydanlardan biri olan GVA meydanındaki bir seferin gecikmesi, vaktinde sisteme yansıtılmadığı için FLS mesajı gelmiştir.",
         "a": "SIP",
         "b": "DES yada SAM",
         "c": "ACK",
@@ -10806,7 +10806,7 @@
         "b": "Patlayıcı tehlikeli maddeler",
         "c": "Bulaşıcı tehlikeli maddeler",
         "d": "Zehirli tehlikeli maddeler",
-        "cevap": "a",
+        "cevap": "a"
     },
     {
         "soru no": "S.1202",
@@ -10815,7 +10815,7 @@
         "b": "Tehlikeli madde, dikkat edin",
         "c": "Üst kısmı yukarıya gelecek şekilde yükle",
         "d": "Aşındırıcı tehlikeli madde",
-        "cevap": "a",
+        "cevap": "a"
     },
     {
         "soru no": "S.1203",
@@ -10855,7 +10855,7 @@
     },
     {
         "soru no": "S.1207",
-        "soru": "Aşağıdaki formlardan hangisini bütün uçuşlarda taşımak gerekli değildir? 1. The Operational Flight Plan (OFP) 2. Mass and balance documentation 3. NOTAMS 4. The Tecnical LOG 5. Maps and Charts 6. Passenger and cargo manifests",
+        "soru": "Aşağıdaki formlardan hangisini bütün uçuşlarda taşımak gerekli değildir?",
         "a": "All except 1",
         "b": "All except 3",
         "c": "All except 6",
@@ -10936,7 +10936,7 @@
     },
     {
         "soru no": "S.1216",
-        "soru": "ICAO standart atmosferi göz önüne aldığımız zaman, aşağıdaki ifadelerden hangisi doğrudur? 1- The temperature lapse rate is assuned to be uniform at 20 C per 1,000 ft up to a height 11,000 ft 2- Sea level temperature is assumed to be 150 C 3- Sea level static pressure is assumed to be 1.225 kg/m3 4- Sea level density is assumed to be 1013.25 hPa",
+        "soru": "ICAO standart atmosferi göz önüne aldığımız zaman, aşağıdaki ifadelerden hangisi doğrudur?",
         "a": "1, 2, 3 and 4",
         "b": "No statements are correct",
         "c": "1, 3 and 4",
@@ -11044,7 +11044,7 @@
     },
     {
         "soru no": "S.1228",
-        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080 BECMG 1618 9999 NSW SCT040 BKN100 RMK AMD AT 151020Z= Yukarıdaki Taf Amd hangi hadise için yapılmış olabilir?",
+        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080",
         "a": "Pus",
         "b": "Gökgürültülü sağanak yağış",
         "c": "Sis",
@@ -11053,7 +11053,7 @@
     },
     {
         "soru no": "S.1229",
-        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080 BECMG 1618 9999 NSW SCT040 BKN100 RMK AMD AT 151020Z= Yukarıdaki Taf Amd hangi zamanda yapılmıştır?",
+        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080",
         "a": "0740Z",
         "b": "1012Z",
         "c": "1618Z",
@@ -11062,7 +11062,7 @@
     },
     {
         "soru no": "S.1229",
-        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080 BECMG 1618 9999 NSW SCT040 BKN100 RMK AMD AT 151020Z= Yukarıdaki Taf Amd de en kuvvetli rüzgarın hangi aralıkta esmesi tahmin edilmiştir?",
+        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080",
         "a": "1018",
         "b": "1012",
         "c": "1618",
@@ -11071,7 +11071,7 @@
     },
     {
         "soru no": "S.1230",
-        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080 BECMG 1618 9999 NSW SCT040 BKN100 RMK AMD AT 151020Z= Yukarıdaki Taf Amd de hangi aralıktan sonra hadisenin kesileceği tahmin edilmektedir?",
+        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080",
         "a": "1018",
         "b": "1012",
         "c": "1618",
@@ -11080,7 +11080,7 @@
     },
     {
         "soru no": "S.1231",
-        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080 BECMG 1618 9999 NSW SCT040 BKN100 RMK AMD AT 151020Z= Yukarıdaki Taf Amd de en düşük görüşün kaç metre olacağı tahmin edilmektedir?",
+        "soru": "LTAU 1500740Z 151018 22015KT 5000 TSRA FEW025CB SCT035 BKN080 TEMPO 1012 22015G30KT 3000 TSGRRA SCT020CB BKN030 BKN080",
         "a": "9999 m",
         "b": "10 000 m",
         "c": "5000 m",
@@ -11125,7 +11125,7 @@
     },
     {
         "soru no": "S.1236",
-        "soru": "ETOPS harekatı için, aşağıdaki kombinasyonlardan hangileri doğrudur? 1. Standart atmosfer ve sakin rüzgar şartlarında 2. Açık deniz üzerinde 3. Kara üzerinde 5. İki motorlu uçaklarla 60 dakikadan daha uzakta 6. İki motorlu uçaklarla120 dakikadan daha uzakta 7. RVSM hava sahalarında",
+        "soru": "ETOPS harekatı için, aşağıdaki kombinasyonlardan hangileri doğrudur?",
         "a": "3, 5, 6, 7",
         "b": "1, 2, 3, 5",
         "c": "1, 3, 5, 7",
@@ -11143,7 +11143,7 @@
     },
     {
         "soru no": "S.1238",
-        "soru": "METAR LSGG 0750Z 00000KT 0300 R05/0700N FG VV001 M02/M02 Q1014 NOSIG Yukarıdaki metar a göre 08:40 UTC de RVR nedir?",
+        "soru": "METAR LSGG 0750Z 00000KT 0300 R05/0700N FG VV001 M02/M02 Q1014 NOSIG",
         "a": "700 M",
         "b": "300 M",
         "c": "RVR bilinmez, RVR NOSIG dahilinde değildir",
@@ -11152,7 +11152,7 @@
     },
     {
         "soru no": "S.1239",
-        "soru": "LIMM MILANO 2809 sigmet 2 valid 0900/1500 mod sev cat btn fl 250 and fl 430 fcst limm fir stnr nc Zurich ten Rome ya yapılacak bir seferde. Yukarıdaki sigmet e göre seçmeniz gereken uçuş seviyesi ne olmalıdır?",
+        "soru": "LIMM MILANO 2809 sigmet 2 valid 0900/1500 mod sev cat btn fl 250 and fl 430 fcst limm fir stnr nc",
         "a": "FL300",
         "b": "FL420",
         "c": "FL210",
@@ -11206,7 +11206,7 @@
     },
     {
         "soru no": "S.1245",
-        "soru": "TAF LSZH 1322 22018G35KT 9999 SCT012 BKN030 BECMG 1315 4000 RA BKN025 BECMG 2022 25015KT T1815Z T1618Z Yukarıdaki TAF a göre 15:00 UTC de beklenen hava durumu hagisidir?",
+        "soru": "TAF LSZH 1322 22018G35KT 9999 SCT012 BKN030 BECMG 1315 4000 RA BKN025",
         "a": "Met. vis. 4000 metres, gusts of 35 KT, temperature 18°C",
         "b": "Met. vis. 10 km or more, ceiling 3000 ft, wind from 250 degrees, temperature",
         "c": "Met. vis. 10 km or more, ceiling 1200 ft, gusts of 45 KT",
@@ -11215,7 +11215,7 @@
     },
     {
         "soru no": "S.1246",
-        "soru": "TAF LSZH 0716 00000KT 0100FG VV001 BECMG 0810 0800 VV002 BECMG 1012 23005KT 2500 BKN005 TEMPO 1316 6000 SCT007 = Yukarıdaki TAF a göre 12:00 UTC de beklenen hava durumu hangisidir?",
+        "soru": "TAF LSZH 0716 00000KT 0100FG VV001 BECMG 0810 0800 VV002 BECMG 1012 23005KT 2500 BKN005 TEMPO 1316 6000 SCT007 =",
         "a": "Met. vis. 800 metres, vertical vis. 200ft, calm",
         "b": "Met. vis. 6 km, ceiling 500 ft, wind from 230 degrees",
         "c": "Met. vis. 2,5 km, ceiling 500 ft, wind speed 5 KT",
@@ -11224,7 +11224,7 @@
     },
     {
         "soru no": "S.1247",
-        "soru": "TAF (FT) 031045Z 031812 17008KT 6000 -RA BR BKN030 BECMG 1821 4000 FEW004 BKN020 BECMG 0004 13006KT 2500 SCT003 BKN004 PROB30 0209 1200 SCT002 BECMG 0912 10005KT 3500 BR NSC Yukarıdaki TAF a göre 01:00 UTC de tahmin edilen bulut taban seviyesi nedir ?",
+        "soru": "TAF (FT) 031045Z 031812 17008KT 6000 -RA BR BKN030 BECMG 1821 4000",
         "a": "300 ft",
         "b": "400 ft",
         "c": "200 ft",
@@ -11521,7 +11521,7 @@
     },
     {
         "soru no": "S.1281",
-        "soru": "Aşağıdaki TAF’a göre; verilen METAR örneğindeki Trend Tipi Pist İniş İstidlali aşağıdakilerden hangisi olmalıdır? LTXX120740Z 120918 VRB02KT CAVOK BECMG 0911 5000 BR = LTXX 120850Z VRB02KT CAVOK 07/04 Q1014 ……?…..",
+        "soru": "Aşağıdaki TAF’a göre; verilen METAR örneğindeki Trend Tipi Pist İniş İstidlali aşağıdakilerden hangisi olmalıdır?",
         "a": "NOSIG",
         "b": "BECMG 5000 BR",
         "c": "BECMG FM0900 5000 BR",
@@ -11557,7 +11557,7 @@
     },
     {
         "soru no": "S.1285",
-        "soru": "Regarding below MVT message what is the actual take-off time ? MVT PC2812/04.TCCCP.ADB AD0840/0858 EA0948 IST PAX127 SI ADB IST 01 INF",
+        "soru": "Regarding below MVT message what is the actual take-off time ?",
         "a": "0840 UTC",
         "b": "0858 UTC",
         "c": "0948 UTC",
@@ -11584,7 +11584,7 @@
     },
     {
         "soru no": "S.1288",
-        "soru": "When calculating the fuel required to carry out a given flight, one must take into account: 1- the wind 2- foreseeable airborne delays 3- other weather forecasts 4- any foreseeable conditions which may delay landing The combination which provides the correct statement is:",
+        "soru": "When calculating the fuel required to carry out a given flight, one must take into account:",
         "a": "1, 2, 3, 4",
         "b": "1, 2, 3",
         "c": "1, 3",
@@ -12133,7 +12133,7 @@
     },
     {
         "soru no": "S.1349",
-        "soru": "Aşağıdaki ifadelerden hangisi (hangileri) doğrudur? I) Açık hava türbülansı (CAT) yatay ve düşey rüzgar kaymaları sebebiyle jet akımlarının sınırlarında meydana gelir. II) Kontur haritaları termal rüzgarı bulmak için kullanılabilir. III) Kuzey Yarım Kürede orta enlemlerde tropopoz yakınında jet akımlarının yönü genelde batılıdır. IV) Polar Cephe Jet Akımı Kuzey Yarım Kürede 40 o -65 o enlemleri arasında meydana gelir.",
+        "soru": "Aşağıdaki ifadelerden hangisi (hangileri) doğrudur?",
         "a": "I,II",
         "b": "I, II, III",
         "c": "I, III, IV",
@@ -12142,7 +12142,7 @@
     },
     {
         "soru no": "S.1350",
-        "soru": "Aşağıdakilerden hangisi (hangileri) doğrudur? I) Bulutlar irtifalarına göre dört sınıfa ayrılır. Bunlar: Alçak irtifa bulutları, Orta irtifa bulutları, yüksek irtifa bulutları ve dikey gelişimli bulutlardır. II) Stratus bulutları alçak seviye bulutlarıdır. III) Cirrus bulutları, yüksek seviyede buz kristallerinden oluşmuş demet şeklinde veya lif görünümünde beyaz bulutlardır. IV) Cumulonimbus bulutları dikey gelişimli bulutlardır.",
+        "soru": "Aşağıdakilerden hangisi (hangileri) doğrudur?",
         "a": "I, II",
         "b": "I, II ve III",
         "c": "III ve IV",
@@ -12151,7 +12151,7 @@
     },
     {
         "soru no": "S.1351",
-        "soru": "Cumulonimbus (CB) ile ilgili aşağıdaki ifadelerden hangisi (hangileri) doğrudur? I) Önemli miktarda yağışa, şiddetli hava olaylarına bazen de hortumlara neden olabilirler. II) Kararsız ve nemli havada oluşurlar. III) Bireysel bir bulut halinde ya da kümeler halinde bulunabilirler. IV) Tepe kısmındaki örs yukarı akımın yavaşlaması ve stratosferde çok kararlı bir havayla karşılaşması sonucu, bulut tepesinin yatay olarak dışa doğru yayılması durumunda gelişir.",
+        "soru": "Cumulonimbus (CB) ile ilgili aşağıdaki ifadelerden hangisi (hangileri) doğrudur?",
         "a": "I",
         "b": "I, II",
         "c": "I, IV",
@@ -12583,7 +12583,7 @@
     },
     {
         "soru no": "S.1399",
-        "soru": "Annex 2 - Light signals for aerodrome traffic; A series of green flashes from aerodrome control directed towards an aircraft on ground means ;",
+        "soru": "Annex 2 - Light signals for aerodrome traffic;",
         "a": "Stand by, clearance for take off will be given in short time.",
         "b": "Cleared to taxi.",
         "c": "Accelerate taxi speed.",
@@ -12601,7 +12601,7 @@
     },
     {
         "soru no": "S.1401",
-        "soru": "Classification of Airspace Above 3050 m ( 10.000 ft ) AMSL , the VMC minima for VFR flights in all classes of airspace are ;",
+        "soru": "Classification of Airspace",
         "a": "Visibility : 8 km , Distance from clouds : 1500 m horizontal , 1000 ft vertical.",
         "b": "No minima defned , VFR flights are not permitted.",
         "c": "Visibility : 8 km , clear of clouds.",
@@ -12610,7 +12610,7 @@
     },
     {
         "soru no": "S.1402",
-        "soru": "Kontrollu hava sahası dışında IFR uçan uçaklar; ATS Otoritesi belirtmedikçe, Deniz seviyesinden …….feet (……m) veya altında uçulacaktır.",
+        "soru": "Kontrollu hava sahası dışında IFR uçan uçaklar;",
         "a": "3000 feet (900m)",
         "b": "2000 feet (600m)",
         "c": "1000 feet (300m)",
@@ -12619,7 +12619,7 @@
     },
     {
         "soru no": "S.1403",
-        "soru": "RVSM sahasında uygulanan dikey ayırma ... ... ... feet olup başlangıç ve bitiş irtifası ... ... arasındadır. Doğru yönlü uçuşlar ... ... ... seviyeden yapılırken batı yönlü uçuşlar ... ... ... yapılmaktadır.",
+        "soru": "RVSM sahasında uygulanan dikey ayırma ... ... ... feet olup başlangıç ve bitiş irtifası ... ...",
         "a": "2000 FT, FL290 – 390, Tek binli, Çift binli",
         "b": "1000 FT, FL290 – 410, Tek binli, Çift binli",
         "c": "3000 FT, FL250 – 350, Çift binli, Tek binli",
@@ -12637,7 +12637,7 @@
     },
     {
         "soru no": "S.1405",
-        "soru": "Aşağıdaki notama göre aşağıdaki ifadelerden hangisi yanlıştır? EDDM A0016/08 08 04JAN1412 / PERM ILS AND NDB APCH PROCEDURE RWY26R CHANGED AS FOLLOWS: FROM IAF MIQ PROCEED ON TRACK 088 DEG TO 46.5 DME WLD (F080), RT, ON R043 MUN (A050) TO INTERCEPT ILS 26R RESPECTIVE FINAL TRACK 262 DEG. REST REMAINS UNCHANGED. (REF AIP AD2 EDDM 4-2-1 AND 4-4-1).",
+        "soru": "Aşağıdaki notama göre aşağıdaki ifadelerden hangisi yanlıştır?",
         "a": "Notam ILS NDB approach prosedüründe yapılan değişiklikler ile ilgilidir",
         "b": "Notam 04 JAN 1412 tarihinde son bulacaktır",
         "c": "Notam 04 JAN 1412 tarihi itibarıyla geçerlilik kazanmıştır",
@@ -13357,7 +13357,7 @@
     },
     {
         "soru no": "S.1485",
-        "soru": "Aşağıda verilenlerden hangisi/hangileri stress durumundan etkilenir? 1- Dikkat 2- Konsantrasyon 3- Hafıza 4- Yargılama",
+        "soru": "Aşağıda verilenlerden hangisi/hangileri stress durumundan etkilenir?",
         "a": "1 ve 3 doğru",
         "b": "1 ve 2 doğru",
         "c": "2, 3 ve 4 doğru",
@@ -13510,7 +13510,7 @@
     },
     {
         "soru no": "S.1502",
-        "soru": "Hava aracı üzerinde şeffaf buzlanma ( clear ice ) aşağıdakilerden hangisinin aracın değişik bölümlerine yapışması ile oluşabilir?",
+        "soru": "Hava aracı üzerinde şeffaf buzlanma ( clear ice ) aşağıdakilerden hangisinin aracın",
         "a": "Su Buharı.",
         "b": "Büyük parçalar halinde aşırı soğumuş su damlacıkları.",
         "c": "Küçük parçalar halinde aşırı soğumuş su damlacıkları.",
@@ -13551,11 +13551,11 @@
         "b": "Karışık tehlikeli maddeleri",
         "c": "Bulaşıcı tehlikeli maddeleri",
         "d": "Zehirli tehlikeli maddeleri",
-        "cevap": "a",
+        "cevap": "a"
     },
     {
         "soru no": "S.1507",
-        "soru": "CTR içinde VFR uçuş en düşük hangi görüş / Tavan değerlerinde yapılır. (Special VFR hariç) Görüş \tTavan",
+        "soru": "CTR içinde VFR uçuş en düşük hangi görüş / Tavan değerlerinde yapılır. (Special VFR hariç)",
         "a": "5 km 1500 feet",
         "b": "10 km 1500 metre",
         "c": "5 nm 5000 feet",
@@ -13960,7 +13960,7 @@
     },
     {
         "soru no": "S.1552",
-        "soru": "ISA’da belirlenmiş olan deniz seviyesiyle ilgili değerlerden hangi dörtlü grup doğrudur? Sıcaklık Basınç Yoğunluk Sıcaklık Laps",
+        "soru": "ISA’da belirlenmiş olan deniz seviyesiyle ilgili değerlerden hangi dörtlü grup doğrudur?",
         "a": "15°C 1013mb 1,225 kg/m³ 1,98°C/1000m",
         "b": "15°C 1013mb 1,225 kg/m³ 6,5°C/1000m",
         "c": "0°C 1013mb 1225 g/m³ 1,98°C/1000ft",
@@ -14032,7 +14032,7 @@
     },
     {
         "soru no": "S.1560",
-        "soru": "Eğer flap açısı, optimum kalkış ayarlarının altında ayarlanırsa, alan tahditli kalkış ağırlığı (1) ve climb gradient tahditli ağılık (2) için aşağıdakilerden hangi ikili doğrudur? (1) \t(2)",
+        "soru": "Eğer flap açısı, optimum kalkış ayarlarının altında ayarlanırsa, alan tahditli kalkış ağırlığı (1) ve climb gradient tahditli ağılık (2) için aşağıdakilerden hangi ikili doğrudur?",
         "a": "Artar Azalır",
         "b": "Azalır Artar",
         "c": "Azalır Azalır",
@@ -14059,7 +14059,7 @@
     },
     {
         "soru no": "S.1563",
-        "soru": "Şu anki hava şartlarıyla, kafa rüzgarını karşılaştırdığımızda, tırmanma oranı (1) ve yere göre tırmanma açısı (2) olacaktır? (1)          (2)",
+        "soru": "Şu anki hava şartlarıyla, kafa rüzgarını karşılaştırdığımızda, tırmanma oranı (1) ve yere göre tırmanma açısı (2) olacaktır?",
         "a": "Aynı kalır artar",
         "b": "Artar artar",
         "c": "Artar aynı kalır",
@@ -14122,7 +14122,7 @@
     },
     {
         "soru no": "S.1570",
-        "soru": "Sabit hızda alçalma esnasında, hava frenleri açıkken, alçalma oranı (1) ve alçalma açısıyla (2) ilgili aşağıdakilerden hangi ikili doğrudur? 1          2",
+        "soru": "Sabit hızda alçalma esnasında, hava frenleri açıkken, alçalma oranı (1) ve alçalma açısıyla (2) ilgili aşağıdakilerden hangi ikili doğrudur?",
         "a": "Artar aynı kalır",
         "b": "Aynı kalır artar",
         "c": "Artar azalır",
@@ -14545,7 +14545,7 @@
     },
     {
         "soru no": "S.1617",
-        "soru": "When considering the ICAO International Standard Atmosphere, which of the following statements is correct: 1- The temperature lapse rate is assumed to be uniform at 20 C per 1,000 ft (1.980C) up to a height of 11.000 ft 2- Sea level temperature is assumed to be 150C 3- Sea level static pressure is assumed to be 1.225 kg/m3 4- Sea level density is assumed to be 1013.25 hPa",
+        "soru": "When considering the ICAO International Standard Atmosphere, which of the following statements is correct:",
         "a": "1, 2, 3 and 4",
         "b": "No statements are correct",
         "c": "2 only",
@@ -15058,7 +15058,7 @@
     },
     {
         "soru no": "S.1674",
-        "soru": "Aşağıdakilerden hangileri çevresel stresörlere örnektir? 1) Sıcaklık 2) Nem 3) Boşanma 4) Dinlenememe 5) İş kaybı 6) gürültü",
+        "soru": "Aşağıdakilerden hangileri çevresel stresörlere örnektir?",
         "a": "1, 2, 3, 6",
         "b": "1, 2, 4, 6",
         "c": "1, 2, 6",
@@ -15229,7 +15229,7 @@
     },
     {
         "soru no": "S.1693",
-        "soru": "EASA-OPS Flight preparation başlığı altında anlaşıldığı üzere her uçuş için bir flight plan yapılmış olmalıdır. Bununla beraber kaptan pilot un (commander) uçuşa başlamadan önce emin olması gerekli konular sıralanmıştır. Bunlardan bazıları aşağıda mevcuttur. Doğru ve eksiksiz olan seçeneği işaretleyiniz. I- Yüklemenin önerildiği gibi yapıldığı ve güvenli olduğu, II- Uçağın uçuşa elverişli olduğu (Minimum Equipment List (MEL) e göre), III- Gürültü sertifikasının mevcut ve geçerli olduğu, IV- Notam ve Meteorolojik bilgilerin operasyon için engel teşkil etmediğinden V- Yolculara verilecek olan Catering malzemelerin eksiksiz yüklendiğinden,",
+        "soru": "EASA-OPS Flight preparation başlığı altında anlaşıldığı üzere her uçuş için bir flight plan yapılmış olmalıdır. Bununla beraber kaptan pilot un (commander) uçuşa başlamadan önce emin olması gerekli konular sıralanmıştır. Bunlardan bazıları aşağıda mevcuttur. Doğru ve eksiksiz olan seçeneği işaretleyiniz.",
         "a": "I, II, IV, V",
         "b": "I, II, III, IV, V",
         "c": "I, II, III, IV",
@@ -15238,7 +15238,7 @@
     },
     {
         "soru no": "S.1694",
-        "soru": "EASA OPS FUEL POLICY’ de bahsedildiği üzere aşağıda sıralanmış yakıt türlerinden hangisi veya hangileri en doğru olarak “pre-flight” yakıt hesaplamasına dahil edilmesi gerekli yakıtlardandır? I. Taxi yakıtı, II. Trip yakıtı, III. Yapılan operasyona bağlı olarak (ETOPS gibi) alınan ilave yakıt, IV. Contingency yakıtı V. Yedek meydan yakıtı, VI. Kaptan pilotun (commander) almak isteyebileceği ilave yakıt",
+        "soru": "EASA OPS FUEL POLICY’ de bahsedildiği üzere aşağıda sıralanmış yakıt türlerinden hangisi veya hangileri en doğru olarak “pre-flight” yakıt hesaplamasına dahil edilmesi gerekli yakıtlardandır?",
         "a": "I, II, IV, V",
         "b": "I, II, III, IV, V, VI",
         "c": "I, II, III, IV, V",
@@ -15319,7 +15319,7 @@
     },
     {
         "soru no": "S.1703",
-        "soru": "Aşağıdakilerden hangisi veya hangileri, bir taşıyıcının, Hava Taşımacılık Lisansı (Air Operators Certificate, AOC) nın yayınlanmasından önce kanıtlaması gereken(ler)dir? 1- Organizasyon yapısı, operasyon takip ve kontrol usulleri 2- Eğitim programları 3- Bakım anlaşmaları",
+        "soru": "Aşağıdakilerden hangisi veya hangileri, bir taşıyıcının, Hava Taşımacılık Lisansı (Air Operators Certificate, AOC) nın yayınlanmasından önce kanıtlaması gereken(ler)dir?",
         "a": "1, 2 ve 3",
         "b": "1 ve 3",
         "c": "1 ve 2",
@@ -15346,7 +15346,7 @@
     },
     {
         "soru no": "S.1706",
-        "soru": "Aşağıdakilerden hangisi veya hangileri, minimum uçuş yüksekliğini belirleyen taşıyıcının uyması gereken faktörleri doğru bir şekilde ifade eder? 1- Rota planındaki muhtemel hatalar. 2- Yolboyu yer şekillerinin karakteristiği. 3- Mürettebat kompozisyonu 4- Olumsuz hava şartları ihtimali 5- Altimetre hataları 6- Hava sahası kısıtlamaları 7- Seyrüsefer hataları",
+        "soru": "Aşağıdakilerden hangisi veya hangileri, minimum uçuş yüksekliğini belirleyen taşıyıcının uyması gereken faktörleri doğru bir şekilde ifade eder?",
         "a": "Yukarıdakilerin hepsi",
         "b": "1 ve 3 dışında hepsi",
         "c": "1, 3 ve 5 dışında hepsi",
@@ -15454,7 +15454,7 @@
     },
     {
         "soru no": "S.1718",
-        "soru": "Aşağıdakilerden hangisi veya hangileri uçağın performansını etkilemez? 1- Uçak kategorisi 2- Kalkış ağırlığı 3- Dış hava sıcaklığı 4- Pist gradient 5- Görüş",
+        "soru": "Aşağıdakilerden hangisi veya hangileri uçağın performansını etkilemez?",
         "a": "Yukarıdakilerin hepsi etkiler",
         "b": "1 ve 4 etkilemez",
         "c": "4 ve 5 etkilemez",
@@ -15589,7 +15589,7 @@
     },
     {
         "soru no": "S.1733",
-        "soru": "Görerek uçuşlar; ilgili Hava Trafik Servisinden izin alınması dışında, hangi şartlarda yapılamaz?",
+        "soru": "Görerek uçuşlar; ilgili Hava Trafik Servisinden izin alınması dışında, hangi şartlarda",
         "a": "Bulut Tavanı 1500 feet’ten az olduğunda,Yer görüşü 5 Km’den az olduğunda,Uçuş seviyesi 20 bin feet’in üzerinde,Gece saatlerinde.",
         "b": "Bulut Tavanı 1500 feet’ten az olduğunda,Yer görüşü 5 Km’den az olduğunda,Uçuş seviyesi 22 bin feet’in üzerinde,Gündüz saatlerinde.",
         "c": "Bulut Tavanı 1800 feet’ten az olduğunda,Yer görüşü 5 Km’den az olduğunda,Uçuş seviyesi 20 bin feet’in üzerinde,Gece saatlerinde.",
