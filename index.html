@@ -12,61 +12,49 @@
         
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1650px; margin: 0 auto; width: 100%; }
         
-        /* Sol Sınav Alanı */
         .main { flex: 2.2; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
         .container { 
-            background: white; width: 100%; max-width: 850px; height: 620px;
+            background: white; width: 100%; max-width: 850px; min-height: 620px; height: auto; max-height: 90vh; overflow-y: auto;
             padding: 30px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             display: flex; flex-direction: column; position: relative;
         }
 
         .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.85em; }
-        .q-text { font-size: 1.25em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; height: 130px; overflow-y: auto; color: #2c3e50; }
+        
+        /* white-space: pre-wrap satır atlamalarını (maddeleri) düzgün gösterir */
+        .q-text { font-size: 1.25em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; min-height: 60px; max-height: 250px; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; }
+        
         #opts { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
 
-        .opt { 
-            display: block; width: 100%; padding: 14px; margin: 6px 0; 
-            border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; 
-            background: #fff; font-size: 1.05em; text-align: left;
-            transition: all 0.2s ease;
-        }
+        .opt { display: block; width: 100%; padding: 14px; margin: 6px 0; border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; background: #fff; font-size: 1.05em; text-align: left; transition: all 0.2s ease; }
         .opt:hover { border-color: var(--p); background: #f8faff; transform: translateX(5px); }
         .ans-mode .opt { pointer-events: none; }
         .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: bold; }
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
 
-        .nav { margin-top: auto; padding-top: 20px; display: flex; justify-content: space-between; gap: 10px; }
+        .action-area { width: 100%; margin-top: 20px; }
+        .btn-acikla { background: #dc3545; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
+        .btn-acikla:hover { background: #c82333; }
+        
+        .aciklama-kutusu { display: none; background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; font-size: 0.95em; line-height: 1.4; border: 1px solid #f5c6cb; margin-bottom: 15px; white-space: pre-wrap;}
+
+        .nav { display: flex; justify-content: space-between; gap: 10px; }
         .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
         .btn-gray { background: #6c757d; }
         .btn-reset { background: #ffc107; color: #000; }
 
-        /* SAĞ SİDEBAR */
         .side { flex: 1; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 25px; min-width: 380px; max-width: 450px; }
-        .link { 
-            display: block; padding: 12px; margin: 6px 0; 
-            background: #f8f9fa; text-decoration: none; color: #495057; 
-            font-size: 14px; text-align: center; border-radius: 8px; 
-            transition: 0.2s; border: 1px solid transparent;
-        }
+        .link { display: block; padding: 12px; margin: 6px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 14px; text-align: center; border-radius: 8px; transition: 0.2s; border: 1px solid transparent; }
         .link:hover { background: #e9ecef; border-color: var(--p); transform: scale(1.02); }
         .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
-        /* FOOTER */
         .footer-area { display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; width: 100%; }
         .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; }
-        .mini-analiz { 
-            background: #17a2b8; color: white; border: none; padding: 6px 15px; 
-            border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold;
-            box-shadow: 0 4px 10px rgba(23,162,184,0.3);
-        }
+        .mini-analiz { background: #17a2b8; color: white; border: none; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; box-shadow: 0 4px 10px rgba(23,162,184,0.3); }
 
-        /* MODAL POPUP */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
-        .modal-content { 
-            background: white; margin: 2% auto; padding: 40px; border-radius: 20px; 
-            width: 90%; max-width: 1000px; height: 85vh; overflow-y: auto; position: relative;
-        }
+        .modal-content { background: white; margin: 2% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 1000px; height: 85vh; overflow-y: auto; position: relative; }
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; color: #333; }
         
         .note-section { margin-bottom: 25px; border-left: 4px solid var(--p); padding-left: 15px; }
@@ -85,18 +73,27 @@
             <div id="q-container" class="container">
                 <div id="no" class="header">GÜNCEL SORU BANKASI</div>
                 <div id="txt" class="q-text">Sistem yükleniyor...</div>
+                
+                <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 250px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
+
                 <div id="opts"></div>
-                <div class="nav">
-                    <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
-                    <button class="btn btn-reset" onclick="resetQ()">Reset</button>
-                    <button class="btn btn-gray" onclick="rand()">Random</button>
-                    <button class="btn" onclick="move(1)">Sonraki</button>
+    
+                <div class="action-area">
+                    <button id="btn-acikla" class="btn-acikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
+                    <div id="aciklama-alani" class="aciklama-kutusu"></div>
+
+                    <div class="nav">
+                        <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
+                        <button class="btn btn-reset" onclick="resetQ()">Reset</button>
+                        <button class="btn btn-gray" onclick="rand()">Random</button>
+                        <button class="btn" onclick="move(1)">Sonraki</button>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-area">
-                <div class="footer-note">CREATED BY BURAK KURT </div>
-                <button class="mini-analiz" onclick="openModal()">📊 ANALİZ NOTLARI</button>
+                <div class="footer-note">CREATED BY BURAK KURT</div>
+                <button class="mini-analiz" onclick="openModal()">ANALİZ NOTLARI</button>
             </div>
         </main>
 
@@ -110,130 +107,13 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h1 style="color: var(--p); text-align: center; margin-bottom: 30px; border-bottom: 3px double var(--p); padding-bottom: 15px;">SHGM Soru Analiz Notları</h1>
-            
-            <div class="note-section">
-                <div class="note-title">1. M&B - AĞIRLIK VE DENGE (U 01 E UO 199)</div>
-                <span class="tech-core">Teknik Çekirdek: Uçağın ağırlığı yapısal ömrü ve aerodinamik kontrol yüzeylerinin etkinliğini belirler.</span>
-                <div class="note-content">
-                    <strong>Ağırlık Hiyerarşisi:</strong> BEM (Çıplak) > DOM (+Mürettebat/Ekipman) > <b>ZFW (+Trafik Yükü - Kritik Sınır)</b> > TOM (+Yakıt) > LM (-Trip Fuel).<br>
-                    <strong>CG ve %MAC:</strong> Ön CG (Stabil, stall hızı yüksek, verim düşük). Arka CG (Daha az stabil, stall hızı düşük, <b>en verimli uçuş</b>).<br>
-                    <strong>LMC:</strong> Limitler aşılırsa Loadsheet yeniden hazırlanır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">2. HPL - İNSAN PERFORMANSI VE LİMİTLERİ (U 01 E UO 209)</div>
-                <span class="tech-core">Teknik Çekirdek: 10.000 ft üzeri adaptasyon ve bilişsel hata payı.</span>
-                <div class="note-content">
-                    <strong>Hipoksi:</strong> Hipoksik (İrtifa), Anemik (Sigara/Hemoglobin), Stagnant (G Kuvveti), Histotoksik (Alkol/Zehir).<br>
-                    <strong>Göz:</strong> Çubuklar (Gece), Koniler (Gündüz). Gece kör noktası foveanın merkezindedir.<br>
-                    <strong>İllüzyonlar:</strong> Somatogravic (Hızlanmayı tırmanma sanma), Black Hole (Derinlik algısı kaybı).
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">3. DGR - TEHLİKELİ MADDELER (U 01 E UO 054)</div>
-                <div class="note-content">
-                    <strong>Sınıflandırma:</strong> 9 Sınıf. 1 (Patlayıcı), 7 (Radyoaktif), 8 (Aşındırıcı) en kritiklerdir.<br>
-                    <strong>Paketleme:</strong> X (PG I - Çok Tehlikeli), Y (PG II), Z (PG III - Az Tehlikeli).<br>
-                    <strong>NOTOC:</strong> Kaptana yer, miktar ve acil kod bildiren resmi belge.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">4. COM - HABERLEŞME (U 01 E UO 197)</div>
-                <div class="note-content">
-                    <strong>Öncelik:</strong> 1. Distress (Mayday), 2. Urgency (Pan-Pan), 3. Radio Nav, 4. Weather.<br>
-                    <strong>Frekans:</strong> VHF (118.00-136.975 MHz - Görüş hattı). HF (Okyanus aşırı - İyonosfer yansıması).
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">5. LAW - HAVA HUKUKU VE ATC (U 01 E UO 201)</div>
-                <div class="note-content">
-                    <strong>Chicago Konvansiyonu (1944):</strong> ICAO'nun temeli.<br>
-                    <strong>Annexler:</strong> Annex 1 (Lisans), 2 (Kurallar), 6 (Operasyon), 17 (Güvenlik).<br>
-                    <strong>Tescil:</strong> Her uçağın bir bayrak devleti ve tescili (TC-LLL) olmalıdır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">6. HAV - HAVA TRAFİK YÖNETİMİ (U 01 E UO 880)</div>
-                <div class="note-content">
-                    <strong>Hava Sahası:</strong> Sınıf A (Sadece IFR, tam kontrol). Sınıf G (Kontrolsüz).<br>
-                    <strong>Ayırma:</strong> RVSM'de dikey 1000 ft. Radar kontrolünde yatay 5 NM standarttır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">7. MET - METEOROLOJİ (U 01 E UO 196)</div>
-                <div class="note-content">
-                    <strong>Buzlanma:</strong> 0°C/-20°C arası bulut içinde. En tehlikelisi <b>Clear Ice</b>.<br>
-                    <strong>Raporlar:</strong> METAR (Anlık), TAF (Tahmin). NOSIG (2 saat değişim yok).<br>
-                    <strong>Rüzgar:</strong> Jetstreamler troposferin üst tabakasındaki çok güçlü akıntılardır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">8. PEF - PERFORMANS (U 01 E UO 176)</div>
-                <div class="note-content">
-                    <strong>Hızlar:</strong> V1 (Karar), Vr (Rotate), V2 (Emniyetli tırmanma).<br>
-                    <strong>Pist:</strong> TODA (Pist+Clearway), ASDA (Pist+Stopway).<br>
-                    <strong>Yoğunluk:</strong> Yüksek sıcaklık ve rakım yoğunluğu düşürür, performansı azaltır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">9. SEC - GÜVENLİK (U 01 E UO 249)</div>
-                <div class="note-content">
-                    <strong>Aramalar:</strong> Security Search (Yer prosedürü).<br>
-                    <strong>Yolcu:</strong> UM (Refakatsiz çocuk), DEPO (Sınır dışı) kuralları.<br>
-                    <strong>Sterile Cockpit:</strong> 10.000 ft altı sadece uçuş odaklı iletişim.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">10. NAV - SEYRÜSEFER (U 01 E UO 205)</div>
-                <div class="note-content">
-                    <strong>Modeller:</strong> Great Circle (En kısa mesafe), Rhumb Line (Sabit açılı hat).<br>
-                    <strong>Yardımcılar:</strong> VOR (Radyal), DME (Uzaklık), ILS (İniş hattı).<br>
-                    <strong>TAS:</strong> İrtifa arttıkça TAS, IAS'ten daha yüksek olur.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">11. FPL&FM - UÇUŞ PLANLAMA (U 01 E UO 208)</div>
-                <div class="note-content">
-                    <strong>Yakıt:</strong> Contingency (%5 veya 5 dk), Final Reserve (Jetler için 30 dk).<br>
-                    <strong>PNR:</strong> Dönüş için yeterli yakıtın olduğu son nokta.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">12. AVI - HAVACILIK ÖĞRETİMİ (U 01 E UO 248)</div>
-                <div class="note-content">
-                    <strong>Dört Kuvvet:</strong> Taşıma, Ağırlık, İtki, Sürükleme.<br>
-                    <strong>Stall:</strong> Hücum açısı (AoA) sınırı aşınca taşımanın kaybı.<br>
-                    <strong>Sistemler:</strong> Hidrolik (Kumanda), Pnömatik (İklimlendirme), Elektrik (Aviyonik).
-                </div>
-            </div>
-
-            <div class="highlight-box">
-                <h3 style="margin-top:0; color:#e67e22;">💡 Son Notlar</h3>
-                <ul style="padding-left: 20px; font-size: 14px; line-height: 1.6;">
-                    <li><strong>Soru Kökü:</strong> "NOT", "EXCEPT", "MINIMUM" kelimelerini gördüğünde 2 kez oku!</li>
-                    <li><strong>Birim Tuzağı:</strong> 1 ft = 0.3048 m çevrimini unutma.</li>
-                    <li><strong>Emniyet Mantığı:</strong> Hatırlayamadığında en muhafazakar/emniyetli şıkka yönel.</li>
-                    <li><strong>Zaman:</strong> Önce bilgi (LAW, SEC, HPL), sonra hesaplama (NAV, PEF) sorularını çöz.</li>
-                </ul>
-            </div>
-            
             <p style="text-align: center; color: #999; font-size: 12px; margin-top: 30px;">"Dispeçerlik bir ezber değil, prosedür disiplinidir."</p>
         </div>
     </div>
 
     <script>
         let qs = [], idx = 0;
+        
         async function start() {
             try {
                 const r = await fetch('sorular.json');
@@ -241,7 +121,7 @@
                 const l = document.getElementById('list');
                 qs.forEach((q, i) => {
                     const a = document.createElement('a');
-                    a.className = 'link'; a.id = 'l'+i; a.innerText = q['soru no'];
+                    a.className = 'link'; a.id = 'l'+i; a.innerText = q['Soru Numarası'];
                     a.href = "javascript:void(0)";
                     a.onclick = () => { idx = i; show(); };
                     l.appendChild(a);
@@ -249,48 +129,86 @@
                 show();
             } catch(e) { console.error("Veri yüklenemedi."); }
         }
+
         function show() {
             if(!qs.length) return;
             const q = qs[idx];
             const cont = document.getElementById('q-container');
             cont.classList.remove('ans-mode');
-            document.getElementById('no').innerText = q['soru no'] + " [GENEL SORULAR CEVAPLAR - En Günceli]";
-            document.getElementById('txt').innerText = q['soru'];
+            
+            document.getElementById('no').innerText = q['Soru Numarası'] + " [GENEL SORULAR CEVAPLAR - En Günceli]";
+            document.getElementById('txt').innerText = q['Soru Metni'];
+            
+            // Resim Mantığı
+            const imgElement = document.getElementById('q-img');
+            if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'].trim() !== "") {
+                imgElement.src = q['Resim Yolu'];
+                imgElement.style.display = "block";
+            } else {
+                imgElement.style.display = "none";
+                imgElement.src = "";
+            }
+
+            // Açıklama Alanı Sıfırlama
+            const aciklamaAlani = document.getElementById('aciklama-alani');
+            aciklamaAlani.style.display = "none";
+            if (q['Açıklama'] && q['Açıklama'] !== "Bilinmiyor") {
+                aciklamaAlani.innerText = q['Açıklama'];
+            } else {
+                aciklamaAlani.innerText = "Bu soru için ek bir açıklama verisi bulunmamaktadır.";
+            }
+
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
-            ['a','b','c','d'].forEach(key => {
-                if(q[key]) {
+            
+            // Yeni Doğal Dil Anahtarları ile şıkların döngüsü
+            const harfler = ['a', 'b', 'c', 'd'];
+            harfler.forEach(harf => {
+                const anahtarStr = harf.toUpperCase() + " Şıkkı";
+                if(q[anahtarStr] && q[anahtarStr] !== "Bilinmiyor") {
                     const b = document.createElement('button');
                     b.className = 'opt';
-                    b.innerText = key.toUpperCase() + ") " + q[key];
+                    b.innerText = harf.toUpperCase() + ") " + q[anahtarStr];
                     b.onclick = () => {
                         cont.classList.add('ans-mode');
-                        const correctKey = (q.cevap || q.dogru_cevap || "").trim().charAt(0).toLowerCase();
-                        if(key === correctKey) b.classList.add('correct');
-                        else {
+                        const correctKey = (q['Doğru Cevap'] || "").trim().charAt(0).toLowerCase();
+                        if(harf === correctKey) {
+                            b.classList.add('correct');
+                        } else {
                             b.classList.add('wrong');
                             Array.from(oDiv.children).forEach(btn => {
-                                if(btn.innerText.toLowerCase().startsWith(correctKey)) btn.classList.add('correct');
+                                if(btn.innerText.toLowerCase().startsWith(correctKey)) {
+                                    btn.classList.add('correct');
+                                }
                             });
                         }
                     };
                     oDiv.appendChild(b);
                 }
             });
+
             document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
             const active = document.getElementById('l'+idx);
             if(active) { active.classList.add('active'); active.scrollIntoView({block:'center', behavior: 'smooth'}); }
         }
+
+        function aciklamaGosterGizle() {
+            const aciklamaAlani = document.getElementById('aciklama-alani');
+            if(aciklamaAlani.style.display === "none") {
+                aciklamaAlani.style.display = "block";
+            } else {
+                aciklamaAlani.style.display = "none";
+            }
+        }
+
         function move(n) { idx = (idx+n+qs.length)%qs.length; show(); }
         function rand() { idx = Math.floor(Math.random()*qs.length); show(); }
         function resetQ() { show(); }
         function openModal() { document.getElementById("analizModal").style.display = "block"; }
         function closeModal() { document.getElementById("analizModal").style.display = "none"; }
         window.onclick = function(e) { if (e.target == document.getElementById("analizModal")) closeModal(); }
+        
         start();
     </script>
 </body>
 </html>
-
-
-
