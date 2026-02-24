@@ -3,259 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uçuş Dispeçerliği | Sınav Portalı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Dispeçer Sınav Portalı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5; }
-        * { box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; display: flex; flex-direction: column; }
+        :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f8f9fa; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: #333; }
         
-        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1650px; margin: 0 auto; width: 100%; }
-        
-        /* Sol Sınav Alanı */
-        .main { flex: 2.2; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        
-        .container { 
-            background: white; width: 100%; max-width: 850px; height: 620px;
-            padding: 30px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            display: flex; flex-direction: column; position: relative;
+        /* Donate Butonu */
+        .donate-btn {
+            position: fixed; top: 15px; right: 15px; width: 45px; height: 45px;
+            background: #ffc107; border: none; border-radius: 10px; cursor: pointer;
+            z-index: 1001; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex; align-items: center; justify-content: center;
         }
 
-        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.85em; }
-        .q-text { font-size: 1.25em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; height: 130px; overflow-y: auto; color: #2c3e50; }
-        #opts { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+        .wrapper { display: flex; height: 100vh; overflow: hidden; }
+        
+        /* Ana Alan */
+        .main { flex: 2; display: flex; flex-direction: column; padding: 20px; position: relative; }
+        .container { 
+            background: white; width: 100%; max-width: 800px; margin: auto;
+            padding: 25px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column; min-height: 500px;
+        }
+
+        .header { color: var(--p); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+        .q-text { font-size: 1.15rem; font-weight: 500; margin-bottom: 20px; line-height: 1.5; color: #2c3e50; }
+        
+        /* Soru Resim Stili */
+        .q-img { max-width: 100%; height: auto; border-radius: 10px; margin: 15px 0; border: 1px solid #eee; }
+
+        /* Açıkla Butonu */
+        .btn-acikla {
+            background: var(--e); color: white; border: none; padding: 10px 20px;
+            border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 15px;
+            display: inline-block; width: fit-content; text-transform: uppercase;
+        }
 
         .opt { 
-            display: block; width: 100%; padding: 14px; margin: 6px 0; 
-            border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; 
-            background: #fff; font-size: 1.05em; text-align: left;
-            transition: all 0.2s ease;
+            display: block; width: 100%; padding: 15px; margin: 8px 0; 
+            border: 2px solid #edf2f7; border-radius: 12px; cursor: pointer; 
+            background: #fff; text-align: left; font-size: 1rem; transition: 0.2s;
         }
-        .opt:hover { border-color: var(--p); background: #f8faff; transform: translateX(5px); }
         .ans-mode .opt { pointer-events: none; }
-        .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: bold; }
+        .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; }
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
 
-        .nav { margin-top: auto; padding-top: 20px; display: flex; justify-content: space-between; gap: 10px; }
-        .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
-        .btn-gray { background: #6c757d; }
-        .btn-reset { background: #ffc107; color: #000; }
+        .nav-controls { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; padding-top: 20px; }
+        .btn-nav { padding: 12px; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; background: var(--p); color: white; }
 
-        /* SAĞ SİDEBAR */
-        .side { flex: 1; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 25px; min-width: 380px; max-width: 450px; }
-        .link { 
-            display: block; padding: 12px; margin: 6px 0; 
-            background: #f8f9fa; text-decoration: none; color: #495057; 
-            font-size: 14px; text-align: center; border-radius: 8px; 
-            transition: 0.2s; border: 1px solid transparent;
+        /* Sağ Panel (Navigasyon) */
+        .side { flex: 0.8; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 20px; }
+        .q-link { 
+            display: inline-block; width: 45px; height: 45px; line-height: 45px; text-align: center;
+            margin: 4px; background: #f1f3f5; border-radius: 8px; text-decoration: none; color: #444; font-size: 12px;
         }
-        .link:hover { background: #e9ecef; border-color: var(--p); transform: scale(1.02); }
-        .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
+        .q-link.active { background: var(--p); color: white; font-weight: bold; }
 
-        /* FOOTER */
-        .footer-area { display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; width: 100%; }
-        .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; }
-        .mini-analiz { 
-            background: #17a2b8; color: white; border: none; padding: 6px 15px; 
-            border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold;
-            box-shadow: 0 4px 10px rgba(23,162,184,0.3);
+        /* MOBİL UYUM */
+        @media (max-width: 768px) {
+            .wrapper { flex-direction: column; overflow: visible; }
+            .main { height: auto; padding: 10px; }
+            .side { height: 300px; border-left: none; border-top: 1px solid #eee; }
+            .container { padding: 15px; min-height: auto; }
+            .q-text { font-size: 1rem; }
+            .donate-btn { width: 40px; height: 40px; top: 10px; right: 10px; }
         }
-
-        /* MODAL POPUP */
-        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
-        .modal-content { 
-            background: white; margin: 2% auto; padding: 40px; border-radius: 20px; 
-            width: 90%; max-width: 1000px; height: 85vh; overflow-y: auto; position: relative;
-        }
-        .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; color: #333; }
-        
-        .note-section { margin-bottom: 25px; border-left: 4px solid var(--p); padding-left: 15px; }
-        .note-title { color: var(--p); font-weight: bold; font-size: 1.1em; margin-bottom: 8px; text-transform: uppercase; }
-        .note-content { font-size: 14px; line-height: 1.6; color: #333; }
-        .tech-core { font-style: italic; color: #666; margin-bottom: 8px; display: block; font-size: 13px; }
-        .highlight-box { background: #fff3cd; padding: 15px; border-radius: 8px; border: 1px dashed #e67e22; margin-top: 15px; }
-
-        @media (max-width: 1000px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 250px; } }
     </style>
 </head>
 <body>
 
+    <button class="donate-btn" onclick="openDonate()">☕</button>
+
     <div class="wrapper">
         <main class="main">
             <div id="q-container" class="container">
-                <div id="no" class="header">GÜNCEL SORU BANKASI</div>
-                <div id="txt" class="q-text">Sistem yükleniyor...</div>
+                <div id="no" class="header">SORU YÜKLENİYOR...</div>
+                <div id="txt" class="q-text"></div>
+                
+                <div id="img-area"></div>
+
+                <button class="btn-acikla" onclick="alert('Açıklama Yakında: NotebookLM verileri entegre ediliyor.')">AÇIKLA</button>
+
                 <div id="opts"></div>
-                <div class="nav">
-                    <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
-                    <button class="btn btn-reset" onclick="resetQ()">Reset</button>
-                    <button class="btn btn-gray" onclick="rand()">Random</button>
-                    <button class="btn" onclick="move(1)">Sonraki</button>
+                
+                <div class="nav-controls">
+                    <button class="btn-nav" style="background:#6c757d" onclick="move(-1)">GERİ</button>
+                    <button class="btn-nav" style="background:#17a2b8" onclick="rand()">RANDOM</button>
+                    <button class="btn-nav" onclick="move(1)">İLERİ</button>
                 </div>
             </div>
-            
-            <div class="footer-area">
-                <div class="footer-note">CREATED BY BURAK KURT </div>
-                <button class="mini-analiz" onclick="openModal()">📊 ANALİZ NOTLARI</button>
-            </div>
+            <div style="text-align:center; font-size:10px; margin-top:15px; color:#aaa;">CREATED BY BURAK KURT</div>
         </main>
 
         <aside class="side">
-            <div style="text-align:center; font-weight:bold; color:var(--p); margin-bottom:20px; font-size:16px; border-bottom:1px solid #eee; padding-bottom:10px;">SORU NAVİGASYONU</div>
+            <h4 style="margin-top:0">SORU LİSTESİ</h4>
             <div id="list"></div>
         </aside>
     </div>
 
-    <div id="analizModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h1 style="color: var(--p); text-align: center; margin-bottom: 30px; border-bottom: 3px double var(--p); padding-bottom: 15px;">SHGM Soru Analiz Notları</h1>
-            
-            <div class="note-section">
-                <div class="note-title">1. M&B - AĞIRLIK VE DENGE (U 01 E UO 199)</div>
-                <span class="tech-core">Teknik Çekirdek: Uçağın ağırlığı yapısal ömrü ve aerodinamik kontrol yüzeylerinin etkinliğini belirler.</span>
-                <div class="note-content">
-                    <strong>Ağırlık Hiyerarşisi:</strong> BEM (Çıplak) > DOM (+Mürettebat/Ekipman) > <b>ZFW (+Trafik Yükü - Kritik Sınır)</b> > TOM (+Yakıt) > LM (-Trip Fuel).<br>
-                    <strong>CG ve %MAC:</strong> Ön CG (Stabil, stall hızı yüksek, verim düşük). Arka CG (Daha az stabil, stall hızı düşük, <b>en verimli uçuş</b>).<br>
-                    <strong>LMC:</strong> Limitler aşılırsa Loadsheet yeniden hazırlanır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">2. HPL - İNSAN PERFORMANSI VE LİMİTLERİ (U 01 E UO 209)</div>
-                <span class="tech-core">Teknik Çekirdek: 10.000 ft üzeri adaptasyon ve bilişsel hata payı.</span>
-                <div class="note-content">
-                    <strong>Hipoksi:</strong> Hipoksik (İrtifa), Anemik (Sigara/Hemoglobin), Stagnant (G Kuvveti), Histotoksik (Alkol/Zehir).<br>
-                    <strong>Göz:</strong> Çubuklar (Gece), Koniler (Gündüz). Gece kör noktası foveanın merkezindedir.<br>
-                    <strong>İllüzyonlar:</strong> Somatogravic (Hızlanmayı tırmanma sanma), Black Hole (Derinlik algısı kaybı).
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">3. DGR - TEHLİKELİ MADDELER (U 01 E UO 054)</div>
-                <div class="note-content">
-                    <strong>Sınıflandırma:</strong> 9 Sınıf. 1 (Patlayıcı), 7 (Radyoaktif), 8 (Aşındırıcı) en kritiklerdir.<br>
-                    <strong>Paketleme:</strong> X (PG I - Çok Tehlikeli), Y (PG II), Z (PG III - Az Tehlikeli).<br>
-                    <strong>NOTOC:</strong> Kaptana yer, miktar ve acil kod bildiren resmi belge.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">4. COM - HABERLEŞME (U 01 E UO 197)</div>
-                <div class="note-content">
-                    <strong>Öncelik:</strong> 1. Distress (Mayday), 2. Urgency (Pan-Pan), 3. Radio Nav, 4. Weather.<br>
-                    <strong>Frekans:</strong> VHF (118.00-136.975 MHz - Görüş hattı). HF (Okyanus aşırı - İyonosfer yansıması).
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">5. LAW - HAVA HUKUKU VE ATC (U 01 E UO 201)</div>
-                <div class="note-content">
-                    <strong>Chicago Konvansiyonu (1944):</strong> ICAO'nun temeli.<br>
-                    <strong>Annexler:</strong> Annex 1 (Lisans), 2 (Kurallar), 6 (Operasyon), 17 (Güvenlik).<br>
-                    <strong>Tescil:</strong> Her uçağın bir bayrak devleti ve tescili (TC-LLL) olmalıdır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">6. HAV - HAVA TRAFİK YÖNETİMİ (U 01 E UO 880)</div>
-                <div class="note-content">
-                    <strong>Hava Sahası:</strong> Sınıf A (Sadece IFR, tam kontrol). Sınıf G (Kontrolsüz).<br>
-                    <strong>Ayırma:</strong> RVSM'de dikey 1000 ft. Radar kontrolünde yatay 5 NM standarttır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">7. MET - METEOROLOJİ (U 01 E UO 196)</div>
-                <div class="note-content">
-                    <strong>Buzlanma:</strong> 0°C/-20°C arası bulut içinde. En tehlikelisi <b>Clear Ice</b>.<br>
-                    <strong>Raporlar:</strong> METAR (Anlık), TAF (Tahmin). NOSIG (2 saat değişim yok).<br>
-                    <strong>Rüzgar:</strong> Jetstreamler troposferin üst tabakasındaki çok güçlü akıntılardır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">8. PEF - PERFORMANS (U 01 E UO 176)</div>
-                <div class="note-content">
-                    <strong>Hızlar:</strong> V1 (Karar), Vr (Rotate), V2 (Emniyetli tırmanma).<br>
-                    <strong>Pist:</strong> TODA (Pist+Clearway), ASDA (Pist+Stopway).<br>
-                    <strong>Yoğunluk:</strong> Yüksek sıcaklık ve rakım yoğunluğu düşürür, performansı azaltır.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">9. SEC - GÜVENLİK (U 01 E UO 249)</div>
-                <div class="note-content">
-                    <strong>Aramalar:</strong> Security Search (Yer prosedürü).<br>
-                    <strong>Yolcu:</strong> UM (Refakatsiz çocuk), DEPO (Sınır dışı) kuralları.<br>
-                    <strong>Sterile Cockpit:</strong> 10.000 ft altı sadece uçuş odaklı iletişim.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">10. NAV - SEYRÜSEFER (U 01 E UO 205)</div>
-                <div class="note-content">
-                    <strong>Modeller:</strong> Great Circle (En kısa mesafe), Rhumb Line (Sabit açılı hat).<br>
-                    <strong>Yardımcılar:</strong> VOR (Radyal), DME (Uzaklık), ILS (İniş hattı).<br>
-                    <strong>TAS:</strong> İrtifa arttıkça TAS, IAS'ten daha yüksek olur.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">11. FPL&FM - UÇUŞ PLANLAMA (U 01 E UO 208)</div>
-                <div class="note-content">
-                    <strong>Yakıt:</strong> Contingency (%5 veya 5 dk), Final Reserve (Jetler için 30 dk).<br>
-                    <strong>PNR:</strong> Dönüş için yeterli yakıtın olduğu son nokta.
-                </div>
-            </div>
-
-            <div class="note-section">
-                <div class="note-title">12. AVI - HAVACILIK ÖĞRETİMİ (U 01 E UO 248)</div>
-                <div class="note-content">
-                    <strong>Dört Kuvvet:</strong> Taşıma, Ağırlık, İtki, Sürükleme.<br>
-                    <strong>Stall:</strong> Hücum açısı (AoA) sınırı aşınca taşımanın kaybı.<br>
-                    <strong>Sistemler:</strong> Hidrolik (Kumanda), Pnömatik (İklimlendirme), Elektrik (Aviyonik).
-                </div>
-            </div>
-
-            <div class="highlight-box">
-                <h3 style="margin-top:0; color:#e67e22;">💡 Son Notlar</h3>
-                <ul style="padding-left: 20px; font-size: 14px; line-height: 1.6;">
-                    <li><strong>Soru Kökü:</strong> "NOT", "EXCEPT", "MINIMUM" kelimelerini gördüğünde 2 kez oku!</li>
-                    <li><strong>Birim Tuzağı:</strong> 1 ft = 0.3048 m çevrimini unutma.</li>
-                    <li><strong>Emniyet Mantığı:</strong> Hatırlayamadığında en muhafazakar/emniyetli şıkka yönel.</li>
-                    <li><strong>Zaman:</strong> Önce bilgi (LAW, SEC, HPL), sonra hesaplama (NAV, PEF) sorularını çöz.</li>
-                </ul>
-            </div>
-            
-            <p style="text-align: center; color: #999; font-size: 12px; margin-top: 30px;">"Dispeçerlik bir ezber değil, prosedür disiplinidir."</p>
-        </div>
-    </div>
-
     <script>
         let qs = [], idx = 0;
-        async function start() {
+
+        async function init() {
             try {
                 const r = await fetch('sorular.json');
                 qs = await r.json();
-                const l = document.getElementById('list');
-                qs.forEach((q, i) => {
-                    const a = document.createElement('a');
-                    a.className = 'link'; a.id = 'l'+i; a.innerText = q['soru no'];
-                    a.href = "javascript:void(0)";
-                    a.onclick = () => { idx = i; show(); };
-                    l.appendChild(a);
-                });
+                renderList();
                 show();
-            } catch(e) { console.error("Veri yüklenemedi."); }
+            } catch(e) { console.error("Veri yükleme hatası!"); }
         }
+
+        function renderList() {
+            const list = document.getElementById('list');
+            qs.forEach((q, i) => {
+                const a = document.createElement('a');
+                a.className = 'q-link';
+                a.id = 'L' + i;
+                a.innerText = q['soru no'].replace('S.', '');
+                a.href = "#";
+                a.onclick = (e) => { e.preventDefault(); idx = i; show(); };
+                list.appendChild(a);
+            });
+        }
+
         function show() {
             if(!qs.length) return;
             const q = qs[idx];
             const cont = document.getElementById('q-container');
             cont.classList.remove('ans-mode');
-            document.getElementById('no').innerText = q['soru no'] + " [GENEL SORULAR CEVAPLAR - En Günceli]";
-            document.getElementById('txt').innerText = q['soru'];
+
+            document.getElementById('no').innerText = q['soru no'] + " / " + qs.length;
+            
+            // Soru metni (Maddeleri alt alta dizer)
+            let formattedSoru = q['soru'].replace(/(\d+\))/g, '<br><b>$1</b>');
+            document.getElementById('txt').innerHTML = formattedSoru;
+
+            // Resim Kontrolü
+            const imgArea = document.getElementById('img-area');
+            imgArea.innerHTML = "";
+            if(q.resim) {
+                const img = document.createElement('img');
+                img.src = q.resim;
+                img.className = 'q-img';
+                imgArea.appendChild(img);
+            }
+
+            // Şıklar
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
             ['a','b','c','d'].forEach(key => {
@@ -265,33 +160,34 @@
                     b.innerText = key.toUpperCase() + ") " + q[key];
                     b.onclick = () => {
                         cont.classList.add('ans-mode');
-                        const correctKey = (q.cevap || q.dogru_cevap || "").trim().charAt(0).toLowerCase();
-                        if(key === correctKey) b.classList.add('correct');
-                        else {
+                        if(key === q.cevap) {
+                            b.classList.add('correct');
+                        } else {
                             b.classList.add('wrong');
+                            // Doğru olanı bul ve yeşil yap
                             Array.from(oDiv.children).forEach(btn => {
-                                if(btn.innerText.toLowerCase().startsWith(correctKey)) btn.classList.add('correct');
+                                if(btn.innerText.toLowerCase().startsWith(q.cevap)) btn.classList.add('correct');
                             });
                         }
                     };
                     oDiv.appendChild(b);
                 }
             });
-            document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
-            const active = document.getElementById('l'+idx);
-            if(active) { active.classList.add('active'); active.scrollIntoView({block:'center', behavior: 'smooth'}); }
+
+            // Navigasyon işaretleme
+            document.querySelectorAll('.q-link').forEach(x => x.classList.remove('active'));
+            const activeLink = document.getElementById('L' + idx);
+            if(activeLink) {
+                activeLink.classList.add('active');
+                activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
-        function move(n) { idx = (idx+n+qs.length)%qs.length; show(); }
-        function rand() { idx = Math.floor(Math.random()*qs.length); show(); }
-        function resetQ() { show(); }
-        function openModal() { document.getElementById("analizModal").style.display = "block"; }
-        function closeModal() { document.getElementById("analizModal").style.display = "none"; }
-        window.onclick = function(e) { if (e.target == document.getElementById("analizModal")) closeModal(); }
-        start();
+
+        function move(n) { idx = (idx + n + qs.length) % qs.length; show(); }
+        function rand() { idx = Math.floor(Math.random() * qs.length); show(); }
+        function openDonate() { alert("Shopier Bağış Sayfasına Yönlendiriliyorsunuz..."); }
+
+        init();
     </script>
 </body>
 </html>
-
-
-
-
