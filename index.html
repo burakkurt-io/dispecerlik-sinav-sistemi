@@ -3,152 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dispeçer Sınav Portalı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Uçuş Dispeçerliği | Sınav Portalı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f8f9fa; }
+        :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: #333; }
-        .donate-btn { position: fixed; top: 15px; right: 15px; width: 45px; height: 45px; background: #ffc107; border: none; border-radius: 10px; cursor: pointer; z-index: 1001; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; }
-        .wrapper { display: flex; height: 100vh; overflow: hidden; }
-        .main { flex: 2; display: flex; flex-direction: column; padding: 20px; position: relative; overflow-y: auto; }
-        .container { background: white; width: 100%; max-width: 800px; margin: auto; padding: 25px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
-        .header { color: var(--p); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
-        .q-text { font-size: 1.15rem; font-weight: 500; margin-bottom: 20px; line-height: 1.5; color: #2c3e50; }
-        .q-img { max-width: 100%; height: auto; border-radius: 10px; margin: 15px 0; border: 1px solid #eee; display: block; }
-        .btn-acikla { background: var(--e); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 15px; display: inline-block; width: fit-content; text-transform: uppercase; }
-        .opt { display: block; width: 100%; padding: 15px; margin: 8px 0; border: 2px solid #edf2f7; border-radius: 12px; cursor: pointer; background: #fff; text-align: left; font-size: 1rem; transition: 0.2s; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        
+        /* Donate Butonu - Minimal Kare */
+        .donate-btn {
+            position: fixed; top: 15px; right: 15px; width: 45px; height: 45px;
+            background: #ffc107; border: none; border-radius: 10px; cursor: pointer;
+            z-index: 1001; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1650px; margin: 0 auto; width: 100%; }
+        
+        /* Sol Sınav Alanı */
+        .main { flex: 2.2; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow-y: auto; }
+        
+        .container { 
+            background: white; width: 100%; max-width: 850px; min-height: 620px;
+            padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative; display: flex; flex-direction: column;
+        }
+
+        .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .q-no { font-size: 22px; font-weight: 700; color: var(--p); }
+        
+        .q-text { font-size: 1.3rem; line-height: 1.6; margin-bottom: 30px; color: #333; }
+        .q-text b { display: block; margin-top: 10px; color: #555; font-weight: normal; } /* Maddeler için */
+
+        /* Resim Alanı */
+        .q-img { max-width: 100%; max-height: 300px; object-fit: contain; border-radius: 10px; margin: 0 auto 20px auto; display: block; border: 1px solid #eee; }
+
+        .btn-acikla {
+            background: var(--e); color: white; border: none; padding: 12px 25px;
+            border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 20px;
+            width: fit-content; text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        .options { display: grid; grid-template-columns: 1fr; gap: 12px; width: 100%; }
+        .opt { 
+            padding: 18px 25px; border: 2px solid #e0e0e0; border-radius: 12px;
+            background: white; cursor: pointer; text-align: left; font-size: 1.1rem;
+            transition: all 0.2s; font-weight: 500; color: #444;
+        }
+        .opt:hover { border-color: var(--p); background: #f8fbff; }
         .ans-mode .opt { pointer-events: none; }
         .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; }
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
-        .nav-controls { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-        .btn-nav { padding: 12px; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; background: var(--p); color: white; }
-        .side { flex: 0.8; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 20px; }
-        .q-link { display: inline-block; width: 45px; height: 45px; line-height: 45px; text-align: center; margin: 4px; background: #f1f3f5; border-radius: 8px; text-decoration: none; color: #444; font-size: 11px; }
-        .q-link.active { background: var(--p); color: white; font-weight: bold; }
-        @media (max-width: 768px) {
-            .wrapper { flex-direction: column; overflow: visible; }
-            .main { height: auto; padding: 10px; }
-            .side { height: 300px; border-left: none; border-top: 1px solid #eee; flex: none; }
-            .container { padding: 15px; }
+
+        /* Sağ Navigasyon */
+        .side { flex: 0.8; background: white; border-left: 1px solid #ddd; padding: 25px; overflow-y: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); gap: 8px; }
+        .link { 
+            height: 45px; display: flex; align-items: center; justify-content: center;
+            background: #eee; border-radius: 8px; text-decoration: none; color: #555;
+            font-weight: 700; font-size: 13px; transition: 0.2s;
         }
+        .link.active { background: var(--p); color: white; transform: scale(1.1); }
+
+        /* Mobil Ayarlar */
+        @media (max-width: 768px) {
+            body { overflow-y: auto; height: auto; }
+            .wrapper { flex-direction: column; height: auto; }
+            .side { height: 300px; order: 2; border-left: none; border-top: 1px solid #ddd; }
+            .main { padding: 10px; order: 1; }
+            .container { padding: 20px; min-height: auto; }
+            .q-text { font-size: 1.1rem; }
+        }
+
+        /* Modal Stili */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
+        .modal-content { background: white; margin: 10% auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 600px; }
     </style>
 </head>
 <body>
 
-<button class="donate-btn" onclick="window.open('https://www.shopier.com/BAĞIŞ_LİNKİN', '_blank')">☕</button>
+    <button class="donate-btn" onclick="openDonate()">☕</button>
 
-<div class="wrapper">
-    <main class="main">
-        <div id="q-container" class="container">
-            <div id="no" class="header">YÜKLENİYOR...</div>
-            <div id="txt" class="q-text">Soru verileri bekleniyor...</div>
-            <div id="img-area"></div>
-            <button class="btn-acikla" onclick="alert('Teknik analiz hazırlanıyor...')">AÇIKLA</button>
-            <div id="opts"></div>
-            <div class="nav-controls">
-                <button class="btn-nav" style="background:#6c757d" onclick="move(-1)">GERİ</button>
-                <button class="btn-nav" style="background:#17a2b8" onclick="rand()">RANDOM</button>
-                <button class="btn-nav" onclick="move(1)">İLERİ</button>
+    <div class="wrapper">
+        <main class="main">
+            <div id="q-container" class="container">
+                <div class="q-header">
+                    <div id="no" class="q-no">S.0</div>
+                    <div id="counter" style="font-weight: bold; color: #999;">0 / 0</div>
+                </div>
+
+                <div id="txt" class="q-text">Soru Yükleniyor...</div>
+                
+                <div id="img-area"></div>
+
+                <button class="btn-acikla" onclick="openModal()">AÇIKLA</button>
+
+                <div id="opts" class="options"></div>
+
+                <div style="display: flex; gap: 15px; margin-top: 30px;">
+                    <button class="opt" style="flex: 1; text-align: center; background: #6c757d; color: white;" onclick="move(-1)">GERİ</button>
+                    <button class="opt" style="flex: 1; text-align: center; background: #17a2b8; color: white;" onclick="rand()">RANDOM</button>
+                    <button class="opt" style="flex: 1; text-align: center; background: var(--p); color: white;" onclick="move(1)">İLERİ</button>
+                </div>
             </div>
+            <p style="font-size: 11px; color: #aaa; margin-top: 15px;">CREATED BY BURAK KURT - DISPATCHER PORTAL v2.0</p>
+        </main>
+
+        <aside class="side">
+            <h3 style="margin-top: 0; color: var(--p);">SORU LİSTESİ</h3>
+            <div id="list" class="grid"></div>
+        </aside>
+    </div>
+
+    <div id="analizModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: var(--e);">Teknik Analiz (NotebookLM)</h2>
+            <p id="analiz-text">Bu sorunun detaylı açıklaması yakında eklenecektir.</p>
+            <button onclick="closeModal()" class="opt" style="text-align:center; background: #eee;">KAPAT</button>
         </div>
-        <div style="text-align:center; font-size:10px; margin-top:15px; color:#aaa; padding-bottom: 20px;">CREATED BY BURAK KURT</div>
-    </main>
+    </div>
 
-    <aside class="side">
-        <h4 style="margin-top:0">SORU LİSTESİ</h4>
-        <div id="list"></div>
-    </aside>
-</div>
+    <script>
+        let qs = [], idx = 0;
 
-<script>
-    let qs = [], idx = 0;
-
-    async function init() {
-        try {
-            const r = await fetch('sorular.json');
-            if (!r.ok) throw new Error('JSON dosyası bulunamadı!');
-            qs = await r.json();
-            renderList();
-            show();
-        } catch(e) { 
-            document.getElementById('txt').innerText = "HATA: sorular.json yüklenemedi. Dosya adını ve formatını kontrol edin.";
-            console.error(e); 
-        }
-    }
-
-    function renderList() {
-        const list = document.getElementById('list');
-        list.innerHTML = "";
-        qs.forEach((q, i) => {
-            const a = document.createElement('a');
-            a.className = 'q-link';
-            a.id = 'L' + i;
-            a.innerText = q['soru no'].replace('S.', '');
-            a.href = "#";
-            a.onclick = (e) => { e.preventDefault(); idx = i; show(); };
-            list.appendChild(a);
-        });
-    }
-
-    function show() {
-        if(!qs.length) return;
-        const q = qs[idx];
-        const cont = document.getElementById('q-container');
-        cont.classList.remove('ans-mode');
-
-        // Soru No ve Metin
-        document.getElementById('no').innerText = q['soru no'] + " / " + qs.length;
-        let formattedSoru = q['soru'].replace(/(\d+\))/g, '<br><b>$1</b>');
-        document.getElementById('txt').innerHTML = formattedSoru;
-
-        // Resim Alanı (Her seferinde temizle)
-        const imgArea = document.getElementById('img-area');
-        imgArea.innerHTML = "";
-        if(q.resim && q.resim.trim() !== "") {
-            const img = document.createElement('img');
-            img.src = q.resim;
-            img.className = 'q-img';
-            img.onerror = () => img.style.display = 'none'; // Resim bulunamazsa alanı gizle
-            imgArea.appendChild(img);
-        }
-
-        // Şıklar
-        const oDiv = document.getElementById('opts');
-        oDiv.innerHTML = '';
-        ['a','b','c','d'].forEach(key => {
-            if(q[key]) {
-                const b = document.createElement('button');
-                b.className = 'opt';
-                b.innerText = key.toUpperCase() + ") " + q[key];
-                b.onclick = () => {
-                    cont.classList.add('ans-mode');
-                    if(key === q.cevap.toLowerCase().trim()) {
-                        b.classList.add('correct');
-                    } else {
-                        b.classList.add('wrong');
-                        Array.from(oDiv.children).forEach(btn => {
-                            if(btn.innerText.toLowerCase().startsWith(q.cevap.toLowerCase().trim())) btn.classList.add('correct');
-                        });
-                    }
-                };
-                oDiv.appendChild(b);
+        async function start() {
+            try {
+                const r = await fetch('sorular.json');
+                qs = await r.json();
+                const list = document.getElementById('list');
+                qs.forEach((q, i) => {
+                    const a = document.createElement('a');
+                    a.className = 'link';
+                    a.id = 'l' + i;
+                    a.innerText = q['soru no'].replace('S.', '');
+                    a.href = "javascript:void(0)";
+                    a.onclick = () => { idx = i; show(); };
+                    list.appendChild(a);
+                });
+                show();
+            } catch (e) {
+                document.getElementById('txt').innerText = "Hata: sorular.json dosyası okunamadı!";
             }
-        });
-
-        // Navigasyon Aktifliği
-        document.querySelectorAll('.q-link').forEach(x => x.classList.remove('active'));
-        const activeLink = document.getElementById('L' + idx);
-        if(activeLink) {
-            activeLink.classList.add('active');
-            activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-    }
 
-    function move(n) { idx = (idx + n + qs.length) % qs.length; show(); }
-    function rand() { idx = Math.floor(Math.random() * qs.length); show(); }
+        function show() {
+            if(!qs.length) return;
+            const q = qs[idx];
+            const cont = document.getElementById('q-container');
+            cont.classList.remove('ans-mode');
 
-    init();
-</script>
+            document.getElementById('no').innerText = q['soru no'];
+            document.getElementById('counter').innerText = (idx + 1) + " / " + qs.length;
+            
+            // Maddeleri alt alta dizme
+            let formattedSoru = q['soru'].replace(/(\d+\))/g, '<br><b>$1</b>');
+            document.getElementById('txt').innerHTML = formattedSoru;
+
+            // Resim Kontrolü
+            const imgArea = document.getElementById('img-area');
+            imgArea.innerHTML = "";
+            if(q.resim) {
+                const img = document.createElement('img');
+                img.src = q.resim;
+                img.className = 'q-img';
+                imgArea.appendChild(img);
+            }
+
+            const oDiv = document.getElementById('opts');
+            oDiv.innerHTML = '';
+            ['a','b','c','d'].forEach(key => {
+                if(q[key]) {
+                    const b = document.createElement('button');
+                    b.className = 'opt';
+                    b.innerText = key.toUpperCase() + ") " + q[key];
+                    b.onclick = () => {
+                        cont.classList.add('ans-mode');
+                        const correctKey = q.cevap.toLowerCase().trim();
+                        if(key === correctKey) b.classList.add('correct');
+                        else {
+                            b.classList.add('wrong');
+                            Array.from(oDiv.children).forEach(btn => {
+                                if(btn.innerText.toLowerCase().startsWith(correctKey)) btn.classList.add('correct');
+                            });
+                        }
+                    };
+                    oDiv.appendChild(b);
+                }
+            });
+
+            document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
+            const active = document.getElementById('l'+idx);
+            if(active) { active.classList.add('active'); active.scrollIntoView({block:'center', behavior: 'smooth'}); }
+        }
+
+        function move(n) { idx = (idx + n + qs.length) % qs.length; show(); }
+        function rand() { idx = Math.floor(Math.random() * qs.length); show(); }
+        function openDonate() { alert("Shopier Bağış/Ürün sayfasına yönlendiriliyorsunuz..."); }
+        function openModal() { document.getElementById("analizModal").style.display = "block"; }
+        function closeModal() { document.getElementById("analizModal").style.display = "none"; }
+        
+        window.onclick = function(e) { if (e.target == document.getElementById("analizModal")) closeModal(); }
+        
+        start();
+    </script>
 </body>
 </html>
