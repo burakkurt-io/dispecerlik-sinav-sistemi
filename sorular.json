@@ -1084,7 +1084,7 @@
         "B Şıkkı": "It must be reasonably expected that an ımstrument approach will be flown at the destination",
         "C Şıkkı": "A met report must indicate that IMC exists somewhere along the route",
         "D Şıkkı": "The met conditions must be equal to or better than the specified minima at the \tdestination or destination alternate",
-        "Doğru Cevap": "d",
+        "Doğru Cevap": "a",
         "Açıklama": "",
         "Resim Yolu": ""
     },
@@ -19316,3 +19316,4 @@
         "Resim Yolu": ""
     }
 ]
+
