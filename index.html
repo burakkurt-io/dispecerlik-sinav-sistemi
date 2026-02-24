@@ -129,7 +129,7 @@
             <div class="side-header">
                 <div class="side-title">SORU NAVİGASYONU</div>
                 <div class="search-box">
-                    <input type="text" id="q-search" placeholder="Soru No (Örn: 64 veya S.64)" onkeypress="handleSearch(event)">
+<input type="number" inputmode="numeric" pattern="[0-9]*" id="q-search" placeholder="Soru No (Örn: 64)" onkeypress="handleSearch(event)">
                     <button onclick="goToQuestion()">GIT</button>
                 </div>
             </div>
@@ -290,6 +290,7 @@
     </script>
 </body>
 </html>
+
 
 
 
