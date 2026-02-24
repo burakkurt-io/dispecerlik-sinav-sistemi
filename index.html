@@ -14,18 +14,23 @@
         
         .main { flex: 2.2; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
+        /* 1. Kutu sabit yükseklik ve iç kaydırma mantığı */
         .container { 
-            background: white; width: 100%; max-width: 850px; min-height: 620px; height: auto; max-height: 90vh; overflow-y: auto;
+            background: white; width: 100%; max-width: 850px; 
+            height: 750px; /* Sabit yükseklik */
             padding: 30px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             display: flex; flex-direction: column; position: relative;
         }
 
-        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.85em; }
+        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; display: inline-block; font-size: 0.85em; flex-shrink: 0; }
         
-        /* white-space: pre-wrap satır atlamalarını (maddeleri) düzgün gösterir */
-        .q-text { font-size: 1.25em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; min-height: 60px; max-height: 250px; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; }
+        /* Soru metni esnek alan alır, taşarsa kaydırılır */
+        .q-text { 
+            font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; 
+            flex: 1; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; 
+        }
         
-        #opts { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+        #opts { flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
 
         .opt { display: block; width: 100%; padding: 14px; margin: 6px 0; border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; background: #fff; font-size: 1.05em; text-align: left; transition: all 0.2s ease; }
         .opt:hover { border-color: var(--p); background: #f8faff; transform: translateX(5px); }
@@ -33,37 +38,59 @@
         .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: bold; }
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
 
-        .action-area { width: 100%; margin-top: 20px; }
+        .action-area { flex-shrink: 0; width: 100%; margin-top: 15px; }
         .btn-acikla { background: #dc3545; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
         .btn-acikla:hover { background: #c82333; }
         
-        .aciklama-kutusu { display: none; background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; font-size: 0.95em; line-height: 1.4; border: 1px solid #f5c6cb; margin-bottom: 15px; white-space: pre-wrap;}
+        .aciklama-kutusu { display: none; background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; font-size: 0.95em; line-height: 1.4; border: 1px solid #f5c6cb; margin-bottom: 15px; white-space: pre-wrap; max-height: 150px; overflow-y: auto;}
 
         .nav { display: flex; justify-content: space-between; gap: 10px; }
         .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
         .btn-gray { background: #6c757d; }
         .btn-reset { background: #ffc107; color: #000; }
 
-        .side { flex: 1; background: white; border-left: 1px solid #eee; overflow-y: auto; padding: 25px; min-width: 380px; max-width: 450px; }
+        /* 2. Kenar çubuğu ve sabit arama alanı */
+        .side { 
+            flex: 1; background: white; border-left: 1px solid #eee; 
+            display: flex; flex-direction: column; min-width: 380px; max-width: 450px; 
+        }
+        .side-header {
+            padding: 25px 25px 15px 25px; border-bottom: 1px solid #eee; z-index: 10;
+        }
+        .side-title {
+            text-align:center; font-weight:bold; color:var(--p); margin-bottom:15px; font-size:16px;
+        }
+        .search-box {
+            display: flex; gap: 8px; width: 100%;
+        }
+        .search-box input {
+            flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;
+        }
+        .search-box button {
+            background: var(--p); color: white; border: none; padding: 0 15px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s;
+        }
+        .search-box button:hover { background: #004494; }
+
+        #list { flex: 1; overflow-y: auto; padding: 15px 25px; }
         .link { display: block; padding: 12px; margin: 6px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 14px; text-align: center; border-radius: 8px; transition: 0.2s; border: 1px solid transparent; }
         .link:hover { background: #e9ecef; border-color: var(--p); transform: scale(1.02); }
         .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
+        /* 3. Footer ve Donate Butonu */
         .footer-area { display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; width: 100%; }
         .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; }
-        .mini-analiz { background: #17a2b8; color: white; border: none; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; box-shadow: 0 4px 10px rgba(23,162,184,0.3); }
+        .mini-analiz { background: #17a2b8; color: white; border: none; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; box-shadow: 0 4px 10px rgba(23,162,184,0.3); transition: 0.2s; }
+        .mini-analiz:hover { background: #138496; }
+        
+        .btn-donate { background: #ffc107; color: white; border: none; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; box-shadow: 0 4px 10px rgba(255,193,7,0.3); transition: 0.2s; }
+        .btn-donate:hover { background: #e0a800; }
 
+        /* Modal Yapısı */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
         .modal-content { background: white; margin: 2% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 1000px; height: 85vh; overflow-y: auto; position: relative; }
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; color: #333; }
         
-        .note-section { margin-bottom: 25px; border-left: 4px solid var(--p); padding-left: 15px; }
-        .note-title { color: var(--p); font-weight: bold; font-size: 1.1em; margin-bottom: 8px; text-transform: uppercase; }
-        .note-content { font-size: 14px; line-height: 1.6; color: #333; }
-        .tech-core { font-style: italic; color: #666; margin-bottom: 8px; display: block; font-size: 13px; }
-        .highlight-box { background: #fff3cd; padding: 15px; border-radius: 8px; border: 1px dashed #e67e22; margin-top: 15px; }
-
-        @media (max-width: 1000px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 250px; } }
+        @media (max-width: 1000px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 350px; } }
     </style>
 </head>
 <body>
@@ -74,7 +101,7 @@
                 <div id="no" class="header">GÜNCEL SORU BANKASI</div>
                 <div id="txt" class="q-text">Sistem yükleniyor...</div>
                 
-                <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 250px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
+                <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 200px; margin-bottom: 15px; border-radius: 8px; object-fit: contain; flex-shrink: 0;">
 
                 <div id="opts"></div>
     
@@ -93,21 +120,47 @@
             
             <div class="footer-area">
                 <div class="footer-note">CREATED BY BURAK KURT</div>
-                <button class="mini-analiz" onclick="openModal()">ANALİZ NOTLARI</button>
+                <button class="mini-analiz" onclick="openModal('analizModal')">ANALİZ NOTLARI</button>
+                <button class="btn-donate" onclick="openModal('donateModal')">DONATE ME</button>
             </div>
         </main>
 
         <aside class="side">
-            <div style="text-align:center; font-weight:bold; color:var(--p); margin-bottom:20px; font-size:16px; border-bottom:1px solid #eee; padding-bottom:10px;">SORU NAVİGASYONU</div>
+            <div class="side-header">
+                <div class="side-title">SORU NAVİGASYONU</div>
+                <div class="search-box">
+                    <input type="text" id="q-search" placeholder="Soru No (Örn: 64 veya S.64)" onkeypress="handleSearch(event)">
+                    <button onclick="goToQuestion()">GIT</button>
+                </div>
+            </div>
             <div id="list"></div>
         </aside>
     </div>
 
     <div id="analizModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <span class="close-btn" onclick="closeModal('analizModal')">&times;</span>
             <h1 style="color: var(--p); text-align: center; margin-bottom: 30px; border-bottom: 3px double var(--p); padding-bottom: 15px;">SHGM Soru Analiz Notları</h1>
+            <p style="text-align: center; color: #333; font-size: 14px;">(Analiz notlarınızı buraya ekleyebilirsiniz)</p>
             <p style="text-align: center; color: #999; font-size: 12px; margin-top: 30px;">"Dispeçerlik bir ezber değil, prosedür disiplinidir."</p>
+        </div>
+    </div>
+
+    <div id="donateModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('donateModal')">&times;</span>
+            <h1 style="color: #ffc107; text-align: center; margin-bottom: 30px; border-bottom: 3px double #ffc107; padding-bottom: 15px;">Destek Ol</h1>
+            <div style="text-align: center; padding: 20px; line-height: 1.6;">
+                <p>Çalışmalarımı faydalı buluyorsanız ve destek olmak isterseniz aşağıdaki paketlerden birini seçebilirsiniz.</p>
+                <p style="color: #666; font-size: 14px; margin-bottom: 30px;">(Destek verenlere özel PDF dokümanlar gönderilecektir.)</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto;">
+                    <a href="#" style="padding: 15px; background: #f8f9fa; border: 2px solid #ffc107; border-radius: 8px; text-decoration: none; color: #333; font-weight: bold; transition: 0.2s;">10 TL - Küçük Bir Teşekkür</a>
+                    <a href="#" style="padding: 15px; background: #f8f9fa; border: 2px solid #ffc107; border-radius: 8px; text-decoration: none; color: #333; font-weight: bold; transition: 0.2s;">50 TL - Kahve Ismarla</a>
+                    <a href="#" style="padding: 15px; background: #f8f9fa; border: 2px solid #ffc107; border-radius: 8px; text-decoration: none; color: #333; font-weight: bold; transition: 0.2s;">100 TL - Güçlü Destek</a>
+                    <a href="#" style="padding: 15px; background: #ffc107; border: 2px solid #ffc107; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; transition: 0.2s;">200 TL - Profesyonel Destekçi</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -139,7 +192,6 @@
             document.getElementById('no').innerText = q['Soru Numarası'] + " [GENEL SORULAR CEVAPLAR - En Günceli]";
             document.getElementById('txt').innerText = q['Soru Metni'];
             
-            // Resim Mantığı
             const imgElement = document.getElementById('q-img');
             if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'].trim() !== "") {
                 imgElement.src = q['Resim Yolu'];
@@ -149,10 +201,9 @@
                 imgElement.src = "";
             }
 
-            // Açıklama Alanı Sıfırlama
             const aciklamaAlani = document.getElementById('aciklama-alani');
             aciklamaAlani.style.display = "none";
-            if (q['Açıklama'] && q['Açıklama'] !== "Bilinmiyor") {
+            if (q['Açıklama'] && q['Açıklama'] !== "Bilinmiyor" && q['Açıklama'].trim() !== "") {
                 aciklamaAlani.innerText = q['Açıklama'];
             } else {
                 aciklamaAlani.innerText = "Bu soru için ek bir açıklama verisi bulunmamaktadır.";
@@ -161,7 +212,6 @@
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
             
-            // Yeni Doğal Dil Anahtarları ile şıkların döngüsü
             const harfler = ['a', 'b', 'c', 'd'];
             harfler.forEach(harf => {
                 const anahtarStr = harf.toUpperCase() + " Şıkkı";
@@ -192,21 +242,48 @@
             if(active) { active.classList.add('active'); active.scrollIntoView({block:'center', behavior: 'smooth'}); }
         }
 
+        // Arama ve Navigasyon Fonksiyonları
+        function handleSearch(e) {
+            if (e.key === 'Enter') {
+                goToQuestion();
+            }
+        }
+
+        function goToQuestion() {
+            const val = document.getElementById('q-search').value.trim().toLowerCase();
+            if (!val) return;
+            
+            // Kullanıcı "64" veya "s.64" yazsa da eşleşme sağlanır
+            const target = val.startsWith('s.') ? val : 's.' + val;
+            
+            const foundIndex = qs.findIndex(q => q['Soru Numarası'].toLowerCase() === target);
+            
+            if (foundIndex !== -1) {
+                idx = foundIndex;
+                show();
+                document.getElementById('q-search').value = ''; 
+            } else {
+                alert("Soru bulunamadı. Lütfen kontrol edip tekrar deneyin.");
+            }
+        }
+
         function aciklamaGosterGizle() {
             const aciklamaAlani = document.getElementById('aciklama-alani');
-            if(aciklamaAlani.style.display === "none") {
-                aciklamaAlani.style.display = "block";
-            } else {
-                aciklamaAlani.style.display = "none";
-            }
+            aciklamaAlani.style.display = aciklamaAlani.style.display === "none" ? "block" : "none";
         }
 
         function move(n) { idx = (idx+n+qs.length)%qs.length; show(); }
         function rand() { idx = Math.floor(Math.random()*qs.length); show(); }
         function resetQ() { show(); }
-        function openModal() { document.getElementById("analizModal").style.display = "block"; }
-        function closeModal() { document.getElementById("analizModal").style.display = "none"; }
-        window.onclick = function(e) { if (e.target == document.getElementById("analizModal")) closeModal(); }
+        
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        
+        window.onclick = function(e) { 
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = "none";
+            }
+        }
         
         start();
     </script>
