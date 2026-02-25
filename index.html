@@ -20,7 +20,7 @@
         }
 
         .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; }
-        .kategori-text { color: red; } /* Kategori icin kirmizi renk */
+        .kategori-text { color: red; }
 
         .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; flex: 1; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; }
         
@@ -34,7 +34,9 @@
         .action-area { flex-shrink: 0; width: 100%; margin-top: 15px; }
         .btn-acikla { background: #dc3545; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
         .btn-acikla:hover { background: #c82333; }
-        .aciklama-kutusu { display: none; background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; font-size: 0.95em; border: 1px solid #f5c6cb; margin-bottom: 15px; white-space: pre-wrap; max-height: 120px; overflow-y: auto; line-height: 1.4; }
+        
+        /* Aciklama kutusu beyaz yazi ve koyu zemin icin guncellendi */
+        .aciklama-kutusu { display: none; background: #2c3e50; color: white; padding: 15px; border-radius: 8px; font-size: 0.95em; border: 1px solid #1a252f; margin-bottom: 15px; white-space: pre-wrap; max-height: 120px; overflow-y: auto; line-height: 1.4; }
 
         .nav { display: flex; justify-content: space-between; gap: 10px; }
         .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
@@ -56,24 +58,26 @@
         .footer-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
         .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; margin-right: 10px; }
         
-        /* Footer Buton Stilleri */
         .btn-footer { border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; transition: 0.2s; text-decoration: none; display: inline-block; }
         .f-analiz { background: #17a2b8; color: white; box-shadow: 0 4px 10px rgba(23,162,184,0.3); }
         .f-donate { background: #ffc107; color: #000; box-shadow: 0 4px 10px rgba(255,193,7,0.3); }
-        .f-tele { background: #0088cc; color: white; box-shadow: 0 4px 10px rgba(0,136,204,0.3); }
-        .f-mail { background: #6c757d; color: white; box-shadow: 0 4px 10px rgba(108,117,125,0.3); }
+        .f-iletisim { background: #0088cc; color: white; box-shadow: 0 4px 10px rgba(0,136,204,0.3); }
 
         .btn-footer:hover { transform: translateY(-2px); }
 
-        .disclaimer { font-size: 10px; color: #666; text-align: center; max-width: 850px; margin-top: 5px; line-height: 1.5; border-top: 1px solid #ddd; padding-top: 10px; }
+        .disclaimer { font-size: 10px; color: #666; text-align: center; max-width: 900px; margin-top: 5px; line-height: 1.5; border-top: 1px solid #ddd; padding-top: 10px; }
 
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
         .modal-content { background: white; margin: 5% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 550px; position: relative; }
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; }
         
-        .donate-option { display: block; padding: 18px; margin: 12px 0; border: 2px solid #ffc107; border-radius: 12px; text-decoration: none; color: #333; font-weight: bold; text-align: center; transition: 0.3s; background: #fffdf5; }
-        .donate-option:hover { background: #ffc107; color: #000; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,193,7,0.4); }
-        .d-price { display: block; font-size: 0.85em; color: #555; font-weight: normal; margin-top: 5px; }
+        .action-option { display: block; padding: 18px; margin: 12px 0; border: 2px solid #0056b3; border-radius: 12px; text-decoration: none; color: #333; font-weight: bold; text-align: center; transition: 0.3s; background: #f8fbff; }
+        .action-option:hover { background: #0056b3; color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,86,179,0.4); }
+        
+        .donate-option { border-color: #ffc107; background: #fffdf5; }
+        .donate-option:hover { background: #ffc107; color: #000; box-shadow: 0 5px 15px rgba(255,193,7,0.4); }
+        
+        .d-price { display: block; font-size: 0.85em; color: inherit; font-weight: normal; margin-top: 5px; opacity: 0.8; }
 
         @media (max-width: 1000px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 350px; } }
     </style>
@@ -108,14 +112,10 @@
                     <div class="footer-note">CREATED BY BURAK KURT</div>
                     <button class="btn-footer f-analiz" onclick="openModal('analizModal')">ANALİZ NOTLARI</button>
                     <button class="btn-footer f-donate" onclick="openModal('donateModal')">DONATE ME</button>
-                    
-                    <a href="https://t.me/kullaniciadin" target="_blank" class="btn-footer f-tele">TELEGRAM</a>
-                    <a href="mailto:mailadresin@gmail.com" class="btn-footer f-mail">E-POSTA</a>
+                    <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">İLETİŞİM</button>
                 </div>
                 <div class="disclaimer">
-                    ÖNEMLİ NOT: Soru açıklamaları ileri düzey <b>Google Gemini 3 Flash Preview API</b> (AI Studio) altyapısı kullanılarak yapılandırılmıştır. 
-                    Bu yöntem standart sohbet botlarından daha derinlemesine veri analizi sunar. Ancak yapay zeka modelleri teknik hata yapabilir. 
-                    <b>Havacılıkta emniyet esastır;</b> eğer bir sorudan emin değilseniz hocanıza kesinlikle danışınız.
+                    ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, standart son kullanıcı yapay zeka araçları (örn. ChatGPT) yerine, doğrudan geliştirici seviyesindeki <b>Google AI Studio</b> üzerinden <b>gemini-3-flash-preview (Bilgi kesim tarihi: Haziran 2025)</b> LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak tüm otonom sistemlerde olduğu gibi teknik halüsinasyon payı mevcuttur. <b>Havacılıkta emniyet ve doğrulama esastır;</b> operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
                 </div>
             </div>
         </main>
@@ -132,22 +132,38 @@
         </aside>
     </div>
 
+    <div id="iletisimModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('iletisimModal')">&times;</span>
+            <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">İletişim Kanalları</h2>
+            
+            <a href="https://t.me/kullaniciadin" target="_blank" class="action-option">
+                Telegram ile Ulaşın
+            </a>
+            <a href="mailto:mailadresin@gmail.com" class="action-option">
+                E-Posta Gönderin
+            </a>
+            
+            <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Hata bildirimi, sistem önerileri veya özel destek talepleriniz için doğrudan bana ulaşabilirsiniz.</p>
+        </div>
+    </div>
+
     <div id="donateModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('donateModal')">&times;</span>
             <h2 style="text-align:center; color:#ffc107; margin-bottom:25px; text-transform: uppercase;">Uçuş Destek Paketleri</h2>
             
-            <a href="https://www.shopier.com/ornek-link-50" target="_blank" class="donate-option">
+            <a href="https://www.shopier.com/ornek-link-50" target="_blank" class="action-option donate-option">
                 Economy Class <span class="d-price">50 TL - Kısa Menzil Desteği</span>
             </a>
-            <a href="https://www.shopier.com/ornek-link-500" target="_blank" class="donate-option">
+            <a href="https://www.shopier.com/ornek-link-500" target="_blank" class="action-option donate-option">
                 Business Class <span class="d-price">500 TL - Konforlu Gelişim Desteği</span>
             </a>
-            <a href="https://www.shopier.com/ornek-link-1000" target="_blank" class="donate-option">
+            <a href="https://www.shopier.com/ornek-link-1000" target="_blank" class="action-option donate-option">
                 Miles & Smiles Elite / VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span>
             </a>
             
-            <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Destekleriniz için teşekkürler! Destek veren kullanıcılarımıza özel hazırlanan PDF dökümanları sistem üzerinden iletilecektir.</p>
+            <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Destekleriniz için teşekkürler. Destek veren kullanıcılarımıza özel hazırlanan PDF dökümanları sistem üzerinden iletilecektir.</p>
         </div>
     </div>
 
@@ -184,29 +200,22 @@
             const cont = document.getElementById('q-container');
             cont.classList.remove('ans-mode');
             
-            // Kategori düzenlemesi (Sondaki numara ve parantezi silme işlemi)
             let rawKategori = q['Kategori'] || "";
-            // Örnek: "5) LAW - HAVA HUKUKU..." metnindeki "5) " kısmını temizler.
             let temizKategori = rawKategori.replace(/^\d+\)\s*/, '');
             if (!temizKategori || temizKategori === "Belirtilmemiş") temizKategori = "Genel Havacılık";
 
-            // Başlık formatını uygulama
             document.getElementById('no').innerHTML = q['Soru Numarası'] + ' [GENEL SORULAR CEVAPLAR - En Günceli] <span class="kategori-text">(' + temizKategori + ')</span>';
-            
             document.getElementById('txt').innerText = q['Soru Metni'];
             
-            // Resim Kontrolü
             const img = document.getElementById('q-img');
             if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'] !== "") {
                 img.src = q['Resim Yolu']; img.style.display = "block";
             } else { img.style.display = "none"; }
 
-            // Açıklama Kontrolü
             const aKutu = document.getElementById('aciklama-alani');
             aKutu.style.display = "none";
             aKutu.innerText = q['Açıklama'] || "Bu soru için bir açıklama verisi bulunmamaktadır.";
 
-            // Şıkların Oluşturulması
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
             ['a','b','c','d'].forEach(h => {
@@ -247,7 +256,26 @@
 
         function aciklamaGosterGizle() {
             const a = document.getElementById('aciklama-alani');
-            a.style.display = a.style.display === "none" ? "block" : "none";
+            const isHidden = a.style.display === "none";
+            
+            // Aciklamayi goster veya gizle
+            a.style.display = isHidden ? "block" : "none";
+            
+            // Aciklama gosterildiginde otomatik olarak dogru cevabi isaretle
+            if (isHidden) {
+                const q = qs[idx];
+                const cont = document.getElementById('q-container');
+                cont.classList.add('ans-mode'); // Siklari kilitle
+                
+                const oDiv = document.getElementById('opts');
+                const dogru = (q['Doğru Cevap'] || "").trim().toLowerCase();
+                
+                Array.from(oDiv.children).forEach(btn => {
+                    if(btn.innerText.toLowerCase().startsWith(dogru + ")")) {
+                        btn.classList.add('correct');
+                    }
+                });
+            }
         }
 
         function move(n) { idx = (idx+n+qs.length)%qs.length; show(); }
