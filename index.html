@@ -9,20 +9,38 @@
         :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5; }
         * { box-sizing: border-box; }
         
-        /* Body'ye overflow: hidden eklenerek sayfanin genel kaymasi engellendi */
         body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
         
-        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1650px; margin: 0 auto; width: 100%; }
-        .main { flex: 2.2; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        /* 3 Sutunlu Yapi: Sol(Dersler), Orta(Soru), Sag(Navigasyon) */
+        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1700px; margin: 0 auto; width: 100%; }
         
-        /* Container artik sabit 780px degil, ekrana gore esnek (max-height: 82vh) */
+        /* SOL MENU (Ders Secimi) */
+        .left-side { 
+            background: white; border-right: 1px solid #eee; display: flex; flex-direction: column; 
+            width: 280px; flex-shrink: 0; z-index: 5;
+        }
+        .left-header { padding: 25px; border-bottom: 1px solid #eee; }
+        .left-title { text-align:center; font-weight:bold; color:var(--p); font-size:16px; text-transform: uppercase;}
+        #cat-list { flex: 1; overflow-y: auto; padding: 15px; }
+        
+        .cat-btn {
+            display: block; width: 100%; padding: 14px 12px; margin-bottom: 8px;
+            background: white; border: 2px solid #e9ecef; border-radius: 8px;
+            color: #495057; font-weight: bold; font-size: 0.85em; text-align: left; cursor: pointer; transition: 0.2s;
+        }
+        .cat-btn:hover { border-color: var(--p); color: var(--p); background: #f8fbff; transform: translateX(3px); }
+        .cat-btn.active { background: var(--p); color: white; border-color: var(--p); box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
+
+        /* ORTA ALAN (Ana Soru Kutusu) */
+        .main { flex: 1; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        
         .container { 
-            background: white; width: 100%; max-width: 850px; flex: 1; min-height: 500px; max-height: 82vh;
+            background: white; width: 100%; max-width: 900px; flex: 1; min-height: 500px; max-height: 85vh;
             padding: 30px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             display: flex; flex-direction: column; position: relative;
         }
 
-        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; }
+        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; line-height: 1.4; }
         .kategori-text { color: red; }
 
         .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; flex: 1; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; }
@@ -38,26 +56,27 @@
         .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
         .btn-acikla:hover { background: #218838; }
         
-        .aciklama-kutusu { display: none; background: #28a745; color: white; font-weight: bold; padding: 15px; border-radius: 8px; font-size: 0.95em; border: 1px solid #218838; margin-bottom: 15px; white-space: pre-wrap; max-height: 120px; overflow-y: auto; line-height: 1.4; }
+        .aciklama-kutusu { display: none; background: #28a745; color: white; font-weight: bold; padding: 15px; border-radius: 8px; font-size: 0.95em; border: 1px solid #218838; margin-bottom: 15px; white-space: pre-wrap; max-height: 150px; overflow-y: auto; line-height: 1.4; }
 
         .nav { display: flex; justify-content: space-between; gap: 10px; }
         .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
         .btn-gray { background: #6c757d; }
         .btn-reset { background: #ffc107; color: #000; }
 
-        .side { flex: 1; background: white; border-left: 1px solid #eee; display: flex; flex-direction: column; min-width: 380px; max-width: 450px; }
+        /* SAG MENU (Soru Listesi) */
+        .side { flex-shrink: 0; background: white; border-left: 1px solid #eee; display: flex; flex-direction: column; width: 320px; }
         .side-header { padding: 25px; border-bottom: 1px solid #eee; }
         .side-title { text-align:center; font-weight:bold; color:var(--p); margin-bottom:15px; font-size:16px; }
         .search-box { display: flex; gap: 8px; }
         .search-box input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
         .search-box button { background: var(--p); color: white; border: none; padding: 0 15px; border-radius: 6px; cursor: pointer; font-weight: bold; }
 
-        /* position: relative eklendi */
         #list { flex: 1; overflow-y: auto; padding: 15px 25px; position: relative; }
         .link { display: block; padding: 12px; margin: 6px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 14px; text-align: center; border-radius: 8px; transition: 0.2s; border: 1px solid transparent; }
         .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
-        .footer-area { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 15px; width: 100%; }
+        /* FOOTER */
+        .footer-area { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 15px; width: 100%; background: white; border-top: 1px solid #eee; z-index: 10; }
         .footer-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
         .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; margin-right: 10px; }
         
@@ -68,8 +87,9 @@
 
         .btn-footer:hover { transform: translateY(-2px); }
 
-        .disclaimer { font-size: 10px; color: #666; text-align: center; max-width: 900px; margin-top: 5px; line-height: 1.5; border-top: 1px solid #ddd; padding-top: 10px; }
+        .disclaimer { font-size: 10px; color: #666; text-align: center; max-width: 1000px; margin-top: 5px; line-height: 1.5; }
 
+        /* MODAL */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
         .modal-content { background: white; margin: 5% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 550px; position: relative; }
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; }
@@ -79,17 +99,17 @@
         
         .donate-option { border-color: #ffc107; background: #fffdf5; }
         .donate-option:hover { background: #ffc107; color: #000; box-shadow: 0 5px 15px rgba(255,193,7,0.4); }
-        
         .d-price { display: block; font-size: 0.85em; color: inherit; font-weight: normal; margin-top: 5px; opacity: 0.8; }
 
-        /* MOBIL UYUMLULUK KODU (Bu kisim telefondaki sikismayi tamamen cozer) */
+        /* MOBIL UYUMLULUK KODU */
         @media (max-width: 1000px) { 
             body { height: auto; display: block; overflow: visible; }
-            .wrapper { display: block; overflow: visible; }
+            .wrapper { display: flex; flex-direction: column; overflow: visible; }
+            .left-side { width: 100%; max-height: 250px; border-right: none; border-bottom: 2px solid #eee; }
             .main { display: block; padding: 10px; }
             .container { height: auto; min-height: 50vh; max-height: none; overflow: visible; padding: 20px; margin-bottom: 20px; }
             .q-text { max-height: none; overflow: visible; }
-            .side { min-width: 100%; max-width: 100%; height: auto; border-left: none; border-top: 2px solid #eee; padding: 15px; }
+            .side { width: 100%; height: auto; border-left: none; border-top: 2px solid #eee; }
             #list { max-height: 350px; overflow-y: auto; }
         }
     </style>
@@ -97,17 +117,26 @@
 <body>
 
     <div class="wrapper">
+        
+        <aside class="left-side">
+            <div class="left-header">
+                <div class="left-title">DERS SEÇİMİ</div>
+            </div>
+            <div id="cat-list">
+                </div>
+        </aside>
+
         <main class="main">
             <div id="q-container" class="container">
-                <div id="no" class="header">GÜNCEL SORU BANKASI</div>
-                <div id="txt" class="q-text">Sistem yükleniyor...</div>
+                <div id="no" class="header">GÜNCEL SORU BANKASI YÜKLENİYOR...</div>
+                <div id="txt" class="q-text">Lütfen bekleyin...</div>
                 
                 <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 200px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
 
                 <div id="opts"></div>
     
                 <div class="action-area">
-                    <button class="btn-acikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
+                    <button class="btn-acikla" id="btnAcikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
                     <div id="aciklama-alani" class="aciklama-kutusu"></div>
 
                     <div class="nav">
@@ -116,18 +145,6 @@
                         <button class="btn btn-gray" onclick="rand()">Random</button>
                         <button class="btn" onclick="move(1)">Sonraki</button>
                     </div>
-                </div>
-            </div>
-            
-            <div class="footer-area">
-                <div class="footer-buttons">
-                    <div class="footer-note">CREATED BY BURAK KURT</div>
-                    <button class="btn-footer f-analiz" onclick="openModal('analizModal')">ANALİZ NOTLARI</button>
-                    <button class="btn-footer f-donate" onclick="openModal('donateModal')">DONATE ME</button>
-                    <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">İLETİŞİM</button>
-                </div>
-                <div class="disclaimer">
-                    ÖNEMLİ NOT: Soru çözümlemeleri ve standart son kullanıcı yapay zeka araçları (örn. ChatGPT) yerine, doğrudan geliştirici seviyesindeki <b>Google AI Studio</b> üzerinden <b>gemini-3-flash-preview (Bilgi kesim tarihi: Haziran 2025)</b> LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak <b>Havacılıkta emniyet ve doğrulama esastır;</b> operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
                 </div>
             </div>
         </main>
@@ -144,18 +161,24 @@
         </aside>
     </div>
 
+    <div class="footer-area">
+        <div class="footer-buttons">
+            <div class="footer-note">CREATED BY BURAK KURT</div>
+            <button class="btn-footer f-analiz" onclick="openModal('analizModal')">ANALİZ NOTLARI</button>
+            <button class="btn-footer f-donate" onclick="openModal('donateModal')">DONATE ME</button>
+            <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">İLETİŞİM</button>
+        </div>
+        <div class="disclaimer">
+            ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, standart son kullanıcı yapay zeka araçları (örn. ChatGPT) yerine, doğrudan geliştirici seviyesindeki <b>Google AI Studio</b> üzerinden <b>gemini-3-flash-preview (Bilgi kesim tarihi: Haziran 2025)</b> LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak tüm otonom sistemlerde olduğu gibi teknik halüsinasyon payı mevcuttur. <b>Havacılıkta emniyet ve doğrulama esastır;</b> operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
+        </div>
+    </div>
+
     <div id="iletisimModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('iletisimModal')">&times;</span>
             <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">İletişim Kanalları</h2>
-            
-            <a href="https://t.me/burakkurt" target="_blank" class="action-option">
-                Telegram ile Ulaşın 📲💬
-            </a>
-            <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">
-                E-Posta Gönderin 📧✉️
-            </a>
-            
+            <a href="https://t.me/burakkurt_dispatch" target="_blank" class="action-option">Telegram ile Ulaşın</a>
+            <a href="mailto:seninmailadresin@gmail.com" class="action-option">E-Posta Gönderin</a>
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Hata bildirimi, sistem önerileri veya özel destek talepleriniz için doğrudan bana ulaşabilirsiniz.</p>
         </div>
     </div>
@@ -164,7 +187,6 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('donateModal')">&times;</span>
             <h2 style="text-align:center; color:#ffc107; margin-bottom:25px; text-transform: uppercase;">Uçuş Destek Paketleri</h2>
-            
             <a href="https://www.shopier.com/ornek-link-50" target="_blank" class="action-option donate-option">
                 Economy Class <span class="d-price">50 TL - Kısa Menzil Desteği</span>
             </a>
@@ -174,7 +196,6 @@
             <a href="https://www.shopier.com/ornek-link-1000" target="_blank" class="action-option donate-option">
                 Miles & Smiles Elite / VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span>
             </a>
-            
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Destekleriniz için teşekkürler. Destek veren kullanıcılarımıza özel hazırlanan PDF dökümanları sistem üzerinden iletilecektir.</p>
         </div>
     </div>
@@ -189,45 +210,132 @@
     </div>
 
     <script>
-        let qs = [], idx = 0;
-        
+        let allQs = []; // Tum sorularin ana kopyasi
+        let filteredQs = []; // O an secili derse ait filtrelenmis sorular
+        let idx = 0; // O anki sorunun index'i
+
+        // Ders Kategorileri Tanimi (Keyword kısmı JSON içerisindeki Kategori ile eşleşir)
+        const categories = [
+            { name: "TÜM SORULAR", keyword: "ALL" },
+            { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
+            { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
+            { name: "3 - TEHLİKELİ MADDELER (DGR)", keyword: "DGR" },
+            { name: "4 - HABERLEŞME (COM)", keyword: "COM" },
+            { name: "5 - HAVA HUKUKU (LAW)", keyword: "LAW" },
+            { name: "6 - HAVA TRAFİK YÖNETİMİ (HAV)", keyword: "HAV" },
+            { name: "7 - METEOROLOJİ (MET)", keyword: "MET" },
+            { name: "8 - PERFORMANS (PEF)", keyword: "PEF" },
+            { name: "9 - GÜVENLİK (SEC)", keyword: "SEC" },
+            { name: "10 - SEYRÜSEFER (NAV)", keyword: "NAV" },
+            { name: "11 - UÇUŞ PLANLAMA (FPL&FM)", keyword: "FPL" },
+            { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
+        ];
+
         async function start() {
             try {
                 const r = await fetch('sorular.json');
-                qs = await r.json();
-                const l = document.getElementById('list');
-                qs.forEach((q, i) => {
-                    const a = document.createElement('a');
-                    a.className = 'link'; a.id = 'l'+i; a.innerText = q['Soru Numarası'];
-                    a.onclick = () => { idx = i; show(); };
-                    l.appendChild(a);
-                });
+                allQs = await r.json();
+                filteredQs = [...allQs]; // Baslangicta hepsi gosterilir
+                
+                renderCategories();
+                renderList();
                 show();
-            } catch(e) { console.error("Veri yüklenemedi."); }
+            } catch(e) { 
+                console.error("Veri yüklenemedi."); 
+                document.getElementById('no').innerText = "BAĞLANTI HATASI";
+                document.getElementById('txt').innerText = "Veriler sunucudan çekilemedi. JSON dosyanızı kontrol ediniz.";
+            }
+        }
+
+        // Sol Menüdeki Butonlari Olusturur
+        function renderCategories() {
+            const catContainer = document.getElementById('cat-list');
+            catContainer.innerHTML = '';
+            
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'cat-btn' + (cat.keyword === 'ALL' ? ' active' : '');
+                btn.innerText = cat.name;
+                btn.onclick = () => filterByCategory(cat.keyword, btn);
+                catContainer.appendChild(btn);
+            });
+        }
+
+        // Tiklanan Derse Gore Sorulari Filtreler
+        function filterByCategory(keyword, clickedBtn) {
+            // Buton aktiflik durumunu guncelle
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            if(clickedBtn) clickedBtn.classList.add('active');
+
+            // Sorulari filtrele
+            if(keyword === 'ALL') {
+                filteredQs = [...allQs];
+            } else {
+                // Kategori icinde keyword geciyorsa dahil et
+                filteredQs = allQs.filter(q => {
+                    const k = (q['Kategori'] || "").toUpperCase();
+                    return k.includes(keyword);
+                });
+            }
+
+            // Yeni listeyi baslat
+            idx = 0; 
+            renderList();
+            show();
+        }
+
+        // Sag Menu Soru Listesini Render Eder
+        function renderList() {
+            const l = document.getElementById('list');
+            l.innerHTML = ''; 
+            
+            filteredQs.forEach((q, i) => {
+                const a = document.createElement('a');
+                a.className = 'link'; 
+                a.id = 'l' + i; 
+                a.innerText = q['Soru Numarası'];
+                a.onclick = () => { idx = i; show(); };
+                l.appendChild(a);
+            });
         }
 
         function show() {
-            if(!qs.length) return;
-            const q = qs[idx];
+            // Eger o derse ait soru yoksa hata ekrani bas
+            if(!filteredQs.length) {
+                document.getElementById('no').innerText = "BİLGİ";
+                document.getElementById('txt').innerText = "Bu kategoriye (derse) ait herhangi bir soru bulunamadı.";
+                document.getElementById('opts').innerHTML = '';
+                document.getElementById('q-img').style.display = "none";
+                document.getElementById('aciklama-alani').style.display = "none";
+                document.getElementById('btnAcikla').style.display = "none";
+                return;
+            }
+
+            document.getElementById('btnAcikla').style.display = "block";
+            const q = filteredQs[idx];
             const cont = document.getElementById('q-container');
             cont.classList.remove('ans-mode');
             
+            // Basligi formatla (Basindaki rakami temizler)
             let rawKategori = q['Kategori'] || "";
             let temizKategori = rawKategori.replace(/^\d+\)\s*/, '');
             if (!temizKategori || temizKategori === "Belirtilmemiş") temizKategori = "Genel Havacılık";
 
-            document.getElementById('no').innerHTML = q['Soru Numarası'] + ' [GENEL SORULAR CEVAPLAR - En Günceli] <span class="kategori-text">(' + temizKategori + ')</span>';
+            document.getElementById('no').innerHTML = q['Soru Numarası'] + ' [GENEL SORULAR CEVAPLAR] <span class="kategori-text">(' + temizKategori + ')</span>';
             document.getElementById('txt').innerText = q['Soru Metni'];
             
+            // Gorsel kontrolu
             const img = document.getElementById('q-img');
             if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'] !== "") {
                 img.src = q['Resim Yolu']; img.style.display = "block";
             } else { img.style.display = "none"; }
 
+            // Aciklama kontrolu
             const aKutu = document.getElementById('aciklama-alani');
             aKutu.style.display = "none";
             aKutu.innerText = q['Açıklama'] || "Bu soru için bir açıklama verisi bulunmamaktadır.";
 
+            // Siklarin yerlestirilmesi
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
             ['a','b','c','d'].forEach(h => {
@@ -251,10 +359,9 @@
                 }
             });
 
+            // Sag navigasyon isaretlemesi ve sayfayi kaydirmadan sadece listeyi kaydirma
             document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
             const active = document.getElementById('l'+idx);
-            
-            // Ekranin komple asagi kaymasini onleyen izole edilmis scroll fonksiyonu
             if(active) { 
                 active.classList.add('active'); 
                 const listEl = document.getElementById('list');
@@ -266,13 +373,22 @@
         }
 
         function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
+        
         function goToQuestion() {
             const val = document.getElementById('q-search').value.trim();
             if(!val) return;
             const target = 'S.' + val;
-            const fIdx = qs.findIndex(q => q['Soru Numarası'].toUpperCase() === target.toUpperCase());
-            if (fIdx !== -1) { idx = fIdx; show(); document.getElementById('q-search').value = ''; }
-            else { alert("Soru bulunamadı!"); }
+            
+            // Sadece o anki secili dersin icinde arama yapar
+            const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase() === target.toUpperCase());
+            
+            if (fIdx !== -1) { 
+                idx = fIdx; 
+                show(); 
+                document.getElementById('q-search').value = ''; 
+            } else { 
+                alert("Bu kategoride böyle bir soru bulunamadı! Lütfen sol menüden 'Tüm Sorular'ı seçip tekrar arayın."); 
+            }
         }
 
         function aciklamaGosterGizle() {
@@ -282,7 +398,7 @@
             a.style.display = isHidden ? "block" : "none";
             
             if (isHidden) {
-                const q = qs[idx];
+                const q = filteredQs[idx];
                 const cont = document.getElementById('q-container');
                 cont.classList.add('ans-mode');
                 
@@ -297,8 +413,14 @@
             }
         }
 
-        function move(n) { idx = (idx+n+qs.length)%qs.length; show(); }
-        function rand() { idx = Math.floor(Math.random()*qs.length); show(); }
+        function move(n) { 
+            if(!filteredQs.length) return;
+            idx = (idx+n+filteredQs.length)%filteredQs.length; show(); 
+        }
+        function rand() { 
+            if(!filteredQs.length) return;
+            idx = Math.floor(Math.random()*filteredQs.length); show(); 
+        }
         function resetQ() { show(); }
         
         function openModal(id) { document.getElementById(id).style.display = "block"; }
@@ -309,5 +431,3 @@
     </script>
 </body>
 </html>
-
-
