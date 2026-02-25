@@ -8,13 +8,16 @@
     <style>
         :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5; }
         * { box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Body'ye overflow: hidden eklenerek sayfanin genel kaymasi engellendi */
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
         
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1650px; margin: 0 auto; width: 100%; }
         .main { flex: 2.2; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
+        /* Container artik sabit 780px degil, ekrana gore esnek (max-height: 82vh) */
         .container { 
-            background: white; width: 100%; max-width: 850px; height: 780px;
+            background: white; width: 100%; max-width: 850px; flex: 1; min-height: 500px; max-height: 82vh;
             padding: 30px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             display: flex; flex-direction: column; position: relative;
         }
@@ -35,8 +38,9 @@
         .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
         .btn-acikla:hover { background: #218838; }
         
-        /* Aciklama kutusu beyaz yazi ve koyu zemin icin guncellendi */
-.aciklama-kutusu { display: none; background: #28a745; color: white; font-weight: bold; padding: 15px; border-radius: 8px; font-size: 0.95em; border: 1px solid #218838; margin-bottom: 15px; white-space: pre-wrap; max-height: 120px; overflow-y: auto; line-height: 1.4; }        .nav { display: flex; justify-content: space-between; gap: 10px; }
+        .aciklama-kutusu { display: none; background: #28a745; color: white; font-weight: bold; padding: 15px; border-radius: 8px; font-size: 0.95em; border: 1px solid #218838; margin-bottom: 15px; white-space: pre-wrap; max-height: 120px; overflow-y: auto; line-height: 1.4; }
+
+        .nav { display: flex; justify-content: space-between; gap: 10px; }
         .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
         .btn-gray { background: #6c757d; }
         .btn-reset { background: #ffc107; color: #000; }
@@ -48,7 +52,8 @@
         .search-box input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
         .search-box button { background: var(--p); color: white; border: none; padding: 0 15px; border-radius: 6px; cursor: pointer; font-weight: bold; }
 
-        #list { flex: 1; overflow-y: auto; padding: 15px 25px; }
+        /* position: relative eklendi */
+        #list { flex: 1; overflow-y: auto; padding: 15px 25px; position: relative; }
         .link { display: block; padding: 12px; margin: 6px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 14px; text-align: center; border-radius: 8px; transition: 0.2s; border: 1px solid transparent; }
         .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
@@ -77,7 +82,16 @@
         
         .d-price { display: block; font-size: 0.85em; color: inherit; font-weight: normal; margin-top: 5px; opacity: 0.8; }
 
-        @media (max-width: 1000px) { .wrapper { flex-direction: column; } .side { min-width: 100%; height: 350px; } }
+        /* MOBIL UYUMLULUK KODU (Bu kisim telefondaki sikismayi tamamen cozer) */
+        @media (max-width: 1000px) { 
+            body { height: auto; display: block; overflow: visible; }
+            .wrapper { display: block; overflow: visible; }
+            .main { display: block; padding: 10px; }
+            .container { height: auto; min-height: 50vh; max-height: none; overflow: visible; padding: 20px; margin-bottom: 20px; }
+            .q-text { max-height: none; overflow: visible; }
+            .side { min-width: 100%; max-width: 100%; height: auto; border-left: none; border-top: 2px solid #eee; padding: 15px; }
+            #list { max-height: 350px; overflow-y: auto; }
+        }
     </style>
 </head>
 <body>
@@ -113,7 +127,7 @@
                     <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">İLETİŞİM</button>
                 </div>
                 <div class="disclaimer">
-                    Soru çözümlemeleri standart son kullanıcı yapay zeka araçları (örn. ChatGPT) yerine, doğrudan geliştirici seviyesindeki <b>Google AI Studio</b> üzerinden <b>gemini-3-flash-preview (Bilgi kesim tarihi: Haziran 2025)</b> LLM API'si kullanılarak yazılmıştır. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak <b>Havacılıkta emniyet ve doğrulama esastır;</b> operasyonel veya akademik şüphe durumunda bilgiyi daima eğitmenlerinizle teyit ediniz. <b>Yapay Zeka (gemini-3-flash-preview) hata yapabilir. Emin olmadığınız soruları ve cevapları Hocanıza sorun.<b>.
+                    ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, standart son kullanıcı yapay zeka araçları (örn. ChatGPT) yerine, doğrudan geliştirici seviyesindeki <b>Google AI Studio</b> üzerinden <b>gemini-3-flash-preview (Bilgi kesim tarihi: Haziran 2025)</b> LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak tüm otonom sistemlerde olduğu gibi teknik halüsinasyon payı mevcuttur. <b>Havacılıkta emniyet ve doğrulama esastır;</b> operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
                 </div>
             </div>
         </main>
@@ -122,7 +136,7 @@
             <div class="side-header">
                 <div class="side-title">SORU NAVİGASYONU</div>
                 <div class="search-box">
-                    <input type="number" inputmode="numeric" pattern="[0-9]*" id="q-search" placeholder="Soru No (Örn: 12)" onkeypress="handleSearch(event)">
+                    <input type="tel" pattern="[0-9]*" id="q-search" placeholder="Soru No (Örn: 12)" onkeypress="handleSearch(event)">
                     <button onclick="goToQuestion()">GİT</button>
                 </div>
             </div>
@@ -135,11 +149,11 @@
             <span class="close-btn" onclick="closeModal('iletisimModal')">&times;</span>
             <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">İletişim Kanalları</h2>
             
-            <a href="https://t.me/burakkurt" target="_blank" class="action-option">
-Telegram ile Ulaşın 📲💬
+            <a href="https://t.me/burakkurt_dispatch" target="_blank" class="action-option">
+                Telegram ile Ulaşın 📲💬
             </a>
-            <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">
-E-Posta Gönderin 📧✉️
+            <a href="mailto:seninmailadresin@gmail.com" class="action-option">
+                E-Posta Gönderin 📧✉️
             </a>
             
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Hata bildirimi, sistem önerileri veya özel destek talepleriniz için doğrudan bana ulaşabilirsiniz.</p>
@@ -239,7 +253,16 @@ E-Posta Gönderin 📧✉️
 
             document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
             const active = document.getElementById('l'+idx);
-            if(active) { active.classList.add('active'); active.scrollIntoView({block:'center', behavior: 'smooth'}); }
+            
+            // Ekranin komple asagi kaymasini onleyen izole edilmis scroll fonksiyonu
+            if(active) { 
+                active.classList.add('active'); 
+                const listEl = document.getElementById('list');
+                listEl.scrollTo({
+                    top: active.offsetTop - (listEl.clientHeight / 2) + (active.clientHeight / 2),
+                    behavior: 'smooth'
+                });
+            }
         }
 
         function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
@@ -256,14 +279,12 @@ E-Posta Gönderin 📧✉️
             const a = document.getElementById('aciklama-alani');
             const isHidden = a.style.display === "none";
             
-            // Aciklamayi goster veya gizle
             a.style.display = isHidden ? "block" : "none";
             
-            // Aciklama gosterildiginde otomatik olarak dogru cevabi isaretle
             if (isHidden) {
                 const q = qs[idx];
                 const cont = document.getElementById('q-container');
-                cont.classList.add('ans-mode'); // Siklari kilitle
+                cont.classList.add('ans-mode');
                 
                 const oDiv = document.getElementById('opts');
                 const dogru = (q['Doğru Cevap'] || "").trim().toLowerCase();
@@ -288,11 +309,3 @@ E-Posta Gönderin 📧✉️
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
