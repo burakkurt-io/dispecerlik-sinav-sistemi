@@ -66,29 +66,31 @@
         .link { display: block; padding: 12px; margin: 6px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 14px; text-align: center; border-radius: 8px; transition: 0.2s; border: 1px solid transparent; }
         .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
-.footer-area { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px; width: 100%; background: transparent; border-top: none; z-index: 10; }        .footer-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
+        /* FOOTER (Kusursuz Onarılmış Hali) */
+        .footer-area { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px; width: 100%; background: transparent; border-top: none; z-index: 10; }
+        .footer-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
+        .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; margin-right: 10px; }
+        
         .btn-footer { border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; transition: 0.2s; text-decoration: none; display: inline-block; }
         .f-analiz { background: #17a2b8; color: white; box-shadow: 0 4px 10px rgba(23,162,184,0.3); }
         .f-donate { background: #ffc107; color: #000; box-shadow: 0 4px 10px rgba(255,193,7,0.3); }
         .f-iletisim { background: #0088cc; color: white; box-shadow: 0 4px 10px rgba(0,136,204,0.3); }
         .btn-footer:hover { transform: translateY(-2px); }
 
-.disclaimer { font-size: 9px; color: #888; text-align: center; max-width: 950px; margin-top: 2px; line-height: 1.2; letter-spacing: 0.2px; opacity: 0.8; }
+        .disclaimer { font-size: 9px; color: #888; text-align: center; max-width: 950px; margin-top: 2px; line-height: 1.2; letter-spacing: 0.2px; opacity: 0.8; }
 
         /* MODAL GENEL */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
         .modal-content { background: white; margin: 5% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 550px; position: relative; max-height: 90vh; overflow-y: auto; }
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; z-index: 100; }
         
-        /* ANALİZ MODAL ÖZEL (Daha Geniş ve Yeni Sayfa Düzeni) */
+        /* ANALİZ MODAL ÖZEL */
         .analiz-modal-content { max-width: 850px; }
         .modal-body-scroll { max-height: 60vh; overflow-y: auto; padding-right: 10px; margin-top: 15px; }
         
-        /* Menü Butonları */
         .analiz-btn { display: block; width: 100%; padding: 16px; margin-bottom: 10px; background: #f8fbff; border: 2px solid #e9ecef; border-radius: 10px; color: var(--p); font-weight: bold; font-size: 14px; text-align: left; cursor: pointer; transition: 0.3s; }
         .analiz-btn:hover { background: var(--p); color: white; border-color: var(--p); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,86,179,0.2); }
         
-        /* İçerik Sayfası (Geri Dön Butonu ve Metin) */
         .btn-back { background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 13px; margin-bottom: 15px; transition: 0.2s; }
         .btn-back:hover { background: #5a6268; }
         .analiz-metin-alani { background: #fdfdfd; padding: 20px; border-radius: 8px; border-left: 4px solid var(--p); font-size: 14px; line-height: 1.7; color: #333; white-space: pre-wrap; }
@@ -230,7 +232,7 @@
     </div>
 
     <script>
-        // --- ANALİZ NOTLARI İÇERİKLERİ (BURAYI GÜNCELLEYECEKSİN) ---
+        // --- ANALİZ NOTLARI İÇERİKLERİ ---
         const analizVerileri = {
             'genel': `Buraya genel analiz metnini yapıştırabilirsiniz...`,
             'notlar': `Buraya kendi şahsi notlarınızı ekleyebilirsiniz...`,
@@ -451,7 +453,3 @@
     </script>
 </body>
 </html>
-
-
-
-
