@@ -50,7 +50,7 @@
         }
         .kategori-text { color: red; }
 
-        .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; flex: 1; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; }
+        .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; flex: 1; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; min-height: 120px; }
         
         #opts { flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
         .opt { display: block; width: 100%; padding: 14px; margin: 6px 0; border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; background: #fff; font-size: 1.05em; text-align: left; transition: all 0.2s ease; }
@@ -87,8 +87,9 @@
         .link { display: block; padding: 12px; margin: 6px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 14px; text-align: center; border-radius: 8px; transition: 0.2s; border: 1px solid transparent; }
         .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
-        /* FOOTER */
-.footer-area { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px; width: 100%; background: transparent; border-top: none; z-index: 10; }        .footer-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
+        /* FOOTER (Sadeleştirilmiş ve Şeffaflaştırılmış) */
+        .footer-area { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px; width: 100%; background: transparent; border-top: none; z-index: 10; }
+        .footer-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
         .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; margin-right: 10px; }
         
         .btn-footer { border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; transition: 0.2s; text-decoration: none; display: inline-block; }
@@ -98,8 +99,8 @@
 
         .btn-footer:hover { transform: translateY(-2px); }
 
-/* YENİ MİKRO HALİ */
-.disclaimer { font-size: 9px; color: #888; text-align: center; max-width: 950px; margin-top: 2px; line-height: 1.2; letter-spacing: 0.2px; opacity: 0.8; }
+        .disclaimer { font-size: 9px; color: #888; text-align: center; max-width: 950px; margin-top: 2px; line-height: 1.2; letter-spacing: 0.2px; opacity: 0.8; }
+
         /* MODAL */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
         .modal-content { background: white; margin: 5% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 550px; position: relative; }
@@ -111,6 +112,21 @@
         .donate-option { border-color: #ffc107; background: #fffdf5; }
         .donate-option:hover { background: #ffc107; color: #000; box-shadow: 0 5px 15px rgba(255,193,7,0.4); }
         .d-price { display: block; font-size: 0.85em; color: inherit; font-weight: normal; margin-top: 5px; opacity: 0.8; }
+
+        /* AKORDEON MENÜ TASARIMI */
+        .modal-body { max-height: 65vh; overflow-y: auto; padding-right: 10px; margin-top: 20px; }
+        .accordion { 
+            background-color: #f8fbff; color: var(--p); cursor: pointer; padding: 15px; 
+            width: 100%; border: 2px solid #e9ecef; border-radius: 8px; text-align: left; 
+            outline: none; font-size: 14px; font-weight: bold; transition: 0.3s; margin-bottom: 8px;
+        }
+        .accordion.active, .accordion:hover { background-color: var(--p); color: white; border-color: var(--p); }
+        
+        .panel { 
+            padding: 15px; background-color: white; border-left: 3px solid var(--p);
+            border-radius: 0 0 8px 8px; display: none; margin-bottom: 15px;
+            font-size: 13px; line-height: 1.6; color: #444; border-bottom: 1px solid #eee;
+        }
 
         /* MOBIL UYUMLULUK KODU */
         @media (max-width: 1000px) { 
@@ -186,7 +202,7 @@
             <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">İLETİŞİM</button>
         </div>
         <div class="disclaimer">
-            ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, standart son kullanıcı yapay zeka araçları (örn. ChatGPT) yerine, doğrudan geliştirici seviyesindeki <b>Google AI Studio</b> üzerinden <b>gemini-3-flash-preview (Bilgi kesim tarihi: Haziran 2025)</b> LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak tüm otonom sistemlerde olduğu gibi teknik halüsinasyon payı mevcuttur. <b>Havacılıkta emniyet ve doğrulama esastır;</b> operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
+            ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, standart son kullanıcı yapay zeka araçları yerine, doğrudan geliştirici seviyesindeki Google AI Studio üzerinden gemini-3-flash-preview (Bilgi kesim tarihi: Haziran 2025) LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak Havacılıkta emniyet ve doğrulama esastır; operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
         </div>
     </div>
 
@@ -194,8 +210,8 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('iletisimModal')">&times;</span>
             <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">İletişim Kanalları</h2>
-            <a href="https://t.me/burakkurt" target="_blank" class="action-option">Telegram ile Ulaşın</a>
-            <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">E-Posta Gönderin</a>
+            <a href="https://t.me/burakkurt_dispatch" target="_blank" class="action-option">Telegram ile Ulaşın</a>
+            <a href="mailto:seninmailadresin@gmail.com" class="action-option">E-Posta Gönderin</a>
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Hata bildirimi, sistem önerileri veya özel destek talepleriniz için doğrudan bana ulaşabilirsiniz.</p>
         </div>
     </div>
@@ -225,9 +241,82 @@
     <div id="analizModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('analizModal')">&times;</span>
-            <h2 style="text-align:center; color:#17a2b8; text-transform: uppercase;">Analiz Notları</h2>
-            <p style="text-align:center; color: #555; margin-top: 20px;">Havacılık derslerine dair kritik analizler, notlar ve ipuçları burada listelenecektir.</p>
-            <p style="text-align: center; color: #999; font-size: 12px; margin-top: 40px; font-style: italic;">"Dispeçerlik bir ezber değil, prosedür disiplinidir."</p>
+            <h2 style="text-align:center; color:#17a2b8; text-transform: uppercase; margin-bottom: 5px;">Analiz Notları</h2>
+            <p style="text-align:center; color: #777; font-size: 12px; margin-top: 0;">Sınav kazandıran hap bilgiler ve dikkat edilecekler.</p>
+            
+            <div class="modal-body">
+                
+                <button class="accordion">Genel Soru Analizi</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">Sizin Notlarınız</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">1 - M&B - AĞIRLIK VE DENGE</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">2 - HPL - İNSAN PERFORMANSI VE LİMİTLERİ</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">3 - DGR - TEHLİKELİ MADDELER</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">4 - COM - HABERLEŞME</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">5 - LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">6 - HAV - HAVA TRAFİK YÖNETİMİ</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">7 - MET - METEOROLOJİ</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">8 - PEF - PERFORMANS</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">9 - SEC - GÜVENLİK</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">10 - NAV - SEYRÜSEFER</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">11 - FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+                <button class="accordion">12 - AVI - HAVACILIK ÖĞRETİMİ</button>
+                <div class="panel">
+                    Metinler buraya gelecek...
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -239,7 +328,7 @@
         // Ders Kategorileri Tanimi
         const categories = [
             { name: "TÜM SORULAR", keyword: "ALL" },
-            { name: "🏆 ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
+            { name: "ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
             { name: "3 - TEHLİKELİ MADDELER (DGR)", keyword: "DGR" },
@@ -449,12 +538,29 @@
         function closeModal(id) { document.getElementById(id).style.display = "none"; }
         window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.style.display = "none"; }
         
+        // Akordeon Menü Çalıştırma Kodu
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                for (let j = 0; j < acc.length; j++) {
+                    if (acc[j] !== this) {
+                        acc[j].classList.remove("active");
+                        if (acc[j].nextElementSibling) {
+                            acc[j].nextElementSibling.style.display = "none";
+                        }
+                    }
+                }
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
         start();
     </script>
 </body>
 </html>
-
-
-
-
-
