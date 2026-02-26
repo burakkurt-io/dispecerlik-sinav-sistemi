@@ -208,8 +208,8 @@
     {
         "Soru Numarası": "S.18",
         "Soru Metni": "Ceiling olabilmesi için, bulut durumu ne olmalıdır?",
-        "A Şıkkı": "25000 ft üstünde / gökyüzünün yarısından fazlasını kaplamalıdır.\nb) 25000 ft altında / gökyüzünün yarısından fazlasını kaplamalıdır.",
-        "B Şıkkı": "",
+        "A Şıkkı": "25000 ft üstünde / gökyüzünün yarısından fazlasını kaplamalıdır.",
+        "B Şıkkı": "25000 ft altında / gökyüzünün yarısından fazlasını kaplamalıdır.",
         "C Şıkkı": "20000 ft üstünde / gökyüzünün yarısından fazlasını kaplamalıdır.",
         "D Şıkkı": "20000 ft altında / gökyüzünün yarısından fazlasını kaplamalıdır.",
         "Doğru Cevap": "d",
@@ -21496,3 +21496,4 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
