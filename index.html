@@ -177,8 +177,8 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('iletisimModal')">&times;</span>
             <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">İletişim Kanalları</h2>
-            <a href="https://t.me/burakkurt_dispatch" target="_blank" class="action-option">Telegram ile Ulaşın</a>
-            <a href="mailto:seninmailadresin@gmail.com" class="action-option">E-Posta Gönderin</a>
+            <a href="https://t.me/burakkurt" target="_blank" class="action-option">Telegram ile Ulaşın</a>
+            <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">E-Posta Gönderin</a>
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Hata bildirimi, sistem önerileri veya özel destek talepleriniz için doğrudan bana ulaşabilirsiniz.</p>
         </div>
     </div>
@@ -198,7 +198,7 @@
     <div id="analizModal" class="modal">
         <div class="modal-content analiz-modal-content">
             <span class="close-btn" onclick="closeModal('analizModal')">&times;</span>
-            <h2 style="text-align:center; color:#17a2b8; text-transform: uppercase; margin-bottom: 5px;">Hap bilgiler</h2>
+            <h2 style="text-align:center; color:#17a2b8; text-transform: uppercase; margin-bottom: 5px;">Hap Bilgiler</h2>
             <p style="text-align:center; color: #777; font-size: 12px; margin-top: 0;">Sınav kazandıran hap bilgiler ve dikkat edilecekler.</p>
             
             <div id="analiz-menu" class="modal-body-scroll">
@@ -501,9 +501,239 @@
 * <b>Durumsal Farkındalık (Situational Awareness):</b> Uçağın o anki durumunu, geçmişini ve gelecekte nereye gideceğini bilmektir. Olayları önceden öngörmeye <b>Pro-aktif</b> davranış denir. Zihinsel aşırı yüklenme (mental overload) bu farkındalığı sıfırlar.<br>
 * <b>Karar Verme Süreci:</b> Acil durumlarda karar vermeyi ve durum analizini en çok kısıtlayan dış faktör <b>"Mevcut Zamanın Sınırlı Olmasıdır"</b> (amount of time available). Karar vermeyi kolaylaştıran etken ise <b>esnek zamandır</b>.<br>
 * <b>Eleştiri Kültürü:</b> Yapılan bir eleştiriye karşı kızgınlık ve kırgınlık duymak CRM kurallarına aykırıdır; ekip hatalarla yüzleşebilmeli (facing the facts) ve yapıcı iletişim kurmalıdır.`,
-            'dgr': `DGR notları buraya gelecek...`,
-            'com': `COM notları buraya gelecek...`,
-            'law': `LAW notları buraya gelecek...`,
+            'dgr': `3) DGR - TEHLİKELİ MADDELER ( U 01 E UO 054 )<br>
+<br>
+<b>Temel Tanımlar ve Sınıflandırma</b><br>
+*   <b>Tehlikeli Madde (Dangerous Goods) Tanımı:</b> Havayolu ile taşınması sırasında uçağa, sağlığa, çevreye, emniyete ve can güvenliğine tehdit oluşturan ve <b>IATA DGR / ICAO Technical Instructions</b> listelerinde tanımlanmış olan maddelerdir.<br>
+*   <b>Temel Doküman:</b> Tehlikeli maddelerin hava yoluyla emniyetli taşınmasına ilişkin temel yasal çerçeve ICAO’nun yayınladığı <b>"Technical Instructions for the safe transport of dangerous goods by air" (Doc 9284)</b> dökümanıdır. Uygulamada ise <b>IATA DGR (Dangerous Goods Regulations)</b> kitabı kullanılır.<br>
+*   <b>Sınıflar (Classes):</b> Tehlikeli maddeler fiziksel ve kimyasal özelliklerine göre toplam <b>9 (dokuz) ayrı sınıfa</b> (class) ayrılır.<br>
+*   <b>Sınıf 1 - Patlayıcılar (Explosives):</b> Kütlesel patlama yapan ve aniden yüksek ısı/şok dalgası yayan maddelerdir.<br>
+*   <b>Sınıf 2 - Gazlar (Gases):</b> Yüksek basınç altında sıkıştırılmış (compressed), sıvılaştırılmış veya dondurulmuş halde bulunan, zehirli veya yanıcı olabilen maddelerdir.<br>
+*   <b>Sınıf 4.3 - Su ile Temas (Dangerous When Wet):</b> Su ile teması halinde alev alıcı veya zehirli gazlar çıkaran (kendiliğinden alevlenebilen) maddelerdir.<br>
+*   <b>Sınıf 7 - Radyoaktif Maddeler:</b> Radyonükleik özellik gösteren, izotop yayan ve insan sağlığına/canlı dokuya zararlı ışınım yapan maddelerdir.<br>
+*   <b>Sınıf 8 - Aşındırıcılar (Corrosive):</b> Temas ettiği yüzeyleri (uçağın gövdesi) veya canlı dokuyu kimyasal reaksiyonla tahrip edebilen maddelerdir.<br>
+<br>
+<b>Sorumluluklar ve İş Süreçleri</b><br>
+*   <b>Göndericinin (Shipper) Sorumluluğu:</b> Bir malın tehlikeli madde olup olmadığını belirlemek, içeriğini sınıflandırmak, uygun şekilde <b>ambalajlamak (packaging)</b>, üzerine doğru <b>tehlike etiketlerini (hazard labels) yapıştırmak</b> ve dökümantasyonu sağlamak tamamen malı gönderen kişinin (shipper) sorumluluğundadır.<br>
+*   <b>Operatörün (Havayolu/Taşıyıcı) Sorumluluğu:</b> Tehlikeli maddelerin uçağa kabulü öncesinde, paketlerin doğru etiketlenip etiketlenmediğini kontrol etmek ve ilgili taşıma düzenlemelerine <b>(IATA DGR kurallarına) tam uyum sağlandığından emin olmak</b> havayolunun sorumluluğudur. Uçağa kusursuz bir şekilde yüklenmesinden ise <b>Yetkili Acenta veya Yükleme Şefi (Load Master)</b> sorumludur.<br>
+<br>
+<b>Etiketler ve İşaretlemeler</b><br>
+*   <b>Risk Etiketleri (Hazard Labels):</b> Maddenin türünü (Örn: Aşındırıcı, Yanıcı vb.) ve sınıfını gösteren ana etiketlerdir. (Gönderici hazırlar).<br>
+*   <b>Handling (Elleçleme) Etiketleri:</b> Risk etiketlerine ilaveten, paketin nasıl taşınacağı, depolanacağı veya hangi yönde tutulacağı hakkında bilgi verir (Örn: Kırılabilir, Dondurulmuş).<br>
+*   <b>THIS WAY UP (Bu Yön Yukarı):</b> İçerisinde sıvı bulunan paketlerin üzerine, uçağın her iki yanından da net görülebilmesi için en az <b>2 (iki) adet</b> konulmalıdır.<br>
+*   <b>CAO (Cargo Aircraft Only):</b> Sadece Kargo Uçağı etiketi. Bu etiketi taşıyan yüksek riskli paketler, içerisinde yolcu bulunan uçaklara <b>kesinlikle yüklenemez ve taşınamaz</b>.<br>
+<br>
+<b>Yolcu ve Ekip Beraberinde Taşınan Maddeler</b><br>
+*   <b>Genel Kural:</b> Tehlikeli maddelerin el bagajı olarak yolcu kabininde taşınması genel kural olarak yasaktır. Ancak <b>Tablo 2.3.A</b> (IATA DGR) limitleri dahilinde bazı istisnalar vardır.<br>
+*   <b>Kozmetik ve Tıbbi Ürünler:</b> Saç spreyi, parfüm veya aseton gibi ürünler; paket başına <b>0.5 lt / 0.5 kg</b>'ı ve kişi başına toplam <b>2 lt / 2 kg</b> sınırını aşmamak şartıyla taşınabilir.<br>
+*   <b>Emniyet Kibriti ve Çakmak:</b> Sadece yolcunun <b>kendi üzerinde (on one's person)</b> bulunması ve bir adetle sınırlı olması şartıyla uçakta taşınmasına izin verilir. Bagajda (el veya check-in) taşınması yasaktır.<br>
+*   <b>Mühimmat (Ammunition):</b> Sportif veya av amaçlı fişekler el bagajında veya kişinin üzerinde asla taşınamaz. Sadece operatörün (havayolunun) izni ile, brüt ağırlığı <b>5 kg'ı geçmemek</b> şartıyla <b>Check-in (Kayıtlı) bagajda</b> taşınabilir.<br>
+*   <b>Alkollü İçecekler:</b> Perakende ambalajında olduğu sürece, özel bir şirket onayı gerektirmeden (limitler dahilinde) yolcu bagajlarında taşınabilir. (Sınavda her seferinde operatör onayı gerekir şıkkı "yanlış ifade" olarak sorulmuştur).<br>
+*   <b>Kesinlikle Yasak Olanlar (Forbidden):</b> Havai fişekler, eğlence amaçlı patlayıcılar, insanı etkisiz hale getiren biber gazı/şok cihazları ve lityum pil içeren ancak emniyet valfi olmayan akıllı çantalar gibi ürünlerin yolcu veya ekip beraberinde taşınması kesinlikle yasaktır.<br>
+<br>
+<b>Özel Kargo Durumları</b><br>
+*   <b>Gizli Tehlikeli Maddeler (Hidden Dangerous Goods):</b> Kargo manifestosunda "kamera", "tıbbi malzeme" veya "yedek parça" gibi genel isimlerle beyan edilen ancak içerisinde lityum pil, kuru buz veya yanıcı madde gibi tehlikeli bileşenler barındıran kargolardır. (Örn: Aşılar, soğuk tutulması için <b>Kuru Buz / Dry Ice</b> ile paketlendiğinden gizli tehlikeli madde sayılır).<br>
+*   <b>Savaş Mühimmatı (Munitions of War):</b> Savaş mühimmatı gibi stratejik ve çok yüksek riskli kargoların taşınabilmesi için, sadece uçağın tescilli olduğu devletten değil, uçağın hava sahasını kullanacağı <b>tüm devletlerden (all States in whose airspace the aircraft is to fly)</b> özel izin alınması şarttır.<br>
+*   <b>Taşıma Belgesi:</b> Ticari uçuşlarda tehlikeli madde taşınabilmesi için malzemeye mutlaka "Tehlikeli Madde Taşıma Belgesi" (Shipper's Declaration for Dangerous Goods) eşlik etmelidir.<br>
+<br>
+<b>Bildirimler, Acil Durumlar ve Raporlama</b><br>
+*   <b>NOTOC (Notification to Captain):</b> Uçağa yüklenen tehlikeli maddelerin cinsi, UN (Birleşmiş Milletler) numarası, miktarı, paketleme grubu ve uçaktaki tam lokasyonu hakkında <b>Sorumlu Kaptan Pilot'a (PIC)</b> verilen resmi yazılı emniyet dökümanıdır.<br>
+*   <b>ATC Bildirimi:</b> Acil bir durumda uçakta tehlikeli madde olduğu NOTOC üzerinden ATC'ye (Hava Trafik Kontrol) bildirilirken; Proper Shipping Name (Maddenin açık adı), UN Number ve Loading Location (Yüklendiği yer) söylenir. Ancak malı gönderenin adı (Shipper's Name) ATC için acil bir bilgi değildir.<br>
+*   <b>ERG (Emergency Response Guide):</b> Tehlikeli maddelerle ilgili uçuş sırasında veya yerde meydana gelebilecek bir acil durumda (sızıntı, yangın vb.) nasıl müdahale edileceğini gösteren ICAO yayınlı <b>"Kırmızı Kitap" (Red Book)</b> tır.<br>
+*   <b>Sızıntı Durumu:</b> Yükleme veya boşaltma sırasında bir tehlikeli maddeden sızıntı/akıntı tespit edilirse, ramp görevlisi durumu derhal <b>Uçağın Kaptanı, Kargo Birimi ve Uçak Teknisyenine</b> haber vermelidir.<br>
+*   <b>Kaza (Accident) Kriteri:</b> Tehlikeli maddenin taşınması sırasında; bir kişinin yaralanması, ölmesi, uçağın yapısal hasar görmesi, yangın çıkması, şiddetli sıvı akması veya radyasyon yayılması durumları resmi olarak 'Kaza' sayılır.<br>
+*   <b>Olay (Incident) / Kaza (Accident) Raporlaması:</b> Sızıntı, kaza veya Kaptana NOTOC verilmemesi gibi durumlarda mutlaka 'Tehlikeli Madde Olay Raporu' (Dangerous Goods Occurrence Report) yazılır. Kaptan, Kabin Amiri ve ilgili ekip tarafından yazılan bu raporlar, en geç <b>72 saat</b> içerisinde hem operatörün (havayolunun) bağlı olduğu ülke otoritesine hem de olayın gerçekleştiği ülkenin Sivil Havacılık Otoritesine bildirilmek zorundadır. (Sadece kendi şirketine rapor vermek yeterli değildir).`,
+            'com': `4) COM - HABERLEŞME ( U 01 E UO 197 )<br>
+<br>
+<b>Temel Radyo Teorisi ve Dalga Özellikleri</b><br>
+*   <b>VHF (Very High Frequency):</b> Sivil havacılıkta "Airband" olarak adlandırılan ve sesli haberleşmede en yaygın kullanılan kısa mesafeli radyo frekansı bandıdır.<br>
+    *   <b>Frekans Aralığı:</b> <b>118.000 ile 136.975 MHz</b> arasıdır. (VOR/ILS seyrüseferi için 108.000 - 117.95 MHz kullanılır).<br>
+    *   <b>Dalga Özelliği:</b> VHF dalgaları 'Görüş Hattı' (Line of Sight) prensibiyle ilerler. Yani sadece <b>direkt dalgalardır</b>.<br>
+    *   <b>Kısıtlamaları:</b> İyonosferden yansımazlar (uzaya delip geçerler) ve dağ, bina gibi <b>maniaları aşamazlar</b>. <br>
+    *   <b>Avantajı:</b> Havadaki kötü hava şartlarından (statik parazit, yağmur vb.) en az etkilenen ve en yüksek kalitede ses sağlayan banttır.<br>
+    *   <b>Menzil:</b> Uçak ne kadar <b>yüksek irtifada</b> ve istasyona ne kadar <b>yakınsa</b>, VHF alım/iletişim kalitesi o kadar artar.<br>
+*   <b>HF (High Frequency):</b> Okyanus aşırı ve çok uzun mesafeli iletişimlerde kullanılan banttır.<br>
+    *   <b>Dalga Özelliği:</b> HF bandında <b>hem yer dalgaları hem de gök dalgaları (sky waves)</b> hakimdir. İyonosfere çarpıp yeryüzüne geri yansırlar.<br>
+    *   <b>Dezavantajı:</b> İki dalga aynı anda alıcıya ulaşırsa "Girişim" (Interference) yapar. Ayrıca atmosferik statik elektriklenmeden (fırtına vb.) <b>çok şiddetli etkilenir</b> ve parazit yapar. (LF - Low Frequency ve MF - Medium Frequency de statik elektrikten kötü etkilenir).<br>
+<br>
+<b>İletişim Kuralları ve Standart Telsiz Terminolojisi</b><br>
+*   <b>Wilco (Will Comply):</b> "Mesajınızı/Talimatınızı tam olarak anladım ve uygulayacağım (yerine getireceğim)" anlamına gelir. En sık sorulan kelimedir.<br>
+*   <b>Roger:</b> "Gönderdiğiniz son mesajı aldım ve anladım" anlamına gelir (Ancak uygulayacağım taahhüdünü içermez).<br>
+*   <b>Verify:</b> "Son mesajını/talimatını kontrol et ve onayla (doğrula)" anlamındadır.<br>
+*   <b>Out:</b> "Yapılan konuşma (transmisyon) tamamen sona erdi, artık sizden bir cevap beklemiyorum" demektir.<br>
+*   <b>Monitor:</b> "Belirtilen frekansı aç, sadece dinlemede kal (listen out on frequency), anons bekle" anlamındadır.<br>
+*   <b>Hava-Yer Haberleşmesi (Air-Ground Comm):</b> Uçaktaki istasyonlar ile yeryüzündeki istasyonlar arasındaki <b>çift yönlü (two-way)</b> bilgi alışverişidir.<br>
+*   <b>Aeronautical Station (Havacılık İstasyonu):</b> Hava araçlarıyla telsiz haberleşmesi yapmak için karada, gemide veya denizde kurulu olan sabit/mobil birimdir.<br>
+*   <b>Blind Transmission (Körlemesine Yayın):</b> Karşı tarafla iki yönlü iletişim kurulamadığında (örneğin kulaklık çalışmıyor ama mikrofon çalışıyorsa), ancak karşı istasyonun sesi duyabildiğine inanıldığı durumlarda yapılan tek taraflı yayındır.<br>
+*   <b>Broadcast (Genel Yayın):</b> Belirli bir uçağa hitap etmeyen, o frekanstaki tüm uçakların alması için yapılan genel yayınlardır (Örn: ATIS, VOLMET).<br>
+<br>
+<b>Sayıların, Saatlerin ve İrtifaların Okunuşu</b><br>
+*   Havacılıkta karışıklığı önlemek için tüm sayılar ve rakamlar <b>tek tek</b> okunur. Binlik/Yüzlük yuvarlamalar (Thousand/Hundred) istisnadır.<br>
+*   <b>Saat Okunuşu:</b> Zaman sistemi daima <b>24 saatlik UTC (Eşgüdümlü Evrensel Zaman)</b> olmalıdır (A.M./P.M. kullanılmaz). Örn: 13:00 UTC saati "One three zero zero" veya "One three zero zero UTC" olarak okunur. (Sınav sorusunda 4:15 PM saati karışıklık olmaması için <b>"One six one five"</b> (16:15) olarak okunur).<br>
+*   <b>İrtifa/Seviye Okunuşu:</b> <br>
+    *   1500 ft -> Wun tousand fife hundred feet (Bin beş yüz).<br>
+    *   2400 ft -> Two thousand four hundred feet (İki bin dört yüz).<br>
+    *   13500 ft -> One three thousand five hundred (On üç bin beş yüz).<br>
+    *   FL180 -> Flight Level <b>Wun Ate Zero</b> (Bir sekiz sıfır - *Sınavda bu okunuşa dikkat*).<br>
+*   <b>Basınç (QNH) Okunuşu:</b> 1001 hPa -> "QNH one zero zero one" şeklinde her rakam tek tek okunur.<br>
+<br>
+<b>Çağrı Adları, Testler ve Haberleşme Hizmetleri</b><br>
+*   <b>Radio Check (Telsiz Testi):</b> "İstasyon adı, Uçak adı, <b>'Radio Check'</b> kelimesi ve Test edilen frekans" sırasıyla yapılır.<br>
+*   <b>Readability (Okunabilirlik) Skalası:</b> 1'den 5'e kadardır.<br>
+    *   <b>Readability 3:</b> Ses anlaşılabilir ancak <b>güçlükle (readable but with difficulty)</b> duyuluyor demektir.<br>
+    *   <b>Readability 4:</b> Sesin problemsiz ve net anlaşıldığını (readable) belirtir.<br>
+*   <b>Haberleşme Hizmet Türleri:</b> 1) Air/ground (Hava/Yer), 2) Flight Information (Uçuş Bilgi - FIS), 3) ATC (Hava Trafik Kontrol).<br>
+*   <b>Çağrı Adları (Callsigns):</b><br>
+    *   <b>TOWER:</b> Meydan kontrol kulesi.<br>
+    *   <b>GROUND:</b> Manevra sahasındaki yer araçlarını ve taksi yapan uçakları yöneten birim (Yer Kontrol).<br>
+    *   <b>DEPARTURE:</b> Kalkan uçaklara radar yardımıyla hizmet veren kalkış kontrol birimi.<br>
+    *   <b>INFORMATION:</b> Uçuş Bilgi Hizmeti (FIS) veren yer istasyonu.<br>
+*   <b>SELCAL (Selective Calling):</b> Yer istasyonunun tüm frekansı meşgul etmeden, sadece istenen uçağı özel bir ses/ışık koduyla uyarmasını sağlayan seçmeli çağrı sistemidir.<br>
+*   <b>Frekans Ulaşılamazsa:</b> Atanan frekansta kuleye ulaşılamazsa, öncelikle o bölgeye ait <b>başka bir bağlantılı yedek frekans (another related frequency)</b> denenmelidir.<br>
+<br>
+<b>Acil Durum (Emergency) ve Uyarı Mesajları</b><br>
+*   Acil durum mesajları ciddiyetine göre ikiye ayrılır: <b>Distress (Tehlike)</b> ve <b>Urgency (Aciliyet)</b>.<br>
+*   <b>Distress (Tehlike):</b> Uçağın veya içindeki kişinin ciddi ve *yakın bir tehlike (grave and imminent danger)* altında olduğunu ve *derhal yardım (immediate assistance)* gerektiğini belirtir. <br>
+    *   Çağrı: Arka arkaya 3 kez <b>"MAYDAY, MAYDAY, MAYDAY"</b>.<br>
+    *   Örnek görsel sinyal: Uçaktan atılan <b>kırmızı renkli paraşütlü fişek</b>.<br>
+*   <b>Urgency (Aciliyet/İvedi):</b> Uçağın/geminin emniyetini ilgilendiren ancak anında *hayati bir yardım gerektirmeyen (does not require immediate assistance)* durumlardır. (Örn: Hasta yolcu).<br>
+    *   Çağrı: Arka arkaya 3 kez <b>"PAN PAN, PAN PAN, PAN PAN"</b>.<br>
+*   <b>MAYDAY Frekansı:</b> Acil durum çağrısı yapılırken önce uçağın o an dinlediği <b>mevcut frekans (frequency currently in use)</b> kullanılmalıdır. Eğer ulaşılamazsa uluslararası sivil acil durum frekansı olan <b>121.500 MHz</b> kullanılır.<br>
+*   <b>Radyo Sessizliği:</b> Frekansta bir Distress (Mayday) mesajı duyan diğer bir pilot, iletişimi bozmamak için <b>radyo sessizliğini korumalı</b>, frekansı dinlemeli ve gerekirse mesaja röle (aktarım) yapmak için hazır beklemelidir.<br>
+*   <b>Sessiz Kod (Speechless Code):</b> Telsiz mikrofonu bozuk ama pilot duyabiliyorsa, telsiz mandalına 3 kez kısa basmak (three short transmissions) <b>"Say Again" (Tekrarla)</b> anlamına gelir.<br>
+*   <b>Flight Regularity Message:</b> Uçuşun devamı için acil ihtiyaç duyulan uçak yedek parçaları (aircraft parts and material) ile ilgili mesajlar 'Uçuş Düzenlilik' kategorisine girer.<br>
+<br>
+<b>ATIS (Automatic Terminal Information Service)</b><br>
+*   Meydana inen veya kalkan uçaklara otomatik ve sürekli olarak hava durumu (METAR) ve operasyonel bilgi sağlayan sistemdir. Frekans kalabalığını önler.<br>
+*   <b>Kısıtlamalar:</b> ATIS, frekans meşguliyetini önlemek için <b>30 saniyeyi (30 seconds)</b> aşmamalıdır.<br>
+*   <b>Frekans Seçimi:</b> ATIS yayını için özel (discrete) bir VHF frekansı veya bir VOR istasyonunun ses kanalı kullanılır. <b>DİKKAT:</b> Bir ILS'in ses kanalından (Voice channel of an ILS) ATIS yayını yapılması yasaktır.<br>
+*   <b>Bulut Kuralı:</b> Bulutlar <b>5000 ft altında</b> veya o bölgenin en yüksek Minimum Sektör İrtifası (MSA) altındaysa ATIS'te mutlaka belirtilmelidir.<br>
+*   <b>Güncellenme:</b> ATIS mesajı, hava durumunda bir değişiklik olsun ya da olmasın, istasyona ulaşan her yeni <b>resmi hava raporu (METAR vb.) geldiğinde</b> yeni bir harf koduyla (Örn: ATIS Info Golf) güncellenir.<br>
+*   <b>Pilotun Teyidi:</b> Pilot ilk temasta ATIS'i dinlediğini <b>"Information Golf received"</b> diyerek harf koduyla belirtir. ATIS yayınını hazırlamak ve sunmak <b>Hava Trafik Hizmetleri'nin (ATS)</b> sorumluluğundadır.<br>
+<br>
+<b>AFTN Mesajlaşma Ağı ve Öncelik Kodları</b><br>
+*   AFTN (Aeronautical Fixed Telecommunication Network), havacılıkta uçuş planları, meteoroloji ve NOTAM gibi verilerin aktarıldığı küresel sabit mesajlaşma ağıdır.<br>
+*   <b>Öncelik Kodları (Priority Codes):</b><br>
+    *   <b>SS:</b> Mutlak tehlike (Distress/Mayday) mesajları. En üst öncelik.<br>
+    *   <b>DD:</b> Uçuş Emniyeti (Flight Safety) ve Urgency (Aciliyet/Pan Pan) mesajları. Sınavda özellikle "Flight Safety" için DD kodu sorulmaktadır.<br>
+    *   <b>FF:</b> Uçuş düzenlilik ve idari mesajlar.<br>
+    *   <b>GG:</b> Meteoroloji (METAR/TAF vb.) mesajları.<br>
+    *   <b>DİKKAT:</b> "YY" diye standart bir AFTN öncelik kodu yoktur.<br>
+*   <b>IFPS AFTN Adresleri:</b> Avrupa CFMU/Network Management sistemine uçuş planı gönderirken Brüksel ve Paris merkezli <b>EUCHZMFP / EUCBZMFP</b> adresleri kullanılır. (Diğer doğru eşleşme BRUEP7X - PAREP7X'tir).<br>
+<br>
+<b>Transponder Kodları (Özet)</b><br>
+*   <b>7500:</b> Yasadışı müdahale / Uçak kaçırma (Hijack).<br>
+*   <b>7600:</b> Telsiz/İletişim arızası (Radio failure / Loss of two-way comms). Mode A'da seçilir.<br>
+*   <b>7700:</b> Genel acil durum (Emergency). Mode A'da seçilir.<br>
+*   "SQUAWK 1234": Transponder paneline 1234 kodunun girilip yayınlanması demektir.<br>
+<br>
+<b>NOTAM (Notice to Airmen) Mesajları</b><br>
+*   Uçuş operasyonlarını etkileyebilecek tehlikeler, radyo yardımcılarındaki arızalar veya prosedür değişiklikleri hakkında bilgi veren telekomünikasyon bildirisidir.<br>
+*   <b>NOTAMN:</b> Yeni (New) bir durum bildirisi.<br>
+*   <b>NOTAMR:</b> Mevcut bir bildiriyi değiştiren/düzenleyen (Replace) bildiri.<br>
+*   <b>NOTAMC:</b> Geçerliliğini yitiren bir bildiriyi tamamen iptal eden (Canceled) bildiri. NOTAMT diye bir kod yoktur.<br>
+*   <b>A Serisi NOTAM:</b> Uluslararası öneme sahip, genellikle <b>FL245 ve üzerindeki</b> üst hava sahası kısıtlamalarını ve büyük uluslararası havalimanlarını kapsar. (G, H, M gibi seriler ulusal/yereldir).<br>
+*   <b>S Serisi NOTAM (SNOWTAM):</b> Pistteki kar, buz ve frenleme koşullarını bildirir.<br>
+*   <b>Trigger NOTAM (Tetikleyici NOTAM):</b> Uzun süreli kalıcı değişiklikleri içeren AIRAC, AIP SUP veya AMDT dökümanlarının <b>yürürlüğe girdiği anı (effective date)</b> duyurmak için kısa süreliğine yayınlanan uyarı mesajıdır.<br>
+*   <b>DİKKAT:</b> Bir NOTAM metninde "WORKS HAVE BEEN COMPLETED" (çalışmalar tamamlandı) veya "NO LONGER IN FORCE" (artık yürürlükte değil) yazıyorsa, bu o durumun bittiğini gösterir. (Sınavda bir NOTAM'ın iptal olduğuna dair şıklar genellikle tuzaktır).`,
+            'law': `5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 )<br>
+<br>
+<b>Uluslararası Havacılık Kuruluşları</b><br>
+*   <b>ICAO (Uluslararası Sivil Havacılık Örgütü):</b> Birleşmiş Milletler'in sivil havacılıktan sorumlu yasal organıdır. Merkezi <b>Montreal</b>'dedir. Dünya çapında seyrüsefer emniyeti için uluslararası standartları (<b>SARPS</b>) ve usulleri (<b>PANS</b>) belirler.<br>
+*   <b>ICAO Yönetim Yapısı:</b> Standartları kabul eden daimi yürütme organı <b>Konsey'dir (The Council)</b>. Konsey üyelerini seçen ve 3 yılda bir toplanan ana organ ise <b>Meclis'tir (Assembly)</b>.<br>
+*   <b>ECAC:</b> Avrupa ülkeleri arasında sivil havacılığın güvenliğini ve düzenli gelişimini koordine eden Avrupa Sivil Havacılık Konferansı'dır. Sadece Avrupa kıtasında etkilidir.<br>
+*   <b>JAA / EASA:</b> Avrupa ülkelerindeki ortak havacılık gerekliliklerini (JAR kurallarını) yürüten ve standartları belirleyen otoritelerdir.<br>
+*   <b>FAA:</b> Amerika Birleşik Devletleri'nin (ABD) sivil havacılık dairesidir (FAR kurallarını yayınlar).<br>
+*   <b>IATA:</b> Havayolu şirketlerinin üye olduğu, biletleme ve ticari operasyonları düzenleyen ticari/sektörel bir kuruluştur (Politik bir kuruluş değildir). Dünyayı <b>3 ana trafik bölgesine</b> ayırır.<br>
+*   <b>DİKKAT:</b> Bir devlet ICAO standartlarına uyamayacak veya farklı bir uygulama yapacaksa (difference), bu durumu ICAO Montreal merkezine bildirmek ve kendi <b>AIP</b> dökümanında yayınlamak zorundadır.<br>
+<br>
+<b>Uluslararası Konvansiyonlar (Sözleşmeler)</b><br>
+*   <b>Şikago Konvansiyonu (1944):</b> ICAO'yu kuran temel anlaşmadır. Her devletin kendi hava sahası üzerinde tam ve mutlak egemenliği olduğunu kabul eder. <b>DİKKAT:</b> Sadece sivil hava araçlarını kapsar, devlet/askeri hava araçlarını kapsamaz.<br>
+*   <b>Varşova Konvansiyonu (1929):</b> Ücret karşılığında yapılan uluslararası uçuşlarda yolcu, bagaj ve kargo biletleme kurallarını düzenler. İşletmecinin (taşıyıcının) sorumluluk ve tazminat limitlerini belirler.<br>
+*   <b>Roma Konvansiyonu (1952):</b> Yabancı bir hava aracının, <b>yerdeki (surface) üçüncü şahıslara ve mallara</b> verdiği zararların tazminini ve işleticinin sorumluluğunu düzenler.<br>
+*   <b>Tokyo Konvansiyonu (1963):</b> Uçak içinde işlenen suçları ve yasadışı müdahaleleri kapsar. Uçak kaptanına suç işleyenleri kontrol altına alma ve yetkililere teslim etme <b>(zor kullanma) yetkisi</b> verir.<br>
+*   <b>Lahey Konvansiyonu (1970):</b> Uçakların kanun dışı yollarla ele geçirilmesini <b>(Uçak Kaçırma / Hijacking)</b> önleme sözleşmesidir.<br>
+<br>
+<b>Trafik Hakları (Freedoms of the Air)</b><br>
+*   <b>1. Hak (İlk Hak):</b> Yabancı bir ülkenin hava sahasından <b>inmeksizin uçup geçme (overflight)</b> hakkıdır.<br>
+*   <b>2. Hak:</b> Yabancı bir ülkeye yolcu/yük indirmeden sadece <b>teknik nedenlerle (yakıt ikmali, bakım)</b> inme hakkıdır.<br>
+*   <b>3. Hak:</b> Kendi ülkesinden aldığı yolcu veya kargoyu, ticari amaçla yabancı bir ülkeye <b>götürme</b> hakkıdır.<br>
+*   <b>4. Hak:</b> Yabancı bir ülkeden aldığı yolcu veya kargoyu, ticari amaçla <b>kendi ülkesine getirme</b> hakkıdır.<br>
+*   <b>5. Hak:</b> Kendi ülkesinden başlayıp, ikinci bir ülkeden yolcu alarak bu yolcuları <b>üçüncü bir ülkeye</b> taşıma hakkıdır.<br>
+*   <b>8. Hak (Kabotaj):</b> Yabancı bir havayolu şirketinin, başka bir devletin <b>kendi içindeki iki şehir arasında (İç hat / Domestic)</b> ticari yolcu taşıma hakkıdır. Çoğu ülke bu hakkı sadece kendi milli şirketlerine saklı tutar ve yabancılara yasaklar.<br>
+<br>
+<b>ICAO Annex (Ek) Dökümanları</b><br>
+*   <b>Annex 1:</b> Personel Lisansları (Personnel Licensing)<br>
+*   <b>Annex 2:</b> Hava Kuralları (Rules of the Air)<br>
+*   <b>Annex 3:</b> Meteoroloji Hizmetleri (Meteorology)<br>
+*   <b>Annex 6:</b> Hava Aracı Operasyonları (Uluslararası ticari hava taşımacılığı standartları)<br>
+*   <b>Annex 8:</b> Uçuşa Elverişlilik (Airworthiness)<br>
+*   <b>Annex 11:</b> Hava Trafik Hizmetleri (ATC, FIS, ALRS)<br>
+*   <b>Annex 12:</b> Arama ve Kurtarma (SAR)<br>
+*   <b>Annex 14:</b> Havaalanları (Aerodromes - pist boyutları, ışıklandırma)<br>
+*   <b>Annex 17:</b> Güvenlik (Security - yasadışı eylemleri önleme)<br>
+*   <b>Annex 19:</b> Emniyet Yönetim Sistemleri (SMS) - En güncel ve 19. Annex'tir.<br>
+<br>
+<b>AIP (Havacılık Bilgi Yayını) ve Haberleşme Belgeleri</b><br>
+*   <b>AIP (Aeronautical Information Publication):</b> Devletin yetkili sivil havacılık otoritesi tarafından yayınlanan, hava seyrüseferi için gerekli ve kalıcı bilgileri içeren ana kaynaktır. Üç bölümden oluşur:<br>
+    *   <b>GEN (General):</b> Ulusal kurallar, meteorolojik hizmetler, arama-kurtarma (SAR) servisleri, vergi ve meydan iniş/konaklama ücretleri burada yer alır.<br>
+    *   <b>ENR (En-Route):</b> Hava yolları, radyo seyrüsefer yardımcıları ile yasak, tahditli ve tehlikeli (P, R, D) sahaların sınırları burada belirtilir.<br>
+    *   <b>AD (Aerodromes):</b> Havaalanlarına ait pist detayları, çalışma saatleri, yaklaşma usulleri ve <b>yakıt/yangın imkanları</b> burada listelenir.<br>
+*   <b>AIP SUP (Supplement):</b> AIP'deki 3 ay veya daha uzun süreli geçici değişiklikleri kapsayan eklerdir.<br>
+*   <b>AIC (Circular):</b> Uçuş emniyeti veya idari konulardaki genelgelerdir (AIP eklentisi değildir).<br>
+*   <b>AIRAC:</b> Havacılık usul ve kurallarındaki değişikliklerin yürürlüğe girmeden önce planlı ve standart tarihlerde bildirilmesini sağlayan sistemdir.<br>
+<br>
+<b>Uçuşa Elverişlilik, Tescil ve Belgeler</b><br>
+*   <b>Tescil İşareti (Registration):</b> Uçağın kimliğidir, mülkiyet bilgileriyle uçağı tanımlar. Uçağın kayıtlı olduğu devlet (State of Registry) tarafından verilir. Uçuşta her zaman uçakta bulunmalıdır.<br>
+*   <b>Uçuşa Elverişlilik Sertifikası (C of A):</b> Uçağın ICAO Annex 8 standartlarına göre emniyetli uçabileceğini belgeler. Uçağın sicile kayıtlı olduğu <b>devletin otoritesi</b> tarafından düzenlenir. Uluslararası uçuşlarda aslı uçakta taşınmalıdır.<br>
+*   <b>Uçakta Taşınması Zorunlu Belgeler:</b> Tescil, Uçuşa Elverişlilik, Telsiz lisansı (Radio Licence), AOC (İşletme Sertifikası), Gürültü sertifikası, Sigorta ve Ekip lisansları her uçuşta orijinal olarak bulunmalıdır. <b>DİKKAT:</b> "Type Design Certificate" taşınmak zorunda değildir.<br>
+*   <b>Sözleşmeler:</b> Charter (kira) sözleşmeleri yazılı olmak zorundadır. İç hatlar için "Mali Mesuliyet", dış hatlar için "Ek Mali Mesuliyet" sigortası zorunludur.<br>
+*   <b>Wet Lease / Dry Lease:</b> Uçağın ekibiyle birlikte kiralanmasına (Wet Lease) denir ve uçak sahibi olan tarafın (lessor) AOC'si ve sorumluluğu altındadır. Uçak ekipsiz kiralanırsa (Dry Lease), kiralayan şirketin (lessee) AOC'si altındadır.<br>
+<br>
+<b>MEL, MMEL ve Operasyon El Kitabı (OM)</b><br>
+*   <b>Operasyon El Kitabı (OM):</b> İşletmeci (Havayolu) tarafından hazırlanır. Bölüm A (OM-A), uçak tipinden bağımsız olarak genel emniyet, yönetim ve kalite politikalarını içerir. Bölüm B ise spesifik uçak limitlerini içerir.<br>
+*   <b>MMEL (Master Minimum Equipment List):</b> Uçağın <b>üreticisi (Airbus/Boeing)</b> tarafından hazırlanan ve EASA/FAA gibi üst otoritelerin onayladığı temel arıza/uçuş listesidir.<br>
+*   <b>MEL (Minimum Equipment List):</b> <b>Havayolu (Operatör)</b> tarafından, MMEL baz alınarak kendi operasyonu için hazırlanan ve <b>yerel Sivil Havacılık Otoritesi (SHGM vb.)</b> tarafından onaylanan belgedir.<br>
+    *   <b>DİKKAT:</b> MEL, üreticinin MMEL'inden <b>daha kısıtlayıcı olabilir</b>, ancak asla daha az kısıtlayıcı (esnek) olamaz.<br>
+    *   <b>Sorumluluk:</b> Arızalı ekipmanla uçuş kararını kokpit ekibi (Kaptan) verir ancak uçağın bu şekilde uçurulmasının nihai sorumluluğu <b>Operatördedir</b>.<br>
+    *   <b>Süreler:</b> Arıza onarım süreleri A, B, C ve D olarak dört kategoridir. Süreler, arızanın tespit edildiği günün ertesi gece yarısı başlar. <b>B=3 gün, C=10 gün, D=120 gün</b>. Tek sefere mahsus süre uzatımı (One Time Extension) en geç 10 gün içinde otoriteye bildirilmelidir.<br>
+    *   <b>Geçerlilik:</b> MEL limitleri uçak motor çalıştırıp hareket edene (take-off roll başlayana) kadar geçerlidir. Havada QRH uygulanır.<br>
+    *   <b>Uygulama Sembolleri:</b> (M) Teknik bakım prosedürü, (O) Uçuş ekibi operasyon prosedürü gerektirir. <b>DDPG</b>, bu prosedürlerin açıklandığı detaylı rehberdir.<br>
+    *   <b>CDL (Configuration Deviation List):</b> Uçuş güvenliğini etkilemeyen eksik kapak, panel gibi aerodinamik yüzey dış sapmaları ve performans kısıtlamalarını içerir.<br>
+<br>
+<b>Hava Sahası ve Hava Trafik Kuralları (Rules of the Air)</b><br>
+*   <b>Egemenlik ve Kural Uyumu:</b> Ülkeler kendi hava sahalarında egemendir. Yabancı hava sahasında uçan pilotlar, üzerinde bulundukları devletin hava kurallarına uymak zorundadır. Açık denizler (High seas) üzerinde ise doğrudan ICAO kuralları geçerlidir.<br>
+*   <b>Kontrollü Hava Sahası (CTR / CTA):</b> <br>
+    *   <b>CTR (Control Zone):</b> Meydan çevresinde yer yüzeyinden (surface) başlayıp belirli bir limite uzanan sahadır. (Kule - TWR yönetir).<br>
+    *   <b>CTA (Control Area):</b> Yerden belirli bir yükseklikten başlayıp yukarı uzanan kontrollü yolları ve sahaları içerir.<br>
+*   <b>ATC Hizmetleri:</b> ACC (Saha Kontrol), APP (Yaklaşma Kontrol - TMA yönetir) ve TWR (Meydan Kontrol). <br>
+    *   <b>FIS (Uçuş Bilgi):</b> SIGMET, AIRMET gibi bilgileri sağlar.<br>
+    *   <b>ALRS (İkaz Hizmeti):</b> Tehlike anında (INCERFA, ALERFA, DETRESFA) arama kurtarma birimlerini tetikler. Bu tetiklemeyi ATC birimleri ve FIC yapar.<br>
+*   <b>Sınırlı Sahalar:</b> P (Prohibited - Yasak), R (Restricted - Tahditli/İzne tabi), D (Danger - Tehlikeli).<br>
+*   <b>VFR Limitleri:</b> <br>
+    *   Meydan CTR bölgesi için min. görüş <b>5 km</b>, min. bulut tavanı <b>1500 ft</b> olmalıdır.<br>
+    *   10.000 ft üzerinde görüş en az <b>8 km</b> olmalıdır (Bulutlara 1500m yatay, 1000 ft dikey mesafe).<br>
+    *   VFR uçuşlar FL200 üzerinde, gece saatlerinde ve süpersonik hızlarda yapılamaz.<br>
+    *   Şehir/Kalabalık üzerinde uçağın 600m yarıçapındaki en yüksek manianın <b>1000 ft</b> üzerinden, boş arazide <b>500 ft</b> üzerinden uçulmalıdır.<br>
+*   <b>IFR Asgari İrtifası:</b> Operatörün belirlediği rota irtifası, devletin belirlediği limitin altına inemez. Limit yoksa; düzlükte en yüksek manianın 1000 ft, dağlık alanda <b>2000 ft</b> (8 km çapında) üzerinden uçulmalıdır.<br>
+<br>
+<b>Yer ve Hava Öncelik/Işık Kuralları</b><br>
+*   <b>Yol Verme Önceliği:</b> Manevra sahasında taksi yapan uçak, kalkmakta olan (take off) uçağa yol verir. Havada kafa kafaya karşılaşan iki uçak <b>sağa (right)</b> döner. Kesişen uçaklardan yol hakkına sahip olan <b>rotasını ve hızını korur</b>. İniş önceliği mutlak suretle <b>Acil Durum (Emergency)</b> deklare eden uçağındır.<br>
+*   <b>Telsiz Arızasında Kule Işık Sinyalleri:</b><br>
+    *   <b>Yerde Çakar Kırmızı:</b> Bulunduğun pisti/alanı derhal terk et.<br>
+    *   <b>Yerde Çakar Yeşil:</b> Taksi yapmaya devam edebilirsin.<br>
+    *   <b>Havada Çakar Kırmızı:</b> Meydan güvensiz, iniş yapma (do not land).<br>
+    *   <b>Havada Çakar Yeşil:</b> İniş için dön, klerans bekle.<br>
+*   <b>Telsiz Arızası (IFR/VMC):</b> Kontrollü sahada VMC (görerek) şartlarda telsiz arızası yaşayan bir IFR uçak rotasına devam etmez; <b>VMC korunarak en yakın uygun meydana iniş yapar</b> ve ATC'ye haber verir.<br>
+*   <b>Pist Işıkları:</b> Pist kenar ışıkları (Runway Edge Lights - RL) beyazdır. Gece operasyonlarında kesinlikle yanmak zorundadır. Gündüz RVR 800 metrenin altına düşerse yine yakılmalıdır. Eşik ışıkları yeşil, pist sonu kırmızıdır. Taksi yolları mavi renklidir. Kaydırılmış eşik (Displaced Threshold) ile pist başı arasındaki RL ışıkları kırmızı yanar. Meydan tanıtma beacon'u (Identification Beacon) yeşil mors kodu ile çakar.<br>
+<br>
+<b>Operatör, Sorumluluk ve Ekip Uygulamaları</b><br>
+*   <b>Nihai Karar:</b> Uçuş sırasında bir uçağın yönetimi, plandan sapması ve kuralların ihlali konusundaki nihai otorite <b>Sorumlu Kaptan Pilottur (Commander)</b>.<br>
+*   <b>Acil Durumda Plan Sapması:</b> Pilot acil bir durumda ATC kleransından sapabilir ancak şartlar düzelir düzelmez bunu ATC'ye rapor etmek zorundadır.<br>
+*   <b>Sorumluluk ve Sigorta:</b> Uçağın üçüncü şahıslara vereceği zararların sigortası ve tüm sorumluluğu Havayolu İşletmecisine (Taşıyan/Operatör) aittir. Operatör ayrıca uçuş güvenliği ve kaza önleme programından (SMS) da doğrudan sorumludur.<br>
+*   <b>Deniz Üstü Operasyon (Can Yeleği ve Sal):</b> Kıyıdan <b>50 NM</b> (Deniz mili) uzaklaşan uçuşlarda her yolcu için can yeleği bulundurulmalıdır. Çift motorlu uçaklar için kıyıdan <b>120 dakika veya 400 NM</b> (hangisi daha azsa) uzaklaşıldığında can salı (Life raft) ve işaret fişeği (Distress flare) bulundurulması zorunludur.<br>
+*   <b>ATC Kleransı:</b> Pilot, ATC'den aldığı kleransı operasyonel olarak uygun bulmazsa reddedip yeni bir klerans talep edebilir. Alınan klerans teyit amacıyla tam ve eksiksiz olarak "Read back" (Geri okuma) yapılmalıdır.<br>
+*   <b>Gece Işık Kuralı:</b> Enerji tasarrufu için gece meydan ışıkları kapatılabilir ancak beklenen uçak gelişinden en az <b>1 saat (60 dk)</b> önce tekrar yakılmalıdır.`,
             'hav': `HAV notları buraya gelecek...`,
             'met': `MET notları buraya gelecek...`,
             'pef': `PEF notları buraya gelecek...`,
@@ -716,6 +946,7 @@
     </script>
 </body>
 </html>
+
 
 
 
