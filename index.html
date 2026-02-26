@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uçuş Dispeçerliği | Sınav Portalı</title>
+    
     <link rel="icon" type="image/png" href="img/logo.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5; }
@@ -12,7 +14,6 @@
         
         body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
         
-        /* 3 Sutunlu Yapi: Sol(Dersler), Orta(Soru), Sag(Navigasyon) */
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1700px; margin: 0 auto; width: 100%; }
         
         /* SOL MENU (Ders Secimi) */
@@ -41,7 +42,12 @@
             display: flex; flex-direction: column; position: relative;
         }
 
-        .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; line-height: 1.4; }
+        /* HEADER & LOGO ENTEGRASYONU */
+        .header { 
+            color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); 
+            margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; line-height: 1.4;
+            display: flex; align-items: center; gap: 10px;
+        }
         .kategori-text { color: red; }
 
         .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; flex: 1; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; }
@@ -54,6 +60,11 @@
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
 
         .action-area { flex-shrink: 0; width: 100%; margin-top: 15px; }
+        
+        /* ÇIKMIŞ SORU BİLGİ KUTUSU */
+        .cikmis-kutu { display: none; background: #003366; color: white; padding: 12px; border-radius: 8px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #002244; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .cikmis-oran { font-weight: bold; color: #ffc107; display: block; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; }
+
         .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
         .btn-acikla:hover { background: #218838; }
         
@@ -129,7 +140,11 @@
 
         <main class="main">
             <div id="q-container" class="container">
-                <div id="no" class="header">GÜNCEL SORU BANKASI YÜKLENİYOR...</div>
+                <div class="header">
+                    <img src="img/logo.png" alt="Logo" style="height: 24px; width: auto;">
+                    <span id="no">GÜNCEL SORU BANKASI YÜKLENİYOR...</span>
+                </div>
+                
                 <div id="txt" class="q-text">Lütfen bekleyin...</div>
                 
                 <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 200px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
@@ -137,6 +152,8 @@
                 <div id="opts"></div>
     
                 <div class="action-area">
+                    <div id="cikmis-alani" class="cikmis-kutu"></div>
+
                     <button class="btn-acikla" id="btnAcikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
                     <div id="aciklama-alani" class="aciklama-kutusu"></div>
 
@@ -178,13 +195,13 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('iletisimModal')">&times;</span>
             <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">İletişim Kanalları</h2>
-            <a href="https://t.me/burakkurt" target="_blank" class="action-option">Telegram ile Ulaşın</a>
-            <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">E-Posta Gönderin</a>
+            <a href="https://t.me/burakkurt_dispatch" target="_blank" class="action-option">Telegram ile Ulaşın</a>
+            <a href="mailto:seninmailadresin@gmail.com" class="action-option">E-Posta Gönderin</a>
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Hata bildirimi, sistem önerileri veya özel destek talepleriniz için doğrudan bana ulaşabilirsiniz.</p>
         </div>
     </div>
 
-   <div id="donateModal" class="modal">
+    <div id="donateModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('donateModal')">&times;</span>
             <h2 style="text-align:center; color:#ffc107; margin-bottom:25px; text-transform: uppercase;">Uçuş Destek Paketleri</h2>
@@ -199,7 +216,7 @@
                 Golden Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span>
             </a>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651987" target="_blank" class="action-option donate-option">
-                "Sayende Dispeç Oldum" <span class="d-price">2000 TL - Efsanevi Kariyer Desteği (Sayende Dispeçer oldum!)</span>
+                "Sayende Dispeç Oldum" <span class="d-price">2000 TL - Efsanevi Kariyer Desteği</span>
             </a>
             
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Destekleriniz için teşekkürler. Destek veren kullanıcılarımıza özel hazırlanan dijital biletler (PDF) sistem üzerinden iletilecektir.</p>
@@ -216,13 +233,14 @@
     </div>
 
     <script>
-        let allQs = []; // Tum sorularin ana kopyasi
-        let filteredQs = []; // O an secili derse ait filtrelenmis sorular
-        let idx = 0; // O anki sorunun index'i
+        let allQs = []; 
+        let filteredQs = []; 
+        let idx = 0; 
 
-        // Ders Kategorileri Tanimi (Keyword kısmı JSON içerisindeki Kategori ile eşleşir)
+        // Ders Kategorileri Tanimi
         const categories = [
             { name: "TÜM SORULAR", keyword: "ALL" },
+            { name: "ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
             { name: "3 - TEHLİKELİ MADDELER (DGR)", keyword: "DGR" },
@@ -241,7 +259,7 @@
             try {
                 const r = await fetch('sorular.json');
                 allQs = await r.json();
-                filteredQs = [...allQs]; // Baslangicta hepsi gosterilir
+                filteredQs = [...allQs]; 
                 
                 renderCategories();
                 renderList();
@@ -253,7 +271,6 @@
             }
         }
 
-        // Sol Menüdeki Butonlari Olusturur
         function renderCategories() {
             const catContainer = document.getElementById('cat-list');
             catContainer.innerHTML = '';
@@ -267,30 +284,27 @@
             });
         }
 
-        // Tiklanan Derse Gore Sorulari Filtreler
         function filterByCategory(keyword, clickedBtn) {
-            // Buton aktiflik durumunu guncelle
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
             if(clickedBtn) clickedBtn.classList.add('active');
 
-            // Sorulari filtrele
             if(keyword === 'ALL') {
                 filteredQs = [...allQs];
+            } else if (keyword === 'CIKMIS') {
+                // Sadece Sınav Anısı verisi olanları listele
+                filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined);
             } else {
-                // Kategori icinde keyword geciyorsa dahil et
                 filteredQs = allQs.filter(q => {
                     const k = (q['Kategori'] || "").toUpperCase();
                     return k.includes(keyword);
                 });
             }
 
-            // Yeni listeyi baslat
             idx = 0; 
             renderList();
             show();
         }
 
-        // Sag Menu Soru Listesini Render Eder
         function renderList() {
             const l = document.getElementById('list');
             l.innerHTML = ''; 
@@ -306,13 +320,13 @@
         }
 
         function show() {
-            // Eger o derse ait soru yoksa hata ekrani bas
             if(!filteredQs.length) {
                 document.getElementById('no').innerText = "BİLGİ";
                 document.getElementById('txt').innerText = "Bu kategoriye (derse) ait herhangi bir soru bulunamadı.";
                 document.getElementById('opts').innerHTML = '';
                 document.getElementById('q-img').style.display = "none";
                 document.getElementById('aciklama-alani').style.display = "none";
+                document.getElementById('cikmis-alani').style.display = "none";
                 document.getElementById('btnAcikla').style.display = "none";
                 return;
             }
@@ -322,7 +336,6 @@
             const cont = document.getElementById('q-container');
             cont.classList.remove('ans-mode');
             
-            // Basligi formatla (Basindaki rakami temizler)
             let rawKategori = q['Kategori'] || "";
             let temizKategori = rawKategori.replace(/^\d+\)\s*/, '');
             if (!temizKategori || temizKategori === "Belirtilmemiş") temizKategori = "Genel Havacılık";
@@ -330,18 +343,24 @@
             document.getElementById('no').innerHTML = q['Soru Numarası'] + ' [GENEL SORULAR CEVAPLAR] <span class="kategori-text">(' + temizKategori + ')</span>';
             document.getElementById('txt').innerText = q['Soru Metni'];
             
-            // Gorsel kontrolu
             const img = document.getElementById('q-img');
             if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'] !== "") {
                 img.src = q['Resim Yolu']; img.style.display = "block";
             } else { img.style.display = "none"; }
 
-            // Aciklama kontrolu
+            // Çıkmış Soru (Sınav Anısı) Kontrolü
+            const cikmisKutu = document.getElementById('cikmis-alani');
+            if(q['Sınav Anısı']) {
+                cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`;
+                cikmisKutu.style.display = "block";
+            } else {
+                cikmisKutu.style.display = "none";
+            }
+
             const aKutu = document.getElementById('aciklama-alani');
             aKutu.style.display = "none";
             aKutu.innerText = q['Açıklama'] || "Bu soru için bir açıklama verisi bulunmamaktadır.";
 
-            // Siklarin yerlestirilmesi
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
             ['a','b','c','d'].forEach(h => {
@@ -365,7 +384,6 @@
                 }
             });
 
-            // Sag navigasyon isaretlemesi ve sayfayi kaydirmadan sadece listeyi kaydirma
             document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
             const active = document.getElementById('l'+idx);
             if(active) { 
@@ -385,7 +403,6 @@
             if(!val) return;
             const target = 'S.' + val;
             
-            // Sadece o anki secili dersin icinde arama yapar
             const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase() === target.toUpperCase());
             
             if (fIdx !== -1) { 
@@ -437,6 +454,3 @@
     </script>
 </body>
 </html>
-
-
-
