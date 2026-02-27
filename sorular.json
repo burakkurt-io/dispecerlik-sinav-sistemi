@@ -17700,7 +17700,7 @@
         "B Şıkkı": "10",
         "C Şıkkı": "9",
         "D Şıkkı": "5",
-        "Doğru Cevap": "",
+        "Doğru Cevap": "c",
         "Açıklama": "Tehlikeli maddeler (Dangerous Goods), içerdikleri fiziksel ve kimyasal risk özelliklerine göre IATA (International Air Transport Association) standartlarında toplam 9 ana sınıfa ayrılmıştır.",
         "Resim Yolu": "",
         "Kategori": "3) DGR - TEHLİKELİ MADDELER ( U 01 E UO 054 ) - TEHLİKELİ MADDELERİN SINIFLANDIRILMASI, TANIMLANMASI VE İŞARETLENMESİ",
@@ -21496,4 +21496,5 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
