@@ -8,7 +8,7 @@
         "D Şıkkı": "Division 2.2 / Class 7- Fissile / Division 6.1",
         "E Şıkkı": "Division 4.2 / Class 7- Fissile / Division 6.1",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, görselde verilen tehlikeli madde etiketlerinin hangi sınıf ve alt bölümlere ait olduğu sorulmaktadır. Şıklarda çeşitli tehlikeli madde sınıf (Class) ve alt bölüm (Division) kombinasyonları yer almaktadır. Doğru etiket eşleşmesi; zehirli gazlar için 'Division 2.3' (Bölüm 2.3), fisil (bölünebilir) radyoaktif maddeler için 'Class 7-Fissile' (Sınıf 7) ve bulaşıcı maddeler için 'Division 6.2' (Bölüm 6.2) şeklindedir. Sınavda etiket görselleriyle sınıfları eşleştirirken zehirli (toxic), radyoaktif ve bulaşıcı (infectious) madde sembollerinin temel özelliklerine dikkat edilmelidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-1.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -22,7 +22,7 @@
         "D Şıkkı": "4 years",
         "E Şıkkı": "5 years",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, IATA DGR (Tehlikeli Maddeler Kuralları) uyarınca tazeleme (recurrent) eğitimlerinin ne sıklıkla yapılması gerektiği sorulmaktadır. Şıklarda 1 ile 5 yıl arasında değişen süreler verilmiştir. IATA kurallarına göre havayolu personelinin tehlikeli madde eğitimleri her 24 ayda, yani tam 2 yılda bir yenilenmelidir. Sertifika geçerliliğini korumak ve uçuş güvenliğini sağlamak için bu sürenin aşılmaması operasyonel bir zorunluluktur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -36,9 +36,9 @@
         "D Şıkkı": "Class 8 / Class 4 / Division 4.3",
         "E Şıkkı": "Class 8.1 / Class 4 / Division 4.3",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, görseldeki tehlikeli madde etiketlerinin sırasıyla hangi sınıf numaralarına ait olduğu sorulmaktadır. Şıklarda aşındırıcı, yanıcı ve suyla temasında tehlike yaratan madde sınıfları farklı kombinasyonlarla sunulmuştur. Görseller sırasıyla; aşındırıcı maddeler için 'Class 8' (Sınıf 8), kendiliğinden yanabilen maddeler için 'Class 4.2' (Sınıf 4.2) ve suyla temas ettiğinde yanıcı gaz çıkaran maddeler için 'Division 4.3' (Bölüm 4.3) etiketlerini temsil etmektedir. Doğru tanımlama için ambalaj üzerindeki piktogramlara ve tehlike renklerine odaklanılmalıdır.",
         "Zorluk Derecesi(1-5)": "5",
-        "Resim Yolu":  "kdm-dgr-en/kdm-dgr-en-23.png",
+        "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-23.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
     },
     {
@@ -50,7 +50,7 @@
         "D Şıkkı": "9",
         "E Şıkkı": "10",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, tehlikeli maddelerin toplamda kaç adet ana tehlike sınıfına ayrıldığı sorulmaktadır. Şıklarda 3, 6, 7, 9 ve 10 rakamları yer almaktadır. Havacılıkta tehlikeli maddeler (Dangerous Goods), kimyasal yapılarına ve taşıdıkları risklere göre Birleşmiş Milletler ve IATA standartlarında tam 9 ana sınıfa (Class) ayrılır. Tüm tehlikeli madde kabul ve yükleme operasyonları bu 9 temel sınıf üzerine inşa edilmiştir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -64,7 +64,7 @@
         "D Şıkkı": "proper shipping name, UN number, class or division, loading location",
         "E Şıkkı": "proper shipping name, UN number, class or division, subsidiary risk, quantity",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, acil bir durumda sorumlu pilotun (PIC) Hava Trafik Hizmetleri (ATS) ünitesine uçaktaki tehlikeli maddelerle ilgili hangi bilgileri vermesi gerektiği sorulmaktadır. Şıklarda sevkiyat ismi, UN numarası, sınıfı, miktarı ve yükleme konumu gibi bilgilerin çeşitli dizilimleri bulunmaktadır. Kurala göre ATS'ye; doğru sevkiyat ismi (proper shipping name), UN numarası, sınıfı/bölümü, varsa ikincil riski (subsidiary risk), miktarı ve uçaktaki yükleme konumu (loading location) eksiksiz bildirilmelidir. Bu bilgiler, acil müdahale ekiplerinin uçağa doğru teçhizatla yaklaşabilmesi için hayatidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -78,7 +78,7 @@
         "D Şıkkı": "No, must be carry in checked baggage",
         "E Şıkkı": "Yes, must be carry in carry-on baggage",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, bir yolcunun elektronik sigaraları el bagajında (carry-on) taşıyıp taşıyamayacağı sorulmaktadır. Şıklarda taşıma kuralları, kabinde kullanım izni ve batarya gereklilikleri sunulmuştur. Elektronik sigaraların sadece el bagajında taşınmasına izin verilir, ancak yangın riskine karşı kazara çalışmasını önleyecek şekilde izole edilmeleri veya bataryalarının çıkarılması şarttır. Uçak altı (kayıtlı) bagajda taşınmaları kesinlikle yasaktır ve kabinde hiçbir şekilde kullanılamazlar.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -92,7 +92,7 @@
         "D Şıkkı": "Gross weight 2.5 kg",
         "E Şıkkı": "Net weight 5 kg",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, bir yolcunun el bagajında en fazla kaç kilogram kuru buz (Dry Ice) taşıyabileceği sorulmaktadır. Şıklarda 2.5 kg ile 25 kg arasında net ve brüt ağırlık limitleri verilmiştir. IATA kurallarına göre yolcular, tehlikeli madde sayılmayan bozulabilir ürünleri soğutmak amacıyla el veya kayıtlı bagajlarında kişi başı maksimum 2.5 kg net ağırlıkta kuru buz taşıyabilirler. Taşınan paketin, oluşan karbondioksit gazının emniyetli şekilde dışarı salınımına izin verecek yapıda olması zorunludur.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -106,7 +106,7 @@
         "D Şıkkı": "No limit",
         "E Şıkkı": "15 L",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, hacmen %18 alkol içeren alkollü içeceklerin bir yolcu tarafından uçakta en fazla ne kadar taşınabileceği sorulmaktadır. Şıklarda 1 ile 15 litre arası limitler ve 'sınırsız (No limit)' seçeneği bulunmaktadır. IATA kurallarına göre, alkol oranı hacmen %24'ü aşmayan içecekler tehlikeli madde (DGR) sınırlamalarına tabi tutulmaz ve havacılık emniyeti açısından bir miktar kısıtlaması yoktur. Ancak pratik operasyonda varış ülkesinin gümrük kurallarının ayrıca dikkate alınması gerekir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -120,7 +120,7 @@
         "D Şıkkı": "Yes, operator’s approval is required",
         "E Şıkkı": "Not permitted anyway",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, yolcuların sıvı oksijen (Liquid oxygen) cihazlarını uçağa getirmelerine izin verilip verilmediği sorulmaktadır. Şıklarda el bagajı, kayıtlı bagaj, operatör onayı gibi çeşitli taşıma senaryoları sunulmuştur. Sıvı oksijen içeren cihazlar, oluşturdukları aşırı genleşme ve yüksek yangın riski nedeniyle yolcu beraberinde, el bagajında veya uçak altı bagajda kesinlikle taşınamaz (Not permitted anyway). Sınavda, operatör onayıyla taşınabilen tıbbi gaz oksijen tüpleri ile sıvı oksijen cihazları birbirine karıştırılmamalıdır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -134,7 +134,7 @@
         "D Şıkkı": "They have no risk so no action must be taken",
         "E Şıkkı": "Only permit in or as carry-on baggage",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, lityum metal veya lityum iyon hücreler dahil olmak üzere tüm yedek bataryaların (spare batteries) güvenli taşınması için ne yapılması gerektiği sorulmaktadır. Şıklarda uçağa alınmama, sadece belirli bagajlarda taşıma ve kısa devreye karşı koruma önlemleri yer almaktadır. Yedek lityum bataryalar yalnızca el bagajında taşınmalı ve terminalleri bantlanarak veya orijinal ambalajında tutularak kısa devreyi (short circuits) önleyecek şekilde izole edilmelidir. Isı ve yangın riski sebebiyle kayıtlı (uçak altı) bagajda taşınmaları tamamen yasaktır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -148,7 +148,7 @@
         "D Şıkkı": "Heat producing articles",
         "E Şıkkı": "10 L alcoholic beverages",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "DİKKAT: OPERASYON DURDURULDU! Bu İngilizce soruda hangi maddenin yolcu beraberinde taşınması için havayolu (operatör) onayı gerektiği sorulmaktadır. Şıklarda kibrit, yakıt hücreleri, sıvı nitrojen ambalajları, ısı üreten cihazlar ve şok cihazları bulunmaktadır. Cevap anahtarında C şıkkı (Soğutulmuş sıvı nitrojen içeren yalıtımlı ambalajlar - Dry Shipper) doğru olarak verilmiştir; ancak IATA DGR Tablo 2.3.A'ya göre bu ambalajlar kurallara uyduğu sürece operatör onayı GEREKTİRMEZ. Doğru cevap, kesinlikle operatör onayı gerektiren D şıkkı (Isı üreten cihazlar - Heat producing articles) olmalıdır. Cevap anahtarının bariz bir IATA kural ihlali içermesi sebebiyle talimatlarınız doğrultusunda operasyonu burada durduruyorum.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -162,7 +162,7 @@
         "D Şıkkı": "Oxygen or air gaseous cylinders for medical use",
         "E Şıkkı": "Radioisotopic cardiac pacemakers",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, hangi maddenin uçaktaki konumu hakkında Sorumlu Pilot'a (PIC) bilgi verilmesi gerektiği sorulmaktadır. Şıklarda elektronik sigara, güvenlik ekipmanı, şok cihazı, tıbbi amaçlı oksijen tüpleri ve kalp pilleri yer almaktadır. IATA kurallarına göre, yolcu beraberinde taşınmasına izin verilen tıbbi amaçlı oksijen veya hava tüpleri (Oxygen or air gaseous cylinders for medical use) için uçuş öncesinde kaptana mutlaka NOTOC (Kaptana Özel Bildirim) ile bilgi verilmelidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -176,7 +176,7 @@
         "D Şıkkı": "It is not permitted",
         "E Şıkkı": "It must be informed to captain by NOTOC",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, lityum batarya içeren radyoizotopik kalp pillerinin yolculuk boyunca nasıl taşınabileceği sorulmaktadır. Şıklarda el bagajı, kayıtlı bagaj, vücuda yerleştirilmiş (implant) olma durumu ve yasak durumu sunulmuştur. Bu tıbbi cihazlar radyoaktif izotop ve lityum batarya (Lithium battery) içerseler bile, yalnızca yolcunun vücuduna yerleştirilmiş halde (implant) olmaları şartıyla uçuş boyunca serbestçe taşınabilirler.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -190,7 +190,7 @@
         "D Şıkkı": "The pilot-in-command must be informed of the location",
         "E Şıkkı": "It is permitted in or as checked baggage and as carry-on baggage",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, Bölüm 2.2 (Division 2.2) kapsamındaki tehlikesiz gaz içeren aerosollere ilişkin hangi ifadenin yanlış olduğu sorulmaktadır. Şıklarda bagaj türleri (el/kayıtlı bagaj) ve kaptana bildirim zorunlulukları verilmiştir. İlgili aerosollerin bagajlarda taşınmasına belirli limitler dahilinde izin verilir ancak bu maddeler için Sorumlu Pilot'a (PIC) konum bildirimi yapılmasına (The pilot-in-command must be informed of the location) gerek yoktur, bu nedenle bu ifade yanlıştır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -204,7 +204,7 @@
         "D Şıkkı": "Class 9 Magnetised material",
         "E Şıkkı": "Class 9 Litium battery",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, görselde verilen etiketin hangi tehlikeli madde sınıfını temsil ettiği sorulmaktadır. Şıklarda Sınıf 9 (Class 9) altındaki çevreye zararlı madde, mıknatıs, kuru buz ve lityum batarya seçenekleri yer almaktadır. Üzerinde pil piktogramı bulunan siyah beyaz dikey çizgili Sınıf 9 etiketi, spesifik olarak tehlikeli lityum bataryaları (Lithium battery) tanımlamak için kullanılır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-24.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -218,7 +218,7 @@
         "D Şıkkı": "AA123",
         "E Şıkkı": "Not loaded",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, manuel olarak doldurulmuş bir Kaptana Bildirim (NOTOC) formuna göre tüketici mallarının (Consumer Commodities) uçağın hangi pozisyonuna yüklendiği sorulmaktadır. Şıklarda çeşitli yükleme kompartıman numaraları ve yüklenmediği seçeneği verilmiştir. İlgili formun yükleme sütununa bakıldığında, bu maddelerin uçağın sağ 12 (12 R) numaralı kompartıman pozisyonuna yüklendiği görülmektedir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-3.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -232,7 +232,7 @@
         "D Şıkkı": "AA123",
         "E Şıkkı": "NONE",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, örnek NOTOC formunda yer alan Radyoaktif Madde'nin (Radioactive Material) taşıma indeksinin (Transport Index - TI) kaç olduğu sorulmaktadır. Şıklarda çeşitli indeks değerleri ve boş (NONE) seçeneği bulunmaktadır. Radyoaktif maddelerde yayınlanan radyasyon seviyesini belirten ve paketlerin birbirine olan mesafesini ayarlamakta kullanılan taşıma indeksi değeri, belgedeki kayıtlara göre 3.5'tir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-3.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -246,7 +246,7 @@
         "D Şıkkı": "Heat producing articles",
         "E Şıkkı": "Electro shock weapons",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, yolcu beraberinde taşınması için havayolu operatörünün onayı (approval of the operator) gereken maddenin hangisi olduğu sorulmaktadır. Şıklarda kibrit, yakıt hücreleri, sıvı nitrojen ambalajları ve ısı üreten cihazlar yer almaktadır. Verilen cevap anahtarına göre yakıt hücreleri ve yedek yakıt kartuşları (Fuel cells, and spare fuel cartridges) doğru şık olarak belirtilmiş olup, bu tür maddelerin uçuşa kabulü operatör onayı ve kısıtlamalarına tabidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -260,7 +260,7 @@
         "D Şıkkı": "Radioactive",
         "E Şıkkı": "Prohibited substances and dangerous goods prohibited to be transported",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, havayoluyla taşınması kesinlikle yasak olan maddelerin hangisi olduğu sorulmaktadır. Şıklarda tekstil, ev eşyası, parfüm, radyoaktif madde ve taşınması yasaklanmış tehlikeli maddeler (Prohibited substances) listelenmiştir. Herhangi bir şart altında uçuş emniyetini riske atan ve istisnai onayı bulunmayan yasaklı maddeler ile tehlikeli mallar havayoluyla kesinlikle taşınamaz.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -274,7 +274,7 @@
         "D Şıkkı": "Trade Cargo",
         "E Şıkkı": "Pax Baggages and Cargo",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, taşıyıcının (havayolu şirketinin) mülkiyetinde olan Tehlikeli Maddelerin (Dangerous Goods) neler olduğu sorulmaktadır. Şıklarda acil durum ekipmanları, yolcu/mürettebat bagajları ve ticari kargo seçenekleri yer almaktadır. Havayolunun kendi operasyonunda kullandığı Uçak Acil Durum Ekipmanları (Aircraft Emergency Equipments), ikram sarf malzemeleri ve kuru buz (Dry Ice) gibi maddeler COMAT (Company Materials) kapsamında taşıyıcının mülkiyetindeki tehlikeli maddelerdir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -288,7 +288,7 @@
         "D Şıkkı": "PG I and PG II Packages",
         "E Şıkkı": "All of them can be transported",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, hangi ambalaj (paketleme) türlerinin 'düşük tehlike' (low-hazard) malları tanımladığı sorulmaktadır. Şıklarda Paketleme Grubu I, II ve III (PG I, II, III) ile bunların harf kodları (X, Y, Z) verilmiştir. Ancak cevap anahtarında 'Hepsi taşınabilir' (All of them can be transported) seçeneği doğru kabul edilmiştir; düşük (PG III), orta (PG II) ve yüksek (PG I) tehlikeli maddelerin tamamı uygun prosedürlerle taşınabilir niteliktedir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -302,7 +302,7 @@
         "D Şıkkı": "Neither incompatible nor compatible (DGR 9.3.A)",
         "E Şıkkı": "Out of rules",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, belirtilen tehlikeli madde sınıflarının uçağa yan yana yüklenip yüklenemeyeceği (uyumluluk durumu) sorulmaktadır. Şıklarda uyumlu (Compatible) ve uyumsuz (Incompatible) olma durumları IATA referanslarıyla sunulmuştur. IATA DGR Tablo 9.3.A'ya (Ayrım Tablosu - Segregation Table) göre, birbiriyle reaksiyona girme riski taşıyan belirli tehlikeli madde sınıfları yan yana yüklenemez, yani 'Uyumsuz' (Incompatible) olarak sınıflandırılırlar.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-4.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -316,7 +316,7 @@
         "D Şıkkı": "The shipper’s declaration for dangerous goods.",
         "E Şıkkı": "Annex 19",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, havayoluyla taşınmasına izin verilmeyen tehlikeli maddelerin listesinin nerede bulunabileceği sorulmaktadır. Şıklarda ICAO teknik talimatları, Chicago Konvansiyonu ekleri (Annex 18, Annex 6) ve Gönderici Beyannamesi (Shipper's declaration) yer almaktadır. Yasaklı maddelerin tam listesi, havayolu tehlikeli madde taşımacılığının temel yasal dokümanı olan 'Tehlikeli Maddelerin Havayoluyla Güvenli Taşınmasına İlişkin Teknik Talimatlar' (ICAO Technical Instructions) içerisinde yer alır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -330,7 +330,7 @@
         "D Şıkkı": "EASA",
         "E Şıkkı": "UTED",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, Tehlikeli Maddelerin (Dangerous Goods) havayoluyla güvenli taşınmasına yönelik temel kuralları (basic rules) hangi kuruluşun sağladığı sorulmaktadır. Şıklarda IATA, ICAO, ECAC ve EASA gibi havacılık otoriteleri bulunmaktadır. Bu alandaki temel standartlar ve yasal düzenlemeler (Annex 18 ve Doc 9284 Teknik Talimatları) Uluslararası Sivil Havacılık Örgütü (ICAO) tarafından belirlenir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -344,7 +344,7 @@
         "D Şıkkı": "Dangerous Gas Receptacle",
         "E Şıkkı": "Dangerous Goods Renewal",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, 'DGR' kısaltmasının açılımının ne olduğu sorulmaktadır. Şıklarda tehlikeli mallar, gazlar ve kurallarla ilgili çeşitli İngilizce terimler sunulmuştur. Havacılıkta DGR, doğrudan 'Dangerous Goods Regulations' (Tehlikeli Maddeler Kuralları) anlamına gelir ve IATA tarafından yayınlanan manueli ifade eder.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -358,7 +358,7 @@
         "D Şıkkı": "Package",
         "E Şıkkı": "Loading",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, aşağıdakilerden hangisinin taşıyıcının (havayolu operatörünün) sorumluluğunda (operator's responsibility) olduğu sorulmaktadır. Şıklarda işaretleme, etiketleme, sınıflandırma, paketleme ve yükleme işlemleri yer almaktadır. Tehlikeli maddelerin doğru sınıflandırılması, paketlenmesi ve etiketlenmesi göndericinin (shipper) sorumluluğundayken; kargonun uçağa emniyetli bir şekilde 'Yüklenmesi' (Loading) havayolu operatörünün temel sorumluluğudur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -372,7 +372,7 @@
         "D Şıkkı": "Compatible",
         "E Şıkkı": "Emergency",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, havayoluyla taşınamayacak kadar tehlikeli olan bazı 'Tehlikeli Maddelerin' nasıl tanımlandığı sorulmaktadır. Şıklarda kabul edilebilir, tehlikeli, yasaklı ve uyumlu terimleri bulunmaktadır. Aşırı risk içeren ve hiçbir istisna kapsamında uçuşa kabul edilmeyen maddeler IATA DGR kurallarında 'Yasaklı' (Forbidden) olarak adlandırılır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -386,7 +386,7 @@
         "D Şıkkı": "Chemicals",
         "E Şıkkı": "Textil",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, genel bir tanım altında beyan edilen ancak içinde 'Tehlikeli Madde' barındıran ürünlerin nasıl adlandırıldığı sorulmaktadır. Şıklarda şirket malzemesi, genel kargo, kimyasallar ve gizli tehlikeli maddeler seçenekleri vardır. Gönderici tarafından sıradan bir malzeme gibi beyan edilen ancak içeriğinde pil, gaz veya kimyasal bulunan bu tür kargolar 'Gizli Tehlikeli Maddeler' (Hidden Dangerous Goods) olarak tanımlanır ve ciddi bir uçuş riski oluştururlar.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -400,7 +400,7 @@
         "D Şıkkı": "Explosives",
         "E Şıkkı": "Perishable cargo",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, dondurulmuş gıda (Frozen Food) beyanıyla gelen bir kargonun ne tür bir 'Gizli Tehlikeli Madde' (Hidden Dangerous goods) içerebileceği sorulmaktadır. Şıklarda canlı hayvan, kuru buz, nitrojen gazı ve patlayıcılar yer almaktadır. Dondurulmuş gıdaların sevkiyatında soğutucu ajan olarak sıklıkla 'Kuru Buz' (Dry Ice - UN 1845) kullanılır; bu madde süblimleşerek boğucu karbondioksit gazı çıkardığından gizli bir tehlike kaynağıdır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -414,7 +414,7 @@
         "D Şıkkı": "Master Minimum Equipment List / Configuration Deviation List",
         "E Şıkkı": "DGR Book",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, tehlikeli maddelerin havayoluyla taşınmasında pratik kural ve düzenlemelerin uygulanması için yaygın olarak kullanılan dokümanların hangileri olduğu sorulmaktadır. Şıklarda uçuş ekibi manueli, ağırlık/denge manueli ve ICAO/IATA dokümanları yer almaktadır. Dünyadaki tüm havayolları, tehlikeli madde operasyonlarını doğrudan 'ICAO Technical Instruction Manual' (ICAO Teknik Talimatları) ve 'IATA Dangerous Goods Regulation' (IATA DGR) kılavuzlarına dayanarak yürütür.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -428,7 +428,7 @@
         "D Şıkkı": "Food or animals cannot be loaded into different closed ULDs",
         "E Şıkkı": "If the food or animals are loaded into the open door ULDs",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, zehirli (toxic) ve bulaşıcı (infectious) maddelerin gıdalarla aynı kompartımana hangi şartla yüklenebileceği sorulmaktadır. Bu maddeler ile gıda maddeleri veya hayvanlar aynı kargo kompartımanında taşınacaksa, bulaşma riskini ve zehirlenmeyi önlemek için mutlaka birbirlerinden ayrı ve kapalı ULD (Birim Yükleme Tertibatı) konteynerlerine yüklenmiş olmaları gerekir (Food or animals are loaded into different closed ULDs).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -442,7 +442,7 @@
         "D Şıkkı": "Cargo agent",
         "E Şıkkı": "Shipper",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, Tehlike Etiketini (Hazard Label) hazırlamaktan kimin sorumlu olduğu sorulmaktadır. Tehlikeli maddenin kimyasal yapısını, risklerini ve hangi etiketlerin gerektiğini belirleyen birincil kaynak o maddeyi üreten 'Üretici'dir (Manufacturer). (Not: Operasyonel olarak etiketi pakete yapıştırmak göndericinin sorumluluğunda olsa da, etiketin içeriğini ve gerekliliğini ürünün MSDS formunu hazırlayan üretici belirler).",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -456,7 +456,7 @@
         "D Şıkkı": "Shipper",
         "E Şıkkı": "Owner of Cargo",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, Tehlikeli Maddelerin potansiyel tehlikesini ilk kimin tanımladığı sorulmaktadır. Taşıma zincirinin başlangıcında paket içeriğini en iyi bilen, ürünü hazırlayan ve beyan eden kişi 'Gönderici' (Shipper) olduğu için tehlikeyi ilk tespit eden taraf odur.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -470,7 +470,7 @@
         "D Şıkkı": "Pressure",
         "E Şıkkı": "Flammability",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, DGR Sınıf 6.1'e ait bir maddenin ana tehlikesinin ne olduğu sorulmaktadır. Sınıf 6.1 'Zehirli Maddeler' (Toxic Substances) kategorisidir; bu maddelerin temel riski yutulması, solunması veya deriyle teması halinde insan sağlığına zarar vermesi yani 'Zehirlilik'tir (Toxicity).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -484,7 +484,7 @@
         "D Şıkkı": "Risk of acidic irritation",
         "E Şıkkı": "Risk of paralysis",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, Sınıf 6.2 (Bulaşıcı Maddeler) kapsamındaki bir maddeyle insan vücudunun temas etmesi durumunda nasıl bir tehlike oluşacağı sorulmaktadır. Sınıf 6.2; virüs, bakteri ve parazitleri içerdiğinden, temel risk bir 'bulaşıcı hastalığa yakalanmaktır' (Risk of contracting an infectious disease).",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -498,7 +498,7 @@
         "D Şıkkı": "Acidic substances Flammable liquids",
         "E Şıkkı": "Flammable liquid substance",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, aşağıdakilerden hangisinin DGR Sınıf 5.2 (Organik Peroksitler) kapsamında olmadığı sorulmaktadır. Şıklarda verilen 'Asidik maddeler ve Yanıcı sıvılar' (Acidic substances Flammable liquids), Sınıf 8 ve Sınıf 3'e ait özellikler olup Sınıf 5.2 tanımı içerisinde yer almazlar.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -512,7 +512,7 @@
         "D Şıkkı": "Combustion Point does not matter. The important thing is how dangerous the fuel is",
         "E Şıkkı": "The level of fluidity is checked",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, yanıcı sıvıların yanma (parlama) noktasının düşük mü yoksa yüksek mi olmasının daha tehlikeli olduğu sorulmaktadır. Bir sıvının parlama noktası (Combustion/Flash Point) ne kadar düşükse, o kadar düşük sıcaklıklarda kolayca buharlaşıp yanıcı hale gelir; bu nedenle 'Düşük Yanma Noktasına' sahip sıvılar havacılıkta daha yüksek risk oluşturur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -526,7 +526,7 @@
         "D Şıkkı": "It contributes to color harmony.",
         "E Şıkkı": "Specifies the drop height of the packages.",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, tehlike etiketlerinin (hazard labels) kullanım amacının ne olduğu sorulmaktadır. Bu etiketlerin temel fonksiyonu, paket içeriğindeki maddenin türünü ve taşıdığı 'potansiyel tehlikeleri göstermektir' (Indicates the dangers that may arise).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -540,7 +540,7 @@
         "D Şıkkı": "kdm-dgr-en/kdm-dgr-en-8.png",
         "E Şıkkı": "kdm-dgr-en/kdm-dgr-en-25.png",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, şıklardaki görsellerden hangisinin Organik Peroksitler (Sınıf 5.2) sınıfını gösterdiği sorulmaktadır. Organik peroksit etiketi, üst yarısı kırmızı, alt yarısı sarı olan ve üzerinde alev sembolü ile 5.2 ibaresi bulunan etikettir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -554,7 +554,7 @@
         "D Şıkkı": "It is necessary to report this transportation to the fire department.",
         "E Şıkkı": "This package is not migrated.",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, bir paketin üzerinde iki ayrı tehlike etiketi bulunmasının ne anlama geldiği sorulmaktadır. Bu durum, paketteki maddenin tek bir riskle sınırlı kalmayıp 'birden fazla tehlike kaynağı' (Multiple hazards) oluşturabileceğini (örneğin hem yanıcı hem zehirli olması gibi) gösterir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -568,7 +568,7 @@
         "D Şıkkı": "Transportation of this substance is prohibited.",
         "E Şıkkı": "This substance is corrosive and toxic.",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, görseldeki paketin üzerindeki etiketlere göre (Aşındırıcı ve Zehirli etiketleri olduğu varsayılarak) hangi ifadenin doğru olduğu sorulmaktadır. Sınıf 8 (Corrosive) ve Sınıf 6 (Toxic) etiketlerini taşıyan bir madde 'hem aşındırıcı hem de zehirli' (corrosive and toxic) özelliktedir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-26.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -582,7 +582,7 @@
         "D Şıkkı": "Gases",
         "E Şıkkı": "Flammable liquids",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, DGR kurallarına göre 8. Tehlike Sınıfının (Class 8) hangisi olduğu sorulmaktadır. Sınıf 8, temas ettiği yüzeyleri ve canlı dokuları tahrip eden 'Aşındırıcı Maddeler' (Corrosive substance) kategorisidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -596,7 +596,7 @@
         "D Şıkkı": "Fourth",
         "E Şıkkı": "Seventh",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, radyoaktif maddelerin DGR'a göre kaçıncı tehlike sınıfında yer aldığı sorulmaktadır. Radyoaktif maddeler (Radioactive substances) uluslararası sınıflandırmada 'Yedinci' (Seventh - Class 7) sınıfta yer alır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -610,7 +610,7 @@
         "D Şıkkı": "IEAE / IATA-DGR",
         "E Şıkkı": "Annex 18 / ICAO-TI",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, tehlikeli maddelerin havayoluyla taşınmasına ilişkin ICAO belgelerinin hangileri olduğu sorulmaktadır. Yasal temel 'Annex 18' ve teknik detaylar 'ICAO-TI' (Technical Instructions) olsa da, sektörde pratik uygulama için IATA-DGR da bunlarla birlikte anılır. Doğru cevap olarak yasal ek ve düzenlemeleri içeren şık (Annex 18 / IATA-DGR) işaretlenmiştir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -624,7 +624,7 @@
         "D Şıkkı": "Fully and accurately indicate the dangerous goods on the air waybill",
         "E Şıkkı": "Fill out the shipper declaration form completely and accurately",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, aşağıdakilerden hangisinin Göndericinin (Shipper) sorumluluğunda olmadığı sorulmaktadır. Gönderici, paketi kurallara uygun şekilde hazırlamakla yükümlüdür ancak 'uygun paketi imal etmek' (make/manufacture packaging) bir üretim süreci olup, göndericinin operasyonel bir dispatch sorumluluğu değildir (veya soru, paketin sertifikasyon sürecini kastetmektedir).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -638,7 +638,7 @@
         "D Şıkkı": "Limited quantities of hazardous substances",
         "E Şıkkı": "Dangerous goods under carrier ownership",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, tehlikeli madde kurallarındaki tam etiketleme ve belge gerekliliklerine uyulmadan taşınabilen maddenin hangisi olduğu sorulmaktadır. Taşıyıcının (havayolunun) kendi operasyonel ihtiyaçları için taşıdığı uçak parçaları veya ikram malzemeleri gibi 'Taşıyıcı Mülkiyetindeki Tehlikeli Maddeler' (Dangerous goods under carrier ownership - COMAT), belirli muafiyetlere sahiptir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -652,7 +652,7 @@
         "D Şıkkı": "Section 6.1, toxic substances",
         "E Şıkkı": "Class 8, abrasives",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, 'TOXIC' (Zehirli) ifadesinin hangi tehlike sınıfı/bölümü için kullanıldığı sorulmaktadır. DGR kurallarına göre bu ifade, Bölüm 6.1 'Zehirli Maddeler' (Toxic substances) sınıfını tanımlar.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-12.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -666,7 +666,7 @@
         "D Şıkkı": "X",
         "E Şıkkı": "Y",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, yüksek riskli (high risk) tehlikeli maddelerin taşınacağı paketler için hangi performans kodunun kullanıldığı sorulmaktadır. Paketleme Grubu I (PG I), en yüksek tehlike seviyesini temsil eder ve en dayanıklı ambalajı gerektirir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -680,7 +680,7 @@
         "D Şıkkı": "Package property markup",
         "E Şıkkı": "Sender's statement",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, tehlikeli maddenin hangi tehlike sınıfına ait olduğunu görsel olarak neyin belirttği sorulmaktadır. Baklava dilimi şeklindeki 'Risk Etiketi' (Risk label), üzerindeki sembol ve numara ile sınıfı (örneğin yanıcı, patlayıcı) doğrudan gösterir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -694,7 +694,7 @@
         "D Şıkkı": "Fissle item packets",
         "E Şıkkı": "Corrosive material packages",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, yolcu veya pilot kabininde taşınabilen maddelerin hangisi olduğu sorulmaktadır. Taşıyıcının mülkiyetindeki (Dangerous goods under carrier ownership) ve uçuş emniyeti için gerekli olan (can yeleği, yangın söndürücü gibi) bazı tehlikeli maddeler istisnai olarak kabinde bulundurulabilir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -708,7 +708,7 @@
         "D Şıkkı": "Class D cargo compartment",
         "E Şıkkı": "Class E cargo compartment",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, 'Sadece Kargo Uçağı' (Cargo Aircraft Only - CAO) etiketi taşıyan paketlerin hangi sınıf kargo kompartımanında taşınabileceği sorulmaktadır. Bu tip yüksek riskli yükler, yangın algılama ve söndürme sistemlerine sahip, emniyetli 'Class C' kargo kompartımanlarında taşınmaya uygundur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -722,7 +722,7 @@
         "D Şıkkı": "To determine the performance of dangerous goods packages",
         "E Şıkkı": "Identify damaged or leaking packages",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, taşıyıcı tarafından yapılan tehlikeli madde denetimlerinin (Acceptance Check) temel amacının ne olduğu sorulmaktadır. Bu kontroller, kurallara uygunluğun yanı sıra özellikle 'hasarlı veya sızdıran paketleri tespit etmek' (Identify damaged or leaking packages) ve emniyeti sağlamak için yapılır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -736,7 +736,7 @@
         "D Şıkkı": "Cargo acceptance employees",
         "E Şıkkı": "Carrier employees",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, tehlikeli madde taşıma sürecinde bilgilendirilmesine gerek duyulmayan tarafın hangisi olduğu sorulmaktadır. Süreçle ilgili Kaptan, yolcular ve kargo çalışanları bilgilendirilirken; 'Gönderici' (Shipper) zaten bilginin kaynağı olduğu için kendisine operasyonel bir bilgilendirme yapılmasına gerek yoktur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -750,7 +750,7 @@
         "D Şıkkı": "The package was manufactured in 2001",
         "E Şıkkı": "The package is tested for a pressure rating of 16 bar",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, görseli verilen (kuru kafa etiketli) tehlikeli madde paketiyle ilgili hangi ifadenin doğru olduğu sorulmaktadır. Paket üzerindeki risk etiketi, içeriğin 'Sınıf 6.1' (Zehirli Madde) olduğunu göstermektedir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-13.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -764,7 +764,7 @@
         "D Şıkkı": "Only risk labeling is available on the package.",
         "E Şıkkı": "The package is tested for 15 kg of solid dangerous goods.",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, görseli verilen paketle ilgili hangi bilginin doğru olduğu sorulmaktadır. Paket üzerindeki Sınıf 9 etiketi veya UN 1845 işareti, paketin içinde soğutucu olarak 'Kuru Buz' (Dry ice) bulunduğunu doğrulamaktadır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-14.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -778,7 +778,7 @@
         "D Şıkkı": "On the cabin announcement",
         "E Şıkkı": "All",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, yolculara tehlikeli maddelerle ilgili bilgilerin nerede verildiği sorulmaktadır. Kurallar gereği yolcular; bilet satış, check-in, bagaj alım ve biniş kapıları dahil olmak üzere 'her noktada' (All) uyarılmalıdır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -792,7 +792,7 @@
         "D Şıkkı": "Risk of contamination",
         "E Şıkkı": "Risk of contamination",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, dondurulmuş gıda (frozen food) taşınıyorsa bunun ne tür bir risk içerebileceği sorulmaktadır. Dondurulmuş gıdalar genellikle 'Kuru Buz' (Dry ice) ile soğutulur; bu madde karbondioksit gazı yaydığı için tehlikeli madde olarak kabul edilir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -806,7 +806,7 @@
         "D Şıkkı": "4 division",
         "E Şıkkı": "One division",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, 4. Sınıf tehlikeli maddelerin kaç alt bölüme ayrıldığı sorulmaktadır. Sınıf 4 (Yanıcı Katılar); 4.1, 4.2 ve 4.3 olmak üzere toplam '3 bölüme' (3 division) ayrılır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -820,7 +820,7 @@
         "D Şıkkı": "Class 1.4 Cartridges, ammunition",
         "E Şıkkı": "Class 1.4 environmentally hazardous substance",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, görselde verilen (üzerinde 1.4 yazan) etiketin tanımı sorulmaktadır. Bu etiket, Sınıf 1 altındaki '1.4 Fişek ve mühimmatlar' (Class 1.4 Cartridges, ammunition) gibi düşük riskli patlayıcıları tanımlar.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-15.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -834,7 +834,7 @@
         "D Şıkkı": "Recipient label",
         "E Şıkkı": "Handling tag",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, tehlikeli madde etiket türlerinin neler olduğu sorulmaktadır. IATA DGR'de etiketler; tehlikenin türünü gösteren 'Risk Etiketleri' ve taşıma şeklini gösteren 'Elleçleme Etiketleri' (Risk and handling label) olmak üzere iki ana gruba ayrılır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -848,7 +848,7 @@
         "D Şıkkı": "8 L",
         "E Şıkkı": "6 L",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, örnek NOTOC formuna göre 'Etanol' (Ethanol) maddesinin uçağın hangi bölümüne yüklendiği sorulmaktadır. Şıklarda çeşitli kompartıman ve miktar bilgileri verilmiştir. NOTOC formundaki yükleme (loading/stowage) sütununa bakıldığında, bu maddenin 2 numaralı kompartımana (Comp 2) yüklendiği görülmektedir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-16.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -862,7 +862,7 @@
         "D Şıkkı": "Toxic Gases",
         "E Şıkkı": "Radioactive Substances in Excepted Quantities",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, yanda görseli verilen (E harfi olan, kırmızı taralı) etiketin hangi madde türü için kullanıldığı sorulmaktadır. Üzerinde büyük bir 'E' harfi bulunan ve 'Excepted Quantity' yazan bu özel etiket, miktarı çok az olduğu için bazı katı kurallardan muaf tutulan 'İstisnai Miktarlardaki Tehlikeli Maddeler' (Dangerous Goods in Excepted Quantities) için kullanılır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-17.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -876,7 +876,7 @@
         "D Şıkkı": "Keep under the sun",
         "E Şıkkı": "Keep warm",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, yanda görseli verilen (üzerinde güneş ve termometre sembolü olan) etiketin hangi talimatı içerdiği sorulmaktadır. Şıklarda sıcak, soğuk ve güneşten koruma talimatları yer almaktadır. Üzeri çizilmiş güneş ve ev şeklinde koruma piktogramı içeren bu elleçleme etiketi, paketin 'Isı kaynaklarından ve güneş ışığından uzak tutulması' (Keep away from heat environment and sunlight) gerektiğini belirtir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-18.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -890,7 +890,7 @@
         "D Şıkkı": "Accepting",
         "E Şıkkı": "Warehouser",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, tehlikeli maddelerin doğru şekilde etiketlenmesi ve işaretlenmesinden kimin sorumlu olduğu sorulmaktadır. IATA DGR kurallarına göre, kargonun içeriğini beyan eden, uygun ambalaja koyan ve üzerine gerekli tüm etiket ve işaretleri yerleştiren asıl taraf 'Gönderici'dir (Shipper).",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -904,7 +904,7 @@
         "D Şıkkı": "Explosive substances may not be carried on board the passenger aircraft under any circumstances.",
         "E Şıkkı": "They can be transported on a cargo plane",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, spor amaçlı mühimmat/fişek taşımak isteyen bir yolcunun hangi kurallara tabi olacağı sorulmaktadır. Şıklarda miktar limitleri, bagaj türü ve havayolu izinleri yer almaktadır. Spor amaçlı mühimmatlar, brüt 5 kilogramı aşmamak ve sadece 'kayıtlı (uçak altı) bagajda' bulunmak şartıyla, havayolunun (operator) izniyle taşınabilir (If it does not exceed 5 kg and is contained in checked baggage, it may be carried with the permission of the airline).",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -918,7 +918,7 @@
         "D Şıkkı": "Toxic hazardous substances",
         "E Şıkkı": "Flammable sustances",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, yandaki görselde yer alan (metal ve el üzerine sıvı damlayan) etiketin hangi tehlikeli madde türünü belirttiği sorulmaktadır. Sınıf 8'e ait olan bu karakteristik etiket, temas ettiği dokuyu ve metalleri tahrip eden 'Aşındırıcı' (Corrosive) maddeleri ifade eder.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-11.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -932,7 +932,7 @@
         "D Şıkkı": "Radioactive material",
         "E Şıkkı": "Fissle material",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, aşağıdaki görselde yer alan (üzerinde radyoaktivite sembolü/pervane olan) etiketin hangi tehlikeli madde türünü gösterdiği sorulmaktadır. Üst yarısı sarı, alt yarısı beyaz olan ve 'Radioactive' ibaresi taşıyan (Kategori II/III) etiketler doğrudan 'Radyoaktif madde' (Radioactive material) taşındığını gösterir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-20.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -946,7 +946,7 @@
         "D Şıkkı": "Acceptance Checklist",
         "E Şıkkı": "DGD form",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, özellikle acil durumlarda evraklara bakmaya gerek kalmadan paketin üzerindeki tehlike türü hakkında anında ve detaylı bilgiyi neyin sağladığı sorulmaktadır. Şıklarda NOTOC, konşimento ve etiketleme gibi belgeler vardır. Paketin dış yüzeyine uygulanan 'Etiketleme ve İşaretleme' (Labeling and Marking), içerikteki tehlikeyi ilk bakışta anlatan en temel ve hızlı görsel uyarı sistemidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -960,7 +960,7 @@
         "D Şıkkı": "Shipper declaration for dangerous goods",
         "E Şıkkı": "in the DGR book",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, havayoluyla taşınması yasak olan tehlikeli maddelerin listesinin nerede bulunduğu sorulmaktadır. (Benzer bir soru daha önce sorulmuştu). Uluslararası havacılık kuralları gereği, taşınması yasak maddelerin tam listesi ICAO'nun hazırladığı 'Tehlikeli Maddelerin Havayoluyla Güvenli Taşınmasına İlişkin Teknik Talimatlar' (Technical instructions for the safe transport of dangerous goods by air) dokümanında yer alır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -974,7 +974,7 @@
         "D Şıkkı": "Can carry 2 in checked baggage",
         "E Şıkkı": "Can be carried in cabin baggage and checked baggage",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, bir yolcunun kayıtlı (uçak altı) bagajında 2 adet tıbbi termometre taşımasına izin verilip verilmediği sorulmaktadır. Şıklarda evet, hayır ve adet/bagaj kısıtlamaları sunulmuştur. IATA DGR Tablo 2.3.A'ya göre cıva içeren tıbbi termometreler, koruyucu bir kılıf içinde olmak şartıyla her yolcu için sadece 1 adet (One small medical or clinical thermometer) taşıma iznine sahiptir; bu nedenle 2 adet taşınmasına izin verilmez (No is not allowed).",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -988,7 +988,7 @@
         "D Şıkkı": "If it is to be carried in the cabin it is allowed",
         "E Şıkkı": "If it is to be carried in the pocket on person it is allowed",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, bir yolcunun sinyal bozucu (jammer) veya biber gazı (mace) gibi cihazları el veya kayıtlı bagajında taşımasına izin verilip verilmediği sorulmaktadır. Göz yaşartıcı gaz, biber gazı (mace/pepper spray) gibi tahriş edici veya sinir bozucu maddeler içeren cihazlar yolcu beraberinde kesinlikle taşınamaz (No is not allowed).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1002,7 +1002,7 @@
         "D Şıkkı": "Can carry 2.5 kg in cabin baggage and checked baggage with the approval of the operator",
         "E Şıkkı": "Can carry 2.5 kg in cabin baggage and checked baggage without permission",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, bir yolcunun kayıtlı bagajında 5 kg kuru buz taşımasına izin verilip verilmediği sorulmaktadır. Şıklarda miktar limitleri ve operatör onayı durumları verilmiştir. Yolcular, bozulabilir ürünleri soğutmak amacıyla operatörün (havayolunun) onayını alarak, el veya kayıtlı bagajlarında kişi başı en fazla 2.5 kg kuru buz taşıyabilirler; dolayısıyla 5 kg taşımak yasaktır ve doğru şık 2.5 kg limitini belirten seçenektir (Can carry 2.5 kg in cabin baggage and checked baggage with the approval of the operator).",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1016,7 +1016,7 @@
         "D Şıkkı": "Energy Response Code",
         "E Şıkkı": "Emergency Runway Code",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, 'ERG code' (ERG kodu) ifadesinin ne anlama geldiği sorulmaktadır. Uçakta tehlikeli madde kaynaklı bir acil durum yaşandığında pilotların başvuracağı ICAO dokümanı 'Emergency Response Guidance' (Acil Durum Müdahale Rehberi) olup, ERG bu ifadenin kısaltmasıdır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1030,7 +1030,7 @@
         "D Şıkkı": "It belongs to the carrier",
         "E Şıkkı": "It belongs to the cargo agency",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, tehlikeli maddelerin kabulü ve taşınmasındaki genel sorumluluğun kimde olduğu sorulmaktadır. Şıklarda gönderici, kaptan, taşıyıcı ve acenteler yer almaktadır. Taşıma sürecinde kargoyu doğru hazırlayıp beyan etmek 'Göndericinin' (Shipper), kurallara uygun şekilde kabul edip emniyetle uçağa yüklemek ise 'Taşıyıcının' (Carrier) sorumluluğunda olduğundan, sorumluluk her ikisine aittir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1044,7 +1044,7 @@
         "D Şıkkı": "Master Minimum Equipment List / Configuration Deviation List",
         "E Şıkkı": "IATA DGR book The Captain must have information about the DG on the aircraft.",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, tehlikeli maddelerin havayoluyla taşınmasında pratik kural ve düzenlemelerin uygulandığı ortak dokümanların hangileri olduğu sorulmaktadır. (Soru 30 ile aynı içerik). Havayolları bu operasyonları temel olarak 'ICAO Technical Instruction Manual' (ICAO TI) ve bunun endüstri standardı olan 'IATA Dangerous Goods Regulation' (IATA DGR) kılavuzlarına dayanarak gerçekleştirir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1058,7 +1058,7 @@
         "D Şıkkı": "Load Sheet",
         "E Şıkkı": "Flight plan",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, uçaktaki tehlikeli maddeler hakkındaki bilgilerin nerede yer aldığı ve bu belge olmadan DG (Dangerous Goods) taşınamayacağı sorulmaktadır. Uçağa yüklenen tehlikeli maddelerin cinsi, miktarı ve konumu Sorumlu Pilot'a mutlaka bildirilmelidir; bu hayati belge 'NOTOC' (Notification to Commander - Kaptana Bildirim) formudur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1072,7 +1072,7 @@
         "D Şıkkı": "It can carry 5 kg / 5 lt",
         "E Şıkkı": "0.5 lt.- 0.5 kg. Maximum kg- 2 lt per person, provided that it is not in packages heavier than . The product can be kept.",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, saç spreyi, parfüm, aseton gibi kozmetik ve tıbbi ürünler için hangi kısıtlamaların olduğu sorulmaktadır. IATA Tablo 2.3.A'ya göre bu tip tehlikesiz (non-radioactive) tıbbi ve tuvalet malzemeleri; her bir paket 0.5 kg veya 0.5 litreyi (0.5 lt.- 0.5 kg) aşmamak ve bir yolcunun taşıdığı toplam miktar 2 kg veya 2 litreyi (Maximum 2 lt per person) geçmemek şartıyla taşınabilir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1086,7 +1086,7 @@
         "D Şıkkı": "They are radionucleic and isotope emitting substances harmful to human health",
         "E Şıkkı": "They are not harmful to human health",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, radyoaktif maddelerin (Radioactive materials) genel tanımı sorulmaktadır. Şıklarda bulaşıcı madde, peroksit ve zararlı izotop yayan maddeler tanımları verilmiştir. Sınıf 7'de yer alan radyoaktif maddeler, atom çekirdekleri kararsız olan ve insan sağlığına/çevreye zararlı olabilecek iyonlaştırıcı radyasyon (izotop/radionucleic) yayan maddelerdir (They are radionucleic and isotope emitting substances harmful to human health).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1100,7 +1100,7 @@
         "D Şıkkı": "No. It's not allowed",
         "E Şıkkı": "In carry on baggage and in checked baggage",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, bir yolcunun bir kutu kibrit veya küçük bir çakmak taşımasına izin verilip verilmediği sorulmaktadır. Yangın riski nedeniyle kibrit (sadece güvenlik kibriti) veya sıvı gazlı küçük bir çakmak, el bagajında veya uçak altı bagajda DEĞİL, sadece 'Yolcunun kendi üzerinde' (On the Person's) cebinde taşınabilir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1114,7 +1114,7 @@
         "D Şıkkı": "To inform all Cargo on aircraft",
         "E Şıkkı": "Notification to Cabin",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, NOTOC belgesinin amacının ne olduğu sorulmaktadır. Kaptana Bildirim formunun (NOTOC) temel amacı; uçaktaki Tehlikeli Maddeler (DG), canlı hayvanlar (AVI) ve diğer özel yüklerin sınıfı, miktarı ve kompartımandaki yerleri hakkında uçuş ekibini bilgilendirmektir (To inform about DG, live animals and special loads on board).",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1128,7 +1128,7 @@
         "D Şıkkı": "Function 7.9",
         "E Şıkkı": "Function 7.10",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, tehlikeli madde taşıma izni olan bir organizasyonda, IATA DGR eğitim tablolarına göre Dispeçerlerin (dispatchers) hangi 'Fonksiyon' kapsamında eğitim alması gerektiği sorulmaktadır. CBTA (Yetkinlik Temelli Eğitim) yaklaşımına göre Uçuş Harekat Uzmanları (Dispeçerler) ve Yük Kontrol personeli 'Fonksiyon 7.8' (Function 7.8) müfredatına göre eğitim almalıdır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1142,7 +1142,7 @@
         "D Şıkkı": "160 Wh/2 Spares",
         "E Şıkkı": "100 Wh/2 Spares",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, lityum-iyon batarya içeren cihazların ve kabinde taşınacak yedek pillerin hangi Watt-saat (Wh) limitini aşmaması ve kaç adede kadar taşınabileceği sorulmaktadır. IATA kurallarına göre, havayolu onayı ile taşınabilen büyük lityum-iyon bataryalar maksimum 160 Wh kapasiteye sahip olabilir ve bir yolcu bunlardan en fazla 2 adet yedek batarya (160 Wh/2 Spares) taşıyabilir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1156,7 +1156,7 @@
         "D Şıkkı": "10.3.D",
         "E Şıkkı": "10.9.C",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, yolcuların ve mürettebatın taşıyabileceği tehlikeli maddelerin kurallarının DGR kitabında hangi tablodan bakılabileceği sorulmaktadır. Yolcu beraberinde taşınan tehlikeli maddelere ilişkin tüm kısıtlamalar, istisnalar ve havayolu onayı gereksinimleri IATA DGR 'Tablo 2.3.A'da (Table 2.3.A) listelenmiştir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1170,7 +1170,7 @@
         "D Şıkkı": "Thermometer containing mercury in the protection container used for health purposes",
         "E Şıkkı": "5 kg Ammunition for sportive",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, yolcu beraberinde getirilen hangi malzeme uçağa yüklendiğinde Sorumlu Pilot'a (PIC) bilgi verilmesi (NOTOC düzenlenmesi) gerektiği sorulmaktadır. Şıklarda kuru buz, alkol, tıbbi termometre ve lityum pilli tekerlekli sandalye bulunmaktadır. Yangın riskine karşı özel yükleme ve batarya izolasyon prosedürleri gerektiren 'Lityum-iyon bataryalı tekerlekli sandalyeler' (Wheelchair with lithium-ion battery) yüklendiğinde mutlaka kaptana bildirilmelidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1184,7 +1184,7 @@
         "D Şıkkı": "Excepted Quantity labels",
         "E Şıkkı": "GHS Labels",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, risk etiketlerine ek olarak paketlerin doğru şekilde taşınması, depolanması ve yönlendirilmesi hakkında bilgi vermek için kullanılan etiketlerin ne olduğu sorulmaktadır. Kargonun dik tutulmasını (This Way Up), ısıdan korunmasını veya sadece kargo uçağında taşınmasını belirten bu yönlendirici etiketler 'Elleçleme Etiketleri' (Handling labels) olarak adlandırılır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1198,7 +1198,7 @@
         "D Şıkkı": "In case of damage to the package",
         "E Şıkkı": "In case  tha package leaks",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, havayoluyla tehlikeli madde taşımacılığında 'Tehlikeli Madde Kazası' (Dangerous goods accident) tanımının hangi koşullarda geçerli olduğu sorulmaktadır. Yanlış etiket veya sızıntı birer 'olay' (incident) iken; taşıma esnasında tehlikeli madde kaynaklı olarak bir kişinin ağır yaralanması, ölmesi, uçakta hasar oluşması veya yangın çıkması durumu 'Kaza' (Accident) olarak tanımlanır (in the event of injury or death of a person, damage to aircraft, fire...).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1212,7 +1212,7 @@
         "D Şıkkı": "They are compressed liquid and mixed toxic substances",
         "E Şıkkı": "Gases are toxic",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, Gazların (Gases) tanımı için hangi ifadenin geçerli olduğu sorulmaktadır. Şıklarda bulaşıcı, aşındırıcı ve sıkıştırılmış gaz tanımları yer almaktadır. Sınıf 2 kapsamındaki gazlar, basınç altında tutulan (sıkıştırılmış, sıvılaştırılmış, çözünmüş veya soğutularak sıvılaştırılmış) maddelerdir; sorudaki en yakın tanım 'Sıkıştırılmış, sıvı ve karışık zehirli maddeler' (They are compressed liquid and mixed toxic substances) şıkkında verilmiştir. (Not: İngilizce şık çevirisi teknik olarak biraz kusurlu olsa da, 'basınç altındaki sıvı/gaz' vurgusu hedeflenmiştir).",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1226,7 +1226,7 @@
         "D Şıkkı": "Restricted substances cannot be transported on aircraft in accordance with ICAO rules",
         "E Şıkkı": "Restricted substances can be transported in cabin",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, kısıtlamaya tabi maddelerin uçakta taşınabilmesi için hangi koşulların yerine getirilmesi gerektiği sorulmaktadır. Kısıtlı maddelerin havayoluyla kargo olarak taşınabilmesi için, ICAO ve IATA DGR kurallarına tam uygun şekilde 'doğru sınıflandırılması, paketlenmesi ve belgelenmesi' (Comply with the ICAO/IATA Dangerous Goods Regulations transportation rules in terms of proper packaging and documentation) zorunludur.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1240,7 +1240,7 @@
         "D Şıkkı": "Flammable gases.",
         "E Şıkkı": "Flammable Liquids",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, görseli verilen mavi zeminli (suya damlayan madde ve alev sembolü) 'Su ile temas ettiğinde tehlikeli' (Dangerous when wet) işaretinin anlamı sorulmaktadır. Sınıf 4.3'e ait olan bu etiket, 'Su ile temas ettiğinde yanıcı gazlar çıkaran maddeleri' (Substances that, in contact with water, form flammable gases) tanımlar.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-22.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1254,7 +1254,7 @@
         "D Şıkkı": "Gas curling irons",
         "E Şıkkı": "Aku",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, genel olarak kısıtlı (yasaklı) maddelerin el bagajında taşınması yasak olmasına rağmen, hangi maddenin belirli kurallar çerçevesinde istisnai olarak yolcu kabininde (el bagajında) taşınmasına müsamaha gösterildiği (izin verildiği) sorulmaktadır. Şıklarda mühimmat, patlayıcı, bulaşıcı madde, akü ve gazlı saç maşası yer almaktadır. IATA Tablo 2.3.A'ya göre, koruyucu bir kapağı olmak şartıyla hidrokarbon gazı içeren bir adet 'Gazlı saç maşası' (Gas curling irons) el bagajında istisnai olarak taşınabilir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1268,7 +1268,7 @@
         "D Şıkkı": "Corrosive",
         "E Şıkkı": "Keep away from heat",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, görseli verilen turuncu zeminli, üzerinde uçağa yüklenen paketleri gösteren ve 'Cargo Aircraft Only' yazan etiketin hangi tehlikeli madde türü (veya talimatı) için kullanıldığı sorulmaktadır. İnsan sağlığı ve emniyet açısından yüksek risk taşıyan ve yolcu uçaklarında taşınması yasak olan maddeler, sadece kargo uçaklarında taşınabileceğini belirten bu (Cargo aircraft only) etiket ile işaretlenir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-21.png",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1282,7 +1282,7 @@
         "D Şıkkı": "Infectious micro-organisms for medical purposes",
         "E Şıkkı": "Elektroshock devise",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, hangi tehlikeli maddenin yolcular veya mürettebat tarafından belirli bir miktar sınırlandırmasıyla (reduced rate) taşınabileceği sorulmaktadır. Şıklarda kuru buz, boya, arsenik ve bulaşıcı maddeler yer almaktadır. IATA kuralları gereği yolcular, bozulabilir ürünleri soğutmak amacıyla, operatör onayıyla 'kişi başı 2.5 kg'ı aşmayan Kuru Buz' (Dry ice not exceeding 2.5 kg) taşıyabilirler.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1296,7 +1296,7 @@
         "D Şıkkı": "Package containing corrosive substance",
         "E Şıkkı": "Clinic used Thermometer",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, gizli tehlikeli maddelere (hidden hazardous substances) hangisinin örnek olabileceği sorulmaktadır. Soruda muhtemelen genel bagaj/kargo içeriği kastedilmiştir. Şıklarda yer alan alet çantası (tool box) gibi beyan edilebilecek 'Bıçak, çamaşır suyu, tiner, makas, iğne' (Knife, bleach, thinner...) gibi günlük ev/iş malzemeleri, içerdikleri kimyasal ve kesici özelliklerden dolayı havacılıkta tipik gizli tehlikeli madde ve güvenlik riski örnekleridir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1310,7 +1310,7 @@
         "D Şıkkı": "8",
         "E Şıkkı": "3",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, sıvı tehlikeli madde içeren bir paketin üzerinde en az kaç adet 'THIS WAY UP' (Yön Etiketi / Bu Yön Yukarı) işareti bulunması gerektiği sorulmaktadır. Sıvıların dökülmesini önlemek amacıyla, paketin karşılıklı '2' dikey yan yüzeyine (2 adet) yön etiketi yapıştırılması kuralı vardır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1324,7 +1324,7 @@
         "D Şıkkı": "Cargo manifest prepared by the sender",
         "E Şıkkı": "Informed with Massage",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, Sorumlu Kaptanın uçağa tehlikeli maddelerin yüklendiğini nasıl öğrendiği sorulmaktadır. Uçuş ekibi, uçağa yüklenen tehlikeli maddelerin cinsi, miktarı ve yükleme konumu hakkında, uçuş öncesi kendilerine sunulan yazılı 'NOTOC' (Notification to Captain) belgesi vasıtasıyla bilgilendirilir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1338,7 +1338,7 @@
         "D Şıkkı": "Transported for the use of the Operator.",
         "E Şıkkı": "Dangerous Goods in Excepted Quantities",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, bazı özel durumların DGR'ın normal kurallarından muaf (exempted) tutulduğu, bunlardan hangisinin bu muafiyetlerden biri olmadığı sorulmaktadır. Yolcu beraberindeki eşyalar, operatör malzemeleri (COMAT) ve istisnai miktarlar belli şartlarda muafiyetlere sahipken; normal bir kargo olarak (Transported as Cargo) taşınan tehlikeli maddeler hiçbir muafiyete tabi olmaksızın DGR kurallarına harfiyen uymak zorundadır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1352,7 +1352,7 @@
         "D Şıkkı": "It is loaded and transported according to the procedures determined by the company.",
         "E Şıkkı": "It is transported in cargo and passenger aircraft",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, 'CAO' (Sadece Kargo Uçağı) etiketi taşıyan bir tehlikeli madde paketinin, bir Kargo ve Yolcu (Passenger) uçağına nasıl yüklenip taşınabileceği sorulmaktadır. 'CAO' etiketi olan bir kargo, aşırı risk içerdiği için içinde yolcu bulunan hiçbir uçağa (passenger aircraft) kesinlikle yüklenemez ve taşınamaz (A package labelled with the 'CAO' sign may not be loaded on board a passenger aircraft).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1366,7 +1366,7 @@
         "D Şıkkı": "Shipper",
         "E Şıkkı": "Package maker",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, Tehlikeli Maddelerin potansiyel tehlikesini ilk kimin belirlediği sorulmaktadır. (33. Soru ile aynı). Ürünü üreten veya paketleyip sevkiyata hazırlayan kişi kargonun içeriğini en iyi bilen taraf olduğu için, tehlike sınıfını ve risklerini ilk belirleyen 'Gönderici'dir (Shipper).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1380,7 +1380,7 @@
         "D Şıkkı": "Cargo agent",
         "E Şıkkı": "Captain",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Bu İngilizce soruda, Tehlike Etiketini (Hazard Label) hazırlamaktan kimin sorumlu olduğu sorulmaktadır. (32. Soru ile aynı). Maddenin kimyasal ve fiziksel özelliklerine göre hangi tehlike sınıfına girdiğini ve dolayısıyla hangi etiketin (MSDS bazında) kullanılması gerektiğini belirleyen ana kaynak 'Üretici'dir (Manufacturer).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1394,7 +1394,7 @@
         "D Şıkkı": "EASA",
         "E Şıkkı": "SHGM",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İngilizce soruda, Tehlikeli Maddelerin havayoluyla güvenli taşınmasına yönelik temel kuralları (basic rules) hangi kuruluşun sağladığı sorulmaktadır. (24. Soru ile aynı). Uluslararası sivil havacılıkta tehlikeli maddelerin taşınmasına yönelik yasal altyapı ve temel teknik talimatlar (Annex 18 ve Doc 9284) 'ICAO' (Uluslararası Sivil Havacılık Örgütü) tarafından belirlenir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (İNGİLİZCE)"
@@ -1408,7 +1408,7 @@
         "D Şıkkı": "Basınç",
         "E Şıkkı": "Yanıcılık",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Soruda DGR Sınıf 6.1'e ait bir maddenin temel tehlikesi sorulmaktadır. Sınıf 6.1 (Toxic Substances), solunması, yutulması veya deri yoluyla emilmesi halinde insan sağlığına ciddi zarar verebilecek 'Zehirlilik' riski taşıyan maddeleri kapsar.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1422,7 +1422,7 @@
         "D Şıkkı": "Asidik tahriş olma tehlikesi",
         "E Şıkkı": "Felç olma tehlikesi",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Soruda Sınıf 6.2'ye ait bir maddeyle temasın sonucunda oluşacak tehlike sorulmaktadır. Sınıf 6.2 (Bulaşıcı Maddeler), hastalık yapıcı virüs ve bakterileri içerdiğinden, temel risk bir bulaşıcı hastalığa yakalanma tehlikesidir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1436,7 +1436,7 @@
         "D Şıkkı": "Asidik maddeler",
         "E Şıkkı": "Yanıcı sıvı maddeler",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Soruda hangisinin DGR Sınıf 5.2 (Organik Peroksitler) ile ilgili olmadığı sorulmaktadır. Şıklardaki 'Asidik maddeler', Sınıf 8'in (Aşındırıcılar) bir özelliği olup Sınıf 5.2 tanımı ve riskleri içerisinde yer almaz.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1450,7 +1450,7 @@
         "D Şıkkı": "Yanma Noktası önemli değildir. Önemli olan yakacak maddenin ne kadar tehlikeli olduğudur.",
         "E Şıkkı": "Akışkanlık düzeyine bakılır.",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Soruda yanıcı sıvılarda yanma (parlama) noktasının düşük veya yüksek olmasının risk durumu sorulmaktadır. Bir sıvının yanma/parlama noktası ne kadar düşükse, normal sıcaklıklarda bile kolayca buharlaşıp alev alabileceğinden, düşük yanma noktasına sahip maddeler çok daha tehlikelidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1464,7 +1464,7 @@
         "D Şıkkı": "Renk uyumuna katkıda bulunur",
         "E Şıkkı": "Paketlerin düşme yüksekliğini belirtir.",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Soruda tehlike etiketlerinin (risk label) temel kullanım amacı sorulmaktadır. Bu etiketler, üzerlerindeki sembol ve renklerle, paketin içindeki maddenin taşıdığı yanıcılık, zehirlilik gibi potansiyel tehlikeleri görsel olarak anında belirtmek için kullanılır.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1478,7 +1478,7 @@
         "D Şıkkı": "kdm-dgr-en/kdm-dgr-en-11.png",
         "E Şıkkı": "kdm-dgr-en/kdm-dgr-en-25.png",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Soruda Organik Peroksitleri (Sınıf 5.2) temsil eden etiketin hangisi olduğu sorulmaktadır. Organik peroksitlerin standart tehlike etiketi, üst yarısı kırmızı, alt yarısı sarı olan ve üzerinde alev sembolü ile '5.2' rakamı bulunan etikettir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1492,7 +1492,7 @@
         "D Şıkkı": "Bu taşımayı itfaiyeye bildirmek gerekir.",
         "E Şıkkı": "Bu paket taşınamaz.",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Soruda bir paketin üzerinde birden fazla tehlike (risk) etiketi bulunmasının anlamı sorulmaktadır. Bu durum, paketin içindeki maddenin tek bir tehlikeyle sınırlı kalmayıp, örneğin hem yanıcı hem de zehirli olmak gibi birden fazla tehlike kaynağı barındırdığını gösterir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1506,7 +1506,7 @@
         "D Şıkkı": "Bu maddenin taşınması yasaktır.",
         "E Şıkkı": "Bu madde aşındırıcı ve zehirlidir.",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "DİKKAT: CEVAP ANAHTARINDA HATA OLABİLİR! Soruda görseldeki paket (Sınıf 8 Aşındırıcı ve Sınıf 6 Zehirli etiketleri varsayımıyla) hakkında hangi ifadenin doğru olduğu sorulmaktadır. 41. İngilizce sorunun birebir aynısı olan bu Türkçe soruda cevap anahtarı D (Taşınması yasaktır) olarak verilmiş. Oysa iki farklı tehlike etiketi (örneğin aşındırıcı ve zehirli) taşıyan maddeler, uygun kurallarla paketlendiklerinde taşınabilirler. Doğru cevabın E (Bu madde aşındırıcı ve zehirlidir) olması gerekir. Ancak talimatlarınız gereği operasyonu DURDURMUYORUM, sadece uyarıda bulunuyorum.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-26.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1520,7 +1520,7 @@
         "D Şıkkı": "Gazlar",
         "E Şıkkı": "Alev alan sıvılar",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Soruda 8. Sınıf (Class 8) tehlikeli maddelerin hangisi olduğu sorulmaktadır. DGR kurallarına göre Sınıf 8, canlı dokulara ve temas ettiği metallere kimyasal reaksiyonla zarar veren 'Aşındırıcı (Corrosive) maddeler' kategorisidir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1534,7 +1534,7 @@
         "D Şıkkı": "Dördüncü",
         "E Şıkkı": "Yedinci",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Soruda radyoaktif maddelerin hangi tehlike sınıfına girdiği sorulmaktadır. İyonlaştırıcı radyasyon yayan radyoaktif maddeler (Radioactive material), uluslararası havacılık kuralları gereği 'Yedinci (Class 7)' sınıfta yer alır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1548,7 +1548,7 @@
         "D Şıkkı": "IEAE / IATA-DGR",
         "E Şıkkı": "Annex 18 / ICAO-TI",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Soruda ICAO'nun tehlikeli maddelerin taşınmasına yönelik dokümanlarının hangileri olduğu sorulmaktadır. Yasal zorunlulukları belirleyen 'Annex 18' (Chicago Konvansiyonu Ek 18) ve detaylı uygulama kurallarını içeren 'ICAO-TI' (Teknik Talimatlar) bu sürecin temel ICAO dokümanlarıdır. (Not: Cevap anahtarı A şıkkını, yani Annex 18 ve IATA-DGR'ı doğru kabul etmiştir, sektörel kullanım bu yöndedir).",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1562,7 +1562,7 @@
         "D Şıkkı": "Tehlikeli maddeyi hava konşimentosunda tam ve doğru bir şekilde belirtmek",
         "E Şıkkı": "Gönderici beyan formunu tam ve doğru bir şekilde doldurmak",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Soruda göndericinin (shipper) sorumluluklarından olmayan işlem sorulmaktadır. Gönderici kargoyu kurallara uygun ambalajlamakla yükümlüdür ancak, bu ambalajları (UN spesifikasyonlu paketleri) test edip 'uygun paketlemeyi yapmak / imal etmek' göndericinin değil, üreticinin yetkisindedir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1576,7 +1576,7 @@
         "D Şıkkı": "Sınırlandırılmış miktardaki tehlikeli maddeler",
         "E Şıkkı": "Taşıyıcı mülkiyet altındaki tehlikeli maddeler",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Soruda tam etiketleme ve dokümantasyon gerekliliklerinden muaf olarak taşınabilen maddelerin hangisi olduğu sorulmaktadır. Havayolu şirketinin kendi operasyonlarında kullanmak üzere taşıdığı uçak parçaları, yangın söndürücüler veya ikram malzemeleri (COMAT), 'Taşıyıcı mülkiyeti altındaki tehlikeli maddeler' olarak belli muafiyetlere sahiptir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1590,7 +1590,7 @@
         "D Şıkkı": "Bölüm 6.1, zehirli maddeler",
         "E Şıkkı": "Sınıf 8, aşındırıcılar",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Soruda 'TOXIC' (Zehirli) işaretinin hangi tehlike bölümü için kullanıldığı sorulmaktadır. DGR sınıflandırma sisteminde zehirli maddeler, Sınıf 6'nın alt bölümü olan 'Bölüm 6.1, zehirli maddeler' (Toxic Substances) olarak adlandırılır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-12.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1604,7 +1604,7 @@
         "D Şıkkı": "X",
         "E Şıkkı": "Y",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Soruda yüksek derecede risk taşıyan maddelerin paket performans kodunun hangisi olduğu sorulmaktadır. Paketleme Grupları (PG) tehlike seviyesini belirtir; 'PG I' (Paketleme Grubu I), en yüksek tehlikeyi ifade eder ve en dayanıklı 'X' kodlu ambalajları gerektirir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1618,7 +1618,7 @@
         "D Şıkkı": "Paket özelliği işaretlemesi",
         "E Şıkkı": "Gönderici beyanatı",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Soruda tehlikeli maddenin sınıfını gösteren görselin adı sorulmaktadır. Baklava dilimi şeklinde olan, üzerinde ilgili sınıfın numarasını (örn. 3, 8, 9) ve piktogramını taşıyan etiketler 'Risk etiketi' (Hazard label) olarak adlandırılır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1632,7 +1632,7 @@
         "D Şıkkı": "Fissle madde paketler",
         "E Şıkkı": "Aşındırıcı madde paketler",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Soruda yolcu veya pilot kabininde taşınmasına izin verilen maddelerin hangisi olduğu sorulmaktadır. Taşıyıcının (havayolunun) uçuş emniyeti veya yolcu ikramı için kendi mülkiyetinde taşıdığı can yelekleri, yangın söndürücüler ve kuru buz gibi maddeler 'Taşıyıcı mülkiyeti altındaki tehlikeli maddeler' olarak kabinde bulunabilir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1646,7 +1646,7 @@
         "D Şıkkı": "D sınıfı kargo kompartımanı",
         "E Şıkkı": "E sınıfı kargo kompartımanı",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Soruda Sadece Kargo Uçağı (CAO) etiketli paketlerin hangi sınıf kargo kompartımanında taşınacağı sorulmaktadır. Bu tür yüksek riskli kargolar, gelişmiş yangın algılama ve aktif yangın söndürme sistemlerine sahip olan 'C sınıfı kargo kompartımanı'na yüklenmelidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1660,7 +1660,7 @@
         "D Şıkkı": "Tehlikeli madde paketlerinin performanslarını belirlemek",
         "E Şıkkı": "Hasar alan ya da sızıntı yapan paketler belirlemek",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Soruda taşıyıcının yaptığı Kabul Denetimlerinin (Acceptance Check) temel amacı sorulmaktadır. Bu fiziki kontrollerin en önemli amacı, kargonun uçuş emniyetini tehlikeye atmaması için 'hasar alan ya da sızıntı yapan paketleri belirlemek' ve uçağa yüklenmesini engellemektir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1674,7 +1674,7 @@
         "D Şıkkı": "Kargo kabul çalışanları",
         "E Şıkkı": "Taşıyıcı çalışanları",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Soruda taşıma sürecinde hangi tarafın bilgilendirilmesine gerek olmadığı sorulmaktadır. Tehlikeli maddenin kuralına uygun hazırlandığını beyan eden ve tüm süreci başlatan zaten 'Gönderici' (Shipper) olduğu için, operasyonun ilerleyen aşamalarında kendisine ayrıca bilgi verilmesi gerekmez.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1688,7 +1688,7 @@
         "D Şıkkı": "Paket 2001 yılında üretilmiştir.",
         "E Şıkkı": "Paket 16 bar basınç değeri için test edilmiştir.",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Paket üzerindeki kuru kafa ve çapraz kemik etiketi, içerikteki maddenin Sınıf 6.1 (Zehirli Maddeler) kategorisine ait olduğunu doğrudan gösterir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-13.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1702,7 +1702,7 @@
         "D Şıkkı": "Paketin üzerinde sadece risk etiketlemeleri mevcuttur.",
         "E Şıkkı": "Paket 15 kg katı tehlikeli madde için test edilmiştir.",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Paket üzerindeki 9. Sınıf risk etiketi ve 'UN 1845' ibaresi, içeriğin soğutucu ajan olarak kullanılan kuru buz (Dry ice) olduğunu doğrular.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-14.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1716,7 +1716,7 @@
         "D Şıkkı": "Kabin anonsunda",
         "E Şıkkı": "Hepsi",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Havacılık emniyeti kuralları gereği tehlikeli madde yolcu bilgilendirmeleri; bilet satış, check-in, bagaj alım ofisleri ve uçuş kapıları dahil havalimanındaki tüm temas noktalarında yapılmak zorundadır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1730,7 +1730,7 @@
         "D Şıkkı": "Bozulma riski",
         "E Şıkkı": "Bulaşma riski",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Dondurulmuş gıdaların sevkiyatında soğutucu olarak kullanılan kuru buz (UN 1845), süblimleştiğinde boğucu karbondioksit gazı çıkardığı için gizli bir tehlike kaynağıdır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1744,7 +1744,7 @@
         "D Şıkkı": "4 bölüm",
         "E Şıkkı": "Bir bölüm",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Sınıf 4 (Yanıcı Katılar) maddeleri taşıdıkları reaksiyon risklerine göre üç alt bölüme ayrılır: Yanıcı katılar (4.1), kendiliğinden yanmaya yatkın maddeler (4.2) ve su ile temasında yanıcı gaz çıkaran maddeler (4.3).",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1758,7 +1758,7 @@
         "D Şıkkı": "Sınıf 1.4 Fişek, cephane",
         "E Şıkkı": "Sınıf  1.4 çevreye zararlı madde",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Üzerinde '1.4' yazan turuncu risk etiketi, taşıma esnasında büyük bir tehlike oluşturmayan fişek ve küçük çaplı cephane gibi düşük riskli patlayıcıları temsil eder.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-15.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1772,7 +1772,7 @@
         "D Şıkkı": "Alıcı etiketi",
         "E Şıkkı": "Handling etiketi",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "IATA DGR sisteminde etiketler iki ana gruba ayrılır: Maddenin tehlike sınıfını gösteren risk etiketleri (hazard labels) ve paketin nasıl taşınıp istiflenmesi gerektiğini gösteren elleçleme etiketleri (handling labels).",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1786,7 +1786,7 @@
         "D Şıkkı": "8 L",
         "E Şıkkı": "6 L",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "NOTOC (Kaptana Bildirim) formunun yükleme pozisyonunu gösteren sütununda, Etanol maddesinin 2 numaralı kargo kompartımanına (Comp 2) yüklendiği belirtilmiştir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-16.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1800,7 +1800,7 @@
         "D Şıkkı": "Zehirli gazlar",
         "E Şıkkı": "İstisnai miktarda radyoaktif madde",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Kırmızı taralı ve üzerinde büyük 'E' harfi bulunan etiket, miktarı çok düşük olduğu için ambalajlama ve belgelemede belirli muafiyetler sağlanan İstisnai Miktarlardaki Tehlikeli Maddeler (Excepted Quantities) için kullanılır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1814,7 +1814,7 @@
         "D Şıkkı": "Güneş altında muhafaza ediniz",
         "E Şıkkı": "Sıcakta tutunuz",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Üzeri çizilmiş güneş ve ev şeklinde koruma sembolü barındıran bu elleçleme etiketi, paketin ısıya duyarlı olduğunu ve sıcak ortam ile doğrudan güneş ışığından uzak tutulması gerektiğini ifade eder.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-18.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1828,7 +1828,7 @@
         "D Şıkkı": "Division 2.2 / Class 7- Fissile / Division 6.1",
         "E Şıkkı": "Division 4.2 / Class 7- Fissile / Division 6.1",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Kuru kafa etiketi zehirli gazları (Bölüm 2.3), radyoaktivite sembolü fisil maddeleri (Sınıf 7-Fissile) ve üç hilal sembolü bulaşıcı maddeleri (Bölüm 6.2) tanımlar.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-1.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1842,7 +1842,7 @@
         "D Şıkkı": "4 yıl",
         "E Şıkkı": "5 yıl",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "IATA kuralları gereği, havacılık personelinin tehlikeli madde operasyonlarındaki yetkinliklerini koruyabilmesi için sertifika tazeleme (recurrent) eğitimleri her 24 ayda (2 yılda) bir yenilenmelidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1856,7 +1856,7 @@
         "D Şıkkı": "Class 8 / Class 4 / Division 4.3",
         "E Şıkkı": "Class 8.1 / Class 4 / Division 4.3",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Damlayan asit görseli aşındırıcı maddeleri (Sınıf 8), yarısı beyaz-kırmızı etiket kendiliğinden yanabilen maddeleri (Sınıf 4.2) ve mavi etiket suyla temasında yanıcı gaz çıkaran maddeleri (Bölüm 4.3) gösterir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-23.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1870,7 +1870,7 @@
         "D Şıkkı": "9",
         "E Şıkkı": "10",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Birleşmiş Milletler ve ICAO/IATA standartlarına göre havacılıkta tehlikeli maddeler, kimyasal yapılarına ve taşıdıkları spesifik risklere göre 9 ana tehlike sınıfına ayrılır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1884,7 +1884,7 @@
         "D Şıkkı": "uygun sevkiyat adı, UN numarası, sınıf veya bölüm, yükleme yeri",
         "E Şıkkı": "Uygun sevkiyat adı, UN numarası, sınıf veya bölüm, ikincil risk, miktar",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Acil bir durumda müdahale ekiplerinin doğru aksiyon alabilmesi için ATC'ye; maddenin uygun sevkiyat adı, UN numarası, sınıfı/bölümü, varsa ikincil riski, miktarı ve uçaktaki yükleme konumu bildirilmelidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1898,7 +1898,7 @@
         "D Şıkkı": "Hayır, check-in bagajında taşınmalıdır",
         "E Şıkkı": "Evet, el bagajında taşınmalıdır",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Yangın riski nedeniyle elektronik sigaraların kayıtlı bagajda taşınması yasaktır; sadece el bagajında, kazara çalışmasını önlemek amacıyla pilleri çıkarılarak veya izole edilerek taşınabilir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1912,7 +1912,7 @@
         "D Şıkkı": "Brüt ağırlık 2,5 kg",
         "E Şıkkı": "Net ağırlık 5 kg",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Bozulabilir ürünleri soğutmak amacıyla yolcuların el veya kayıtlı bagajlarında taşıyabilecekleri kuru buz limiti, gaz salınımına izin veren ambalajda kişi başı en fazla 2.5 kg net ağırlıktır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1926,7 +1926,7 @@
         "D Şıkkı": "limitsiz",
         "E Şıkkı": "15 L",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Alkol oranı hacmen %24'ü aşmayan alkollü içecekler tehlikeli madde (DGR) sınırlamalarına tabi tutulmaz, bu nedenle havacılık emniyeti açısından bir miktar kısıtlaması yoktur.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1940,7 +1940,7 @@
         "D Şıkkı": "Evet, operatörün onayı gereklidir",
         "E Şıkkı": "Hiçbir şekilde izin verilmez",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Sıvı oksijen içeren cihazlar, çok yüksek genleşme katsayısı ve oluşturdukları şiddetli yangın riski sebebiyle yolcu beraberinde hiçbir şekilde taşınamaz.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1954,7 +1954,7 @@
         "D Şıkkı": "Riskleri yoktur, bu nedenle herhangi bir işlem yapılmamalıdır",
         "E Şıkkı": "Yalnızca el bagajına veya el bagajı olarak izin verilir",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Yedek lityum bataryalar sadece el bagajında taşınmalı ve terminallerinin metal eşyalarla temas edip yangın çıkarmasını önlemek için mutlaka kısa devrelere karşı izole edilmelidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1968,7 +1968,7 @@
         "D Şıkkı": "Isı üreten ürünler",
         "E Şıkkı": "10 L alkollü içecekler",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Soğutulmuş sıvı nitrojen içeren yalıtımlı ambalajların (Dry Shipper) yolcu beraberinde uçuşa kabul edilebilmesi için önceden havayolu (operatör) onayı alınması gerekmektedir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1982,7 +1982,7 @@
         "D Şıkkı": "Tıbbi kullanım için oksijen veya hava gaz silindirleri",
         "E Şıkkı": "Radyoizotopik kalp pilleri",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Tıbbi kullanım için havayolu onayıyla taşınan oksijen veya hava gaz silindirleri yüksek yangın riski oluşturduğu için uçağa yüklendiği konum kaptan pilota NOTOC belgesiyle bildirilmelidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -1996,7 +1996,7 @@
         "D Şıkkı": "İzin verilmez",
         "E Şıkkı": "NOTOC tarafından kaptana bildirilmelidir",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Radyoaktif izotop ve lityum pil içermelerine rağmen, radyoizotopik kalp pillerinin yolcu beraberinde taşınmasına sadece kişinin vücuduna yerleştirilmiş (implant) halde olmaları şartıyla izin verilir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2010,7 +2010,7 @@
         "D Şıkkı": "Sorumlu pilota lokasyonu hakkında bilgi verilmelidir",
         "E Şıkkı": "Check-in bagajı ve el bagajı olarak izin verilir",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Tehlikesiz gaz içeren Bölüm 2.2 aerosolleri belirli limitler dahilinde bagajlarda taşınabilir; bu maddelerin uçağa yüklenmesinde sorumlu pilota konum bildirimi (NOTOC) yapılması zorunluluğu yoktur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2024,7 +2024,7 @@
         "D Şıkkı": "Sınıf 9 Manyetik Materyal",
         "E Şıkkı": "Sınıf 9 Litium batarya",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Üzerinde pillerin yanma reaksiyonunu gösteren piktogram bulunan siyah-beyaz dikey çizgili Sınıf 9 etiketi, spesifik olarak tehlikeli lityum bataryaların işaretlenmesinde kullanılır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-24.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2038,7 +2038,7 @@
         "D Şıkkı": "AA123",
         "E Şıkkı": "Yüklü değildir",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Örnek NOTOC formunun yükleme detaylarında, tüketici emtiaları (Consumer Commodities) kargosunun uçağın sağ 12 (12 R) numaralı kompartıman pozisyonuna yüklendiği belirtilmiştir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-2.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2052,7 +2052,7 @@
         "D Şıkkı": "AA123",
         "E Şıkkı": "Yoktur",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Radyoaktif maddelerin güvenli ayrım mesafesini belirleyen Taşıma İndeksi (TI) değeri belgede 3.5'tir. Şıklardaki tarih formatı, 3.5 değerinin sistemsel çeviri hatasıyla bozulmuş halidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-2.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2066,7 +2066,7 @@
         "D Şıkkı": "Isı üreten ürünler",
         "E Şıkkı": "Elektro şok silahları",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Taşınabilir elektronik cihazlara güç sağlayan yakıt hücreleri ve yedek yakıt kartuşlarının yolcu beraberinde uçuşa kabul edilebilmesi için operatör (havayolu) onayı ve kısıtlamalarına uyulması zorunludur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2080,7 +2080,7 @@
         "D Şıkkı": "Radyoaktif",
         "E Şıkkı": "Yasaklı maddeler ve taşınması yasak olan tehlikeli maddeler",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Uçuş emniyetini ve insan sağlığını doğrudan riske atan, IATA DGR kurallarında istisnai hiçbir taşıma onayı bulunmayan yasaklı maddeler havayoluyla kesinlikle taşınamaz.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2094,7 +2094,7 @@
         "D Şıkkı": "Trade Cargo",
         "E Şıkkı": "Pax Baggages and Cargo",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Havayolunun kendi operasyonlarında kullandığı uçak acil durum ekipmanları, ikram sarf malzemeleri ve kuru buz gibi maddeler COMAT (Taşıyıcı Mülkiyetindeki Malzemeler) kapsamında değerlendirilir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2108,7 +2108,7 @@
         "D Şıkkı": "PG I ve PG II Paketleri",
         "E Şıkkı": "Hepsiyle taşınabilir",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Düşük tehlike seviyesine sahip maddeler Paketleme Grubu III (PG III) sınıfına girer ve bu maddelerin taşınmasında dayanıklılık testlerinden geçmiş 'Z' kodlu ambalajlar kullanılır ancak yüksek ve orta tehlikeli maddelerin ambalajlarıyla da taşınabildikleri için hepsiyle taşınabilirler.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2122,7 +2122,7 @@
         "D Şıkkı": "Ne uyumsuz ne de uyumlu (DGR 9.3.A)",
         "E Şıkkı": "Kural dışı",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "IATA DGR Tablo 9.3.A (Ayrım Tablosu) kurallarına göre, birbiriyle temas etmesi halinde tehlikeli kimyasal reaksiyon oluşturma riski taşıyan belirli tehlikeli madde sınıfları uçağa yan yana yüklenemez; bu maddeler 'Uyumsuz' olarak sınıflandırılır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-4.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2136,7 +2136,7 @@
         "D Şıkkı": "DG gönderici deklarasyonu",
         "E Şıkkı": "Annex 19",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Havayoluyla taşınması kesinlikle yasak olan tehlikeli maddelerin yasal ve tam listesi, ICAO tarafından hazırlanan 'Tehlikeli maddelerin havayoluyla güvenli taşınmasına ilişkin teknik talimatlar' dokümanında bulunur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2150,7 +2150,7 @@
         "D Şıkkı": "EASA",
         "E Şıkkı": "UTED",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Uluslararası sivil havacılıkta tehlikeli maddelerin emniyetli şekilde taşınabilmesi için gerekli olan temel standartlar, yasal düzenlemeler ve teknik talimatlar ICAO (Uluslararası Sivil Havacılık Örgütü) tarafından belirlenir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2164,7 +2164,7 @@
         "D Şıkkı": "Dangerous Gas Receptacle",
         "E Şıkkı": "Dangerous Goods Renewal",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Havacılık sektöründe tehlikeli maddeler için kullanılan DGR kısaltması, 'Dangerous Goods Regulations' (Tehlikeli Maddeler Kuralları) ifadesinin baş harflerinden oluşur.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2178,7 +2178,7 @@
         "D Şıkkı": "Paketleme",
         "E Şıkkı": "Yükleme",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Tehlikeli maddelerin gönderici tarafından doğru hazırlanıp beyan edilmesinin ardından, kargonun uçağa emniyet kurallarına uygun şekilde yerleştirilmesi ve yüklenmesi (Loading) doğrudan havayolu operatörünün sorumluluğundadır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2192,7 +2192,7 @@
         "D Şıkkı": "Uyumlu",
         "E Şıkkı": "Acil Durum",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "İçerdikleri aşırı reaksiyon, yangın veya patlama riski nedeniyle havayoluyla taşınması hiçbir muafiyet kapsamında kabul edilmeyen maddeler DGR kurallarında 'Yasak' (Forbidden) olarak tanımlanır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2206,7 +2206,7 @@
         "D Şıkkı": "Kimyasallar",
         "E Şıkkı": "Tekstil",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Gönderici tarafından genel bir yük (örneğin ev eşyası, oyuncak) olarak beyan edilen ancak içeriğinde pil, aerosol veya kimyasal barındıran kargolar 'Gizli Tehlikeli Maddeler' olarak adlandırılır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2220,7 +2220,7 @@
         "D Şıkkı": "Patlayıcılar",
         "E Şıkkı": "Bozulabilir yükler",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Dondurulmuş veya soğuk zincir gerektiren gıdaların ambalajlarında soğutucu ajan olarak sıklıkla Kuru Buz kullanılır; karbondioksit gazı yayan bu madde gizli bir tehlike kaynağıdır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2234,7 +2234,7 @@
         "D Şıkkı": "Master Minimum Ekipman Listesi / Konfigürasyon Sapma Listesi",
         "E Şıkkı": "DGR Kitabı",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Dünya genelindeki tüm havayolları ve kargo acenteleri, tehlikeli madde operasyonlarını standartlaştırmak için temel başvuru kaynağı olarak 'ICAO Teknik Kullanım Manueli' ve endüstri standardı olan 'IATA Tehlikeli Maddeler Yönetmeliği'ni (DGR) kullanır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2248,7 +2248,7 @@
         "D Şıkkı": "Yiyecek veya hayvanlar farklı kapalı ULD'lere yüklenemezse",
         "E Şıkkı": "Yiyecek veya hayvanlar açık kapı ULD'lerine yüklenmişse",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Zehirli ve bulaşıcı maddelerin gıda ürünleriyle aynı kargo kompartımanında taşınabilmesi için, bulaşma ve zehirlenme riskini tamamen ortadan kaldırmak amacıyla bu yüklerin birbirlerinden ayrı, farklı ve kapalı ULD (Birim Yükleme Tertibatı) konteynerlerine yüklenmesi zorunludur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2262,7 +2262,7 @@
         "D Şıkkı": "Kargo acentesi",
         "E Şıkkı": "Gönderici",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Kimyasal maddenin içeriğini, reaksiyon seviyesini ve dolayısıyla taşıdığı tehlike sınıfını en iyi bilen ve buna uygun tehlike etiketinin (MSDS formuna göre) gerekliliğini belirleyen taraf maddenin üreticisidir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2276,7 +2276,7 @@
         "D Şıkkı": "Gönderici",
         "E Şıkkı": "Yük sahibi",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Kargoyu taşıma zincirine veren ve ambalajın içine hangi maddenin konulduğunu bilen ilk taraf olduğu için, kargonun potansiyel tehlikesini tanımlamak ve beyan etmekle yükümlü olan kişi göndericidir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2290,7 +2290,7 @@
         "D Şıkkı": "Hangi tehlikeli maddelerin etiketlenmesi gerektiğini belirler",
         "E Şıkkı": "Hiçbir şey kontrol etmeden tehlikeli maddeyi kabul eder",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Havayolu operatörü kargoyu uçuşa kabul ederken (Acceptance Check), göndericinin hazırladığı paketin dış kondisyonunu, etiketlemelerin doğruluğunu ve beyan dokümanlarının eksiksiz doldurulduğunu kontrol etmekle yükümlüdür.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2304,7 +2304,7 @@
         "D Şıkkı": "Kabul Eden",
         "E Şıkkı": "Depocu",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "IATA kurallarına göre, kargonun uygun ambalaja yerleştirilmesi, tehlike sınıfını gösteren etiketlerin yapıştırılması ve gerekli yön işaretlemelerinin pakete uygulanması tamamen göndericinin sorumluluğundadır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2318,7 +2318,7 @@
         "D Şıkkı": "Patlayıcı maddeler hiç bir şekilde yolcu uçağında taşınamazlar.",
         "E Şıkkı": "Kargo uçağında taşınabilirler",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Sportif amaçlı küçük çaplı mühimmatlar (fişekler), brüt 5 kilogramı aşmamak ve sadece uçak altı (kayıtlı) bagajda güvenli bir şekilde paketlenmek şartıyla, ancak havayolu şirketinin izniyle taşınabilir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2332,7 +2332,7 @@
         "D Şıkkı": "Zehirli tehlikeli maddeleri",
         "E Şıkkı": "Yanıcı maddeler",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Metal ve canlı doku üzerine sıvı damlayan piktogramı içeren Sınıf 8 etiketi, temas ettiği yüzeylerde kimyasal reaksiyonla tahribat yaratan aşındırıcı (korozif) maddeleri gösterir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-19.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2346,7 +2346,7 @@
         "D Şıkkı": "Paketin zararını acente ödemelidir",
         "E Şıkkı": "Hiçbiri",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Radyoaktif (RRW/RRY) paketlerin hasar görmesi ve sızıntı/radyasyon yayılımı şüphesi oluşması durumunda, insan sağlığını korumak için acilen güvenlik çemberi oluşturularak hasarlı paketin 25 metre etrafına kimsenin yaklaşmasına izin verilmemelidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2360,7 +2360,7 @@
         "D Şıkkı": "Radioactive materyal",
         "E Şıkkı": "Fissle material",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Üst yarısı sarı, alt yarısı beyaz olan ve üzerinde pervane (radyasyon) sembolü bulunan Kategori II ve III etiketleri, kargonun iyonlaştırıcı radyasyon yayan radyoaktif materyal içerdiğini gösterir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-20.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2374,7 +2374,7 @@
         "D Şıkkı": "Kabul Kontrol Listesi",
         "E Şıkkı": "DGD formu",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Paketlerin dış yüzeyine uygulanan etiketleme ve işaretlemeler, acil bir durumda evraklara ulaşmaya gerek kalmadan içerdeki maddenin yanıcılık, zehirlilik gibi tehlike türünü anında ve görsel olarak bildirir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2388,7 +2388,7 @@
         "D Şıkkı": "Tehlikeli maddeler için gönderici beyanı",
         "E Şıkkı": "DGR kitabında",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Uluslararası kurallar gereği, havayolu emniyetini riske atacak kadar tehlikeli olan ve taşınması yasaklanan maddelerin tam listesi ICAO Teknik Talimatları (Doc 9284) içerisinde yer alır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2402,7 +2402,7 @@
         "D Şıkkı": "2 adet check-in bagajında taşıyabilir",
         "E Şıkkı": "Kabin bagajında ve check edilmiş bagajda taşınabilir",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Cıva içeren tıbbi termometrelerin yolcu beraberinde taşınmasına koruyucu bir kılıf içinde olmak şartıyla kişi başı sadece 1 adet ile izin verildiğinden, bir yolcunun 2 adet taşıması kurallara aykırıdır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2416,7 +2416,7 @@
         "D Şıkkı": "Kabinde taşınacaksa izin verilir",
         "E Şıkkı": "Cebinde taşıyacaksa izin verilir",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Göz yaşartıcı gaz, biber gazı (mace) ve sinir bozucu tahriş edici maddeler içeren savunma/etkisiz hale getirme cihazları, yüksek riskleri nedeniyle yolcu beraberinde hiçbir şekilde taşınamaz.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2430,7 +2430,7 @@
         "D Şıkkı": "Kabin bagajında ve check edilmiş bagajda operatör onayı ile 2.5 kg taşıyabilir",
         "E Şıkkı": "Kabin bagajında ve check edilmiş bagajda izin almadan 2.5 kg taşıyabilir",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Bozulabilir ürünleri soğutmak amacıyla yolcuların el veya kayıtlı bagajlarında taşıyabilecekleri kuru buz limiti, havayolu şirketinin onayını almak şartıyla kişi başı en fazla 2.5 kg'dır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2444,7 +2444,7 @@
         "D Şıkkı": "TI 3.1: Dikey mesafe 0.85 m, TI 5.7 ise 1 m, yatay mesafe 3.45 m dir",
         "E Şıkkı": "TI 3.1: Dikey mesafe 0.70 m, TI 5.7 ise 1.15 m, yatay mesafe 3.45 m dir",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Radyoaktif maddelerin ayrım (segregation) tablolarına göre, toplam Taşıma İndeksi (TI) arttıkça yolcu kabini zeminine bırakılması gereken minimum dikey ve yatay güvenlik mesafeleri de artar; TI 3.1 için 0.85m dikey mesafe gerekirken, TI 5.7 için bu mesafe 1.15m olmalı, iki paketin toplamı (8.8) içinse yatay mesafe 3.45m olmalıdır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-tr1.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2458,7 +2458,7 @@
         "D Şıkkı": "Energy Response Code",
         "E Şıkkı": "Emergency Runway Code",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Uçakta meydana gelebilecek tehlikeli madde kazalarına karşı uçuş ekibinin izleyeceği prosedürleri içeren ICAO dokümanının adı 'Emergency Response Guidance' (Acil Durum Müdahale Rehberi) olup, ERG bunun kısaltmasıdır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2472,7 +2472,7 @@
         "D Şıkkı": "Taşıyıcıya aittir",
         "E Şıkkı": "Kargo acentesine aittir",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Tehlikeli madde operasyonlarında kargoyu kurallara uygun hazırlayıp beyan etmek göndericinin, bu kargoyu prosedürlere uygun şekilde kontrol edip uçağa emniyetle yüklemek ise taşıyıcının asli sorumluluğudur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2486,7 +2486,7 @@
         "D Şıkkı": "Master Minimum Equipment List / Configuration Deviation List",
         "E Şıkkı": "IATA DGR kitabı",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Havayolu endüstrisinde tehlikeli maddelerin kabulü, paketlenmesi ve yüklenmesinde referans alınan ana dokümanlar ICAO Teknik Talimatları ve IATA Tehlikeli Maddeler Yönetmeliğidir (IATA DGR).",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2500,7 +2500,7 @@
         "D Şıkkı": "Load Sheet",
         "E Şıkkı": "Flight plan",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Uçağa yüklenen tehlikeli maddelerin cinsi, miktarı ve yükleme kompartımanı, uçuş emniyeti açısından sefer kaptanına 'NOTOC' (Kaptana Özel Bildirim) belgesi ile yazılı olarak bildirilmek zorundadır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2514,7 +2514,7 @@
         "D Şıkkı": "5 kg/ 5 lt taşıyabilir",
         "E Şıkkı": "0.5 lt.- 0.5 kg. ‘dan ağır ambalajlarda olmamak şartıyla kişi başına maksimum 2 kg- 2 lt. ürün bulundurulabilir.",
         "Doğru Cevap": "e",
-        "Açıklama": "",
+        "Açıklama": "Kozmetik ve tehlikesiz tıbbi malzemeler (aerosoller dahil), ambalaj başına 0.5 kg veya 0.5 litreyi, kişi başına ise toplamda 2 kg veya 2 litreyi aşmamak kaydıyla yolcu beraberinde taşınabilir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2528,7 +2528,7 @@
         "D Şıkkı": "Radyonükleik ve izotop yayan insan sağlığına zararlı maddelerdir",
         "E Şıkkı": "İnsan sağlığına zararı yoktur",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Sınıf 7 altında değerlendirilen radyoaktif maddeler, atom çekirdekleri kararsız olan ve bozunma sürecinde insan sağlığına ciddi zararlar verebilecek iyonlaştırıcı radyasyon (radyonükleik ve izotop) yayan maddelerdir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2542,7 +2542,7 @@
         "D Şıkkı": "Buna izin verilmiyor",
         "E Şıkkı": "Hem kabin bagajında hem de kontrol edilmiş bagajda taşınır",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "Yangın ve güvenlik riskleri sebebiyle bir kutu güvenlik kibriti veya küçük bir sıvı gazlı çakmak, kabin veya uçak altı bagajlarda taşınamaz; sadece yolcunun kendi üzerinde (cebinde) taşınmasına izin verilir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2556,7 +2556,7 @@
         "D Şıkkı": "Uçaktaki tüm Kargoları bilgilendirmek",
         "E Şıkkı": "Kabine bilgi verme",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Kaptana Özel Bildirim (NOTOC) belgesinin temel amacı; uçuş emniyetini sağlamak için uçağa yüklenen tehlikeli maddelerin, canlı hayvanların (AVI) ve diğer özel kargoların sınıfı, miktarı ve kompartımandaki yerleri hakkında uçuş ekibini bilgilendirmektir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2570,7 +2570,7 @@
         "D Şıkkı": "Yalnız Sivil Uçakta",
         "E Şıkkı": "Yalnız Kabinde",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Tehlikeli madde etiketlemelerinde kullanılan 'CAO' kısaltması, 'Cargo Aircraft Only' (Sadece Kargo Uçağı) anlamına gelir ve paketin yolcu uçaklarında taşınmasının yasak olduğunu belirtir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2584,7 +2584,7 @@
         "D Şıkkı": "Function 7.9",
         "E Şıkkı": "Function 7.10",
         "Doğru Cevap": "c",
-        "Açıklama": "",
+        "Açıklama": "IATA'nın CBTA (Yetkinlik Temelli Eğitim) yaklaşımı doğrultusunda, tehlikeli madde taşıyan havayollarında görevli uçuş harekat uzmanları (dispeçerler) ve yük kontrol personeli 'Function 7.8' müfredatına göre eğitim ve sertifika almalıdır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2598,7 +2598,7 @@
         "D Şıkkı": "160 Wh/2 Spares",
         "E Şıkkı": "100 Wh/2 Spares",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "IATA kurallarına göre havayolu onayı ile taşınabilen büyük kapasiteli lityum-iyon bataryalar maksimum 160 Watt-saat (Wh) değerini aşmamalıdır ve bir yolcu bu kapasitedeki pillerden en fazla 2 adet yedek bataryayı sadece kabin bagajında taşıyabilir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2612,7 +2612,7 @@
         "D Şıkkı": "10.3.D",
         "E Şıkkı": "10.9.C",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Yolcu ve mürettebatın beraberinde taşıyabileceği tehlikeli maddelere ilişkin tüm kısıtlamalar, miktar limitleri ve operatör onayı gereklilikleri IATA DGR kitabındaki 'Tablo 2.3.A' referans alınarak uygulanır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2626,7 +2626,7 @@
         "D Şıkkı": "Sağlık amaçlı kullanılan koruma kabı içerisinde civa içeren termometre",
         "E Şıkkı": "5 kg paketlenmiş sportif amaçlı fişek",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Yolcu beraberinde taşınan ve yüksek yangın riski taşıyan lityum-iyon pilli tekerlekli sandalyeler, bataryalarının sökülmesi veya izole edilmesi gibi özel yükleme prosedürleri gerektirdiğinden, uçağa yüklendiklerinde mutlaka kaptan pilota (NOTOC ile) bildirilmelidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2640,7 +2640,7 @@
         "D Şıkkı": "Excepted Quantity etiketi",
         "E Şıkkı": "Tüketici Uyarı etiketleri",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Kargonun tehlike sınıfını gösteren risk etiketlerine ek olarak; paketin dik tutulması, sıcaklıktan korunması veya sadece kargo uçağında taşınması gibi doğru yönlendirme ve depolama talimatlarını veren etiketlere 'Handling (Elleçleme) Etiketleri' denir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2654,7 +2654,7 @@
         "D Şıkkı": "Paketin zarar görmesi durumunda",
         "E Şıkkı": "Paketin sızıntı yapması durumunda",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Tehlikeli madde kaynaklı olaylarda; bir kişinin ağır yaralanması, ölmesi, uçakta yapısal hasar oluşması, yangın çıkması veya tehlikeli maddenin sızıntı/radyasyon yayması durumları resmi olarak 'Kaza' (Accident) statüsünde değerlendirilir ve raporlanır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2668,7 +2668,7 @@
         "D Şıkkı": "Sıkıştırılmış sıvı ve karışık zehirli maddelerdir",
         "E Şıkkı": "Gazlar zehirlidir",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Sınıf 2 kapsamındaki gazlar, 50°C'de buhar basıncı yüksek olan ve tamamen gaz halinde bulunan; operasyonel olarak tüplerde basınç altında (sıkıştırılmış, sıvılaştırılmış, çözünmüş) tutulan, yanıcı, boğucu veya zehirli olabilen maddelerdir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2682,7 +2682,7 @@
         "D Şıkkı": "ICAO kuralları gereği tahditli maddeler uçaklarda taşınamaz",
         "E Şıkkı": "Tahditli maddeler kabinde taşınır",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Kısıtlamaya tabi (tahditli) maddelerin uçakta yasal ve emniyetli şekilde kargo olarak taşınabilmesi için, göndericinin paketi ICAO ve IATA DGR kurallarına tam uygun olarak sınıflandırması, ambalajlaması ve belgelendirmesi zorunludur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2696,7 +2696,7 @@
         "D Şıkkı": "Alev alıcı gazlar.",
         "E Şıkkı": "Yanıcı sıvılar",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Mavi zeminli ve üzerinde alev sembolü bulunan Sınıf 4.3 'Dangerous when wet' ikaz işareti, su veya nem ile temas ettiğinde şiddetli kimyasal reaksiyona girerek yanıcı (alev alıcı) gazlar çıkaran maddeleri tanımlar.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-22.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2710,7 +2710,7 @@
         "D Şıkkı": "Gazlı saç kıvırma maşası",
         "E Şıkkı": "Akü",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Genel kural olarak yasak olmasına rağmen, koruyucu bir kapağı bulunması şartıyla hidrokarbon gazı içeren bir adet gazlı saç kıvırma maşasının yolcu kabininde (el bagajında) taşınmasına istisnai olarak izin verilmektedir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2724,7 +2724,7 @@
         "D Şıkkı": "Aşındırıcı",
         "E Şıkkı": "Sıcaktan koruyun",
         "Doğru Cevap": "",
-        "Açıklama": "",
+        "Açıklama": "DİKKAT: Doğru cevap anahtarı girilmemiş. Görseli belirtilen turuncu zeminli ve üzerinde siyah uçak şekli bulunan etiket, aşırı risk nedeniyle paketlerin yolcu uçaklarında taşınmasının yasak olduğunu belirten 'Sadece Kargo Uçağı' (A Şıkkı - Cargo Aircraft Only) etiketidir.",
         "Zorluk Derecesi(1-5)": "",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-21.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2738,7 +2738,7 @@
         "D Şıkkı": "Tıbbi amaclı bulaşıcı mikro organizmalar",
         "E Şıkkı": "Elektroşok cihaz",
         "Doğru Cevap": "a",
-        "Açıklama": "",
+        "Açıklama": "Yolcular, DGR kurallarında belirtilen miktar kısıtlamaları (azaltılmış oran) dahilinde, bozulabilir ürünlerini soğutmak amacıyla havayolunun onayıyla maksimum 2.5 kg'ı aşmayan kuru buz taşıyabilirler.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2752,7 +2752,7 @@
         "D Şıkkı": "Aşındırıcı madde içeren paket",
         "E Şıkkı": "Klinik amaçlı termometre",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Yolcu bagajı veya genel kargo içinde sıradan ev eşyası olarak bulunabilen ancak içerik itibariyle kimyasal, kesici veya yanıcı risk taşıyan çamaşır suyu, tiner, makas gibi günlük eşyalar gizli tehlikeli maddelere tipik birer örnektir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2766,7 +2766,7 @@
         "D Şıkkı": "8",
         "E Şıkkı": "3",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "İçinde sıvı tehlikeli madde bulunan paketlerin devrilmesini ve sızıntı yapmasını önlemek amacıyla, paketin karşılıklı iki dikey yan yüzeyine 'THIS WAY UP' (Bu Yön Yukarı) etiketi yapıştırılması zorunludur.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2780,7 +2780,7 @@
         "D Şıkkı": "Gönderenin hazırladığı yük manifestosuyla",
         "E Şıkkı": "Mesajla bildirilir",
         "Doğru Cevap": "b",
-        "Açıklama": "",
+        "Açıklama": "Uçuş öncesinde sorumlu kaptan pilot, uçağa yüklenen tehlikeli maddelerin tüm detaylarını (cinsi, miktarı, pozisyonu), yük kontrol veya harekat birimi tarafından kendisine fiziksel/dijital olarak sunulan yazılı NOTOC belgesini inceleyerek öğrenir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2794,7 +2794,7 @@
         "D Şıkkı": "Gönderici",
         "E Şıkkı": "Paketleyici",
         "Doğru Cevap": "d",
-        "Açıklama": "",
+        "Açıklama": "Kargoyu taşıma zincirine sokan ve ambalajın içindeki kimyasalın türünü, miktarını ve reaksiyon düzeyini en iyi bilen taraf olduğu için, kargonun potansiyel tehlikesini ilk belirleyen ve beyan eden kişi göndericidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
