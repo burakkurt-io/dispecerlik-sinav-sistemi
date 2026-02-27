@@ -1802,7 +1802,7 @@
         "Doğru Cevap": "a",
         "Açıklama": "Kırmızı taralı ve üzerinde büyük 'E' harfi bulunan etiket, miktarı çok düşük olduğu için ambalajlama ve belgelemede belirli muafiyetler sağlanan İstisnai Miktarlardaki Tehlikeli Maddeler (Excepted Quantities) için kullanılır.",
         "Zorluk Derecesi(1-5)": "5",
-        "Resim Yolu": "",
+        "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-17.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
     },
     {
@@ -2800,5 +2800,6 @@
         "Kategori": "KDM - DGR (TÜRKÇE)"
     }
 ]
+
 
 
