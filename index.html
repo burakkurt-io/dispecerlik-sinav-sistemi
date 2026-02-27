@@ -312,7 +312,7 @@ let guncellemeCache = null;
             
             try {
                 // Ana dizindeki guncelle.html dosyasını çeker
-                const response = await fetch('guncelle.html'); 
+                const response = await fetch('html_notlar/guncelle.html'); 
                 if (!response.ok) throw new Error("Dosya bulunamadı");
                 
                 const htmlText = await response.text();
@@ -576,6 +576,7 @@ let guncellemeCache = null;
     </script>
 </body>
 </html>
+
 
 
 
