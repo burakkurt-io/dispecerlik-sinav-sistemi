@@ -2289,8 +2289,8 @@
         "C Şıkkı": "Hangi maddelerin tehlikeli madde teşkil ettiğini belirler",
         "D Şıkkı": "Hangi tehlikeli maddelerin etiketlenmesi gerektiğini belirler",
         "E Şıkkı": "Hiçbir şey kontrol etmeden tehlikeli maddeyi kabul eder",
-        "Doğru Cevap": "b",
-        "Açıklama": "Havayolu operatörü kargoyu uçuşa kabul ederken (Acceptance Check), göndericinin hazırladığı paketin dış kondisyonunu, etiketlemelerin doğruluğunu ve beyan dokümanlarının eksiksiz doldurulduğunu kontrol etmekle yükümlüdür.",
+        "Doğru Cevap": "a",
+        "Açıklama": "Tehlikeli maddelerin hava yolu ile taşınması, başta ICAO tarafından yayımlanan *Technical Instructions* ve IATA tarafından yayımlanan *Dangerous Goods Regulations (DGR)* hükümlerine tabidir. Operatörün temel sorumluluğu, gönderinin bu düzenlemelere tam uygunluğunu kontrol etmektir. Bu; sınıflandırma, paketleme, işaretleme, etiketleme ve dokümantasyon süreçlerinin mevzuata uygun yürütülüp yürütülmediğinin doğrulanmasını kapsar. Operatör, tehlikeli maddenin içeriğini yeniden belirlemez; ancak beyan edilen bilginin kurallara uygunluğunu denetlemekle yükümlüdür. Bu nedenle doğru cevap <b>A<b> şıkkıdır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2800,6 +2800,7 @@
         "Kategori": "KDM - DGR (TÜRKÇE)"
     }
 ]
+
 
 
 
