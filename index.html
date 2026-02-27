@@ -31,16 +31,23 @@
         .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; line-height: 1.4; display: flex; align-items: center; gap: 10px; }
         .kategori-text { color: red; }
 
-        .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; flex: 1; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; min-height: 120px; }
+        /* YENİ: KAYDIRILABİLİR İÇERİK ALANI (Scrollbar Çözümü) */
+        .content-scroll-area { flex: 1; overflow-y: auto; padding-right: 10px; margin-bottom: 10px; }
+        /* Şık Scrollbar Tasarımı */
+        .content-scroll-area::-webkit-scrollbar { width: 6px; }
+        .content-scroll-area::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+        .content-scroll-area::-webkit-scrollbar-track { background: transparent; }
+
+        .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; color: #2c3e50; white-space: pre-wrap; }
         
-        #opts { flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+        #opts { display: flex; flex-direction: column; justify-content: flex-start; }
         .opt { display: block; width: 100%; padding: 14px; margin: 6px 0; border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; background: #fff; font-size: 1.05em; text-align: left; transition: all 0.2s ease; }
         .opt:hover { border-color: var(--p); background: #f8faff; transform: translateX(5px); }
         .ans-mode .opt { pointer-events: none; }
         .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: bold; }
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
 
-        .action-area { flex-shrink: 0; width: 100%; margin-top: 15px; }
+        .action-area { flex-shrink: 0; width: 100%; margin-top: 10px; border-top: 1px solid #eee; padding-top: 15px; }
         
         /* BİLGİ KUTULARI */
         .cikmis-kutu { display: none; background: #003366; color: white; padding: 12px; border-radius: 8px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #002244; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -69,7 +76,6 @@
         .link { display: block; padding: 12px; margin: 6px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 14px; text-align: center; border-radius: 8px; transition: 0.2s; border: 1px solid transparent; }
         .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
 
-        /* FOOTER KUSURSUZ ŞEFFAF YAPI */
         .footer-area { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px; width: 100%; background: transparent; border-top: none; z-index: 10; }
         .footer-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
         .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; margin-right: 10px; }
@@ -80,15 +86,12 @@
         .f-iletisim { background: #0088cc; color: white; box-shadow: 0 4px 10px rgba(0,136,204,0.3); }
         .btn-footer:hover { transform: translateY(-2px); }
 
-        /* GEMINI STİLİ UYARI */
         .disclaimer { font-size: 9px; color: #888; text-align: center; max-width: 950px; margin-top: 2px; line-height: 1.2; letter-spacing: 0.2px; opacity: 0.8; }
 
-        /* MODAL GENEL */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
         .modal-content { background: white; margin: 5% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 550px; position: relative; max-height: 90vh; overflow-y: auto; }
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; z-index: 100; }
         
-        /* ANALİZ MODAL ÖZEL */
         .analiz-modal-content { max-width: 850px; }
         .modal-body-scroll { max-height: 60vh; overflow-y: auto; padding-right: 10px; margin-top: 15px; }
         
@@ -134,9 +137,11 @@
                     <span id="no">GÜNCEL SORU BANKASI YÜKLENİYOR...</span>
                 </div>
                 
-                <div id="txt" class="q-text">Lütfen bekleyin...</div>
-                <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 200px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
-                <div id="opts"></div>
+                <div class="content-scroll-area" id="content-scroll">
+                    <div id="txt" class="q-text">Lütfen bekleyin...</div>
+                    <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 200px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
+                    <div id="opts"></div>
+                </div>
     
                 <div class="action-area">
                     <div id="zorluk-alani" class="zorluk-kutu"></div>
@@ -237,7 +242,6 @@
     </div>
 
     <script>
-        // --- DİNAMİK NOT ÇEKME (FETCH API) ---
         const analizVerileri = {
             'notlar': `
                 <p>Buraya kendi şahsi notlarınızı ekleyebilirsiniz...</p>
@@ -278,15 +282,14 @@
             document.getElementById('analiz-menu').style.display = 'block';
         }
 
-        // --- ANA SİSTEM FONKSİYONLARI ---
         let allQs = []; 
         let filteredQs = []; 
         let idx = 0; 
 
+        // Kategori isimleri (Tüm KDM-DGR'leri birleştirdik)
         const categories = [
             { name: "ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
-            { name: "KDM - DGR (TÜRKÇE)", keyword: "KDM - DGR (TÜRKÇE)" },
-            { name: "KDM - DGR (İNGİLİZCE)", keyword: "KDM - DGR (İNGİLİZCE)" },
+            { name: "⭐ KDM - DGR", keyword: "KDM - DGR" },
             { name: "TÜM SORULAR", keyword: "ALL" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
@@ -302,13 +305,11 @@
             { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
         ];
 
-        // JSON BİRLEŞTİRME VE VERİ ÇEKME İŞLEMİ (ÇOKLU DOSYA MİMARİSİ)
         async function start() {
             try {
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
                 document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
 
-                // Birden fazla JSON dosyasını paralel çekiyoruz
                 const urls = ['sorular.json', 'kdm_dgr_sorular.json'];
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => {
                     console.warn(url + " yüklenemedi, sistem devam ediyor.");
@@ -317,7 +318,6 @@
 
                 const dataArrays = await Promise.all(responses.map(res => res.json()));
 
-                // İndirilen verileri tek bir RAM dizisinde birleştiriyoruz
                 allQs = [];
                 dataArrays.forEach(arr => {
                     if (Array.isArray(arr)) {
@@ -325,7 +325,6 @@
                     }
                 });
 
-                // Açılışta varsayılan olarak ÇIKMIŞ SORULAR'ı filtrele
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined); 
                 
                 renderCategories();
@@ -358,6 +357,7 @@
             } else if (keyword === 'CIKMIS') {
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined);
             } else {
+                // "KDM - DGR" araması hem Türkçeyi hem İngilizceyi kapsar
                 filteredQs = allQs.filter(q => (q['Kategori'] || "").toUpperCase().includes(keyword));
             }
             idx = 0; 
@@ -393,6 +393,9 @@
             const q = filteredQs[idx];
             const cont = document.getElementById('q-container');
             cont.classList.remove('ans-mode');
+            
+            // Yeni soru yüklendiğinde içerik alanını en üste kaydır
+            document.getElementById('content-scroll').scrollTop = 0;
             
             let temizKategori = (q['Kategori'] || "").replace(/^\d+\)\s*/, '') || "Genel Havacılık";
 
@@ -433,8 +436,9 @@
                     b.className = 'opt';
                     
                     let sikIcerigi = q[key].trim();
+                    // Şık resmi için max-width eklendi ki mobil ekranda veya dar alanda taşmasın
                     if(sikIcerigi.toLowerCase().endsWith('.png') || sikIcerigi.toLowerCase().endsWith('.jpg') || sikIcerigi.toLowerCase().endsWith('.jpeg')) {
-                        sikIcerigi = `<br><img src="${sikIcerigi}" style="max-height: 90px; margin-top: 8px; border-radius: 4px;">`;
+                        sikIcerigi = `<br><img src="${sikIcerigi}" style="max-height: 80px; max-width: 100%; margin-top: 8px; border-radius: 4px; object-fit: contain;">`;
                     }
                     
                     b.innerHTML = "<b>" + h.toUpperCase() + ")</b> " + sikIcerigi;
