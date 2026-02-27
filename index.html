@@ -341,11 +341,11 @@ let guncellemeCache = null;
         }
         // Tesis Edilen Yeni Kategoriler Listesi
         const categories = [
-            { name: "🏆 ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
-            { name: "⭐ KDM - TEHLİKELİ MADDELER (DGR)", keyword: "KDM - DGR" },
-            { name: "⭐ KDM - HAVA HUKUKU VE HAVA TRAFİK KONTROL (LAW)", keyword: "KDM - HAVA" },
-            { name: "⭐ KDM - SEYRÜSEFER (NAV)", keyword: "KDM - SEYR" },
-            { name: "⭐ KDM - HABERLEŞME (COM)", keyword: "KDM - HABER" },
+            { name: "🏆 GOLDEN SORULAR", keyword: "CIKMIS" },
+            { name: "⭐ GOLDEN - TEHLİKELİ MADDELER (DGR)", keyword: "GOLDEN - DGR" },
+            { name: "⭐ GOLDEN - HAVA HUKUKU VE HAVA TRAFİK KONTROL (LAW)", keyword: "GOLDEN - HAVA" },
+            { name: "⭐ GOLDEN - SEYRÜSEFER (NAV)", keyword: "GOLDEN - SEYR" },
+            { name: "⭐ GOLDEN - HABERLEŞME (COM)", keyword: "GOLDEN - HABER" },
             { name: "TÜM SORULAR", keyword: "ALL" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
@@ -420,14 +420,14 @@ let guncellemeCache = null;
                 filteredQs = [...allQs];
             } else if (keyword === 'CIKMIS') {
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined);
-            } else if (keyword.startsWith('KDM')) {
+            } else if (keyword.startsWith('GOLDEN')) {
                 // KDM butonlarına tıklandığında sadece o KDM'yi getirir
                 filteredQs = allQs.filter(q => (q['Kategori'] || "").toUpperCase().includes(keyword));
             } else {
                 // Standart ders butonlarına (örn: LAW) tıklandığında, KDM verilerini harici tutarak yığılmayı önler (İzolasyon)
                 filteredQs = allQs.filter(q => {
                     const cat = (q['Kategori'] || "").toUpperCase();
-                    return cat.includes(keyword) && !cat.includes('KDM');
+                    return cat.includes(keyword) && !cat.includes('GOLDEN');
                 });
             }
             idx = 0; 
