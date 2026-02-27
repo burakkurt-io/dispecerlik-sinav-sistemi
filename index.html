@@ -37,9 +37,21 @@
         .kategori-text { color: red; }
 
         .content-scroll-area { flex: 1; overflow-y: auto; padding-right: 10px; margin-bottom: 10px; }
-        .content-scroll-area::-webkit-scrollbar { width: 6px; }
-        .content-scroll-area::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
-        .content-scroll-area::-webkit-scrollbar-track { background: transparent; }
+        /* Zarif & Modern Scrollbar Tasarımı */
+        .content-scroll-area::-webkit-scrollbar { 
+            width: 8px; 
+        }
+        .content-scroll-area::-webkit-scrollbar-track { 
+            background: transparent; 
+        }
+        .content-scroll-area::-webkit-scrollbar-thumb { 
+            background-color: rgba(0, 86, 179, 0.25); /* Tema renginin zarif şeffaf hali */
+            border-radius: 10px; 
+            transition: background-color 0.3s ease;
+        }
+        .content-scroll-area::-webkit-scrollbar-thumb:hover { 
+            background-color: rgba(0, 86, 179, 0.7); /* Fare üzerine gelince belirginleşsin */
+        }
 
         .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; color: #2c3e50; white-space: pre-wrap; }
         
@@ -576,6 +588,7 @@ let guncellemeCache = null;
     </script>
 </body>
 </html>
+
 
 
 
