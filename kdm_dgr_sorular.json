@@ -2723,8 +2723,8 @@
         "C Şıkkı": "Üst kısmı yukarıya gelecek şekilde yükle",
         "D Şıkkı": "Aşındırıcı",
         "E Şıkkı": "Sıcaktan koruyun",
-        "Doğru Cevap": "",
-        "Açıklama": "DİKKAT: Doğru cevap anahtarı girilmemiş. Görseli belirtilen turuncu zeminli ve üzerinde siyah uçak şekli bulunan etiket, aşırı risk nedeniyle paketlerin yolcu uçaklarında taşınmasının yasak olduğunu belirten 'Sadece Kargo Uçağı' (A Şıkkı - Cargo Aircraft Only) etiketidir.",
+        "Doğru Cevap": "a",
+        "Açıklama": "Görseli belirtilen turuncu zeminli ve üzerinde siyah uçak şekli bulunan etiket, aşırı risk nedeniyle paketlerin yolcu uçaklarında taşınmasının yasak olduğunu belirten 'Sadece Kargo Uçağı' (A Şıkkı - Cargo Aircraft Only) etiketidir.",
         "Zorluk Derecesi(1-5)": "",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-21.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2800,4 +2800,5 @@
         "Kategori": "KDM - DGR (TÜRKÇE)"
     }
 ]
+
 
