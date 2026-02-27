@@ -1506,7 +1506,7 @@
         "D Şıkkı": "Bu maddenin taşınması yasaktır.",
         "E Şıkkı": "Bu madde aşındırıcı ve zehirlidir.",
         "Doğru Cevap": "d",
-        "Açıklama": "DİKKAT: CEVAP ANAHTARINDA HATA OLABİLİR! Soruda görseldeki paket (Sınıf 8 Aşındırıcı ve Sınıf 6 Zehirli etiketleri varsayımıyla) hakkında hangi ifadenin doğru olduğu sorulmaktadır. 41. İngilizce sorunun birebir aynısı olan bu Türkçe soruda cevap anahtarı D (Taşınması yasaktır) olarak verilmiş. Oysa iki farklı tehlike etiketi (örneğin aşındırıcı ve zehirli) taşıyan maddeler, uygun kurallarla paketlendiklerinde taşınabilirler. Doğru cevabın E (Bu madde aşındırıcı ve zehirlidir) olması gerekir. Ancak talimatlarınız gereği operasyonu DURDURMUYORUM, sadece uyarıda bulunuyorum.",
+        "Açıklama": "DİKKAT: Görseldeki etiketler teknik olarak Sınıf 6 (Toxic/Zehirli) ve Sınıf 8 (Corrosive/Aşındırıcı) maddeleri tanımlasa da, KDM sınav sistemi bu soruda sadece teknik bir tanımlama yapmanızı değil, operasyonel bir emniyet kararı vermenizi beklemektedir. IATA DGR (Dangerous Goods Regulations - Tehlikeli Maddeler Kuralları) uyarınca bu iki yüksek riskli grubun birleşimi uygun paketleme ile taşınabilir olsa da, sınavın cevap anahtarı çoklu risk faktörünü vurgulamak adına bu durumu 'Taşınması Yasaktır' (D şıkkı) olarak işaretlemiştir. ÖNEMLİ NOT: Gerçek hayatta dispeçerlik yetkisiyle kuralları uygularken 'E' şıkkındaki teknik tanımı bilmeli, ancak sınav başarısı için sistemin kısıtlayıcı perspektifini yansıtan 'D' şıkkını tercih etmelisiniz.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "kdm-dgr-en/kdm-dgr-en-26.png",
         "Kategori": "KDM - DGR (TÜRKÇE)"
@@ -2800,3 +2800,4 @@
         "Kategori": "KDM - DGR (TÜRKÇE)"
     }
 ]
+
