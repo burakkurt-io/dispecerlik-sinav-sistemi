@@ -288,13 +288,13 @@
         let filteredQs = []; 
         let idx = 0; 
 
-        // Kategori isimleri ve sıralamaları güncellendi
+        // Tesis Edilen Yeni Kategoriler Listesi
         const categories = [
             { name: "ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
             { name: "⭐ KDM - DGR", keyword: "KDM - DGR" },
-            { name: "⭐ KDM - COM", keyword: "KDM - COM" },
-            { name: "⭐ KDM - LAW", keyword: "KDM - LAW" },
-            { name: "⭐ KDM - NAV", keyword: "KDM - NAV" },
+            { name: "⭐ KDM - LAW", keyword: "KDM - HAVA" },
+            { name: "⭐ KDM - NAV", keyword: "KDM - SEYR" },
+            { name: "⭐ KDM - COM", keyword: "KDM - HABER" },
             { name: "TÜM SORULAR", keyword: "ALL" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
@@ -315,17 +315,17 @@
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
                 document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
 
-                // Tüm veritabanlarını paralel çekiyoruz
+                // Yeni json dosyaları sisteme eklendi
                 const urls = [
                     'sorular.json', 
                     'kdm_dgr_sorular.json',
-                    'kdm_com_sorular.json',
-                    'kdm_law_sorular.json',
-                    'kdm_nav_sorular.json'
+                    'kdm_law_final.json',
+                    'kdm_nav_final.json',
+                    'kdm_com_final.json'
                 ];
                 
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => {
-                    console.warn(url + " yüklenemedi, sistem mevcut dosyalarla devam ediyor.");
+                    console.warn(url + " yüklenemedi, sistem devam ediyor.");
                     return { json: () => [] }; 
                 })));
 
@@ -369,8 +369,15 @@
                 filteredQs = [...allQs];
             } else if (keyword === 'CIKMIS') {
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined);
-            } else {
+            } else if (keyword.startsWith('KDM')) {
+                // KDM butonlarına tıklandığında sadece o KDM'yi getirir
                 filteredQs = allQs.filter(q => (q['Kategori'] || "").toUpperCase().includes(keyword));
+            } else {
+                // Standart ders butonlarına (örn: LAW) tıklandığında, KDM verilerini harici tutarak yığılmayı önler (İzolasyon)
+                filteredQs = allQs.filter(q => {
+                    const cat = (q['Kategori'] || "").toUpperCase();
+                    return cat.includes(keyword) && !cat.includes('KDM');
+                });
             }
             idx = 0; 
             renderList();
@@ -436,7 +443,7 @@
 
             const aKutu = document.getElementById('aciklama-alani');
             aKutu.style.display = "none";
-            aKutu.innerText = (q['Açıklama'] && q['Açıklama'] !== "Bilinmiyor") ? q['Açıklama'] : "Bu soru için bir açıklama verisi bulunmamaktadır.";
+            aKutu.innerText = q['Açıklama'] || "Bu soru için bir açıklama verisi bulunmamaktadır.";
 
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
@@ -478,8 +485,8 @@
             }
         }
 
-        // Akıllı Arama Motoru (KDM vs standart S. farketmez)
         function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
+        
         function goToQuestion() {
             const val = document.getElementById('q-search').value.trim();
             if(!val) return;
