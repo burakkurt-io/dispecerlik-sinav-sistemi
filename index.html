@@ -475,16 +475,31 @@
 
         function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
         function goToQuestion() {
-            const val = document.getElementById('q-search').value.trim().toUpperCase();
+            const val = document.getElementById('q-search').value.trim();
             if(!val) return;
             
-            let target = val.includes('S.') ? val : 'S.' + val;
+            // Regex ile kullanıcının girdiği metinden sadece sayıları çekiyoruz (Örn: S.12, 12 veya DGR 12 yazsa bile sadece 12'yi alır)
+            const numMatch = val.match(/\d+/);
+            if(!numMatch) {
+                alert("Lütfen geçerli bir soru numarası girin.");
+                return;
+            }
             
-            const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase() === target);
-            if (fIdx !== -1) { idx = fIdx; show(); document.getElementById('q-search').value = ''; } 
-            else { alert("Bu kategoride aradığınız soru bulunamadı! Sol menüden doğru kategoriyi seçtiğinizden emin olun."); }
+            // Aranacak standart formatı oluştur (Örn: S.12)
+            const target = 'S.' + numMatch[0]; 
+            
+            // .endsWith() kullanarak sorunun "S.12" ile BİTİP BİTMEDİĞİNİ kontrol et. 
+            // Bu sayede hem standart "S.12" hem de "KDM-DGR S.12" kusursuzca eşleşir.
+            const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase().endsWith(target));
+            
+            if (fIdx !== -1) { 
+                idx = fIdx; 
+                show(); 
+                document.getElementById('q-search').value = ''; 
+            } else { 
+                alert("Bu kategoride aradığınız soru bulunamadı! Sol menüden doğru kategoriyi seçtiğinizden emin olun."); 
+            }
         }
-
         function aciklamaGosterGizle() {
             const a = document.getElementById('aciklama-alani');
             const isHidden = a.style.display === "none";
@@ -518,4 +533,5 @@
     </script>
 </body>
 </html>
+
 
