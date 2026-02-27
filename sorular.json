@@ -18876,9 +18876,8 @@
         "B Şıkkı": "Tırmanma performansını azaltır.",
         "C Şıkkı": "Kalkış performansını arttırır.",
         "D Şıkkı": "Uçağın performansı üzerinde yoğunluk irtifasının bir etkisi yoktur.",
-        "Doğru Cevap": "",
-        "Açıklama": "",
-        "Resim Yolu": "",
+        "Doğru Cevap": "b",
+        "Açıklama": "Yüksek yoğunluk irtifası (yüksek density altitude), hava yoğunluğunun azalması anlamına gelir; bu da kanatların ürettiği kaldırmanın, normal aspirasyonlu motorların ürettiği gücün ve pervane veriminin azalmasına yol açar. Sonuç olarak kalkış mesafesi artar, tırmanma oranı azalır ve iniş ruloları uzar. Pilotlar AFM/POH tablolarını kullanmalı, gerekirse kalkış yükünü azaltmalı ve serin saatleri tercih etmelidir. (Kaynak: FAA, Airplane Flying Handbook, AOPA, Skybrary).",        "Resim Yolu": "",
         "Kategori": "Belirtilmemiş",
         "Sınav Anısı": "high density ile ilgili sorular vardı.",
         "Eşleşme Oranı": "Yüksek"
@@ -21496,5 +21495,6 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
