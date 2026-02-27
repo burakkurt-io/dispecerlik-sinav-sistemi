@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uçuş Dispeçerliği | Sınav Portalı</title>
     
-<script>
+    <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-    
+
     <link rel="icon" type="image/png" href="img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -36,9 +36,7 @@
         .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; line-height: 1.4; display: flex; align-items: center; gap: 10px; }
         .kategori-text { color: red; }
 
-        /* YENİ: KAYDIRILABİLİR İÇERİK ALANI (Scrollbar Çözümü) */
         .content-scroll-area { flex: 1; overflow-y: auto; padding-right: 10px; margin-bottom: 10px; }
-        /* Şık Scrollbar Tasarımı */
         .content-scroll-area::-webkit-scrollbar { width: 6px; }
         .content-scroll-area::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
         .content-scroll-area::-webkit-scrollbar-track { background: transparent; }
@@ -54,7 +52,6 @@
 
         .action-area { flex-shrink: 0; width: 100%; margin-top: 10px; border-top: 1px solid #eee; padding-top: 15px; }
         
-        /* BİLGİ KUTULARI */
         .cikmis-kutu { display: none; background: #003366; color: white; padding: 12px; border-radius: 8px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #002244; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .cikmis-oran { font-weight: bold; color: #ffc107; display: block; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; }
         
@@ -291,10 +288,13 @@
         let filteredQs = []; 
         let idx = 0; 
 
-        // Kategori isimleri (Tüm KDM-DGR'leri birleştirdik)
+        // Kategori isimleri ve sıralamaları güncellendi
         const categories = [
             { name: "ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
             { name: "⭐ KDM - DGR", keyword: "KDM - DGR" },
+            { name: "⭐ KDM - COM", keyword: "KDM - COM" },
+            { name: "⭐ KDM - LAW", keyword: "KDM - LAW" },
+            { name: "⭐ KDM - NAV", keyword: "KDM - NAV" },
             { name: "TÜM SORULAR", keyword: "ALL" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
@@ -315,9 +315,17 @@
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
                 document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
 
-                const urls = ['sorular.json', 'kdm_dgr_sorular.json'];
+                // Tüm veritabanlarını paralel çekiyoruz
+                const urls = [
+                    'sorular.json', 
+                    'kdm_dgr_sorular.json',
+                    'kdm_com_sorular.json',
+                    'kdm_law_sorular.json',
+                    'kdm_nav_sorular.json'
+                ];
+                
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => {
-                    console.warn(url + " yüklenemedi, sistem devam ediyor.");
+                    console.warn(url + " yüklenemedi, sistem mevcut dosyalarla devam ediyor.");
                     return { json: () => [] }; 
                 })));
 
@@ -362,7 +370,6 @@
             } else if (keyword === 'CIKMIS') {
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined);
             } else {
-                // "KDM - DGR" araması hem Türkçeyi hem İngilizceyi kapsar
                 filteredQs = allQs.filter(q => (q['Kategori'] || "").toUpperCase().includes(keyword));
             }
             idx = 0; 
@@ -399,7 +406,6 @@
             const cont = document.getElementById('q-container');
             cont.classList.remove('ans-mode');
             
-            // Yeni soru yüklendiğinde içerik alanını en üste kaydır
             document.getElementById('content-scroll').scrollTop = 0;
             
             let temizKategori = (q['Kategori'] || "").replace(/^\d+\)\s*/, '') || "Genel Havacılık";
@@ -422,7 +428,7 @@
 
             const zorlukKutu = document.getElementById('zorluk-alani');
             if(q['Zorluk Derecesi(1-5)']) {
-                zorlukKutu.innerHTML = `⭐ <b>DGR Zorluk Seviyesi (1-5):</b> ${q['Zorluk Derecesi(1-5)']}`;
+                zorlukKutu.innerHTML = `⭐ <b>Zorluk Seviyesi (1-5):</b> ${q['Zorluk Derecesi(1-5)']}`;
                 zorlukKutu.style.display = "block";
             } else {
                 zorlukKutu.style.display = "none";
@@ -430,7 +436,7 @@
 
             const aKutu = document.getElementById('aciklama-alani');
             aKutu.style.display = "none";
-            aKutu.innerText = q['Açıklama'] || "Bu soru için bir açıklama verisi bulunmamaktadır.";
+            aKutu.innerText = (q['Açıklama'] && q['Açıklama'] !== "Bilinmiyor") ? q['Açıklama'] : "Bu soru için bir açıklama verisi bulunmamaktadır.";
 
             const oDiv = document.getElementById('opts');
             oDiv.innerHTML = '';
@@ -441,7 +447,6 @@
                     b.className = 'opt';
                     
                     let sikIcerigi = q[key].trim();
-                    // Şık resmi için max-width eklendi ki mobil ekranda veya dar alanda taşmasın
                     if(sikIcerigi.toLowerCase().endsWith('.png') || sikIcerigi.toLowerCase().endsWith('.jpg') || sikIcerigi.toLowerCase().endsWith('.jpeg')) {
                         sikIcerigi = `<br><img src="${sikIcerigi}" style="max-height: 80px; max-width: 100%; margin-top: 8px; border-radius: 4px; object-fit: contain;">`;
                     }
@@ -473,23 +478,19 @@
             }
         }
 
+        // Akıllı Arama Motoru (KDM vs standart S. farketmez)
         function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
         function goToQuestion() {
             const val = document.getElementById('q-search').value.trim();
             if(!val) return;
             
-            // Regex ile kullanıcının girdiği metinden sadece sayıları çekiyoruz (Örn: S.12, 12 veya DGR 12 yazsa bile sadece 12'yi alır)
             const numMatch = val.match(/\d+/);
             if(!numMatch) {
                 alert("Lütfen geçerli bir soru numarası girin.");
                 return;
             }
             
-            // Aranacak standart formatı oluştur (Örn: S.12)
             const target = 'S.' + numMatch[0]; 
-            
-            // .endsWith() kullanarak sorunun "S.12" ile BİTİP BİTMEDİĞİNİ kontrol et. 
-            // Bu sayede hem standart "S.12" hem de "KDM-DGR S.12" kusursuzca eşleşir.
             const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase().endsWith(target));
             
             if (fIdx !== -1) { 
@@ -500,6 +501,7 @@
                 alert("Bu kategoride aradığınız soru bulunamadı! Sol menüden doğru kategoriyi seçtiğinizden emin olun."); 
             }
         }
+
         function aciklamaGosterGizle() {
             const a = document.getElementById('aciklama-alani');
             const isHidden = a.style.display === "none";
@@ -533,5 +535,3 @@
     </script>
 </body>
 </html>
-
-
