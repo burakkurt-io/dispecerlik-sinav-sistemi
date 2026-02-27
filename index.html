@@ -221,7 +221,7 @@
             <h2 style="text-align:center; color:#ffc107; margin-bottom:25px; text-transform: uppercase;">Uçuş Destek Paketleri</h2>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651529" target="_blank" class="action-option donate-option">Economy Class <span class="d-price">100 TL - Kısa Menzil Desteği</span></a>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651866" target="_blank" class="action-option donate-option">Business Class <span class="d-price">500 TL - Konforlu Gelişim Desteği</span></a>
-            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651917" target="_blank" class="action-option donate-option">KDM Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span></a>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651917" target="_blank" class="action-option donate-option">Golden Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span></a>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651987" target="_blank" class="action-option donate-option">"Sayende Dispeç Oldum" <span class="d-price">2000 TL - Efsanevi Kariyer Desteği</span></a>
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Destekleriniz için teşekkürler. Destek veren kullanıcılarımıza özel hazırlanan dijital biletler (PDF) sistem üzerinden iletilecektir.</p>
         </div>
@@ -369,10 +369,10 @@ let guncellemeCache = null;
                 // Yeni json dosyaları sisteme eklendi
                 const urls = [
                     'sorular.json', 
-                    'KDM_dgr_sorular.json',
-                    'KDM_law_final.json',
-                    'KDM_nav_final.json',
-                    'KDM_com_final.json'
+                    'kdm_dgr_sorular.json',
+                    'kdm_law_final.json',
+                    'kdm_nav_final.json',
+                    'kdm_com_final.json'
                 ];
                 
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => {
@@ -593,8 +593,6 @@ let guncellemeCache = null;
     </script>
 </body>
 </html>
-
-
 
 
 
