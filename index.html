@@ -41,6 +41,11 @@
         .content-scroll-area::-webkit-scrollbar { 
             width: 8px; 
         }
+        /* Firefox için Zarif Scrollbar Desteği */
+        .content-scroll-area {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 86, 179, 0.4) transparent;
+        }
         .content-scroll-area::-webkit-scrollbar-track { 
             background: transparent; 
         }
@@ -588,6 +593,7 @@ let guncellemeCache = null;
     </script>
 </body>
 </html>
+
 
 
 
