@@ -221,7 +221,7 @@
             <h2 style="text-align:center; color:#ffc107; margin-bottom:25px; text-transform: uppercase;">Uçuş Destek Paketleri</h2>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651529" target="_blank" class="action-option donate-option">Economy Class <span class="d-price">100 TL - Kısa Menzil Desteği</span></a>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651866" target="_blank" class="action-option donate-option">Business Class <span class="d-price">500 TL - Konforlu Gelişim Desteği</span></a>
-            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651917" target="_blank" class="action-option donate-option">Golden Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span></a>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651917" target="_blank" class="action-option donate-option">KDM Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span></a>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651987" target="_blank" class="action-option donate-option">"Sayende Dispeç Oldum" <span class="d-price">2000 TL - Efsanevi Kariyer Desteği</span></a>
             <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Destekleriniz için teşekkürler. Destek veren kullanıcılarımıza özel hazırlanan dijital biletler (PDF) sistem üzerinden iletilecektir.</p>
         </div>
@@ -341,11 +341,11 @@ let guncellemeCache = null;
         }
         // Tesis Edilen Yeni Kategoriler Listesi
         const categories = [
-            { name: "🏆 ÇIKMIŞ SORULAR (GOLDEN)", keyword: "CIKMIS" },
-            { name: "⭐ GOLDEN - TEHLİKELİ MADDELER (DGR)", keyword: "GOLDEN - DGR" },
-            { name: "⭐ GOLDEN - HAVA HUKUKU VE HAVA TRAFİK KONTROL (LAW)", keyword: "GOLDEN - HAVA" },
-            { name: "⭐ GOLDEN - SEYRÜSEFER (NAV)", keyword: "GOLDEN - SEYR" },
-            { name: "⭐ GOLDEN - HABERLEŞME (COM)", keyword: "GOLDEN - HABER" },
+            { name: "🏆 ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
+            { name: "⭐ KDM - TEHLİKELİ MADDELER (DGR)", keyword: "KDM - DGR" },
+            { name: "⭐ KDM - HAVA HUKUKU VE HAVA TRAFİK KONTROL (LAW)", keyword: "KDM - HAVA" },
+            { name: "⭐ KDM - SEYRÜSEFER (NAV)", keyword: "KDM - SEYR" },
+            { name: "⭐ KDM - HABERLEŞME (COM)", keyword: "KDM - HABER" },
             { name: "TÜM SORULAR", keyword: "ALL" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
@@ -369,10 +369,10 @@ let guncellemeCache = null;
                 // Yeni json dosyaları sisteme eklendi
                 const urls = [
                     'sorular.json', 
-                    'GOLDEN_dgr_sorular.json',
-                    'GOLDEN_law_final.json',
-                    'GOLDEN_nav_final.json',
-                    'GOLDEN_com_final.json'
+                    'KDM_dgr_sorular.json',
+                    'KDM_law_final.json',
+                    'KDM_nav_final.json',
+                    'KDM_com_final.json'
                 ];
                 
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => {
@@ -420,14 +420,14 @@ let guncellemeCache = null;
                 filteredQs = [...allQs];
             } else if (keyword === 'CIKMIS') {
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined);
-            } else if (keyword.startsWith('GOLDEN')) {
-                // GOLDEN butonlarına tıklandığında sadece o GOLDEN'yi getirir
+            } else if (keyword.startsWith('KDM')) {
+                // KDM butonlarına tıklandığında sadece o KDM'yi getirir
                 filteredQs = allQs.filter(q => (q['Kategori'] || "").toUpperCase().includes(keyword));
             } else {
-                // Standart ders butonlarına (örn: LAW) tıklandığında, GOLDEN verilerini harici tutarak yığılmayı önler (İzolasyon)
+                // Standart ders butonlarına (örn: LAW) tıklandığında, KDM verilerini harici tutarak yığılmayı önler (İzolasyon)
                 filteredQs = allQs.filter(q => {
                     const cat = (q['Kategori'] || "").toUpperCase();
-                    return cat.includes(keyword) && !cat.includes('GOLDEN');
+                    return cat.includes(keyword) && !cat.includes('KDM');
                 });
             }
             idx = 0; 
@@ -593,6 +593,7 @@ let guncellemeCache = null;
     </script>
 </body>
 </html>
+
 
 
 
