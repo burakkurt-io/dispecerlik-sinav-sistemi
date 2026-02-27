@@ -86,6 +86,7 @@
         .f-analiz { background: #17a2b8; color: white; box-shadow: 0 4px 10px rgba(23,162,184,0.3); }
         .f-donate { background: #ffc107; color: #000; box-shadow: 0 4px 10px rgba(255,193,7,0.3); }
         .f-iletisim { background: #0088cc; color: white; box-shadow: 0 4px 10px rgba(0,136,204,0.3); }
+        .f-guncelle { background: #6c757d; color: white; box-shadow: 0 4px 10px rgba(108,117,125,0.3); font-size: 9px; padding: 5px 10px; }
         .btn-footer:hover { transform: translateY(-2px); }
 
         .disclaimer { font-size: 9px; color: #888; text-align: center; max-width: 950px; margin-top: 2px; line-height: 1.2; letter-spacing: 0.2px; opacity: 0.8; }
@@ -180,6 +181,7 @@
             <button class="btn-footer f-analiz" onclick="openModal('analizModal')">ANALİZ NOTLARI</button>
             <button class="btn-footer f-donate" onclick="openModal('donateModal')">DONATE ME</button>
             <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">İLETİŞİM</button>
+            <button class="btn-footer f-guncelle" onclick="openGuncelleModal()">GÜNCELLEME NOTLARI</button>
         </div>
         <div class="disclaimer">
             ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, doğrudan geliştirici seviyesindeki Google AI Studio üzerinden gemini-3.1-pro-preview (Bilgi kesim tarihi: Ocak 2025) LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak Havacılıkta emniyet ve doğrulama esastır; operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
@@ -242,7 +244,15 @@
             </div>
         </div>
     </div>
-
+<div id="guncelleModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('guncelleModal')">&times;</span>
+            <h2 style="text-align:center; color:#6c757d; text-transform: uppercase; margin-bottom: 5px; font-size: 16px;">Güncelleme Notları</h2>
+            <p style="text-align:center; color: #777; font-size: 11px; margin-top: 0;">Sisteme eklenen yeni özellikler ve soru bankası güncellemeleri.</p>
+            <div id="guncelle-metin" class="analiz-metin-alani" style="max-height: 50vh; overflow-y: auto;">
+                </div>
+        </div>
+    </div>
     <script>
         const analizVerileri = {
             'notlar': `
@@ -287,7 +297,31 @@
         let allQs = []; 
         let filteredQs = []; 
         let idx = 0; 
+let guncellemeCache = null;
+        async function openGuncelleModal() {
+            openModal('guncelleModal');
+            const metinAlani = document.getElementById('guncelle-metin');
+            
+            // Eğer daha önce tıklandıysa tekrar indirme, hafızadan oku
+            if (guncellemeCache) {
+                metinAlani.innerHTML = guncellemeCache;
+                return;
+            }
 
+            metinAlani.innerHTML = "<div style='text-align:center; color:#0056b3; font-weight:bold;'>Güncelleme notları sunucudan yükleniyor...</div>";
+            
+            try {
+                // Ana dizindeki guncelle.html dosyasını çeker
+                const response = await fetch('guncelle.html'); 
+                if (!response.ok) throw new Error("Dosya bulunamadı");
+                
+                const htmlText = await response.text();
+                guncellemeCache = htmlText; 
+                metinAlani.innerHTML = htmlText; 
+            } catch (error) {
+                metinAlani.innerHTML = "<div style='color:#dc3545; font-weight:bold; text-align:center;'>Güncelleme notlarına şu an ulaşılamıyor (guncelle.html dosyası bulunamadı).</div>";
+            }
+        }
         // Tesis Edilen Yeni Kategoriler Listesi
         const categories = [
             { name: "🏆 ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
@@ -542,6 +576,7 @@
     </script>
 </body>
 </html>
+
 
 
 
