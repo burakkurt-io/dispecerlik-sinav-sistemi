@@ -1,0 +1,18 @@
+<div style="display: flex; flex-direction: column; gap: 10px; align-items: center; padding: 10px;">
+    <p style="color: #666; font-size: 13px; text-align: center; margin-bottom: 10px;">Lütfen başlatmak istediğiniz sınav simülasyonu süresini seçin.</p>
+    
+    <button class="action-option" style="width: 100%; margin: 5px 0; padding: 14px; border-color: #28a745; color: #28a745; cursor:pointer;" onclick="startExamWithDuration(30)">
+        ⏱️ 30 Dakika (Hızlı Deneme)
+    </button>
+    <button class="action-option" style="width: 100%; margin: 5px 0; padding: 14px; border-color: #0056b3; color: #0056b3; cursor:pointer;" onclick="startExamWithDuration(60)">
+        ⏱️ 60 Dakika (Standart Deneme)
+    </button>
+    <button class="action-option" style="width: 100%; margin: 5px 0; padding: 14px; border-color: #dc3545; color: #dc3545; cursor:pointer;" onclick="startExamWithDuration(120)">
+        ⏱️ 120 Dakika (Gerçek Sınav Modu)
+    </button>
+    
+    <div style="display: flex; gap: 10px; width: 100%; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+        <input type="number" id="custom-time-input" placeholder="Özel (Dk)" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-weight:bold; text-align:center;">
+        <button onclick="let v = document.getElementById('custom-time-input').value; if(v > 0) startExamWithDuration(v); else showCustomNotification('Lütfen geçerli bir süre girin!', 'error');" style="background: var(--p); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">BAŞLAT</button>
+    </div>
+</div>
