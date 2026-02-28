@@ -3019,6 +3019,19 @@
         "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 205 ) - ALAN NAVİGASYONU"
     },
     {
+        "Soru Numarası": "S.244",
+        "Soru Metni": "The period of validity of the navigational database is:",
+        "A Şıkkı": "28 days.",
+        "B Şıkkı": "1 month.",
+        "C Şıkkı": "determined by the national authority and may be from 28 days to 56 days.",
+        "D Şıkkı": "56 days.",
+        "E Şıkkı": "Bilinmiyor",
+        "Doğru Cevap": "a",
+        "Açıklama": "Havacılıkta navigasyon veri tabanlarının (FMS Nav Database) güncelleme ve geçerlilik döngüsü, uluslararası standart olan AIRAC (Aeronautical Information Regulation And Control) kurallarına göre kesin olarak 28 gündür.",
+        "Resim Yolu": "",
+        "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 204 ) - UÇUŞ YÖNETİM SİSTEMİ (FMS)"
+    },
+    {
         "Soru Numarası": "S.245",
         "Soru Metni": "Hava yolu şayet bir intersection ile ayrılmışsa, intersection üzerinde bulunulması gereken minimum irtifaya……denir?",
         "A Şıkkı": "MCA (Minimum Crossing Altitude)",
@@ -15607,6 +15620,19 @@
         "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 205 ) - ALAN NAVİGASYONU"
     },
     {
+        "Soru Numarası": "S.1272",
+        "Soru Metni": "Aşağıdakilerden hangisi BRNAV için kullanılan sensörlerden değildir?",
+        "A Şıkkı": "NDB / NDB",
+        "B Şıkkı": "DME / DME",
+        "C Şıkkı": "VOR / DME",
+        "D Şıkkı": "INS or IRS",
+        "E Şıkkı": "Bilinmiyor",
+        "Doğru Cevap": "a",
+        "Açıklama": "B-RNAV (Basic Area Navigation - RNAV 5) sistemlerinde konum doğrulaması için DME/DME, VOR/DME veya INS/IRS sensörleri kullanılır. NDB sinyalleri konvansiyonel navigasyonda kullanılsa da RNAV doğruluğunu sağlayacak kadar hassas değildir ve sistem sensörü olarak kabul edilmez.",
+        "Resim Yolu": "",
+        "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 204 ) - SAHA SEYRÜSEFERİ ( RNAV )"
+    },
+    {
         "Soru Numarası": "S.1273",
         "Soru Metni": "When a controlled flight inadvertently deviates from its current flight plan, ATC has to be informed in case:",
         "A Şıkkı": "it is a deviation from the track.",
@@ -21496,6 +21522,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
