@@ -837,7 +837,7 @@
         "B Şıkkı": "Gönderilen malın muhteviyatını doğru etiketlenip etiketlenmediğini kontrol eder",
         "C Şıkkı": "Hangi maddelerin tehlikeli madde teşkil ettiğini belirler",
         "D Şıkkı": "Hangi tehlikeli maddelerin etiketlenmesi gerektiğini belirler.",
-        "Doğru Cevap": "b",
+        "Doğru Cevap": "a",
         "Açıklama": "Operatörün (Havayolu) tehlikeli madde taşımacılığındaki en temel sorumluluklarından biri, uçağa kabul edilen malların doğru şekilde etiketlenip etiketlenmediğini kontrol etmektir. Gönderici malı hazırlar ancak operatör, uçağa yüklemeden önce beyan edilen madde ile etiketin uyumlu olduğunu teyit etmek zorundadır. Bu, uçuş emniyetini korumak için hayati bir denetim mekanizmasıdır.",
         "Resim Yolu": "",
         "Kategori": "3) DGR - TEHLİKELİ MADDELER ( U 01 E UO 054 ) - UÇUŞ EKİBİNİN BİLGİLENDİRİLMESİ, ACİL DURUM PROSEDÜRLERİ VE RAPORLAMA"
@@ -21496,6 +21496,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
