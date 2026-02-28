@@ -169,7 +169,7 @@
                     </div>
                     <div style="display:flex; align-items:center; gap:15px;">
                         <span id="timer-display" style="display:none; font-weight:bold; color:#dc3545; font-size:15px; border: 1px solid #dc3545; padding: 2px 8px; border-radius: 5px;">00:00</span>
-                        <button onclick="filterByCategory('SIMULATION')" style="background:none; border:none; cursor:pointer; font-size:16px; color: var(--p); font-weight:bold;" title="Sınav Simülasyonu">⏱️</button>
+<button id="installAppBtn" onclick="installPWA()" style="background:none; border:none; cursor:pointer; font-size:18px; display:none;" title="Ana Ekrana Ekle (Uygulama Yap)">📲</button>
                         <button onclick="toggleDarkMode()" id="darkModeBtn" style="background:none; border:none; cursor:pointer; font-size:16px;" title="Gece/Gündüz Modu">🌙</button>
                     </div>
                 </div>
@@ -874,8 +874,37 @@
                 metinAlani.innerHTML = guncellemeCache; 
             } catch (error) { metinAlani.innerHTML = "<div style='color:#dc3545; font-weight:bold; text-align:center;'>Güncelleme notlarına ulaşılamıyor.</div>"; }
         }
+// --- PWA (ANA EKRANA EKLE) MANTIĞI ---
+        let deferredPrompt;
+        const installBtn = document.getElementById('installAppBtn');
 
+        // Tarayıcı "Bu site kurulabilir" dediğinde tetiklenir
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault(); // Otomatik çubuğu engelle
+            deferredPrompt = e; // Kurulum eventini hafızaya al
+            installBtn.style.display = 'block'; // 📲 Butonunu görünür yap
+        });
+
+        // Butona tıklandığında çalışacak fonksiyon
+        async function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt(); // Android kurulum penceresini aç
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('Kullanıcı uygulamayı kurdu');
+                }
+                deferredPrompt = null;
+                installBtn.style.display = 'none'; // Kurulduktan sonra butonu gizle
+            }
+        }
+
+        // Kurulum başarıyla tamamlandığında
+        window.addEventListener('appinstalled', () => {
+            installBtn.style.display = 'none';
+            showCustomNotification("Uygulama başarıyla ana ekrana eklendi!", "success");
+        });
         start();
     </script>
 </body>
 </html>
+
