@@ -13679,7 +13679,7 @@
         "B Şıkkı": "It must be reasonably expected that an instrument approach will be flown at the destination",
         "C Şıkkı": "A met report must indicate that IMC exists somewhere along the route",
         "D Şıkkı": "The met conditions must be equal to or better than the specified minima at the \tdestination or destination alternate",
-        "Doğru Cevap": "d",
+        "Doğru Cevap": "a",
         "Açıklama": "Soruda bir IFR (Instrument Flight Rules - Aletli Uçuş) uçuşun başlayabilmesi için gereken meteorolojik şart sorulmaktadır. Meteoroloji raporları, varış meydanındaki veya yedek meydandaki şartların tahmini varış zamanında (ETA) belirlenen planlama minimalarına eşit veya daha iyi (equal to or better) olacağını göstermelidir.",
         "Resim Yolu": "",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - HAVA DURUMU VE HAVAALANI UYGUNLUĞU"
@@ -21496,6 +21496,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
