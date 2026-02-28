@@ -9,6 +9,7 @@
         "E Şıkkı": "Havana",
         "Doğru Cevap": "c",
         "Açıklama": "Roma Sözleşmesi (1952), hava araçlarının yeryüzündeki üçüncü şahıslara veya mallara verdiği zararların (3. Şahıs Mali Mesuliyet) tazminini ve hukuki sorumluluk esaslarını düzenleyen temel antlaşmadır.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -22,6 +23,7 @@
         "E Şıkkı": "3. Şahıs Mali Mesuliyet Sigortası",
         "Doğru Cevap": "d",
         "Açıklama": "Kabotaj, bir devletin kendi ülkesindeki iki nokta arasında (iç hat) yolcu, yük ve posta taşıma hakkını, dış rekabete kapatarak yalnızca kendi milli hava taşıyıcılarına tanımasıdır.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -35,6 +37,7 @@
         "E Şıkkı": "RUB",
         "Doğru Cevap": "c",
         "Açıklama": "Uluslararası havacılık tazminat limitleri, ulusal para birimlerinin kur dalgalanmalarından etkilenmemek ve küresel standart sağlamak için IMF'nin para birimi sepeti olan SDR (Özel Çekme Hakkı) üzerinden hesaplanır.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -48,6 +51,7 @@
         "E Şıkkı": "1900 sayılı Türk sivil havacılık kanunu",
         "Doğru Cevap": "a",
         "Açıklama": "Türkiye'de sivil havacılık faaliyetlerini, ulusal çıkarlar ve uluslararası kurallara uygun şekilde düzenleyen temel kanun, 2920 Sayılı Türk Sivil Havacılık Kanunu'dur (Soruda şık hatalı olarak 1920 yazılmış olsa da kastedilen kanun budur).",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -61,6 +65,7 @@
         "E Şıkkı": "Hava aracını işleten şirkete",
         "Doğru Cevap": "e",
         "Açıklama": "Havacılık kurallarına göre operasyonu yöneten, kar elde eden ve riskten sorumlu olan taraf 'İşletici' olduğu için sigorta yaptırma yükümlülüğü de Hava Aracını İşleten Şirkete aittir.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -74,6 +79,7 @@
         "E Şıkkı": "4. Trafik hakkı",
         "Doğru Cevap": "a",
         "Açıklama": "2. Trafik Hakkı (Teknik İniş Hakkı); uçağın ticari bir işlem (yolcu/yük indirme-bindirme) yapmaksızın, sadece yakıt ikmali veya bakım gibi teknik nedenlerle yabancı bir ülkeye inebilmesidir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -87,6 +93,7 @@
         "E Şıkkı": "Uçağın, kendi ülkesinden başlayan veya kendi ülkesinde biten bir seferle, başka bir devletin ülkesinden yolcu, kargo ve postayı taşıma hakkıdır.",
         "Doğru Cevap": "d",
         "Açıklama": "7. Trafik Hakkı; bir havayolunun, kendi tescil ülkesine hiç uğramadan (kalkış veya varış noktası kendi ülkesi olmadan), tamamen iki yabancı ülke arasında ticari taşımacılık yapabilme hakkıdır.",
+        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -100,6 +107,7 @@
         "E Şıkkı": "Havana",
         "Doğru Cevap": "c",
         "Açıklama": "Varşova Konvansiyonu (1929), uluslararası hava taşımacılığında taşıyıcının yolcu, bagaj ve yüke karşı sorumluluklarını ve bilet düzenleme esaslarını belirleyen ilk temel sözleşmedir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -113,6 +121,7 @@
         "E Şıkkı": "Paris",
         "Doğru Cevap": "d",
         "Açıklama": "Tokyo Sözleşmesi (1963), uçak içinde işlenen suçları, yetki yargılamasını ve Sorumlu Pilotun (PIC) uçuş güvenliğini bozan kişilere karşı yetkilerini düzenleyen antlaşmadır.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -126,6 +135,7 @@
         "E Şıkkı": "Havana",
         "Doğru Cevap": "b",
         "Açıklama": "Montreal Sözleşmesi (1971), sivil havacılığın güvenliğine karşı işlenen (sabotaj vb.) kanun dışı eylemlerin önlenmesini ve cezalandırılmasını kapsayan; uçak kaçırma (Lahey) ile birlikte güvenliğin temelini oluşturan konvansiyondur.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -139,6 +149,7 @@
         "E Şıkkı": "ABD",
         "Doğru Cevap": "e",
         "Açıklama": "Şikago Konvansiyonu, II. Dünya Savaşı sonrasında sivil havacılığın geleceğini ve düzenini belirlemek amacıyla ABD (Amerika Birleşik Devletleri) hükümetinin daveti üzerine toplanmıştır.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -152,6 +163,7 @@
         "E Şıkkı": "1940",
         "Doğru Cevap": "d",
         "Açıklama": "Uluslararası Sivil Havacılık Anlaşması (Şikago Konvansiyonu), 52 ülkenin katılımıyla 7 Aralık 1944 tarihinde imzalanmıştır.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -165,6 +177,7 @@
         "E Şıkkı": "Şikago konvansiyonuna ilgili ülkelerin bayrak taşıyıcısı havayolu şirketleri katılmıştır.",
         "Doğru Cevap": "e",
         "Açıklama": "Şikago Konvansiyonu devletler arası (hükümetler arası) bir anlaşmadır; havayolu şirketleri bu anlaşmanın imzacısı veya doğrudan tarafı değildir, şirketler için IATA kurulmuştur.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -178,6 +191,7 @@
         "E Şıkkı": "Hepsi",
         "Doğru Cevap": "e",
         "Açıklama": "Şikago Konvansiyonu; hava seyrüseferinin düzenlenmesi, gümrük kolaylıkları, standartların belirlenmesi ve ulusal egemenlik hakları gibi şıkların tamamını kapsayan sivil havacılığın temel anayasasıdır.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -191,6 +205,7 @@
         "E Şıkkı": "Montreal Konvansiyonu",
         "Doğru Cevap": "a",
         "Açıklama": "Şikago Konvansiyonu (1944), sivil havacılığın kurallarını belirlediği ve ICAO'nun kuruluşunu sağladığı için 'Sivil Havacılığın Anayasası' olarak kabul edilir.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -204,6 +219,7 @@
         "E Şıkkı": "Şikago",
         "Doğru Cevap": "b",
         "Açıklama": "Birleşmiş Milletler'in sivil havacılık ihtisas organı olan ICAO'nun (Uluslararası Sivil Havacılık Örgütü) daimi genel merkezi Montreal, Kanada'dadır.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -217,6 +233,7 @@
         "E Şıkkı": "EASA",
         "Doğru Cevap": "c",
         "Açıklama": "IATA (Uluslararası Hava Taşımacılığı Birliği), devletlerin değil; ticari havayolu şirketlerinin ve seyahat/yer hizmeti kuruluşlarının üye olduğu sektörel kuruluştur.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -230,6 +247,7 @@
         "E Şıkkı": "21",
         "Doğru Cevap": "c",
         "Açıklama": "ICAO, Şikago Konvansiyonu'na bağlı olarak sivil havacılık standartlarını (SARPs) belirleyen toplam 19 adet Ek (Annex) yayımlamıştır (En son eklenen Annex 19 - Emniyet Yönetimi'dir).",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -243,6 +261,7 @@
         "E Şıkkı": "1959",
         "Doğru Cevap": "a",
         "Açıklama": "Avrupa Sivil Havacılık Konferansı (ECAC), Avrupa ülkeleri arasında sivil havacılık politikalarını uyumlu hale getirmek ve iş birliğini artırmak amacıyla 1955 yılında kurulmuştur.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -256,6 +275,7 @@
         "E Şıkkı": "Annex 8",
         "Doğru Cevap": "d",
         "Açıklama": "ICAO Annex 1 (Personel Lisanslandırma); pilotlar, dispeçerler, teknisyenler ve hava trafik kontrolörleri gibi personelin lisans alma şartlarını, eğitim ve sağlık standartlarını belirler.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -269,6 +289,7 @@
         "E Şıkkı": "Hiçbiri",
         "Doğru Cevap": "a",
         "Açıklama": "EASA/EU-OPS standartlarına göre İşletme El Kitabı (OM); Genel (A), Uçak İşletme (B), Rota/Meydan (C) ve Eğitim (D) olmak üzere 4 ana bölümden oluşur.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -282,6 +303,7 @@
         "E Şıkkı": "Part A, B, C, D hepsi",
         "Doğru Cevap": "d",
         "Açıklama": "OM Part A (Genel/Temel), uçak tipinden bağımsız olan genel şirket kurallarını, organizasyon yapısını, personel sorumluluklarını ve kayıt saklama prosedürlerini içerir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -295,6 +317,7 @@
         "E Şıkkı": "Part A, B, C, D hepsi",
         "Doğru Cevap": "c",
         "Açıklama": "OM Part B (Uçak İşletme Bilgileri), belirli bir uçak tipine özgü sistemleri, performans verilerini ve pist durumu (ıslak/kuru) gibi çevresel faktörlere bağlı limitleri içerir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -308,6 +331,7 @@
         "E Şıkkı": "Part A, B, C, D hepsi",
         "Doğru Cevap": "a",
         "Açıklama": "OM Part C (Rota ve Meydan Bilgileri), uçuş yapılacak havaalanlarına ait haritaları, yaklaşma prosedürlerini, iletişim bilgilerini ve operasyonel minima (iniş/kalkış/yedek meydan) değerlerini içerir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -321,6 +345,7 @@
         "E Şıkkı": "Part A, B, C, D hepsi",
         "Doğru Cevap": "d",
         "Açıklama": "OM Part D (Eğitim), personelin görevlerini yapabilmesi için gereken başlangıç, tazeleme ve dönüşüm eğitimlerinin müfredatını ve kontrol standartlarını belirler.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -334,6 +359,7 @@
         "E Şıkkı": "MMEL uçak işleticisi firma tarafından MEL temel alınarak hazırlanmış bir dökümandır.",
         "Doğru Cevap": "c",
         "Açıklama": "MMEL (Master MEL), uçak üreticisi tarafından hazırlanan ve o uçak tipi için asgari donanım gerekliliklerini belirleyen temel belgedir; havayolları kendi MEL'lerini buna dayanarak hazırlar.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -347,6 +373,7 @@
         "E Şıkkı": "hiç biri",
         "Doğru Cevap": "a",
         "Açıklama": "MEL onarım kategorilerinde 'Kategori B', ilgili arızanın tespit edildiği günü takip eden 3 takvim günü (72 saat) içinde giderilmesi gerektiğini belirtir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -360,6 +387,7 @@
         "E Şıkkı": "Standart bir aralık belirtilmiştir ve 1 takvim gününü ifade etmektedir.",
         "Doğru Cevap": "b",
         "Açıklama": "'Kategori A', standart bir gün süresi olmayan; onarım süresi veya şartı MEL'in 'Remarks' kısmında özel olarak belirtilen (örn: 'bir sonraki uçuştan önce') arızalar için kullanılır.",
+        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -373,6 +401,7 @@
         "E Şıkkı": "Hiçbiri",
         "Doğru Cevap": "d",
         "Açıklama": "MEL onarım kategorilerinde 'Kategori C', ilgili arızanın tespit edildiği günü takip eden 10 takvim günü içinde giderilmesi gerektiğini belirtir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     },
@@ -386,6 +415,7 @@
         "E Şıkkı": "Hiçbiri",
         "Doğru Cevap": "c",
         "Açıklama": "MEL onarım kategorilerinde 'Kategori D', genellikle uçuş emniyetini doğrudan etkilemeyen opsiyonel sistemleri kapsayan ve onarımı için 120 takvim günü süre tanınan kategoridir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HAVA HUKUKU (LAW)"
     }
