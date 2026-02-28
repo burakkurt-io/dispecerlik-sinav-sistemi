@@ -62,13 +62,12 @@
         .header { color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; line-height: 1.4; display: flex; align-items: center; justify-content: space-between; transition: 0.3s; }
         .kategori-text { color: red; }
 
-        /* Firefox için Zarif Scrollbar Desteği */
+        /* Zarif Scrollbar */
         .content-scroll-area {
             flex: 1; overflow-y: auto; padding-right: 10px; margin-bottom: 10px;
             scrollbar-width: thin;
             scrollbar-color: rgba(0, 86, 179, 0.4) transparent;
         }
-        /* WebKit (Chrome/Safari) Zarif & Modern Scrollbar Tasarımı */
         .content-scroll-area::-webkit-scrollbar { width: 8px; }
         .content-scroll-area::-webkit-scrollbar-track { background: transparent; }
         .content-scroll-area::-webkit-scrollbar-thumb { background-color: rgba(0, 86, 179, 0.25); border-radius: 10px; transition: background-color 0.3s ease; }
@@ -138,7 +137,7 @@
         .btn-back:hover { background: #5a6268; }
         .analiz-metin-alani { background: #fdfdfd; padding: 20px; border-radius: 8px; border-left: 4px solid var(--p); font-size: 14px; line-height: 1.7; color: #333; white-space: pre-wrap; transition: 0.3s; }
 
-        .action-option { display: block; padding: 18px; margin: 12px 0; border: 2px solid var(--p); border-radius: 12px; text-decoration: none; color: #333; font-weight: bold; text-align: center; transition: 0.3s; background: #f8fbff; }
+        .action-option { display: block; padding: 18px; margin: 12px 0; border: 2px solid var(--p); border-radius: 12px; text-decoration: none; color: #333; font-weight: bold; text-align: center; transition: 0.3s; background: #f8fbff; cursor: pointer; }
         .action-option:hover { background: var(--p); color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         .donate-option { border-color: #ffc107; background: #fffdf5; color: #333;}
         .donate-option:hover { background: #ffc107; color: #000; box-shadow: 0 5px 15px rgba(255,193,7,0.3); }
@@ -174,8 +173,8 @@
                         <span id="no">GÜNCEL SORU BANKASI YÜKLENİYOR...</span>
                     </div>
                     <div style="display:flex; align-items:center; gap:15px;">
-                        <span id="timer-display" style="display:none; font-weight:bold; color:#dc3545; font-size:15px; border: 1px solid #dc3545; padding: 2px 8px; border-radius: 5px;">120:00</span>
-                        <button onclick="startExamMode()" style="background:none; border:none; cursor:pointer; font-size:16px; color: var(--p); font-weight:bold;" title="Sınav Simülasyonunu Başlat">⏱️</button>
+                        <span id="timer-display" style="display:none; font-weight:bold; color:#dc3545; font-size:15px; border: 1px solid #dc3545; padding: 2px 8px; border-radius: 5px;">00:00</span>
+                        <button onclick="openTimerModal()" style="background:none; border:none; cursor:pointer; font-size:16px; color: var(--p); font-weight:bold;" title="Sınav Simülasyonu Ayarları">⏱️</button>
                         <button onclick="toggleDarkMode()" id="darkModeBtn" style="background:none; border:none; cursor:pointer; font-size:16px;" title="Gece/Gündüz Modu">🌙</button>
                     </div>
                 </div>
@@ -225,6 +224,15 @@
         </div>
         <div class="disclaimer">
             ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, doğrudan geliştirici seviyesindeki Google AI Studio üzerinden gemini-3.1-pro-preview (Bilgi kesim tarihi: Ocak 2025) LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak Havacılıkta emniyet ve doğrulama esastır; operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
+        </div>
+    </div>
+
+    <div id="timerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('timerModal')">&times;</span>
+            <h2 style="text-align:center; color:#0056b3; text-transform: uppercase; margin-bottom: 5px; font-size: 16px;">Sınav Simülasyonu</h2>
+            <div id="timer-metin" style="margin-top: 15px;">
+                </div>
         </div>
     </div>
 
@@ -288,15 +296,40 @@
                 <h3 id="analiz-baslik" style="color:var(--p); margin-top:5px; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px;"></h3>
                 <div id="analiz-metin" class="analiz-metin-alani"></div>
             </div>
-
-            <div class="disclaimer" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px; max-width: 100%;">
-                ÖNEMLİ NOT: Bu analiz notları, doğrudan geliştirici seviyesindeki <b>Google AI Studio</b> üzerinden <b>gemini-3.1-pro-preview</b> (Bilgi kesim tarihi: Ocak 2025) LLM API'si kullanılarak sentezlenmiştir. SOTA akıl yürütme mimarisi ile çalışan bu model, havacılık verilerinde <b>sıfır halüsinasyon hedefiyle</b> yüksek isabet oranı ve derinlemesine teknik analiz sağlar. Ancak Havacılıkta emniyet ve doğrulama esastır; akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
-            </div>
         </div>
     </div>
 
     <script>
-        // --- Gece Modu Mantığı (Tarayıcı Hafızalı) ---
+        // --- CUSTOM TOAST NOTIFICATION SİSTEMİ (NATIVE ALERT YERİNE) ---
+        function showCustomNotification(msg, type="success") {
+            let container = document.getElementById('custom-notification');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'custom-notification';
+                // Ekranın en üstünden zarifçe inecek Toast tasarımı
+                container.style.cssText = "position:fixed; top:-50px; left:50%; transform:translateX(-50%); z-index:99999; padding:12px 24px; border-radius:8px; color:white; font-weight:bold; font-size: 14px; box-shadow:0 4px 15px rgba(0,0,0,0.3); transition:opacity 0.3s ease, top 0.3s ease; opacity:0; pointer-events:none;";
+                document.body.appendChild(container);
+            }
+            
+            let bgColor = "#28a745"; // Yeşil (Başarılı)
+            if (type === "error") bgColor = "#dc3545"; // Kırmızı (Hata)
+            if (type === "warning") bgColor = "#fd7e14"; // Turuncu (Uyarı)
+            
+            container.style.backgroundColor = bgColor;
+            container.innerText = msg;
+            
+            // Animasyonla aşağı indir ve görünür yap
+            container.style.top = "20px";
+            container.style.opacity = "1";
+            
+            // 3 saniye sonra geri yukarı gizle
+            setTimeout(() => {
+                container.style.opacity = "0";
+                container.style.top = "-50px";
+            }, 3000);
+        }
+
+        // --- Gece Modu Mantığı ---
         if(localStorage.getItem('darkMode') === 'enabled') {
             document.body.classList.add('dark-mode');
             document.getElementById('darkModeBtn').innerText = '☀️';
@@ -314,24 +347,50 @@
             }
         }
 
-        // --- Sınav Simülasyonu Sayacı ---
+        // --- Zaman Sayacı (Timer) Mantığı ---
         let timerInterval;
         let isExamMode = false;
-        function startExamMode() {
-            const timerDisplay = document.getElementById('timer-display');
+        let timerCache = null;
+
+        async function openTimerModal() {
+            openModal('timerModal');
+            const metinAlani = document.getElementById('timer-metin');
+
+            // Eğer sınav zaten devam ediyorsa sadece iptal seçeneği göster
             if(isExamMode) {
-                clearInterval(timerInterval);
-                timerDisplay.style.display = "none";
-                isExamMode = false;
-                alert("Sınav Modu İptal Edildi. Serbest çalışmaya geri dönüldü.");
-                return;
+                 metinAlani.innerHTML = `
+                    <div style="text-align:center; padding: 20px;">
+                        <p style="color:#333; font-weight:bold; margin-bottom:20px;">Sınav simülasyonu şu an devam ediyor.</p>
+                        <button onclick="stopExamMode()" class="action-option" style="width: 100%; border-color:#dc3545; color:#dc3545; background:transparent;">SINAVI İPTAL ET / BİTİR</button>
+                    </div>`;
+                 return;
             }
+
+            if (timerCache) { metinAlani.innerHTML = timerCache; return; }
+
+            metinAlani.innerHTML = "<div style='text-align:center; color:var(--p); font-weight:bold;'>Süre seçenekleri yükleniyor...</div>";
+            try {
+                const response = await fetch('html_notlar/timer.html'); 
+                if (!response.ok) throw new Error("Dosya bulunamadı");
+                const htmlText = await response.text();
+                timerCache = htmlText; 
+                metinAlani.innerHTML = htmlText; 
+            } catch (error) {
+                metinAlani.innerHTML = "<div style='color:#dc3545; font-weight:bold; text-align:center;'>Bağlantı hatası (html_notlar/timer.html dosyası bulunamadı).</div>";
+            }
+        }
+
+        function startExamWithDuration(minutes) {
+            closeModal('timerModal');
+            const timerDisplay = document.getElementById('timer-display');
             
-            let timeLeft = 120 * 60; // 120 Dakika
+            clearInterval(timerInterval);
+            let timeLeft = minutes * 60; 
             timerDisplay.style.display = "block";
             isExamMode = true;
-            alert("120 Dakikalık Sınav Simülasyonu Başladı! Başarılar.");
             
+            showCustomNotification(`${minutes} Dakikalık Sınav Başladı! Başarılar.`);
+
             timerInterval = setInterval(() => {
                 timeLeft--;
                 let m = Math.floor(timeLeft / 60);
@@ -340,70 +399,56 @@
                 
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
-                    timerDisplay.innerText = "BİTTİ";
-                    alert("SÜRE BİTTİ! Kalemleri bırakın.");
+                    timerDisplay.innerText = "0:00";
+                    showCustomNotification("SÜRE BİTTİ! Kalemleri bırakın.", "error");
                     isExamMode = false;
                 }
             }, 1000);
         }
 
-        // --- KLAVYE KISAYOLLARI (Pro Kullanıcı Özelliği) ---
+        function stopExamMode() {
+            clearInterval(timerInterval);
+            document.getElementById('timer-display').style.display = "none";
+            isExamMode = false;
+            closeModal('timerModal');
+            showCustomNotification("Sınav Modu iptal edildi. Serbest çalışmaya dönüldü.", "warning");
+        }
+
+        // --- KLAVYE KISAYOLLARI ---
         document.addEventListener('keydown', (e) => {
-            // Arama kutusunda yazı yazarken kısayolların çalışmasını engelle
             if(document.activeElement.id === 'q-search') return;
-            
             const key = e.key.toLowerCase();
-            
-            // A, B, C, D, E tuşlarına basıldığında
             if(['a', 'b', 'c', 'd', 'e'].includes(key)) {
                 const opts = document.getElementById('opts').children;
-                const index = key.charCodeAt(0) - 97; // a=0, b=1, c=2...
+                const index = key.charCodeAt(0) - 97;
                 if(opts[index] && !document.getElementById('q-container').classList.contains('ans-mode')) {
                     opts[index].click();
                 }
             } 
-            // Sağ/Sol yön tuşlarına basıldığında (Sonraki/Önceki Soru)
             else if (e.key === 'ArrowRight') { move(1); } 
             else if (e.key === 'ArrowLeft') { move(-1); } 
-            // Boşluk tuşuna basıldığında (Açıklama Göster)
             else if (e.key === ' ') {
-                e.preventDefault(); // Sayfanın aşağı kaymasını engelle
+                e.preventDefault();
                 document.getElementById('btnAcikla').click();
             }
         });
 
-        const analizVerileri = {
-            'notlar': `
-                <p>Buraya kendi şahsi notlarınızı ekleyebilirsiniz...</p>
-                <img src="img/not1.png" alt="Not 1" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-                <img src="img/not2.png" alt="Not 2" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-                <img src="img/not3.png" alt="Not 3" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-                <img src="img/not4.png" alt="Not 4" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">`
-        };
-
+        // --- ANALİZ NOTLARI FONKSİYONU ---
         async function openAnaliz(kategoriId, baslik) {
             document.getElementById('analiz-menu').style.display = 'none';
             document.getElementById('analiz-icerik').style.display = 'block';
             document.getElementById('analiz-baslik').innerText = baslik;
 
             const metinAlani = document.getElementById('analiz-metin');
-
-            if (analizVerileri[kategoriId]) {
-                metinAlani.innerHTML = analizVerileri[kategoriId];
-                return;
-            }
-
             metinAlani.innerHTML = "<div style='text-align:center; padding: 20px; font-weight:bold; color:var(--p);'>Notlar sunucudan yükleniyor, lütfen bekleyin...</div>";
             
             try {
                 const response = await fetch(`html_notlar/${kategoriId}.html`); 
                 if (!response.ok) throw new Error("Dosya bulunamadı");
-                
                 const htmlText = await response.text();
-                analizVerileri[kategoriId] = htmlText; 
                 metinAlani.innerHTML = htmlText; 
             } catch (error) {
-                metinAlani.innerHTML = `<div style='color:#dc3545; font-weight:bold; text-align:center;'>Bu kategori için henüz HTML not dosyası (html_notlar/${kategoriId}.html) yüklenmemiştir.</div>`;
+                metinAlani.innerHTML = `<div style='color:#dc3545; font-weight:bold; text-align:center;'>Bu kategori için henüz HTML not dosyası bulunamadı.</div>`;
             }
         }
 
@@ -418,22 +463,18 @@
             openModal('guncelleModal');
             const metinAlani = document.getElementById('guncelle-metin');
             
-            if (guncellemeCache) {
-                metinAlani.innerHTML = guncellemeCache;
-                return;
-            }
+            if (guncellemeCache) { metinAlani.innerHTML = guncellemeCache; return; }
 
             metinAlani.innerHTML = "<div style='text-align:center; color:var(--p); font-weight:bold;'>Güncelleme notları sunucudan yükleniyor...</div>";
             
             try {
                 const response = await fetch('html_notlar/guncelle.html'); 
                 if (!response.ok) throw new Error("Dosya bulunamadı");
-                
                 const htmlText = await response.text();
                 guncellemeCache = htmlText; 
                 metinAlani.innerHTML = htmlText; 
             } catch (error) {
-                metinAlani.innerHTML = "<div style='color:#dc3545; font-weight:bold; text-align:center;'>Güncelleme notlarına şu an ulaşılamıyor (html_notlar/guncelle.html dosyası bulunamadı).</div>";
+                metinAlani.innerHTML = "<div style='color:#dc3545; font-weight:bold; text-align:center;'>Güncelleme notlarına şu an ulaşılamıyor.</div>";
             }
         }
 
@@ -441,7 +482,6 @@
         let filteredQs = []; 
         let idx = 0; 
 
-        // GOLDEN OPERASYONU: KDM'ler GOLDEN ile Değiştirildi
         const categories = [
             { name: "ÇIKMIŞ SORULAR (GOLDEN)", keyword: "CIKMIS" },
             { name: "⭐ GOLDEN - DGR", keyword: "GOLDEN - DGR" },
@@ -468,7 +508,6 @@
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
                 document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
 
-                // JSON dosya isimlerini bozmadık ama içeriklerindeki "KDM" yazıları "GOLDEN" olarak güncellenmiş olmalı
                 const urls = [
                     'sorular.json', 
                     'kdm_dgr_sorular.json',
@@ -478,7 +517,7 @@
                 ];
                 
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => {
-                    console.warn(url + " yüklenemedi, sistem devam ediyor.");
+                    console.warn(url + " yüklenemedi.");
                     return { json: () => [] }; 
                 })));
 
@@ -487,7 +526,6 @@
                 allQs = [];
                 dataArrays.forEach(arr => {
                     if (Array.isArray(arr)) {
-                        // Gelen JSON içerisindeki KDM kelimelerini ihtimale karşı dinamik olarak GOLDEN yapalım (Güvenlik Katmanı)
                         arr.forEach(item => {
                             if(item['Kategori']) item['Kategori'] = item['Kategori'].replace(/KDM/g, 'GOLDEN');
                             if(item['Soru Numarası']) item['Soru Numarası'] = item['Soru Numarası'].replace(/KDM/g, 'GOLDEN');
@@ -530,7 +568,6 @@
             } else if (keyword.startsWith('GOLDEN')) {
                 filteredQs = allQs.filter(q => (q['Kategori'] || "").toUpperCase().includes(keyword));
             } else {
-                // Standart derslere tıklandığında eski "KDM" veya yeni "GOLDEN" havuzunu tamamen izole et
                 filteredQs = allQs.filter(q => {
                     const cat = (q['Kategori'] || "").toUpperCase();
                     return cat.includes(keyword) && !cat.includes('GOLDEN') && !cat.includes('KDM');
@@ -650,7 +687,7 @@
             
             const numMatch = val.match(/\d+/);
             if(!numMatch) {
-                alert("Lütfen geçerli bir soru numarası girin.");
+                showCustomNotification("Lütfen geçerli bir soru numarası girin.", "warning");
                 return;
             }
             
@@ -662,7 +699,7 @@
                 show(); 
                 document.getElementById('q-search').value = ''; 
             } else { 
-                alert("Bu kategoride aradığınız soru bulunamadı! Sol menüden doğru kategoriyi seçtiğinizden emin olun."); 
+                showCustomNotification("Bu kategoride aradığınız soru bulunamadı! Sol menüden doğru kategoriyi seçtiğinizden emin olun.", "error"); 
             }
         }
 
