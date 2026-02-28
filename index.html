@@ -1,59 +1,459 @@
-<div style="font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6;">
-<div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">✨ Sürüm 1.4.1 (28 Şubat 2026)</h3>
-        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px;">
-            <li><b>Arayüz (UI) İyileştirmeleri:</b> Soru ve şıkların listelendiği panellerdeki standart kaydırma çubukları (scrollbar), sistemin genel temasına uygun, daha şeffaf, modern ve zarif bir tasarımla yenilendi.</li>
-            <li><b>Çapraz Tarayıcı (Cross-Browser) Uyumluluğu:</b> Yapılan estetik tasarım iyileştirmelerinin Chrome, Yandex, Safari gibi WebKit tabanlı tarayıcıların yanı sıra <b>Firefox</b> motorunda da kusursuz ve stabil çalışması sağlandı.</li>
-            <li><b>Kullanıcı Deneyimi (UX):</b> Özellikle bol şıklı veya büyük görselli (KDM-DGR vb.) sorularda kaydırma deneyimi daha akıcı ve göz yormayan bir yapıya kavuşturuldu.</li>
-        </ul>
-    </div>
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">🚀 Sürüm 1.4.0 (27 Şubat 2026)</h3>
-        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px;">
-            <li><b>Yeni KDM Modülleri Eklendi:</b> Eğitim müfredatına uygun olarak 4 yeni KDM soru bankası (DGR, LAW, NAV, COM) sisteme entegre edildi.</li>
-            <li><b>Sürüm Notları Paneli:</b> Sistem güncellemelerinin anlık takip edilebilmesi için arayüze "Güncelleme Notları" butonu eklendi.</li>
-            <li><b>Hotfix (Hata Onarımı):</b> Bazı görsel etiketlerindeki görüntülenme sorunları giderildi (Anlık veri yenileme stabilizasyonu sağlandı).</li>
-            <li><i>Not: Soru havuzundaki yabancı dil ve Türkçe versiyonlar arasındaki şık farklılıkları (Örn: DGR soruları) doğrudan kaynak Excel dosyalarının orijinal yapısına sadık kalınarak aktarılmıştır.</i></li>
-        </ul>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uçuş Dispeçerliği | Sınav Portalı</title>
+    
+    <link rel="icon" type="image/png" href="img/logo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --p: #0056b3; --s: #28a745; --e: #dc3545; --bg: #f0f2f5; }
+        * { box-sizing: border-box; }
+        
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+        
+        .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1700px; margin: 0 auto; width: 100%; }
+        
+        /* SOL MENU (Ders Secimi) */
+        .left-side { 
+            background: white; border-right: 1px solid #eee; display: flex; flex-direction: column; 
+            width: 280px; flex-shrink: 0; z-index: 5;
+        }
+        .left-header { padding: 25px; border-bottom: 1px solid #eee; }
+        .left-title { text-align:center; font-weight:bold; color:var(--p); font-size:16px; text-transform: uppercase;}
+        #cat-list { flex: 1; overflow-y: auto; padding: 15px; }
+        
+        .cat-btn {
+            display: block; width: 100%; padding: 14px 12px; margin-bottom: 8px;
+            background: white; border: 2px solid #e9ecef; border-radius: 8px;
+            color: #495057; font-weight: bold; font-size: 0.85em; text-align: left; cursor: pointer; transition: 0.2s;
+        }
+        .cat-btn:hover { border-color: var(--p); color: var(--p); background: #f8fbff; transform: translateX(3px); }
+        .cat-btn.active { background: var(--p); color: white; border-color: var(--p); box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
+
+        /* ORTA ALAN (Ana Soru Kutusu) */
+        .main { flex: 1; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        
+        .container { 
+            background: white; width: 100%; max-width: 900px; flex: 1; min-height: 500px; max-height: 85vh;
+            padding: 30px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            display: flex; flex-direction: column; position: relative;
+        }
+
+        /* HEADER & LOGO ENTEGRASYONU */
+        .header { 
+            color: var(--p); font-weight: 700; border-bottom: 2px solid var(--p); 
+            margin-bottom: 15px; font-size: 0.85em; flex-shrink: 0; padding-bottom: 5px; line-height: 1.4;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .kategori-text { color: red; }
+
+        .q-text { font-size: 1.15em; font-weight: 500; margin-bottom: 15px; line-height: 1.5; flex: 1; overflow-y: auto; color: #2c3e50; white-space: pre-wrap; }
+        
+        #opts { flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+        .opt { display: block; width: 100%; padding: 14px; margin: 6px 0; border: 2px solid #f1f3f5; border-radius: 10px; cursor: pointer; background: #fff; font-size: 1.05em; text-align: left; transition: all 0.2s ease; }
+        .opt:hover { border-color: var(--p); background: #f8faff; transform: translateX(5px); }
+        .ans-mode .opt { pointer-events: none; }
+        .correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; font-weight: bold; }
+        .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
+
+        .action-area { flex-shrink: 0; width: 100%; margin-top: 15px; }
+        
+        /* ÇIKMIŞ SORU BİLGİ KUTUSU */
+        .cikmis-kutu { display: none; background: #003366; color: white; padding: 12px; border-radius: 8px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #002244; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .cikmis-oran { font-weight: bold; color: #ffc107; display: block; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; }
+
+        .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
+        .btn-acikla:hover { background: #218838; }
+        
+        .aciklama-kutusu { display: none; background: #28a745; color: white; font-weight: bold; padding: 15px; border-radius: 8px; font-size: 0.95em; border: 1px solid #218838; margin-bottom: 15px; white-space: pre-wrap; max-height: 150px; overflow-y: auto; line-height: 1.4; }
+
+        .nav { display: flex; justify-content: space-between; gap: 10px; }
+        .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
+        .btn-gray { background: #6c757d; }
+        .btn-reset { background: #ffc107; color: #000; }
+
+        /* SAG MENU (Soru Listesi) */
+        .side { flex-shrink: 0; background: white; border-left: 1px solid #eee; display: flex; flex-direction: column; width: 320px; }
+        .side-header { padding: 25px; border-bottom: 1px solid #eee; }
+        .side-title { text-align:center; font-weight:bold; color:var(--p); margin-bottom:15px; font-size:16px; }
+        .search-box { display: flex; gap: 8px; }
+        .search-box input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+        .search-box button { background: var(--p); color: white; border: none; padding: 0 15px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+        #list { flex: 1; overflow-y: auto; padding: 15px 25px; position: relative; }
+        .link { display: block; padding: 12px; margin: 6px 0; background: #f8f9fa; text-decoration: none; color: #495057; font-size: 14px; text-align: center; border-radius: 8px; transition: 0.2s; border: 1px solid transparent; }
+        .link.active { background: var(--p); color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,86,179,0.2); }
+
+        /* FOOTER */
+.footer-area { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px; width: 100%; background: transparent; border-top: none; z-index: 10; }        .footer-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
+        .footer-note { font-size: 11px; color: var(--p); font-weight: bold; letter-spacing: 1px; margin-right: 10px; }
+        
+        .btn-footer { border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; transition: 0.2s; text-decoration: none; display: inline-block; }
+        .f-analiz { background: #17a2b8; color: white; box-shadow: 0 4px 10px rgba(23,162,184,0.3); }
+        .f-donate { background: #ffc107; color: #000; box-shadow: 0 4px 10px rgba(255,193,7,0.3); }
+        .f-iletisim { background: #0088cc; color: white; box-shadow: 0 4px 10px rgba(0,136,204,0.3); }
+
+        .btn-footer:hover { transform: translateY(-2px); }
+
+/* YENİ MİKRO HALİ */
+.disclaimer { font-size: 9px; color: #888; text-align: center; max-width: 950px; margin-top: 2px; line-height: 1.2; letter-spacing: 0.2px; opacity: 0.8; }
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
+        .modal-content { background: white; margin: 5% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 550px; position: relative; }
+        .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; }
+        
+        .action-option { display: block; padding: 18px; margin: 12px 0; border: 2px solid #0056b3; border-radius: 12px; text-decoration: none; color: #333; font-weight: bold; text-align: center; transition: 0.3s; background: #f8fbff; }
+        .action-option:hover { background: #0056b3; color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,86,179,0.4); }
+        
+        .donate-option { border-color: #ffc107; background: #fffdf5; }
+        .donate-option:hover { background: #ffc107; color: #000; box-shadow: 0 5px 15px rgba(255,193,7,0.4); }
+        .d-price { display: block; font-size: 0.85em; color: inherit; font-weight: normal; margin-top: 5px; opacity: 0.8; }
+
+        /* MOBIL UYUMLULUK KODU */
+        @media (max-width: 1000px) { 
+            body { height: auto; display: block; overflow: visible; }
+            .wrapper { display: flex; flex-direction: column; overflow: visible; }
+            .left-side { width: 100%; max-height: 250px; border-right: none; border-bottom: 2px solid #eee; }
+            .main { display: block; padding: 10px; }
+            .container { height: auto; min-height: 50vh; max-height: none; overflow: visible; padding: 20px; margin-bottom: 20px; }
+            .q-text { max-height: none; overflow: visible; }
+            .side { width: 100%; height: auto; border-left: none; border-top: 2px solid #eee; }
+            #list { max-height: 350px; overflow-y: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <aside class="left-side">
+            <div class="left-header">
+                <div class="left-title">DERS SEÇİMİ</div>
+            </div>
+            <div id="cat-list">
+                </div>
+        </aside>
+
+        <main class="main">
+            <div id="q-container" class="container">
+                <div class="header">
+                    <img src="img/logo.png" alt="Logo" style="height: 24px; width: auto;">
+                    <span id="no">GÜNCEL SORU BANKASI YÜKLENİYOR...</span>
+                </div>
+                
+                <div id="txt" class="q-text">Lütfen bekleyin...</div>
+                
+                <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 200px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
+
+                <div id="opts"></div>
+    
+                <div class="action-area">
+                    <div id="cikmis-alani" class="cikmis-kutu"></div>
+
+                    <button class="btn-acikla" id="btnAcikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
+                    <div id="aciklama-alani" class="aciklama-kutusu"></div>
+
+                    <div class="nav">
+                        <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
+                        <button class="btn btn-reset" onclick="resetQ()">Reset</button>
+                        <button class="btn btn-gray" onclick="rand()">Random</button>
+                        <button class="btn" onclick="move(1)">Sonraki</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="side">
+            <div class="side-header">
+                <div class="side-title">SORU NAVİGASYONU</div>
+                <div class="search-box">
+                    <input type="tel" pattern="[0-9]*" id="q-search" placeholder="Soru No (Örn: 12)" onkeypress="handleSearch(event)">
+                    <button onclick="goToQuestion()">GİT</button>
+                </div>
+            </div>
+            <div id="list"></div>
+        </aside>
     </div>
 
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">⭐ Sürüm 1.3.0 (26 Şubat 2026)</h3>
-        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px;">
-            <li><b>Kapsamlı Kategorizasyon:</b> Soru havuzu, Dispeçerlik sınav standartlarına uygun olarak 12 ana derse bölündü ve yan menüye "Ders Seçimi" modülü eklendi.</li>
-            <li><b>Yapay Zeka Destekli KDM Analizi:</b> Öğrenci geribildirimleri ve kesin KDM çıkmış 88 soru, yapay zeka ile veri tabanında eşleştirilerek "KDM Çıkmış Sorular" başlığı altında özel bir havuza alındı.</li>
-            <li><b>Analiz Notları (Hap Bilgiler):</b> 12 ders için özel olarak hazırlanan teknik çalışma notları modülü aktif edildi.</li>
-            <li><b>Kullanıcı Entegrasyonu:</b> Adaylardan gelen şahsi çalışma notlarının (görsellerin) sisteme yüklenebilmesi için altyapı oluşturuldu.</li>
-            <li><b>Arayüz Geliştirmeleri:</b> Proje logosu eklendi ve projeyi desteklemek isteyen kullanıcılar için "Donate" sistemi aktif edildi.</li>
-        </ul>
+    <div class="footer-area">
+        <div class="footer-buttons">
+            <div class="footer-note">CREATED BY BURAK KURT</div>
+            <button class="btn-footer f-analiz" onclick="openModal('analizModal')">ANALİZ NOTLARI</button>
+            <button class="btn-footer f-donate" onclick="openModal('donateModal')">DONATE ME</button>
+            <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">İLETİŞİM</button>
+        </div>
+        <div class="disclaimer">
+            ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, standart son kullanıcı yapay zeka araçları (örn. ChatGPT) yerine, doğrudan geliştirici seviyesindeki <b>Google AI Studio</b> üzerinden <b>gemini-3-flash-preview (Bilgi kesim tarihi: Haziran 2025)</b> LLM API'si kullanılarak işlenmiştir. Bu mimari, havacılık verilerinde yüksek isabet oranı ve derinlemesine semantik analiz sağlar. Ancak tüm otonom sistemlerde olduğu gibi teknik halüsinasyon payı mevcuttur. <b>Havacılıkta emniyet ve doğrulama esastır;</b> operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
+        </div>
     </div>
 
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">🧠 Sürüm 1.2.0 (25 Şubat 2026)</h3>
-        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px;">
-            <li><b>Gemini AI Entegrasyonu:</b> Veri tabanındaki tüm sorulara (1756 Soru) Gemini-Pro-3 yapay zeka modeli ile detaylı açıklamalar ve çözüm yolları eklendi.</li>
-            <li><b>Mobil Stabilizasyon:</b> Mobil cihazlardaki taşma ve kaydırma (scroll) sorunları kökünden çözülerek %100 mobil uyumluluk sağlandı.</li>
-            <li><b>Kategori Gösterimi:</b> Kullanıcı deneyimini artırmak amacıyla soru başlıklarına ait oldukları dersin (Kategori) dinamik olarak yazdırılması sağlandı.</li>
-        </ul>
+    <div id="iletisimModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('iletisimModal')">&times;</span>
+            <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">İletişim Kanalları</h2>
+            <a href="https://t.me/burakkurt" target="_blank" class="action-option">Telegram ile Ulaşın</a>
+            <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">E-Posta Gönderin</a>
+            <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Hata bildirimi, sistem önerileri veya özel destek talepleriniz için doğrudan bana ulaşabilirsiniz.</p>
+        </div>
     </div>
 
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">🔍 Sürüm 1.1.0 (24 Şubat 2026)</h3>
-        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px;">
-            <li><b>Arama Motoru:</b> Soru numarası ile doğrudan arama yapabilmeyi sağlayan navigasyon özelliği eklendi.</li>
-            <li><b>Görsel Soru Desteği:</b> Görsel veya tablo içeren soruların (Örn: 1202, 1201, 1506, 94 vb.) arayüzde doğru render edilmesi sağlandı.</li>
-            <li><b>Maddeli Format Desteği:</b> Önerme içeren (maddeli) soruların metin yapısı düzeltildi.</li>
-            <li><b>Cevap Anahtarı Revizyonu:</b> Geri bildirimler doğrultusunda hatalı olan bazı soru şıkları (Örn: Soru 99) güncellendi.</li>
-        </ul>
+    <div id="donateModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('donateModal')">&times;</span>
+            <h2 style="text-align:center; color:#ffc107; margin-bottom:25px; text-transform: uppercase;">Uçuş Destek Paketleri</h2>
+            
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651529" target="_blank" class="action-option donate-option">
+                Economy Class <span class="d-price">100 TL - Kısa Menzil Desteği</span>
+            </a>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651866" target="_blank" class="action-option donate-option">
+                Business Class <span class="d-price">500 TL - Konforlu Gelişim Desteği</span>
+            </a>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651917" target="_blank" class="action-option donate-option">
+                Golden Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span>
+            </a>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651987" target="_blank" class="action-option donate-option">
+                "Sayende Dispeç Oldum" <span class="d-price">2000 TL - Efsanevi Kariyer Desteği</span>
+            </a>
+            
+            <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px; line-height: 1.4;">Destekleriniz için teşekkürler. Destek veren kullanıcılarımıza özel hazırlanan dijital biletler (PDF) sistem üzerinden iletilecektir.</p>
+        </div>
     </div>
 
-    <div style="margin-bottom: 10px;">
-        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">🌱 Sürüm 1.0.0 (23 Şubat 2026)</h3>
-        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px;">
-            <li><b>Sistem Lansmanı:</b> Uçuş Dispeçerliği Sınav Portalı yayınlandı.</li>
-            <li><b>Veri Tabanı:</b> SHGM güncel formatındaki "Genel Sorular ve Cevaplar" ana veri kaynağı olarak sisteme entegre edildi.</li>
-        </ul>
+    <div id="analizModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('analizModal')">&times;</span>
+            <h2 style="text-align:center; color:#17a2b8; text-transform: uppercase;">Analiz Notları</h2>
+            <p style="text-align:center; color: #555; margin-top: 20px;">Havacılık derslerine dair kritik analizler, notlar ve ipuçları burada listelenecektir.</p>
+            <p style="text-align: center; color: #999; font-size: 12px; margin-top: 40px; font-style: italic;">"Dispeçerlik bir ezber değil, prosedür disiplinidir."</p>
+        </div>
     </div>
 
+    <script>
+        let allQs = []; 
+        let filteredQs = []; 
+        let idx = 0; 
 
-</div>
+        // Ders Kategorileri Tanimi
+        const categories = [
+            { name: "TÜM SORULAR", keyword: "ALL" },
+            { name: "🏆 ÇIKMIŞ SORULAR (KDM)", keyword: "CIKMIS" },
+            { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
+            { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
+            { name: "3 - TEHLİKELİ MADDELER (DGR)", keyword: "DGR" },
+            { name: "4 - HABERLEŞME (COM)", keyword: "COM" },
+            { name: "5 - HAVA HUKUKU (LAW)", keyword: "LAW" },
+            { name: "6 - HAVA TRAFİK YÖNETİMİ (HAV)", keyword: "HAV" },
+            { name: "7 - METEOROLOJİ (MET)", keyword: "MET" },
+            { name: "8 - PERFORMANS (PEF)", keyword: "PEF" },
+            { name: "9 - GÜVENLİK (SEC)", keyword: "SEC" },
+            { name: "10 - SEYRÜSEFER (NAV)", keyword: "NAV" },
+            { name: "11 - UÇUŞ PLANLAMA (FPL&FM)", keyword: "FPL" },
+            { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
+        ];
+
+        async function start() {
+            try {
+                const r = await fetch('sorular.json');
+                allQs = await r.json();
+                filteredQs = [...allQs]; 
+                
+                renderCategories();
+                renderList();
+                show();
+            } catch(e) { 
+                console.error("Veri yüklenemedi."); 
+                document.getElementById('no').innerText = "BAĞLANTI HATASI";
+                document.getElementById('txt').innerText = "Veriler sunucudan çekilemedi. JSON dosyanızı kontrol ediniz.";
+            }
+        }
+
+        function renderCategories() {
+            const catContainer = document.getElementById('cat-list');
+            catContainer.innerHTML = '';
+            
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'cat-btn' + (cat.keyword === 'ALL' ? ' active' : '');
+                btn.innerText = cat.name;
+                btn.onclick = () => filterByCategory(cat.keyword, btn);
+                catContainer.appendChild(btn);
+            });
+        }
+
+        function filterByCategory(keyword, clickedBtn) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            if(clickedBtn) clickedBtn.classList.add('active');
+
+            if(keyword === 'ALL') {
+                filteredQs = [...allQs];
+            } else if (keyword === 'CIKMIS') {
+                // Sadece Sınav Anısı verisi olanları listele
+                filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined);
+            } else {
+                filteredQs = allQs.filter(q => {
+                    const k = (q['Kategori'] || "").toUpperCase();
+                    return k.includes(keyword);
+                });
+            }
+
+            idx = 0; 
+            renderList();
+            show();
+        }
+
+        function renderList() {
+            const l = document.getElementById('list');
+            l.innerHTML = ''; 
+            
+            filteredQs.forEach((q, i) => {
+                const a = document.createElement('a');
+                a.className = 'link'; 
+                a.id = 'l' + i; 
+                a.innerText = q['Soru Numarası'];
+                a.onclick = () => { idx = i; show(); };
+                l.appendChild(a);
+            });
+        }
+
+        function show() {
+            if(!filteredQs.length) {
+                document.getElementById('no').innerText = "BİLGİ";
+                document.getElementById('txt').innerText = "Bu kategoriye (derse) ait herhangi bir soru bulunamadı.";
+                document.getElementById('opts').innerHTML = '';
+                document.getElementById('q-img').style.display = "none";
+                document.getElementById('aciklama-alani').style.display = "none";
+                document.getElementById('cikmis-alani').style.display = "none";
+                document.getElementById('btnAcikla').style.display = "none";
+                return;
+            }
+
+            document.getElementById('btnAcikla').style.display = "block";
+            const q = filteredQs[idx];
+            const cont = document.getElementById('q-container');
+            cont.classList.remove('ans-mode');
+            
+            let rawKategori = q['Kategori'] || "";
+            let temizKategori = rawKategori.replace(/^\d+\)\s*/, '');
+            if (!temizKategori || temizKategori === "Belirtilmemiş") temizKategori = "Genel Havacılık";
+
+            document.getElementById('no').innerHTML = q['Soru Numarası'] + ' [GENEL SORULAR CEVAPLAR] <span class="kategori-text">(' + temizKategori + ')</span>';
+            document.getElementById('txt').innerText = q['Soru Metni'];
+            
+            const img = document.getElementById('q-img');
+            if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'] !== "") {
+                img.src = q['Resim Yolu']; img.style.display = "block";
+            } else { img.style.display = "none"; }
+
+            // Çıkmış Soru (Sınav Anısı) Kontrolü
+            const cikmisKutu = document.getElementById('cikmis-alani');
+            if(q['Sınav Anısı']) {
+                cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`;
+                cikmisKutu.style.display = "block";
+            } else {
+                cikmisKutu.style.display = "none";
+            }
+
+            const aKutu = document.getElementById('aciklama-alani');
+            aKutu.style.display = "none";
+            aKutu.innerText = q['Açıklama'] || "Bu soru için bir açıklama verisi bulunmamaktadır.";
+
+            const oDiv = document.getElementById('opts');
+            oDiv.innerHTML = '';
+            ['a','b','c','d'].forEach(h => {
+                const key = h.toUpperCase() + " Şıkkı";
+                if(q[key] && q[key] !== "Bilinmiyor" && q[key].trim() !== "") {
+                    const b = document.createElement('button');
+                    b.className = 'opt';
+                    b.innerText = h.toUpperCase() + ") " + q[key];
+                    b.onclick = () => {
+                        cont.classList.add('ans-mode');
+                        const dogru = (q['Doğru Cevap'] || "").trim().toLowerCase();
+                        if(h === dogru) b.classList.add('correct');
+                        else {
+                            b.classList.add('wrong');
+                            Array.from(oDiv.children).forEach(btn => {
+                                if(btn.innerText.toLowerCase().startsWith(dogru + ")")) btn.classList.add('correct');
+                            });
+                        }
+                    };
+                    oDiv.appendChild(b);
+                }
+            });
+
+            document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
+            const active = document.getElementById('l'+idx);
+            if(active) { 
+                active.classList.add('active'); 
+                const listEl = document.getElementById('list');
+                listEl.scrollTo({
+                    top: active.offsetTop - (listEl.clientHeight / 2) + (active.clientHeight / 2),
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
+        
+        function goToQuestion() {
+            const val = document.getElementById('q-search').value.trim();
+            if(!val) return;
+            const target = 'S.' + val;
+            
+            const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase() === target.toUpperCase());
+            
+            if (fIdx !== -1) { 
+                idx = fIdx; 
+                show(); 
+                document.getElementById('q-search').value = ''; 
+            } else { 
+                alert("Bu kategoride böyle bir soru bulunamadı! Lütfen sol menüden 'Tüm Sorular'ı seçip tekrar arayın."); 
+            }
+        }
+
+        function aciklamaGosterGizle() {
+            const a = document.getElementById('aciklama-alani');
+            const isHidden = a.style.display === "none";
+            
+            a.style.display = isHidden ? "block" : "none";
+            
+            if (isHidden) {
+                const q = filteredQs[idx];
+                const cont = document.getElementById('q-container');
+                cont.classList.add('ans-mode');
+                
+                const oDiv = document.getElementById('opts');
+                const dogru = (q['Doğru Cevap'] || "").trim().toLowerCase();
+                
+                Array.from(oDiv.children).forEach(btn => {
+                    if(btn.innerText.toLowerCase().startsWith(dogru + ")")) {
+                        btn.classList.add('correct');
+                    }
+                });
+            }
+        }
+
+        function move(n) { 
+            if(!filteredQs.length) return;
+            idx = (idx+n+filteredQs.length)%filteredQs.length; show(); 
+        }
+        function rand() { 
+            if(!filteredQs.length) return;
+            idx = Math.floor(Math.random()*filteredQs.length); show(); 
+        }
+        function resetQ() { show(); }
+        
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.style.display = "none"; }
+        
+        start();
+    </script>
+</body>
+</html>
+
+
+
+
