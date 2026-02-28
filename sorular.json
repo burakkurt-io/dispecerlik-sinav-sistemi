@@ -15610,11 +15610,11 @@
     {
         "Soru Numarası": "S.1271",
         "Soru Metni": "The shortest distance in kilometres between 17°27'N 019°30'W and 38°00'S 019°30'W is:",
-        "A Şıkkı": "NDB / NDB",
-        "B Şıkkı": "DME / DME",
-        "C Şıkkı": "VOR / DME",
-        "D Şıkkı": "INS or IRS",
-        "Doğru Cevap": "a",
+        "A Şıkkı": "1,233",
+        "B Şıkkı": "2,285",
+        "C Şıkkı": "3,327",
+        "D Şıkkı": "6,139",
+        "Doğru Cevap": "d",
         "Açıklama": "Soruda B-RNAV (Basic Area Navigation - Temel Alan Seyrüseferi) operasyonlarında konum belirleme için kullanılmayan sensör sorulmaktadır. B-RNAV yüksek hassasiyet gerektirdiği için sadece düşük frekanslı NDB istasyonları bu sistemin ana sensörü olarak kabul edilmez.",
         "Resim Yolu": "",
         "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 205 ) - ALAN NAVİGASYONU"
@@ -21522,6 +21522,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
