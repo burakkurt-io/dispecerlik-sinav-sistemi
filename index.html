@@ -50,7 +50,7 @@
         body.dark-mode .review-opt { background: #2a2a2a; border-color: #444; color: #e0e0e0; }
         body.dark-mode .correct-opt { background: rgba(40, 167, 69, 0.15) !important; border-color: #28a745 !important; color: #28a745 !important; }
         body.dark-mode .wrong-opt { background: rgba(220, 53, 69, 0.15) !important; border-color: #dc3545 !important; color: #dc3545 !important; text-decoration: line-through; }
-        body.dark-mode .zorluk-kutu { background: #332b00; color: #ffdd80; border-color: #ffc107; }
+        body.dark-mode .zorluk-kutu { background: #e85900; color: white; border-color: #cc4d00; }
 
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1700px; margin: 0 auto; width: 100%; }
         
@@ -86,11 +86,10 @@
         .wrong { background: var(--e) !important; color: white !important; border-color: var(--e) !important; }
         .selected-opt { background: #cce5ff !important; border-color: var(--p) !important; font-weight: bold; }
 
-        .action-area { flex-shrink: 0; width: 100%; margin-top: 10px; border-top: 1px solid #eee; padding-top: 15px; transition: 0.3s; }
+        .action-area { flex-shrink: 0; width: 100%; margin-top: 10px; border-top: 1px solid #eee; padding-top: 15px; transition: 0.3s; display: flex; flex-direction: column; }
         
-        .cikmis-kutu, .zorluk-kutu { display: none; padding: 10px 15px; border-radius: 8px; font-size: 0.9em; margin-bottom: 10px; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; }
-        .cikmis-kutu { background: #003366; color: white; border: 1px solid #002244; }
-        .zorluk-kutu { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; text-transform: none; }
+        .zorluk-kutu { display: none; background: #fd7e14; color: white; padding: 8px 12px; border-radius: 6px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #e85900; font-weight: bold; width: fit-content; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .cikmis-kutu { display: none; background: #003366; color: white; padding: 12px; border-radius: 8px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #002244; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold;}
         .cikmis-oran { color: #ffc107; display: block; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; font-weight: bold; }
 
         .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
@@ -153,11 +152,12 @@
         .modal-content { background: white; margin: 5% auto; padding: 40px; border-radius: 20px; width: 90%; max-width: 550px; position: relative; max-height: 90vh; overflow-y: auto; transition: 0.3s; }
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 35px; cursor: pointer; z-index: 100; color: #888; }
         .analiz-modal-content { max-width: 850px; }
-        .modal-body-scroll { overflow-y: auto; }
+        
+        .btn-back { background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 13px; display: inline-block; transition: 0.2s; position: relative; z-index: 9999; }
+        .btn-back:hover { background: #5a6268; }
+        
         .analiz-btn { display: block; width: 100%; padding: 16px; margin-bottom: 10px; background: #f8fbff; border: 2px solid #e9ecef; border-radius: 10px; color: var(--p); font-weight: bold; font-size: 14px; text-align: left; cursor: pointer; transition: 0.3s; }
         .analiz-btn:hover { background: var(--p); color: white; border-color: var(--p); transform: translateY(-2px); }
-        .btn-back { background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 13px; transition: 0.2s;}
-        .btn-back:hover { opacity: 0.9; }
         .analiz-metin-alani { background: #fdfdfd; padding: 20px; border-radius: 8px; border-left: 4px solid var(--p); font-size: 14px; line-height: 1.7; color: #333; white-space: pre-wrap; }
         .action-option { display: block; padding: 18px; margin: 12px 0; border: 2px solid var(--p); border-radius: 12px; text-decoration: none; color: #333; font-weight: bold; text-align: center; background: #f8fbff; cursor: pointer; }
         .action-option:hover { background: var(--p); color: white; transform: translateY(-3px); }
@@ -311,8 +311,8 @@
             </div>
             
             <div id="analiz-icerik" style="display:none;">
-                <button type="button" class="btn-back" onclick="closeAnaliz()" style="margin-bottom: 10px;">← Menüye Dön</button>
-                <div style="max-height: 55vh; overflow-y: auto; padding-right: 10px;">
+                <button type="button" class="btn-back" onclick="closeAnaliz()">← Menüye Dön</button>
+                <div style="max-height: 55vh; overflow-y: auto; padding-right: 10px; margin-top: 15px;">
                     <h3 id="analiz-baslik" style="color:var(--p); margin-top:0; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px;"></h3>
                     <div id="analiz-metin" class="analiz-metin-alani"></div>
                 </div>
@@ -492,7 +492,7 @@
 
             let totalMins = checkboxes.length * 15;
             
-            document.getElementById('action-area').style.display = 'block'; 
+            document.getElementById('action-area').style.display = 'flex'; 
             document.getElementById('btnAcikla').style.display = 'none'; 
             document.getElementById('cikmis-alani').style.display = 'none';
             document.getElementById('zorluk-alani').style.display = 'none';
@@ -568,6 +568,12 @@
             if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'] !== "") {
                 img.src = q['Resim Yolu']; img.style.display = "block";
             } else { img.style.display = "none"; }
+
+            const zorlukKutu = document.getElementById('zorluk-alani');
+            if(q['Zorluk Derecesi(1-5)']) {
+                zorlukKutu.innerHTML = `⭐ Zorluk Seviyesi (1-5) : ${q['Zorluk Derecesi(1-5)']}`;
+                zorlukKutu.style.display = "inline-block";
+            } else { zorlukKutu.style.display = "none"; }
 
             const oDiv = document.getElementById('opts'); oDiv.innerHTML = '';
             ['a','b','c','d','e'].forEach(h => {
@@ -712,7 +718,7 @@
             isExamModeActive = false;
             clearInterval(timerInterval);
             document.getElementById('timer-display').style.display = "none";
-            document.getElementById('action-area').style.display = 'block';
+            document.getElementById('action-area').style.display = 'flex';
             document.getElementById('btnAcikla').style.display = 'block';
             document.getElementById('nav-buttons').innerHTML = `
                 <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
@@ -824,7 +830,7 @@
             }
 
             if(!isExamModeActive) { 
-                document.getElementById('action-area').style.display = 'block';
+                document.getElementById('action-area').style.display = 'flex';
                 document.getElementById('btnAcikla').style.display = 'block';
             }
 
@@ -879,7 +885,7 @@
             const zorlukKutu = document.getElementById('zorluk-alani');
             if(q['Zorluk Derecesi(1-5)']) {
                 zorlukKutu.innerHTML = `⭐ Zorluk Seviyesi (1-5) : ${q['Zorluk Derecesi(1-5)']}`;
-                zorlukKutu.style.display = "block";
+                zorlukKutu.style.display = "inline-block";
             } else { zorlukKutu.style.display = "none"; }
 
             const cikmisKutu = document.getElementById('cikmis-alani');
@@ -949,6 +955,12 @@
                 const response = await fetch(`html_notlar/${kategoriId}.html`); if (!response.ok) throw new Error("Dosya bulunamadı");
                 analizVerileri[kategoriId] = await response.text(); metinAlani.innerHTML = analizVerileri[kategoriId]; 
             } catch (error) { metinAlani.innerHTML = `<div style='color:#dc3545; font-weight:bold; text-align:center;'>HTML not dosyası bulunamadı.</div>`; }
+        }
+
+        function closeAnaliz() {
+            document.getElementById('analiz-icerik').style.display = 'none'; 
+            document.getElementById('analiz-menu').style.display = 'block';
+            document.getElementById('analiz-baslik').innerText = '';
         }
 
         let guncellemeCache = null;
