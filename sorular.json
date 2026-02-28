@@ -13627,10 +13627,10 @@
     {
         "Soru Numarası": "S.1109",
         "Soru Metni": "Who is responsible for establishing operating minima (AOM)?",
-        "A Şıkkı": "The Operator,\nb) ATC at the aerodrome,",
-        "B Şıkkı": "",
-        "C Şıkkı": "The Pilot-in Command,\nd) The State of the Operator.",
-        "D Şıkkı": "",
+        "A Şıkkı": "The Operator",
+        "B Şıkkı": " ATC at the aerodrome",
+        "C Şıkkı": "The Pilot-in Command",
+        "D Şıkkı": "The State of the Operator.",
         "Doğru Cevap": "a",
         "Açıklama": "Soruda Meydan İşletme Minimaları'nın (AOM - Aerodrome Operating Minima) kim tarafından oluşturulduğu sorulmaktadır. Bu limitler, uçağı işleten havayolu operatörü (Operator) tarafından, devletin belirlediği emniyet sınırlarını aşmayacak şekilde belirlenir.",
         "Resim Yolu": "",
@@ -21496,6 +21496,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
