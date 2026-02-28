@@ -1139,8 +1139,8 @@
     {
         "Soru Numarası": "S.93",
         "Soru Metni": "CAT C uçaklar için RVR’in 125 metre olduğu durumlarda kalkış yapabilmesi için HIRL ve HICL aralıkları en fazla kaç metre olmalıdır?",
-        "A Şıkkı": "HIRL 60m ve daha az HICL 15m ve daha az\nb) HIRL 60m ve daha az HICL 15m ve daha fazla",
-        "B Şıkkı": "",
+        "A Şıkkı": "HIRL 60m ve daha az HICL 15m ve daha az",
+        "B Şıkkı": "HIRL 60m ve daha az HICL 15m ve daha fazla",
         "C Şıkkı": "HIRL 60m ve daha fazla HICL 15m ve daha az",
         "D Şıkkı": "HIRL 60m ve daha fazla HICL 15m ve daha fazla",
         "Doğru Cevap": "a",
@@ -21496,6 +21496,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
