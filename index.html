@@ -46,6 +46,8 @@
         body.dark-mode .sim-cb-container { background: #2a2a2a !important; border-color: #444 !important; color:#fff !important;}
         body.dark-mode .sim-cb-container:hover { border-color: var(--p) !important; background: #1a2a3a !important; }
         body.dark-mode .selected-opt { background: #004080 !important; border-color: var(--p) !important; }
+        body.dark-mode .wrong-review-box { background: #2a2a2a !important; border-color: #dc3545 !important; }
+        body.dark-mode .wrong-review-exp { background: #1a2a3a !important; border-color: #0056b3 !important; color: #80bfff !important; }
 
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1700px; margin: 0 auto; width: 100%; }
         
@@ -85,7 +87,7 @@
         
         .cikmis-kutu, .zorluk-kutu { display: none; color: white; padding: 10px 15px; border-radius: 8px; font-size: 0.9em; margin-bottom: 10px; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; }
         .cikmis-kutu { background: #003366; border: 1px solid #002244; }
-        .zorluk-kutu { background: #fd7e14; border: 1px solid #e85900; }
+        .zorluk-kutu { background: #fd7e14; border: 1px solid #e85900; display: block; }
         .cikmis-oran { color: #ffc107; display: block; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; }
 
         .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
@@ -169,7 +171,7 @@
                     </div>
                     <div style="display:flex; align-items:center; gap:15px;">
                         <span id="timer-display" style="display:none; font-weight:bold; color:#dc3545; font-size:15px; border: 1px solid #dc3545; padding: 2px 8px; border-radius: 5px;">00:00</span>
-<button id="installAppBtn" onclick="installPWA()" style="background:none; border:none; cursor:pointer; font-size:18px; display:none;" title="Ana Ekrana Ekle (Uygulama Yap)">📲</button>
+                        <button id="installAppBtn" onclick="installPWA()" style="background:none; border:none; cursor:pointer; font-size:18px; display:none;" title="Ana Ekrana Ekle (Uygulama Yap)">📲</button>
                         <button onclick="toggleDarkMode()" id="darkModeBtn" style="background:none; border:none; cursor:pointer; font-size:16px;" title="Gece/Gündüz Modu">🌙</button>
                     </div>
                 </div>
@@ -222,6 +224,17 @@
         </div>
     </div>
 
+    <div id="customConfirmModal" class="modal" style="z-index: 100000;">
+        <div class="modal-content" style="max-width: 400px; text-align: center; padding: 30px;">
+            <h3 style="color: var(--p); margin-top: 0; text-transform: uppercase;">⚠️ Sınav Uyarısı</h3>
+            <p id="confirm-msg" style="color: #555; font-size: 14px; margin-bottom: 25px; line-height: 1.5; font-weight: bold;"></p>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-gray" onclick="closeConfirm(false)" style="flex: 1;">İptal Et</button>
+                <button class="btn" onclick="closeConfirm(true)" style="flex: 1; background: #dc3545;">Evet, Çık</button>
+            </div>
+        </div>
+    </div>
+
     <div id="guncelleModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('guncelleModal')">&times;</span>
@@ -270,8 +283,8 @@
                 <button class="analiz-btn" onclick="openAnaliz('fpl', '11 - FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ')">11 - FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ</button>
                 <button class="analiz-btn" onclick="openAnaliz('avi', '12 - AVI - HAVACILIK ÖĞRETİMİ')">12 - AVI - HAVACILIK ÖĞRETİMİ</button>
             </div>
-            <div id="analiz-icerik" class="modal-body-scroll" style="display:none;">
-                <button class="btn-back" onclick="closeAnaliz()">← Menüye Dön</button>
+            <div id="analiz-icerik" class="modal-body-scroll" style="display:none; position: relative;">
+                <button class="btn-back" onclick="closeAnaliz()" style="position: sticky; top: 0; z-index: 10;">← Menüye Dön</button>
                 <h3 id="analiz-baslik" style="color:var(--p); margin-top:5px; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px;"></h3>
                 <div id="analiz-metin" class="analiz-metin-alani"></div>
             </div>
@@ -297,6 +310,35 @@
             setTimeout(() => { container.style.opacity = "0"; container.style.top = "-50px"; }, 3000);
         }
 
+        // --- CUSTOM CONFIRM MODAL ---
+        let confirmAction = null;
+        function showConfirm(msg, callback) {
+            document.getElementById('confirm-msg').innerText = msg;
+            confirmAction = callback;
+            document.getElementById('customConfirmModal').style.display = 'block';
+        }
+        function closeConfirm(result) {
+            document.getElementById('customConfirmModal').style.display = 'none';
+            if(result && confirmAction) confirmAction();
+        }
+
+        // --- PWA MANTIĞI ---
+        let deferredPrompt;
+        const installBtn = document.getElementById('installAppBtn');
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault(); deferredPrompt = e; installBtn.style.display = 'block';
+        });
+        async function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                deferredPrompt = null; installBtn.style.display = 'none';
+            }
+        }
+        window.addEventListener('appinstalled', () => {
+            installBtn.style.display = 'none'; showCustomNotification("Uygulama başarıyla eklendi!", "success");
+        });
+
         // --- GECE MODU ---
         if(localStorage.getItem('darkMode') === 'enabled') {
             document.body.classList.add('dark-mode');
@@ -312,7 +354,7 @@
             }
         }
 
-        // --- SİMÜLASYON VERİ VE MANTIĞI ---
+        // --- SİMÜLASYON MANTIĞI ---
         let isExamModeActive = false;
         let examUserAnswers = [];
         let timerInterval = null;
@@ -341,11 +383,20 @@
             let html = `
                 <div style="padding: 10px; width:100%;">
                     <div style="background: ${document.body.classList.contains('dark-mode') ? '#2a2a2a' : '#eef5ff'}; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; border-left: 4px solid var(--p);">
-                        <strong style="color:var(--p); font-size: 16px;">📋 Sınav Kuralları:</strong><br>
-                        • Seçtiğiniz her ders için ana havuzdan ve GOLDEN havuzundan birleştirilerek <b>rastgele 10 soru</b> çekilir.<br>
-                        • Seçilen her ders başına sınav süresine <b>15 Dakika</b> (Soru başı 90 sn) eklenir.<br>
-                        • Yanlış doğruyu <b>GÖTÜRMEZ</b>. Dersi geçmek için en az <b>7 Doğru (70 Puan)</b> yapmalısınız.<br>
+                        <strong style="color:var(--p); font-size: 16px;">📋 Sınav Kuralları ve Dinamik Zorluk:</strong><br>
+                        • Seçtiğiniz dersler için <b>Genel ve GOLDEN</b> havuzları birleştirilir.<br>
+                        • Belirlediğiniz zorluk derecesindeki sorulardan <b>rastgele 10 adet</b> çekilir.<br>
+                        • Ders başına <b>15 Dakika</b> süre verilir. Dersi geçmek için en az <b>7 Doğru</b> gereklidir.<br>
                     </div>
+                    
+                    <h3 style="margin-bottom: 10px; color: var(--p);">Zorluk Derecesi:</h3>
+                    <select id="sim-difficulty" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #ccc; margin-bottom: 20px; font-weight: bold; font-size: 14px; background: ${document.body.classList.contains('dark-mode') ? '#1e1e1e' : '#fff'}; color: inherit;">
+                        <option value="ALL">🎲 Karışık (Tüm Seviyelerden Rastgele)</option>
+                        <option value="EASY">🟢 Kolay (1 ve 2 Yıldızlı Sorular)</option>
+                        <option value="MEDIUM">🟡 Orta (3 Yıldızlı Sorular)</option>
+                        <option value="HARD">🔴 Zor (4 ve 5 Yıldızlı Sorular)</option>
+                    </select>
+
                     <h3 style="margin-bottom: 15px; color: var(--p);">Simülasyona Dahil Edilecek Dersler:</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 20px;" id="sim-subject-grid">
                     </div>
@@ -372,20 +423,39 @@
         function startSimulation() {
             const checkboxes = document.querySelectorAll('.sim-cb:checked');
             if(checkboxes.length === 0) {
-                showCustomNotification("Lütfen en az bir ders seçin!", "warning");
-                return;
+                showCustomNotification("Lütfen en az bir ders seçin!", "warning"); return;
             }
 
+            const diffChoice = document.getElementById('sim-difficulty').value;
             let totalQuestions = [];
+            
             checkboxes.forEach(cb => {
                 const sub = examSubjects[cb.value];
+                // Regex Koruması ile Kesin Eşleşme (Sıfır Karışma)
                 let subQs = allQs.filter(q => {
-                    let searchStr = ((q['Kategori'] || "") + " " + (q['Soru Numarası'] || "")).toUpperCase();
-                    return searchStr.includes(sub.code);
+                    let catStr = (q['Kategori'] || "").toUpperCase();
+                    let regex = new RegExp("\\b" + sub.code + "\\b");
+                    return regex.test(catStr) || catStr.includes("GOLDEN - " + sub.code);
                 });
+
+                // Zorluk Filtresi
+                if(diffChoice !== "ALL") {
+                    subQs = subQs.filter(q => {
+                        let z = parseInt(q['Zorluk Derecesi(1-5)']);
+                        if(isNaN(z)) return true; // Zorluk girilmemişse havuzda kalsın
+                        if(diffChoice === "EASY") return z <= 2;
+                        if(diffChoice === "MEDIUM") return z === 3;
+                        if(diffChoice === "HARD") return z >= 4;
+                    });
+                }
+
                 subQs = subQs.sort(() => 0.5 - Math.random());
-                totalQuestions.push(...subQs.slice(0, 10)); // Tam 10 Soru
+                totalQuestions.push(...subQs.slice(0, 10)); 
             });
+
+            if(totalQuestions.length === 0) {
+                showCustomNotification("Seçtiğiniz zorlukta yeterli soru bulunamadı!", "error"); return;
+            }
 
             filteredQs = totalQuestions;
             examUserAnswers = new Array(filteredQs.length).fill(null);
@@ -394,6 +464,7 @@
 
             let totalMins = checkboxes.length * 15;
             
+            // Sınav anında alt butonları temizle ve özel butonları koy
             document.getElementById('action-area').style.display = 'block'; 
             document.getElementById('btnAcikla').style.display = 'none'; 
             document.getElementById('cikmis-alani').style.display = 'none';
@@ -407,7 +478,7 @@
             renderExamNavList();
             startExamTimer(totalMins);
             showExamQuestion();
-            showCustomNotification(`Simülasyon Başladı! ${checkboxes.length} Ders, ${filteredQs.length} Soru. Süre: ${totalMins} Dk.`, "success");
+            showCustomNotification(`Sınav Başladı! ${filteredQs.length} Soru. Süre: ${totalMins} Dk.`, "success");
         }
 
         function startExamTimer(minutes) {
@@ -421,23 +492,19 @@
                 let m = Math.floor(timeLeft / 60);
                 let s = timeLeft % 60;
                 timerDisplay.innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
-                
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
-                    showCustomNotification("SÜRE BİTTİ! Kalemleri bırakın.", "error");
+                    showCustomNotification("SÜRE BİTTİ! Sınav otomatik sonlandırılıyor.", "error");
                     finishExam();
                 }
             }, 1000);
         }
 
         function renderExamNavList() {
-            const l = document.getElementById('list');
-            l.innerHTML = ''; 
+            const l = document.getElementById('list'); l.innerHTML = ''; 
             filteredQs.forEach((q, i) => {
                 const a = document.createElement('a');
-                a.className = 'link'; 
-                a.id = 'l' + i; 
-                a.innerText = "Soru " + (i + 1);
+                a.className = 'link'; a.id = 'l' + i; a.innerText = "Soru " + (i + 1);
                 a.onclick = () => { idx = i; showExamQuestion(); };
                 l.appendChild(a);
             });
@@ -451,8 +518,7 @@
             });
             const active = document.getElementById('l'+idx);
             if(active) { 
-                active.classList.add('active'); 
-                active.style.borderLeft = "none"; 
+                active.classList.add('active'); active.style.borderLeft = "none"; 
                 document.getElementById('list').scrollTo({ top: active.offsetTop - (document.getElementById('list').clientHeight / 2) + (active.clientHeight / 2), behavior: 'smooth' });
             }
         }
@@ -463,7 +529,10 @@
             
             let searchStr = ((q['Kategori'] || "") + " " + (q['Soru Numarası'] || "")).toUpperCase();
             let subName = "Karma";
-            examSubjects.forEach(sub => { if(searchStr.includes(sub.code)) subName = sub.code; });
+            examSubjects.forEach(sub => { 
+                let regex = new RegExp("\\b" + sub.code + "\\b");
+                if(regex.test(searchStr) || searchStr.includes("GOLDEN - " + sub.code)) subName = sub.code; 
+            });
 
             document.getElementById('no').innerHTML = `Soru ${idx + 1} / ${filteredQs.length} <span class="kategori-text">(${subName})</span>`;
             document.getElementById('txt').innerText = q['Soru Metni'];
@@ -473,25 +542,27 @@
                 img.src = q['Resim Yolu']; img.style.display = "block";
             } else { img.style.display = "none"; }
 
-            const oDiv = document.getElementById('opts');
-            oDiv.innerHTML = '';
+            // Sınav esnasında da zorluk derecesini gösterelim (Talebiniz üzerine)
+            const zorlukKutu = document.getElementById('zorluk-alani');
+            if(q['Zorluk Derecesi(1-5)']) {
+                zorlukKutu.innerHTML = `⭐ <b>Zorluk Seviyesi (1-5):</b> ${q['Zorluk Derecesi(1-5)']}`;
+                zorlukKutu.style.display = "block";
+            } else { zorlukKutu.style.display = "none"; }
+
+            const oDiv = document.getElementById('opts'); oDiv.innerHTML = '';
             ['a','b','c','d','e'].forEach(h => {
                 const key = h.toUpperCase() + " Şıkkı";
                 if(q[key] && q[key] !== "Bilinmiyor" && q[key].trim() !== "") {
-                    const b = document.createElement('button');
-                    b.className = 'opt';
+                    const b = document.createElement('button'); b.className = 'opt';
                     if(examUserAnswers[idx] === h) b.classList.add('selected-opt');
                     
                     let sikIcerigi = q[key].trim();
-                    if(sikIcerigi.toLowerCase().endsWith('.png') || sikIcerigi.toLowerCase().endsWith('.jpg') || sikIcerigi.toLowerCase().endsWith('.jpeg')) {
+                    if(sikIcerigi.toLowerCase().endsWith('.png') || sikIcerigi.toLowerCase().endsWith('.jpg')) {
                         sikIcerigi = `<br><img src="${sikIcerigi}" style="max-height: 80px; max-width: 100%; margin-top: 8px; border-radius: 4px; object-fit: contain;">`;
                     }
                     b.innerHTML = "<b>" + h.toUpperCase() + ")</b> " + sikIcerigi;
                     
-                    b.onclick = () => {
-                        examUserAnswers[idx] = h;
-                        showExamQuestion(); 
-                    };
+                    b.onclick = () => { examUserAnswers[idx] = h; showExamQuestion(); };
                     oDiv.appendChild(b);
                 }
             });
@@ -507,35 +578,66 @@
             document.getElementById('no').innerText = "SİMÜLASYON SONUÇLARI";
 
             let results = {}; 
+            let wrongTopics = {};
+            let wrongQuestionsHtml = "";
+            let isDark = document.body.classList.contains('dark-mode');
+
             filteredQs.forEach((q, i) => {
                 let searchStr = ((q['Kategori'] || "") + " " + (q['Soru Numarası'] || "")).toUpperCase();
-                let subName = "Diğer";
-                examSubjects.forEach(sub => { if(searchStr.includes(sub.code)) subName = sub.name; });
+                let subName = "Diğer", subCode = "MIX";
+                examSubjects.forEach(sub => { 
+                    let regex = new RegExp("\\b" + sub.code + "\\b");
+                    if(regex.test(searchStr) || searchStr.includes("GOLDEN - " + sub.code)) { subName = sub.name; subCode = sub.code; }
+                });
 
                 if(!results[subName]) results[subName] = { total: 0, correct: 0, wrong: 0, empty: 0 };
                 results[subName].total++;
                 
                 const ans = examUserAnswers[i];
                 const correctAns = (q['Doğru Cevap'] || "").trim().toLowerCase();
+                
                 if(!ans) results[subName].empty++;
                 else if(ans === correctAns) results[subName].correct++;
                 else results[subName].wrong++;
+
+                // Diagnostik (Yanlış/Boş) Analizi ve Çözüm Paneli
+                if(ans !== correctAns) {
+                    // Konuyu Ayrıştır
+                    let parts = (q['Kategori'] || "").split('-');
+                    let topic = parts.length > 2 ? parts[parts.length-1].trim() : "Genel Kapsamlı Soru";
+                    if(q['Kategori'].includes('GOLDEN') && parts.length <= 2) topic = "GOLDEN Soru Havuzu";
+                    
+                    let topicKey = `[${subCode}] ${topic}`;
+                    wrongTopics[topicKey] = (wrongTopics[topicKey] || 0) + 1;
+
+                    // Yanlış Soruların Çözüm Kutusu
+                    let userAnsText = ans ? `<b>${ans.toUpperCase()})</b> ` + (q[ans.toUpperCase() + " Şıkkı"] || "") : "Boş Bırakıldı";
+                    let correctAnsText = `<b>${correctAns.toUpperCase()})</b> ` + (q[correctAns.toUpperCase() + " Şıkkı"] || "");
+                    
+                    wrongQuestionsHtml += `
+                        <div class="wrong-review-box" style="background: ${isDark ? '#2a2a2a' : '#fff'}; border: 1px solid #dc3545; border-left: 5px solid #dc3545; padding: 15px; border-radius: 8px; margin-bottom: 15px; text-align:left; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                            <div style="font-weight:bold; color:var(--p); margin-bottom:8px; display:flex; justify-content:space-between;">
+                                <span>Soru ${i+1} (${q['Soru Numarası']})</span>
+                                <span style="color:#888; font-size:12px;">${subCode}</span>
+                            </div>
+                            <div style="margin-bottom:10px; font-size:14.5px; line-height:1.5;">${q['Soru Metni']}</div>
+                            <div style="font-size:13.5px; margin-bottom:5px; padding:5px; background:rgba(220,53,69,0.1); border-radius:4px;"><b style="color:#dc3545;">Senin Cevabın:</b> <br>${userAnsText}</div>
+                            <div style="font-size:13.5px; margin-bottom:10px; padding:5px; background:rgba(40,167,69,0.1); border-radius:4px;"><b style="color:#28a745;">Doğru Cevap:</b> <br>${correctAnsText}</div>
+                            <div class="wrong-review-exp" style="background:#eef5ff; color:#0056b3; padding:12px; border-radius:5px; font-size:13.5px; border:1px solid #b8daff; line-height:1.5;">
+                                <b>Açıklama:</b> ${q['Açıklama'] || 'Bu soru için açıklama bulunmuyor.'}
+                            </div>
+                        </div>
+                    `;
+                }
             });
 
-            let isDark = document.body.classList.contains('dark-mode');
+            // Tabloyu Oluştur
             let html = `<div style="width:100%; overflow-x:auto;"><table style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; min-width:600px;">
                 <tr style="background:var(--p); color:white; text-align:left;">
-                    <th style="padding:10px;">Ders Adı</th>
-                    <th style="padding:10px;">Soru</th>
-                    <th style="padding:10px;">Doğru</th>
-                    <th style="padding:10px;">Yanlış</th>
-                    <th style="padding:10px;">Boş</th>
-                    <th style="padding:10px;">Puan</th>
-                    <th style="padding:10px;">Durum</th>
+                    <th style="padding:10px;">Ders Adı</th><th style="padding:10px;">Soru</th><th style="padding:10px;">Doğru</th><th style="padding:10px;">Yanlış</th><th style="padding:10px;">Boş</th><th style="padding:10px;">Puan</th><th style="padding:10px;">Durum</th>
                 </tr>`;
             
             let totalC = 0, totalW = 0, totalE = 0, totalQ = 0;
-
             for(let key in results) {
                 let r = results[key];
                 totalC += r.correct; totalW += r.wrong; totalE += r.empty; totalQ += r.total;
@@ -543,25 +645,36 @@
                 let status = score >= 70 ? '<span style="color:#28a745; font-weight:bold;">GEÇTİ</span>' : '<span style="color:#dc3545; font-weight:bold;">KALDI</span>';
                 
                 html += `<tr style="border-bottom: 1px solid #ddd; color: ${isDark ? '#ccc' : '#333'};">
-                    <td style="padding:10px; font-weight:bold;">${key}</td>
-                    <td style="padding:10px;">${r.total}</td>
+                    <td style="padding:10px; font-weight:bold;">${key}</td><td style="padding:10px;">${r.total}</td>
                     <td style="padding:10px; color:#28a745; font-weight:bold;">${r.correct}</td>
                     <td style="padding:10px; color:#dc3545;">${r.wrong}</td>
                     <td style="padding:10px; color:#888;">${r.empty}</td>
-                    <td style="padding:10px; font-weight:bold;">${score.toFixed(0)}</td>
-                    <td style="padding:10px;">${status}</td>
+                    <td style="padding:10px; font-weight:bold;">${score.toFixed(0)}</td><td style="padding:10px;">${status}</td>
                 </tr>`;
             }
 
             let overallScore = (totalC / totalQ) * 100;
             html += `</table>
-                <div style="background:${isDark ? '#1e1e1e' : '#f8f9fa'}; padding:15px; border-radius:8px; text-align:center; font-size:16px; border: 2px solid ${overallScore >= 70 ? '#28a745' : '#dc3545'}; color: ${isDark ? '#fff' : '#333'};">
+                <div style="background:${isDark ? '#1e1e1e' : '#f8f9fa'}; padding:15px; border-radius:8px; text-align:center; font-size:16px; border: 2px solid ${overallScore >= 70 ? '#28a745' : '#dc3545'}; margin-bottom:20px; color: ${isDark ? '#fff' : '#333'};">
                     Genel Ortalama: <b>${overallScore.toFixed(0)}</b> / 100<br>
                     <span style="font-size:13px; color:#888;">(Toplam: ${totalC} Doğru, ${totalW} Yanlış, ${totalE} Boş)</span>
-                </div>
-                <button onclick="exitExamMode()" class="action-option" style="width:100%; margin-top:20px;">SİSTEME GERİ DÖN</button>
-            </div>`;
+                </div>`;
 
+            // Diagnostik (Zayıf Konular) Kutusu
+            if(Object.keys(wrongTopics).length > 0) {
+                html += `<div style="background: ${isDark ? '#332b00' : '#fff3cd'}; border: 1px solid #ffeeba; border-left: 5px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 25px; text-align: left; color: ${isDark ? '#ffdd80' : '#856404'};">
+                    <h3 style="margin-top:0; margin-bottom:10px; font-size:15px; text-transform:uppercase;">🎯 Zayıf Olduğunuz Alt Konular (Çalışma Reçetesi)</h3>
+                    <ul style="margin:0; padding-left:20px; font-size:13.5px; line-height:1.6;">`;
+                for(let t in wrongTopics) { html += `<li><b>${t}</b> alanından <b>${wrongTopics[t]} yanlış/boş</b> yaptınız.</li>`; }
+                html += `</ul></div>`;
+            }
+
+            // Hatalı Sorular İncelemesi
+            if(wrongQuestionsHtml !== "") {
+                html += `<h3 style="color:var(--p); margin-top:20px; text-align:center; border-bottom:2px solid #eee; padding-bottom:10px; font-size:16px;">❌ YANLIŞ VE BOŞ YAPILAN SORULARIN ÇÖZÜMLERİ</h3>` + wrongQuestionsHtml;
+            }
+
+            html += `<button onclick="exitExamMode()" class="action-option" style="width:100%; margin-top:20px;">SİSTEME GERİ DÖN</button></div>`;
             document.getElementById('txt').innerHTML = html;
         }
 
@@ -577,7 +690,7 @@
                 <button class="btn btn-gray" onclick="rand()">Random</button>
                 <button class="btn" onclick="move(1)">Sonraki</button>
             `;
-            filterByCategory('CIKMIS'); // Normale dönmek için çıkmış soruları yükle
+            filterByCategory('CIKMIS'); 
         }
 
         // --- KLAVYE KISAYOLLARI ---
@@ -587,20 +700,14 @@
             if(['a', 'b', 'c', 'd', 'e'].includes(key)) {
                 const opts = document.getElementById('opts').children;
                 const index = key.charCodeAt(0) - 97;
-                if(opts[index] && !document.getElementById('q-container').classList.contains('ans-mode')) {
-                    opts[index].click();
-                }
+                if(opts[index] && !document.getElementById('q-container').classList.contains('ans-mode')) opts[index].click();
             } 
             else if (e.key === 'ArrowRight') { move(1); } 
             else if (e.key === 'ArrowLeft') { move(-1); } 
-            else if (e.key === ' ' && !isExamModeActive) {
-                e.preventDefault();
-                const btnAcikla = document.getElementById('btnAcikla');
-                if(btnAcikla.style.display !== 'none') btnAcikla.click();
-            }
+            else if (e.key === ' ' && !isExamModeActive) { e.preventDefault(); const btn = document.getElementById('btnAcikla'); if(btn.style.display !== 'none') btn.click(); }
         });
 
-        // --- ANA FONKSİYONLAR ---
+        // --- ANA FONKSİYONLAR VE LİSTELER ---
         let allQs = []; 
         let filteredQs = []; 
         let idx = 0; 
@@ -670,22 +777,31 @@
         }
 
         function filterByCategory(keyword, clickedBtn) {
+            // Sınavdayken çıkış onayı
             if(isExamModeActive && keyword !== 'SIMULATION') {
-                if(!confirm("Sınav devam ediyor! Çıkmak istediğinize emin misiniz? Sınav verileriniz silinecek.")) return;
-                exitExamMode();
+                showConfirm("Sınav devam ediyor! Çıkmak istediğinize emin misiniz? Sınav verileriniz silinecek.", () => {
+                    exitExamMode();
+                    executeCategoryFilter(keyword, clickedBtn);
+                });
+                return;
             }
+            executeCategoryFilter(keyword, clickedBtn);
+        }
 
+        function executeCategoryFilter(keyword, clickedBtn) {
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
             if(clickedBtn) {
                 clickedBtn.classList.add('active');
             } else if (keyword === 'SIMULATION') {
-                document.querySelector('.cat-btn').classList.add('active'); // İlk buton simülasyon butonu
+                document.querySelector('.cat-btn').classList.add('active'); 
             }
 
-            if(keyword === 'SIMULATION') {
-                renderSimulationSetup();
-                return;
+            if(!isExamModeActive) { // Alt butonları garanti görünür yap
+                document.getElementById('action-area').style.display = 'block';
+                document.getElementById('btnAcikla').style.display = 'block';
             }
+
+            if(keyword === 'SIMULATION') { renderSimulationSetup(); return; }
 
             if(keyword === 'ALL') {
                 filteredQs = [...allQs];
@@ -694,9 +810,11 @@
             } else if (keyword.startsWith('GOLDEN')) {
                 filteredQs = allQs.filter(q => (q['Kategori'] || "").toUpperCase().includes(keyword));
             } else {
+                // Strict Regex Match (Sıfır Karışma Garantisi)
                 filteredQs = allQs.filter(q => {
                     const cat = (q['Kategori'] || "").toUpperCase();
-                    return cat.includes(keyword) && !cat.includes('GOLDEN');
+                    let regex = new RegExp("\\b" + keyword + "\\b");
+                    return regex.test(cat) && !cat.includes('GOLDEN');
                 });
             }
             idx = 0; 
@@ -705,33 +823,24 @@
         }
 
         function renderList() {
-            const l = document.getElementById('list');
-            l.innerHTML = ''; 
+            const l = document.getElementById('list'); l.innerHTML = ''; 
             filteredQs.forEach((q, i) => {
-                const a = document.createElement('a');
-                a.className = 'link'; a.id = 'l' + i; a.innerText = q['Soru Numarası'];
-                a.onclick = () => { idx = i; show(); };
-                l.appendChild(a);
+                const a = document.createElement('a'); a.className = 'link'; a.id = 'l' + i; a.innerText = q['Soru Numarası'];
+                a.onclick = () => { idx = i; show(); }; l.appendChild(a);
             });
         }
 
         function show() {
             if(!filteredQs.length) {
-                document.getElementById('no').innerText = "BİLGİ";
-                document.getElementById('txt').innerText = "Bu kategoriye ait soru bulunamadı.";
-                document.getElementById('opts').innerHTML = '';
-                document.getElementById('q-img').style.display = "none";
-                document.getElementById('aciklama-alani').style.display = "none";
-                document.getElementById('cikmis-alani').style.display = "none";
-                document.getElementById('zorluk-alani').style.display = "none";
-                document.getElementById('btnAcikla').style.display = "none";
-                return;
+                document.getElementById('no').innerText = "BİLGİ"; document.getElementById('txt').innerText = "Bu kategoriye ait soru bulunamadı.";
+                document.getElementById('opts').innerHTML = ''; document.getElementById('q-img').style.display = "none";
+                document.getElementById('aciklama-alani').style.display = "none"; document.getElementById('cikmis-alani').style.display = "none";
+                document.getElementById('zorluk-alani').style.display = "none"; document.getElementById('btnAcikla').style.display = "none"; return;
             }
 
             document.getElementById('btnAcikla').style.display = "block";
             const q = filteredQs[idx];
-            const cont = document.getElementById('q-container');
-            cont.classList.remove('ans-mode');
+            const cont = document.getElementById('q-container'); cont.classList.remove('ans-mode');
             document.getElementById('content-scroll').scrollTop = 0;
             
             let temizKategori = (q['Kategori'] || "").replace(/^\d+\)\s*/, '') || "Genel Havacılık";
@@ -739,48 +848,35 @@
             document.getElementById('txt').innerText = q['Soru Metni'];
             
             const img = document.getElementById('q-img');
-            if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'] !== "") {
-                img.src = q['Resim Yolu']; img.style.display = "block";
-            } else { img.style.display = "none"; }
+            if(q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'] !== "") { img.src = q['Resim Yolu']; img.style.display = "block"; } else { img.style.display = "none"; }
 
             const cikmisKutu = document.getElementById('cikmis-alani');
-            if(q['Sınav Anısı']) {
-                cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`;
-                cikmisKutu.style.display = "block";
-            } else { cikmisKutu.style.display = "none"; }
+            if(q['Sınav Anısı']) { cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`; cikmisKutu.style.display = "block"; } else { cikmisKutu.style.display = "none"; }
 
+            // Tüm Sorularda Zorluk Seviyesini Gösterme
             const zorlukKutu = document.getElementById('zorluk-alani');
             if(q['Zorluk Derecesi(1-5)']) {
                 zorlukKutu.innerHTML = `⭐ <b>Zorluk Seviyesi (1-5):</b> ${q['Zorluk Derecesi(1-5)']}`;
                 zorlukKutu.style.display = "block";
             } else { zorlukKutu.style.display = "none"; }
 
-            const aKutu = document.getElementById('aciklama-alani');
-            aKutu.style.display = "none";
-            aKutu.innerText = q['Açıklama'] || "Açıklama bulunamadı.";
+            const aKutu = document.getElementById('aciklama-alani'); aKutu.style.display = "none"; aKutu.innerText = q['Açıklama'] || "Açıklama bulunamadı.";
 
-            const oDiv = document.getElementById('opts');
-            oDiv.innerHTML = '';
+            const oDiv = document.getElementById('opts'); oDiv.innerHTML = '';
             ['a','b','c','d','e'].forEach(h => {
                 const key = h.toUpperCase() + " Şıkkı";
                 if(q[key] && q[key] !== "Bilinmiyor" && q[key].trim() !== "") {
-                    const b = document.createElement('button');
-                    b.className = 'opt';
+                    const b = document.createElement('button'); b.className = 'opt';
                     let sikIcerigi = q[key].trim();
-                    if(sikIcerigi.toLowerCase().endsWith('.png') || sikIcerigi.toLowerCase().endsWith('.jpg')) {
-                        sikIcerigi = `<br><img src="${sikIcerigi}" style="max-height: 80px; max-width: 100%; margin-top: 8px; border-radius: 4px; object-fit: contain;">`;
-                    }
+                    if(sikIcerigi.toLowerCase().endsWith('.png') || sikIcerigi.toLowerCase().endsWith('.jpg')) sikIcerigi = `<br><img src="${sikIcerigi}" style="max-height: 80px; max-width: 100%; margin-top: 8px; border-radius: 4px; object-fit: contain;">`;
                     b.innerHTML = "<b>" + h.toUpperCase() + ")</b> " + sikIcerigi;
                     
                     b.onclick = () => {
-                        cont.classList.add('ans-mode');
-                        const dogru = (q['Doğru Cevap'] || "").trim().toLowerCase();
+                        cont.classList.add('ans-mode'); const dogru = (q['Doğru Cevap'] || "").trim().toLowerCase();
                         if(h === dogru) b.classList.add('correct');
                         else {
                             b.classList.add('wrong');
-                            Array.from(oDiv.children).forEach(btn => {
-                                if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct');
-                            });
+                            Array.from(oDiv.children).forEach(btn => { if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct'); });
                         }
                     };
                     oDiv.appendChild(b);
@@ -789,48 +885,26 @@
 
             document.querySelectorAll('.link').forEach(x => x.classList.remove('active'));
             const active = document.getElementById('l'+idx);
-            if(active) { 
-                active.classList.add('active'); 
-                document.getElementById('list').scrollTo({ top: active.offsetTop - (document.getElementById('list').clientHeight / 2) + (active.clientHeight / 2), behavior: 'smooth' });
-            }
+            if(active) { active.classList.add('active'); document.getElementById('list').scrollTo({ top: active.offsetTop - (document.getElementById('list').clientHeight / 2) + (active.clientHeight / 2), behavior: 'smooth' }); }
         }
 
-        function move(n) { 
-            if(!filteredQs.length) return; 
-            idx = (idx+n+filteredQs.length)%filteredQs.length; 
-            if(isExamModeActive) showExamQuestion(); else show(); 
-        }
+        function move(n) { if(!filteredQs.length) return; idx = (idx+n+filteredQs.length)%filteredQs.length; if(isExamModeActive) showExamQuestion(); else show(); }
         function rand() { if(!filteredQs.length) return; idx = Math.floor(Math.random()*filteredQs.length); show(); }
         function resetQ() { show(); }
         function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
         
         function goToQuestion() {
-            const val = document.getElementById('q-search').value.trim();
-            if(!val) return;
-            const numMatch = val.match(/\d+/);
-            if(!numMatch) { showCustomNotification("Geçerli bir sayı girin.", "warning"); return; }
-            
-            const target = 'S.' + numMatch[0]; 
-            const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase().endsWith(target));
-            if (fIdx !== -1) { 
-                idx = fIdx; 
-                if(isExamModeActive) showExamQuestion(); else show(); 
-                document.getElementById('q-search').value = ''; 
-            } else { 
-                showCustomNotification("Soru bulunamadı!", "error"); 
-            }
+            const val = document.getElementById('q-search').value.trim(); if(!val) return;
+            const numMatch = val.match(/\d+/); if(!numMatch) { showCustomNotification("Geçerli bir sayı girin.", "warning"); return; }
+            const target = 'S.' + numMatch[0]; const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase().endsWith(target));
+            if (fIdx !== -1) { idx = fIdx; if(isExamModeActive) showExamQuestion(); else show(); document.getElementById('q-search').value = ''; } else { showCustomNotification("Soru bulunamadı!", "error"); }
         }
 
         function aciklamaGosterGizle() {
-            const a = document.getElementById('aciklama-alani');
-            const isHidden = a.style.display === "none";
-            a.style.display = isHidden ? "block" : "none";
+            const a = document.getElementById('aciklama-alani'); const isHidden = a.style.display === "none"; a.style.display = isHidden ? "block" : "none";
             if (isHidden) {
-                document.getElementById('q-container').classList.add('ans-mode');
-                const dogru = (filteredQs[idx]['Doğru Cevap'] || "").trim().toLowerCase();
-                Array.from(document.getElementById('opts').children).forEach(btn => {
-                    if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct');
-                });
+                document.getElementById('q-container').classList.add('ans-mode'); const dogru = (filteredQs[idx]['Doğru Cevap'] || "").trim().toLowerCase();
+                Array.from(document.getElementById('opts').children).forEach(btn => { if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct'); });
             }
         }
 
@@ -839,73 +913,31 @@
         window.onclick = function(e) { if (e.target.classList.contains('modal')) { e.target.style.display = "none"; if(e.target.id === 'analizModal') closeAnaliz(); } }
 
         const analizVerileri = {
-            'notlar': `
-                <p>Kendi şahsi notlarınız...</p>
-                <img src="img/not1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-                <img src="img/not2.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-                <img src="img/not3.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-                <img src="img/not4.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">`
+            'notlar': `<p>Kendi şahsi notlarınız...</p><img src="img/not1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">`
         };
         async function openAnaliz(kategoriId, baslik) {
-            document.getElementById('analiz-menu').style.display = 'none';
-            document.getElementById('analiz-icerik').style.display = 'block';
-            document.getElementById('analiz-baslik').innerText = baslik;
+            document.getElementById('analiz-menu').style.display = 'none'; document.getElementById('analiz-icerik').style.display = 'block'; document.getElementById('analiz-baslik').innerText = baslik;
             const metinAlani = document.getElementById('analiz-metin');
             if (analizVerileri[kategoriId]) { metinAlani.innerHTML = analizVerileri[kategoriId]; return; }
             metinAlani.innerHTML = "<div style='text-align:center; padding: 20px; font-weight:bold;'>Yükleniyor...</div>";
             try {
-                const response = await fetch(`html_notlar/${kategoriId}.html`); 
-                if (!response.ok) throw new Error("Dosya bulunamadı");
-                analizVerileri[kategoriId] = await response.text(); 
-                metinAlani.innerHTML = analizVerileri[kategoriId]; 
+                const response = await fetch(`html_notlar/${kategoriId}.html`); if (!response.ok) throw new Error("Dosya bulunamadı");
+                analizVerileri[kategoriId] = await response.text(); metinAlani.innerHTML = analizVerileri[kategoriId]; 
             } catch (error) { metinAlani.innerHTML = `<div style='color:#dc3545; font-weight:bold; text-align:center;'>HTML not dosyası bulunamadı.</div>`; }
         }
 
         let guncellemeCache = null;
         async function openGuncelleModal() {
-            openModal('guncelleModal');
-            const metinAlani = document.getElementById('guncelle-metin');
+            openModal('guncelleModal'); const metinAlani = document.getElementById('guncelle-metin');
             if (guncellemeCache) { metinAlani.innerHTML = guncellemeCache; return; }
             metinAlani.innerHTML = "<div style='text-align:center; font-weight:bold;'>Yükleniyor...</div>";
             try {
-                const response = await fetch('html_notlar/guncelle.html'); 
-                if (!response.ok) throw new Error("Dosya bulunamadı");
-                guncellemeCache = await response.text(); 
-                metinAlani.innerHTML = guncellemeCache; 
+                const response = await fetch('html_notlar/guncelle.html'); if (!response.ok) throw new Error("Dosya bulunamadı");
+                guncellemeCache = await response.text(); metinAlani.innerHTML = guncellemeCache; 
             } catch (error) { metinAlani.innerHTML = "<div style='color:#dc3545; font-weight:bold; text-align:center;'>Güncelleme notlarına ulaşılamıyor.</div>"; }
         }
-// --- PWA (ANA EKRANA EKLE) MANTIĞI ---
-        let deferredPrompt;
-        const installBtn = document.getElementById('installAppBtn');
 
-        // Tarayıcı "Bu site kurulabilir" dediğinde tetiklenir
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault(); // Otomatik çubuğu engelle
-            deferredPrompt = e; // Kurulum eventini hafızaya al
-            installBtn.style.display = 'block'; // 📲 Butonunu görünür yap
-        });
-
-        // Butona tıklandığında çalışacak fonksiyon
-        async function installPWA() {
-            if (deferredPrompt) {
-                deferredPrompt.prompt(); // Android kurulum penceresini aç
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    console.log('Kullanıcı uygulamayı kurdu');
-                }
-                deferredPrompt = null;
-                installBtn.style.display = 'none'; // Kurulduktan sonra butonu gizle
-            }
-        }
-
-        // Kurulum başarıyla tamamlandığında
-        window.addEventListener('appinstalled', () => {
-            installBtn.style.display = 'none';
-            showCustomNotification("Uygulama başarıyla ana ekrana eklendi!", "success");
-        });
         start();
     </script>
 </body>
 </html>
-
-
