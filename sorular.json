@@ -3463,10 +3463,10 @@
     {
         "Soru Numarası": "S.281",
         "Soru Metni": "What should the pilot rely on if disoriented in IMC?",
-        "A Şıkkı": "Vision\nb) Turning head to recover from disorientation\nc) Sense of balance\nd) Instruments",
-        "B Şıkkı": "",
-        "C Şıkkı": "",
-        "D Şıkkı": "",
+        "A Şıkkı": "Vision",
+        "B Şıkkı": "Turning head to recover from disorientation",
+        "C Şıkkı": "Sense of balance",
+        "D Şıkkı": " Instruments",
         "Doğru Cevap": "a",
         "Açıklama": "Bulut içi (IMC) uçuşlarda pilotun hisleri yanıltıcı olabilir; yön kaybı (disorient) durumunda pilotun kendi duyularına değil, uçağın hassas uçuş aletlerine (instruments) tam güvenmesi ve onlara göre uçması gerekir.",
         "Resim Yolu": "",
@@ -21496,6 +21496,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
