@@ -538,7 +538,7 @@
         "B Şıkkı": "The flight can be safely completed with a reserve for contingencies",
         "C Şıkkı": "The aeroplane ıs not over landing mass at the destination",
         "D Şıkkı": "In the event of an emergency, fuel does not have to be jettisoned over land",
-        "Doğru Cevap": "b",
+        "Doğru Cevap": "a",
         "Açıklama": "Bir uçuş için gereken yakıt miktarı, sadece varış noktasına gitmeyi değil, aynı zamanda beklenmedik durumlar için yedek yakıt (contingency) ve yedek meydana gidiş yakıtını da içermelidir. Yakıt planlaması; hava durumu, trafik gecikmeleri ve uçağın performans karakteristikleri göz önüne alınarak uçuşun emniyetle tamamlanmasını garanti etmelidir. Bu, her uçuşun temel emniyet kriteridir.",
         "Resim Yolu": "",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - UÇUŞ SÜRESİ VE YAKIT HESAPLAMALARI"
@@ -21495,6 +21495,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
