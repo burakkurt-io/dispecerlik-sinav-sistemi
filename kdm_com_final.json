@@ -9,6 +9,7 @@
         "E Şıkkı": "Hava durumu bilgilerinin iletilmesi için kullanılan bir hizmettir.",
         "Doğru Cevap": "a",
         "Açıklama": "Uluslararası Havacılık Telekomünikasyon Hizmeti (IATS), havacılık emniyeti ve uçuş düzeni için kurulan; AFS (sabit yer ağları) ve AMS (mobil hava-yer iletişimi) olmak üzere iki ana kategoriden oluşan global bir çatı hizmettir.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -22,6 +23,7 @@
         "E Şıkkı": "Uçakların konumunu belirlemek için kullanılan bir hizmettir.",
         "Doğru Cevap": "a",
         "Açıklama": "AFS (Havacılık Sabit Hizmeti), havadan yere değil; sadece yer istasyonları, ATC üniteleri ve havalimanları gibi 'sabit' noktalar arasında ses ve veri (AFTN/AMHS) iletişimini sağlayan kablolu/sabit ağ sistemidir.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -35,6 +37,7 @@
         "E Şıkkı": "Uçakların konumunu belirlemek için kullanılan bir hizmettir.",
         "Doğru Cevap": "a",
         "Açıklama": "AMS (Havacılık Mobil Hizmeti), uçaklar (mobil istasyonlar) ile yer istasyonları arasında veya uçakların kendi aralarında, uçuş emniyeti için yapılan telsiz (RF) haberleşmesidir.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -48,6 +51,7 @@
         "E Şıkkı": "Uçakların konumunu belirlemek için kullanılır.",
         "Doğru Cevap": "a",
         "Açıklama": "Acil durum kanalı (VHF 121.5 MHz), normal frekanslarda temas kurulamadığında veya tehlike (Distress/Urgency) anlarında tüm istasyonların iletişim kurabilmesi için ayrılmış uluslararası korumalı frekanstır.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -61,6 +65,7 @@
         "E Şıkkı": "Uçakların konumunu belirlemek için kullanılır.",
         "Doğru Cevap": "a",
         "Açıklama": "ICAO Fonetik Alfabesi (Alpha, Bravo, Charlie...), telsiz iletişimindeki parazit veya aksan farklarından kaynaklanabilecek yanlış anlaşılmaları önlemek ve harflerin net kodlanmasını sağlamak için kullanılır.",
+        "Zorluk Derecesi(1-5)": "1",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -74,6 +79,7 @@
         "E Şıkkı": "Dalga boyu, frekansın bir fonksiyonudur.",
         "Doğru Cevap": "a",
         "Açıklama": "Fizik kuralı gereği frekans ve dalga boyu ters orantılıdır ($λ = c / f$); frekans yükseldikçe (MHz -> GHz) dalga boyu kısalır ve küçülür.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -87,6 +93,7 @@
         "E Şıkkı": "Hem gök dalgaları hem de yer dalgaları aynı frekanslarda kullanılabilir.",
         "Doğru Cevap": "b",
         "Açıklama": "Gök dalgaları (Sky waves), iyonosfer tabakasından kırılarak yeryüzüne geri döner ve bu sayede dünyanın eğimine takılmadan okyanus aşırı gibi çok uzun mesafelere (HF bandı ile) ulaşabilir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -100,6 +107,7 @@
         "E Şıkkı": "VHF ve UHF bantları her ikisi de mobil telekomünikasyonda kullanılır.",
         "Doğru Cevap": "b",
         "Açıklama": "Havacılıkta ana sesli iletişim (COM) ve VOR/ILS sistemleri için VHF bandı kullanılırken; UHF bandı genellikle askeri havacılık, DME ve ILS Glide Path gibi daha özel sistemlerde kullanılır.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -113,6 +121,7 @@
         "E Şıkkı": "İyonosfer, radyo dalgalarının gücünü artırır.",
         "Doğru Cevap": "a",
         "Açıklama": "İyonosfer tabakası, özellikle HF (Yüksek Frekans) radyo dalgalarını bir ayna gibi yansıtarak (kırarak) yeryüzüne geri gönderir; bu özellik ufuk ötesi uzun mesafe haberleşmesini mümkün kılar.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -126,6 +135,7 @@
         "E Şıkkı": "Antenler, elektromanyetik dalgaların gücünü artırır.",
         "Doğru Cevap": "c",
         "Açıklama": "Antenler birer dönüştürücüdür; vericideki elektrik akımını boşluğa yayılan elektromanyetik dalgalara, alıcıda ise havadaki elektromanyetik dalgaları tekrar elektrik sinyallerine çevirir.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -139,6 +149,7 @@
         "E Şıkkı": "Tüm bunlar",
         "Doğru Cevap": "e",
         "Açıklama": "Radyo seyrüsefer yardımcıları (VOR, NDB, ILS); uçağın konumunu saptama, belirlenen rotayı takip etme ve hava trafik kontrolünün uçaklar arası emniyetli ayrımı sağlamasına olanak tanır.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -152,6 +163,7 @@
         "E Şıkkı": "DH 200 ft, > DH 30",
         "Doğru Cevap": "b",
         "Açıklama": "ILS CAT II, pilotun karar yüksekliğinin (DH) 100 feet'e kadar düştüğü ve Pist Görüş Mesafesinin (RVR) 300-350m (soru şıkkına göre min. 200m toleransı) olduğu hassas yaklaşma kategorisidir.",
+        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -165,6 +177,7 @@
         "E Şıkkı": "Hata toleransları ILS'e göre daha düşüktür.",
         "Doğru Cevap": "c",
         "Açıklama": "MLS (Mikrodalga İniş Sistemi), ILS'in aksine tek bir doğruya bağlı kalmaz; geniş açılı kapsama alanı sayesinde esnek, eğrisel ve çoklu süzülüş hatlarıyla yaklaşma imkanı sunar.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -178,6 +191,7 @@
         "E Şıkkı": "GPS, INS'e göre daha az doğru bir sistemdir.",
         "Doğru Cevap": "a",
         "Açıklama": "GPS çalışmak için dış kaynaklı uydu sinyallerine ihtiyaç duyarken; INS (Atalet Seyrüsefer Sistemi) tamamen uçağın üzerindeki jiroskop ve ivmeölçerlerle, dışa bağımlı olmadan konum hesabı yapar.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -191,6 +205,7 @@
         "E Şıkkı": "Pirep ve Airep",
         "Doğru Cevap": "b",
         "Açıklama": "Otomatik sesli yayın hizmetlerinden ATIS; iniş/kalkış meydan bilgilerini verirken, VOLMET; uçuş halindeki uçaklara bölgedeki meteorolojik raporları (METAR/TAF) iletir.",
+        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -204,6 +219,7 @@
         "E Şıkkı": "QNH",
         "Doğru Cevap": "c",
         "Açıklama": "VOLMET, üst hava sahasındaki uçaklar için genel meteorolojik özetleri (METAR, SIGMET) içerir; ancak anlık 'Pist Durumu' veya frenleme katsayısı gibi yere özgü operasyonel detaylar ATIS'in konusudur.",
+        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -217,6 +233,7 @@
         "E Şıkkı": "Pilot talep ettiğinde",
         "Doğru Cevap": "b",
         "Açıklama": "ATIS yayınları standart olarak her 30 dakikada bir (saat başı ve buçuğunda) yenilenir; ancak şartlarda (rüzgar, pist, QNH) önemli bir değişiklik olduğunda beklemeden anında güncellenir.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -230,6 +247,7 @@
         "E Şıkkı": "Pist uzunluğunu",
         "Doğru Cevap": "a",
         "Açıklama": "ATIS mesajları 'Alpha' ile başlayıp sırayla harf kodu alır. Pilot, ATC ile ilk temasında bu harfi söyleyerek elindeki bilginin 'güncel' (Current) olduğunu teyit eder.",
+        "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -243,6 +261,7 @@
         "E Şıkkı": "25.000 ft",
         "Doğru Cevap": "b",
         "Açıklama": "ATIS ve METAR'da bulut bilgisi, operasyonel açıdan kritik olan seviyeye kadar raporlanır; bu sınır genellikle yer seviyesinden (AGL) 5.000 ft veya 10.000 ft (MSA) yüksekliğe kadardır.",
+        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -256,6 +275,7 @@
         "E Şıkkı": "Hem SITA hem de AFTN mesajları aynı formatı kullanır.",
         "Doğru Cevap": "d",
         "Açıklama": "AFTN, devletlerin hava seyrüsefer güvenliği (NOTAM, FPL) için kullandığı resmi ağdır; SITA ise havayollarının ticari operasyonları (yolcu, yük, dispeç) için kullandığı özel ağdır.",
+        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -269,6 +289,7 @@
         "E Şıkkı": "Tüm öncelik kodları aynı anlamı taşır ve her durumda kullanılabilir.",
         "Doğru Cevap": "d",
         "Açıklama": "Havacılık mesajlarında iletim sırasını belirleyen öncelik kodları vardır. AFTN'de bu SS (Acil), DD, FF şeklindeyken; SITA sisteminde Q ön ekli (QU, QD) ticari öncelik kodları kullanılır.",
+        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -282,6 +303,7 @@
         "E Şıkkı": "İlk 4 harfi havayolu şirketinin kodunu, 5., 6. ve 7. harfler uçak tipini, 8. harfi ise uçuş numarasını temsil eder.",
         "Doğru Cevap": "a",
         "Açıklama": "8 karakterli AFTN adres formatında; ilk 4 harf ICAO Yer Göstergesini (Örn: LTAA), sonraki 3 harf Birim/Departmanı (Örn: ZPZ), son harf ise tamamlayıcıyı (X) ifade eder.",
+        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     },
@@ -295,6 +317,7 @@
         "E Şıkkı": "Uçuş planı değişiklikleri için mesaj tipi kullanılmaz, telefonla iletilir.",
         "Doğru Cevap": "b",
         "Açıklama": "Standart ICAO FPL değişikliği 'CHG' olsa da; bazı sistemlerde ve bu sorunun bağlamında 'COR' (Correction), daha önce gönderilmiş hatalı bir mesajın veya planın düzeltilmesi/revize edilmesi için kullanılır.",
+        "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - HABERLEŞME (COM)"
     }
