@@ -10,7 +10,6 @@
         "Açıklama": "Hava araçları mülkiyet ve kullanım amaçlarına göre devlet hava araçları ve sivil hava araçları olarak iki ana hukuki kategoriye ayrılır.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
-        "Konu Anlatımı": "<b>Ataletsel Seyrüsefer Sistemi (INS) ve Başlatma (Initialization) Süreci</b><br><br>Dış dünyadan radyo sinyali almayan (uyduları veya antenleri kullanmayan) tamamen kapalı kutu bir mekanik/lazer sisteminin (INS), uçuş boyunca dünyadaki konumunu hesaplamaya başlayabilmesi için, ilk olarak nerede durduğunu ve dünyanın dönüşünü hissetmesi gerekir.<br><br><b>Çalışma Mantığı:</b> Uçak yerde tam hareketsizken uçağın geçerli park pozisyonu koordinatlarının (Enlem/Boylam) sisteme girildiği <b>(Sıraya dizme / Initialization / Hizalama aşaması)</b>, ardından uçuş boyunca kalkıştan inişe kadar meydana gelen tüm hızlanma/yavaşlama ve yatış verilerini ivmeölçerler vasıtasıyla entegre edip hesaplayarak <b>(ivme entegrasyonu)</b> anlık rotayı üreten otonom sisteme <b>INS (Inertial Navigation System)</b> denir.",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - ULUSLARARASI HUKUK VE ULUSLARARASI ÖZEL HUKUK"
     },
     {
@@ -23281,4 +23280,5 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
