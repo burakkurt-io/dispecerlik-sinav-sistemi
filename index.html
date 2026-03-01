@@ -50,7 +50,8 @@
         body.dark-mode .review-opt { background: #2a2a2a; border-color: #444; color: #e0e0e0; }
         body.dark-mode .correct-opt { background: rgba(40, 167, 69, 0.15) !important; border-color: #28a745 !important; color: #28a745 !important; }
         body.dark-mode .wrong-opt { background: rgba(220, 53, 69, 0.15) !important; border-color: #dc3545 !important; color: #dc3545 !important; text-decoration: line-through; }
-        body.dark-mode .zorluk-kutu { background: #e85900; color: black; border-color: #cc4d00; }
+        body.dark-mode .zorluk-kutu { background: #332b00; color: #ffdd80; border-color: #ffc107; }
+        body.dark-mode .konu-anlatimi-kutusu { background: #1a2a3a !important; color: #80bfff !important; border-color: #0056b3 !important; }
 
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1700px; margin: 0 auto; width: 100%; }
         
@@ -88,13 +89,17 @@
 
         .action-area { flex-shrink: 0; width: 100%; margin-top: 10px; border-top: 1px solid #eee; padding-top: 15px; transition: 0.3s; display: flex; flex-direction: column; }
         
-        .zorluk-kutu { display: none; background: #FFF3CD; color: black; padding: 8px 12px; border-radius: 6px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #e85900; font-weight: bold; width: fit-content; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .zorluk-kutu { display: none; background: #FFF3CD; color: #856404; padding: 8px 12px; border-radius: 6px; font-size: 0.85em; border: 1px solid #ffeeba; font-weight: bold; width: fit-content; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 0; }
         .cikmis-kutu { display: none; background: #003366; color: white; padding: 12px; border-radius: 8px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #002244; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold;}
         .cikmis-oran { color: #ffc107; display: block; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; font-weight: bold; }
 
         .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
         .btn-acikla:hover { background: #218838; }
+        .btn-konu-anlat { background: #17a2b8; width: auto; margin-bottom: 0; padding: 8px 15px; font-size: 0.85em; display: none; }
+        .btn-konu-anlat:hover { background: #138496; }
+
         .aciklama-kutusu { display: none; background: #28a745; color: white; font-weight: bold; padding: 15px; border-radius: 8px; font-size: 0.95em; margin-bottom: 15px; white-space: pre-wrap; line-height: 1.4; }
+        .konu-anlatimi-kutusu { display: none; background: #eef5ff; color: #0056b3; border: 1px solid #b8daff; padding: 15px; border-radius: 8px; font-size: 0.95em; margin-bottom: 15px; line-height: 1.6; }
 
         .nav { display: flex; justify-content: space-between; gap: 10px; }
         .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; transition: 0.2s;}
@@ -209,9 +214,16 @@
                 </div>
     
                 <div class="action-area" id="action-area">
-                    <div id="zorluk-alani" class="zorluk-kutu"></div>
                     <div id="cikmis-alani" class="cikmis-kutu"></div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; min-height: 35px;">
+                        <div id="zorluk-alani" class="zorluk-kutu"></div>
+                        <button class="btn-acikla btn-konu-anlat" id="btnKonuAnlat" onclick="konuAnlatimiGosterGizle()">📚 KONUYU ANLAT</button>
+                    </div>
+
                     <button class="btn-acikla" id="btnAcikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
+                    
+                    <div id="konu-anlatimi-alani" class="konu-anlatimi-kutusu"></div>
                     <div id="aciklama-alani" class="aciklama-kutusu"></div>
 
                     <div class="nav" id="nav-buttons">
@@ -496,6 +508,8 @@
             document.getElementById('btnAcikla').style.display = 'none'; 
             document.getElementById('cikmis-alani').style.display = 'none';
             document.getElementById('zorluk-alani').style.display = 'none';
+            document.getElementById('btnKonuAnlat').style.display = 'none';
+            document.getElementById('konu-anlatimi-alani').style.display = 'none';
             document.getElementById('nav-buttons').innerHTML = `
                 <button class="btn btn-gray" onclick="move(-1)">Önceki Soru</button>
                 <button class="btn" onclick="finishExam()" style="background:#dc3545; color:white; flex:0.8;">SINAVI BİTİR</button>
@@ -867,7 +881,8 @@
                 document.getElementById('no').innerText = "BİLGİ"; document.getElementById('txt').innerText = "Bu kategoriye ait soru bulunamadı.";
                 document.getElementById('opts').innerHTML = ''; document.getElementById('q-img').style.display = "none";
                 document.getElementById('aciklama-alani').style.display = "none"; document.getElementById('cikmis-alani').style.display = "none";
-                document.getElementById('zorluk-alani').style.display = "none"; document.getElementById('btnAcikla').style.display = "none"; return;
+                document.getElementById('zorluk-alani').style.display = "none"; document.getElementById('btnAcikla').style.display = "none"; 
+                document.getElementById('btnKonuAnlat').style.display = "none"; document.getElementById('konu-anlatimi-alani').style.display = "none"; return;
             }
 
             document.getElementById('btnAcikla').style.display = "block";
@@ -892,6 +907,8 @@
             if(q['Sınav Anısı']) { cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`; cikmisKutu.style.display = "block"; } else { cikmisKutu.style.display = "none"; }
 
             const aKutu = document.getElementById('aciklama-alani'); aKutu.style.display = "none"; aKutu.innerText = q['Açıklama'] || "Açıklama bulunamadı.";
+            document.getElementById('btnKonuAnlat').style.display = "none";
+            document.getElementById('konu-anlatimi-alani').style.display = "none";
 
             const oDiv = document.getElementById('opts'); oDiv.innerHTML = '';
             ['a','b','c','d','e'].forEach(h => {
@@ -932,11 +949,33 @@
         }
 
         function aciklamaGosterGizle() {
-            const a = document.getElementById('aciklama-alani'); const isHidden = a.style.display === "none"; a.style.display = isHidden ? "block" : "none";
+            const a = document.getElementById('aciklama-alani'); 
+            const isHidden = a.style.display === "none"; 
+            a.style.display = isHidden ? "block" : "none";
+            
             if (isHidden) {
-                document.getElementById('q-container').classList.add('ans-mode'); const dogru = (filteredQs[idx]['Doğru Cevap'] || "").trim().toLowerCase();
-                Array.from(document.getElementById('opts').children).forEach(btn => { if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct'); });
+                document.getElementById('q-container').classList.add('ans-mode'); 
+                const dogru = (filteredQs[idx]['Doğru Cevap'] || "").trim().toLowerCase();
+                Array.from(document.getElementById('opts').children).forEach(btn => { 
+                    if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct'); 
+                });
+                
+                const kBtn = document.getElementById('btnKonuAnlat');
+                if (filteredQs[idx]['Konu Anlatımı'] && filteredQs[idx]['Konu Anlatımı'].trim() !== "") {
+                    kBtn.style.display = "block";
+                    document.getElementById('konu-anlatimi-alani').innerHTML = filteredQs[idx]['Konu Anlatımı'];
+                } else {
+                    kBtn.style.display = "none";
+                }
+            } else {
+                document.getElementById('btnKonuAnlat').style.display = "none";
+                document.getElementById('konu-anlatimi-alani').style.display = "none";
             }
+        }
+
+        function konuAnlatimiGosterGizle() {
+            const kAlan = document.getElementById('konu-anlatimi-alani');
+            kAlan.style.display = (kAlan.style.display === "none" || kAlan.style.display === "") ? "block" : "none";
         }
 
         function openModal(id) { document.getElementById(id).style.display = "block"; }
@@ -978,6 +1017,3 @@
     </script>
 </body>
 </html>
-
-
-
