@@ -3567,10 +3567,10 @@
     {
         "Soru Numarası": "S.267",
         "Soru Metni": "For a flight plan filed before flight, the indicated time of departure is:",
-        "A Şıkkı": "The time overhead the first reporting point after take-off\nb) The time at which the flight plan is filed\nc) The estimated off-block time\nd) The time of take-off",
-        "B Şıkkı": "Bilinmiyor",
-        "C Şıkkı": "Bilinmiyor",
-        "D Şıkkı": "Bilinmiyor",
+        "A Şıkkı": "The time overhead the first reporting point after take-off",
+        "B Şıkkı": "The time at which the flight plan is filed",
+        "C Şıkkı": "The estimated off-block time",
+        "D Şıkkı": " The time of take-off",
         "Doğru Cevap": "a",
         "Açıklama": "Uçuş planındaki kalkış zamanı, uçağın motor çalıştırıp park yerinden hareket etmesi beklenen 'Tahmini Blok Çıkış Zamanı' (EOBT) olarak ifade edilir.",
         "Zorluk Derecesi(1-5)": "3",
@@ -23280,6 +23280,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
