@@ -3394,10 +3394,10 @@
     {
         "Soru Numarası": "S.254",
         "Soru Metni": "The isobars drawn on a surface weather chart represent lines of equal pressure:",
-        "A Şıkkı": "At flight level\nb) At height of observatory\nc) At a determined density altitude\nd) Reduced to sea level",
-        "B Şıkkı": "Bilinmiyor",
-        "C Şıkkı": "Bilinmiyor",
-        "D Şıkkı": "Bilinmiyor",
+        "A Şıkkı": "At flight level ",
+        "B Şıkkı": "At height of observatory",
+        "C Şıkkı": "At a determined density altitude",
+        "D Şıkkı": "Reduced to sea level",
         "Doğru Cevap": "a",
         "Açıklama": "Yer hava haritaları üzerinde çizilen izobarlar, farklı bölgelerdeki basınç değerlerinin deniz seviyesine indirgenmiş (MSL) hallerini birleştiren eşit basınç eğrileridir.",
         "Zorluk Derecesi(1-5)": "3",
@@ -3407,10 +3407,10 @@
     {
         "Soru Numarası": "S.255",
         "Soru Metni": "With regard to RVR and Met vis: ?",
-        "A Şıkkı": "Met vis is usually less than RVR\nb) Met vis is usually greater than RVR\nc) RVR is usually less than met vis\nd) Met vis and RVR are usually the same",
-        "B Şıkkı": "Bilinmiyor",
-        "C Şıkkı": "Bilinmiyor",
-        "D Şıkkı": "Bilinmiyor",
+        "A Şıkkı": "Met vis is usually less than RVR ",
+        "B Şıkkı": "Met vis is usually greater than RVR",
+        "C Şıkkı": "RVR is usually less than met vis",
+        "D Şıkkı": "Met vis and RVR are usually the same",
         "Doğru Cevap": "a",
         "Açıklama": "Pist Görüş Mesafesi (RVR), pist ışıklarının yoğunluğu nedeniyle genellikle meteorolojik görüş (Met Vis) değerinden daha yüksek çıkar; bu nedenle Met Vis çoğu zaman RVR'dan daha düşüktür.",
         "Zorluk Derecesi(1-5)": "4",
@@ -3759,7 +3759,7 @@
         "B Şıkkı": "Turning head to recover from disorientation",
         "C Şıkkı": "Sense of balance",
         "D Şıkkı": " Instruments",
-        "Doğru Cevap": "a",
+        "Doğru Cevap": "d",
         "Açıklama": "Bulut içi (IMC) uçuşlarda pilotun hisleri yanıltıcı olabilir; yön kaybı (disorient) durumunda pilotun kendi duyularına değil, uçağın hassas uçuş aletlerine (instruments) tam güvenmesi ve onlara göre uçması gerekir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
@@ -23280,5 +23280,6 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
