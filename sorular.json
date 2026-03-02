@@ -3398,7 +3398,7 @@
         "B Şıkkı": "At height of observatory",
         "C Şıkkı": "At a determined density altitude",
         "D Şıkkı": "Reduced to sea level",
-        "Doğru Cevap": "a",
+        "Doğru Cevap": "d",
         "Açıklama": "Yer hava haritaları üzerinde çizilen izobarlar, farklı bölgelerdeki basınç değerlerinin deniz seviyesine indirgenmiş (MSL) hallerini birleştiren eşit basınç eğrileridir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
@@ -3759,7 +3759,7 @@
         "B Şıkkı": "Turning head to recover from disorientation",
         "C Şıkkı": "Sense of balance",
         "D Şıkkı": " Instruments",
-        "Doğru Cevap": "a",
+        "Doğru Cevap": "d",
         "Açıklama": "Bulut içi (IMC) uçuşlarda pilotun hisleri yanıltıcı olabilir; yön kaybı (disorient) durumunda pilotun kendi duyularına değil, uçağın hassas uçuş aletlerine (instruments) tam güvenmesi ve onlara göre uçması gerekir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
@@ -23266,4 +23266,5 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
