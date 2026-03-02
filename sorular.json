@@ -13057,19 +13057,6 @@
         "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 205 ) - TEMEL SEYRÜSEFER"
     },
     {
-        "Soru Numarası": "S.982",
-        "Soru Metni": "Uçağın Performansını aşağıdakilerden hangisi olumlu etkiler?",
-        "A Şıkkı": "Headwind / upslope / long runway / high altitude",
-        "B Şıkkı": "Tail wind / downslope / short runway / low altitude",
-        "C Şıkkı": "Head wind / downslope / long runway / low altitude",
-        "D Şıkkı": "Tail wind / upslope / long runway / high altitude",
-        "Doğru Cevap": "b",
-        "Açıklama": "Uçağın performansını (kalkış ve tırmanış) olumlu etkileyen faktörler; uçağı arkadan iten rüzgar (Tailwind), ivmelenmeyi artıran aşağı eğim (Downslope) ve yüksek hava yoğunluğu sağlayan alçak irtifa (Low altitude) meydanlardır.",
-        "Zorluk Derecesi(1-5)": "3",
-        "Resim Yolu": "Bilinmiyor",
-        "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - UÇUŞ GÜVENLİĞİ, AĞIRLIK–HIZ FAKTÖRLERİ VE KALKIŞ PERFORMANSI"
-    },
-    {
         "Soru Numarası": "S.983",
         "Soru Metni": "Bir uçuş için kalkışı ve inişi sınırlamayacak, uçuş planı harici alınabilecek azami yakıt ve yük için en kısa hesaplama aşağıdakilerden hangisidir?",
         "A Şıkkı": "MTOW-ATOW / MLW-ALW",
@@ -23279,3 +23266,4 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
