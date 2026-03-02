@@ -907,9 +907,20 @@
             if(q['Sınav Anısı']) { cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`; cikmisKutu.style.display = "block"; } else { cikmisKutu.style.display = "none"; }
 
             const aKutu = document.getElementById('aciklama-alani'); aKutu.style.display = "none"; aKutu.innerText = q['Açıklama'] || "Açıklama bulunamadı.";
-            document.getElementById('btnKonuAnlat').style.display = "none";
-            document.getElementById('konu-anlatimi-alani').style.display = "none";
-
+            
+            // Konu Anlatımı Butonunu Bağımsız Hale Getirme
+            const kBtn = document.getElementById('btnKonuAnlat');
+            const kAlan = document.getElementById('konu-anlatimi-alani');
+            kAlan.style.display = "none"; // İçerik başta hep gizli
+            
+            if (q['Konu Anlatımı'] && q['Konu Anlatımı'].trim() !== "") {
+                kBtn.style.display = "block"; // JSON'da konu anlatımı varsa butonu HEP göster
+                kAlan.innerHTML = q['Konu Anlatımı']; // İçeriği hazırla
+            } else {
+                kBtn.style.display = "none"; // Veri yoksa butonu gizle
+                kAlan.innerHTML = "";
+            }
+            
             const oDiv = document.getElementById('opts'); oDiv.innerHTML = '';
             ['a','b','c','d','e'].forEach(h => {
                 const key = h.toUpperCase() + " Şıkkı";
@@ -948,31 +959,22 @@
             if (fIdx !== -1) { idx = fIdx; if(isExamModeActive) showExamQuestion(); else show(); document.getElementById('q-search').value = ''; } else { showCustomNotification("Soru bulunamadı!", "error"); }
         }
 
-        function aciklamaGosterGizle() {
+function aciklamaGosterGizle() {
             const a = document.getElementById('aciklama-alani'); 
             const isHidden = a.style.display === "none"; 
             a.style.display = isHidden ? "block" : "none";
             
             if (isHidden) {
+                // Doğru şıkkı göster ve optikleri kitle
                 document.getElementById('q-container').classList.add('ans-mode'); 
                 const dogru = (filteredQs[idx]['Doğru Cevap'] || "").trim().toLowerCase();
                 Array.from(document.getElementById('opts').children).forEach(btn => { 
                     if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct'); 
                 });
-                
-                const kBtn = document.getElementById('btnKonuAnlat');
-                if (filteredQs[idx]['Konu Anlatımı'] && filteredQs[idx]['Konu Anlatımı'].trim() !== "") {
-                    kBtn.style.display = "block";
-                    document.getElementById('konu-anlatimi-alani').innerHTML = filteredQs[idx]['Konu Anlatımı'];
-                } else {
-                    kBtn.style.display = "none";
-                }
-            } else {
-                document.getElementById('btnKonuAnlat').style.display = "none";
-                document.getElementById('konu-anlatimi-alani').style.display = "none";
             }
+            // Konu anlatımı butonuna veya alanına artık buradan müdahale etmiyoruz!
         }
-
+        
         function konuAnlatimiGosterGizle() {
             const kAlan = document.getElementById('konu-anlatimi-alani');
             kAlan.style.display = (kAlan.style.display === "none" || kAlan.style.display === "") ? "block" : "none";
@@ -1017,3 +1019,4 @@
     </script>
 </body>
 </html>
+
