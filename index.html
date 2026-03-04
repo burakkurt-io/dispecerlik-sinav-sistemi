@@ -235,23 +235,28 @@
                 </div>
             </div>
         </main>
-    <aside class="side">
+
+<aside class="side">
             <div class="side-header">
-                <div class="side-title">SORU NAVIGASYONU</div>
+                <div class="side-title">SORU NAVİGASYONU</div>
+                
                 <div class="search-box" style="margin-bottom: 10px;">
-                    <input type="text" id="keyword-search" placeholder="Kelime Ara (Orn: RVR)" onkeypress="handleKeywordSearch(event)">
-                    <div style="display: flex;">
-                        <button onclick="searchByKeyword()" style="background: #17a2b8; border-radius: 6px 0 0 6px; padding: 0 15px;">BUL</button>
-                        <button onclick="resetKeywordSearch()" style="background: #28a745; border-radius: 0 6px 6px 0; padding: 0 12px; font-size: 18px; font-weight: bold;" title="Aramayi Sifirla">&#x21BB;</button>
+                    <input type="text" id="keyword-search" placeholder="Kelime Ara (Örn: RVR)" onkeypress="handleKeywordSearch(event)">
+                    <div style="display: flex; gap: 6px;">
+                        <button onclick="searchByKeyword()" style="background: #17a2b8; border-radius: 6px; padding: 0 15px;">BUL</button>
+                        <button onclick="resetKeywordSearch()" style="background: #28a745; border-radius: 6px; padding: 0 12px; font-size: 18px; font-weight: bold;" title="Aramayı Sıfırla">&#x21BB;</button>
                     </div>
                 </div>
+
                 <div class="search-box">
-                    <input type="text" id="q-search" placeholder="Soru No (Örn: 12)" onkeypress="handleSearch(event)">
-                    <button onclick="goToQuestion()">GIT</button>
+                    <input type="text" id="q-search" placeholder="Soru No (Örn: S.12)" onkeypress="handleSearch(event)">
+                    <button onclick="goToQuestion()">GİT</button>
                 </div>
             </div>
+            
             <div id="list"></div>
         </aside>
+        
     </div>
     <div class="footer-area">
         <div class="footer-buttons">
@@ -1089,6 +1094,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
