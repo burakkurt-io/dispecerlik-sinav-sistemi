@@ -2047,7 +2047,7 @@
         "Soru Numarası": "GOLDEN-DGR S.147",
         "Soru Metni": "Türk Havayollarının IST-FRA yolcu uçuşu için doldurulmuş NOTOC’ta yer alan bilgilere göre aşağıdaki soruları cevaplayınız. Radyoaktif Materyalin Taşıma İndeksi nedir?",
         "A Şıkkı": "20 L",
-        "B Şıkkı": "3.May",
+        "B Şıkkı": "3.5",
         "C Şıkkı": "50",
         "D Şıkkı": "AA123",
         "E Şıkkı": "Yoktur",
@@ -2800,6 +2800,7 @@
         "Kategori": "GOLDEN - DGR (TÜRKÇE)"
     }
 ]
+
 
 
 
