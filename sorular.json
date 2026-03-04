@@ -6034,8 +6034,8 @@
         "B Şıkkı": "İmzalayan devletler, Devletlerin ülkeleri üzerinde tam ve paylaşılmayan hakimiyete sahip olduklarını kabul ederler",
         "C Şıkkı": "Bu konvansiyon tüm hava araçlarını kapsar",
         "D Şıkkı": "Bu konvansiyon sadece sivil hava araçlarını kapsar",
-        "Doğru Cevap": "d",
-        "Açıklama": "Şikago Konvansiyonu, uluslararası sivil havacılığı düzenlemek için oluşturulmuştur ve sadece sivil hava araçları için geçerlidir; askeri, gümrük ve polis (devlet) hava araçlarını kapsamaz.",
+        "Doğru Cevap": "c",
+        "Açıklama": "Chicago Konvansiyonu Madde 3 uyarınca, bu sözleşme SADECE sivil hava araçlarına uygulanır; askeri, gümrük ve polis hizmetlerinde kullanılan 'Devlet' hava araçlarına uygulanmaz. Bu nedenle 'tüm hava araçlarını kapsar' ifadesi yanlıştır.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - ULUSLARARASI HUKUK VE ULUSLARARASI ÖZEL HUKUK",
@@ -9366,8 +9366,8 @@
         "B Şıkkı": "Aletlere olan güven, organlara duyulan güvenden daha fazla olmalıdır.",
         "C Şıkkı": "Uçağın hareketinin ters yönünde vücut meyilli olmalıdır",
         "D Şıkkı": "Aletlere güvenmemelidir.",
-        "Doğru Cevap": "a",
-        "Açıklama": "Düşük görüşlü uçuşlarda (IMC - Instrument Meteorological Conditions) duyuların yanıltması sonucu oluşan uzaysal disoryantasyonu önlemenin yolu, dışarıdaki belirsiz görsel alan yerine uçağın içindeki güvenilir alet paneline (instrument panel) odaklanmaktır.",
+        "Doğru Cevap": "b",
+        "Açıklama": "IMC (Aletli Meteorolojik Şartlar) altında uçarken insan duyuları (iç kulak vb.) pilotu yanıltabilir. Uzaysal disoryantasyonu (vertigo) yenmenin tek yolu, vücut hislerini tamamen görmezden gelip kokpitteki uçuş aletlerine güvenmektir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "2) HPL - İNSAN PERFORMANSI VE LİMİTLERİ ( U 01 E UO 209 ) - İNSAN FAKTÖRLERİ VE İNSAN PERFORMANSI"
@@ -10829,8 +10829,8 @@
         "B Şıkkı": "which the sum of the moments from the external forces acting on the body is equal to zero.",
         "C Şıkkı": "where the sum of the external forces is equal to zero.",
         "D Şıkkı": "through which the sum of the forces of all masses of the body is considered to act.",
-        "Doğru Cevap": "a",
-        "Açıklama": "Soruda ağırlık merkezinin (CG - Centre of Gravity) tanımı sorulmaktadır. Ağırlık merkezi, uçağın toplam kütlesinin dengelendiği ve moment hesaplamalarında referans noktası (datum) olarak kullanılabilen hayali noktadır.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Ağırlık merkezi (CG), bir cismi oluşturan tüm parçaların kütlelerinden doğan ağırlık kuvvetlerinin (momentlerin) dengelendiği ve tek bir noktadan etki ettiği varsayılan noktadır. Referans noktası (Datum) olmak zorunda değildir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "1) M&B - AĞIRLIK VE DENGE (U 01 E UO 199 ) - UÇAK DENGESİ VE BOYLAMASINA STABİLİTE, AĞIRLIK MERKEZİNİN TANIMI (CG)"
@@ -11724,7 +11724,7 @@
         "B Şıkkı": "01/M01",
         "C Şıkkı": "01/M00",
         "D Şıkkı": "00/M01",
-        "Doğru Cevap": "a",
+        "Doğru Cevap": "c",
         "Açıklama": "METAR (Meteorological Aerodrome Report - Meydan Meteoroloji Raporu) kodlamasında sıcaklık değerleri tam sayıya yuvarlanarak yazılır; 0.5 derece 00 olarak, -0.5 derece ise eksi değerleri temsil eden 'M' (Minus) harfiyle M00 olarak rapor edilir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
@@ -12682,8 +12682,8 @@
         "B Şıkkı": "Water vapour content is greatest.",
         "C Şıkkı": "Pressure remains constant.",
         "D Şıkkı": "Temperature ceases to fall with increasing height.",
-        "Doğru Cevap": "a",
-        "Açıklama": "Tropopoz (Tropopause) seviyesi, troposferdeki dikey hava akımlarının (vertical currents) sona erdiği ve stratosferin başladığı sınır tabakadır.",
+        "Doğru Cevap": "d", 
+        "Açıklama": "Tropopoz (Tropopause), atmosferde troposfer ile stratosfer arasındaki sınır tabakadır. Bu seviyeye kadar irtifa arttıkça sıcaklık düşer (lapse rate), ancak tropopoz seviyesinde sıcaklık düşüşü durur ve sabitlenir (izotermal tabaka başlar).",     
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
@@ -14324,8 +14324,8 @@
         "B Şıkkı": "Vertical, horizontal and longitudinal separation.",
         "C Şıkkı": "Time separation and track separation.",
         "D Şıkkı": "Composite separation.",
-        "Doğru Cevap": "a",
-        "Açıklama": "Soruda, ATC (Air Traffic Control) tarafından uygulanan kontrollü IFR ayırma metodları sorulmaktadır. Standart ayırmalar; Dikey (Vertical - 1000/2000 ft), Yatay (Horizontal - Radar/DME) ve Karma (Composite) ayırma yöntemlerini kapsar.",
+        "Doğru Cevap": "b",
+        "Açıklama": "Hava Trafik Kontrolü (ATC) tarafından uygulanan standart IFR ayırma yöntemleri Dikey (Vertical), Yatay (Horizontal/Lateral) ve Boylamasına (Longitudinal) ayırmalardır. Eski sistem hatası giderilmiş ve doğru cevap B olarak güncellenmiştir.",       
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "6) HAV - HAVA TRAFİK YÖNETİMİ ( U 01 E UO 880 ) - AYIRMALAR"
@@ -14350,8 +14350,8 @@
         "B Şıkkı": "At least 30 minutes before the expected arrival of an aircraft",
         "C Şıkkı": "At least 15 minutes before the expected arrival of an aircraft",
         "D Şıkkı": "At least one hour before the expected arrival of an aircraft",
-        "Doğru Cevap": "d",
-        "Açıklama": "Soruda, meydan ve çevresindeki ışıkların enerji tasarrufu amacıyla ne zaman kapatılabileceği sorulmaktadır. Işıklar kapatılabilir; ancak uçağın tahmini varış zamanından (ETA) en az bir saat (one hour) önce tüm sistemlerin tekrar faal hale getirilmesi zorunludur.",
+        "Doğru Cevap": "a",
+       "Açıklama": "ICAO Annex 14 uyarınca, meydan ve çevresindeki havacılık ışıkları enerji tasarrufu amacıyla kapatılabilir; ancak yaklaşan bir uçağın tahmini varış zamanından (ETA) en az 5 dakika önce tekrar aktif hale getirilebilecek durumda olmalıdır.",       
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - HAVA TRAFİK KONTROL-ATC"
@@ -22646,9 +22646,8 @@
         "B Şıkkı": "Kalkış meydanındaki pist uzunluğu, fren arızasında yetecek kadar uzun değilse",
         "C Şıkkı": "Uçak tehlikeli madde taşıyorsa ve tamamen yakıtla doluysa",
         "D Şıkkı": "Kalkış meydanına inmek için yakıt atılması gerekli ve bunun içinde yeterli zaman yoksa",
-        "Doğru Cevap": "d",
-        "Açıklama": "Kalkıştan hemen sonra bir acil durum yaşandığında, uçağın kalkış meydanına iniş ağırlığı (MLW - Maximum Landing Weight) limitlerini aşması ve yakıt boşaltmak (fuel jettison) için yeterli vaktin olmaması durumunda bir kalkış yedek meydanı (Take-off Alternate) planlanmalıdır.",
-        "Zorluk Derecesi(1-5)": "5",
+        "Doğru Cevap": "a",
+        "Açıklama": "Bir uçuşta kalkış yedek meydanı (Take-off Alternate) planlanmasının temel yasal sebebi; uçağın kalkış yaptığı meydandaki meteorolojik şartların (RVR ve tavan), kalkıştan hemen sonra yaşanabilecek acil bir durumda aynı meydana geri inmek için belirlenen iniş minimalarının altında olmasıdır. Yani pilotun kalkış yapabildiği ancak olası bir arızada geri inemeyeceği durumlarda planlanır.",        "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - ACİL DURUM PROSEDÜRLERİ VE HAVAALANI SEÇİMİ"
     },
@@ -23266,6 +23265,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
