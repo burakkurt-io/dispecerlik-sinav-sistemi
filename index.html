@@ -992,12 +992,12 @@ function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
 
             filteredQs = allQs.filter(q => {
                 const metin = (q['Soru Metni'] || "").toLowerCase();
-                const a = (q['A Sikki'] || "").toLowerCase();
-                const b = (q['B Sikki'] || "").toLowerCase();
-                const c = (q['C Sikki'] || "").toLowerCase();
-                const d = (q['D Sikki'] || "").toLowerCase();
-                const e = (q['E Sikki'] || "").toLowerCase();
-                const aciklama = (q['Aciklama'] || "").toLowerCase();
+                const a = (q['A Şıkkı'] || "").toLowerCase();
+                const b = (q['B Şıkkı'] || "").toLowerCase();
+                const c = (q['C Şıkkı'] || "").toLowerCase();
+                const d = (q['D Şıkkı'] || "").toLowerCase();
+                const e = (q['E Şıkkı'] || "").toLowerCase();
+                const aciklama = (q['Açıklama'] || "").toLowerCase();
                 
                 return metin.includes(val) || a.includes(val) || b.includes(val) || c.includes(val) || d.includes(val) || e.includes(val) || aciklama.includes(val);
             });
@@ -1010,14 +1010,14 @@ function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
             } else {
                 renderList();
                 show();
-                showCustomNotification(`"${val}" kelimesi ile eslesen soru bulunamadi.`, "error");
+                showCustomNotification(`"${val}" kelimesi ile eşleşen soru bulunamadi.`, "error");
             }
             document.getElementById('keyword-search').value = ''; 
         }
 function resetKeywordSearch() {
             document.getElementById('keyword-search').value = '';
             
-            // Varsayilan listeye (GOLDEN SORULAR) geri donus yap
+            // Varsayilan listeye (GOLDEN SORULAR) geri dönüş yap
             let defaultBtn = Array.from(document.querySelectorAll('.cat-btn')).find(b => b.innerText.includes('GOLDEN SORULAR'));
             
             if(defaultBtn) {
@@ -1026,7 +1026,7 @@ function resetKeywordSearch() {
                 filterByCategory('CIKMIS');
             }
             
-            showCustomNotification("Arama temizlendi, liste normale dondu.", "success");
+            showCustomNotification("Arama temizlendi, liste normale döndü.", "success");
         }
         
 function aciklamaGosterGizle() {
@@ -1089,6 +1089,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
