@@ -21292,8 +21292,8 @@
         "B Şıkkı": "UN number",
         "C Şıkkı": "Loading Location",
         "D Şıkkı": "Shipper’s Name",
-        "Doğru Cevap": "c",
-        "Açıklama": "Soruda acil bir durumda NOTOC (Notification to Captain - Kaptana Özel Yük Bildirimi) dökümanından ATC'ye (Air Traffic Control) verilmesi gerekmeyen bilgi sorulmaktadır. Acil müdahale için maddenin adı, UN numarası ve konumu kritiktir; ancak malı gönderen kişinin ismi (Shipper’s Name) trafik kontrolü için öncelikli bir bilgi değildir.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Uçuş sırasında acil bir durum (emergency) yaşandığında, kaptan NOTOC belgesine bakarak ATC'ye tehlikeli maddenin ne olduğunu (Proper Shipping Name, UN Number) ve uçakta nerede bulunduğunu (Loading Location) rapor etmelidir. Malı gönderenin ismi (Shipper's Name) acil müdahale ekipleri için hiçbir önem taşımaz.",       
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "3) DGR - TEHLİKELİ MADDELER ( U 01 E UO 054 ) - UÇUŞ EKİBİNİN BİLGİLENDİRİLMESİ, ACİL DURUM PROSEDÜRLERİ VE RAPORLAMA"
@@ -21878,8 +21878,7 @@
         "C Şıkkı": "Elevated arterial blood pressures, both systolic and diastolic.",
         "D Şıkkı": "A reduction in the O2 carrying abilities of the blood.",
         "Doğru Cevap": "a",
-        "Açıklama": "Soruda Hiperventilasyon tanımı sorulmaktadır. Hiperventilasyon; solunum hızının ve derinliğinin aşırı artması sonucunda kanda bulunan karbondioksitin (CO2) anormal derecede dışarı atılması ve kimyasal dengenin bozulmasıdır.",
-        "Zorluk Derecesi(1-5)": "3",
+        "Açıklama": "Soruda Hiperventilasyon tanımı sorulmaktadır. Hiperventilasyon; solunum hızının ve derinliğinin aşırı artması sonucunda kanda bulunan karbondioksitin (CO2) anormal derecede dışarı atılması ve kimyasal dengenin bozulmasıdır.",        "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "2) HPL - İNSAN PERFORMANSI VE LİMİTLERİ ( U 01 E UO 209 ) - İNSAN FAKTÖRLERİ VE İNSAN PERFORMANSI"
     },
@@ -23265,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
