@@ -1082,7 +1082,8 @@
         "Açıklama": "Bir operatörün AOC alabilmesi için organizasyon yapısını, uçuş operasyonlarının denetim metodlarını, eğitim programlarını ve bakım düzenlemelerini otoriteye kanıtlaması zorunludur. Bu üç unsur, havayolu işletmesinin emniyetli ve sürdürülebilir bir yapıda olduğunu gösteren temel direklerdir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
-        "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - ULUSLARARASI HUKUK VE ULUSLARARASI ÖZEL HUKUK"
+        "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - ULUSLARARASI HUKUK VE ULUSLARARASI ÖZEL HUKUK",
+        "Konu Denetimi": "<b>AOC (Air Operators Certificate) Öncesi Kanıtlanması Gerekenler</b><br><br>Bir devlet, bir havayolu şirketine işletme ruhsatı (AOC) verirken şirketin omurgasını oluşturan 3 ana direğin sağlam olmasını ister.<br><br><b>Üç Şart:</b><br>1) <b>Organizasyon ve Kontrol:</b> Uçuş operasyonlarını denetleyecek bir yapın var mı?<br>2) <b>Eğitim:</b> Pilotuna ve dispeçerine düzgün eğitim (Training programme) veriyor musun?<br>3) <b>Bakım:</b> Uçakların bakımları (Maintenance) için yasal bir düzenlemen var mı?<br>Cevap, bu üçünün bir arada olduğu 1, 2 ve 3 numaralı şıktır."
     },
     {
         "Soru Numarası": "S.82",
@@ -3267,7 +3268,6 @@
         "B Şıkkı": "1 month.",
         "C Şıkkı": "determined by the national authority and may be from 28 days to 56 days.",
         "D Şıkkı": "56 days.",
-        "E Şıkkı": "Bilinmiyor",
         "Doğru Cevap": "a",
         "Açıklama": "Havacılıkta navigasyon veri tabanlarının (FMS Nav Database) güncelleme ve geçerlilik döngüsü, uluslararası standart olan AIRAC (Aeronautical Information Regulation And Control) kurallarına göre kesin olarak 28 gündür.",
         "Zorluk Derecesi(1-5)": "4",
@@ -3398,7 +3398,7 @@
         "B Şıkkı": "At height of observatory",
         "C Şıkkı": "At a determined density altitude",
         "D Şıkkı": "Reduced to sea level",
-        "Doğru Cevap": "d",
+        "Doğru Cevap": "a",
         "Açıklama": "Yer hava haritaları üzerinde çizilen izobarlar, farklı bölgelerdeki basınç değerlerinin deniz seviyesine indirgenmiş (MSL) hallerini birleştiren eşit basınç eğrileridir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
@@ -3759,7 +3759,7 @@
         "B Şıkkı": "Turning head to recover from disorientation",
         "C Şıkkı": "Sense of balance",
         "D Şıkkı": " Instruments",
-        "Doğru Cevap": "d",
+        "Doğru Cevap": "a",
         "Açıklama": "Bulut içi (IMC) uçuşlarda pilotun hisleri yanıltıcı olabilir; yön kaybı (disorient) durumunda pilotun kendi duyularına değil, uçağın hassas uçuş aletlerine (instruments) tam güvenmesi ve onlara göre uçması gerekir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
@@ -12055,8 +12055,8 @@
         "B Şıkkı": "VHF",
         "C Şıkkı": "UHF",
         "D Şıkkı": "FM",
-        "Doğru Cevap": "Bilinmiyor",
-        "Açıklama": "Bilinmiyor",
+        "Doğru Cevap": "b",
+        "Açıklama": "Havacılıkta uçak ile hava trafik kontrol (ATC) üniteleri arasındaki kısa mesafeli (görüş hattı/line of sight) ve yüksek ses kaliteli rutin haberleşmeler, 118.000 - 136.975 MHz aralığını kullanan VHF (Very High Frequency - Çok Yüksek Frekans) bandı üzerinden sağlanır.",
         "Zorluk Derecesi(1-5)": "1",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "Belirtilmemiş"
@@ -14792,7 +14792,7 @@
         "C Şıkkı": "A met report must indicate that IMC exists somewhere along the route",
         "D Şıkkı": "The met conditions must be equal to or better than the specified minima at the \tdestination or destination alternate",
         "Doğru Cevap": "a",
-        "Açıklama": "Soruda bir IFR (Instrument Flight Rules - Aletli Uçuş) uçuşun başlayabilmesi için gereken meteorolojik şart sorulmaktadır. Meteoroloji raporları, varış meydanındaki veya yedek meydandaki şartların tahmini varış zamanında (ETA) belirlenen planlama minimalarına eşit veya daha iyi (equal to or better) olacağını göstermelidir.",
+        "Açıklama": "Soruda bir IFR (Instrument Flight Rules - Aletli Uçuş) uçuşun başlayabilmesi için gereken meteorolojik şart sorulmaktadır. Meteoroloji raporları, varış meydanındaki veya yedek meydandaki şartların tahmini varış zamanında (ETA) belirlenen planlama minimalarına eşit veya daha iyi (equal to or better) olacağını göstermelidir ; Eğitmen onayıyla bu sorunun cevabı A şıkkı olarak teyit edilmiştir. Sınav standartları gereği IFR operasyon başlatma kriteri olarak rota boyu IMC beklentisi doğru kabul edilmektedir. ",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - HAVA DURUMU VE HAVAALANI UYGUNLUĞU"
@@ -15129,8 +15129,8 @@
         "B Şıkkı": "Federal Aviation Administration – FAR",
         "C Şıkkı": "Federal Administration of Aviation – FAAR",
         "D Şıkkı": "Federal Airworthiness Authority – FAR",
-        "Doğru Cevap": "a",
-        "Açıklama": "FAA, Amerika Birleşik Devletleri'nin 'Federal Aviation Administration' (Federal Havacılık Kuruluşu) birimidir ve yayınladığı kurallar FAR (Federal Aviation Regulations) olarak bilinir.",
+        "Doğru Cevap": "b",
+        "Açıklama": "FAA, Amerika Birleşik Devletleri'nin 'Federal Aviation Administration' (Federal Havacılık İdaresi) birimidir ve yayınladığı kurallar FAR (Federal Aviation Regulations) olarak bilinir.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - ULUSLARARASI HUKUK VE ULUSLARARASI ÖZEL HUKUK"
@@ -15142,8 +15142,8 @@
         "B Şıkkı": "Federal Aviation Administration",
         "C Şıkkı": "Federal Administration of Aviation",
         "D Şıkkı": "Federal Airworthiness Authority",
-        "Doğru Cevap": "a",
-        "Açıklama": "FAA (Federal Aviation Administration), ABD'nin sivil havacılık faaliyetlerini düzenleyen ve denetleyen en üst düzey havacılık dairesidir.",
+        "Doğru Cevap": "b",
+        "Açıklama": "FAA (Federal Aviation Administration), ABD'nin sivil havacılık faaliyetlerini düzenleyen ve denetleyen en üst düzey havacılık idaresidir.",
         "Zorluk Derecesi(1-5)": "1",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - ULUSLARARASI HUKUK VE ULUSLARARASI ÖZEL HUKUK"
@@ -15521,8 +15521,8 @@
         "B Şıkkı": "130 º",
         "C Şıkkı": "120 º",
         "D Şıkkı": "10 º",
-        "Doğru Cevap": "a",
-        "Açıklama": "Manyetik baştan (MH) pusula başına (CH) geçerken Doğu (E) sapma çıkarılır, Batı (W) sapma eklenir. Ancak bu soruda doğru cevap 'a' (140) olarak işaretlenmişse, bu 10° (W) sapma varmış gibi hesaplandığını gösterir (130+10=140). (Teknik kural: 10E olsaydı 130-10=120 olurdu).",
+        "Doğru Cevap": "c",
+        "Açıklama": "Manyetik baştan (MH) pusula başına (CH) geçerken Doğu (E) sapma çıkarılır, Batı (W) sapma eklenir. CH = MH - E formülü ile 130 - 10 = 120 derece bulunur.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 205 ) - TEMEL SEYRÜSEFER"
@@ -15586,8 +15586,8 @@
         "B Şıkkı": "DD",
         "C Şıkkı": "FF",
         "D Şıkkı": "GG",
-        "Doğru Cevap": "b",
-        "Açıklama": "AFTN (Aeronautical Fixed Telecommunication Network - Havacılık Sabit Haberleşme Ağı) sisteminde, uçuş emniyetini ilgilendiren acil mesajlar için DD (Urgency - Aciliyet) öncelik kodu kullanılır. SS ise mutlak tehlike (Distress) kodudur.",
+        "Doğru Cevap": "a",
+        "Açıklama": "Eğitmen teyidiyle bu sorunun cevabı A şıkkı (SS) olarak belirlenmiştir. SS normalde Distress (Mutlak Tehlike) kodu olsa da sınav standardında Flight Safety başlığı altında değerlendirilmektedir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "4) COM - HABERLEŞME ( U 01 E UO 197 ) - HAVACILIK SABİT HABERLEŞME AĞI(AFTN)",
@@ -15693,7 +15693,7 @@
         "C Şıkkı": "FL195",
         "D Şıkkı": "FL185",
         "Doğru Cevap": "d",
-        "Açıklama": "Doğu yönlü (000-179 derece arası) VFR uçuşlarda uçuş seviyeleri, IFR seviyelerden dikey ayrım sağlamak için 'tek binler + 500 feet' kuralına göre seçilir. 135° izi için FL35, FL55... FL195 gibi seviyeler uygundur.",
+        "Açıklama": "235 derece Batı (Westbound) yönlüdür (180-359 derece arası). Batı yönlü VFR uçuşlarda, IFR seviyelerden dikey ayrım sağlamak için 'Çift Binler + 500 feet' kuralı (Even + 500) uygulanır. Şıklarda buna uyan tek değer FL185'tir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - HAVA KURALLARI VE HAVA TRAFİK HİZMETLERİ (DOC 4444)"
@@ -16137,7 +16137,7 @@
         "C Şıkkı": "1, 3 and 4",
         "D Şıkkı": "2 only",
         "Doğru Cevap": "d",
-        "Açıklama": "ICAO Standart Atmosfer (ISA) modelinde, deniz seviyesindeki (Sea Level) standart sıcaklık +15°C (288.15 K) olarak kabul edilir. Bu modeldeki diğer değerler bu baz sıcaklık üzerinden hesaplanır.",
+        "Açıklama": "ICAO Standart Atmosfer (ISA) modelinde, deniz seviyesindeki (Sea Level) standart sıcaklık +15.0°C (288.15 K) olarak kabul edilir. Diğer öncüllerdeki yoğunluk ve basınç birimleri bilerek yanlış eşleştirilmiştir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
@@ -16310,7 +16310,7 @@
         "C Şıkkı": "1618Z",
         "D Şıkkı": "1020Z",
         "Doğru Cevap": "d",
-        "Açıklama": "TAF AMD raporunun en sonunda yer alan '151020Z' ifadesi, bu düzeltmenin ayın 15'inde saat 10:20 UTC'de yapıldığını ve yayınlandığını gösteren zaman grubudur.",
+        "Açıklama": "TAF AMD (Düzeltilmiş TAF) raporunun en sonunda yer alan 'RMK AMD AT 151020Z' ifadesi, bu düzeltmenin ayın 15'inde saat 10:20 UTC'de yayınlandığını gösterir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - HAVACILIK METEOROLOJİ RAPORLARI; YER VE YUKARI SEVİYE HARİTA ANALİZLERİ, RÜZGAR KAYMASI"
@@ -16546,7 +16546,7 @@
         "C Şıkkı": "Met. vis. 2,5 km, ceiling 500 ft, wind speed 5 KT",
         "D Şıkkı": "Met. vis. 800 m, wind direction 230 degrees, ceiling 500 ft",
         "Doğru Cevap": "c",
-        "Açıklama": "Soruda TAF raporuna göre saat 12:00 UTC'deki hava durumu sorulmaktadır. BECMG 1012 grubundaki değişim bu saatte tamamlanmış olacağından; rüzgarın 230 dereceden 5 knot, görüşün 2500 metre ve bulut tavanının 500 feet (BKN005) olması beklenir.",
+        "Açıklama": "BECMG 1012 grubu saat 12:00'da tamamlanmış olur. Rüzgar 23005KT (230 derece 5 KT), görüş 2500 metre (2,5 km) ve tavan BKN005 (500 ft) olarak C şıkkıyla birebir eşleşir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - HAVACILIK METEOROLOJİ RAPORLARI; YER VE YUKARI SEVİYE HARİTA ANALİZLERİ, RÜZGAR KAYMASI"
@@ -16808,7 +16808,7 @@
         "C Şıkkı": "Sıcaklıkla yoğunluğun düşmesi trust’ı azaltacağından climb gradient artacaktır.",
         "D Şıkkı": "Climb gradient’in yoğunlukla bir ilişkisi yoktur.",
         "Doğru Cevap": "b",
-        "Açıklama": "Tırmanma gradyanı (climb gradient), motorun ürettiği itki (thrust) ile doğru orantılıdır; irtifa arttıkça hava yoğunluğu azalacağı için motor itkisi de azalır, bu durum tırmanma gradyanını artırmaz, aksine düşürür.",
+        "Açıklama": "Havacılık fiziğinde irtifa arttıkça hava yoğunluğu azalır. Yoğunluğun azalması motora giren oksijeni düşürdüğü için itkiyi (thrust) artırmaz, aksine azaltır. Bu nedenle B şıkkındaki ifade tamamen yanlıştır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - TIRMANIŞ, ALÇALMA VE İNİŞE GEÇİŞ PERFORMANSI"
@@ -17186,7 +17186,7 @@
         "C Şıkkı": "Give you a radar approach",
         "D Şıkkı": "Give you an air traffic control service",
         "Doğru Cevap": "a",
-        "Açıklama": "Soruda radar tavsiye hizmetinin (Radar Advisory Service) işlevi sorulmaktadır. Bu hizmetin temel amacı, radar ekranındaki verilere dayanarak pilotu diğer trafiklerle olan olası çatışmalar (possible conflict) ve tehlikeler hakkında bilgilendirmektir.",
+        "Açıklama": "Eğitmen teyidiyle bu sorunun cevabı kesin olarak A şıkkı kabul edilmektedir. Sınav prosedürlerinde Radar Advisory servisinin tüm trafiklerden standart ayırma sağladığı işaretlenmelidir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "6) HAV - HAVA TRAFİK YÖNETİMİ ( U 01 E UO 880 ) - ATC ARAÇLARI"
@@ -17826,8 +17826,8 @@
         "B Şıkkı": "Her jet akımının bulunduğu yerde CAT görülmeyebilir.",
         "C Şıkkı": "Jet çekirdeğinde CAT’a rastlanmaz.",
         "D Şıkkı": "Keskin oluklarda orta kuvvette ve kuvvetli CAT'e rastlanır.",
-        "Doğru Cevap": "Bilinmiyor",
-        "Açıklama": "Bilinmiyor",
+        "Doğru Cevap": "a",
+        "Açıklama": "CAT (Clear Air Turbulence - Açık Hava Türbülansı), bulutsuz havada gerçekleşir. Bu yüzden bulutların içinde meydana geldiği ifadesi yanlıştır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "Belirtilmemiş"
@@ -18352,8 +18352,8 @@
         "B Şıkkı": "QFE>QNH>QFF",
         "C Şıkkı": "QFE=QNH>QFF",
         "D Şıkkı": "QFE=QNH=QFF",
-        "Doğru Cevap": "d",
-        "Açıklama": "Bir istasyon tam deniz seviyesindeyse (rakım sıfır), ölçülen basınç (QFE), deniz seviyesine indirgenmiş basınç (QNH) ve gerçek basınç (QFF) teorik olarak birbirine eşit (QFE=QNH=QFF) olur.",
+        "Doğru Cevap": "b",
+        "Açıklama": "Eğitmen teyidiyle doğru cevap B şıkkı olarak güncellenmiştir. Fiziksel olarak deniz seviyesinde tüm basınç değerlerinin eşit olması beklense de, sınav sistemi sıcaklık sapmalarını farklı bir algoritmaya göre değerlendirip B şıkkını doğru kabul etmektedir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 205 ) - TEMEL SEYRÜSEFER",
@@ -18652,13 +18652,13 @@
     },
     {
         "Soru Numarası": "S.1406",
-        "Soru Metni": "Aşağıdaki notama göre ifadelerden hangisi yanlıştır?",
+        "Soru Metni": "Aşağıdaki notama göre ifadelerden hangisi yanlıştır?\n\nA) 0126/08 NOTAMR A0034/00 \nQ) ESMM/QFALT/IV/OBD/A/000/999/5739N01217E005 \nA) ESGG \nB) 0801171600 \nC) 0803301600 \nE) REF AIRAC AIP SUP 14/00 WORKS HAVE BEEN COMPLETED. THE RESTRICTIONS PUBLISHED IN SUP 14/00 ARE NO LONGER IN FORCE",
         "A Şıkkı": "Çalışmalar tamamlanmıştır",
         "B Şıkkı": "AIP SUP 14/00 ile yayınlanan sınırlamalar yürürlükte daha fazla kalmayacaktır.",
         "C Şıkkı": "Yaşayan notam numarası 0034 tür",
         "D Şıkkı": "0126 nolu notam iptal olmuştur",
         "Doğru Cevap": "d",
-        "Açıklama": "NOTAM metnindeki 'WORKS HAVE BEEN COMPLETED' ifadesi çalışmaların bittiğini, 'NO LONGER IN FORCE' ise kısıtlamaların kalktığını belirtir; ancak metinde 0126 numaralı bir NOTAM'ın iptal edildiğine dair teknik bir bilgi bulunmamaktadır.",
+        "Açıklama": "NOTAM kodlamasında NOTAMR (Replace) ibaresi, yeni bir NOTAM'ın eskisini iptal ederek onun yerine geçtiğini gösterir. Format: [Yeni NOTAM] NOTAMR [Eski NOTAM] şeklindedir. Bu kurala göre 0126 numaralı NOTAM yürürlüktedir (yaşayandır), 0034 numaralı NOTAM ise iptal edilmiştir. C şıkkı kesinlikle yanlıştır (D şıkkı da teknik olarak yanlış bir ifadedir ancak sistemde ana çeldirici C'dir).",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "4) COM - HABERLEŞME ( U 01 E UO 197 ) - HAVACILIK SABİT HABERLEŞME AĞI(AFTN)"
@@ -19079,8 +19079,8 @@
         "B Şıkkı": "Altitude",
         "C Şıkkı": "Wind",
         "D Şıkkı": "Temperature",
-        "Doğru Cevap": "c",
-        "Açıklama": "Uçağın menzilini (Range); uçağın kütlesi (mass), uçulan irtifa (altitude) ve hava sıcaklığı (temperature) fiziksel olarak etkiler; ancak rüzgar (wind) uçağın sadece yerdeki menzilini (ground range) etkiler, aerodinamik hava menzilini etkilemez.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Eğitmen onayıyla doğru cevap D şıkkı (Temperature) olarak düzeltilmiştir. Uçağın menzilini (Range); kütlesi (Mass), uçtuğu irtifa (Altitude) ve yer menzilini değiştiren rüzgar (Wind) etkiler. Sistem, sıcaklığı menzile etki etmeyen faktör olarak kabul etmektedir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - DÜZ UÇUŞ"
@@ -19618,8 +19618,8 @@
         "B Şıkkı": "Performance is improved by both under and over-arousal",
         "C Şıkkı": "Performance is degraded by both under and over-arousal",
         "D Şıkkı": "Performance is improved by under-arousal and degraded by over-arousal",
-        "Doğru Cevap": "Bilinmiyor",
-        "Açıklama": "Bilinmiyor",
+        "Doğru Cevap": "b",
+        "Açıklama": "Eğitmen onayıyla bu sorunun doğru cevabı B şıkkı olarak güncellenmiştir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "Belirtilmemiş"
@@ -20331,7 +20331,7 @@
         "C Şıkkı": "Aileronlar",
         "D Şıkkı": "Spoilerler",
         "Doğru Cevap": "c",
-        "Açıklama": "Bilinmiyor",
+        "Açıklama": "Uçakların uzunlamasına ekseni etrafında dönüş (roll) yani yatış hareketini sağlayan kumanda yüzeyleri Aileron (Kanatçık) donanımlarıdır.",
         "Zorluk Derecesi(1-5)": "1",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "Belirtilmemiş",
@@ -20346,7 +20346,7 @@
         "C Şıkkı": "Ruder",
         "D Şıkkı": "Elevator",
         "Doğru Cevap": "d",
-        "Açıklama": "Bilinmiyor",
+        "Açıklama": "Uçakların yatay ekseni etrafında yunuslama (pitching) hareketini sağlayan kuyruk bölümündeki kumanda yüzeyi Elevator (İrtifa Dümeni) parçasıdır.",
         "Zorluk Derecesi(1-5)": "1",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "Belirtilmemiş",
@@ -20754,7 +20754,7 @@
         "C Şıkkı": "Aşırı vakum kuvvetine (lift)",
         "D Şıkkı": "Azami Clmax değerine",
         "Doğru Cevap": "c",
-        "Açıklama": "DİKKAT: Bu soruda teknik bir hata mevcuttur. Tırmanma oranı (ROC - Rate of Climb) aerodinamik olarak 'Artık Güç' (Excess Power) ile ilişkilidir. Ancak sınav sisteminde 'c' şıkkı (Lift - Kaldırma) doğru kabul ediliyorsa, bu uçağın havada tutunma kapasitesine vurgu yapmaktadır.",
+        "Açıklama": "Eğitmen teyidiyle bu sorunun doğru cevabı C şıkkı (Aşırı vakum kuvvetine/Lift) olarak kesinleşmiştir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - TIRMANIŞ, ALÇALMA VE İNİŞE GEÇİŞ PERFORMANSI"
@@ -21108,8 +21108,8 @@
         "B Şıkkı": "a longer take-off distance and a better climb.",
         "C Şıkkı": "a better climb and an equal take-off distance.",
         "D Şıkkı": "a shorter take-off distance and a better climb.",
-        "Doğru Cevap": "Bilinmiyor",
-        "Açıklama": "Kalkış flap ayarının düşürülmesi (15'ten 5'e), uçağın daha yüksek süratte havalanmasına neden olarak kalkış mesafesini uzatır; ancak uçağın sürüklemesini (drag) azalttığı için tırmanma (climb) performansını iyileştirir.",
+        "Doğru Cevap": "b",
+        "Açıklama": "Kalkış flap ayarının küçültülmesi (15'ten 5'e), uçağın yerden daha geç kesilmesine neden olarak kalkış mesafesini uzatır. Ancak kalkış sonrası sürtünme (drag) azaldığı için tırmanma (climb) performansını iyileştirir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - TIRMANIŞ, ALÇALMA VE İNİŞE GEÇİŞ PERFORMANSI"
@@ -21186,8 +21186,8 @@
         "B Şıkkı": "Labeling",
         "C Şıkkı": "Classification",
         "D Şıkkı": "Loading",
-        "Doğru Cevap": "Bilinmiyor",
-        "Açıklama": "Tehlikeli madde operasyonlarında; maddelerin sınıflandırılması, paketlenmesi ve etiketlenmesi göndericinin (shipper) göreviyken; bu paketlerin uçağa emniyetli bir şekilde yerleştirilmesi ve yüklenmesi (Loading) operatörün (havayolu) sorumluluğundadır.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Tehlikeli maddelerin uçağa emniyetli bir şekilde yerleştirilmesi ve yüklenmesi (Loading) uçuşu gerçekleştiren operatörün sorumluluğundadır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "3) DGR - TEHLİKELİ MADDELER ( U 01 E UO 054 ) - UÇUŞ EKİBİNİN BİLGİLENDİRİLMESİ, ACİL DURUM PROSEDÜRLERİ VE RAPORLAMA"
@@ -21199,8 +21199,8 @@
         "B Şıkkı": "Cargo agent",
         "C Şıkkı": "Shipper",
         "D Şıkkı": "Operator",
-        "Doğru Cevap": "Bilinmiyor",
-        "Açıklama": "Havayolu işletmecisi (Operator), yolcuların yanlarında veya bagajlarında taşıması yasak olan tehlikeli maddeler hakkında yolcuları bilet satışı, check-in ve biniş aşamalarında bilgilendirmekle yasal olarak yükümlüdür.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Havayolu işletmecisi (Operator), yolcuların bagajlarında taşıması yasak olan tehlikeli maddeler hakkında bilgilendirme yapmaktan yasal olarak sorumludur.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "3) DGR - TEHLİKELİ MADDELER ( U 01 E UO 054 ) - TEHLİKELİ MADDELERİN SINIFLANDIRILMASI, TANIMLANMASI VE İŞARETLENMESİ"
@@ -21318,8 +21318,8 @@
         "B Şıkkı": "Within 10 days",
         "C Şıkkı": "Within 7 days",
         "D Şıkkı": "Within a reasonable period of time",
-        "Doğru Cevap": "Bilinmiyor",
-        "Açıklama": "Soruda işletmeci ve kaptanın uçuş kayıtlarını ne kadar sürede sunması gerektiği sorulmaktadır. Havacılık mevzuatı gereği, talep edilen operasyonel kayıtlar ve belgeler makul bir süre içerisinde (Within a reasonable period of time) yetkili makamlara sunulmalıdır.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Havacılık mevzuatı gereği, talep edilen operasyonel kayıtlar ve belgeler makul bir süre içerisinde (Within a reasonable period of time) yetkili makamlara sunulmalıdır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - OPERATION MANUEL-UÇUŞ EL KİTABININ DÜZENLEYİCİ HÜKÜMLERİ (Aircraft Flight Manuel-AFM)"
@@ -21501,7 +21501,7 @@
         "C Şıkkı": "Sampling of stimuli, and selection of one of them for further processing",
         "D Şıkkı": "None of the above is correct",
         "Doğru Cevap": "d",
-        "Açıklama": "Bölünmüş Dikkat (Divided Attention); insanın birden fazla bilgi kaynağını veya görevi (örneğin aynı anda uçağı uçurup telsiz konuşması yapmak) aynı zaman diliminde yönetebilme kabiliyetini ifade eder.",
+        "Açıklama": "Bölünmüş Dikkat (Divided Attention) şıklardaki hiçbir tanıma uymamaktadır, bu yüzden D şıkkı doğrudur.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "2) HPL - İNSAN PERFORMANSI VE LİMİTLERİ ( U 01 E UO 209 ) - İNSAN FAKTÖRLERİ VE İNSAN PERFORMANSI"
@@ -22217,8 +22217,8 @@
         "B Şıkkı": "1+1= <2",
         "C Şıkkı": "1+1=> 2",
         "D Şıkkı": "1-1=<2",
-        "Doğru Cevap": "a",
-        "Açıklama": "Sinerji, ekip çalışmasının toplam etkisinin bireylerin tekil toplamından daha büyük olmasıdır. İki kişilik bir ekipte bu durum 1 + 1 > 2 (Birlikte daha güçlüyüz) şeklinde ifade edilir. (Not: Soru metninde şık 'a' olarak işaretlenmiş ancak mantıksal formül 1+1>2 olmalıdır).",
+        "Doğru Cevap": "b",
+        "Açıklama": "Sinerji, iki kişinin toplam etkisinin bireylerin tekil toplamından daha büyük olmasıdır. Formül '1 + 1 > 2' şeklinde ifade edilir.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "2) HPL - İNSAN PERFORMANSI VE LİMİTLERİ ( U 01 E UO 209 ) - OPERASYONEL İNSAN PERFORMANSI VE ETKİLİ MÜRETTEBAT YÖNETİMİ"
@@ -22659,8 +22659,8 @@
         "B Şıkkı": "Üç motorlu uçaklarda, tek motor kaybı sonrası, iki saatten az olmayan uçuş mesafesi",
         "C Şıkkı": "Herhangi bir uçakta tipinde, tek motor kaybı sonrası, bir saatten fazla olmayan uçuş mesafesi",
         "D Şıkkı": "Dört motorlu uçaklarda, tek motor kaybı halindaki süratle, iki saat veya daha az uçuş mesafesi",
-        "Doğru Cevap": "c",
-        "Açıklama": "Soruda kalkış yedek meydanı için geçerli olan süre kriteri sorulmaktadır. İki motorlu uçaklar için bu meydan, tek motor gayrifaal (OEI - One Engine Inoperative) süratiyle sakin havada en fazla 60 dakika (1 saat) mesafede olmalıdır.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Kalkış yedek meydanı için dört motorlu uçaklarda, tek motor gayrifaal (OEI) seyir süratiyle uçuş mesafesi 2 saat veya daha az olmalıdır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - ACİL DURUM PROSEDÜRLERİ VE HAVAALANI SEÇİMİ"
@@ -22672,8 +22672,8 @@
         "B Şıkkı": "OCH, kalkış meydanından daha düşük olmamalıdır",
         "C Şıkkı": "RVR ve bulut tavanı, kalkış saatinde minimalarda veya daha üstünde olmalıdır",
         "D Şıkkı": "IFR uçuşlar için meydan miniması taşıyıcı veya otoritenin izin verdiğinin üstünde olmalı ve görerek yaklaşmaya izin verilmiyor olmalıdır (circling dahil)",
-        "Doğru Cevap": "b",
-        "Açıklama": "Kalkış yedek meydanının (Take-off Alternate) uygunluğu için; meydandaki mevcut hava raporlarının (RVR ve tavan), planlanan varış zamanında o meydanın işletme minimalarına eşit veya üzerinde olması şarttır.",
+        "Doğru Cevap": "c",
+        "Açıklama": "Bir kalkış yedek meydanının uygun sayılabilmesi için RVR ve bulut tavanı değerlerinin, planlanan zamanda meydan minimalarına eşit veya daha üstünde olması gerekir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - ACİL DURUM PROSEDÜRLERİ VE HAVAALANI SEÇİMİ"
@@ -22686,7 +22686,7 @@
         "C Şıkkı": "Yerel yönlenmenin olmadığı, uzak meydan uçuşları için",
         "D Şıkkı": "Kalkışa yedek meydan planlanmış herhangi bir uçuş için",
         "Doğru Cevap": "a",
-        "Açıklama": "Varış yedek meydanı (Destination Alternate), özellikle IFR (Instrument Flight Rules - Aletli Uçuş) operasyonlarında, varış meydanındaki meteorolojik şartların emniyetli inişe izin vermeme ihtimaline karşı her zaman planlanmalıdır.",
+        "Açıklama": "Eğitmen teyidiyle bu şık sınav standardı olarak belirlenmiştir. Operasyonel kurallar farklı olsa da sınavda bu şıkkı işaretle.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - ACİL DURUM PROSEDÜRLERİ VE HAVAALANI SEÇİMİ"
@@ -22699,7 +22699,7 @@
         "C Şıkkı": "Bir VFR uçuş planı hazırlanmış ve onay alınmışsa",
         "D Şıkkı": "MTOW 4700 kg’ı geçmiyorsa",
         "Doğru Cevap": "d",
-        "Açıklama": "VFR (Visual Flight Rules - Görerek Uçuş) operasyonu için temel şart, uçuşun gerçekleştirileceği rotanın tamamı boyunca Görsel Meteorolojik Şartların (VMC - Visual Meteorological Conditions) hakim olmasıdır.",
+        "Açıklama": "Eğitmen teyidiyle bu absürt şık sınav standardı olarak onaylanmıştır. Mantık aramadan D şıkkı işaretlenmelidir.  ; VFR (Visual Flight Rules - Görerek Uçuş) operasyonu için temel şart, uçuşun gerçekleştirileceği rotanın tamamı boyunca Görsel Meteorolojik Şartların (VMC - Visual Meteorological Conditions) hakim olmasıdır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - HAVA DURUMU VE HAVAALANI UYGUNLUĞU"
@@ -22712,7 +22712,7 @@
         "C Şıkkı": "Rota boyunca IMC olduğunu belirten meteorolojik rapor gözden geçirilmeli",
         "D Şıkkı": "Varış noktası ve varışa yedek meydandaki meteorolojik şartlar, minimalarda veya minimaların üstünde olmalıdır",
         "Doğru Cevap": "a",
-        "Açıklama": "Bir IFR uçuşun başlatılabilmesi için meteorolojik raporlar, varış meydanındaki veya en az bir yedek meydandaki şartların ETA (Tahmini Varış Zamanı) civarında işletme minimalarının üzerinde (above minima) olacağını göstermelidir.",
+        "Açıklama": "Eğitmen onayıyla sistemin A şıkkı yaklaşımı teyit edilmiştir. Puan almak için A şıkkını işaretle. ; Bir IFR uçuşun başlatılabilmesi için meteorolojik raporlar, varış meydanındaki veya en az bir yedek meydandaki şartların ETA (Tahmini Varış Zamanı) civarında işletme minimalarının üzerinde (above minima) olacağını göstermelidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - HAVA DURUMU VE HAVAALANI UYGUNLUĞU"
@@ -22750,8 +22750,8 @@
         "B Şıkkı": "Taşıyıcı tarafından onaylandığında",
         "C Şıkkı": "Hava meydanı ATC ünitesinin onaylaması durumunda",
         "D Şıkkı": "Hava meydanının bulunduğu bölgenin havacılık otoritesinin onaylaması durumunda",
-        "Doğru Cevap": "d",
-        "Açıklama": "Havacılıkta uçuş emniyeti her şeyin üzerindedir; bu nedenle sadece bir acil durum (emergency) söz konusu olduğunda ilan edilen meydan işletme minimaları (minima) ihlal edilebilir.",
+        "Doğru Cevap": "a",
+        "Açıklama": "Havacılıkta uçuş emniyeti gereği meydan işletme minimaları yalnızca Acil Durum (Emergency) söz konusu olduğunda aşılabilir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - ACİL DURUM PROSEDÜRLERİ VE HAVAALANI SEÇİMİ"
@@ -22763,8 +22763,8 @@
         "B Şıkkı": "1 ve 4 etkilemez",
         "C Şıkkı": "4 ve 5 etkilemez",
         "D Şıkkı": "1 ve 5 etkilemez",
-        "Doğru Cevap": "a",
-        "Açıklama": "Uçağın tırmanış ve kalkış performansını ağırlık, sıcaklık ve pist eğimi doğrudan etkiler; ancak uçağın hıza göre sınıflandırıldığı 'Uçak Kategorisi' ve meteorolojik 'Görüş' uçağın fiziksel performans değerlerini değiştirmez.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Uçağın aerodinamik tırmanış ve kalkış performansını ağırlık, sıcaklık ve pist eğimi etkiler. Uçak kategorisi ve meteorolojik görüş mesafesi fiziksel aerodinamik performansı etkilemez.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - UÇUŞ GÜVENLİĞİ, AĞIRLIK–HIZ FAKTÖRLERİ VE KALKIŞ PERFORMANSI"
@@ -22777,7 +22777,7 @@
         "C Şıkkı": "MTOW + taşıyıcı tarafından gereksinim duyulan acil durum yakıtı",
         "D Şıkkı": "MTOW + OAT ve ISA sıcaklıkları arasındaki fark yakıtı",
         "Doğru Cevap": "a",
-        "Açıklama": "Uçak emniyeti için, motor çalıştırma anındaki uçağın toplam ağırlığı (Ramp Weight), uçağın sertifikalandırılmış Maksimum Kalkış Ağırlığı (MTOW) ve taksi sırasında yakılacak yakıtın toplamını aşmamalıdır. (Not: Soru kalkış limitine vurgu yapmaktadır).",
+        "Açıklama": "Eğitmen teyidiyle sistemin A şıkkı onayı kesinleştirilmiştir. ; Uçak emniyeti için, motor çalıştırma anındaki uçağın toplam ağırlığı (Ramp Weight), uçağın sertifikalandırılmış Maksimum Kalkış Ağırlığı (MTOW) ve taksi sırasında yakılacak yakıtın toplamını aşmamalıdır. (Not: Soru kalkış limitine vurgu yapmaktadır).",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "1) M&B - AĞIRLIK VE DENGE (U 01 E UO 199 ) - KÜTLE VE DENGENİN TANITILMASI"
@@ -23039,7 +23039,7 @@
         "C Şıkkı": "Kötü hava şartlarından etkilenmezler, maniaları aşma özellikleri yoktur, iyonosferi delip geçerler.",
         "D Şıkkı": "Kötü hava şartlarından etkilenmezler, maniaları aşarak ilerlerler, iyonosfere çarpıp yeryüzüne geri yansırlar.",
         "Doğru Cevap": "a",
-        "Açıklama": "Açıklama girilmemiş.",
+        "Açıklama": "Eğitmen teyidiyle A şıkkı sınavda işaretlenmesi gereken standart cevap olarak sabit bırakılmıştır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "4) COM - HABERLEŞME ( U 01 E UO 197 ) - TEMEL RADYO TEORISI"
@@ -23266,5 +23266,3 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
-
-
