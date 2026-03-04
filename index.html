@@ -240,10 +240,13 @@
                 <div class="side-title">SORU NAVIGASYONU</div>
                 <div class="search-box" style="margin-bottom: 10px;">
                     <input type="text" id="keyword-search" placeholder="Kelime Ara (Orn: RVR)" onkeypress="handleKeywordSearch(event)">
-                    <button onclick="searchByKeyword()" style="background: #17a2b8;">BUL</button>
+                    <div style="display: flex;">
+                        <button onclick="searchByKeyword()" style="background: #17a2b8; border-radius: 6px 0 0 6px; padding: 0 15px;">BUL</button>
+                        <button onclick="resetKeywordSearch()" style="background: #28a745; border-radius: 0 6px 6px 0; padding: 0 12px; font-size: 18px; font-weight: bold;" title="Aramayi Sifirla">&#x21BB;</button>
+                    </div>
                 </div>
                 <div class="search-box">
-                    <input type="text" id="q-search" placeholder="Soru No (Orn: S.12)" onkeypress="handleSearch(event)">
+                    <input type="text" id="q-search" placeholder="Soru No (Örn: 12)" onkeypress="handleSearch(event)">
                     <button onclick="goToQuestion()">GIT</button>
                 </div>
             </div>
@@ -1011,6 +1014,21 @@ function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
             }
             document.getElementById('keyword-search').value = ''; 
         }
+function resetKeywordSearch() {
+            document.getElementById('keyword-search').value = '';
+            
+            // Varsayilan listeye (GOLDEN SORULAR) geri donus yap
+            let defaultBtn = Array.from(document.querySelectorAll('.cat-btn')).find(b => b.innerText.includes('GOLDEN SORULAR'));
+            
+            if(defaultBtn) {
+                filterByCategory('CIKMIS', defaultBtn);
+            } else {
+                filterByCategory('CIKMIS');
+            }
+            
+            showCustomNotification("Arama temizlendi, liste normale dondu.", "success");
+        }
+        
 function aciklamaGosterGizle() {
             const a = document.getElementById('aciklama-alani'); 
             const isHidden = a.style.display === "none"; 
@@ -1071,6 +1089,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
