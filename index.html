@@ -235,19 +235,21 @@
                 </div>
             </div>
         </main>
-
-        <aside class="side">
+    <aside class="side">
             <div class="side-header">
-                <div class="side-title">SORU NAVİGASYONU</div>
+                <div class="side-title">SORU NAVIGASYONU</div>
+                <div class="search-box" style="margin-bottom: 10px;">
+                    <input type="text" id="keyword-search" placeholder="Kelime Ara (Orn: RVR)" onkeypress="handleKeywordSearch(event)">
+                    <button onclick="searchByKeyword()" style="background: #17a2b8;">BUL</button>
+                </div>
                 <div class="search-box">
-                    <input type="text" id="q-search" placeholder="Soru No (Örn: S.12)" onkeypress="handleSearch(event)">
-                    <button onclick="goToQuestion()">GİT</button>
+                    <input type="text" id="q-search" placeholder="Soru No (Orn: S.12)" onkeypress="handleSearch(event)">
+                    <button onclick="goToQuestion()">GIT</button>
                 </div>
             </div>
             <div id="list"></div>
         </aside>
     </div>
-
     <div class="footer-area">
         <div class="footer-buttons">
             <div class="footer-note">CREATED BY BURAK KURT</div>
@@ -966,7 +968,49 @@
             const target = 'S.' + numMatch[0]; const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase().endsWith(target));
             if (fIdx !== -1) { idx = fIdx; if(isExamModeActive) showExamQuestion(); else show(); document.getElementById('q-search').value = ''; } else { showCustomNotification("Soru bulunamadı!", "error"); }
         }
+function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
 
+        function searchByKeyword() {
+            const val = document.getElementById('keyword-search').value.trim().toLowerCase();
+            if (!val) { showCustomNotification("Lutfen aranacak kelimeyi girin.", "warning"); return; }
+
+            if(isExamModeActive) {
+                showConfirm("Sinav devam ediyor! Cikmak istediginize emin misiniz? Sinav verileriniz silinecek.", () => {
+                    exitExamMode();
+                    executeKeywordSearch(val);
+                });
+                return;
+            }
+            executeKeywordSearch(val);
+        }
+
+        function executeKeywordSearch(val) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+
+            filteredQs = allQs.filter(q => {
+                const metin = (q['Soru Metni'] || "").toLowerCase();
+                const a = (q['A Sikki'] || "").toLowerCase();
+                const b = (q['B Sikki'] || "").toLowerCase();
+                const c = (q['C Sikki'] || "").toLowerCase();
+                const d = (q['D Sikki'] || "").toLowerCase();
+                const e = (q['E Sikki'] || "").toLowerCase();
+                const aciklama = (q['Aciklama'] || "").toLowerCase();
+                
+                return metin.includes(val) || a.includes(val) || b.includes(val) || c.includes(val) || d.includes(val) || e.includes(val) || aciklama.includes(val);
+            });
+
+            if(filteredQs.length > 0) {
+                idx = 0;
+                renderList();
+                show();
+                showCustomNotification(`"${val}" kelimesi ile ${filteredQs.length} soru bulundu.`, "success");
+            } else {
+                renderList();
+                show();
+                showCustomNotification(`"${val}" kelimesi ile eslesen soru bulunamadi.`, "error");
+            }
+            document.getElementById('keyword-search').value = ''; 
+        }
 function aciklamaGosterGizle() {
             const a = document.getElementById('aciklama-alani'); 
             const isHidden = a.style.display === "none"; 
@@ -1027,6 +1071,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
