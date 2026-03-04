@@ -1,3 +1,39 @@
+<div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">🚀 Sürüm 2.2.0 (4 Mart 2026 - Arama Motoru ve Sistem Optimizasyonu)</h3>
+        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px; line-height: 1.5;">
+            <li><b>Gelişmiş Kelime Arama Motoru:</b> Soru navigasyon paneline detaylı "Kelime Ara" özelliği eklendi. Girdiğiniz kelime (örn: RVR, M&B) anında soruların metninde, şıklarında ve açıklamalarında taranarak nokta atışı olarak listelenir. Arama kutusunun yanındaki (🔄) butonu ile tek tıkla ana havuza dönülebilir.</li>
+            <li><b>Veritabanı Normalizasyonu (Hızlandırma):</b> Sistemin yükleme hızını artırmak ve GitHub dosya boyutu limitlerini aşmak adına devasa veritabanı ikiye bölündü. "Konu Anlatımı" (Cheatsheet) verileri bağımsız bir JSON dosyasına aktarıldı ve eşleştirme algoritmasıyla sisteme pürüzsüzce entegre edildi.</li>
+            <li><b>Kullanıcı Deneyimi (UI/UX) İyileştirmeleri:</b> Analiz notlarındaki "Menüye Dön" butonunun bazı cihazlarda tıklanamamasına (z-index) yol açan kronik hata kökünden çözüldü. Soru paneli arayüzünde "Zorluk" ve "Konuyu Anlat" kutuları simetrik olarak hizalandı. İletişim ve Destek ekranlarına mesleğin ruhunu yansıtan motivasyonel sürprizler eklendi.</li>
+        </ul>
+    </div>
+
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">🛠️ Soru Bankası V2.0 İçerik ve Yama Notları (4 Mart 2026)</h3>
+        <p style="font-size: 13px; color: #333; margin-bottom: 10px; line-height: 1.5;">Sistemimizde yer alan eski soru bankasındaki kronikleşmiş fizik, aerodinamik ve regülasyon hataları, uzman eğitmen onayı ile tamamen düzeltilmiş ve güncel ICAO standartlarına entegre edilmiştir. Sınavda karşınıza çıkacak "sistemsel tuzaklar" ve hatalı şıklar için özel taktikler konu anlatımlarına eklenmiştir.</p>
+        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px; line-height: 1.5;">
+            <li><b>Hatalı Soru Silindi:</b> S.846 (Tokyo/Lahey uçak kaçırma sorusu) kurgu hatası nedeniyle veritabanından kalıcı olarak kaldırıldı.</li>
+            <li><b>Dizgi ve Kurgu Hataları Giderildi:</b>
+                <ul style="margin-top: 5px; margin-bottom: 5px;">
+                    <li><b>S.1182:</b> Track değeri, Batı kuralına (Çift + 500) uyumlu olması için "135"ten "235"e çevrildi (Doğru Cevap: FL185).</li>
+                    <li><b>S.1216:</b> İnsanüstü ISA deniz seviyesi sıcaklığı olan "150 C" dizgi hatası, "15.0 C" olarak düzeltildi.</li>
+                    <li><b>S.1676:</b> İki kişilik ekip sinerjisi matematiksel gerçeğe uyarlanarak "1+1>2" şeklinde güncellendi.</li>
+                </ul>
+            </li>
+            <li><b>Terminoloji ve Fizik Kuralları Teyit Edildi:</b> S.1139 ve S.1140'ta FAA açılımı <em>Administration</em> olarak güncellendi. S.1169'daki manyetik sapma hesabı "East is Least" kuralı işletilerek pusula başı 120 olarak düzeltildi.</li>
+            <li><b>Baştan Yazılan "Sınav Şifresi" Soruları (38 Adet):</b> S.267, S.433, S.906, S.1113, S.1139, S.1140, S.1169, S.1174, S.1182, S.1216, S.1229, S.1246, S.1266, S.1294, S.1343, S.1383, S.1406, S.1438, S.1456, S.1479, S.1533, S.1534, S.1564, S.1591, S.1597, S.1598, S.1607, S.1621, S.1676, S.1710, S.1711, S.1712, S.1713, S.1714, S.1717, S.1718, S.1719, S.1739.<br><em>Not: Sınav sisteminin kabul ettiği "yerel" şıkları ezberlerken, havacılığın asıl doğrularını unutmamak adına açıklamaları dikkatle okumanızı tavsiye ederiz.</em></li>
+        </ul>
+    </div>
+
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+        <h3 style="color: #0056b3; margin-bottom: 5px; font-size: 15px;">🧹 Veri Temizliği ve Hata Düzeltmeleri (2 Mart 2026)</h3>
+        <ul style="margin-top: 5px; padding-left: 20px; font-size: 13px; line-height: 1.5;">
+            <li><b>Biçimlendirme Onarımı:</b> S.244, S.254, S.255, S.267, S.282, S.402, S.484, S.487, S.652, S.949, S.950, S.1110, S.1111, S.1112 ve S.1272 numaralı sorularda tespit edilen şık birleşme ve karakter hataları tamamen düzeltildi.</li>
+            <li><b>Havuz Optimizasyonu:</b> Bilimsel geçerliliği veya soru yapısı hatalı bulunan S.982 numaralı soru, sınav kalitesini korumak adına tüm havuzdan silinmiştir.</li>
+            <br>
+            <li><b>Sistem Geliştiricisi Burak Kurt, Dispeçerlik Sınav Portalı V2.2'yi iftiharla sunar! ✈️😎</b></li>
+        </ul>
+    </div>
+
 <div class="update-notes">
     <h2>DİSPEÇERLİK SINAV SİSTEMİ Güncellemesi: Soru Bankası V2.0 Yayında! (4 MART)</h2>
     <p><strong>Değerli Dispeçer Adayları,</strong></p>
@@ -120,6 +156,7 @@
 
 
 </div>
+
 
 
 
