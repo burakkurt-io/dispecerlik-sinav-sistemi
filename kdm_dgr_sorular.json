@@ -2047,12 +2047,12 @@
         "Soru Numarası": "GOLDEN-DGR S.147",
         "Soru Metni": "Türk Havayollarının IST-FRA yolcu uçuşu için doldurulmuş NOTOC’ta yer alan bilgilere göre aşağıdaki soruları cevaplayınız. Radyoaktif Materyalin Taşıma İndeksi nedir?",
         "A Şıkkı": "20 L",
-        "B Şıkkı": "2024-05-03 00:00:00",
+        "B Şıkkı": "3.May",
         "C Şıkkı": "50",
         "D Şıkkı": "AA123",
         "E Şıkkı": "Yoktur",
         "Doğru Cevap": "b",
-        "Açıklama": "Radyoaktif maddelerin güvenli ayrım mesafesini belirleyen Taşıma İndeksi (TI) değeri belgede 3.5'tir. Şıklardaki tarih formatı, 3.5 değerinin sistemsel çeviri hatasıyla bozulmuş halidir.",
+        "Açıklama": "Belgedeki (NOTOC) 3. satırda yer alan radyoaktif malzemenin (UN2915) 'Net quantity or Transp. Ind. per package' sütunundaki gerçek Taşıma İndeksi (TI) değeri 3.5'tir. Sınav sistemindeki '3.May' şıkkı, 3.5 değerinin elektronik ortama aktarılırken tarih formatına dönüşmesiyle oluşan bir yazılım hatasıdır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "GOLDEN-dgr-en/GOLDEN-dgr-en-2.png",
         "Kategori": "GOLDEN - DGR (TÜRKÇE)"
@@ -2800,6 +2800,7 @@
         "Kategori": "GOLDEN - DGR (TÜRKÇE)"
     }
 ]
+
 
 
 
