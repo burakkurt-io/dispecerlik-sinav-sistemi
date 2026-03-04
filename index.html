@@ -992,21 +992,29 @@ function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
             executeKeywordSearch(val);
         }
 
-        function executeKeywordSearch(val) {
+       function executeKeywordSearch(val) {
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
 
-            filteredQs = allQs.filter(q => {
-                const metin = (q['Soru Metni'] || "").toLowerCase();
-                const a = (q['A Şıkkı'] || "").toLowerCase();
-                const b = (q['B Şıkkı'] || "").toLowerCase();
-                const c = (q['C Şıkkı'] || "").toLowerCase();
-                const d = (q['D Şıkkı'] || "").toLowerCase();
-                const e = (q['E Şıkkı'] || "").toLowerCase();
-                const aciklama = (q['Açıklama'] || "").toLowerCase();
-                
-                return metin.includes(val) || a.includes(val) || b.includes(val) || c.includes(val) || d.includes(val) || e.includes(val) || aciklama.includes(val);
-            });
+            // 1. Kullanıcının girdiği kelimedeki özel sembolleri (+, -, ?) regex'i bozmaması için temizliyoruz
+            const escapedVal = val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            
+            // 2. Sadece TAM KELİME (\b) eşleşmesi yapan Regex'i oluşturuyoruz ('i' büyük/küçük harf duyarsız yapar)
+            const regex = new RegExp("\\b" + escapedVal + "\\b", "i");
 
+            filteredQs = allQs.filter(q => {
+                // toLowerCase() yapmamıza gerek kalmadı çünkü Regex'teki "i" bayrağı o işi kendi hallediyor
+                const metin = q['Soru Metni'] || "";
+                const a = q['A Şıkkı'] || "";
+                const b = q['B Şıkkı'] || "";
+                const c = q['C Şıkkı'] || "";
+                const d = q['D Şıkkı'] || "";
+                const e = q['E Şıkkı'] || "";
+                const aciklama = q['Açıklama'] || "";
+                
+                // .includes yerine regex.test() kullanıyoruz ki sadece kelime sınırları içindeyse true dönsün
+                return regex.test(metin) || regex.test(a) || regex.test(b) || regex.test(c) || regex.test(d) || regex.test(e) || regex.test(aciklama);
+            });
+           
             if(filteredQs.length > 0) {
                 idx = 0;
                 renderList();
@@ -1094,6 +1102,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
