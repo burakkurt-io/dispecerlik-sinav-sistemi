@@ -245,7 +245,7 @@
         "C Şıkkı": "Insulated packagings containing refrigrated liquid nitrogen",
         "D Şıkkı": "Heat producing articles",
         "E Şıkkı": "Electro shock weapons",
-        "Doğru Cevap": "b",
+        "Doğru Cevap": "c",
         "Açıklama": "İngilizce soruda, yolcu beraberinde taşınması için havayolu operatörünün onayı (approval of the operator) gereken maddenin hangisi olduğu sorulmaktadır. Şıklarda kibrit, yakıt hücreleri, sıvı nitrojen ambalajları ve ısı üreten cihazlar yer almaktadır. Verilen cevap anahtarına göre yakıt hücreleri ve yedek yakıt kartuşları (Fuel cells, and spare fuel cartridges) doğru şık olarak belirtilmiş olup, bu tür maddelerin uçuşa kabulü operatör onayı ve kısıtlamalarına tabidir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
@@ -2800,6 +2800,7 @@
         "Kategori": "GOLDEN - DGR (TÜRKÇE)"
     }
 ]
+
 
 
 
