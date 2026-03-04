@@ -19421,7 +19421,7 @@
         "B Şıkkı": "1 + 1 > 2",
         "C Şıkkı": "1 + 1 < 2",
         "D Şıkkı": "1 +/- 1 < 2",
-        "Doğru Cevap": "b",
+        "Doğru Cevap": "a",
         "Açıklama": "Sinerji, ekip çalışmasının verimliliğinin bireylerin tekil toplamından daha yüksek olmasıdır. İki kişilik bir ekipte sinerji 1 + 1 > 2 formülüyle (birlikte daha güçlü) ifade edilir.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
