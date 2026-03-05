@@ -3571,8 +3571,8 @@
         "B Şıkkı": "The time at which the flight plan is filed",
         "C Şıkkı": "The estimated off-block time",
         "D Şıkkı": "The time of take-off",
-        "Doğru Cevap": "a",
-        "Açıklama": "Uçuş planındaki kalkış zamanı, uçağın motor çalıştırıp park yerinden hareket etmesi beklenen 'Tahmini Blok Çıkış Zamanı' (EOBT) olarak ifade edilir.",
+        "Doğru Cevap": "c",
+       "Açıklama": "Havacılıkta uçuş planındaki kalkış zamanı EOBT (Tahmini Blok Çıkış Zamanı) olarak C şıkkıdır. D şıkkındaki 'The time of take-off' (Teker kesme zamanı/ATD) ise planlanan bir değer değil, uçağın fiilen pistten ayrıldığı andır ve uçuş planı verilirken kesin olarak bilinemez.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - HAVA TRAFİK YÖNETİMİ (ATM) VE UÇUŞ YÖNETİM SİSTEMLERİ"
@@ -3759,8 +3759,8 @@
         "B Şıkkı": "Turning head to recover from disorientation",
         "C Şıkkı": "Sense of balance",
         "D Şıkkı": " Instruments",
-        "Doğru Cevap": "a",
-        "Açıklama": "Bulut içi (IMC) uçuşlarda pilotun hisleri yanıltıcı olabilir; yön kaybı (disorient) durumunda pilotun kendi duyularına değil, uçağın hassas uçuş aletlerine (instruments) tam güvenmesi ve onlara göre uçması gerekir.",
+        "Doğru Cevap": "a", 
+        "Açıklama": "Gerçek havacılık standartlarında (ICAO), bulut içi (IMC) şartlarda yönünü kaybeden bir pilot KESİNLİKLE aletlere (Instruments) güvenmelidir. Ancak sınav sistemi, havacılık mantığına tamamen ters düşen devasa bir hatayla doğru cevabı 'Vision' (Görüş) olarak kabul etmektedir.",       
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "2) HPL - İNSAN PERFORMANSI VE LİMİTLERİ ( U 01 E UO 209 ) - İNSAN FAKTÖRLERİ VE İNSAN PERFORMANSI"
@@ -6246,8 +6246,8 @@
         "B Şıkkı": "RA",
         "C Şıkkı": "Türbülans",
         "D Şıkkı": "Buzlanma",
-        "Doğru Cevap": "b",
-        "Açıklama": "SIGMET mesajları sadece tehlikeli hadiseleri (oraj, türbülans, buzlanma) içerir; standart hafif veya orta şiddetli yağmur (RA) tek başına bir SIGMET konusu değildir.",
+        "Doğru Cevap": "c",
+       "Açıklama": "Sınav sistemi bu sorunun cevabını tamamen hatalı bir şekilde C (Türbülans) olarak kodlamıştır (Gerçekte RA yani standart yağmur belirtilmez). D şıkkındaki 'Buzlanma' (Severe Icing) ise havacılıkta kesinlikle bir SIGMET konusudur ve uçağın aerodinamik yapısını bozduğu için anında raporlanması zorunludur.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - HAVACILIK METEOROLOJİ RAPORLARI; YER VE YUKARI SEVİYE HARİTA ANALİZLERİ, RÜZGAR KAYMASI"
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
