@@ -6035,7 +6035,7 @@
         "C Şıkkı": "Bu konvansiyon tüm hava araçlarını kapsar",
         "D Şıkkı": "Bu konvansiyon sadece sivil hava araçlarını kapsar",
         "Doğru Cevap": "c",
-        "Açıklama": "Chicago Konvansiyonu Madde 3 uyarınca, bu sözleşme SADECE sivil hava araçlarına uygulanır; askeri, gümrük ve polis hizmetlerinde kullanılan 'Devlet' hava araçlarına uygulanmaz. Bu nedenle 'tüm hava araçlarını kapsar' ifadesi yanlıştır.",
+        "Açıklama": "1944 Chicago Konvansiyonu (Madde 3) uyarınca, bu sözleşme SADECE sivil hava araçlarına uygulanır; askeri, gümrük ve polis hizmetlerinde kullanılan 'Devlet' hava araçlarına uygulanmaz. Sözleşmenin tüm hava araçlarını kapsadığını belirten ifade hukuken yanlıştır.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - ULUSLARARASI HUKUK VE ULUSLARARASI ÖZEL HUKUK",
@@ -6274,8 +6274,8 @@
         "B Şıkkı": "Kaldırma kuvveti artar",
         "C Şıkkı": "Take-off Roll mesafesi artar",
         "D Şıkkı": "Motorların gücü azalır",
-        "Doğru Cevap": "a",
-        "Açıklama": "Yüksek yoğunluk irtifası (ince hava), kanatların kaldırma kuvvetini (lift) artırmaz, aksine azaltır; bu nedenle uçağın performansı düşer ve kalkış mesafesi uzar. Şık 'azalır' yerine 'artar' dediği için yanlıştır.",
+        "Doğru Cevap": "b",
+        "Açıklama": "Yüksek yoğunluk irtifası (High Density Altitude), havanın ince ve daha az yoğun olması demektir. İnce havada motorlar daha az güç üretir ve kanatlardaki kaldırma kuvveti (lift) azalır, bu yüzden uçağın kalkış mesafesi uzar. Kaldırma kuvvetinin artacağını iddia eden B şıkkı, aerodinamik olarak tamamen yanlış bir ifadedir.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - UÇUŞ GÜVENLİĞİ, AĞIRLIK–HIZ FAKTÖRLERİ VE KALKIŞ PERFORMANSI",
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
