@@ -3759,8 +3759,8 @@
         "B Şıkkı": "Turning head to recover from disorientation",
         "C Şıkkı": "Sense of balance",
         "D Şıkkı": " Instruments",
-        "Doğru Cevap": "a", 
-        "Açıklama": "Gerçek havacılık standartlarında (ICAO), bulut içi (IMC) şartlarda yönünü kaybeden bir pilot KESİNLİKLE aletlere (Instruments) güvenmelidir. Ancak sınav sistemi, havacılık mantığına tamamen ters düşen devasa bir hatayla doğru cevabı 'Vision' (Görüş) olarak kabul etmektedir.",       
+        "Doğru Cevap": "d", 
+       "Açıklama": "Bulut içi (IMC) uçuşlarda pilotun hisleri ve görüşü tamamen yanıltıcıdır. Yön kaybı (spatial disorientation) yaşandığında, pilotun kendi duyularına değil, uçağın hassas uçuş aletlerine (instruments) tam ve koşulsuz güvenmesi hayati önem taşır. Eğitmen teyidiyle SHGM standartlarında da bu kural kesinlikle esnetilemez.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "2) HPL - İNSAN PERFORMANSI VE LİMİTLERİ ( U 01 E UO 209 ) - İNSAN FAKTÖRLERİ VE İNSAN PERFORMANSI"
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
