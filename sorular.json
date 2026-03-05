@@ -2214,8 +2214,8 @@
         "B Şıkkı": "V1 azalır ve ASDA artar",
         "C Şıkkı": "V1 artar ve TODA artar",
         "D Şıkkı": "V1 azalır ve TODA azalır",
-        "Doğru Cevap": "d",
-        "Açıklama": "Aşağı eğimli (down-slope) bir pistte uçak daha hızlı ivmelenir, bu da kalkış koşusu mesafesini (TODA) azaltır. Ancak ivmelenme kolaylaştığı için karar verme hızı olan V1'in, durma mesafesi kısıtları nedeniyle daha düşük (azalmış) belirlenmesi gerekir.",
+        "Doğru Cevap": "b",
+        "Açıklama": "Aşağı eğimli (down-slope) bir pistte uçağın ivmelenmesi kolaylaşır ancak yokuş aşağı fren yapmak ve uçağı durdurmak zorlaşır. Durma mesafesi gereksinimi (ASDA limiti) artacağı için, uçağın pistten çıkmasını engellemek adına karar hızı (V1) düşürülerek frenlemeye daha erken başlanması sağlanır.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - HIZLANMA-DURMA MESAFESİ, DENGELİ VE DENGESİZ ALAN UZUNLUĞU, ENGEL-SINIRLARI, AZALTILMIŞ / DERECELENDİRİLMİŞ İTME",
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
