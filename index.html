@@ -799,7 +799,44 @@
             { name: "11 - UÇUŞ PLANLAMA (FPL&FM)", keyword: "FPL" },
             { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
         ];
+// --- ARKA PLAN RESİM ÖN YÜKLEYİCİ (HAYALET BOT) ---
+        function arkaPlanResimYukleyici(tumSorular) {
+            // Sistemin açılışından 2 saniye sonra başlasın ki ana ekran donmasın
+            setTimeout(() => {
+                console.log("Arka plan resim ön yükleyicisi (Preloader) başlatıldı...");
+                const preloadSet = new Set();
+                
+                // 1. Sabit ve HTML içi resimleri ekle (Bildiğin manuel notların)
+                preloadSet.add('img/logo.png');
+                preloadSet.add('img/flight dispatch.jpeg');
+                preloadSet.add('img/not1.png');
 
+                // 2. Tüm JSON verisini tara ve resimleri avla
+                tumSorular.forEach(q => {
+                    // Ana Soru Görselleri
+                    if (q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'].trim() !== "") {
+                        preloadSet.add(q['Resim Yolu'].trim());
+                    }
+                    // Şıklardaki Görseller
+                    ['A', 'B', 'C', 'D', 'E'].forEach(harf => {
+                        const sik = q[harf + ' Şıkkı'];
+                        if (sik && typeof sik === 'string') {
+                            const s = sik.trim().toLowerCase();
+                            if (s.endsWith('.png') || s.endsWith('.jpg') || s.endsWith('.jpeg')) {
+                                preloadSet.add(sik.trim());
+                            }
+                        }
+                    });
+                });
+
+                // Toplanan resimleri sessizce indir
+                preloadSet.forEach(src => {
+                    const img = new Image();
+                    img.src = src;
+                });
+                console.log(preloadSet.size + " adet resim arka planda başarıyla ön belleğe alınıyor.");
+            }, 2000); // 2000 milisaniye (2 saniye) gecikme
+        }
         async function start() {
             try {
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
@@ -823,7 +860,11 @@
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined); 
                 renderCategories();
                 renderList();
-                show();
+                show(); // EKRAN ÇİZİLDİ, SİSTEM KULLANIMA HAZIR!
+                
+                // Şimdi arka planda sessizce resimleri indirmeye başla (Sistemi asla kasmaz)
+                arkaPlanResimYukleyici(allQs);
+                
             } catch(e) { 
                 document.getElementById('no').innerText = "BAĞLANTI HATASI";
                 document.getElementById('txt').innerText = "Veriler sunucudan çekilemedi.";
@@ -1125,6 +1166,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
