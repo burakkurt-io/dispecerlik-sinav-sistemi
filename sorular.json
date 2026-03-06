@@ -12059,7 +12059,7 @@
         "Açıklama": "Havacılıkta uçak ile hava trafik kontrol (ATC) üniteleri arasındaki kısa mesafeli (görüş hattı/line of sight) ve yüksek ses kaliteli rutin haberleşmeler, 118.000 - 136.975 MHz aralığını kullanan VHF (Very High Frequency - Çok Yüksek Frekans) bandı üzerinden sağlanır.",
         "Zorluk Derecesi(1-5)": "1",
         "Resim Yolu": "Bilinmiyor",
-        "Kategori": "Belirtilmemiş"
+        "Kategori": "4 - COM - HABERLEŞME (VHF İletişimi)"
     },
     {
         "Soru Numarası": "S.907",
@@ -17830,7 +17830,7 @@
         "Açıklama": "CAT (Clear Air Turbulence - Açık Hava Türbülansı), bulutsuz havada gerçekleşir. Bu yüzden bulutların içinde meydana geldiği ifadesi yanlıştır.",
         "Zorluk Derecesi(1-5)": "3",
         "Resim Yolu": "Bilinmiyor",
-        "Kategori": "Belirtilmemiş"
+"Kategori": "7 - MET - METEOROLOJİ (Açık Hava Türbülansı - CAT)"
     },
     {
         "Soru Numarası": "S.1344",
@@ -19622,7 +19622,7 @@
         "Açıklama": "Eğitmen onayıyla bu sorunun doğru cevabı B şıkkı olarak güncellenmiştir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
-        "Kategori": "Belirtilmemiş"
+        "Kategori": "2 - HPL - İNSAN PERFORMANSI VE LİMİTLERİ (Arousal and Performance)"
     },
     {
         "Soru Numarası": "S.1480",
@@ -20334,7 +20334,7 @@
         "Açıklama": "Uçakların uzunlamasına ekseni etrafında dönüş (roll) yani yatış hareketini sağlayan kumanda yüzeyleri Aileron (Kanatçık) donanımlarıdır.",
         "Zorluk Derecesi(1-5)": "1",
         "Resim Yolu": "Bilinmiyor",
-        "Kategori": "Belirtilmemiş",
+        "Kategori": "12 - AVI - HAVACILIK ÖĞRETİMİ (Aerodinamik - Kumanda Yüzeyleri)",
         "Sınav Anısı": "Ailerons ve elevator sordu.",
         "Eşleşme Oranı": "Yüksek"
     },
@@ -20349,7 +20349,7 @@
         "Açıklama": "Uçakların yatay ekseni etrafında yunuslama (pitching) hareketini sağlayan kuyruk bölümündeki kumanda yüzeyi Elevator (İrtifa Dümeni) parçasıdır.",
         "Zorluk Derecesi(1-5)": "1",
         "Resim Yolu": "Bilinmiyor",
-        "Kategori": "Belirtilmemiş",
+        "Kategori": "12 - AVI - HAVACILIK ÖĞRETİMİ (Aerodinamik - Kumanda Yüzeyleri)",
         "Sınav Anısı": "Ailerons ve elevator sordu.",
         "Eşleşme Oranı": "Yüksek"
     },
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
