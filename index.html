@@ -803,18 +803,20 @@ function renderSimulationSetup() {
             { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
         ];
 // --- ARKA PLAN RESİM ÖN YÜKLEYİCİ (HAYALET BOT) ---
+       // --- ARKA PLAN ÖN YÜKLEYİCİ (HAYALET BOT V2: RESİM + HTML) ---
         function arkaPlanResimYukleyici(tumSorular) {
             // Sistemin açılışından 2 saniye sonra başlasın ki ana ekran donmasın
             setTimeout(() => {
-                console.log("Arka plan resim ön yükleyicisi (Preloader) başlatıldı...");
+                console.log("Arka plan ön yükleyicisi (Preloader) başlatıldı...");
                 const preloadSet = new Set();
                 
-                // 1. Sabit ve HTML içi resimleri ekle (Bildiğin manuel notların)
+                // 1. Sabit ve HTML içi resimleri ekle
                 preloadSet.add('img/logo.png');
                 preloadSet.add('img/flight dispatch.jpeg');
                 preloadSet.add('img/crew_briefing.png');
+                preloadSet.add('img/not1.png');
 
-                // 2. Tüm JSON verisini tara ve resimleri avla
+                // 2. Tüm JSON verisini tara ve PNG/JPG'leri avla
                 tumSorular.forEach(q => {
                     // Ana Soru Görselleri
                     if (q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'].trim() !== "") {
@@ -832,13 +834,29 @@ function renderSimulationSetup() {
                     });
                 });
 
-                // Toplanan resimleri sessizce indir
+                // 3. Toplanan resimleri sessizce RAM'e indir
                 preloadSet.forEach(src => {
                     const img = new Image();
                     img.src = src;
                 });
-                console.log(preloadSet.size + " adet resim arka planda başarıyla ön belleğe alınıyor.");
-            }, 2000); // 2000 milisaniye (2 saniye) gecikme
+                console.log(preloadSet.size + " adet resim arka planda başarıyla ön belleğe alındı.");
+
+                // -------------------------------------------------------------
+                // 4. HTML ANALİZ VE GÜNCELLEME NOTLARINI ÖN BELLEĞE ALMA (YENİ)
+                // -------------------------------------------------------------
+                const htmlDosyalar = [
+                    'guncelle.html', 'genel.html', 'notlar.html', 'mb.html', 
+                    'hpl.html', 'dgr.html', 'com.html', 'law.html', 'hav.html', 
+                    'met.html', 'pef.html', 'sec.html', 'nav.html', 'fpl.html', 'avi.html'
+                ];
+
+                htmlDosyalar.forEach(dosya => {
+                    // Arka planda sessizce fetch atıp tarayıcı cache'ine (hafızasına) hapsediyoruz
+                    fetch(`html_notlar/${dosya}`).catch(e => console.log("Preload hatası:", dosya));
+                });
+                console.log(htmlDosyalar.length + " adet HTML not dosyası ön belleğe alındı.");
+
+            }, 2000); // 2 saniye gecikme
         }
         async function start() {
             try {
@@ -1169,6 +1187,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
