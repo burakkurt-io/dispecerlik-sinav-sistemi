@@ -434,6 +434,18 @@
             btn.classList.add('active');
             selectedDifficulty = val;
         }
+        // --- ÇAKIŞMA ÖNLEYİCİ (HATA YÖNETİMİ) FONKSİYONU ---
+        function checkMutuallyExclusive(checkbox, typeToUncheck) {
+            if(checkbox.checked) {
+                const code = checkbox.getAttribute('data-code');
+                let otherSelector = typeToUncheck === 'golden' ? `.golden-cb[data-code="${code}"]` : `.sim-cb[data-code="${code}"]`;
+                const otherCb = document.querySelector(otherSelector);
+                if(otherCb && otherCb.checked) {
+                    otherCb.checked = false; // Diğerini otomatik iptal et
+                    showCustomNotification(`"${code}" dersi için hem Genel hem GOLDEN aynı anda seçilemez. Çakışma önlendi!`, "warning");
+                }
+            }
+        }
 function renderSimulationSetup() {
             document.getElementById('no').innerText = "SINAV SİMÜLASYONU MERKEZİ";
             document.getElementById('opts').innerHTML = '';
@@ -443,14 +455,14 @@ function renderSimulationSetup() {
             let html = `
                 <div style="padding: 10px; width:100%;">
                     <div style="text-align: center; margin-bottom: 20px;">
-<img src="img/crew_briefing.png" alt="Crew Briefing" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);">
-<div style="font-size: 12px; color: #6c757d; margin-top: 8px; font-style: italic; font-weight: bold;">"Pre-flight briefing... Sınav operasyonuna hazırlanıyorsunuz."</div>
+                        <img src="img/crew_briefing.png" alt="Crew Briefing" style="max-width: 100%; max-height: 220px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); object-fit: cover; width: 100%;">
+                        <div style="font-size: 12px; color: #6c757d; margin-top: 8px; font-style: italic; font-weight: bold;">"Pre-flight briefing... Sınav operasyonuna hazırlanıyorsunuz."</div>
                     </div>
                     <div style="background: ${document.body.classList.contains('dark-mode') ? '#2a2a2a' : '#eef5ff'}; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; border-left: 4px solid var(--p);">
                         <strong style="color:var(--p); font-size: 16px;">📋 Kurallar ve Dinamik Zorluk:</strong><br>
-                        • Seçtiğiniz dersler için <b>Genel ve GOLDEN</b> havuzları birleştirilir.<br>
-                        • Belirlediğiniz zorluk derecesindeki sorulardan <b>rastgele 10 adet</b> çekilir.<br>
-                        • Ders başına <b>15 Dakika</b> süre verilir. Dersi geçmek için en az <b>7 Doğru</b> gereklidir.<br>
+                        • Genel ve GOLDEN havuzlarını dilediğiniz gibi karma yapabilirsiniz.<br>
+                        • Seçtiğiniz her modül için zorluk derecesine göre <b>rastgele 10 adet</b> çekilir.<br>
+                        • Modül başına <b>15 Dakika</b> süre verilir. Geçmek için en az <b>7 Doğru</b> gerekir.<br>
                     </div>
                     
                     <h3 style="margin-bottom: 10px; color: var(--p); font-size: 14px;">Zorluk Derecesi:</h3>
@@ -459,33 +471,44 @@ function renderSimulationSetup() {
                         <button class="diff-btn diff-easy" onclick="selectDiff(this, 'EASY')">KOLAY (1-2)</button>
                         <button class="diff-btn diff-med" onclick="selectDiff(this, 'MEDIUM')">ORTA (3-4)</button>
                         <button class="diff-btn diff-hard" onclick="selectDiff(this, 'HARD')">ZOR (4-5)</button>
-</div>
-
-<div style="margin-bottom: 20px;">
-    <label class="sim-cb-container" style="border: 2px solid #ffc107; background: #fffdf5;">
-        <input type="checkbox" id="only-golden-cb" onchange="toggleGoldenSim(this)" style="width: 20px; height: 20px;">
-        <span style="font-weight: bold; color: #856404;">SADECE GOLDEN SORULAR (ÖZEL HAVUZ)</span>
-    </label>
-</div>
-
-<h3 style="margin-bottom: 15px; color: var(--p); font-size: 14px;">Simülasyona Dahil Edilecek Dersler:</h3>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 20px;" id="sim-subject-grid">
                     </div>
+
+                    <h3 style="margin-bottom: 10px; color: #856404; font-size: 14px; background: #FFF3CD; padding: 8px; border-radius: 6px; border-left: 4px solid #ffc107;">⭐ GOLDEN DERSLER (ÖZEL HAVUZ):</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 20px;" id="golden-subject-grid"></div>
+
+                    <h3 style="margin-bottom: 15px; color: var(--p); font-size: 14px;">GENEL DERSLER (STANDART HAVUZ):</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 20px;" id="sim-subject-grid"></div>
+                    
                     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <button onclick="document.querySelectorAll('.sim-cb').forEach(cb => cb.checked = true);" class="btn btn-gray" style="flex: 1; min-width: 150px;">Tümünü Seç (12 Ders)</button>
-                        <button onclick="startSimulation()" class="btn" style="flex: 2; background: #28a745; min-width: 200px;">SİMÜLASYONU BAŞLAT</button>
+                        <button onclick="startSimulation()" class="btn" style="flex: 2; background: #28a745; min-width: 200px; font-size: 15px;">SİMÜLASYONU BAŞLAT</button>
                     </div>
                 </div>
             `;
             document.getElementById('txt').innerHTML = html;
             document.getElementById('list').innerHTML = ''; 
             
+            // Sadece Golden Olan 5 Dersin Listesi
+            const goldenList = [
+                { code: "DGR", name: "3 - DGR" }, { code: "COM", name: "4 - COM" },
+                { code: "LAW", name: "5 - LAW" }, { code: "NAV", name: "10 - NAV" }, { code: "FPL", name: "11 - FPL&FM" }
+            ];
+
+            const goldenGrid = document.getElementById('golden-subject-grid');
+            goldenList.forEach((sub) => {
+                goldenGrid.innerHTML += `
+                    <label class="sim-cb-container" style="border-color: #ffc107; background: #fffdf5;">
+                        <input type="checkbox" class="golden-cb" value="${sub.code}" data-code="${sub.code}" onchange="checkMutuallyExclusive(this, 'normal')" style="width: 18px; height: 18px; cursor:pointer;">
+                        <span style="font-size: 13px; font-weight: bold; color: #856404;">GOLDEN - ${sub.code}</span>
+                    </label>
+                `;
+            });
+
+            // Standart 12 Dersin Listesi
             const grid = document.getElementById('sim-subject-grid');
             examSubjects.forEach((sub, i) => {
                 grid.innerHTML += `
                     <label class="sim-cb-container">
-                        <input type="checkbox" class="sim-cb" value="${i}" style="width: 18px; height: 18px; cursor:pointer;">
+                        <input type="checkbox" class="sim-cb" value="${i}" data-code="${sub.code}" onchange="checkMutuallyExclusive(this, 'golden')" style="width: 18px; height: 18px; cursor:pointer;">
                         <span style="font-size: 13px; font-weight: bold;">${sub.name}</span>
                     </label>
                 `;
@@ -493,37 +516,35 @@ function renderSimulationSetup() {
         }
 
         function startSimulation() {
-            const checkboxes = document.querySelectorAll('.sim-cb:checked');
-            if(checkboxes.length === 0) {
-                showCustomNotification("Lütfen en az bir ders seçin!", "warning"); return;
+            const normalCbs = document.querySelectorAll('.sim-cb:checked');
+            const goldenCbs = document.querySelectorAll('.golden-cb:checked');
+
+            if(normalCbs.length === 0 && goldenCbs.length === 0) {
+                showCustomNotification("Lütfen en az bir Genel veya Golden ders seçin!", "warning"); return;
             }
 
             let totalQuestions = [];
             
-            checkboxes.forEach(cb => {
+            // 1. Standart Havuzdaki Soruları Çek
+            normalCbs.forEach(cb => {
                 const sub = examSubjects[cb.value];
-                const onlyGolden = document.getElementById('only-golden-cb').checked;
-let subQs = allQs.filter(q => {
-    let catStr = (q['Kategori'] || "").toUpperCase();
-    if (onlyGolden) {
-        return catStr.includes("GOLDEN - " + sub.code);
-    } else {
-        let regex = new RegExp("\\b" + sub.code + "\\b");
-        return regex.test(catStr) || catStr.includes("GOLDEN - " + sub.code);
-    }
-});
+                let subQs = allQs.filter(q => {
+                    let catStr = (q['Kategori'] || "").toUpperCase();
+                    let regex = new RegExp("\\b" + sub.code + "\\b");
+                    return regex.test(catStr) && !catStr.includes("GOLDEN"); // Golden'ları buradan eledik
+                });
+                subQs = applyDifficultyFilter(subQs);
+                totalQuestions.push(...subQs.slice(0, 10)); 
+            });
 
-                if(selectedDifficulty !== "ALL") {
-                    subQs = subQs.filter(q => {
-                        let z = parseInt(q['Zorluk Derecesi(1-5)']);
-                        if(isNaN(z)) return true;
-                        if(selectedDifficulty === "EASY") return z <= 2;
-                        if(selectedDifficulty === "MEDIUM") return z === 3 || z === 4;
-                        if(selectedDifficulty === "HARD") return z >= 4;
-                    });
-                }
-
-                subQs = subQs.sort(() => 0.5 - Math.random());
+            // 2. Sadece GOLDEN Havuzundaki Soruları Çek
+            goldenCbs.forEach(cb => {
+                const code = cb.value;
+                let subQs = allQs.filter(q => {
+                    let catStr = (q['Kategori'] || "").toUpperCase();
+                    return catStr.includes("GOLDEN - " + code);
+                });
+                subQs = applyDifficultyFilter(subQs);
                 totalQuestions.push(...subQs.slice(0, 10)); 
             });
 
@@ -536,7 +557,7 @@ let subQs = allQs.filter(q => {
             isExamModeActive = true;
             idx = 0;
 
-            let totalMins = checkboxes.length * 15;
+            let totalMins = (normalCbs.length + goldenCbs.length) * 15;
             
             document.getElementById('action-area').style.display = 'flex'; 
             document.getElementById('btnAcikla').style.display = 'none'; 
@@ -556,6 +577,19 @@ let subQs = allQs.filter(q => {
             showCustomNotification(`Sınav Başladı! ${filteredQs.length} Soru. Süre: ${totalMins} Dk.`, "success");
         }
 
+        // Kod tekrarını önlemek için ufak bir yardımcı filtreleyici
+        function applyDifficultyFilter(subQs) {
+            if(selectedDifficulty === "ALL") return subQs.sort(() => 0.5 - Math.random());
+            
+            let filtered = subQs.filter(q => {
+                let z = parseInt(q['Zorluk Derecesi(1-5)']);
+                if(isNaN(z)) return true;
+                if(selectedDifficulty === "EASY") return z <= 2;
+                if(selectedDifficulty === "MEDIUM") return z === 3 || z === 4;
+                if(selectedDifficulty === "HARD") return z >= 4;
+            });
+            return filtered.sort(() => 0.5 - Math.random());
+        }
         function startExamTimer(minutes) {
             const timerDisplay = document.getElementById('timer-display');
             clearInterval(timerInterval);
@@ -1240,6 +1274,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
