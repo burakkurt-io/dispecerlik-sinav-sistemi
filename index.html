@@ -51,7 +51,6 @@
         body.dark-mode .correct-opt { background: rgba(40, 167, 69, 0.15) !important; border-color: #28a745 !important; color: #28a745 !important; }
         body.dark-mode .wrong-opt { background: rgba(220, 53, 69, 0.15) !important; border-color: #dc3545 !important; color: #dc3545 !important; text-decoration: line-through; }
         body.dark-mode .zorluk-kutu { background: #332b00; color: #ffdd80; border-color: #ffc107; }
-        body.dark-mode .konu-anlatimi-kutusu { background: #1a2a3a !important; color: #80bfff !important; border-color: #0056b3 !important; }
 
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1700px; margin: 0 auto; width: 100%; }
         
@@ -89,17 +88,14 @@
 
         .action-area { flex-shrink: 0; width: 100%; margin-top: 10px; border-top: 1px solid #eee; padding-top: 15px; transition: 0.3s; display: flex; flex-direction: column; }
         
-        .zorluk-kutu { display: none; background: #FFF3CD; color: #856404; padding: 8px 12px; border-radius: 6px; font-size: 0.85em; border: 1px solid #ffeeba; font-weight: bold; width: fit-content; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 0; }
+        .zorluk-kutu { display: none; background: #FFF3CD; color: #856404; padding: 8px 12px; border-radius: 6px; font-size: 0.85em; border: 1px solid #ffeeba; font-weight: bold; width: fit-content; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 10px; }
         .cikmis-kutu { display: none; background: #003366; color: white; padding: 12px; border-radius: 8px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #002244; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold;}
         .cikmis-oran { color: #ffc107; display: block; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; font-weight: bold; }
 
         .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
         .btn-acikla:hover { background: #218838; }
-        .btn-konu-anlat { background: #17a2b8; width: auto; margin-bottom: 0; padding: 8px 15px; font-size: 0.85em; display: none; }
-        .btn-konu-anlat:hover { background: #138496; }
 
         .aciklama-kutusu { display: none; background: #28a745; color: white; font-weight: bold; padding: 15px; border-radius: 8px; font-size: 0.95em; margin-bottom: 15px; white-space: pre-wrap; line-height: 1.4; }
-        .konu-anlatimi-kutusu { display: none; background: #eef5ff; color: #0056b3; border: 1px solid #b8daff; padding: 15px; border-radius: 8px; font-size: 0.95em; margin-bottom: 15px; line-height: 1.6; }
 
         .nav { display: flex; justify-content: space-between; gap: 10px; }
         .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; transition: 0.2s;}
@@ -215,15 +211,10 @@
     
                 <div class="action-area" id="action-area">
                     <div id="cikmis-alani" class="cikmis-kutu"></div>
+                    <div id="zorluk-alani" class="zorluk-kutu"></div>
                     
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; min-height: 35px;">
-                        <div id="zorluk-alani" class="zorluk-kutu"></div>
-                        <button class="btn-acikla btn-konu-anlat" id="btnKonuAnlat" onclick="konuAnlatimiGosterGizle()">📚 KONUYU ANLAT</button>
-                    </div>
-
                     <button class="btn-acikla" id="btnAcikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
                     
-                    <div id="konu-anlatimi-alani" class="konu-anlatimi-kutusu"></div>
                     <div id="aciklama-alani" class="aciklama-kutusu"></div>
 
                     <div class="nav" id="nav-buttons">
@@ -435,11 +426,11 @@
         function toggleGoldenSim(cb) {
             const grid = document.getElementById('sim-subject-grid');
             const containers = grid.querySelectorAll('.sim-cb-container');
-            const goldenSubjects = ["M&B", "DGR", "LAW", "NAV", "COM", "FPL"]; 
+            const goldenSubjects = ["M&B", "DGR", "LAW", "NAV", "COM", "FPL"];
 
-            containers.forEach(container => {
+            containers.forEach((container, i) => {
                 const checkbox = container.querySelector('.sim-cb');
-                const subjectCode = examSubjects[checkbox.value].code;
+                const subjectCode = examSubjects[i].code;
                 
                 if (cb.checked) {
                     if (!goldenSubjects.includes(subjectCode)) {
@@ -493,7 +484,7 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 20px;" id="sim-subject-grid">
                     </div>
                     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <button onclick="document.querySelectorAll('.sim-cb').forEach(cb => { if(cb.parentElement.style.display !== 'none') cb.checked = true; });" class="btn btn-gray" style="flex: 1; min-width: 150px;">Tümünü Seç</button>
+                        <button onclick="document.querySelectorAll('.sim-cb').forEach(cb => cb.checked = true);" class="btn btn-gray" style="flex: 1; min-width: 150px;">Tümünü Seç (12 Ders)</button>
                         <button onclick="startSimulation()" class="btn" style="flex: 2; background: #28a745; min-width: 200px;">SİMÜLASYONU BAŞLAT</button>
                     </div>
                 </div>
@@ -518,8 +509,8 @@
                 showCustomNotification("Lütfen en az bir ders seçin!", "warning"); return;
             }
 
+            const onlyGolden = document.getElementById('only-golden-cb') ? document.getElementById('only-golden-cb').checked : false;
             let totalQuestions = [];
-            const onlyGolden = document.getElementById('only-golden-cb').checked;
             
             checkboxes.forEach(cb => {
                 const sub = examSubjects[cb.value];
@@ -562,8 +553,6 @@
             document.getElementById('btnAcikla').style.display = 'none'; 
             document.getElementById('cikmis-alani').style.display = 'none';
             document.getElementById('zorluk-alani').style.display = 'none';
-            document.getElementById('btnKonuAnlat').style.display = 'none';
-            document.getElementById('konu-anlatimi-alani').style.display = 'none';
             document.getElementById('nav-buttons').innerHTML = `
                 <button class="btn btn-gray" onclick="move(-1)">Önceki Soru</button>
                 <button class="btn" onclick="finishExam()" style="background:#dc3545; color:white; flex:0.8;">SINAVI BİTİR</button>
@@ -810,64 +799,6 @@
             else if (e.key === ' ' && !isExamModeActive) { e.preventDefault(); const btn = document.getElementById('btnAcikla'); if(btn.style.display !== 'none') btn.click(); }
         });
 
-        function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
-
-        function searchByKeyword() {
-            const val = document.getElementById('keyword-search').value.trim().toLowerCase();
-            if (!val) { showCustomNotification("Lütfen aranacak kelimeyi girin.", "warning"); return; }
-
-            if(isExamModeActive) {
-                showConfirm("Sınav devam ediyor! Çıkmak istediğinize emin misiniz? Sınav verileriniz silinecek.", () => {
-                    exitExamMode();
-                    executeKeywordSearch(val);
-                });
-                return;
-            }
-            executeKeywordSearch(val);
-        }
-
-        function executeKeywordSearch(val) {
-            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-
-            const escapedVal = val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const regex = new RegExp("\\b" + escapedVal + "\\b", "i");
-
-            filteredQs = allQs.filter(q => {
-                const metin = q['Soru Metni'] || "";
-                const a = q['A Şıkkı'] || "";
-                const b = q['B Şıkkı'] || "";
-                const c = q['C Şıkkı'] || "";
-                const d = q['D Şıkkı'] || "";
-                const e = q['E Şıkkı'] || "";
-                const aciklama = q['Açıklama'] || "";
-                
-                return regex.test(metin) || regex.test(a) || regex.test(b) || regex.test(c) || regex.test(d) || regex.test(e) || regex.test(aciklama);
-            });
-
-            if(filteredQs.length > 0) {
-                idx = 0;
-                renderList();
-                show();
-                showCustomNotification(`"${val}" kelimesi ile ${filteredQs.length} soru bulundu.`, "success");
-            } else {
-                renderList();
-                show();
-                showCustomNotification(`"${val}" kelimesi ile eşleşen soru bulunamadı.`, "error");
-            }
-            document.getElementById('keyword-search').value = ''; 
-        }
-
-        function resetKeywordSearch() {
-            document.getElementById('keyword-search').value = '';
-            let defaultBtn = Array.from(document.querySelectorAll('.cat-btn')).find(b => b.innerText.includes('GOLDEN SORULAR'));
-            if(defaultBtn) {
-                filterByCategory('CIKMIS', defaultBtn);
-            } else {
-                filterByCategory('CIKMIS');
-            }
-            showCustomNotification("Arama temizlendi, liste normale döndü.", "success");
-        }
-
         let allQs = []; 
         let filteredQs = []; 
         let idx = 0; 
@@ -898,24 +829,11 @@
         async function start() {
             try {
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
-                document.getElementById('txt').innerText = "Sorular ve konu analizleri hazırlanıyor, lütfen bekleyin...";
+                document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
 
-                const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm_com_final.json', 'golden-fpl-fm-full.json' ];
+                const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm_com_final.json', 'kdm-fpl-fm-full.json' ];
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => { return { json: () => [] }; })));
                 const dataArrays = await Promise.all(responses.map(res => res.json()));
-
-                const konuRes = await fetch('sorular-konu-anlatimi.json').catch(e => { return { json: () => [] }; });
-                const konuData = await konuRes.json();
-
-                const konuSozlugu = {};
-                if (Array.isArray(konuData)) {
-                    konuData.forEach(item => {
-                        if(item['Soru Numarası'] && item['Konu Anlatımı']) {
-                            let temizNo = item['Soru Numarası'].replace(/KDM/g, 'GOLDEN');
-                            konuSozlugu[temizNo] = item['Konu Anlatımı'];
-                        }
-                    });
-                }
 
                 allQs = [];
                 dataArrays.forEach(arr => {
@@ -923,10 +841,6 @@
                         arr.forEach(item => {
                             if(item['Kategori']) item['Kategori'] = item['Kategori'].replace(/KDM/g, 'GOLDEN');
                             if(item['Soru Numarası']) item['Soru Numarası'] = item['Soru Numarası'].replace(/KDM/g, 'GOLDEN');
-                            
-                            if(konuSozlugu[item['Soru Numarası']]) {
-                                item['Konu Anlatımı'] = konuSozlugu[item['Soru Numarası']];
-                            }
                         });
                         allQs.push(...arr);
                     }
@@ -938,17 +852,15 @@
                 show();
                 
                 arkaPlanResimYukleyici(allQs);
-
+                
             } catch(e) { 
                 document.getElementById('no').innerText = "BAĞLANTI HATASI";
                 document.getElementById('txt').innerText = "Veriler sunucudan çekilemedi. Lütfen bağlantınızı kontrol edin.";
             }
         }
 
-        // --- ARKA PLAN ÖN YÜKLEYİCİ (HAYALET BOT V2: RESİM + HTML) ---
         function arkaPlanResimYukleyici(tumSorular) {
             setTimeout(() => {
-                console.log("Arka plan ön yükleyicisi (Preloader) başlatıldı...");
                 const preloadSet = new Set();
                 
                 preloadSet.add('img/logo.png');
@@ -975,7 +887,6 @@
                     const img = new Image();
                     img.src = src;
                 });
-                console.log(preloadSet.size + " adet resim arka planda başarıyla ön belleğe alındı.");
 
                 const htmlDosyalar = [
                     'guncelle.html', 'genel.html', 'notlar.html', 'mb.html', 
@@ -984,10 +895,8 @@
                 ];
 
                 htmlDosyalar.forEach(dosya => {
-                    fetch(`html_notlar/${dosya}`).catch(e => console.log("Preload hatası:", dosya));
+                    fetch(`html_notlar/${dosya}`).catch(e => {});
                 });
-                console.log(htmlDosyalar.length + " adet HTML not dosyası ön belleğe alındı.");
-
             }, 2000); 
         }
 
@@ -1060,8 +969,7 @@
                 document.getElementById('no').innerText = "BİLGİ"; document.getElementById('txt').innerText = "Bu kategoriye ait soru bulunamadı.";
                 document.getElementById('opts').innerHTML = ''; document.getElementById('q-img').style.display = "none";
                 document.getElementById('aciklama-alani').style.display = "none"; document.getElementById('cikmis-alani').style.display = "none";
-                document.getElementById('zorluk-alani').style.display = "none"; document.getElementById('btnAcikla').style.display = "none"; 
-                document.getElementById('btnKonuAnlat').style.display = "none"; document.getElementById('konu-anlatimi-alani').style.display = "none"; return;
+                document.getElementById('zorluk-alani').style.display = "none"; document.getElementById('btnAcikla').style.display = "none"; return;
             }
 
             document.getElementById('btnAcikla').style.display = "block";
@@ -1086,18 +994,6 @@
             if(q['Sınav Anısı']) { cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`; cikmisKutu.style.display = "block"; } else { cikmisKutu.style.display = "none"; }
 
             const aKutu = document.getElementById('aciklama-alani'); aKutu.style.display = "none"; aKutu.innerText = q['Açıklama'] || "Açıklama bulunamadı.";
-            
-            const kBtn = document.getElementById('btnKonuAnlat');
-            const kAlan = document.getElementById('konu-anlatimi-alani');
-            kAlan.style.display = "none"; 
-            
-            if (q['Konu Anlatımı'] && q['Konu Anlatımı'].trim() !== "") {
-                kBtn.style.display = "block"; 
-                kAlan.innerHTML = q['Konu Anlatımı']; 
-            } else {
-                kBtn.style.display = "none"; 
-                kAlan.innerHTML = "";
-            }
 
             const oDiv = document.getElementById('opts'); oDiv.innerHTML = '';
             ['a','b','c','d','e'].forEach(h => {
@@ -1128,6 +1024,68 @@
         function move(n) { if(!filteredQs.length) return; idx = (idx+n+filteredQs.length)%filteredQs.length; if(isExamModeActive) showExamQuestion(); else show(); }
         function rand() { if(!filteredQs.length) return; idx = Math.floor(Math.random()*filteredQs.length); show(); }
         function resetQ() { show(); }
+        function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
+        
+        function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
+
+        function searchByKeyword() {
+            const val = document.getElementById('keyword-search').value.trim();
+            if (!val) { showCustomNotification("Lütfen aranacak kelimeyi girin.", "warning"); return; }
+
+            if(isExamModeActive) {
+                showConfirm("Sınav devam ediyor! Çıkmak istediğinize emin misiniz? Sınav verileriniz silinecek.", () => {
+                    exitExamMode();
+                    executeKeywordSearch(val);
+                });
+                return;
+            }
+            executeKeywordSearch(val);
+        }
+
+        function executeKeywordSearch(val) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+
+            const escapedVal = val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp("\\b" + escapedVal + "\\b", "i");
+
+            filteredQs = allQs.filter(q => {
+                const metin = q['Soru Metni'] || "";
+                const a = q['A Şıkkı'] || "";
+                const b = q['B Şıkkı'] || "";
+                const c = q['C Şıkkı'] || "";
+                const d = q['D Şıkkı'] || "";
+                const e = q['E Şıkkı'] || "";
+                const aciklama = q['Açıklama'] || "";
+                
+                return regex.test(metin) || regex.test(a) || regex.test(b) || regex.test(c) || regex.test(d) || regex.test(e) || regex.test(aciklama);
+            });
+
+            if(filteredQs.length > 0) {
+                idx = 0;
+                renderList();
+                show();
+                showCustomNotification(`"${val}" kelimesi ile ${filteredQs.length} soru bulundu.`, "success");
+            } else {
+                renderList();
+                show();
+                showCustomNotification(`"${val}" kelimesi ile eşleşen soru bulunamadı.`, "error");
+            }
+            document.getElementById('keyword-search').value = ''; 
+        }
+
+        function resetKeywordSearch() {
+            document.getElementById('keyword-search').value = '';
+            
+            let defaultBtn = Array.from(document.querySelectorAll('.cat-btn')).find(b => b.innerText.includes('GOLDEN SORULAR'));
+            
+            if(defaultBtn) {
+                filterByCategory('CIKMIS', defaultBtn);
+            } else {
+                filterByCategory('CIKMIS');
+            }
+            
+            showCustomNotification("Arama temizlendi, liste normale döndü.", "success");
+        }
         
         function goToQuestion() {
             const val = document.getElementById('q-search').value.trim(); if(!val) return;
@@ -1150,20 +1108,6 @@
             }
         }
 
-        function konuAnlaent.getElementById('analiz-menu').style.display = 'none'; document.getElementById('analiz-icerik').style.display = 'block'; document.getElementById('analiz-baslik').innerText = baslik;
-            const metinAlani = document.getElementById('analiz-metin');
-            if (analizVerileri[kategoriId]) { metinAlani.innerHTML = analizVerileri[kategoriId]; return; }
-            metinAlani.innerHTML = "<div style='text-align:center; padding: 20px; font-weight:bold;'>Yükleniyor...</div>";
-            try {
-                const response = await fetch(`html_notlar/${kategoriId}.html`); if (!response.ok) throw new Error("Dosya bulunamadı");
-                analizVerileri[kategoriId] = await response.text(); metinAlani.innerHTML = analizVerileri[kategoriId]; 
-            } catch (error) { metinAlani.innerHTML = `<div style='color:#dc3545; font-weight:bold; text-align:center;'>HTML not dosyası bulunamadı.</div>`; }
-        }
-timiGosterGizle() {
-            const kAlan = document.getElementById('konu-anlatimi-alani');
-            kAlan.style.display = (kAlan.style.display === "none" || kAlan.style.display === "") ? "block" : "none";
-        }
-
         function openModal(id) { document.getElementById(id).style.display = "block"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; if(id === 'analizModal') closeAnaliz(); }
         window.onclick = function(e) { if (e.target.classList.contains('modal')) { e.target.style.display = "none"; if(e.target.id === 'analizModal') closeAnaliz(); } }
@@ -1172,7 +1116,16 @@ timiGosterGizle() {
             'notlar': `<p>Kendi şahsi notlarınız...</p><img src="img/not1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">`
         };
         async function openAnaliz(kategoriId, baslik) {
-            docum
+            document.getElementById('analiz-menu').style.display = 'none'; document.getElementById('analiz-icerik').style.display = 'block'; document.getElementById('analiz-baslik').innerText = baslik;
+            const metinAlani = document.getElementById('analiz-metin');
+            if (analizVerileri[kategoriId]) { metinAlani.innerHTML = analizVerileri[kategoriId]; return; }
+            metinAlani.innerHTML = "<div style='text-align:center; padding: 20px; font-weight:bold;'>Yükleniyor...</div>";
+            try {
+                const response = await fetch(`html_notlar/${kategoriId}.html`); if (!response.ok) throw new Error("Dosya bulunamadı");
+                analizVerileri[kategoriId] = await response.text(); metinAlani.innerHTML = analizVerileri[kategoriId]; 
+            } catch (error) { metinAlani.innerHTML = `<div style='color:#dc3545; font-weight:bold; text-align:center;'>HTML not dosyası bulunamadı.</div>`; }
+        }
+
         function closeAnaliz() {
             document.getElementById('analiz-icerik').style.display = 'none'; 
             document.getElementById('analiz-menu').style.display = 'block';
