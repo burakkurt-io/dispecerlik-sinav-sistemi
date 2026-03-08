@@ -1283,9 +1283,33 @@ function aciklamaGosterGizle() {
         }
 
         start();
+        // --- GÜVENLİK: F12 VE KAYNAK KODU KISAYOLLARINI ENGELLEME ---
+        document.addEventListener('keydown', function(e) {
+            // F12 tuşunu engelle
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl + Shift + I (Geliştirici Araçları)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl + Shift + J (Konsol)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl + U (Kaynağı Görüntüle)
+            if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+                e.preventDefault();
+                return false;
+            }
+        });
     </script>
 </body>
 </html>
+
 
 
 
