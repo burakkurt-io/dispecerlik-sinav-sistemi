@@ -51,6 +51,7 @@
         body.dark-mode .correct-opt { background: rgba(40, 167, 69, 0.15) !important; border-color: #28a745 !important; color: #28a745 !important; }
         body.dark-mode .wrong-opt { background: rgba(220, 53, 69, 0.15) !important; border-color: #dc3545 !important; color: #dc3545 !important; text-decoration: line-through; }
         body.dark-mode .zorluk-kutu { background: #332b00; color: #ffdd80; border-color: #ffc107; }
+        body.dark-mode .konu-anlatimi-kutusu { background: #1a2a3a !important; color: #80bfff !important; border-color: #0056b3 !important; }
 
         .wrapper { display: flex; flex: 1; overflow: hidden; max-width: 1700px; margin: 0 auto; width: 100%; }
         
@@ -88,14 +89,17 @@
 
         .action-area { flex-shrink: 0; width: 100%; margin-top: 10px; border-top: 1px solid #eee; padding-top: 15px; transition: 0.3s; display: flex; flex-direction: column; }
         
-        .zorluk-kutu { display: none; background: #FFF3CD; color: #856404; padding: 8px 12px; border-radius: 6px; font-size: 0.85em; border: 1px solid #ffeeba; font-weight: bold; width: fit-content; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 10px; }
+        .zorluk-kutu { display: none; background: #FFF3CD; color: #856404; padding: 8px 12px; border-radius: 6px; font-size: 0.85em; border: 1px solid #ffeeba; font-weight: bold; width: fit-content; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 0; }
         .cikmis-kutu { display: none; background: #003366; color: white; padding: 12px; border-radius: 8px; font-size: 0.85em; margin-bottom: 10px; border: 1px solid #002244; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold;}
         .cikmis-oran { color: #ffc107; display: block; margin-top: 5px; font-size: 0.9em; text-transform: uppercase; font-weight: bold; }
 
         .btn-acikla { background: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; transition: 0.2s; }
         .btn-acikla:hover { background: #218838; }
+        .btn-konu-anlat { background: #17a2b8; width: auto; margin-bottom: 0; padding: 8px 15px; font-size: 0.85em; display: none; }
+        .btn-konu-anlat:hover { background: #138496; }
 
         .aciklama-kutusu { display: none; background: #28a745; color: white; font-weight: bold; padding: 15px; border-radius: 8px; font-size: 0.95em; margin-bottom: 15px; white-space: pre-wrap; line-height: 1.4; }
+        .konu-anlatimi-kutusu { display: none; background: #eef5ff; color: #0056b3; border: 1px solid #b8daff; padding: 15px; border-radius: 8px; font-size: 0.95em; margin-bottom: 15px; line-height: 1.6; }
 
         .nav { display: flex; justify-content: space-between; gap: 10px; }
         .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; background: var(--p); color: white; font-weight: bold; font-size: 0.85em; text-transform: uppercase; transition: 0.2s;}
@@ -211,10 +215,15 @@
     
                 <div class="action-area" id="action-area">
                     <div id="cikmis-alani" class="cikmis-kutu"></div>
-                    <div id="zorluk-alani" class="zorluk-kutu"></div>
                     
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; min-height: 35px;">
+                        <div id="zorluk-alani" class="zorluk-kutu"></div>
+                        <button class="btn-acikla btn-konu-anlat" id="btnKonuAnlat" onclick="konuAnlatimiGosterGizle()">📚 KONUYU ANLAT</button>
+                    </div>
+
                     <button class="btn-acikla" id="btnAcikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
                     
+                    <div id="konu-anlatimi-alani" class="konu-anlatimi-kutusu"></div>
                     <div id="aciklama-alani" class="aciklama-kutusu"></div>
 
                     <div class="nav" id="nav-buttons">
@@ -227,25 +236,28 @@
             </div>
         </main>
 
-        <aside class="side">
+<aside class="side">
             <div class="side-header">
                 <div class="side-title">SORU NAVİGASYONU</div>
+                
                 <div class="search-box" style="margin-bottom: 10px;">
                     <input type="text" id="keyword-search" placeholder="Kelime Ara (Örn: RVR)" onkeypress="handleKeywordSearch(event)">
                     <div style="display: flex; gap: 6px;">
                         <button onclick="searchByKeyword()" style="background: #17a2b8; border-radius: 6px; padding: 0 15px;">BUL</button>
-                        <button onclick="resetKeywordSearch()" style="background: #28a745; border-radius: 6px; padding: 0 12px; font-size: 18px; font-weight: bold;" title="Aramayı Sıfırla">&#x21BB;</button>
+<button onclick="resetKeywordSearch()" style="background: #28a745; font-size: 18px; padding: 0 10px; margin-left: 1px;" title="Aramayı Sıfırla">&#x21BB;</button>      
                     </div>
                 </div>
+
                 <div class="search-box">
                     <input type="text" id="q-search" placeholder="Soru No (Örn: S.12)" onkeypress="handleSearch(event)">
                     <button onclick="goToQuestion()">GİT</button>
                 </div>
             </div>
+            
             <div id="list"></div>
         </aside>
+        
     </div>
-
     <div class="footer-area">
         <div class="footer-buttons">
             <div class="footer-note">CREATED BY BURAK KURT</div>
@@ -286,7 +298,7 @@
             <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">E-Posta Gönderin</a>
             <div style="text-align: center; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px;">
                 <img src="img/flight dispatch.jpeg" alt="Dispeçer Hayatı" style="max-width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                <div style="font-size: 12px; color: #6c757d; margin-top: 10px; font-style: italic; font-weight: bold;">"Bir dispeçerin sıradan bir günü..." 😅</div>
+                <div style="font-size: 12px; color: #6c757d; margin-top: 10px; font-weight: bold;">"Yoğunum ama fırsat bulursam size dönerim..." </div>
             </div>
         </div>
     </div>
@@ -299,7 +311,7 @@
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651866" target="_blank" class="action-option donate-option">Business Class <span class="d-price">500 TL - Konforlu Gelişim Desteği</span></a>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651917" target="_blank" class="action-option donate-option">Golden Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span></a>
             <a href="https://www.shopier.com/dispecerliksinavsistemi/44651987" target="_blank" class="action-option donate-option">"Sayende Dispeç Oldum" <span class="d-price">2000 TL - Efsanevi Kariyer Desteği</span></a>
-            <div style="text-align: center; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px;">
+       <div style="text-align: center; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px;">
                 <img src="img/flight dispatch.jpeg" alt="Dispeçer Hayatı" style="max-width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
                 <div style="font-size: 12px; color: #6c757d; margin-top: 10px; font-style: italic; font-weight: bold;">"Sistemi ayakta tutan o yorgun kahramanlara destek olun..." ☕✈️</div>
             </div>
@@ -422,31 +434,7 @@
             btn.classList.add('active');
             selectedDifficulty = val;
         }
-
-        function toggleGoldenSim(cb) {
-            const grid = document.getElementById('sim-subject-grid');
-            const containers = grid.querySelectorAll('.sim-cb-container');
-            const goldenSubjects = ["M&B", "DGR", "LAW", "NAV", "COM", "FPL"];
-
-            containers.forEach((container, i) => {
-                const checkbox = container.querySelector('.sim-cb');
-                const subjectCode = examSubjects[i].code;
-                
-                if (cb.checked) {
-                    if (!goldenSubjects.includes(subjectCode)) {
-                        container.style.display = 'none';
-                        checkbox.checked = false;
-                    } else {
-                        container.style.border = "2px solid #ffc107";
-                    }
-                } else {
-                    container.style.display = 'flex';
-                    container.style.border = "2px solid #eee";
-                }
-            });
-        }
-
-        function renderSimulationSetup() {
+function renderSimulationSetup() {
             document.getElementById('no').innerText = "SINAV SİMÜLASYONU MERKEZİ";
             document.getElementById('opts').innerHTML = '';
             document.getElementById('q-img').style.display = 'none';
@@ -455,8 +443,8 @@
             let html = `
                 <div style="padding: 10px; width:100%;">
                     <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="img/crew_briefing.png" alt="Crew Briefing" style="max-width: 100%; max-height: 220px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); object-fit: cover; width: 100%;">
-                        <div style="font-size: 12px; color: #6c757d; margin-top: 8px; font-style: italic; font-weight: bold;">"Pre-flight briefing... Sınav operasyonuna hazırlanıyorsunuz."</div>
+<img src="img/crew_briefing.png" alt="Crew Briefing" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);">
+<div style="font-size: 12px; color: #6c757d; margin-top: 8px; font-style: italic; font-weight: bold;">"Pre-flight briefing... Sınav operasyonuna hazırlanıyorsunuz."</div>
                     </div>
                     <div style="background: ${document.body.classList.contains('dark-mode') ? '#2a2a2a' : '#eef5ff'}; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; border-left: 4px solid var(--p);">
                         <strong style="color:var(--p); font-size: 16px;">📋 Kurallar ve Dinamik Zorluk:</strong><br>
@@ -471,13 +459,6 @@
                         <button class="diff-btn diff-easy" onclick="selectDiff(this, 'EASY')">KOLAY (1-2)</button>
                         <button class="diff-btn diff-med" onclick="selectDiff(this, 'MEDIUM')">ORTA (3-4)</button>
                         <button class="diff-btn diff-hard" onclick="selectDiff(this, 'HARD')">ZOR (4-5)</button>
-                    </div>
-
-                    <div style="margin-bottom: 20px;">
-                        <label class="sim-cb-container" style="border: 2px solid #ffc107; background: #fffdf5;">
-                            <input type="checkbox" id="only-golden-cb" onchange="toggleGoldenSim(this)" style="width: 20px; height: 20px;">
-                            <span style="font-weight: bold; color: #856404;">SADECE GOLDEN SORULAR (ÖZEL HAVUZ)</span>
-                        </label>
                     </div>
 
                     <h3 style="margin-bottom: 15px; color: var(--p); font-size: 14px;">Simülasyona Dahil Edilecek Dersler:</h3>
@@ -509,19 +490,14 @@
                 showCustomNotification("Lütfen en az bir ders seçin!", "warning"); return;
             }
 
-            const onlyGolden = document.getElementById('only-golden-cb') ? document.getElementById('only-golden-cb').checked : false;
             let totalQuestions = [];
             
             checkboxes.forEach(cb => {
                 const sub = examSubjects[cb.value];
                 let subQs = allQs.filter(q => {
                     let catStr = (q['Kategori'] || "").toUpperCase();
-                    if (onlyGolden) {
-                        return catStr.includes("GOLDEN - " + sub.code);
-                    } else {
-                        let regex = new RegExp("\\b" + sub.code + "\\b");
-                        return regex.test(catStr) || catStr.includes("GOLDEN - " + sub.code);
-                    }
+                    let regex = new RegExp("\\b" + sub.code + "\\b");
+                    return regex.test(catStr) || catStr.includes("GOLDEN - " + sub.code);
                 });
 
                 if(selectedDifficulty !== "ALL") {
@@ -553,6 +529,8 @@
             document.getElementById('btnAcikla').style.display = 'none'; 
             document.getElementById('cikmis-alani').style.display = 'none';
             document.getElementById('zorluk-alani').style.display = 'none';
+            document.getElementById('btnKonuAnlat').style.display = 'none';
+            document.getElementById('konu-anlatimi-alani').style.display = 'none';
             document.getElementById('nav-buttons').innerHTML = `
                 <button class="btn btn-gray" onclick="move(-1)">Önceki Soru</button>
                 <button class="btn" onclick="finishExam()" style="background:#dc3545; color:white; flex:0.8;">SINAVI BİTİR</button>
@@ -787,7 +765,7 @@
         }
 
         document.addEventListener('keydown', (e) => {
-            if(document.activeElement.id === 'q-search' || document.activeElement.id === 'keyword-search') return;
+            if(document.activeElement.id === 'q-search') return;
             const key = e.key.toLowerCase();
             if(['a', 'b', 'c', 'd', 'e'].includes(key)) {
                 const opts = document.getElementById('opts').children;
@@ -810,7 +788,6 @@
             { name: "⭐ GOLDEN - LAW", keyword: "GOLDEN - HAVA" },
             { name: "⭐ GOLDEN - NAV", keyword: "GOLDEN - SEYR" },
             { name: "⭐ GOLDEN - COM", keyword: "GOLDEN - HABER" },
-            { name: "⭐ GOLDEN - FPL&FM", keyword: "GOLDEN - FPL" },
             { name: "📚 TÜM SORULAR", keyword: "ALL" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
@@ -825,13 +802,68 @@
             { name: "11 - UÇUŞ PLANLAMA (FPL&FM)", keyword: "FPL" },
             { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
         ];
+// --- ARKA PLAN RESİM ÖN YÜKLEYİCİ (HAYALET BOT) ---
+       // --- ARKA PLAN ÖN YÜKLEYİCİ (HAYALET BOT V2: RESİM + HTML) ---
+        function arkaPlanResimYukleyici(tumSorular) {
+            // Sistemin açılışından 2 saniye sonra başlasın ki ana ekran donmasın
+            setTimeout(() => {
+                console.log("Arka plan ön yükleyicisi (Preloader) başlatıldı...");
+                const preloadSet = new Set();
+                
+                // 1. Sabit ve HTML içi resimleri ekle
+                preloadSet.add('img/logo.png');
+                preloadSet.add('img/flight dispatch.jpeg');
+                preloadSet.add('img/crew_briefing.png');
+                preloadSet.add('img/not1.png');
 
+                // 2. Tüm JSON verisini tara ve PNG/JPG'leri avla
+                tumSorular.forEach(q => {
+                    // Ana Soru Görselleri
+                    if (q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'].trim() !== "") {
+                        preloadSet.add(q['Resim Yolu'].trim());
+                    }
+                    // Şıklardaki Görseller
+                    ['A', 'B', 'C', 'D', 'E'].forEach(harf => {
+                        const sik = q[harf + ' Şıkkı'];
+                        if (sik && typeof sik === 'string') {
+                            const s = sik.trim().toLowerCase();
+                            if (s.endsWith('.png') || s.endsWith('.jpg') || s.endsWith('.jpeg')) {
+                                preloadSet.add(sik.trim());
+                            }
+                        }
+                    });
+                });
+
+                // 3. Toplanan resimleri sessizce RAM'e indir
+                preloadSet.forEach(src => {
+                    const img = new Image();
+                    img.src = src;
+                });
+                console.log(preloadSet.size + " adet resim arka planda başarıyla ön belleğe alındı.");
+
+                // -------------------------------------------------------------
+                // 4. HTML ANALİZ VE GÜNCELLEME NOTLARINI ÖN BELLEĞE ALMA (YENİ)
+                // -------------------------------------------------------------
+                const htmlDosyalar = [
+                    'guncelle.html', 'genel.html', 'notlar.html', 'mb.html', 
+                    'hpl.html', 'dgr.html', 'com.html', 'law.html', 'hav.html', 
+                    'met.html', 'pef.html', 'sec.html', 'nav.html', 'fpl.html', 'avi.html'
+                ];
+
+                htmlDosyalar.forEach(dosya => {
+                    // Arka planda sessizce fetch atıp tarayıcı cache'ine (hafızasına) hapsediyoruz
+                    fetch(`html_notlar/${dosya}`).catch(e => console.log("Preload hatası:", dosya));
+                });
+                console.log(htmlDosyalar.length + " adet HTML not dosyası ön belleğe alındı.");
+
+            }, 2000); // 2 saniye gecikme
+        }
         async function start() {
             try {
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
                 document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
 
-                const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm_com_final.json', 'kdm-fpl-fm-full.json' ];
+                const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm_com_final.json' ];
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => { return { json: () => [] }; })));
                 const dataArrays = await Promise.all(responses.map(res => res.json()));
 
@@ -849,55 +881,15 @@
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined); 
                 renderCategories();
                 renderList();
-                show();
+                show(); // EKRAN ÇİZİLDİ, SİSTEM KULLANIMA HAZIR!
                 
+                // Şimdi arka planda sessizce resimleri indirmeye başla (Sistemi asla kasmaz)
                 arkaPlanResimYukleyici(allQs);
                 
             } catch(e) { 
                 document.getElementById('no').innerText = "BAĞLANTI HATASI";
-                document.getElementById('txt').innerText = "Veriler sunucudan çekilemedi. Lütfen bağlantınızı kontrol edin.";
+                document.getElementById('txt').innerText = "Veriler sunucudan çekilemedi.";
             }
-        }
-
-        function arkaPlanResimYukleyici(tumSorular) {
-            setTimeout(() => {
-                const preloadSet = new Set();
-                
-                preloadSet.add('img/logo.png');
-                preloadSet.add('img/flight dispatch.jpeg');
-                preloadSet.add('img/crew_briefing.png');
-                preloadSet.add('img/not1.png');
-
-                tumSorular.forEach(q => {
-                    if (q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'].trim() !== "") {
-                        preloadSet.add(q['Resim Yolu'].trim());
-                    }
-                    ['A', 'B', 'C', 'D', 'E'].forEach(harf => {
-                        const sik = q[harf + ' Şıkkı'];
-                        if (sik && typeof sik === 'string') {
-                            const s = sik.trim().toLowerCase();
-                            if (s.endsWith('.png') || s.endsWith('.jpg') || s.endsWith('.jpeg')) {
-                                preloadSet.add(sik.trim());
-                            }
-                        }
-                    });
-                });
-
-                preloadSet.forEach(src => {
-                    const img = new Image();
-                    img.src = src;
-                });
-
-                const htmlDosyalar = [
-                    'guncelle.html', 'genel.html', 'notlar.html', 'mb.html', 
-                    'hpl.html', 'dgr.html', 'com.html', 'law.html', 'hav.html', 
-                    'met.html', 'pef.html', 'sec.html', 'nav.html', 'fpl.html', 'avi.html'
-                ];
-
-                htmlDosyalar.forEach(dosya => {
-                    fetch(`html_notlar/${dosya}`).catch(e => {});
-                });
-            }, 2000); 
         }
 
         function renderCategories() {
@@ -969,7 +961,8 @@
                 document.getElementById('no').innerText = "BİLGİ"; document.getElementById('txt').innerText = "Bu kategoriye ait soru bulunamadı.";
                 document.getElementById('opts').innerHTML = ''; document.getElementById('q-img').style.display = "none";
                 document.getElementById('aciklama-alani').style.display = "none"; document.getElementById('cikmis-alani').style.display = "none";
-                document.getElementById('zorluk-alani').style.display = "none"; document.getElementById('btnAcikla').style.display = "none"; return;
+                document.getElementById('zorluk-alani').style.display = "none"; document.getElementById('btnAcikla').style.display = "none"; 
+                document.getElementById('btnKonuAnlat').style.display = "none"; document.getElementById('konu-anlatimi-alani').style.display = "none"; return;
             }
 
             document.getElementById('btnAcikla').style.display = "block";
@@ -994,7 +987,20 @@
             if(q['Sınav Anısı']) { cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`; cikmisKutu.style.display = "block"; } else { cikmisKutu.style.display = "none"; }
 
             const aKutu = document.getElementById('aciklama-alani'); aKutu.style.display = "none"; aKutu.innerText = q['Açıklama'] || "Açıklama bulunamadı.";
-
+            
+            // Konu Anlatımı Butonunu Bağımsız Hale Getirme
+            const kBtn = document.getElementById('btnKonuAnlat');
+            const kAlan = document.getElementById('konu-anlatimi-alani');
+            kAlan.style.display = "none"; // İçerik başta hep gizli
+            
+            if (q['Konu Anlatımı'] && q['Konu Anlatımı'].trim() !== "") {
+                kBtn.style.display = "block"; // JSON'da konu anlatımı varsa butonu HEP göster
+                kAlan.innerHTML = q['Konu Anlatımı']; // İçeriği hazırla
+            } else {
+                kBtn.style.display = "none"; // Veri yoksa butonu gizle
+                kAlan.innerHTML = "";
+            }
+            
             const oDiv = document.getElementById('opts'); oDiv.innerHTML = '';
             ['a','b','c','d','e'].forEach(h => {
                 const key = h.toUpperCase() + " Şıkkı";
@@ -1026,14 +1032,20 @@
         function resetQ() { show(); }
         function handleSearch(e) { if (e.key === 'Enter') goToQuestion(); }
         
-        function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
+        function goToQuestion() {
+            const val = document.getElementById('q-search').value.trim(); if(!val) return;
+            const numMatch = val.match(/\d+/); if(!numMatch) { showCustomNotification("Geçerli bir sayı girin.", "warning"); return; }
+            const target = 'S.' + numMatch[0]; const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase().endsWith(target));
+            if (fIdx !== -1) { idx = fIdx; if(isExamModeActive) showExamQuestion(); else show(); document.getElementById('q-search').value = ''; } else { showCustomNotification("Soru bulunamadı!", "error"); }
+        }
+function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
 
         function searchByKeyword() {
-            const val = document.getElementById('keyword-search').value.trim();
-            if (!val) { showCustomNotification("Lütfen aranacak kelimeyi girin.", "warning"); return; }
+            const val = document.getElementById('keyword-search').value.trim().toLowerCase();
+            if (!val) { showCustomNotification("Lutfen aranacak kelimeyi girin.", "warning"); return; }
 
             if(isExamModeActive) {
-                showConfirm("Sınav devam ediyor! Çıkmak istediğinize emin misiniz? Sınav verileriniz silinecek.", () => {
+                showConfirm("Sinav devam ediyor! Cikmak istediginize emin misiniz? Sinav verileriniz silinecek.", () => {
                     exitExamMode();
                     executeKeywordSearch(val);
                 });
@@ -1042,13 +1054,17 @@
             executeKeywordSearch(val);
         }
 
-        function executeKeywordSearch(val) {
+       function executeKeywordSearch(val) {
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
 
+            // 1. Kullanıcının girdiği kelimedeki özel sembolleri (+, -, ?) regex'i bozmaması için temizliyoruz
             const escapedVal = val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            
+            // 2. Sadece TAM KELİME (\b) eşleşmesi yapan Regex'i oluşturuyoruz ('i' büyük/küçük harf duyarsız yapar)
             const regex = new RegExp("\\b" + escapedVal + "\\b", "i");
 
             filteredQs = allQs.filter(q => {
+                // toLowerCase() yapmamıza gerek kalmadı çünkü Regex'teki "i" bayrağı o işi kendi hallediyor
                 const metin = q['Soru Metni'] || "";
                 const a = q['A Şıkkı'] || "";
                 const b = q['B Şıkkı'] || "";
@@ -1057,9 +1073,10 @@
                 const e = q['E Şıkkı'] || "";
                 const aciklama = q['Açıklama'] || "";
                 
+                // .includes yerine regex.test() kullanıyoruz ki sadece kelime sınırları içindeyse true dönsün
                 return regex.test(metin) || regex.test(a) || regex.test(b) || regex.test(c) || regex.test(d) || regex.test(e) || regex.test(aciklama);
             });
-
+           
             if(filteredQs.length > 0) {
                 idx = 0;
                 renderList();
@@ -1068,14 +1085,14 @@
             } else {
                 renderList();
                 show();
-                showCustomNotification(`"${val}" kelimesi ile eşleşen soru bulunamadı.`, "error");
+                showCustomNotification(`"${val}" kelimesi ile eşleşen soru bulunamadi.`, "error");
             }
             document.getElementById('keyword-search').value = ''; 
         }
-
-        function resetKeywordSearch() {
+function resetKeywordSearch() {
             document.getElementById('keyword-search').value = '';
             
+            // Varsayilan listeye (GOLDEN SORULAR) geri dönüş yap
             let defaultBtn = Array.from(document.querySelectorAll('.cat-btn')).find(b => b.innerText.includes('GOLDEN SORULAR'));
             
             if(defaultBtn) {
@@ -1087,25 +1104,25 @@
             showCustomNotification("Arama temizlendi, liste normale döndü.", "success");
         }
         
-        function goToQuestion() {
-            const val = document.getElementById('q-search').value.trim(); if(!val) return;
-            const numMatch = val.match(/\d+/); if(!numMatch) { showCustomNotification("Geçerli bir sayı girin.", "warning"); return; }
-            const target = 'S.' + numMatch[0]; const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase().endsWith(target));
-            if (fIdx !== -1) { idx = fIdx; if(isExamModeActive) showExamQuestion(); else show(); document.getElementById('q-search').value = ''; } else { showCustomNotification("Soru bulunamadı!", "error"); }
-        }
-
-        function aciklamaGosterGizle() {
+function aciklamaGosterGizle() {
             const a = document.getElementById('aciklama-alani'); 
             const isHidden = a.style.display === "none"; 
             a.style.display = isHidden ? "block" : "none";
             
             if (isHidden) {
+                // Doğru şıkkı göster ve optikleri kitle
                 document.getElementById('q-container').classList.add('ans-mode'); 
                 const dogru = (filteredQs[idx]['Doğru Cevap'] || "").trim().toLowerCase();
                 Array.from(document.getElementById('opts').children).forEach(btn => { 
                     if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct'); 
                 });
             }
+            // Konu anlatımı butonuna veya alanına artık buradan müdahale etmiyoruz!
+        }
+        
+        function konuAnlatimiGosterGizle() {
+            const kAlan = document.getElementById('konu-anlatimi-alani');
+            kAlan.style.display = (kAlan.style.display === "none" || kAlan.style.display === "") ? "block" : "none";
         }
 
         function openModal(id) { document.getElementById(id).style.display = "block"; }
@@ -1113,8 +1130,31 @@
         window.onclick = function(e) { if (e.target.classList.contains('modal')) { e.target.style.display = "none"; if(e.target.id === 'analizModal') closeAnaliz(); } }
 
         const analizVerileri = {
-            'notlar': `<p>Kendi şahsi notlarınız...</p><img src="img/not1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">`
-        };
+    'notlar': `<p>Kendi şahsi notlarımız... Eğer siz de notunuzu yayınlamak istiyorsanız benimle iletişime geçebilirsiniz!</p>
+    <img src="img/not1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="img/not2.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="img/not3.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="img/not4.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O2.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O3.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O4.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O5.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O6.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O7.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O8.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O9.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O10.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O11.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O12.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O13.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O14.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O15.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O16.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O17.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O18.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+    <img src="notlar/O19.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">`
+};
         async function openAnaliz(kategoriId, baslik) {
             document.getElementById('analiz-menu').style.display = 'none'; document.getElementById('analiz-icerik').style.display = 'block'; document.getElementById('analiz-baslik').innerText = baslik;
             const metinAlani = document.getElementById('analiz-metin');
@@ -1147,3 +1187,22 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
