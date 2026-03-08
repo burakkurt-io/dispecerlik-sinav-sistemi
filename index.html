@@ -878,11 +878,24 @@ let subQs = allQs.filter(q => {
                 document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
 
                 const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm-fpl-fm-full.json' , 'kdm_com_final.json' ];
-                const responses = await Promise.all(urls.map(url => fetch(url).catch(e => { return { json: () => [] }; })));
-                const dataArrays = await Promise.all(responses.map(res => res.json()));
+                
+                // Her bir dosyayı güvenli bir şekilde çekmeyi deneriz
+                const responses = await Promise.all(urls.map(async url => {
+                    try {
+                        const res = await fetch(url);
+                        if (!res.ok) {
+                            console.warn(`HATA: ${url} bulunamadı! (Hata Kodu: ${res.status})`);
+                            return []; // Dosya yoksa sistemi çökertmek yerine boş dizi döndür
+                        }
+                        return await res.json();
+                    } catch (e) {
+                        console.warn(`HATA: ${url} çekilemedi! JSON formatı bozuk veya CORS engeli.`, e);
+                        return [];
+                    }
+                }));
 
                 allQs = [];
-                dataArrays.forEach(arr => {
+                responses.forEach(arr => {
                     if (Array.isArray(arr)) {
                         arr.forEach(item => {
                             if(item['Kategori']) item['Kategori'] = item['Kategori'].replace(/KDM/g, 'GOLDEN');
@@ -892,17 +905,22 @@ let subQs = allQs.filter(q => {
                     }
                 });
 
+                if (allQs.length === 0) {
+                    throw new Error("Hiçbir JSON dosyasından soru çekilemedi. Dosyaları kontrol edin.");
+                }
+
                 filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined); 
                 renderCategories();
                 renderList();
                 show(); // EKRAN ÇİZİLDİ, SİSTEM KULLANIMA HAZIR!
                 
-                // Şimdi arka planda sessizce resimleri indirmeye başla (Sistemi asla kasmaz)
+                // Arka plan resim yükleyicisi
                 arkaPlanResimYukleyici(allQs);
                 
             } catch(e) { 
+                console.error("KRİTİK HATA:", e);
                 document.getElementById('no').innerText = "BAĞLANTI HATASI";
-                document.getElementById('txt').innerText = "Veriler sunucudan çekilemedi.";
+                document.getElementById('txt').innerHTML = `Veriler sunucudan çekilemedi.<br><br><b>Teknik Detay (F12 Konsola da bakın):</b> ${e.message}`;
             }
         }
 
@@ -1222,6 +1240,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
