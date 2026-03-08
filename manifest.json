@@ -1,6 +1,6 @@
 {
   "name": "Dispeçerlik Sınav Sistemi",
-  "short_name": "Dispeçerlik",
+  "short_name": "Dispeçerlik Sınav Sistemi",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f0f2f5",
@@ -17,4 +17,5 @@
       "type": "image/png"
     }
   ]
+
 }
