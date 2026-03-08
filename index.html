@@ -459,9 +459,17 @@ function renderSimulationSetup() {
                         <button class="diff-btn diff-easy" onclick="selectDiff(this, 'EASY')">KOLAY (1-2)</button>
                         <button class="diff-btn diff-med" onclick="selectDiff(this, 'MEDIUM')">ORTA (3-4)</button>
                         <button class="diff-btn diff-hard" onclick="selectDiff(this, 'HARD')">ZOR (4-5)</button>
-                    </div>
+</div>
 
-                    <h3 style="margin-bottom: 15px; color: var(--p); font-size: 14px;">Simülasyona Dahil Edilecek Dersler:</h3>
+<div style="margin-bottom: 20px;">
+    <label class="sim-cb-container" style="border: 2px solid #ffc107; background: #fffdf5;">
+        <input type="checkbox" id="only-golden-cb" onchange="toggleGoldenSim(this)" style="width: 20px; height: 20px;">
+        <span style="font-weight: bold; color: #856404;">SADECE GOLDEN SORULAR (ÖZEL HAVUZ)</span>
+    </label>
+</div>
+
+<h3 style="margin-bottom: 15px; color: var(--p); font-size: 14px;">Simülasyona Dahil Edilecek Dersler:</h3>
+
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 20px;" id="sim-subject-grid">
                     </div>
                     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -494,11 +502,16 @@ function renderSimulationSetup() {
             
             checkboxes.forEach(cb => {
                 const sub = examSubjects[cb.value];
-                let subQs = allQs.filter(q => {
-                    let catStr = (q['Kategori'] || "").toUpperCase();
-                    let regex = new RegExp("\\b" + sub.code + "\\b");
-                    return regex.test(catStr) || catStr.includes("GOLDEN - " + sub.code);
-                });
+                const onlyGolden = document.getElementById('only-golden-cb').checked;
+let subQs = allQs.filter(q => {
+    let catStr = (q['Kategori'] || "").toUpperCase();
+    if (onlyGolden) {
+        return catStr.includes("GOLDEN - " + sub.code);
+    } else {
+        let regex = new RegExp("\\b" + sub.code + "\\b");
+        return regex.test(catStr) || catStr.includes("GOLDEN - " + sub.code);
+    }
+});
 
                 if(selectedDifficulty !== "ALL") {
                     subQs = subQs.filter(q => {
@@ -788,6 +801,7 @@ function renderSimulationSetup() {
             { name: "⭐ GOLDEN - LAW", keyword: "GOLDEN - HAVA" },
             { name: "⭐ GOLDEN - NAV", keyword: "GOLDEN - SEYR" },
             { name: "⭐ GOLDEN - COM", keyword: "GOLDEN - HABER" },
+            { name: "⭐ GOLDEN - FPL&FM", keyword: "GOLDEN - FPL" },
             { name: "📚 TÜM SORULAR", keyword: "ALL" },
             { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
             { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
@@ -863,7 +877,7 @@ function renderSimulationSetup() {
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
                 document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
 
-                const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm_com_final.json' ];
+                const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm-fpl-fm-full.json' , 'kdm_com_final.json' ];
                 const responses = await Promise.all(urls.map(url => fetch(url).catch(e => { return { json: () => [] }; })));
                 const dataArrays = await Promise.all(responses.map(res => res.json()));
 
@@ -927,7 +941,28 @@ function renderSimulationSetup() {
                 document.getElementById('action-area').style.display = 'flex';
                 document.getElementById('btnAcikla').style.display = 'block';
             }
+function toggleGoldenSim(cb) {
+    const grid = document.getElementById('sim-subject-grid');
+    const containers = grid.querySelectorAll('.sim-cb-container');
+    const goldenSubjects = ["M&B", "DGR", "LAW", "NAV", "COM", "FPL"]; // Golden içeriği olan ders kodları
 
+    containers.forEach(container => {
+        const checkbox = container.querySelector('.sim-cb');
+        const subjectCode = examSubjects[checkbox.value].code;
+        
+        if (cb.checked) {
+            if (!goldenSubjects.includes(subjectCode)) {
+                container.style.display = 'none';
+                checkbox.checked = false;
+            } else {
+                container.style.border = "2px solid #ffc107";
+            }
+        } else {
+            container.style.display = 'flex';
+            container.style.border = "2px solid #eee";
+        }
+    });
+}
             if(keyword === 'SIMULATION') { renderSimulationSetup(); return; }
 
             if(keyword === 'ALL') {
@@ -1187,6 +1222,7 @@ function aciklamaGosterGizle() {
     </script>
 </body>
 </html>
+
 
 
 
