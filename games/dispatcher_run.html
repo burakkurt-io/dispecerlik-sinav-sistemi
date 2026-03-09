@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>body{margin:0; overflow:hidden; background:#f4f4f4; font-family: sans-serif;} canvas{display:block;}</style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+<script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    let w, h;
+    function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize); resize();
+
+    let player = {x: 50, y: 0, size: 30, vy: 0, gravity: 0.6, jump: -12, grounded: false};
+    let obstacles = [];
+    let frame = 0; let score = 0; let speed = 5;
+    let isDead = false; let waitingRevive = false;
+
+    function resetGame() {
+        player.y = h - 50; player.vy = 0; obstacles = []; frame = 0; score = 0; speed = 5;
+        isDead = false; waitingRevive = false; loop();
+    }
+
+    function doJump() {
+        if(player.grounded && !isDead && !waitingRevive) {
+            player.vy = player.jump;
+            player.grounded = false;
+        }
+    }
+
+    window.addEventListener("mousedown", doJump);
+    window.addEventListener("keydown", (e) => { if(e.code === "Space" || e.code === "ArrowUp") doJump(); });
+
+    window.addEventListener('message', (e) => {
+        if(e.data === 'REVIVE') { 
+            isDead = false; waitingRevive = false; obstacles = []; player.y = 0; loop(); 
+        }
+        if(e.data === 'GAME_OVER_FINAL') { isDead = true; waitingRevive = false; drawGameOver(); }
+    });
+
+    function loop() {
+        if(isDead || waitingRevive) return;
+        ctx.clearRect(0, 0, w, h);
+        
+        // Zemin
+        ctx.fillStyle = "#333";
+        ctx.fillRect(0, h - 20, w, 20);
+
+        // Fizik
+        player.vy += player.gravity;
+        player.y += player.vy;
+        
+        if(player.y + player.size >= h - 20) {
+            player.y = h - 20 - player.size;
+            player.vy = 0;
+            player.grounded = true;
+        }
+        
+        // Oyuncu (Dispeçer)
+        ctx.fillStyle = "#0056b3"; 
+        ctx.fillRect(player.x, player.y, player.size, player.size);
+        
+        // Engeller (Gecikmeli Evraklar / Towbar)
+        if(frame % Math.floor(Math.random() * 60 + 60) === 0) {
+            obstacles.push({x: w, y: h - 50, w: 20, h: 30});
+        }
+        
+        ctx.fillStyle = "#dc3545";
+        for(let i=0; i<obstacles.length; i++) {
+            let obs = obstacles[i];
+            obs.x -= speed;
+            ctx.fillRect(obs.x, obs.y, obs.w, obs.h);
+            
+            // Çarpışma
+            if(player.x < obs.x + obs.w && player.x + player.size > obs.x && 
+               player.y < obs.y + obs.h && player.y + player.size > obs.y) {
+                die();
+            }
+        }
+        
+        if(frame % 100 === 0) { score++; speed += 0.1; } // Gittikçe hızlanır
+        
+        ctx.fillStyle = "#333"; ctx.font = "20px Arial";
+        ctx.fillText("Uçuş Skoru: " + score, 20, 40);
+        
+        frame++;
+        requestAnimationFrame(loop);
+    }
+
+    function die() {
+        waitingRevive = true;
+        ctx.fillStyle = "rgba(0,0,0,0.6)"; ctx.fillRect(0,0,w,h);
+        ctx.fillStyle = "white"; ctx.font = "24px Arial";
+        ctx.fillText("KULE TELSİZİ BEKLENİYOR...", w/2 - 160, h/2);
+        window.parent.postMessage('ARCADE_DEATH', '*');
+    }
+    
+    function drawGameOver() {
+        ctx.fillStyle = "rgba(220,53,69,0.9)"; ctx.fillRect(0,0,w,h);
+        ctx.fillStyle = "white"; ctx.font = "36px Arial";
+        ctx.fillText("MESAİ BİTTİ (GAME OVER)", w/2 - 200, h/2);
+    }
+    resetGame();
+</script>
+</body>
+</html>

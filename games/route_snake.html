@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>body{margin:0; background:#111; display:flex; justify-content:center; align-items:center; height:100vh; overflow:hidden; color:white; font-family:sans-serif;}</style>
+</head>
+<body>
+<div style="position:absolute; top:10px; left:20px; font-size:18px;">Rota Uzunluğu: <span id="score">0</span></div>
+<canvas id="gameCanvas" width="600" height="400" style="background:#222; border: 2px solid #555;"></canvas>
+<script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    const grid = 20;
+    let count = 0;
+    let score = 0;
+    let isDead = false; let waitingRevive = false;
+    
+    let snake = { x: 160, y: 160, dx: grid, dy: 0, cells: [], maxCells: 4 };
+    let apple = { x: 320, y: 320 };
+
+    function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min)) + min; }
+    function spawnApple() { apple.x = getRandomInt(0, canvas.width/grid) * grid; apple.y = getRandomInt(0, canvas.height/grid) * grid; }
+
+    function resetGame() {
+        snake.x = 160; snake.y = 160; snake.cells = []; snake.maxCells = 4; snake.dx = grid; snake.dy = 0;
+        score = 0; document.getElementById('score').innerText = score; spawnApple();
+        isDead = false; waitingRevive = false; requestAnimationFrame(loop);
+    }
+
+    window.addEventListener('message', (e) => {
+        if(e.data === 'REVIVE') { isDead = false; waitingRevive = false; requestAnimationFrame(loop); }
+        if(e.data === 'GAME_OVER_FINAL') { isDead = true; waitingRevive = false; drawGameOver(); }
+    });
+
+    function loop() {
+        if(isDead || waitingRevive) return;
+        requestAnimationFrame(loop);
+        if (++count < 6) return; // Hız ayarı
+        count = 0;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+
+        snake.x += snake.dx; snake.y += snake.dy;
+
+        // Duvara çarpma (Sınır ihlali)
+        if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) { die(); return; }
+
+        snake.cells.unshift({x: snake.x, y: snake.y});
+        if (snake.cells.length > snake.maxCells) { snake.cells.pop(); }
+
+        // Elma (Waypoint) Çizimi
+        ctx.fillStyle = '#ffc107';
+        ctx.fillRect(apple.x, apple.y, grid-1, grid-1);
+
+        // Yılan (Rota İzi) Çizimi
+        ctx.fillStyle = '#17a2b8';
+        snake.cells.forEach(function(cell, index) {
+            ctx.fillRect(cell.x, cell.y, grid-1, grid-1);
+            if (cell.x === apple.x && cell.y === apple.y) {
+                snake.maxCells++; score++; document.getElementById('score').innerText = score; spawnApple();
+            }
+            // Kendi kendine çarpma
+            for (let i = index + 1; i < snake.cells.length; i++) {
+                if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) { die(); return; }
+            }
+        });
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if(isDead || waitingRevive) return;
+        if (e.code === 'ArrowLeft' && snake.dx === 0) { snake.dx = -grid; snake.dy = 0; }
+        else if (e.code === 'ArrowUp' && snake.dy === 0) { snake.dy = -grid; snake.dx = 0; }
+        else if (e.code === 'ArrowRight' && snake.dx === 0) { snake.dx = grid; snake.dy = 0; }
+        else if (e.code === 'ArrowDown' && snake.dy === 0) { snake.dy = grid; snake.dx = 0; }
+    });
+
+    function die() {
+        waitingRevive = true;
+        ctx.fillStyle = "rgba(0,0,0,0.7)"; ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = "white"; ctx.font = "20px Arial"; ctx.fillText("KULE TELSİZİ BEKLENİYOR...", canvas.width/2 - 140, canvas.height/2);
+        window.parent.postMessage('ARCADE_DEATH', '*');
+    }
+    
+    function drawGameOver() {
+        ctx.fillStyle = "rgba(220,53,69,0.9)"; ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = "white"; ctx.font = "30px Arial"; ctx.fillText("ROTA İHLALİ! (GAME OVER)", canvas.width/2 - 180, canvas.height/2);
+    }
+    resetGame();
+</script>
+</body>
+</html>
