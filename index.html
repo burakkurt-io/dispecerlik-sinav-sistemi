@@ -444,15 +444,14 @@
             btn.classList.add('active');
             selectedDifficulty = val;
         }
-        
-        // --- ÇAKIŞMA ÖNLEYİCİ (HATA YÖNETİMİ) FONKSİYONU ---
+
         function checkMutuallyExclusive(checkbox, typeToUncheck) {
             if(checkbox.checked) {
                 const code = checkbox.getAttribute('data-code');
                 let otherSelector = typeToUncheck === 'golden' ? `.golden-cb[data-code="${code}"]` : `.sim-cb[data-code="${code}"]`;
                 const otherCb = document.querySelector(otherSelector);
                 if(otherCb && otherCb.checked) {
-                    otherCb.checked = false; // Diğerini otomatik iptal et
+                    otherCb.checked = false; 
                     showCustomNotification(`"${code}" dersi için hem Genel hem GOLDEN aynı anda seçilemez. Çakışma önlendi!`, "warning");
                 }
             }
@@ -499,7 +498,6 @@
             document.getElementById('txt').innerHTML = html;
             document.getElementById('list').innerHTML = ''; 
             
-            // Sadece Golden Olan 5 Dersin Listesi
             const goldenList = [
                 { code: "DGR", name: "3 - DGR" }, { code: "COM", name: "4 - COM" },
                 { code: "LAW", name: "5 - LAW" }, { code: "NAV", name: "10 - NAV" }, { code: "FPL", name: "11 - FPL&FM" }
@@ -515,7 +513,6 @@
                 `;
             });
 
-            // Standart 12 Dersin Listesi
             const grid = document.getElementById('sim-subject-grid');
             examSubjects.forEach((sub, i) => {
                 grid.innerHTML += `
@@ -537,19 +534,17 @@
 
             let totalQuestions = [];
             
-            // 1. Standart Havuzdaki Soruları Çek
             normalCbs.forEach(cb => {
                 const sub = examSubjects[cb.value];
                 let subQs = allQs.filter(q => {
                     let catStr = (q['Kategori'] || "").toUpperCase();
                     let regex = new RegExp("\\b" + sub.code + "\\b");
-                    return regex.test(catStr) && !catStr.includes("GOLDEN"); // Golden'ları buradan eledik
+                    return regex.test(catStr) && !catStr.includes("GOLDEN"); 
                 });
                 subQs = applyDifficultyFilter(subQs);
                 totalQuestions.push(...subQs.slice(0, 10)); 
             });
 
-            // 2. Sadece GOLDEN Havuzundaki Soruları Çek
             goldenCbs.forEach(cb => {
                 const code = cb.value;
                 let subQs = allQs.filter(q => {
@@ -589,7 +584,6 @@
             showCustomNotification(`Sınav Başladı! ${filteredQs.length} Soru. Süre: ${totalMins} Dk.`, "success");
         }
 
-        // Kod tekrarını önlemek için ufak bir yardımcı filtreleyici
         function applyDifficultyFilter(subQs) {
             if(selectedDifficulty === "ALL") return subQs.sort(() => 0.5 - Math.random());
             
@@ -865,7 +859,6 @@
             { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
         ];
 
-        // --- ARKA PLAN ÖN YÜKLEYİCİ (HAYALET BOT V2: RESİM + HTML) ---
         function arkaPlanResimYukleyici(tumSorular) {
             setTimeout(() => {
                 console.log("Arka plan ön yükleyicisi (Preloader) başlatıldı...");
@@ -1277,13 +1270,10 @@
         start();
 
         // ==========================================
-        // --- ARCADE (HOLDING PATTERN) SİSTEMİ ---
-        // ==========================================
-       // ==========================================
         // --- ARCADE (HOLDING PATTERN) SISTEMI ---
         // ==========================================
         function openArcade() {
-            document.getElementById('no').innerText = "HOLDING PATTERN (DINLENME MODU)";
+            document.getElementById('no').innerText = "HOLDING PATTERN (DİNLENME MODU)";
             document.getElementById('opts').innerHTML = '';
             document.getElementById('action-area').style.display = 'none';
             if(document.getElementById('list')) document.getElementById('list').innerHTML = '';
@@ -1291,32 +1281,30 @@
             let html = `
                 <div style="padding: 10px; width:100%;">
                     <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #6f42c1;">
-                        <strong style="color:#6f42c1; font-size: 16px;">Kule: "Bekleme Paternine Girin!"</strong><br>
-                        <span style="font-size: 13px;">Oyunlarda yandiginizda Kule size <b>Zorluk Derecesi 4 veya 5 olan GOLDEN bir soru</b> sorar. Sadece yandiginizda soru cikar. Gecerseniz devam edersiniz!</span>
+                        <strong style="color:#6f42c1; font-size: 16px;">🎧 Kule: "Bekleme Paternine Girin!"</strong><br>
+                        <span style="font-size: 13px;">Oyunlarda yandığınızda Kule size <b>Zorluk Derecesi 4 veya 5 olan GOLDEN bir soru</b> sorar. Sadece yandığınızda soru çıkar. Doğru cevap verirseniz uçuşa (oyuna) kaldığınız yerden devam edersiniz!</span>
                     </div>
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 20px;">
-                        <button class="btn" style="background: #17a2b8;" onclick="loadGame('flappy_plane.html')">Flappy Plane</button>
-                        <button class="btn" style="background: #28a745;" onclick="loadGame('dispatcher_run.html')">Dispatcher Run</button>
-                        <button class="btn" style="background: #e0a800;" onclick="loadGame('route_snake.html')">Route Snake</button>
-                        <button class="btn" style="background: #dc3545;" onclick="loadGame('tetris.html')">Kargo Tetris</button>
-                        <button class="btn" style="background: #0056b3;" onclick="loadGame('pong.html')">Radar Pong</button>
+                        <button class="btn" style="background: #17a2b8;" onclick="loadGame('flappy_plane.html')">✈️ Flappy Plane</button>
+                        <button class="btn" style="background: #28a745;" onclick="loadGame('dispatcher_run.html')">🏃 Dispatcher Run</button>
+                        <button class="btn" style="background: #e0a800;" onclick="loadGame('route_snake.html')">🐍 Route Snake</button>
+                        <button class="btn" style="background: #dc3545;" onclick="loadGame('tetris.html')">📦 Kargo Tetris</button>
+                        <button class="btn" style="background: #0056b3;" onclick="loadGame('pong.html')">📡 Radar Pong</button>
                     </div>
                 </div>
             `;
-            // Iframe'i ana ekrandan tamamen kaldirdik. Sadece menuyu basiyoruz.
             document.getElementById('txt').innerHTML = html;
         }
 
         function loadGame(gameFile) {
             let modal = document.getElementById('gameModal');
             if(!modal) {
-                // Eger modal daha once olusturulmamissa, HTML'e enjekte et
                 let mHtml = `
                 <div id="gameModal" class="modal" style="z-index: 10000; display:none;">
                     <div class="modal-content" style="width: 95%; height: 90vh; max-width: 1400px; padding: 0; display: flex; flex-direction: column; background: #000; border-radius: 12px; overflow: hidden; margin: 2% auto;">
                         <div style="background: #333; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-weight: bold; color: #ffc107;">HOLDING PATTERN (TAM EKRAN)</span>
+                            <span style="font-weight: bold; color: #ffc107;">🎮 HOLDING PATTERN (TAM EKRAN)</span>
                             <span style="font-size: 28px; cursor: pointer; color: white; line-height: 1;" onclick="closeGameModal()">&times;</span>
                         </div>
                         <iframe id="game-frame-fs" src="" style="width: 100%; flex: 1; border: none; outline: none; background: #111;"></iframe>
@@ -1324,14 +1312,13 @@
                 </div>`;
                 document.body.insertAdjacentHTML('beforeend', mHtml);
             }
-            // Secilen oyunu tam ekran iframe icine yukle
             document.getElementById('game-frame-fs').src = 'games/' + gameFile;
             document.getElementById('gameModal').style.display = 'block';
         }
 
         function closeGameModal() {
             document.getElementById('gameModal').style.display = 'none';
-            document.getElementById('game-frame-fs').src = ''; // Arka planda ses veya oyun devam etmesin diye temizliyoruz
+            document.getElementById('game-frame-fs').src = ''; 
         }
 
         window.addEventListener('message', function(event) {
@@ -1360,19 +1347,18 @@
             let oldModal = document.getElementById('arcadeModal');
             if(oldModal) oldModal.remove();
 
-            // Yardim Metni Html Blogu
-            let explanationHtml = q['Açıklama'] ? `<div id="yardim-metni" style="display:none; background:#eef5ff; color:#0056b3; padding:12px; border-radius:6px; font-size:13px; margin-top:10px; border:1px solid #b8daff; line-height:1.5;"><b>Aciklama:</b> ${q['Açıklama']}</div>` : '';
+            let explanationHtml = q['Açıklama'] ? `<div id="yardim-metni" style="display:none; background:#eef5ff; color:#0056b3; padding:12px; border-radius:6px; font-size:13px; margin-top:10px; border:1px solid #b8daff; line-height:1.5;"><b>Açıklama:</b> ${q['Açıklama']}</div>` : '';
 
             let modalHtml = `
                 <div id="arcadeModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:10001; display:flex; align-items:center; justify-content:center; padding:20px;">
                     <div style="background: white; padding: 25px; border-radius: 12px; max-width: 600px; width:100%; box-shadow: 0 0 30px rgba(255,0,0,0.5); border: 3px solid #dc3545; max-height: 90vh; overflow-y: auto;">
-                        <h3 style="color:#dc3545; margin-bottom:15px; font-family:sans-serif; margin-top:0;">KULE TELSIZI (ACIL DURUM)</h3>
+                        <h3 style="color:#dc3545; margin-bottom:15px; font-family:sans-serif; margin-top:0;">🚨 KULE TELSİZİ (ACİL DURUM)</h3>
                         <p style="font-size:15px; font-weight:bold; margin-bottom:15px; color:#333; font-family:sans-serif;">"${q['Soru Metni']}"</p>
                         <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:10px;">
                             ${['A', 'B', 'C', 'D', 'E'].map(harf => q[harf + ' Şıkkı'] ? `<button onclick="checkArcadeAnswer('${harf.toLowerCase()}')" style="padding:12px; border:1px solid #ccc; border-radius:6px; background:#f8f9fa; cursor:pointer; text-align:left; font-size:14px;"><b>${harf})</b> ${q[harf + ' Şıkkı']}</button>` : '').join('')}
                         </div>
                         
-                        <button onclick="document.getElementById('yardim-metni').style.display='block'" style="background:#ffc107; color:#000; border:none; padding:10px 15px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:13px; margin-top:10px; width:100%;">YARDIM (ACIKLAMAYI GOR)</button>
+                        <button onclick="document.getElementById('yardim-metni').style.display='block'" style="background:#ffc107; color:#000; border:none; padding:10px 15px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:13px; margin-top:10px; width:100%;">YARDIM (AÇIKLAMAYI GÖR)</button>
                         ${explanationHtml}
                     </div>
                 </div>
@@ -1384,68 +1370,11 @@
             document.getElementById('arcadeModal').remove();
             
             if(secilen === currentArcadeAnswer) {
-                showCustomNotification("Tebrikler! Ucusa geri donuyorsunuz!", "success");
+                showCustomNotification("Tebrikler! Uçuşa geri dönüyorsunuz!", "success");
                 document.getElementById('game-frame-fs').contentWindow.postMessage('REVIVE', '*');
             } else {
-                showCustomNotification("Yanlis Cevap! Sefer Iptal Edildi.", "error");
-                document.getElementById('game-frame-fs').contentWindow.postMessage('GAME_OVER_FINAL', '*');
-            }
-        }
-        // ==========================================
-        function loadGame(gameFile) {
-            document.getElementById('game-placeholder').style.display = 'none';
-            document.getElementById('game-frame').src = 'games/' + gameFile;
-        }
-
-        window.addEventListener('message', function(event) {
-            if (event.data === 'ARCADE_DEATH') {
-                tetikleDirilmeSorusu();
-            }
-        });
-
-        let currentArcadeAnswer = "";
-        
-        function tetikleDirilmeSorusu() {
-            let hardGoldenQs = allQs.filter(q => {
-                let cat = (q['Kategori'] || "").toUpperCase();
-                let z = parseInt(q['Zorluk Derecesi(1-5)']);
-                return cat.includes("GOLDEN") && (z === 4 || z === 5);
-            });
-
-            if(hardGoldenQs.length === 0) {
-                document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
-                return;
-            }
-
-            let q = hardGoldenQs[Math.floor(Math.random() * hardGoldenQs.length)];
-            currentArcadeAnswer = (q['Doğru Cevap'] || "").toLowerCase();
-
-            let oldModal = document.getElementById('arcadeModal');
-            if(oldModal) oldModal.remove();
-
-            let modalHtml = `
-                <div id="arcadeModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px;">
-                    <div style="background: white; padding: 25px; border-radius: 12px; max-width: 600px; width:100%; box-shadow: 0 0 30px rgba(255,0,0,0.5); border: 3px solid #dc3545;">
-                        <h3 style="color:#dc3545; margin-bottom:15px; font-family:sans-serif;">🚨 KULE TELSİZİ (ACİL DURUM)</h3>
-                        <p style="font-size:15px; font-weight:bold; margin-bottom:15px; color:#333; font-family:sans-serif;">"${q['Soru Metni']}"</p>
-                        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:10px;">
-                            ${['A', 'B', 'C', 'D', 'E'].map(harf => q[harf + ' Şıkkı'] ? `<button onclick="checkArcadeAnswer('${harf.toLowerCase()}')" style="padding:12px; border:1px solid #ccc; border-radius:6px; background:#f8f9fa; cursor:pointer; text-align:left; font-size:14px;"><b>${harf})</b> ${q[harf + ' Şıkkı']}</button>` : '').join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', modalHtml);
-        }
-
-        function checkArcadeAnswer(secilen) {
-            document.getElementById('arcadeModal').remove();
-            
-            if(secilen === currentArcadeAnswer) {
-                showCustomNotification("Tebrikler! Uçuşa geri dönüyorsunuz!", "success");
-                document.getElementById('game-frame').contentWindow.postMessage('REVIVE', '*');
-            } else {
                 showCustomNotification("Yanlış Cevap! Sefer İptal Edildi.", "error");
-                document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
+                document.getElementById('game-frame-fs').contentWindow.postMessage('GAME_OVER_FINAL', '*');
             }
         }
         // ==========================================
@@ -1476,4 +1405,3 @@
     </script>
 </body>
 </html>
-
