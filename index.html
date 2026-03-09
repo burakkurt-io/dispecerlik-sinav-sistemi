@@ -1488,31 +1488,21 @@ function aciklamaGosterGizle() {
             `;
             document.body.insertAdjacentHTML('beforeend', modalHtml);
         }
-
-        function checkArcadeAnswer(secilen) {
+function checkArcadeAnswer(secilen) {
             document.getElementById('arcadeModal').remove();
             
             if(secilen === currentArcadeAnswer) {
-                // Eğer sisteminde bildirim (showCustomNotification) yoksa alert kullanır
-                if(typeof showCustomNotification === "function") {
-                    showCustomNotification("Tebrikler! Uçuşa geri dönüyorsunuz!", "success");
-                } else {
-                    alert("Tebrikler! Doğru cevap.");
-                }
+                showCustomNotification("Tebrikler! Ucusa geri donuyorsunuz!", "success");
                 document.getElementById('game-frame').contentWindow.postMessage('REVIVE', '*');
             } else {
-                if(typeof showCustomNotification === "function") {
-                    showCustomNotification("Yanlış Cevap! Sefer İptal Edildi.", "error");
-                } else {
-                    alert("Yanlış Cevap! Game Over.");
-                }
+                showCustomNotification("Yanlis Cevap! Sefer Iptal Edildi.", "error");
                 document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
             }
         }
-        // ==========================================
     </script>
 </body>
 </html>
+
 
 
 
