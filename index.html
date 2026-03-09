@@ -860,8 +860,7 @@ function renderSimulationSetup() {
             { name: "9 - GÜVENLİK (SEC)", keyword: "SEC" },
             { name: "10 - SEYRÜSEFER (NAV)", keyword: "NAV" },
             { name: "11 - UÇUŞ PLANLAMA (FPL&FM)", keyword: "FPL" },
-            { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" },
-            { name: "🎮 HOLDING PATTERN", keyword: "ARCADE" }
+            { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
         ];
 // --- ARKA PLAN RESİM ÖN YÜKLEYİCİ (HAYALET BOT) ---
        // --- ARKA PLAN ÖN YÜKLEYİCİ (HAYALET BOT V2: RESİM + HTML) ---
@@ -919,96 +918,6 @@ function renderSimulationSetup() {
 
             }, 2000); // 2 saniye gecikme
         }
-        // ==========================================
-        // --- ARCADE (HOLDING PATTERN) SİSTEMİ ---
-        // ==========================================
-        function openArcade() {
-            document.getElementById('no').innerText = "HOLDING PATTERN (DİNLENME MODU)";
-            document.getElementById('opts').innerHTML = '';
-            document.getElementById('action-area').style.display = 'none';
-            if(document.getElementById('list')) document.getElementById('list').innerHTML = '';
-
-            let html = `
-                <div style="padding: 10px; width:100%;">
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #6f42c1;">
-                        <strong style="color:#6f42c1; font-size: 16px;">🎧 Kule: "Bekleme Paternine Girin!"</strong><br>
-                        <span style="font-size: 13px;">Oyunlarda yandığınızda Kule size <b>Zorluk Derecesi 4 veya 5 olan GOLDEN bir soru</b> sorar. Doğru cevap verirseniz uçuşa (oyuna) kaldığınız yerden devam edersiniz!</span>
-                    </div>
-                    
-                    <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                        <button class="btn" style="background: #17a2b8;" onclick="loadGame('flappy_plane.html')">✈️ Flappy Plane</button>
-                        <button class="btn" style="background: #28a745;" onclick="loadGame('dispatcher_run.html')">🏃 Dispatcher Run</button>
-                        <button class="btn" style="background: #e0a800;" onclick="loadGame('route_snake.html')">🐍 Route Snake</button>
-                    </div>
-
-                    <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #222; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 4px solid #333;">
-                        <iframe id="game-frame" src="" style="width: 100%; height: 100%; border: none; outline: none;"></iframe>
-                        <div id="game-placeholder" style="position: absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#777; font-size: 20px; font-weight:bold;">
-                            Üstten Bir Oyun Seçin...
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.getElementById('txt').innerHTML = html;
-        }
-
-        function loadGame(gameFile) {
-            document.getElementById('game-placeholder').style.display = 'none';
-            document.getElementById('game-frame').src = 'games/' + gameFile;
-        }
-
-        window.addEventListener('message', function(event) {
-            if (event.data === 'ARCADE_DEATH') {
-                tetikleDirilmeSorusu();
-            }
-        });
-
-        let currentArcadeAnswer = "";
-        
-        function tetikleDirilmeSorusu() {
-            let hardGoldenQs = allQs.filter(q => {
-                let cat = (q['Kategori'] || "").toUpperCase();
-                let z = parseInt(q['Zorluk Derecesi(1-5)']);
-                return cat.includes("GOLDEN") && (z === 4 || z === 5);
-            });
-
-            if(hardGoldenQs.length === 0) {
-                document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
-                return;
-            }
-
-            let q = hardGoldenQs[Math.floor(Math.random() * hardGoldenQs.length)];
-            currentArcadeAnswer = (q['Doğru Cevap'] || "").toLowerCase();
-
-            let oldModal = document.getElementById('arcadeModal');
-            if(oldModal) oldModal.remove();
-
-            let modalHtml = `
-                <div id="arcadeModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px;">
-                    <div style="background: white; padding: 25px; border-radius: 12px; max-width: 600px; width:100%; box-shadow: 0 0 30px rgba(255,0,0,0.5); border: 3px solid #dc3545;">
-                        <h3 style="color:#dc3545; margin-bottom:15px; font-family:sans-serif;">🚨 KULE TELSİZİ (ACİL DURUM)</h3>
-                        <p style="font-size:15px; font-weight:bold; margin-bottom:15px; color:#333; font-family:sans-serif;">"${q['Soru Metni']}"</p>
-                        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:10px;">
-                            ${['A', 'B', 'C', 'D', 'E'].map(harf => q[harf + ' Şıkkı'] ? `<button onclick="checkArcadeAnswer('${harf.toLowerCase()}')" style="padding:12px; border:1px solid #ccc; border-radius:6px; background:#f8f9fa; cursor:pointer; text-align:left; font-size:14px;"><b>${harf})</b> ${q[harf + ' Şıkkı']}</button>` : '').join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', modalHtml);
-        }
-
-        function checkArcadeAnswer(secilen) {
-            document.getElementById('arcadeModal').remove();
-            
-            if(secilen === currentArcadeAnswer) {
-                showCustomNotification("Tebrikler! Uçuşa geri dönüyorsunuz!", "success");
-                document.getElementById('game-frame').contentWindow.postMessage('REVIVE', '*');
-            } else {
-                showCustomNotification("Yanlış Cevap! Sefer İptal Edildi.", "error");
-                document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
-            }
-        }
-        // ==========================================
         async function start() {
             try {
                 document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
@@ -1061,25 +970,18 @@ function renderSimulationSetup() {
             }
         }
 
-       function renderCategories() {
+        function renderCategories() {
             const catContainer = document.getElementById('cat-list');
             catContainer.innerHTML = '';
             categories.forEach(cat => {
                 const btn = document.createElement('button');
                 btn.className = 'cat-btn' + (cat.keyword === 'CIKMIS' ? ' active' : '');
                 btn.innerText = cat.name;
-                
-                // Arcade butonuna özel mor stil
-                if(cat.keyword === 'ARCADE') {
-                    btn.style.background = "#6f42c1";
-                    btn.style.color = "white";
-                    btn.style.borderColor = "#59339d";
-                }
-                
                 btn.onclick = () => filterByCategory(cat.keyword, btn);
                 catContainer.appendChild(btn);
             });
         }
+
         function filterByCategory(keyword, clickedBtn) {
             if(isExamModeActive && keyword !== 'SIMULATION') {
                 showConfirm("Sınav devam ediyor! Çıkmak istediğinize emin misiniz? Sınav verileriniz silinecek.", () => {
@@ -1125,8 +1027,7 @@ function toggleGoldenSim(cb) {
         }
     });
 }
-           if(keyword === 'SIMULATION') { renderSimulationSetup(); return; }
-            if(keyword === 'ARCADE') { openArcade(); return; }
+            if(keyword === 'SIMULATION') { renderSimulationSetup(); return; }
 
             if(keyword === 'ALL') {
                 filteredQs = [...allQs];
@@ -1405,107 +1306,9 @@ function aciklamaGosterGizle() {
                 return false;
             }
         });
-        // ==========================================
-        // --- ARCADE (HOLDING PATTERN) SİSTEMİ ---
-        // ==========================================
-        function openArcade() {
-            document.getElementById('no').innerText = "HOLDING PATTERN (DİNLENME MODU)";
-            document.getElementById('opts').innerHTML = '';
-            document.getElementById('action-area').style.display = 'none';
-            // Eğer varsa liste alanını temizle
-            if(document.getElementById('list')) document.getElementById('list').innerHTML = '';
-
-            let html = `
-                <div style="padding: 10px; width:100%;">
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #6f42c1;">
-                        <strong style="color:#6f42c1; font-size: 16px;">🎧 Kule: "Bekleme Paternine Girin!"</strong><br>
-                        <span style="font-size: 13px;">Oyunlarda yandığınızda Kule size <b>Zorluk Derecesi 4 veya 5 olan GOLDEN bir soru</b> sorar. Doğru cevap verirseniz uçuşa (oyuna) kaldığınız yerden devam edersiniz!</span>
-                    </div>
-                    
-                    <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                        <button class="btn" style="background: #17a2b8;" onclick="loadGame('flappy_plane.html')">✈️ Flappy Plane</button>
-                        <button class="btn" style="background: #28a745;" onclick="loadGame('dispatcher_run.html')">🏃 Dispatcher Run</button>
-                        <button class="btn" style="background: #e0a800;" onclick="loadGame('route_snake.html')">🐍 Route Snake</button>
-                    </div>
-
-                    <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #222; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 4px solid #333;">
-                        <iframe id="game-frame" src="" style="width: 100%; height: 100%; border: none; outline: none;"></iframe>
-                        <div id="game-placeholder" style="position: absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#777; font-size: 20px; font-weight:bold;">
-                            Üstten Bir Oyun Seçin...
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.getElementById('txt').innerHTML = html;
-        }
-
-        function loadGame(gameFile) {
-            document.getElementById('game-placeholder').style.display = 'none';
-            // Sadece butona basıldığında sunucudan oyunu çeker
-            document.getElementById('game-frame').src = 'games/' + gameFile;
-        }
-
-        // Oyunlardan gelen "ÖLDÜM" sinyalini dinleyen global dinleyici
-        window.addEventListener('message', function(event) {
-            if (event.data === 'ARCADE_DEATH') {
-                tetikleDirilmeSorusu();
-            }
-        });
-
-        let currentArcadeAnswer = "";
-        
-        function tetikleDirilmeSorusu() {
-            // Sadece GOLDEN ve Zorluğu 4-5 olan soruları filtrele
-            let hardGoldenQs = allQs.filter(q => {
-                let cat = (q['Kategori'] || "").toUpperCase();
-                let z = parseInt(q['Zorluk Derecesi(1-5)']);
-                return cat.includes("GOLDEN") && (z === 4 || z === 5);
-            });
-
-            if(hardGoldenQs.length === 0) {
-                document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
-                return;
-            }
-
-            // Rastgele bir soru çek
-            let q = hardGoldenQs[Math.floor(Math.random() * hardGoldenQs.length)];
-            currentArcadeAnswer = (q['Doğru Cevap'] || "").toLowerCase();
-
-            // Eğer varsa önceki uyarı kutusunu sil (üst üste binmemesi için)
-            let oldModal = document.getElementById('arcadeModal');
-            if(oldModal) oldModal.remove();
-
-            let modalHtml = `
-                <div id="arcadeModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px;">
-                    <div style="background: white; padding: 25px; border-radius: 12px; max-width: 600px; width:100%; box-shadow: 0 0 30px rgba(255,0,0,0.5); border: 3px solid #dc3545;">
-                        <h3 style="color:#dc3545; margin-bottom:15px; font-family:sans-serif;">🚨 KULE TELSİZİ (ACİL DURUM)</h3>
-                        <p style="font-size:15px; font-weight:bold; margin-bottom:15px; color:#333; font-family:sans-serif;">"${q['Soru Metni']}"</p>
-                        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:10px;">
-                            ${['A', 'B', 'C', 'D', 'E'].map(harf => q[harf + ' Şıkkı'] ? `<button onclick="checkArcadeAnswer('${harf.toLowerCase()}')" style="padding:12px; border:1px solid #ccc; border-radius:6px; background:#f8f9fa; cursor:pointer; text-align:left; font-size:14px;"><b>${harf})</b> ${q[harf + ' Şıkkı']}</button>` : '').join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', modalHtml);
-        }
-function checkArcadeAnswer(secilen) {
-            document.getElementById('arcadeModal').remove();
-            
-            if(secilen === currentArcadeAnswer) {
-                showCustomNotification("Tebrikler! Ucusa geri donuyorsunuz!", "success");
-                document.getElementById('game-frame').contentWindow.postMessage('REVIVE', '*');
-            } else {
-                showCustomNotification("Yanlis Cevap! Sefer Iptal Edildi.", "error");
-                document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
-            }
-        }
     </script>
 </body>
 </html>
-
-
-
-
 
 
 
