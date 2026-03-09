@@ -1327,6 +1327,7 @@
             }
         });
 
+let currentArcadeQuestion = null;
         let currentArcadeAnswer = "";
         
         function tetikleDirilmeSorusu() {
@@ -1342,23 +1343,25 @@
             }
 
             let q = hardGoldenQs[Math.floor(Math.random() * hardGoldenQs.length)];
+            currentArcadeQuestion = q;
             currentArcadeAnswer = (q['Doğru Cevap'] || "").toLowerCase();
 
             let oldModal = document.getElementById('arcadeModal');
             if(oldModal) oldModal.remove();
 
-            let explanationHtml = q['Açıklama'] ? `<div id="yardim-metni" style="display:none; background:#eef5ff; color:#0056b3; padding:12px; border-radius:6px; font-size:13px; margin-top:10px; border:1px solid #b8daff; line-height:1.5;"><b>Açıklama:</b> ${q['Açıklama']}</div>` : '';
+            let explanationHtml = q['Açıklama'] ? `<div id="yardim-metni" style="display:none; background:#eef5ff; color:#0056b3; padding:12px; border-radius:6px; font-size:13px; margin-top:10px; border:1px solid #b8daff; line-height:1.5;"><b>Aciklama:</b> ${q['Açıklama']}</div>` : '';
 
             let modalHtml = `
                 <div id="arcadeModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:10001; display:flex; align-items:center; justify-content:center; padding:20px;">
-                    <div style="background: white; padding: 25px; border-radius: 12px; max-width: 600px; width:100%; box-shadow: 0 0 30px rgba(255,0,0,0.5); border: 3px solid #dc3545; max-height: 90vh; overflow-y: auto;">
-                        <h3 style="color:#dc3545; margin-bottom:15px; font-family:sans-serif; margin-top:0;">🚨 KULE TELSİZİ (ACİL DURUM)</h3>
+                    <div style="background: white; padding: 25px; border-radius: 12px; max-width: 600px; width:100%; box-shadow: 0 0 30px rgba(255,0,0,0.5); max-height: 90vh; overflow-y: auto;">
+                        <h3 style="color:#dc3545; margin-bottom:15px; font-family:sans-serif; margin-top:0;">KULE TELSIZI (ACIL DURUM)</h3>
                         <p style="font-size:15px; font-weight:bold; margin-bottom:15px; color:#333; font-family:sans-serif;">"${q['Soru Metni']}"</p>
-                        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:10px;">
+                        
+                        <div id="arcade-options" style="display:flex; flex-direction:column; gap:8px; margin-bottom:10px;">
                             ${['A', 'B', 'C', 'D', 'E'].map(harf => q[harf + ' Şıkkı'] ? `<button onclick="checkArcadeAnswer('${harf.toLowerCase()}')" style="padding:12px; border:1px solid #ccc; border-radius:6px; background:#f8f9fa; cursor:pointer; text-align:left; font-size:14px;"><b>${harf})</b> ${q[harf + ' Şıkkı']}</button>` : '').join('')}
                         </div>
                         
-                        <button onclick="document.getElementById('yardim-metni').style.display='block'" style="background:#ffc107; color:#000; border:none; padding:10px 15px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:13px; margin-top:10px; width:100%;">YARDIM (AÇIKLAMAYI GÖR)</button>
+                        <button id="btn-arcade-yardim" onclick="document.getElementById('yardim-metni').style.display='block'" style="background:#ffc107; color:#000; border:none; padding:10px 15px; border-radius:6px; cursor:pointer; font-weight:bold; font-size:13px; margin-top:10px; width:100%;">YARDIM (ACIKLAMAYI GOR)</button>
                         ${explanationHtml}
                     </div>
                 </div>
@@ -1366,6 +1369,42 @@
             document.body.insertAdjacentHTML('beforeend', modalHtml);
         }
 
+        function checkArcadeAnswer(secilen) {
+            if(secilen === currentArcadeAnswer) {
+                document.getElementById('arcadeModal').remove();
+                showCustomNotification("Tebrikler! Ucusa geri donuyorsunuz!", "success");
+                document.getElementById('game-frame-fs').contentWindow.postMessage('REVIVE', '*');
+            } else {
+                // Kullanici yanlis bildiginde ekrani kapatma, dogru cevabi ve DEVAM butonunu ciz.
+                let q = currentArcadeQuestion;
+                let correctSik = currentArcadeAnswer.toUpperCase();
+                let correctMetin = q[correctSik + ' Şıkkı'] || "";
+                
+                let optsDiv = document.getElementById('arcade-options');
+                let yardimBtn = document.getElementById('btn-arcade-yardim');
+                if(yardimBtn) yardimBtn.style.display = 'none';
+                
+                optsDiv.innerHTML = `
+                    <div style="background: #f8d7da; border: 1px solid #dc3545; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <b style="font-size:14px; display:block; margin-bottom:5px;">YANLIS CEVAP VERDINIZ!</b>
+                    </div>
+                    <div style="background: #d4edda; border: 1px solid #28a745; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <b style="font-size:14px; display:block; margin-bottom:5px;">DOGRU CEVAP:</b>
+                        <b>${correctSik})</b> ${correctMetin}
+                    </div>
+                    <button onclick="finishArcadeDeath()" style="background:#dc3545; color:white; border:none; padding:12px 20px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:14px; width:100%;">MESAIYI BITIR (DEVAM)</button>
+                `;
+                
+                // Aciklamayi otomatik olarak ac
+                let yardimMetni = document.getElementById('yardim-metni');
+                if(yardimMetni) yardimMetni.style.display = 'block';
+            }
+        }
+
+        function finishArcadeDeath() {
+            document.getElementById('arcadeModal').remove();
+            document.getElementById('game-frame-fs').contentWindow.postMessage('GAME_OVER_FINAL', '*');
+        }
         function checkArcadeAnswer(secilen) {
             document.getElementById('arcadeModal').remove();
             
@@ -1405,3 +1444,4 @@
     </script>
 </body>
 </html>
+
