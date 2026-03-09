@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>body{margin:0; background:#000; color:#0f0; font-family:monospace; display:flex; justify-content:center; align-items:center; height:100vh; overflow:hidden;} canvas{border: 2px solid #0f0; box-shadow: 0 0 15px #0f0; max-width: 100%; max-height: 100vh;}</style>
+</head>
+<body>
+<canvas id="pong" width="800" height="600"></canvas>
+<script>
+    const cvs = document.getElementById("pong");
+    const ctx = cvs.getContext("2d");
+    let isDead = false; let waitingRevive = false;
+
+    const user = { x: 10, y: 250, width: 10, height: 100, color: "#0f0", score: 0 };
+    const com = { x: 780, y: 250, width: 10, height: 100, color: "#0f0", score: 0 };
+    const net = { x: 395, y: 0, width: 10, height: 10, color: "#0f0" };
+    const ball = { x: 400, y: 300, radius: 10, speed: 5, velocityX: 5, velocityY: 5, color: "#0f0" };
+
+    function drawRect(x,y,w,h,color){ ctx.fillStyle = color; ctx.fillRect(x,y,w,h); }
+    function drawArc(x,y,r,color){ ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2,true); ctx.closePath(); ctx.fill(); }
+    function drawNet(){ for(let i=0; i<=cvs.height; i+=15){ drawRect(net.x, net.y + i, net.width, net.height, net.color); } }
+    function drawText(text,x,y){ ctx.fillStyle = "#0f0"; ctx.font = "45px monospace"; ctx.fillText(text,x,y); }
+
+    cvs.addEventListener("mousemove", evt => { let rect = cvs.getBoundingClientRect(); user.y = evt.clientY - rect.top - user.height/2; });
+
+    function resetBall(){ ball.x = cvs.width/2; ball.y = cvs.height/2; ball.speed = 5; ball.velocityX = -ball.velocityX; }
+
+    window.addEventListener('message', (e) => {
+        if(e.data === 'REVIVE') { isDead = false; waitingRevive = false; resetBall(); loop(); }
+        if(e.data === 'GAME_OVER_FINAL') { isDead = true; waitingRevive = false; drawGameOver(); }
+    });
+
+    function die() {
+        waitingRevive = true;
+        ctx.fillStyle = "rgba(0,0,0,0.8)"; ctx.fillRect(0,0,cvs.width,cvs.height);
+        ctx.fillStyle = "#0f0"; ctx.font = "30px monospace"; ctx.fillText("KULE ILETISIMI BEKLENIYOR...", 120, 300);
+        window.parent.postMessage('ARCADE_DEATH', '*');
+    }
+
+    function drawGameOver() {
+        ctx.fillStyle = "rgba(255,0,0,0.9)"; ctx.fillRect(0,0,cvs.width,cvs.height);
+        ctx.fillStyle = "#fff"; ctx.font = "40px monospace"; ctx.fillText("RADAR KAYBI! (GAME OVER)", 130, 300);
+    }
+
+    function collision(b,p){ p.top = p.y; p.bottom = p.y + p.height; p.left = p.x; p.right = p.x + p.width; b.top = b.y - b.radius; b.bottom = b.y + b.radius; b.left = b.x - b.radius; b.right = b.x + b.radius; return p.left < b.right && p.top < b.bottom && p.right > b.left && p.bottom > b.top; }
+
+    function update(){
+        if(isDead || waitingRevive) return;
+        ball.x += ball.velocityX; ball.y += ball.velocityY;
+        com.y += ((ball.y - (com.y + com.height/2))) * 0.1;
+        if(ball.y - ball.radius < 0 || ball.y + ball.radius > cvs.height){ ball.velocityY = -ball.velocityY; }
+        let player = (ball.x < cvs.width/2) ? user : com;
+        
+        if(collision(ball, player)){
+            let collidePoint = (ball.y - (player.y + player.height/2)); collidePoint = collidePoint / (player.height/2);
+            let angleRad = (Math.PI/4) * collidePoint;
+            let direction = (ball.x < cvs.width/2) ? 1 : -1;
+            ball.velocityX = direction * ball.speed * Math.cos(angleRad); ball.velocityY = ball.speed * Math.sin(angleRad);
+            ball.speed += 0.5;
+        }
+        
+        // Eger top senin tarafindan disari cikarsa olursun (Dirilme Tetiklenir)
+        if(ball.x - ball.radius < 0){ die(); com.score++; }
+        else if(ball.x + ball.radius > cvs.width){ user.score++; resetBall(); }
+    }
+
+    function render(){
+        if(isDead || waitingRevive) return;
+        drawRect(0,0,cvs.width,cvs.height,"#000"); drawText(user.score, cvs.width/4, cvs.height/5); drawText(com.score, 3*cvs.width/4, cvs.height/5);
+        drawNet(); drawRect(user.x, user.y, user.width, user.height, user.color); drawRect(com.x, com.y, com.width, com.height, com.color);
+        drawArc(ball.x, ball.y, ball.radius, ball.color);
+    }
+
+    function loop(){ if(!isDead && !waitingRevive){ update(); render(); requestAnimationFrame(loop); } }
+    loop();
+</script>
+</body>
+</html>
