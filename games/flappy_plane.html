@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>body{margin:0; overflow:hidden; background:#87CEEB;} canvas{display:block;}</style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+<script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    let w, h;
+    function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize); resize();
+
+    let plane = {x: 100, y: 150, size: 20, vy: 0, gravity: 0.5, jump: -8};
+    let pipes = [];
+    let frame = 0;
+    let score = 0;
+    let isDead = false;
+    let waitingRevive = false;
+
+    function resetGame() {
+        plane.y = h/2; plane.vy = 0; pipes = []; frame = 0; score = 0; isDead = false; waitingRevive = false; loop();
+    }
+
+    window.addEventListener("mousedown", () => { if(!isDead && !waitingRevive) plane.vy = plane.jump; });
+    window.addEventListener("keydown", (e) => { if((e.code === "Space" || e.code === "ArrowUp") && !isDead && !waitingRevive) plane.vy = plane.jump; });
+
+    window.addEventListener('message', (e) => {
+        if(e.data === 'REVIVE') { isDead = false; waitingRevive = false; plane.y = h/2; plane.vy = 0; pipes = []; loop(); }
+        if(e.data === 'GAME_OVER_FINAL') { isDead = true; waitingRevive = false; drawGameOver(); }
+    });
+
+    function loop() {
+        if(isDead || waitingRevive) return;
+        ctx.clearRect(0, 0, w, h);
+        
+        plane.vy += plane.gravity;
+        plane.y += plane.vy;
+        
+        ctx.fillStyle = "#FFD700"; // Sarı Uçak
+        ctx.fillRect(plane.x, plane.y, plane.size*2, plane.size);
+        
+        if(frame % 90 === 0) {
+            let gap = 150;
+            let pipeY = Math.random() * (h - gap - 50) + 25;
+            pipes.push({x: w, y: pipeY, w: 50, gap: gap});
+        }
+        
+        ctx.fillStyle = "#228B22"; // Yeşil Borular (CB Bulutu gibi)
+        for(let i=0; i<pipes.length; i++) {
+            let p = pipes[i];
+            p.x -= 4;
+            ctx.fillRect(p.x, 0, p.w, p.y);
+            ctx.fillRect(p.x, p.y + p.gap, p.w, h - (p.y + p.gap));
+            
+            if(p.x === plane.x) score++;
+            
+            // Çarpışma Kontrolü
+            if(plane.x < p.x + p.w && plane.x + plane.size*2 > p.x && 
+              (plane.y < p.y || plane.y + plane.size > p.y + p.gap)) { die(); }
+        }
+        
+        if(plane.y > h || plane.y < 0) die();
+        
+        ctx.fillStyle = "black";
+        ctx.font = "24px Arial";
+        ctx.fillText("Skor: " + score, 20, 40);
+        
+        frame++;
+        requestAnimationFrame(loop);
+    }
+
+    function die() {
+        waitingRevive = true;
+        ctx.fillStyle = "rgba(0,0,0,0.5)";
+        ctx.fillRect(0,0,w,h);
+        ctx.fillStyle = "white";
+        ctx.font = "30px Arial";
+        ctx.fillText("TELSİZ BEKLENİYOR...", w/2 - 150, h/2);
+        // Ana sisteme "öldüm" mesajı gönder
+        window.parent.postMessage('ARCADE_DEATH', '*');
+    }
+    
+    function drawGameOver() {
+        ctx.fillStyle = "rgba(255,0,0,0.8)";
+        ctx.fillRect(0,0,w,h);
+        ctx.fillStyle = "white";
+        ctx.font = "40px Arial";
+        ctx.fillText("SEFER İPTAL! (GAME OVER)", w/2 - 250, h/2);
+        ctx.font = "20px Arial";
+        ctx.fillText("Tekrar oynamak için sayfayı yenile veya butona bas.", w/2 - 220, h/2 + 40);
+    }
+    resetGame();
+</script>
+</body>
+</html>
