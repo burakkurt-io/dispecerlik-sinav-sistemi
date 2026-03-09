@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uçuş Dispeçerliği | Sınav Portalı</title>
-      <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107213854', 'ym');
+    <title>Ucus Dispecerligi | Sinav Portali</title>
+    
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107213854', 'ym');
 
-    ym(107213854, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/107213854" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+        ym(107213854, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/107213854" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0056b3">
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js').catch(err => console.log('SW Kayıt Hatası:', err));
+        navigator.serviceWorker.register('sw.js').catch(err => console.log('SW Kayit Hatasi:', err));
       }
     </script>
 
@@ -200,7 +199,7 @@
     <div class="wrapper">
         <aside class="left-side">
             <div class="left-header">
-                <div class="left-title">DERS SEÇİMİ</div>
+                <div class="left-title">DERS SECIMI</div>
             </div>
             <div id="cat-list"></div>
         </aside>
@@ -210,18 +209,18 @@
                 <div class="header">
                     <div style="display:flex; align-items:center; gap:10px;">
                         <img src="img/logo.png" alt="Logo" style="height: 24px; width: auto;">
-                        <span id="no">GÜNCEL SORU BANKASI YÜKLENİYOR...</span>
+                        <span id="no">GUNCEL SORU BANKASI YUKLENIYOR...</span>
                     </div>
                     <div style="display:flex; align-items:center; gap:15px;">
                         <span id="timer-display" style="display:none; font-weight:bold; color:#dc3545; font-size:15px; border: 1px solid #dc3545; padding: 2px 8px; border-radius: 5px;">00:00</span>
-                        <button id="installAppBtn" onclick="installPWA()" style="background:none; border:none; cursor:pointer; font-size:18px; display:none;" title="Ana Ekrana Ekle (Uygulama Yap)">📲</button>
-                        <button onclick="toggleDarkMode()" id="darkModeBtn" style="background:none; border:none; cursor:pointer; font-size:16px;" title="Gece/Gündüz Modu">🌙</button>
+                        <button id="installAppBtn" onclick="installPWA()" style="background:none; border:none; cursor:pointer; font-size:18px; display:none;" title="Ana Ekrana Ekle (Uygulama Yap)">[+]</button>
+                        <button onclick="toggleDarkMode()" id="darkModeBtn" style="background:none; border:none; cursor:pointer; font-size:16px;" title="Gece/Gunduz Modu">MOD</button>
                     </div>
                 </div>
                 
                 <div class="content-scroll-area" id="content-scroll">
-                    <div id="txt" class="q-text">Lütfen bekleyin...</div>
-                    <img id="q-img" src="" alt="Soru Görseli" style="display:none; max-width: 100%; max-height: 200px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
+                    <div id="txt" class="q-text">Lutfen bekleyin...</div>
+                    <img id="q-img" src="" alt="Soru Gorseli" style="display:none; max-width: 100%; max-height: 200px; margin-bottom: 15px; border-radius: 8px; object-fit: contain;">
                     <div id="opts"></div>
                 </div>
     
@@ -230,16 +229,16 @@
                     
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; min-height: 35px;">
                         <div id="zorluk-alani" class="zorluk-kutu"></div>
-                        <button class="btn-acikla btn-konu-anlat" id="btnKonuAnlat" onclick="konuAnlatimiGosterGizle()">📚 KONUYU ANLAT</button>
+                        <button class="btn-acikla btn-konu-anlat" id="btnKonuAnlat" onclick="konuAnlatimiGosterGizle()">KONUYU ANLAT</button>
                     </div>
 
-                    <button class="btn-acikla" id="btnAcikla" onclick="aciklamaGosterGizle()">AÇIKLA</button>
+                    <button class="btn-acikla" id="btnAcikla" onclick="aciklamaGosterGizle()">ACIKLA</button>
                     
                     <div id="konu-anlatimi-alani" class="konu-anlatimi-kutusu"></div>
                     <div id="aciklama-alani" class="aciklama-kutusu"></div>
 
                     <div class="nav" id="nav-buttons">
-                        <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
+                        <button class="btn btn-gray" onclick="move(-1)">Onceki</button>
                         <button class="btn btn-reset" onclick="resetQ()">Reset</button>
                         <button class="btn btn-gray" onclick="rand()">Random</button>
                         <button class="btn" onclick="move(1)">Sonraki</button>
@@ -248,21 +247,21 @@
             </div>
         </main>
 
-<aside class="side">
+        <aside class="side">
             <div class="side-header">
-                <div class="side-title">SORU NAVİGASYONU</div>
+                <div class="side-title">SORU NAVIGASYONU</div>
                 
                 <div class="search-box" style="margin-bottom: 10px;">
-                    <input type="text" id="keyword-search" placeholder="Kelime Ara (Örn: RVR)" onkeypress="handleKeywordSearch(event)">
+                    <input type="text" id="keyword-search" placeholder="Kelime Ara (Orn: RVR)" onkeypress="handleKeywordSearch(event)">
                     <div style="display: flex; gap: 6px;">
                         <button onclick="searchByKeyword()" style="background: #17a2b8; border-radius: 6px; padding: 0 15px;">BUL</button>
-<button onclick="resetKeywordSearch()" style="background: #28a745; font-size: 18px; padding: 0 10px; margin-left: 1px;" title="Aramayı Sıfırla">&#x21BB;</button>      
+                        <button onclick="resetKeywordSearch()" style="background: #28a745; border-radius: 6px; font-size: 18px; padding: 0 10px; margin-left: 1px;" title="Aramayi Sifirla">X</button>      
                     </div>
                 </div>
 
                 <div class="search-box">
-                    <input type="text" id="q-search" placeholder="Soru No (Örn: S.12)" onkeypress="handleSearch(event)">
-                    <button onclick="goToQuestion()">GİT</button>
+                    <input type="text" id="q-search" placeholder="Soru No (Orn: S.12)" onkeypress="handleSearch(event)">
+                    <button onclick="goToQuestion()">GIT</button>
                 </div>
             </div>
             
@@ -273,23 +272,23 @@
     <div class="footer-area">
         <div class="footer-buttons">
             <div class="footer-note">CREATED BY BURAK KURT</div>
-            <button class="btn-footer f-analiz" onclick="openModal('analizModal')">ANALİZ NOTLARI</button>
+            <button class="btn-footer f-analiz" onclick="openModal('analizModal')">ANALIZ NOTLARI</button>
             <button class="btn-footer f-donate" onclick="openModal('donateModal')">DONATE ME</button>
-            <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">İLETİŞİM</button>
-            <button class="btn-footer f-guncelle" onclick="openGuncelleModal()">GÜNCELLEME NOTLARI</button>
+            <button class="btn-footer f-iletisim" onclick="openModal('iletisimModal')">ILETISIM</button>
+            <button class="btn-footer f-guncelle" onclick="openGuncelleModal()">GUNCELLEME NOTLARI</button>
         </div>
         <div class="disclaimer">
-            ÖNEMLİ NOT: Soru çözümlemeleri ve yapısal veri entegrasyonu, doğrudan geliştirici seviyesindeki Google AI Studio üzerinden gemini-3.1-pro-preview (Bilgi kesim tarihi: Ocak 2025) LLM API'si kullanılarak işlenmiştir. Havacılıkta emniyet ve doğrulama esastır; operasyonel veya akademik şüphe durumunda bilgiyi daima yetkili eğitmenlerinizle teyit ediniz.
+            ONEMLI NOT: Soru cozumlemeleri ve yapisal veri entegrasyonu, dogrudan gelistirici seviyesindeki Google AI Studio uzerinden gemini-3.1-pro-preview (Bilgi kesim tarihi: Ocak 2025) LLM API'si kullanilarak islenmistir. Havacilikta emniyet ve dogrulama esastir; operasyonel veya akademik suphe durumunda bilgiyi daima yetkili egitmenlerinizle teyit ediniz.
         </div>
     </div>
 
     <div id="customConfirmModal" class="modal" style="z-index: 100000;">
         <div class="modal-content" style="max-width: 400px; text-align: center; padding: 30px;">
-            <h3 style="color: var(--p); margin-top: 0; text-transform: uppercase;">⚠️ Sınav Uyarısı</h3>
+            <h3 style="color: var(--p); margin-top: 0; text-transform: uppercase;">Sinav Uyarisi</h3>
             <p id="confirm-msg" style="color: #555; font-size: 14px; margin-bottom: 25px; line-height: 1.5; font-weight: bold;"></p>
             <div style="display: flex; gap: 10px;">
-                <button class="btn btn-gray" onclick="closeConfirm(false)" style="flex: 1;">İptal Et</button>
-                <button class="btn" onclick="closeConfirm(true)" style="flex: 1; background: #dc3545;">Evet, Çık</button>
+                <button class="btn btn-gray" onclick="closeConfirm(false)" style="flex: 1;">Iptal Et</button>
+                <button class="btn" onclick="closeConfirm(true)" style="flex: 1; background: #dc3545;">Evet, Cik</button>
             </div>
         </div>
     </div>
@@ -297,7 +296,7 @@
     <div id="guncelleModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('guncelleModal')">&times;</span>
-            <h2 style="text-align:center; color:#6c757d; text-transform: uppercase; margin-bottom: 5px; font-size: 16px;">Güncelleme Notları</h2>
+            <h2 style="text-align:center; color:#6c757d; text-transform: uppercase; margin-bottom: 5px; font-size: 16px;">Guncelleme Notlari</h2>
             <div id="guncelle-metin" class="analiz-metin-alani" style="max-height: 50vh; overflow-y: auto; margin-top:15px;"></div>
         </div>
     </div>
@@ -305,12 +304,12 @@
     <div id="iletisimModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('iletisimModal')">&times;</span>
-            <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">İletişim Kanalları</h2>
-            <a href="https://t.me/burakkurt_dispatch" target="_blank" class="action-option">Telegram ile Ulaşın</a>
-            <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">E-Posta Gönderin</a>
+            <h2 style="text-align:center; color:#0056b3; margin-bottom:25px; text-transform: uppercase;">Iletisim Kanallari</h2>
+            <a href="https://t.me/burakkurt_dispatch" target="_blank" class="action-option">Telegram ile Ulasin</a>
+            <a href="mailto:6cy8oal8y@mozmail.com" class="action-option">E-Posta Gonderin</a>
             <div style="text-align: center; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px;">
-                <img src="img/flight dispatch.jpeg" alt="Dispeçer Hayatı" style="max-width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                <div style="font-size: 12px; color: #6c757d; margin-top: 10px; font-weight: bold;">"Yoğunum ama fırsat bulursam size dönerim..." </div>
+                <img src="img/flight dispatch.jpeg" alt="Dispecer Hayati" style="max-width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                <div style="font-size: 12px; color: #6c757d; margin-top: 10px; font-weight: bold;">"Yogunum ama firsat bulursam size donerim..." </div>
             </div>
         </div>
     </div>
@@ -318,14 +317,14 @@
     <div id="donateModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('donateModal')">&times;</span>
-            <h2 style="text-align:center; color:#ffc107; margin-bottom:25px; text-transform: uppercase;">Uçuş Destek Paketleri</h2>
-            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651529" target="_blank" class="action-option donate-option">Economy Class <span class="d-price">100 TL - Kısa Menzil Desteği</span></a>
-            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651866" target="_blank" class="action-option donate-option">Business Class <span class="d-price">500 TL - Konforlu Gelişim Desteği</span></a>
-            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651917" target="_blank" class="action-option donate-option">Golden Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Desteği</span></a>
-            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651987" target="_blank" class="action-option donate-option">"Sayende Dispeç Oldum" <span class="d-price">2000 TL - Efsanevi Kariyer Desteği</span></a>
+            <h2 style="text-align:center; color:#ffc107; margin-bottom:25px; text-transform: uppercase;">Ucus Destek Paketleri</h2>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651529" target="_blank" class="action-option donate-option">Economy Class <span class="d-price">100 TL - Kisa Menzil Destegi</span></a>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651866" target="_blank" class="action-option donate-option">Business Class <span class="d-price">500 TL - Konforlu Gelisim Destegi</span></a>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651917" target="_blank" class="action-option donate-option">Golden Ticket VIP <span class="d-price">1000 TL - First Class Operasyon Destegi</span></a>
+            <a href="https://www.shopier.com/dispecerliksinavsistemi/44651987" target="_blank" class="action-option donate-option">"Sayende Dispec Oldum" <span class="d-price">2000 TL - Efsanevi Kariyer Destegi</span></a>
        <div style="text-align: center; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px;">
-                <img src="img/flight dispatch.jpeg" alt="Dispeçer Hayatı" style="max-width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                <div style="font-size: 12px; color: #6c757d; margin-top: 10px; font-style: italic; font-weight: bold;">"Sistemi ayakta tutan o yorgun kahramanlara destek olun..." ☕✈️</div>
+                <img src="img/flight dispatch.jpeg" alt="Dispecer Hayati" style="max-width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                <div style="font-size: 12px; color: #6c757d; margin-top: 10px; font-style: italic; font-weight: bold;">"Sistemi ayakta tutan o yorgun kahramanlara destek olun..."</div>
             </div>
         </div>
     </div>
@@ -333,27 +332,27 @@
     <div id="analizModal" class="modal">
         <div class="modal-content analiz-modal-content">
             <span class="close-btn" onclick="closeModal('analizModal')">&times;</span>
-            <h2 style="text-align:center; color:#17a2b8; text-transform: uppercase; margin-bottom: 5px;">Analiz Notları</h2>
+            <h2 style="text-align:center; color:#17a2b8; text-transform: uppercase; margin-bottom: 5px;">Analiz Notlari</h2>
             
             <div id="analiz-menu" style="max-height: 60vh; overflow-y: auto; padding-right: 10px; margin-top: 15px;">
                 <button class="analiz-btn" onclick="openAnaliz('genel', 'Genel Soru Analizi')">Genel Soru Analizi</button>
-                <button class="analiz-btn" onclick="openAnaliz('notlar', 'Sizin Notlarınız')">Sizin Notlarınız</button>
-                <button class="analiz-btn" onclick="openAnaliz('mb', '1 - M&B - AĞIRLIK VE DENGE')">1 - M&B - AĞIRLIK VE DENGE</button>
-                <button class="analiz-btn" onclick="openAnaliz('hpl', '2 - HPL - İNSAN PERFORMANSI VE LİMİTLERİ')">2 - HPL - İNSAN PERFORMANSI VE LİMİTLERİ</button>
-                <button class="analiz-btn" onclick="openAnaliz('dgr', '3 - DGR - TEHLİKELİ MADDELER')">3 - DGR - TEHLİKELİ MADDELER</button>
-                <button class="analiz-btn" onclick="openAnaliz('com', '4 - COM - HABERLEŞME')">4 - COM - HABERLEŞME</button>
-                <button class="analiz-btn" onclick="openAnaliz('law', '5 - LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL')">5 - LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL</button>
-                <button class="analiz-btn" onclick="openAnaliz('hav', '6 - HAV - HAVA TRAFİK YÖNETİMİ')">6 - HAV - HAVA TRAFİK YÖNETİMİ</button>
-                <button class="analiz-btn" onclick="openAnaliz('met', '7 - MET - METEOROLOJİ')">7 - MET - METEOROLOJİ</button>
+                <button class="analiz-btn" onclick="openAnaliz('notlar', 'Sizin Notlariniz')">Sizin Notlariniz</button>
+                <button class="analiz-btn" onclick="openAnaliz('mb', '1 - M&B - AGIRLIK VE DENGE')">1 - M&B - AGIRLIK VE DENGE</button>
+                <button class="analiz-btn" onclick="openAnaliz('hpl', '2 - HPL - INSAN PERFORMANSI VE LIMITLERI')">2 - HPL - INSAN PERFORMANSI VE LIMITLERI</button>
+                <button class="analiz-btn" onclick="openAnaliz('dgr', '3 - DGR - TEHLIKELI MADDELER')">3 - DGR - TEHLIKELI MADDELER</button>
+                <button class="analiz-btn" onclick="openAnaliz('com', '4 - COM - HABERLESME')">4 - COM - HABERLESME</button>
+                <button class="analiz-btn" onclick="openAnaliz('law', '5 - LAW - HAVA HUKUKU VE HAVA TRAFIK KONTROL')">5 - LAW - HAVA HUKUKU VE HAVA TRAFIK KONTROL</button>
+                <button class="analiz-btn" onclick="openAnaliz('hav', '6 - HAV - HAVA TRAFIK YONETIMI')">6 - HAV - HAVA TRAFIK YONETIMI</button>
+                <button class="analiz-btn" onclick="openAnaliz('met', '7 - MET - METEOROLOJI')">7 - MET - METEOROLOJI</button>
                 <button class="analiz-btn" onclick="openAnaliz('pef', '8 - PEF - PERFORMANS')">8 - PEF - PERFORMANS</button>
-                <button class="analiz-btn" onclick="openAnaliz('sec', '9 - SEC - GÜVENLİK')">9 - SEC - GÜVENLİK</button>
-                <button class="analiz-btn" onclick="openAnaliz('nav', '10 - NAV - SEYRÜSEFER')">10 - NAV - SEYRÜSEFER</button>
-                <button class="analiz-btn" onclick="openAnaliz('fpl', '11 - FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ')">11 - FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ</button>
-                <button class="analiz-btn" onclick="openAnaliz('avi', '12 - AVI - HAVACILIK ÖĞRETİMİ')">12 - AVI - HAVACILIK ÖĞRETİMİ</button>
+                <button class="analiz-btn" onclick="openAnaliz('sec', '9 - SEC - GUVENLIK')">9 - SEC - GUVENLIK</button>
+                <button class="analiz-btn" onclick="openAnaliz('nav', '10 - NAV - SEYRUSEFER')">10 - NAV - SEYRUSEFER</button>
+                <button class="analiz-btn" onclick="openAnaliz('fpl', '11 - FPL&FM - UCUS PLANLAMA VE TAKIBI')">11 - FPL&FM - UCUS PLANLAMA VE TAKIBI</button>
+                <button class="analiz-btn" onclick="openAnaliz('avi', '12 - AVI - HAVACILIK OGRETIMI')">12 - AVI - HAVACILIK OGRETIMI</button>
             </div>
             
             <div id="analiz-icerik" style="display:none;">
-                <button type="button" class="btn-back" onclick="closeAnaliz()">← Menüye Dön</button>
+                <button type="button" class="btn-back" onclick="closeAnaliz()">Menu Geri</button>
                 <div style="max-height: 55vh; overflow-y: auto; padding-right: 10px; margin-top: 15px;">
                     <h3 id="analiz-baslik" style="color:var(--p); margin-top:0; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px;"></h3>
                     <div id="analiz-metin" class="analiz-metin-alani"></div>
@@ -404,20 +403,20 @@
             }
         }
         window.addEventListener('appinstalled', () => {
-            installBtn.style.display = 'none'; showCustomNotification("Uygulama başarıyla eklendi!", "success");
+            installBtn.style.display = 'none'; showCustomNotification("Uygulama basariyla eklendi!", "success");
         });
 
         if(localStorage.getItem('darkMode') === 'enabled') {
             document.body.classList.add('dark-mode');
-            document.getElementById('darkModeBtn').innerText = '☀️';
+            document.getElementById('darkModeBtn').innerText = 'GUN';
         }
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             const btn = document.getElementById('darkModeBtn');
             if(document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled'); btn.innerText = '☀️';
+                localStorage.setItem('darkMode', 'enabled'); btn.innerText = 'GUN';
             } else {
-                localStorage.setItem('darkMode', 'disabled'); btn.innerText = '🌙';
+                localStorage.setItem('darkMode', 'disabled'); btn.innerText = 'MOD';
             }
         }
 
@@ -427,18 +426,18 @@
         let selectedDifficulty = 'ALL';
 
         const examSubjects = [
-            { code: "M&B", name: "1 - M&B (Ağırlık ve Denge)" },
-            { code: "HPL", name: "2 - HPL (İnsan Performansı)" },
+            { code: "M&B", name: "1 - M&B (Agirlik ve Denge)" },
+            { code: "HPL", name: "2 - HPL (Insan Performansi)" },
             { code: "DGR", name: "3 - DGR (Tehlikeli Maddeler)" },
-            { code: "COM", name: "4 - COM (Haberleşme)" },
+            { code: "COM", name: "4 - COM (Haberlesme)" },
             { code: "LAW", name: "5 - LAW (Hava Hukuku)" },
-            { code: "HAV", name: "6 - HAV (Hava Trafik Yönetimi)" },
+            { code: "HAV", name: "6 - HAV (Hava Trafik Yonetimi)" },
             { code: "MET", name: "7 - MET (Meteoroloji)" },
             { code: "PEF", name: "8 - PEF (Performans)" },
-            { code: "SEC", name: "9 - SEC (Güvenlik)" },
-            { code: "NAV", name: "10 - NAV (Seyrüsefer)" },
-            { code: "FPL", name: "11 - FPL&FM (Uçuş Planlama)" },
-            { code: "AVI", name: "12 - AVI (Havacılık Öğretimi)" }
+            { code: "SEC", name: "9 - SEC (Guvenlik)" },
+            { code: "NAV", name: "10 - NAV (Seyrusefer)" },
+            { code: "FPL", name: "11 - FPL&FM (Ucus Planlama)" },
+            { code: "AVI", name: "12 - AVI (Havacilik Ogretimi)" }
         ];
 
         function selectDiff(btn, val) {
@@ -446,20 +445,21 @@
             btn.classList.add('active');
             selectedDifficulty = val;
         }
-        // --- ÇAKIŞMA ÖNLEYİCİ (HATA YÖNETİMİ) FONKSİYONU ---
+
         function checkMutuallyExclusive(checkbox, typeToUncheck) {
             if(checkbox.checked) {
                 const code = checkbox.getAttribute('data-code');
                 let otherSelector = typeToUncheck === 'golden' ? `.golden-cb[data-code="${code}"]` : `.sim-cb[data-code="${code}"]`;
                 const otherCb = document.querySelector(otherSelector);
                 if(otherCb && otherCb.checked) {
-                    otherCb.checked = false; // Diğerini otomatik iptal et
-                    showCustomNotification(`"${code}" dersi için hem Genel hem GOLDEN aynı anda seçilemez. Çakışma önlendi!`, "warning");
+                    otherCb.checked = false; 
+                    showCustomNotification(`"${code}" dersi icin hem Genel hem GOLDEN ayni anda secilemez. Cakisma onlendi!`, "warning");
                 }
             }
         }
-function renderSimulationSetup() {
-            document.getElementById('no').innerText = "SINAV SİMÜLASYONU MERKEZİ";
+
+        function renderSimulationSetup() {
+            document.getElementById('no').innerText = "SINAV SIMULASYONU MERKEZI";
             document.getElementById('opts').innerHTML = '';
             document.getElementById('q-img').style.display = 'none';
             document.getElementById('action-area').style.display = 'none';
@@ -468,13 +468,13 @@ function renderSimulationSetup() {
                 <div style="padding: 10px; width:100%;">
                     <div style="text-align: center; margin-bottom: 20px;">
                         <img src="img/crew_briefing.png" alt="Crew Briefing" style="max-width: 100%; max-height: 220px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); object-fit: cover; width: 100%;">
-                        <div style="font-size: 12px; color: #6c757d; margin-top: 8px; font-style: italic; font-weight: bold;">"Pre-flight briefing... Sınav operasyonuna hazırlanıyorsunuz."</div>
+                        <div style="font-size: 12px; color: #6c757d; margin-top: 8px; font-style: italic; font-weight: bold;">"Pre-flight briefing... Sinav operasyonuna hazirlaniyorsunuz."</div>
                     </div>
                     <div style="background: ${document.body.classList.contains('dark-mode') ? '#2a2a2a' : '#eef5ff'}; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; border-left: 4px solid var(--p);">
-                        <strong style="color:var(--p); font-size: 16px;">📋 Kurallar ve Dinamik Zorluk:</strong><br>
-                        • Genel ve GOLDEN havuzlarını dilediğiniz gibi karma yapabilirsiniz.<br>
-                        • Seçtiğiniz her modül için zorluk derecesine göre <b>rastgele 10 adet</b> çekilir.<br>
-                        • Modül başına <b>15 Dakika</b> süre verilir. Geçmek için en az <b>7 Doğru</b> gerekir.<br>
+                        <strong style="color:var(--p); font-size: 16px;">Kurallar ve Dinamik Zorluk:</strong><br>
+                        Genel ve GOLDEN havuzlarini dilediginiz gibi karma yapabilirsiniz.<br>
+                        Sectiginiz her modul icin zorluk derecesine gore <b>rastgele 10 adet</b> cekilir.<br>
+                        Modul basina <b>15 Dakika</b> sure verilir. Gecmek icin en az <b>7 Dogru</b> gerekir.<br>
                     </div>
                     
                     <h3 style="margin-bottom: 10px; color: var(--p); font-size: 14px;">Zorluk Derecesi:</h3>
@@ -485,21 +485,20 @@ function renderSimulationSetup() {
                         <button class="diff-btn diff-hard" onclick="selectDiff(this, 'HARD')">ZOR (4-5)</button>
                     </div>
 
-                    <h3 style="margin-bottom: 10px; color: #856404; font-size: 14px; background: #FFF3CD; padding: 8px; border-radius: 6px; border-left: 4px solid #ffc107;">⭐ GOLDEN DERSLER (ÖZEL HAVUZ):</h3>
+                    <h3 style="margin-bottom: 10px; color: #856404; font-size: 14px; background: #FFF3CD; padding: 8px; border-radius: 6px; border-left: 4px solid #ffc107;">GOLDEN DERSLER (OZEL HAVUZ):</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 20px;" id="golden-subject-grid"></div>
 
                     <h3 style="margin-bottom: 15px; color: var(--p); font-size: 14px;">GENEL DERSLER (STANDART HAVUZ):</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 20px;" id="sim-subject-grid"></div>
                     
                     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <button onclick="startSimulation()" class="btn" style="flex: 2; background: #28a745; min-width: 200px; font-size: 15px;">SİMÜLASYONU BAŞLAT</button>
+                        <button onclick="startSimulation()" class="btn" style="flex: 2; background: #28a745; min-width: 200px; font-size: 15px;">SIMULASYONU BASLAT</button>
                     </div>
                 </div>
             `;
             document.getElementById('txt').innerHTML = html;
             document.getElementById('list').innerHTML = ''; 
             
-            // Sadece Golden Olan 5 Dersin Listesi
             const goldenList = [
                 { code: "DGR", name: "3 - DGR" }, { code: "COM", name: "4 - COM" },
                 { code: "LAW", name: "5 - LAW" }, { code: "NAV", name: "10 - NAV" }, { code: "FPL", name: "11 - FPL&FM" }
@@ -515,7 +514,6 @@ function renderSimulationSetup() {
                 `;
             });
 
-            // Standart 12 Dersin Listesi
             const grid = document.getElementById('sim-subject-grid');
             examSubjects.forEach((sub, i) => {
                 grid.innerHTML += `
@@ -532,24 +530,22 @@ function renderSimulationSetup() {
             const goldenCbs = document.querySelectorAll('.golden-cb:checked');
 
             if(normalCbs.length === 0 && goldenCbs.length === 0) {
-                showCustomNotification("Lütfen en az bir Genel veya Golden ders seçin!", "warning"); return;
+                showCustomNotification("Lutfen en az bir Genel veya Golden ders secin!", "warning"); return;
             }
 
             let totalQuestions = [];
             
-            // 1. Standart Havuzdaki Soruları Çek
             normalCbs.forEach(cb => {
                 const sub = examSubjects[cb.value];
                 let subQs = allQs.filter(q => {
                     let catStr = (q['Kategori'] || "").toUpperCase();
                     let regex = new RegExp("\\b" + sub.code + "\\b");
-                    return regex.test(catStr) && !catStr.includes("GOLDEN"); // Golden'ları buradan eledik
+                    return regex.test(catStr) && !catStr.includes("GOLDEN");
                 });
                 subQs = applyDifficultyFilter(subQs);
                 totalQuestions.push(...subQs.slice(0, 10)); 
             });
 
-            // 2. Sadece GOLDEN Havuzundaki Soruları Çek
             goldenCbs.forEach(cb => {
                 const code = cb.value;
                 let subQs = allQs.filter(q => {
@@ -561,7 +557,7 @@ function renderSimulationSetup() {
             });
 
             if(totalQuestions.length === 0) {
-                showCustomNotification("Seçtiğiniz zorlukta yeterli soru bulunamadı!", "error"); return;
+                showCustomNotification("Sectiginiz zorlukta yeterli soru bulunamadi!", "error"); return;
             }
 
             filteredQs = totalQuestions;
@@ -578,18 +574,17 @@ function renderSimulationSetup() {
             document.getElementById('btnKonuAnlat').style.display = 'none';
             document.getElementById('konu-anlatimi-alani').style.display = 'none';
             document.getElementById('nav-buttons').innerHTML = `
-                <button class="btn btn-gray" onclick="move(-1)">Önceki Soru</button>
-                <button class="btn" onclick="finishExam()" style="background:#dc3545; color:white; flex:0.8;">SINAVI BİTİR</button>
-                <button class="btn" onclick="move(1)">Sonraki Soru</button>
+                <button class="btn btn-gray" onclick="move(-1)">Onceki</button>
+                <button class="btn" onclick="finishExam()" style="background:#dc3545; color:white; flex:0.8;">SINAVI BITIR</button>
+                <button class="btn" onclick="move(1)">Sonraki</button>
             `;
 
             renderExamNavList();
             startExamTimer(totalMins);
             showExamQuestion();
-            showCustomNotification(`Sınav Başladı! ${filteredQs.length} Soru. Süre: ${totalMins} Dk.`, "success");
+            showCustomNotification(`Sinav Basladi! ${filteredQs.length} Soru. Sure: ${totalMins} Dk.`, "success");
         }
 
-        // Kod tekrarını önlemek için ufak bir yardımcı filtreleyici
         function applyDifficultyFilter(subQs) {
             if(selectedDifficulty === "ALL") return subQs.sort(() => 0.5 - Math.random());
             
@@ -602,6 +597,7 @@ function renderSimulationSetup() {
             });
             return filtered.sort(() => 0.5 - Math.random());
         }
+
         function startExamTimer(minutes) {
             const timerDisplay = document.getElementById('timer-display');
             clearInterval(timerInterval);
@@ -615,7 +611,7 @@ function renderSimulationSetup() {
                 timerDisplay.innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
-                    showCustomNotification("SÜRE BİTTİ! Sınav otomatik sonlandırılıyor.", "error");
+                    showCustomNotification("SURE BITTI! Sinav otomatik sonlandiriliyor.", "error");
                     finishExam();
                 }
             }, 1000);
@@ -648,7 +644,7 @@ function renderSimulationSetup() {
             const q = filteredQs[idx];
             document.getElementById('content-scroll').scrollTop = 0;
             
-            let searchStr = ((q['Kategori'] || "") + " " + (q['Soru Numarası'] || "")).toUpperCase();
+            let searchStr = ((q['Kategori'] || "") + " " + (q['Soru Numarasi'] || "")).toUpperCase();
             let subName = "Karma";
             examSubjects.forEach(sub => { 
                 let regex = new RegExp("\\b" + sub.code + "\\b");
@@ -665,7 +661,7 @@ function renderSimulationSetup() {
 
             const zorlukKutu = document.getElementById('zorluk-alani');
             if(q['Zorluk Derecesi(1-5)']) {
-                zorlukKutu.innerHTML = `⭐ Zorluk Seviyesi (1-5) : ${q['Zorluk Derecesi(1-5)']}`;
+                zorlukKutu.innerHTML = `Zorluk Seviyesi (1-5) : ${q['Zorluk Derecesi(1-5)']}`;
                 zorlukKutu.style.display = "inline-block";
             } else { zorlukKutu.style.display = "none"; }
 
@@ -695,15 +691,15 @@ function renderSimulationSetup() {
             document.getElementById('opts').innerHTML = '';
             document.getElementById('q-img').style.display = 'none';
             document.getElementById('action-area').style.display = 'none';
-            document.getElementById('no').innerText = "SİMÜLASYON SONUÇLARI";
+            document.getElementById('no').innerText = "SIMULASYON SONUCLARI";
 
             let results = {}; 
             let wrongTopics = {};
             let wrongQuestionsHtml = "";
 
             filteredQs.forEach((q, i) => {
-                let searchStr = ((q['Kategori'] || "") + " " + (q['Soru Numarası'] || "")).toUpperCase();
-                let subName = "Diğer", subCode = "MIX";
+                let searchStr = ((q['Kategori'] || "") + " " + (q['Soru Numarasi'] || "")).toUpperCase();
+                let subName = "Diger", subCode = "MIX";
                 examSubjects.forEach(sub => { 
                     let regex = new RegExp("\\b" + sub.code + "\\b");
                     if(regex.test(searchStr) || searchStr.includes("GOLDEN - " + sub.code)) { subName = sub.name; subCode = sub.code; }
@@ -721,7 +717,7 @@ function renderSimulationSetup() {
 
                 if(ans !== correctAns) {
                     let parts = (q['Kategori'] || "").split('-');
-                    let topic = parts.length > 2 ? parts[parts.length-1].trim() : "Genel Kapsamlı Konular";
+                    let topic = parts.length > 2 ? parts[parts.length-1].trim() : "Genel Kapsamli Konular";
                     if(q['Kategori'].includes('GOLDEN') && parts.length <= 2) topic = "GOLDEN Karma Soru";
                     
                     let topicKey = `[${subCode}] ${topic}`;
@@ -756,7 +752,7 @@ function renderSimulationSetup() {
                                 ${optionsHtml}
                             </div>
                             <div class="wrong-review-exp">
-                                <b>Açıklama:</b> ${q['Açıklama'] || 'Bu soru için açıklama bulunmuyor.'}
+                                <b>Aciklama:</b> ${q['Açıklama'] || 'Bu soru icin aciklama bulunmuyor.'}
                             </div>
                         </div>
                     `;
@@ -766,7 +762,7 @@ function renderSimulationSetup() {
             let isDark = document.body.classList.contains('dark-mode');
             let html = `<div style="width:100%; overflow-x:auto;"><table style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; min-width:600px;">
                 <tr style="background:var(--p); color:white; text-align:left;">
-                    <th style="padding:10px;">Ders Adı</th><th style="padding:10px;">Soru</th><th style="padding:10px;">Doğru</th><th style="padding:10px;">Yanlış</th><th style="padding:10px;">Boş</th><th style="padding:10px;">Puan</th><th style="padding:10px;">Durum</th>
+                    <th style="padding:10px;">Ders Adi</th><th style="padding:10px;">Soru</th><th style="padding:10px;">Dogru</th><th style="padding:10px;">Yanlis</th><th style="padding:10px;">Bos</th><th style="padding:10px;">Puan</th><th style="padding:10px;">Durum</th>
                 </tr>`;
             
             let totalC = 0, totalW = 0, totalE = 0, totalQ = 0;
@@ -774,7 +770,7 @@ function renderSimulationSetup() {
                 let r = results[key];
                 totalC += r.correct; totalW += r.wrong; totalE += r.empty; totalQ += r.total;
                 let score = (r.correct / r.total) * 100;
-                let status = score >= 70 ? '<span style="color:#28a745; font-weight:bold;">GEÇTİ</span>' : '<span style="color:#dc3545; font-weight:bold;">KALDI</span>';
+                let status = score >= 70 ? '<span style="color:#28a745; font-weight:bold;">GECTI</span>' : '<span style="color:#dc3545; font-weight:bold;">KALDI</span>';
                 
                 html += `<tr style="border-bottom: 1px solid #ddd; color: ${isDark ? '#ccc' : '#333'};">
                     <td style="padding:10px; font-weight:bold;">${key}</td><td style="padding:10px;">${r.total}</td>
@@ -789,22 +785,22 @@ function renderSimulationSetup() {
             html += `</table>
                 <div style="background:${isDark ? '#1e1e1e' : '#f8f9fa'}; padding:15px; border-radius:8px; text-align:center; font-size:16px; border: 2px solid ${overallScore >= 70 ? '#28a745' : '#dc3545'}; margin-bottom:20px; color: ${isDark ? '#fff' : '#333'};">
                     Genel Ortalama: <b>${overallScore.toFixed(0)}</b> / 100<br>
-                    <span style="font-size:13px; color:#888;">(Toplam: ${totalC} Doğru, ${totalW} Yanlış, ${totalE} Boş)</span>
+                    <span style="font-size:13px; color:#888;">(Toplam: ${totalC} Dogru, ${totalW} Yanlis, ${totalE} Bos)</span>
                 </div>`;
 
             if(Object.keys(wrongTopics).length > 0) {
                 html += `<div style="background: ${isDark ? '#332b00' : '#fff3cd'}; border: 1px solid #ffeeba; border-left: 5px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 25px; text-align: left; color: ${isDark ? '#ffdd80' : '#856404'};">
-                    <h3 style="margin-top:0; margin-bottom:10px; font-size:14px; text-transform:uppercase;">🎯 Zayıf Olduğunuz Alt Konular (Çalışma Reçetesi)</h3>
+                    <h3 style="margin-top:0; margin-bottom:10px; font-size:14px; text-transform:uppercase;">Zayif Oldugunuz Alt Konular</h3>
                     <ul style="margin:0; padding-left:20px; font-size:13px; line-height:1.6;">`;
-                for(let t in wrongTopics) { html += `<li><b>${t}</b> alanından <b>${wrongTopics[t]} soruyu</b> yanlış veya boş yaptınız.</li>`; }
+                for(let t in wrongTopics) { html += `<li><b>${t}</b> alanindan <b>${wrongTopics[t]} soruyu</b> yanlis veya bos yaptiniz.</li>`; }
                 html += `</ul></div>`;
             }
 
             if(wrongQuestionsHtml !== "") {
-                html += `<h3 style="color:var(--p); margin-top:20px; text-align:center; border-bottom:2px solid #eee; padding-bottom:10px; font-size:15px;">❌ YANLIŞ VE BOŞ YAPILAN SORULARIN ÇÖZÜMLERİ</h3>` + wrongQuestionsHtml;
+                html += `<h3 style="color:var(--p); margin-top:20px; text-align:center; border-bottom:2px solid #eee; padding-bottom:10px; font-size:15px;">YANLIS VE BOS YAPILAN SORULARIN COZUMLERI</h3>` + wrongQuestionsHtml;
             }
 
-            html += `<button onclick="exitExamMode()" class="action-option" style="width:100%; margin-top:20px;">SİSTEME GERİ DÖN</button></div>`;
+            html += `<button onclick="exitExamMode()" class="action-option" style="width:100%; margin-top:20px;">SISTEME GERI DON</button></div>`;
             document.getElementById('txt').innerHTML = html;
         }
 
@@ -815,7 +811,7 @@ function renderSimulationSetup() {
             document.getElementById('action-area').style.display = 'flex';
             document.getElementById('btnAcikla').style.display = 'block';
             document.getElementById('nav-buttons').innerHTML = `
-                <button class="btn btn-gray" onclick="move(-1)">Önceki</button>
+                <button class="btn btn-gray" onclick="move(-1)">Onceki</button>
                 <button class="btn btn-reset" onclick="resetQ()">Reset</button>
                 <button class="btn btn-gray" onclick="rand()">Random</button>
                 <button class="btn" onclick="move(1)">Sonraki</button>
@@ -841,48 +837,42 @@ function renderSimulationSetup() {
         let idx = 0; 
 
         const categories = [
-            { name: "🚀 SİMÜLASYON MODU", keyword: "SIMULATION" },
-            { name: "🏆 GOLDEN SORULAR", keyword: "CIKMIS" },
-            { name: "⭐ GOLDEN - DGR", keyword: "GOLDEN - DGR" },
-            { name: "⭐ GOLDEN - LAW", keyword: "GOLDEN - HAVA" },
-            { name: "⭐ GOLDEN - NAV", keyword: "GOLDEN - SEYR" },
-            { name: "⭐ GOLDEN - COM", keyword: "GOLDEN - HABER" },
-            { name: "⭐ GOLDEN - FPL&FM", keyword: "GOLDEN - FPL" },
-            { name: "📚 TÜM SORULAR", keyword: "ALL" },
-            { name: "1 - AĞIRLIK VE DENGE (M&B)", keyword: "M&B" },
-            { name: "2 - İNSAN PERFORMANSI (HPL)", keyword: "HPL" },
-            { name: "3 - TEHLİKELİ MADDELER (DGR)", keyword: "DGR" },
-            { name: "4 - HABERLEŞME (COM)", keyword: "COM" },
+            { name: "SIMULASYON MODU", keyword: "SIMULATION" },
+            { name: "HOLDING PATTERN", keyword: "ARCADE" },
+            { name: "GOLDEN SORULAR", keyword: "CIKMIS" },
+            { name: "GOLDEN - DGR", keyword: "GOLDEN - DGR" },
+            { name: "GOLDEN - LAW", keyword: "GOLDEN - HAVA" },
+            { name: "GOLDEN - NAV", keyword: "GOLDEN - SEYR" },
+            { name: "GOLDEN - COM", keyword: "GOLDEN - HABER" },
+            { name: "GOLDEN - FPL&FM", keyword: "GOLDEN - FPL" },
+            { name: "TUM SORULAR", keyword: "ALL" },
+            { name: "1 - AGIRLIK VE DENGE (M&B)", keyword: "M&B" },
+            { name: "2 - INSAN PERFORMANSI (HPL)", keyword: "HPL" },
+            { name: "3 - TEHLIKELI MADDELER (DGR)", keyword: "DGR" },
+            { name: "4 - HABERLESME (COM)", keyword: "COM" },
             { name: "5 - HAVA HUKUKU (LAW)", keyword: "LAW" },
-            { name: "6 - HAVA TRAFİK YÖNETİMİ (HAV)", keyword: "HAV" },
-            { name: "7 - METEOROLOJİ (MET)", keyword: "MET" },
+            { name: "6 - HAVA TRAFIK YONETIMI (HAV)", keyword: "HAV" },
+            { name: "7 - METEOROLOJI (MET)", keyword: "MET" },
             { name: "8 - PERFORMANS (PEF)", keyword: "PEF" },
-            { name: "9 - GÜVENLİK (SEC)", keyword: "SEC" },
-            { name: "10 - SEYRÜSEFER (NAV)", keyword: "NAV" },
-            { name: "11 - UÇUŞ PLANLAMA (FPL&FM)", keyword: "FPL" },
-            { name: "12 - HAVACILIK ÖĞRETİMİ (AVI)", keyword: "AVI" }
+            { name: "9 - GUVENLIK (SEC)", keyword: "SEC" },
+            { name: "10 - SEYRUSEFER (NAV)", keyword: "NAV" },
+            { name: "11 - UCUS PLANLAMA (FPL&FM)", keyword: "FPL" },
+            { name: "12 - HAVACILIK OGRETIMI (AVI)", keyword: "AVI" }
         ];
-// --- ARKA PLAN RESİM ÖN YÜKLEYİCİ (HAYALET BOT) ---
-       // --- ARKA PLAN ÖN YÜKLEYİCİ (HAYALET BOT V2: RESİM + HTML) ---
+
         function arkaPlanResimYukleyici(tumSorular) {
-            // Sistemin açılışından 2 saniye sonra başlasın ki ana ekran donmasın
             setTimeout(() => {
-                console.log("Arka plan ön yükleyicisi (Preloader) başlatıldı...");
                 const preloadSet = new Set();
                 
-                // 1. Sabit ve HTML içi resimleri ekle
                 preloadSet.add('img/logo.png');
                 preloadSet.add('img/flight dispatch.jpeg');
                 preloadSet.add('img/crew_briefing.png');
                 preloadSet.add('img/not1.png');
 
-                // 2. Tüm JSON verisini tara ve PNG/JPG'leri avla
                 tumSorular.forEach(q => {
-                    // Ana Soru Görselleri
                     if (q['Resim Yolu'] && q['Resim Yolu'] !== "Bilinmiyor" && q['Resim Yolu'].trim() !== "") {
                         preloadSet.add(q['Resim Yolu'].trim());
                     }
-                    // Şıklardaki Görseller
                     ['A', 'B', 'C', 'D', 'E'].forEach(harf => {
                         const sik = q[harf + ' Şıkkı'];
                         if (sik && typeof sik === 'string') {
@@ -894,16 +884,11 @@ function renderSimulationSetup() {
                     });
                 });
 
-                // 3. Toplanan resimleri sessizce RAM'e indir
                 preloadSet.forEach(src => {
                     const img = new Image();
                     img.src = src;
                 });
-                console.log(preloadSet.size + " adet resim arka planda başarıyla ön belleğe alındı.");
 
-                // -------------------------------------------------------------
-                // 4. HTML ANALİZ VE GÜNCELLEME NOTLARINI ÖN BELLEĞE ALMA (YENİ)
-                // -------------------------------------------------------------
                 const htmlDosyalar = [
                     'guncelle.html', 'genel.html', 'notlar.html', 'mb.html', 
                     'hpl.html', 'dgr.html', 'com.html', 'law.html', 'hav.html', 
@@ -911,31 +896,27 @@ function renderSimulationSetup() {
                 ];
 
                 htmlDosyalar.forEach(dosya => {
-                    // Arka planda sessizce fetch atıp tarayıcı cache'ine (hafızasına) hapsediyoruz
-                    fetch(`html_notlar/${dosya}`).catch(e => console.log("Preload hatası:", dosya));
+                    fetch(`html_notlar/${dosya}`).catch(e => console.log("Preload hatasi:", dosya));
                 });
-                console.log(htmlDosyalar.length + " adet HTML not dosyası ön belleğe alındı.");
-
-            }, 2000); // 2 saniye gecikme
+            }, 2000); 
         }
+
         async function start() {
             try {
-                document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
-                document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
+                document.getElementById('no').innerText = "VERITABANLARI YUKLENIYOR...";
+                document.getElementById('txt').innerText = "Sorular hazirlaniyor, lutfen bekleyin...";
 
                 const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm-fpl-fm-full.json' , 'kdm_com_final.json' ];
                 
-                // Her bir dosyayı güvenli bir şekilde çekmeyi deneriz
                 const responses = await Promise.all(urls.map(async url => {
                     try {
                         const res = await fetch(url);
                         if (!res.ok) {
-                            console.warn(`HATA: ${url} bulunamadı! (Hata Kodu: ${res.status})`);
-                            return []; // Dosya yoksa sistemi çökertmek yerine boş dizi döndür
+                            console.warn(`HATA: ${url} bulunamadi!`);
+                            return []; 
                         }
                         return await res.json();
                     } catch (e) {
-                        console.warn(`HATA: ${url} çekilemedi! JSON formatı bozuk veya CORS engeli.`, e);
                         return [];
                     }
                 }));
@@ -945,28 +926,26 @@ function renderSimulationSetup() {
                     if (Array.isArray(arr)) {
                         arr.forEach(item => {
                             if(item['Kategori']) item['Kategori'] = item['Kategori'].replace(/KDM/g, 'GOLDEN');
-                            if(item['Soru Numarası']) item['Soru Numarası'] = item['Soru Numarası'].replace(/KDM/g, 'GOLDEN');
+                            if(item['Soru Numarasi']) item['Soru Numarasi'] = item['Soru Numarasi'].replace(/KDM/g, 'GOLDEN');
                         });
                         allQs.push(...arr);
                     }
                 });
 
                 if (allQs.length === 0) {
-                    throw new Error("Hiçbir JSON dosyasından soru çekilemedi. Dosyaları kontrol edin.");
+                    throw new Error("Hicbir JSON dosyasindan soru cekilemedi.");
                 }
 
-                filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined); 
+                filteredQs = allQs.filter(q => q['Sinav Anisi'] !== undefined); 
                 renderCategories();
                 renderList();
-                show(); // EKRAN ÇİZİLDİ, SİSTEM KULLANIMA HAZIR!
+                show(); 
                 
-                // Arka plan resim yükleyicisi
                 arkaPlanResimYukleyici(allQs);
                 
             } catch(e) { 
-                console.error("KRİTİK HATA:", e);
-                document.getElementById('no').innerText = "BAĞLANTI HATASI";
-                document.getElementById('txt').innerHTML = `Veriler sunucudan çekilemedi.<br><br><b>Teknik Detay (F12 Konsola da bakın):</b> ${e.message}`;
+                document.getElementById('no').innerText = "BAGLANTI HATASI";
+                document.getElementById('txt').innerHTML = `Veriler sunucudan cekilemedi.<br><br><b>Teknik Detay:</b> ${e.message}`;
             }
         }
 
@@ -977,6 +956,13 @@ function renderSimulationSetup() {
                 const btn = document.createElement('button');
                 btn.className = 'cat-btn' + (cat.keyword === 'CIKMIS' ? ' active' : '');
                 btn.innerText = cat.name;
+                
+                if(cat.keyword === 'ARCADE') {
+                    btn.style.background = "#6f42c1";
+                    btn.style.color = "white";
+                    btn.style.borderColor = "#59339d";
+                }
+                
                 btn.onclick = () => filterByCategory(cat.keyword, btn);
                 catContainer.appendChild(btn);
             });
@@ -984,7 +970,7 @@ function renderSimulationSetup() {
 
         function filterByCategory(keyword, clickedBtn) {
             if(isExamModeActive && keyword !== 'SIMULATION') {
-                showConfirm("Sınav devam ediyor! Çıkmak istediğinize emin misiniz? Sınav verileriniz silinecek.", () => {
+                showConfirm("Sinav devam ediyor! Cikmak istediginize emin misiniz?", () => {
                     exitExamMode();
                     executeCategoryFilter(keyword, clickedBtn);
                 });
@@ -1005,34 +991,14 @@ function renderSimulationSetup() {
                 document.getElementById('action-area').style.display = 'flex';
                 document.getElementById('btnAcikla').style.display = 'block';
             }
-function toggleGoldenSim(cb) {
-    const grid = document.getElementById('sim-subject-grid');
-    const containers = grid.querySelectorAll('.sim-cb-container');
-    const goldenSubjects = ["M&B", "DGR", "LAW", "NAV", "COM", "FPL"]; // Golden içeriği olan ders kodları
 
-    containers.forEach(container => {
-        const checkbox = container.querySelector('.sim-cb');
-        const subjectCode = examSubjects[checkbox.value].code;
-        
-        if (cb.checked) {
-            if (!goldenSubjects.includes(subjectCode)) {
-                container.style.display = 'none';
-                checkbox.checked = false;
-            } else {
-                container.style.border = "2px solid #ffc107";
-            }
-        } else {
-            container.style.display = 'flex';
-            container.style.border = "2px solid #eee";
-        }
-    });
-}
             if(keyword === 'SIMULATION') { renderSimulationSetup(); return; }
+            if(keyword === 'ARCADE') { openArcade(); return; }
 
             if(keyword === 'ALL') {
                 filteredQs = [...allQs];
             } else if (keyword === 'CIKMIS') {
-                filteredQs = allQs.filter(q => q['Sınav Anısı'] !== undefined);
+                filteredQs = allQs.filter(q => q['Sinav Anisi'] !== undefined);
             } else if (keyword.startsWith('GOLDEN')) {
                 filteredQs = allQs.filter(q => (q['Kategori'] || "").toUpperCase().includes(keyword));
             } else {
@@ -1050,14 +1016,14 @@ function toggleGoldenSim(cb) {
         function renderList() {
             const l = document.getElementById('list'); l.innerHTML = ''; 
             filteredQs.forEach((q, i) => {
-                const a = document.createElement('a'); a.className = 'link'; a.id = 'l' + i; a.innerText = q['Soru Numarası'];
+                const a = document.createElement('a'); a.className = 'link'; a.id = 'l' + i; a.innerText = q['Soru Numarası'] || q['Soru Numarasi'];
                 a.onclick = () => { idx = i; show(); }; l.appendChild(a);
             });
         }
 
         function show() {
             if(!filteredQs.length) {
-                document.getElementById('no').innerText = "BİLGİ"; document.getElementById('txt').innerText = "Bu kategoriye ait soru bulunamadı.";
+                document.getElementById('no').innerText = "BILGI"; document.getElementById('txt').innerText = "Bu kategoriye ait soru bulunamadi.";
                 document.getElementById('opts').innerHTML = ''; document.getElementById('q-img').style.display = "none";
                 document.getElementById('aciklama-alani').style.display = "none"; document.getElementById('cikmis-alani').style.display = "none";
                 document.getElementById('zorluk-alani').style.display = "none"; document.getElementById('btnAcikla').style.display = "none"; 
@@ -1069,8 +1035,8 @@ function toggleGoldenSim(cb) {
             const cont = document.getElementById('q-container'); cont.classList.remove('ans-mode');
             document.getElementById('content-scroll').scrollTop = 0;
             
-            let temizKategori = (q['Kategori'] || "").replace(/^\d+\)\s*/, '') || "Genel Havacılık";
-            document.getElementById('no').innerHTML = q['Soru Numarası'] + ' <span class="kategori-text">(' + temizKategori + ')</span>';
+            let temizKategori = (q['Kategori'] || "").replace(/^\d+\)\s*/, '') || "Genel Havacilik";
+            document.getElementById('no').innerHTML = (q['Soru Numarası'] || q['Soru Numarasi']) + ' <span class="kategori-text">(' + temizKategori + ')</span>';
             document.getElementById('txt').innerText = q['Soru Metni'];
             
             const img = document.getElementById('q-img');
@@ -1078,25 +1044,24 @@ function toggleGoldenSim(cb) {
 
             const zorlukKutu = document.getElementById('zorluk-alani');
             if(q['Zorluk Derecesi(1-5)']) {
-                zorlukKutu.innerHTML = `⭐ Zorluk Seviyesi (1-5) : ${q['Zorluk Derecesi(1-5)']}`;
+                zorlukKutu.innerHTML = `Zorluk Seviyesi (1-5) : ${q['Zorluk Derecesi(1-5)']}`;
                 zorlukKutu.style.display = "inline-block";
             } else { zorlukKutu.style.display = "none"; }
 
             const cikmisKutu = document.getElementById('cikmis-alani');
-            if(q['Sınav Anısı']) { cikmisKutu.innerHTML = `<i>"${q['Sınav Anısı']}"</i> <span class="cikmis-oran">Eşleşme Oranı: ${q['Eşleşme Oranı']}</span>`; cikmisKutu.style.display = "block"; } else { cikmisKutu.style.display = "none"; }
+            if(q['Sinav Anisi']) { cikmisKutu.innerHTML = `<i>"${q['Sinav Anisi']}"</i> <span class="cikmis-oran">Eslesme Orani: ${q['Eşleşme Oranı'] || q['Eslesme Orani']}</span>`; cikmisKutu.style.display = "block"; } else { cikmisKutu.style.display = "none"; }
 
-            const aKutu = document.getElementById('aciklama-alani'); aKutu.style.display = "none"; aKutu.innerText = q['Açıklama'] || "Açıklama bulunamadı.";
+            const aKutu = document.getElementById('aciklama-alani'); aKutu.style.display = "none"; aKutu.innerText = q['Açıklama'] || "Aciklama bulunamadi.";
             
-            // Konu Anlatımı Butonunu Bağımsız Hale Getirme
             const kBtn = document.getElementById('btnKonuAnlat');
             const kAlan = document.getElementById('konu-anlatimi-alani');
-            kAlan.style.display = "none"; // İçerik başta hep gizli
+            kAlan.style.display = "none"; 
             
-            if (q['Konu Anlatımı'] && q['Konu Anlatımı'].trim() !== "") {
-                kBtn.style.display = "block"; // JSON'da konu anlatımı varsa butonu HEP göster
-                kAlan.innerHTML = q['Konu Anlatımı']; // İçeriği hazırla
+            if (q['Konu Anlatimi'] && q['Konu Anlatimi'].trim() !== "") {
+                kBtn.style.display = "block"; 
+                kAlan.innerHTML = q['Konu Anlatimi']; 
             } else {
-                kBtn.style.display = "none"; // Veri yoksa butonu gizle
+                kBtn.style.display = "none"; 
                 kAlan.innerHTML = "";
             }
             
@@ -1133,18 +1098,19 @@ function toggleGoldenSim(cb) {
         
         function goToQuestion() {
             const val = document.getElementById('q-search').value.trim(); if(!val) return;
-            const numMatch = val.match(/\d+/); if(!numMatch) { showCustomNotification("Geçerli bir sayı girin.", "warning"); return; }
-            const target = 'S.' + numMatch[0]; const fIdx = filteredQs.findIndex(q => q['Soru Numarası'].toUpperCase().endsWith(target));
-            if (fIdx !== -1) { idx = fIdx; if(isExamModeActive) showExamQuestion(); else show(); document.getElementById('q-search').value = ''; } else { showCustomNotification("Soru bulunamadı!", "error"); }
+            const numMatch = val.match(/\d+/); if(!numMatch) { showCustomNotification("Gecerli bir sayi girin.", "warning"); return; }
+            const target = 'S.' + numMatch[0]; const fIdx = filteredQs.findIndex(q => (q['Soru Numarası'] || q['Soru Numarasi']).toUpperCase().endsWith(target));
+            if (fIdx !== -1) { idx = fIdx; if(isExamModeActive) showExamQuestion(); else show(); document.getElementById('q-search').value = ''; } else { showCustomNotification("Soru bulunamadi!", "error"); }
         }
-function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
+
+        function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
 
         function searchByKeyword() {
             const val = document.getElementById('keyword-search').value.trim().toLowerCase();
             if (!val) { showCustomNotification("Lutfen aranacak kelimeyi girin.", "warning"); return; }
 
             if(isExamModeActive) {
-                showConfirm("Sinav devam ediyor! Cikmak istediginize emin misiniz? Sinav verileriniz silinecek.", () => {
+                showConfirm("Sinav devam ediyor! Cikmak istediginize emin misiniz?", () => {
                     exitExamMode();
                     executeKeywordSearch(val);
                 });
@@ -1153,17 +1119,13 @@ function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
             executeKeywordSearch(val);
         }
 
-       function executeKeywordSearch(val) {
+        function executeKeywordSearch(val) {
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
 
-            // 1. Kullanıcının girdiği kelimedeki özel sembolleri (+, -, ?) regex'i bozmaması için temizliyoruz
             const escapedVal = val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            
-            // 2. Sadece TAM KELİME (\b) eşleşmesi yapan Regex'i oluşturuyoruz ('i' büyük/küçük harf duyarsız yapar)
             const regex = new RegExp("\\b" + escapedVal + "\\b", "i");
 
             filteredQs = allQs.filter(q => {
-                // toLowerCase() yapmamıza gerek kalmadı çünkü Regex'teki "i" bayrağı o işi kendi hallediyor
                 const metin = q['Soru Metni'] || "";
                 const a = q['A Şıkkı'] || "";
                 const b = q['B Şıkkı'] || "";
@@ -1172,7 +1134,6 @@ function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
                 const e = q['E Şıkkı'] || "";
                 const aciklama = q['Açıklama'] || "";
                 
-                // .includes yerine regex.test() kullanıyoruz ki sadece kelime sınırları içindeyse true dönsün
                 return regex.test(metin) || regex.test(a) || regex.test(b) || regex.test(c) || regex.test(d) || regex.test(e) || regex.test(aciklama);
             });
            
@@ -1184,39 +1145,30 @@ function handleKeywordSearch(e) { if (e.key === 'Enter') searchByKeyword(); }
             } else {
                 renderList();
                 show();
-                showCustomNotification(`"${val}" kelimesi ile eşleşen soru bulunamadi.`, "error");
+                showCustomNotification(`"${val}" kelimesi ile eslesen soru bulunamadi.`, "error");
             }
             document.getElementById('keyword-search').value = ''; 
         }
-function resetKeywordSearch() {
+
+        function resetKeywordSearch() {
             document.getElementById('keyword-search').value = '';
-            
-            // Varsayilan listeye (GOLDEN SORULAR) geri dönüş yap
             let defaultBtn = Array.from(document.querySelectorAll('.cat-btn')).find(b => b.innerText.includes('GOLDEN SORULAR'));
-            
-            if(defaultBtn) {
-                filterByCategory('CIKMIS', defaultBtn);
-            } else {
-                filterByCategory('CIKMIS');
-            }
-            
-            showCustomNotification("Arama temizlendi, liste normale döndü.", "success");
+            if(defaultBtn) { filterByCategory('CIKMIS', defaultBtn); } else { filterByCategory('CIKMIS'); }
+            showCustomNotification("Arama temizlendi, liste normale dondu.", "success");
         }
         
-function aciklamaGosterGizle() {
+        function aciklamaGosterGizle() {
             const a = document.getElementById('aciklama-alani'); 
             const isHidden = a.style.display === "none"; 
             a.style.display = isHidden ? "block" : "none";
             
             if (isHidden) {
-                // Doğru şıkkı göster ve optikleri kitle
                 document.getElementById('q-container').classList.add('ans-mode'); 
                 const dogru = (filteredQs[idx]['Doğru Cevap'] || "").trim().toLowerCase();
                 Array.from(document.getElementById('opts').children).forEach(btn => { 
                     if(btn.innerHTML.toLowerCase().includes("<b>" + dogru + ")</b>")) btn.classList.add('correct'); 
                 });
             }
-            // Konu anlatımı butonuna veya alanına artık buradan müdahale etmiyoruz!
         }
         
         function konuAnlatimiGosterGizle() {
@@ -1229,40 +1181,41 @@ function aciklamaGosterGizle() {
         window.onclick = function(e) { if (e.target.classList.contains('modal')) { e.target.style.display = "none"; if(e.target.id === 'analizModal') closeAnaliz(); } }
 
         const analizVerileri = {
-    'notlar': `<p>Kendi şahsi notlarımız... Eğer siz de notunuzu yayınlamak istiyorsanız benimle iletişime geçebilirsiniz!</p>
-    <img src="img/not1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="img/not2.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="img/not3.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="img/not4.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O2.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O3.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O4.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O5.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O6.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O7.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O8.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O9.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O10.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O11.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O12.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O13.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O14.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O15.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O16.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O17.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O18.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
-    <img src="notlar/O19.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">`
-};
+            'notlar': `<p>Kendi sahsi notlarimiz... Eger siz de notunuzu yayinlamak istiyorsaniz benimle iletisime gecebilirsiniz!</p>
+            <img src="img/not1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="img/not2.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="img/not3.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="img/not4.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O1.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O2.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O3.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O4.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O5.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O6.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O7.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O8.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O9.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O10.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O11.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O12.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O13.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O14.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O15.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O16.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O17.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O18.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">
+            <img src="notlar/O19.png" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #ddd;">`
+        };
+
         async function openAnaliz(kategoriId, baslik) {
             document.getElementById('analiz-menu').style.display = 'none'; document.getElementById('analiz-icerik').style.display = 'block'; document.getElementById('analiz-baslik').innerText = baslik;
             const metinAlani = document.getElementById('analiz-metin');
             if (analizVerileri[kategoriId]) { metinAlani.innerHTML = analizVerileri[kategoriId]; return; }
-            metinAlani.innerHTML = "<div style='text-align:center; padding: 20px; font-weight:bold;'>Yükleniyor...</div>";
+            metinAlani.innerHTML = "<div style='text-align:center; padding: 20px; font-weight:bold;'>Yukleniyor...</div>";
             try {
-                const response = await fetch(`html_notlar/${kategoriId}.html`); if (!response.ok) throw new Error("Dosya bulunamadı");
+                const response = await fetch(`html_notlar/${kategoriId}.html`); if (!response.ok) throw new Error("Dosya bulunamadi");
                 analizVerileri[kategoriId] = await response.text(); metinAlani.innerHTML = analizVerileri[kategoriId]; 
-            } catch (error) { metinAlani.innerHTML = `<div style='color:#dc3545; font-weight:bold; text-align:center;'>HTML not dosyası bulunamadı.</div>`; }
+            } catch (error) { metinAlani.innerHTML = `<div style='color:#dc3545; font-weight:bold; text-align:center;'>HTML not dosyasi bulunamadi.</div>`; }
         }
 
         function closeAnaliz() {
@@ -1275,62 +1228,111 @@ function aciklamaGosterGizle() {
         async function openGuncelleModal() {
             openModal('guncelleModal'); const metinAlani = document.getElementById('guncelle-metin');
             if (guncellemeCache) { metinAlani.innerHTML = guncellemeCache; return; }
-            metinAlani.innerHTML = "<div style='text-align:center; font-weight:bold;'>Yükleniyor...</div>";
+            metinAlani.innerHTML = "<div style='text-align:center; font-weight:bold;'>Yukleniyor...</div>";
             try {
-                const response = await fetch('html_notlar/guncelle.html'); if (!response.ok) throw new Error("Dosya bulunamadı");
+                const response = await fetch('html_notlar/guncelle.html'); if (!response.ok) throw new Error("Dosya bulunamadi");
                 guncellemeCache = await response.text(); metinAlani.innerHTML = guncellemeCache; 
-            } catch (error) { metinAlani.innerHTML = "<div style='color:#dc3545; font-weight:bold; text-align:center;'>Güncelleme notlarına ulaşılamıyor.</div>"; }
+            } catch (error) { metinAlani.innerHTML = "<div style='color:#dc3545; font-weight:bold; text-align:center;'>Guncelleme notlarina ulasilamiyor.</div>"; }
         }
 
+        // ==========================================
+        // --- ARCADE (HOLDING PATTERN) SISTEMI ---
+        // ==========================================
+        function openArcade() {
+            document.getElementById('no').innerText = "HOLDING PATTERN (DINLENME MODU)";
+            document.getElementById('opts').innerHTML = '';
+            document.getElementById('action-area').style.display = 'none';
+            if(document.getElementById('list')) document.getElementById('list').innerHTML = '';
+
+            let html = `
+                <div style="padding: 10px; width:100%;">
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #6f42c1;">
+                        <strong style="color:#6f42c1; font-size: 16px;">Kule: "Bekleme Paternine Girin!"</strong><br>
+                        <span style="font-size: 13px;">Oyunlarda yandiginizda Kule size <b>Zorluk Derecesi 4 veya 5 olan GOLDEN bir soru</b> sorar. Dogru cevap verirseniz ucusa (oyuna) kaldiginiz yerden devam edersiniz!</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                        <button class="btn" style="background: #17a2b8;" onclick="loadGame('flappy_plane.html')">Flappy Plane</button>
+                        <button class="btn" style="background: #28a745;" onclick="loadGame('dispatcher_run.html')">Dispatcher Run</button>
+                        <button class="btn" style="background: #e0a800;" onclick="loadGame('route_snake.html')">Route Snake</button>
+                    </div>
+
+                    <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #222; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 4px solid #333;">
+                        <iframe id="game-frame" src="" style="width: 100%; height: 100%; border: none; outline: none;"></iframe>
+                        <div id="game-placeholder" style="position: absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#777; font-size: 20px; font-weight:bold;">
+                            Ustten Bir Oyun Secin...
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('txt').innerHTML = html;
+        }
+
+        function loadGame(gameFile) {
+            document.getElementById('game-placeholder').style.display = 'none';
+            document.getElementById('game-frame').src = 'games/' + gameFile;
+        }
+
+        window.addEventListener('message', function(event) {
+            if (event.data === 'ARCADE_DEATH') {
+                tetikleDirilmeSorusu();
+            }
+        });
+
+        let currentArcadeAnswer = "";
+        
+        function tetikleDirilmeSorusu() {
+            let hardGoldenQs = allQs.filter(q => {
+                let cat = (q['Kategori'] || "").toUpperCase();
+                let z = parseInt(q['Zorluk Derecesi(1-5)']);
+                return cat.includes("GOLDEN") && (z === 4 || z === 5);
+            });
+
+            if(hardGoldenQs.length === 0) {
+                document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
+                return;
+            }
+
+            let q = hardGoldenQs[Math.floor(Math.random() * hardGoldenQs.length)];
+            currentArcadeAnswer = (q['Doğru Cevap'] || "").toLowerCase();
+
+            let oldModal = document.getElementById('arcadeModal');
+            if(oldModal) oldModal.remove();
+
+            let modalHtml = `
+                <div id="arcadeModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px;">
+                    <div style="background: white; padding: 25px; border-radius: 12px; max-width: 600px; width:100%; box-shadow: 0 0 30px rgba(255,0,0,0.5); border: 3px solid #dc3545;">
+                        <h3 style="color:#dc3545; margin-bottom:15px; font-family:sans-serif;">KULE TELSIZI (ACIL DURUM)</h3>
+                        <p style="font-size:15px; font-weight:bold; margin-bottom:15px; color:#333; font-family:sans-serif;">"${q['Soru Metni']}"</p>
+                        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:10px;">
+                            ${['A', 'B', 'C', 'D', 'E'].map(harf => q[harf + ' Şıkkı'] ? `<button onclick="checkArcadeAnswer('${harf.toLowerCase()}')" style="padding:12px; border:1px solid #ccc; border-radius:6px; background:#f8f9fa; cursor:pointer; text-align:left; font-size:14px;"><b>${harf})</b> ${q[harf + ' Şıkkı']}</button>` : '').join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
+        function checkArcadeAnswer(secilen) {
+            document.getElementById('arcadeModal').remove();
+            
+            if(secilen === currentArcadeAnswer) {
+                showCustomNotification("Tebrikler! Ucusa geri donuyorsunuz!", "success");
+                document.getElementById('game-frame').contentWindow.postMessage('REVIVE', '*');
+            } else {
+                showCustomNotification("Yanlis Cevap! Sefer Iptal Edildi.", "error");
+                document.getElementById('game-frame').contentWindow.postMessage('GAME_OVER_FINAL', '*');
+            }
+        }
+        
         start();
-        // --- GÜVENLİK: F12 VE KAYNAK KODU KISAYOLLARINI ENGELLEME ---
+
         document.addEventListener('keydown', function(e) {
-            // F12 tuşunu engelle
-            if (e.key === 'F12' || e.keyCode === 123) {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl + Shift + I (Geliştirici Araçları)
-            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl + Shift + J (Konsol)
-            if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl + U (Kaynağı Görüntüle)
-            if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
-                e.preventDefault();
-                return false;
-            }
+            if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); return false; }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) { e.preventDefault(); return false; }
+            if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); return false; }
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
