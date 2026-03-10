@@ -17011,7 +17011,7 @@
         "C Şıkkı": "BECMG FM0900 5000 BR",
         "D Şıkkı": "BECMG TL1100 5000 BR",
         "Doğru Cevap": "d",
-        "Açıklama": "TAF (Terminal Aerodrome Forecast - Terminal Havaalanı Tahmini) raporunda belirtilen 'BECMG 0911 5000 BR' tahmini, saat 11:00 UTC itibarıyla görüşün 5000 metreye düşeceğini ve pus oluşacağını öngörür. Bu değişim süreci devam ettiği için METAR (Meteorological Aerodrome Report - Meydan Meteoroloji Raporu) sonundaki TREND bölümünde 'BECMG 5000 BR' şeklinde belirtilmelidir.",
+        "Açıklama": "TAF verisindeki 'BECMG 0911' ifadesi, 09:00Z'de başlayacak değişimin 11:00Z itibarıyla tamamlanacağını belirtir. 08:50Z'de yayınlanan METAR'ın kapsadığı 2 saatlik TREND periyodu bu değişim aralığına denk geldiği için, değişimin tamamlanma zamanı 'Until' (kadar) anlamına gelen 'TL1100' koduyla belirtilmelidir. Bu doğrultuda, görüşün 5000 metreye düşeceği ve pus (BR) hadisesinin başlayacağı nihai durumu temsil eden D şıkkı, TAF projeksiyonuyla tam uyumlu tek seçenektir."
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - HAVACILIK METEOROLOJİ RAPORLARI; YER VE YUKARI SEVİYE HARİTA ANALİZLERİ, RÜZGAR KAYMASI"
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
