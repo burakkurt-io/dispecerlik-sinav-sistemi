@@ -22,7 +22,7 @@
 
     cvs.addEventListener("mousemove", evt => { let rect = cvs.getBoundingClientRect(); user.y = evt.clientY - rect.top - user.height/2; });
 
-    function resetBall(){ ball.x = cvs.width/2; ball.y = cvs.height/2; ball.speed = 1.5; ball.velocityX = -ball.velocityX; }
+    function resetBall(){ ball.x = cvs.width/2; ball.y = cvs.height/2; ball.speed = 0.8; ball.velocityX = -ball.velocityX; }
 
     window.addEventListener('message', (e) => {
         if(e.data === 'REVIVE') { isDead = false; waitingRevive = false; resetBall(); loop(); }
@@ -76,3 +76,4 @@
 </body>
 
 </html>
+
