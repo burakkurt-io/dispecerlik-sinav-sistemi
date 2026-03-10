@@ -8756,8 +8756,8 @@
         "B Şıkkı": "2000 ft above the heighest obstacle within a radius of 600 ft from the aircraft.",
         "C Şıkkı": "500 ft above the heighest obstacle.",
         "D Şıkkı": "1000 ft above the heighest obstacle within a radius of 600 m from the aircraft.",
-        "Doğru Cevap": "b",
-        "Açıklama": "VFR (Visual Flight Rules - Görerek Uçuş) yapan uçaklar, kalabalık şehir bölgeleri üzerinde emniyet için en yüksek manianın en az 1000 feet üzerinde (veya uçağın 600m yarıçapındaki en yüksek engelin üzerinde) uçmalıdır.",
+        "Doğru Cevap": "d",
+        "Açıklama": "VFR uçuşlar, meskun mahaller üzerinde emniyetin tesisi için, hava aracını merkez alan 600 metre yarıçapındaki dairesel alan içerisindeki en yüksek engelin en az 1000 feet üzerinde gerçekleştirilmelidir.",       
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - HAVA KURALLARI VE HAVA TRAFİK HİZMETLERİ (DOC 4444)"
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
