@@ -1967,8 +1967,8 @@
         "C Şıkkı": "Soğutulmuş sıvı nitrojen içeren yalıtımlı ambalajlar",
         "D Şıkkı": "Isı üreten ürünler",
         "E Şıkkı": "10 L alkollü içecekler",
-        "Doğru Cevap": "c",
-        "Açıklama": "Soğutulmuş sıvı nitrojen içeren yalıtımlı ambalajların (Dry Shipper) yolcu beraberinde uçuşa kabul edilebilmesi için önceden havayolu (operatör) onayı alınması gerekmektedir.",
+        "Doğru Cevap": "b",
+        "Açıklama": "Yakıt hücreleri ve yedek yakıt kartuşları uçuşa kabul edilebilmesi için önceden havayolu (operatör) onayı alınması gerekmektedir.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "",
         "Kategori": "GOLDEN - DGR (TÜRKÇE)"
@@ -2065,7 +2065,7 @@
         "C Şıkkı": "Soğutulmuş sıvı nitrojen içeren yalıtımlı ambalajlar",
         "D Şıkkı": "Isı üreten ürünler",
         "E Şıkkı": "Elektro şok silahları",
-        "Doğru Cevap": "d", 
+        "Doğru Cevap": "b", 
         "Açıklama": "IATA DGR Tablo 2.3.A hükümleri uyarınca, su altı fenerleri veya havya gibi yüksek ısı üreten pilli cihazların taşınması, kazaen aktivasyon durumunda yangın riski oluşturabileceği için havayolu operatörünün onayına tabidir. Bu tür maddelerin emniyetli taşınması için enerji kaynağının fiziksel olarak ayrılması ve kısa devreyi önleyecek şekilde izole edilmesi operasyonel bir zorunluluktur. Diğer seçeneklerdeki maddeler ya operatör onayı gerektirmeyen genel muafiyetler kapsamındadır ya da elektro şok silahları örneğinde olduğu gibi yolcu beraberinde taşınması tamamen yasaklanmış kalemlerdir."
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
@@ -2800,6 +2800,7 @@
         "Kategori": "GOLDEN - DGR (TÜRKÇE)"
     }
 ]
+
 
 
 
