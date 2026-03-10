@@ -866,6 +866,7 @@
                 
                 preloadSet.add('img/logo.png');
                 preloadSet.add('img/flight dispatch.jpeg');
+                preloadSet.add('games/holding.png');
                 preloadSet.add('img/crew_briefing.png');
                 preloadSet.add('img/not1.png');
 
@@ -1280,16 +1281,19 @@
 
             let html = `
                 <div style="padding: 10px; width:100%;">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <img src="games/holding.png" alt="Holding Pattern" style="max-width: 100%; max-height: 250px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); object-fit: cover; width: 100%;">
+                    </div>
+                    
                     <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #6f42c1;">
                         <strong style="color:#6f42c1; font-size: 16px;">🎧 Kule: "Bekleme Paternine Girin!"</strong><br>
                         <span style="font-size: 13px;">Oyunlarda yandığınızda Kule size <b>Zorluk Derecesi 4 veya 5 olan GOLDEN bir soru</b> sorar. Sadece yandığınızda soru çıkar. Doğru cevap verirseniz uçuşa (oyuna) kaldığınız yerden devam edersiniz!</span>
                     </div>
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 20px;">
-                        <button class="btn" style="background: #e0a800;" onclick="loadGame('route_snake.html')">🐍 Route Snake</button>
                         <button class="btn" style="background: #dc3545;" onclick="loadGame('tetris.html')">📦 Kargo Tetris</button>
                         <button class="btn" style="background: #0056b3;" onclick="loadGame('pong.html')">📡 Radar Pong</button>
-                        <button class="btn" style="background: #17a2b8;" onclick="loadGame('missile_defense.html')">🚀 Hava Savunma (Radar)</button>
+                        <button class="btn" style="background: #17a2b8;" onclick="loadGame('missile_defense.html')">🚀 Radar Savunma</button>
                     </div>
                 </div>
             `;
@@ -1443,6 +1447,7 @@ let currentArcadeQuestion = null;
     </script>
 </body>
 </html>
+
 
 
 
