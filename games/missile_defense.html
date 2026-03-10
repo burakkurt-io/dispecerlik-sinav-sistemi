@@ -6,7 +6,7 @@
     <style>
         body {
             margin: 0;
-            background: #050505;
+            background: #020a02;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -17,21 +17,39 @@
         canvas {
             display: block;
             cursor: crosshair;
-            background: radial-gradient(circle at center, #001a00 0%, #000000 100%);
+            background: radial-gradient(circle at center, #001a00 0%, #000500 100%);
+        }
+        /* CRT Ekran Çizgileri ve Parlama Efekti */
+        .scanlines {
+            position: absolute;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px);
+            pointer-events: none;
+            z-index: 10;
+        }
+        .vignette {
+            position: absolute;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            box-shadow: 0 0 150px rgba(0,0,0,0.9) inset;
+            pointer-events: none;
+            z-index: 11;
         }
         #ui {
             position: absolute;
             top: 15px;
             left: 20px;
             pointer-events: none;
+            z-index: 20;
         }
     </style>
 </head>
 <body>
 <div id="ui">
-    <h2 style="margin:0; text-shadow: 0 0 5px #0f0;">RADAR COMMAND</h2>
-    <div style="font-size:18px;">KORUNAN SEFERLER: <span id="score">0</span></div>
+    <h2 style="margin:0; text-shadow: 0 0 8px #0f0;">RADAR COMMAND</h2>
+    <div style="font-size:18px; text-shadow: 0 0 5px #0f0;">KORUNAN SEFERLER: <span id="score">0</span></div>
 </div>
+<div class="scanlines"></div>
+<div class="vignette"></div>
 <canvas id="game"></canvas>
 
 <script>
@@ -56,7 +74,7 @@ window.addEventListener('resize', resize);
 const missileSize = 8;
 const counterMissileSize = 6;
 let missileSpeed = 1.5;
-const counterMissileSpeed = 12;
+const counterMissileSpeed = 18; // 1.5 Kat Hızlandırıldı (12 -> 18)
 
 let missiles = [];
 let counterMissiles = [];
@@ -64,6 +82,12 @@ let explosions = [];
 let cities = [];
 let silos = [];
 let missileSpawns = [];
+
+// Sürekli ateş için değişkenler
+let isFiring = false;
+let mouseX = 0, mouseY = 0;
+let lastFireTime = 0;
+const FIRE_RATE = 150; // Milisaniye cinsinden atış aralığı
 
 function initLevel() {
     cities = [
@@ -76,9 +100,9 @@ function initLevel() {
     ];
 
     silos = [
-        { x: w * 0.08, y: groundY - 20, missiles: 15, alive: true },
-        { x: w * 0.50, y: groundY - 20, missiles: 15, alive: true },
-        { x: w * 0.92, y: groundY - 20, missiles: 15, alive: true }
+        { x: w * 0.08, y: groundY - 20, alive: true },
+        { x: w * 0.50, y: groundY - 20, alive: true },
+        { x: w * 0.92, y: groundY - 20, alive: true }
     ];
 
     missileSpawns = cities.concat(silos).concat([{ x: 0, y: 0 }, { x: w, y: 0 }]).map(pos => ({ x: pos.x, y: 0 }));
@@ -106,10 +130,27 @@ function resetGame() {
     isDead = false; waitingRevive = false; score = 0; missileSpeed = 1.5;
     document.getElementById('score').innerText = score;
     missiles = []; counterMissiles = []; explosions = [];
+    isFiring = false;
     resize();
     lastTime = performance.now();
     loop(lastTime);
 }
+
+// Fare Kontrolleri
+canvas.addEventListener('mousedown', e => {
+    if(isDead || waitingRevive) return;
+    isFiring = true;
+    mouseX = e.clientX - e.target.offsetLeft;
+    mouseY = e.clientY - e.target.offsetTop;
+});
+
+canvas.addEventListener('mousemove', e => {
+    mouseX = e.clientX - e.target.offsetLeft;
+    mouseY = e.clientY - e.target.offsetTop;
+});
+
+canvas.addEventListener('mouseup', () => isFiring = false);
+canvas.addEventListener('mouseleave', () => isFiring = false);
 
 let lastTime = performance.now();
 let spawnInterval = 2000;
@@ -118,52 +159,91 @@ function loop(time) {
     if(isDead || waitingRevive) return;
     requestAnimationFrame(loop);
     
-    context.fillStyle = 'rgba(0, 10, 0, 0.3)';
+    // Radarın fosforlu izi (eski kareleri yavaşça silme)
+    context.fillStyle = 'rgba(0, 15, 0, 0.3)';
     context.fillRect(0, 0, w, h);
 
+    // Sürekli Ateş Kontrolü
+    if (isFiring && (time - lastFireTime > FIRE_RATE)) {
+        silos.forEach(silo => {
+            if (silo.alive) {
+                const start = { x: silo.x, y: silo.y };
+                const target = { x: mouseX, y: mouseY };
+                const angle = angleBetweenPoints(start, target);
+                counterMissiles.push({
+                    start, target, pos: { x: silo.x, y: silo.y},
+                    dx: counterMissileSpeed * Math.sin(angle), dy: counterMissileSpeed * -Math.cos(angle), alive: true
+                });
+            }
+        });
+        lastFireTime = time;
+    }
+
+    // Düşman spawn zorluğu
     if (time - lastTime > spawnInterval) {
         let spawnCount = 1 + Math.floor(score / 15);
         for(let i=0; i<spawnCount; i++) spawnMissile();
         lastTime = time;
         if(spawnInterval > 800) spawnInterval -= 20; 
-        
-        silos.forEach(s => { if(s.alive && s.missiles < 20) s.missiles++; });
     }
 
-    context.strokeStyle = '#050';
-    context.lineWidth = 1;
-    for(let i=0; i<h; i+=40) { context.beginPath(); context.moveTo(0, i); context.lineTo(w, i); context.stroke(); }
-    for(let i=0; i<w; i+=40) { context.beginPath(); context.moveTo(i, 0); context.lineTo(i, h); context.stroke(); }
+    // Radar Tarama Çizgisi (Dönen Sinyal)
+    let radarAngle = (time / 1500) % (2 * Math.PI);
+    context.save();
+    context.translate(w/2, groundY);
+    context.rotate(radarAngle);
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(0, -w);
+    context.strokeStyle = 'rgba(0, 255, 0, 0.4)';
+    context.lineWidth = 2;
+    context.stroke();
+    context.restore();
 
+    // Arka Plan Grid (Yeşil Radar Izgarası)
+    context.strokeStyle = 'rgba(0, 100, 0, 0.5)';
+    context.lineWidth = 1;
+    for(let i=0; i<h; i+=50) { context.beginPath(); context.moveTo(0, i); context.lineTo(w, i); context.stroke(); }
+    for(let i=0; i<w; i+=50) { context.beginPath(); context.moveTo(i, 0); context.lineTo(i, h); context.stroke(); }
+
+    // Zemin
     context.fillStyle = '#0a0';
     context.fillRect(0, groundY, w, h - groundY);
+    context.strokeStyle = '#0f0';
+    context.beginPath(); context.moveTo(0, groundY); context.lineTo(w, groundY); context.stroke();
     
+    // Silolar
     silos.forEach(silo => {
         if(silo.alive) {
+            context.fillStyle = '#0f0';
             context.beginPath(); context.moveTo(silo.x - 30, groundY);
             context.lineTo(silo.x - 15, silo.y); context.lineTo(silo.x + 15, silo.y);
             context.lineTo(silo.x + 30, groundY); context.fill();
+            context.stroke();
             
+            // Sonsuz mermi göstergesi
             context.fillStyle = '#000';
-            context.font = "14px monospace";
-            context.fillText(silo.missiles, silo.x - 8, silo.y + 15);
-            context.fillStyle = '#0a0';
+            context.font = "bold 16px monospace";
+            context.fillText("∞", silo.x - 6, silo.y + 16);
         }
     });
 
-    context.fillStyle = '#0ff';
+    // Şehirler
+    context.fillStyle = '#0f0';
     let aliveCities = 0;
     cities.forEach(city => {
         if(city.alive) {
             aliveCities++;
             context.fillRect(city.x - cityWidth / 2, city.y, cityWidth, cityHeight);
+            context.strokeRect(city.x - cityWidth / 2, city.y, cityWidth, cityHeight);
         }
     });
 
     if(aliveCities === 0) die();
 
+    // DÜŞMAN FÜZELERİ (Kırmızı Radar Sinyali)
     context.strokeStyle = '#f00';
-    context.lineWidth = 3;
+    context.lineWidth = 2;
     context.fillStyle = '#faa';
 
     missiles.forEach(missile => {
@@ -198,6 +278,7 @@ function loop(time) {
         }
     });
 
+    // BİZİM FÜZELERİMİZ (Cyan/Açık Yeşil)
     context.strokeStyle = '#0ff';
     context.fillStyle = '#fff';
     context.lineWidth = 2;
@@ -216,13 +297,19 @@ function loop(time) {
         }
     });
 
+    // PATLAMALAR (Radar Dalgaları)
     explosions.forEach(explosion => {
-        explosion.size += 0.8 * explosion.dir;
-        if (explosion.size > 80) explosion.dir = -1; 
+        explosion.size += 2.5 * explosion.dir; // Büyüme hızını artırdım
+        if (explosion.size > 160) explosion.dir = -1; // Patlama alanı 160 oldu (2x)
         if (explosion.size <= 0) explosion.alive = false;
         else {
-            context.fillStyle = `rgba(255, ${Math.random()*255}, 0, 0.6)`;
-            context.beginPath(); context.arc(explosion.x, explosion.y, explosion.size, 0, 2 * Math.PI); context.fill();
+            context.fillStyle = `rgba(0, 255, 100, ${0.4 * (explosion.size/160)})`; 
+            context.strokeStyle = `rgba(0, 255, 100, ${1 - (explosion.size/160)})`;
+            context.lineWidth = 2;
+            context.beginPath(); 
+            context.arc(explosion.x, explosion.y, explosion.size, 0, 2 * Math.PI); 
+            context.fill();
+            context.stroke();
         }
     });
 
@@ -231,35 +318,11 @@ function loop(time) {
     explosions = explosions.filter(e => e.alive);
 }
 
-canvas.addEventListener('click', e => {
-    if(isDead || waitingRevive) return;
-    const x = e.clientX - e.target.offsetLeft;
-    const y = e.clientY - e.target.offsetTop;
-
-    let launchSilo = null;
-    let siloDistance = Infinity;
-    silos.forEach(silo => {
-        const dist = distance({ x, y }, silo);
-        if (dist < siloDistance && silo.alive) {
-            siloDistance = dist; launchSilo = silo;
-        }
-    });
-
-    if (launchSilo) {
-        const start = { x: launchSilo.x, y: launchSilo.y };
-        const target = { x, y };
-        const angle = angleBetweenPoints(start, target);
-        counterMissiles.push({
-            start, target, pos: { x: launchSilo.x, y: launchSilo.y},
-            dx: counterMissileSpeed * Math.sin(angle), dy: counterMissileSpeed * -Math.cos(angle), alive: true
-        });
-    }
-});
-
 function die() {
     waitingRevive = true;
-    context.fillStyle = "rgba(0, 0, 0, 0.8)"; context.fillRect(0,0,w,h);
-    context.fillStyle = "#ff0"; context.font = "30px monospace"; context.textAlign = "center";
+    isFiring = false;
+    context.fillStyle = "rgba(0, 10, 0, 0.9)"; context.fillRect(0,0,w,h);
+    context.fillStyle = "#0f0"; context.font = "30px monospace"; context.textAlign = "center";
     context.fillText("TUM SEFERLER DUSTU! TELSİZ BEKLENİYOR...", w/2, h/2);
     window.parent.postMessage('ARCADE_DEATH', '*');
 }
@@ -273,14 +336,14 @@ function drawGameOver() {
 window.addEventListener('message', (e) => {
     if(e.data === 'REVIVE') { 
         cities.forEach(c => c.alive = true);
-        silos.forEach(s => { s.alive = true; s.missiles = 15; });
+        silos.forEach(s => s.alive = true);
         missiles = []; counterMissiles = []; explosions = [];
-        isDead = false; waitingRevive = false; 
+        isDead = false; waitingRevive = false; isFiring = false;
         lastTime = performance.now();
         requestAnimationFrame(loop);
     }
     if(e.data === 'GAME_OVER_FINAL') { 
-        isDead = true; waitingRevive = false; drawGameOver(); 
+        isDead = true; waitingRevive = false; isFiring = false; drawGameOver(); 
     }
 });
 
