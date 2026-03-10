@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>DOOM RETRO</title>
+    <style>
+        body {
+            background: #000; color: #0f0; margin: 0; padding: 20px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            height: 100vh; font-family: monospace; overflow: hidden; user-select: none;
+        }
+        #game-ui { text-align: center; }
+        #screen { 
+            border: 4px solid #333; max-width: 100%; max-height: 55vh; 
+            image-rendering: pixelated; margin-bottom: 20px; box-shadow: 0 0 20px rgba(255,0,0,0.2); 
+            cursor: pointer;
+        }
+        .controls {
+            display: grid; grid-template-columns: 80px 80px 80px; gap: 10px;
+            justify-content: center; align-items: center; margin: 0 auto;
+        }
+        .btn-img { width: 100%; cursor: pointer; transition: transform 0.1s; border-radius: 8px; }
+        .btn-img:active { transform: scale(0.9); }
+        .btn-img:hover { box-shadow: 0 0 15px rgba(255,255,255,0.4); }
+        #fire-btn { grid-column: span 3; width: 120px; margin: 10px auto; }
+        
+        #death-screen { display: none; text-align: center; }
+        h1 { font-size: 60px; color: red; text-shadow: 2px 2px 10px darkred; margin-bottom: 10px; }
+        p { font-size: 20px; color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- OYUN EKRANI -->
+    <div id="game-ui">
+        <img id="screen" src="title-screen.png" onclick="go('f')">
+        <div class="controls" id="controls" style="display:none;">
+            <div></div>
+            <img class="btn-img" src="strait.png" onclick="go('s')" title="İleri">
+            <div></div>
+            <img class="btn-img" src="Left-arrow.png" onclick="go('l')" title="Sola Dön">
+            <img class="btn-img" src="down.png" onclick="go('d')" title="Geri Çekil">
+            <img class="btn-img" src="Right-arrow.png" onclick="go('r')" title="Sağa Dön">
+            <img class="btn-img" id="fire-btn" src="Fire-Button.png" onclick="go('f')" title="ATEŞ ET!">
+        </div>
+    </div>
+
+    <!-- ÖLÜM EKRANI -->
+    <div id="death-screen">
+        <h1 id="statusText">ÖLDÜNÜZ!</h1>
+        <p id="subText">Kule iletişimi bekleniyor...</p>
+    </div>
+
+    <script>
+        // TÜM DOOM LABİRENT HARİTASI (ÖLÜM VE GEÇİŞ KOORDİNATLARI)
+        const map = {
+            "title": { img: "title-screen.png", l: "title", s: "title", d: "title", r: "title", f: "1" },
+            "1": { img: "1.png", l: "1", s: "2closed", d: "1", r: "1", f: "1" },
+            "2closed": { img: "2closed.png", l: "2closed", s: "2opena", d: "1", r: "2closed", f: "2closed" },
+            "2opena": { img: "2openA.png", l: "dead", s: "dead", d: "2closed", r: "dead", f: "2open" }, // Yaratık! Hareket edersen ölürsün, Ateş edersen '2open' olur.
+            "2open": { img: "2open.png", l: "2open", s: "3a", d: "2closed", r: "2open", f: "2open" },
+            "3a": { img: "3A.png", l: "dead", s: "dead", d: "2open", r: "dead", f: "3" }, // Yaratık!
+            "3": { img: "3.png", l: "6a", s: "9a", d: "2open", r: "4a", f: "3" },
+            "4a": { img: "4A.png", l: "dead", s: "dead", d: "3", r: "dead", f: "4" }, // Yaratık!
+            "4": { img: "4.png", l: "3", s: "9a", d: "4", r: "5a", f: "4" },
+            "5a": { img: "5.png", l: "dead", s: "dead", d: "4", r: "dead", f: "5" }, 
+            "5": { img: "5.png", l: "4", s: "10a", d: "5", r: "5", f: "5" },
+            "6a": { img: "6A.png", l: "dead", s: "dead", d: "3", r: "dead", f: "6" }, // Yaratık!
+            "6": { img: "6.png", l: "7a", s: "6", d: "6", r: "3", f: "6" },
+            "7a": { img: "7.png", l: "dead", s: "dead", d: "6", r: "dead", f: "7" },
+            "7": { img: "7.png", l: "7", s: "8a", d: "7", r: "6", f: "7" },
+            "8a": { img: "8.png", l: "dead", s: "dead", d: "7", r: "dead", f: "8" },
+            "8": { img: "8.png", l: "8", s: "13a", d: "7", r: "8", f: "8" },
+            "9a": { img: "9A.png", l: "dead", s: "dead", d: "3", r: "dead", f: "9" }, // Yaratık!
+            "9": { img: "9.png", l: "9", s: "11a", d: "3", r: "9", f: "9" },
+            "10a": { img: "10.png", l: "dead", s: "dead", d: "5", r: "dead", f: "10" },
+            "10": { img: "10.png", l: "10", s: "15a", d: "5", r: "10", f: "10" },
+            "11a": { img: "11.png", l: "dead", s: "dead", d: "9", r: "dead", f: "11" },
+            "11": { img: "11.png", l: "12a", s: "11open", d: "9", r: "14a", f: "11" },
+            "11open": { img: "11open.png", l: "11open", s: "16", d: "11", r: "11open", f: "11" },
+            "12a": { img: "12.png", l: "dead", s: "dead", d: "11", r: "dead", f: "12" },
+            "12": { img: "12.png", l: "13a", s: "12", d: "12", r: "11", f: "12" },
+            "13a": { img: "13.png", l: "dead", s: "dead", d: "8", r: "dead", f: "13" },
+            "13": { img: "13.png", l: "13", s: "13", d: "8", r: "12", f: "13" },
+            "14a": { img: "14.png", l: "dead", s: "dead", d: "11", r: "dead", f: "14" },
+            "14": { img: "14.png", l: "11", s: "14", d: "14", r: "15a", f: "14" },
+            "15a": { img: "15.png", l: "dead", s: "dead", d: "10", r: "dead", f: "15" },
+            "15": { img: "15.png", l: "14", s: "15", d: "10", r: "15", f: "15" },
+            "16": { img: "16.png", l: "16", s: "16", d: "11open", r: "16", f: "15" },
+        };
+
+        let currentRoom = "title";
+
+        // OYUN MOTORU MANTIĞI
+        function go(dir) {
+            let nextRoom = map[currentRoom][dir];
+            
+            // Eğer oyuncu yaratıklı bir odada (Ateş etmek yerine) yürümeye çalıştıysa ölür!
+            if(nextRoom === "dead") {
+                die();
+            } else {
+                currentRoom = nextRoom;
+                render();
+            }
+        }
+
+        // EKRANI ÇİZ
+        function render() {
+            document.getElementById('screen').src = map[currentRoom].img;
+            if(currentRoom === "title") {
+                document.getElementById('controls').style.display = "none";
+            } else {
+                document.getElementById('controls').style.display = "grid";
+            }
+        }
+
+        // ÖLÜM (KULE SİSTEMİNE MESAJ GÖNDER)
+        function die() {
+            document.getElementById('game-ui').style.display = "none";
+            document.getElementById('death-screen').style.display = "block";
+            // Arcade sistemini (Soru sormayı) tetikler
+            window.parent.postMessage('ARCADE_DEATH', '*');
+        }
+
+        // KULEDEN GELEN CEVABI DİNLE
+        window.addEventListener('message', function(event) {
+            if (event.data === 'REVIVE') {
+                document.getElementById('statusText').innerText = "KULE ONAYI ALINDI!";
+                document.getElementById('statusText').style.color = "#0f0";
+                document.getElementById('subText').innerText = "Silahlarınız doldu. Operasyona geri dönülüyor...";
+                
+                setTimeout(() => {
+                    // Oyuncu soruyu bilirse oyunun başlangıcına (1. Odaya) doğar
+                    currentRoom = "1";
+                    document.getElementById('death-screen').style.display = "none";
+                    document.getElementById('game-ui').style.display = "block";
+                    
+                    // Ölüm ekranı yazılarını sıfırla
+                    document.getElementById('statusText').innerText = "ÖLDÜNÜZ!";
+                    document.getElementById('statusText').style.color = "red";
+                    document.getElementById('subText').innerText = "Kule iletişimi bekleniyor...";
+                    render();
+                }, 2000);
+            }
+            if (event.data === 'GAME_OVER_FINAL') {
+                document.getElementById('statusText').innerText = "SEFER İPTAL EDİLDİ";
+                document.getElementById('statusText').style.color = "darkred";
+                document.getElementById('subText').innerText = "Ana sisteme dönmek için sağ üstteki çarpı (X) tuşuna basınız.";
+            }
+        });
+
+        // Oyunu Başlat
+        render();
+    </script>
+</body>
+</html>
