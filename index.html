@@ -907,25 +907,61 @@
 
         async function start() {
             try {
-                document.getElementById('no').innerText = "VERİTABANLARI YÜKLENİYOR...";
-                document.getElementById('txt').innerText = "Sorular hazırlanıyor, lütfen bekleyin...";
+                document.getElementById('no').innerText = "SİSTEM BOOT EDİLİYOR...";
+                
+                // CMD Tarzı Progress Bar Arayüzü
+                document.getElementById('txt').innerHTML = `
+                    <div id="cmd-progress" style="font-family: 'Courier New', Courier, monospace; background: #050505; color: #0f0; padding: 25px; border-radius: 8px; border: 1px solid #333; text-align: left; line-height: 1.8; font-weight: bold; box-shadow: inset 0 0 20px rgba(0,255,0,0.05);">
+                        C:\\DISPATCH_OS> init_database_fetch.exe<br>
+                        <span style="color: #aaa; font-weight: normal;">[INFO] Establishing secure connection to aviation servers...</span><br>
+                        <span style="color: #aaa; font-weight: normal;">[INFO] Downloading golden & general databanks...</span><br><br>
+                        > PROGRESS: [<span id="bar-fill" style="color: #0f0; text-shadow: 0 0 5px #0f0;"></span><span id="bar-empty" style="color: #444;">--------------------</span>] <span id="percent-text" style="color: #fff;">0</span>%
+                    </div>
+                `;
 
                 const urls = [ 'sorular.json', 'kdm_dgr_sorular.json', 'kdm_law_final.json', 'kdm_nav_final.json', 'kdm-fpl-fm-full.json' , 'kdm_com_final.json' ];
                 
+                let completed = 0;
+                const total = urls.length;
+                const barLength = 20;
+
                 const responses = await Promise.all(urls.map(async url => {
                     try {
                         const res = await fetch(url);
+                        
+                        // İlerleme çubuğunu güncelle (Animasyonlu)
+                        completed++;
+                        let percent = Math.round((completed / total) * 100);
+                        let filledCount = Math.round((percent / 100) * barLength);
+                        
+                        if(document.getElementById('bar-fill')) {
+                            document.getElementById('bar-fill').innerText = '█'.repeat(filledCount);
+                            document.getElementById('bar-empty').innerText = '-'.repeat(barLength - filledCount);
+                            document.getElementById('percent-text').innerText = percent;
+                        }
+
                         if (!res.ok) {
                             console.warn(`HATA: ${url} bulunamadı! (Hata Kodu: ${res.status})`);
                             return [];
                         }
                         return await res.json();
                     } catch (e) {
+                        // Hata olsa bile progress barı tıkama, devam et
+                        completed++; 
+                        let percent = Math.round((completed / total) * 100);
+                        let filledCount = Math.round((percent / 100) * barLength);
+                        
+                        if(document.getElementById('bar-fill')) {
+                            document.getElementById('bar-fill').innerText = '█'.repeat(filledCount);
+                            document.getElementById('bar-empty').innerText = '-'.repeat(barLength - filledCount);
+                            document.getElementById('percent-text').innerText = percent;
+                        }
+                        
                         console.warn(`HATA: ${url} çekilemedi! JSON formatı bozuk veya CORS engeli.`, e);
                         return [];
                     }
                 }));
-
+                
                 allQs = [];
                 responses.forEach(arr => {
                     if (Array.isArray(arr)) {
@@ -1451,5 +1487,6 @@
     </script>
 </body>
 </html>
+
 
 
