@@ -1966,8 +1966,8 @@
         "B Şıkkı": "2, 4, 5, 6",
         "C Şıkkı": "1, 2, 4, 5",
         "D Şıkkı": "2, 5, 6, 7",
-        "Doğru Cevap": "a",
-        "Açıklama": "AIP'nin Genel (GEN) bölümü; idari makamlar, ulusal kurallar, uçakların giriş-çıkış şartları, vergi/harçlar ve kullanılan standart birimler gibi temel ve yasal bilgileri içerir. Yaklaşma usulleri ise AD (Aerodromes) bölümünde yer alır.",
+        "Doğru Cevap": "c",
+       "Açıklama": "AIP'nin GEN (General) bölümü, havacılık faaliyetlerinin idari ve hukuki altyapısını belirleyen temel bilgileri içerir. C şıkkındaki maddeler incelendiğinde; Yetkili Otoriteler (1), Genel Kurallar (2) ve Uçaklarda Bulunması Gereken Belgeler (5), doğrudan GEN 1 başlığı altındaki idari gerekliliklerdir. VFR ve IFR kuralları (4) ise, teknik detayları ENR bölümünde olsa dahi, Annex 2 'Rules of the Air' kapsamında uçuşun temel yasal rejimini belirlediği için sınav literatüründe genel kurallar hiyerarşisinde kabul edilir. Bu kombinasyon, operasyonun yasal ve idari statüsünü belirleyen en güçlü bütünü oluşturur.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - HAVA KURALLARI VE HAVA TRAFİK HİZMETLERİ (DOC 4444)"
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
