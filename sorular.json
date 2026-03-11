@@ -20909,8 +20909,8 @@
         "B Şıkkı": "Artar ve jetin hızı azalır.",
         "C Şıkkı": "Aynı kalır ve jetin hızı aynı kalır.",
         "D Şıkkı": "Aynı kalır ve jetin hızı artar.",
-        "Doğru Cevap": "c",
-        "Açıklama": "Belirli bir kütle için irtifa arttıkça uçağın minimum toplam sürüklemesi (Minimum Drag) değişmez; ancak bu sürükleme değerini elde etmek için uçağın uçması gereken gerçek hava hızı (TAS - True Air Speed) artar.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Aerodinamik prensiplere göre, sabit kütledeki bir uçak için 'Minimum Toplam Sürüklenme' (Minimum Total Drag), uçağın ağırlığının süzülme oranına (L/D max) bölünmesiyle bulunur. İrtifa arttıkça hava yoğunluğu azalsa da, aynı ağırlığı taşımak için gereken 'Indicated Airspeed' (IAS) değişmez, dolayısıyla minimum sürüklenme miktarı (Newton cinsinden) sabit kalır. Ancak, düşük yoğunluklu havada aynı kaldırma kuvvetini üretmek için uçağın yere göre veya havaya göre gerçek hızı (TAS - True Airspeed) artmak zorundadır. Bu nedenle sürüklenme aynı kalırken, bu sürüklenmenin gerçekleştiği hız (TAS) artar.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "8) PEF - PERFORMANS ( U 01 E UO 176 ) - DÜZ UÇUŞ"
@@ -21383,8 +21383,8 @@
         "B Şıkkı": "T9, T14, T16 rutlar",
         "C Şıkkı": "G3, G14 rutlar",
         "D Şıkkı": "NAT TRACK rutlar",
-        "Doğru Cevap": "b",
-        "Açıklama": "NAT MNPS (North Atlantic Minimum Navigation Performance Specifications) sahasında, okyanus geçişi için gereken yedekli uzun menzilli seyrüsefer sistemlerine (2 adet LRNS) sahip olmayan uçaklar, merkezi 'NAT TRACK' rotalarını kullanamazlar.",
+        "Doğru Cevap": "d",
+        "Açıklama": "Kuzey Atlantik (NAT) hava sahasında MNPS (Minimum Navigation Performance Specifications) gereklilikleri uyarınca, ana NAT Track rotalarında uçabilmek için en az iki adet bağımsız Uzun Menzilli Seyrüsefer Sistemi (LRNS - Long Range Navigation System) bulunması zorunludur. Uçakta sadece tek bir LRNS ve kısa menzilli seyrüsefer yardımcıları (VOR, DME, ADF) bulunması durumunda, uçağın NAT Track yapısına girmesine izin verilmez. Bu tip uçaklar sadece Blue Spruce (A şıkkı) gibi kıyı şeridine yakın, yer istasyonları ile desteklenen özel rotaları kullanabilirler. Dolayısıyla, tek LRNS ile 'NAT Track' rotaları kullanılamaz.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 205 ) - HARİTALAR VE GRAFİKLER"
@@ -21435,8 +21435,8 @@
         "B Şıkkı": "The flight can be safely completed taking into account the weather, load, aerodrome criteria, and flight characteristics of the aero plane",
         "C Şıkkı": "The aero plane is not over landing mass at the destination",
         "D Şıkkı": "In the event of an emergency, fuel does not have to be jettisoned over land",
-        "Doğru Cevap": "a",
-        "Açıklama": "Uçuş planlamasında taşınması gereken toplam yakıt miktarı; uçağın varış noktasına gitmesini ve beklenmedik durumlar için bir emniyet payı (reserve for contingencies) kalmasını garanti edecek şekilde hesaplanmalıdır.",
+        "Doğru Cevap": "b",
+       "Açıklama": "ICAO Annex 6 ve EASA CAT.OP.MPA.150 (Fuel Policy) regülasyonları uyarınca, bir uçuş için planlanan yakıt miktarı sadece gidilecek mesafeyi değil; beklenen hava durumunu (meteoroloji), uçağın yükünü (load), iniş yapılacak ve yedek meydanların kriterlerini (aerodrome criteria) ve uçağın performans karakteristiklerini (fuel flow, degradation) kapsamak zorundadır. A şıkkı genel bir ifadeyken, B şıkkı mevzuatın 'yakıt planlaması yapılırken dikkate alınması zorunlu parametreler' listesini tam olarak karşılayan teknik tanımdır.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "11) FPL&FM - UÇUŞ PLANLAMA VE TAKİBİ ( U 01 E UO 208 ) - UÇUŞ SÜRESİ VE YAKIT HESAPLAMALARI"
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
