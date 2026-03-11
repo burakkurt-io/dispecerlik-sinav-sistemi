@@ -2065,8 +2065,8 @@
         "C Şıkkı": "Soğutulmuş sıvı nitrojen içeren yalıtımlı ambalajlar",
         "D Şıkkı": "Isı üreten ürünler",
         "E Şıkkı": "Elektro şok silahları",
-        "Doğru Cevap": "b", 
-        "Açıklama": "IATA DGR Tablo 2.3.A hükümleri uyarınca, su altı fenerleri veya havya gibi yüksek ısı üreten pilli cihazların taşınması, kazaen aktivasyon durumunda yangın riski oluşturabileceği için havayolu operatörünün onayına tabidir. Bu tür maddelerin emniyetli taşınması için enerji kaynağının fiziksel olarak ayrılması ve kısa devreyi önleyecek şekilde izole edilmesi operasyonel bir zorunluluktur. Diğer seçeneklerdeki maddeler ya operatör onayı gerektirmeyen genel muafiyetler kapsamındadır ya da elektro şok silahları örneğinde olduğu gibi yolcu beraberinde taşınması tamamen yasaklanmış kalemlerdir.",
+        "Doğru Cevap": "c", 
+       "Açıklama": "IATA DGR Tablo 2.3.A (Provisions for Dangerous Goods Carried by Passengers or Crew) uyarınca, 'Insulated packagings containing refrigerated liquid nitrogen' (Sıvı nitrojen içeren yalıtımlı ambalajlar / Dry Shipper) taşınabilmesi için operatör onayı (Approval of the operator: YES) zorunludur. Bu madde, sıvı nitrojenin gözenekli bir materyal tarafından tamamen emilmiş olması ve ambalajın basınç oluşumuna izin vermeyecek şekilde tasarlanmış olması şartıyla hem el bagajında hem de kayıtlı bagajda taşınabilir; ancak her iki durumda da havayolunun önceden bilgilendirilmesi ve onayının alınması emniyet protokolleri gereği şarttır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "GOLDEN - DGR (TÜRKÇE)"
@@ -2800,6 +2800,7 @@
         "Kategori": "GOLDEN - DGR (TÜRKÇE)"
     }
 ]
+
 
 
 
