@@ -14908,8 +14908,8 @@
         "B Şıkkı": "VFR uçuş planları ve bunlarla ilgili mesajların çekilmesi",
         "C Şıkkı": "Arama kurtarma hizmetlerinde işbirliğini sağlamak",
         "D Şıkkı": "Resmi tatil günlerinde veya hafta sonunda Türk hava sahasında uçuş yapmak isteyen uçaklara Sivil Havacılık adına uçuş izni vermek (sadece Ankara FIC)",
-        "Doğru Cevap": "b",
-        "Açıklama": "FIC (Flight Information Centre - Uçuş Bilgi Merkezi); uçuş izinleri, arama kurtarma koordinasyonu ve genel bilgilendirme sağlar; ancak VFR (Visual Flight Rules - Görerek Uçuş Kuralları) uçuş planlarının çekilmesi birincil görevleri arasında değildir, bu işlem genellikle AIS (Aeronautical Information Service) veya TWR (Tower - Kule) üzerinden yürütülür.",
+        "Doğru Cevap": "a",
+        "Açıklama": "Uçuş Bilgi Merkezleri (FIC), uçuş bilgi (FIS) ve ikaz hizmeti (ALRS) sağlamakla yükümlü birimlerdir; Türk hava sahasındaki uçuş izinlerinin (permit) asıl takibi ve idari kontrolü Sivil Havacılık Genel Müdürlüğü (SHGM) yetkisindedir. B ve C şıklarındaki görevler tüm FIC'ler için standart ICAO/DHMİ prosedürleridir. D şıkkındaki yetki ise Ankara FIC'ye hafta sonu ve tatil günlerinde SHGM tarafından devredilmiş, Türkiye'ye özgü istisnai bir koordinasyon görevidir. Bu nedenle A şıkkı, FIC'lerin asli görev tanımı dışında kalmaktadır.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - HAVA TRAFİK KONTROL-ATC"
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
