@@ -22216,8 +22216,8 @@
         "B Şıkkı": "1+1= <2",
         "C Şıkkı": "1+1=> 2",
         "D Şıkkı": "1-1=<2",
-        "Doğru Cevap": "b",
-        "Açıklama": "Sinerji, iki kişinin toplam etkisinin bireylerin tekil toplamından daha büyük olmasıdır. Formül '1 + 1 > 2' şeklinde ifade edilir.",
+        "Doğru Cevap": "a",
+        "Açıklama": "1676 - A sabit, başka bir teoriye dayanıyor. - Kadir Hoca A şıkkını işaretleyin dedi.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "2) HPL - İNSAN PERFORMANSI VE LİMİTLERİ ( U 01 E UO 209 ) - OPERASYONEL İNSAN PERFORMANSI VE ETKİLİ MÜRETTEBAT YÖNETİMİ"
@@ -23264,6 +23264,7 @@
         "Kategori": "7) MET - METEOROLOJİ ( U 01 E UO 196 ) - ATMOSFER, ATMOSFERİN BİLEŞİMİ VE KAPSAMI, DİKEY BÖLME"
     }
 ]
+
 
 
 
