@@ -105,8 +105,8 @@
         "C Şıkkı": "Rota değişikliklerini",
         "D Şıkkı": "Tahmini uçuş süresini",
         "E Şıkkı": "Yük ve yolcu ağırlığını",
-        "Doğru Cevap": "b",
-        "Açıklama": "SIFIR Yakıt Ağırlığı (Zero Fuel Weight - ZFW), uçağın boş işletme ağırlığı (DOW) ile taşınan faydalı yükün (yolcu ve kargo) toplamını ifade eder. Uçuş planlama aşamasında kesin yük verileri belli olmadığı için Tahmini ZFW (EZFW) kullanılır. ZFW tahmini, üzerine planlanan blok yakıt eklendiğinde 'Tahmini Kalkış Ağırlığı'na (ETOW) ulaşılmasını sağlar. Dolayısıyla ZFW tahmini, dolaylı olarak uçağın kalkış ağırlığını yaklaşık olarak belirlemek ve yakıt hesabını başlatmak için atılan en kritik adımdır.",
+        "Doğru Cevap": "e",
+        "Açıklama": "SIFIR Yakıt Ağırlığı (Zero Fuel Weight - ZFW), uçağın boş işletme ağırlığı (DOW) ile taşınan faydalı yükün (yolcu ve kargo) toplamını ifade eder.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "",
         "Kategori": "GOLDEN - FPL&FM"
@@ -1554,4 +1554,5 @@
         "Kategori": "GOLDEN - FPL&FM"
     }
 ]
+
 
