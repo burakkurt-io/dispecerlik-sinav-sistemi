@@ -6021,8 +6021,8 @@
         "B Şıkkı": "Distress flares",
         "C Şıkkı": "Multi seat life rafts with sufficient overload space for all the passengers and crew",
         "D Şıkkı": "Immersion suits (qick don type)",
-        "Doğru Cevap": "b",
-        "Açıklama": "Kıyıdan 120 dakika veya 400 NM uzaklıktaki deniz üstü uçuşlarda taşınması gereken ek hayatta kalma ekipmanı içerisinde, kurtarma ekiplerinin yer tespiti yapabilmesi için işaret fişekleri (distress flares) zorunludur.",
+        "Doğru Cevap": "c",
+        "Açıklama": "Uzun menzilli su üzeri uçuşlarda (Extended Overwater Operations), belirtilen limitler (120 dk / 400 NM) aşıldığında taşınması gereken temel ek ekipman, uçaktaki tüm yolcu ve mürettebatı kapsayacak kapasiteye ve aşırı yüklenme (overload) payına sahip çok koltuklu can sallarıdır (life rafts). Diğer ekipmanlar yardımcı unsurlar olsa da, regülasyonun bu spesifik mesafe/zaman limitindeki ana şartı sal kapasitesidir.",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "5) LAW - HAVA HUKUKU VE HAVA TRAFİK KONTROL ( U 01 E UO 201 ) - OPERATION MANUEL-UÇUŞ EL KİTABININ DÜZENLEYİCİ HÜKÜMLERİ (Aircraft Flight Manuel-AFM)"
@@ -11194,8 +11194,8 @@
         "B Şıkkı": "The time most frequently used for air navigation",
         "C Şıkkı": "The time enforced by the legal authority to be used in a country or an area",
         "D Şıkkı": "The time used at a particular meridian",
-        "Doğru Cevap": "a",
-        "Açıklama": "Soruda Standart Zaman (Standard Time) kavramının neyi ifade ettiği sorulmaktadır. Standart zaman, dünya genelinde zaman birliği sağlamak amacıyla kabul edilen ve referans meridyeni (Greenwich) baz alınarak tüm dünya için standart olarak kullanılan zaman (UTC - Coordinated Universal Time) sistemidir.",
+        "Doğru Cevap": "c",
+        "Açıklama": "Standart zaman (Standard Time), belirli bir boylam dilimi veya bölge içerisinde, karışıklığı önlemek adına yasal otorite tarafından resmi olarak kabul edilen yerel saattir. Seçeneklerdeki "world" (A) veya "particular meridian" (D) ifadeleri genel veya astronomik tanımlardır; ancak "Standard Time" kavramı özünde bir ülkenin veya bölgenin hukuki olarak dayattığı zaman dilimini ifade eder.",
         "Zorluk Derecesi(1-5)": "2",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "10) NAV - SEYRÜSEFER ( U 01 E UO 205 ) - TEMEL SEYRÜSEFER"
