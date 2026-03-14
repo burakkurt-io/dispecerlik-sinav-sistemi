@@ -204,7 +204,7 @@
         "D Şıkkı": "07.46",
         "E Şıkkı": "11.16",
         "Doğru Cevap": "c",
-        "Açıklama": "$56 / 15 = 3$ saat $44$ dakika fark vardır. Doğu (LMT), UTC'den ileridir (UTC daha geridedir): $12:00 - 03:44 = 08:16$.",
+        "Açıklama": "1 derece boylam farkı 4 dakikaya eşittir. 56 derece Doğu boylamı ile 0 derece (UTC) meridyeni arasında 56×4=224 dakikalık (3 saat 44 dakika) fark vardır. Doğu boylamında yerel saat daha ileri olduğu için UTC hesaplanırken bu fark yerel saatten çıkarılır: 12:00−03:44=08:16",
         "Zorluk Derecesi(1-5)": "4",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - SEYRÜSEFER (NAV)"
