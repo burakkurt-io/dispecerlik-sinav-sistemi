@@ -218,7 +218,7 @@
         "D Şıkkı": "20E",
         "E Şıkkı": "25E",
         "Doğru Cevap": "a",
-        "Açıklama": "Deviation, Manyetik (M) ile Pusula (C) arasındaki farktır. Manyetik (120), Pusula (105)'den büyüktür. Soru mantığına göre $120 - 15 = 105$ denklemiyle 15W cevabı verilmiştir.",
+        "Açıklama": "Deviation, Magnetic Heading (120∘) ile Compass Heading (105∘) arasındaki farktır. 120−105=15 derecelik bir fark mevcuttur. Magnetic değer Compass değerinden büyük olduğu için sapma Doğu (East) yönündedir. (120M−15E=105C sağlaması yapılırsa sonucun doğruluğu teyit edilir)",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - SEYRÜSEFER (NAV)"
