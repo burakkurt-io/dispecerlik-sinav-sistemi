@@ -232,7 +232,7 @@
         "D Şıkkı": "15W",
         "E Şıkkı": "20W",
         "Doğru Cevap": "c",
-        "Açıklama": "Variation, True (T) ile Magnetic (M) arasındaki farktır. $T(100) + Variation = M(120)$ denklemine göre Variation $+20$ yani 20 East (Doğu) dur.",
+        "Açıklama": "Variation, True Heading (100∘) ile Magnetic Heading (120∘) arasındaki farktır. 120−100=20 derecelik bir fark mevcuttur. Magnetic Heading değeri True Heading değerinden büyük olduğu için bu fark "West" (Batı) yönlüdür.",
         "Zorluk Derecesi(1-5)": "5",
         "Resim Yolu": "Bilinmiyor",
         "Kategori": "GOLDEN - SEYRÜSEFER (NAV)"
